@@ -58,24 +58,24 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90%; /* Increase the width as needed */
-            background: transparent; /* Make the background transparent */
-            border: 1px solid white; /* Add a white border */
-            border-radius: 6px; /* Make the borders round */
+            width: 90%; 
+            background: transparent; 
+            border: 1px solid white; 
+            border-radius: 6px; 
         }
 
-        /* Style the input and button inside the second search bar */
+        
         .second-search-bar input,
         .second-search-bar button {
-            background: transparent; /* Make the background transparent */
-            border: none; /* Remove borders */
-            color: white !important; /* Set text color to white */
+            background: transparent; 
+            border: none;
+            color: white !important; 
         }
 
-        /* Style the placeholder (hint text) */
+        
         .second-search-bar input::placeholder {
-            color: white; /* Set hint text color to white */
-            border-radius: 6px; /* Make the borders round */
+            color: white; 
+            border-radius: 6px; 
         }
 
         .text-in-image {
@@ -85,7 +85,7 @@
             margin-left: 4%;
             color: white;
             font-size: 28px;
-            /* font-weight: bold; */
+
         }
 
         .icon-in-image {
@@ -99,23 +99,25 @@
         }
 
         .faq-section {
-            background: #f5f5f5;
-            padding: 20px;
+            background: linear-gradient(to left, #f5f5f5 0%, #f5f5f5 98%, transparent 80%);
+            /* padding: 20px; */
+           
         }
 
         .faq-question {
             font-weight: bold;
-            cursor: pointer; /* Add pointer cursor to questions */
+            cursor: pointer;
+            position: relative;
         }
 
         .faq-answer {
-            display: none; /* Hide answers by default */
+            display: none;
             margin-left: 20px;
-            cursor: pointer; /* Add left margin to indent sub-answers */
+            cursor: pointer;
         }
         .faq-sub-answer {
             display: none; 
-            margin-left: 20px; 
+            margin-left: 50px; 
         }
         .expanded-color-container {
   position: relative;
@@ -124,20 +126,36 @@
 
 .solid-square {
   position: absolute;
-  width: 40px; /* Adjust the size as needed */
-  height: 40px; /* Adjust the size as needed */
-  /* background-color: #FFFF00; Remove the single quotes around the color value */
-  border-radius: 8px; /* Adjust the border radius as needed for a rounded square */
+  width: 40px; 
+  height: 40px; 
+ 
+  border-radius: 8px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .fa-angle-down {
-  color: black; /* Change the arrow color to black */
-  font-size: 12px; /* Adjust the size as needed */
+  color: black; 
+  font-size: 12px;
+  margin-left: 5px;
+            margin-right: 10px;
+}
+.faq-question + .faq-question {
+    margin-top: 10px; 
+    border-top: 1px solid white;
+    padding-top: 10px; 
 }
 
+.faq-question .fa-arrow-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+}
+.lower-arrow {
+    margin-top: 10px; /* Adjust the margin-top to lower the forward arrow */
+}
 </style>
 
 <body>
@@ -202,51 +220,59 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
 
-    <!-- QA Section -->
-<div class="body-container">
+
+          <!-- QA Section -->
 
 
-    <div class="row mt-4">
-            <div class="col-md-12">
-                <div class="faq-section">
-                   
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-question" onclick="toggleAnswer(this)"><i class="fa-solid fa-angle-down"></i>How can I get started with this website?</div>
-                    <div class="faq-answer" onclick="toggleSubAnswer(this)">
-  <div class="expanded-color-container">
-    <div class="solid-square"></div>
-    <i class="fa-solid fa-angle-down"></i>
-  </div>
-  You can start by using the search bar to find what you're looking for.
-</div>
 
-                        <div class="faq-sub-answer">
-                        <div>Sub-answer 1</div>
-                        <div >Sub-answer 2</div>
-                        </div>
-                        
-                    
-                    
-                    <div class="faq-question" onclick="toggleAnswer(this)"><i class="fa-solid fa-angle-down"></i>Is there a mobile app available?</div>
-                    <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    
-                    <i class="fa-solid fa-angle-down"></i>
-                       Yes, we have a mobile app available for both Android and iOS.</div>
-                        <div class="faq-sub-answer"><div >Sub-answer 1</div>
-                        <div >Sub-answer 2</div></div>
-                        
-                    
-                    
-                    <!-- Add more FAQ items as needed -->
-                </div>
+          <div class="row mt-4">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-question" onclick="toggleAnswer(this)">
+                <i class="fa-solid fa-angle-down"></i>How can I get started with this website?
+                <i class="fa-solid fa-arrow-right"></i> <!-- Add your right arrow icon here -->
             </div>
+            <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                <div class="expanded-color-container">
+                    <div class="solid-square"></div>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                You can start by using the search bar to find what you're looking for.
+            </div>
+            <div class="faq-sub-answer">
+                <div>Sub-answer 1</div>
+                <div>Sub-answer 2</div>
+            </div>
+            <div class="faq-question"></div>
+            <div class="faq-question" onclick="toggleAnswer(this)">
+                <i class="fa-solid fa-angle-down"></i>Is there a mobile app available?
+                <i class="fa-solid fa-arrow-right"></i> <!-- Add your right arrow icon here -->
+            </div>
+            <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                <i class="fa-solid fa-angle-down"></i>
+                Yes, we have a mobile app available for both Android and iOS.
+            </div>
+            <div class="faq-sub-answer">
+                <div>Sub-answer 1</div>
+                <div>Sub-answer 2</div>
+            </div>
+            <!-- Add more FAQ items as needed -->
         </div>
     </div>
+</div>
+
+
+    </div>
+
+
+
+
+  
     <script>
         // JavaScript function to toggle FAQ answers
         function toggleAnswer(element) {
