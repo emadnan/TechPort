@@ -99,10 +99,8 @@
         }
 
         .faq-section {
-            background: linear-gradient(to left, #f5f5f5 0%, #f5f5f5 98%, transparent 80%);
-            /* padding: 20px; */
-           
-        }
+   background: linear-gradient(to right, #065386 2%, #E8E8E8 2%);
+}
 
         .faq-question {
             font-weight: bold;
@@ -114,6 +112,7 @@
             display: none;
             margin-left: 20px;
             cursor: pointer;
+            background: linear-gradient(to right, yellow 2%, #E8E8E8 2%);
         }
         .faq-sub-answer {
             display: none; 
@@ -152,10 +151,38 @@
     top: 0;
     right: 0;
     margin-top: 10px;
+    margin-right: 10px;
 }
 .lower-arrow {
-    margin-top: 10px; /* Adjust the margin-top to lower the forward arrow */
+    margin-top: 10px;
+   
 }
+.faq-question + .faq-answer::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: white; /* Choose your preferred divider color */
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+/* Add the background gradient to the faq-answer */
+.faq-answer {
+    display: none;
+    margin-left: 20px;
+    cursor: pointer;
+    background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%); /* Apply yellow background gradient */
+}
+
+/* Adjust the FAQ sub-answer styles */
+.faq-sub-answer {
+    display: none;
+    margin-left: 20px;
+    background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%); /* Apply the same yellow background gradient */
+}
+.faq-sub-answer-text{
+    margin-left: 50px;
+}
+
+
 </style>
 
 <body>
@@ -228,43 +255,39 @@
           <!-- QA Section -->
 
 
+<!-- QA Section -->
 
-          <div class="row mt-4">
+<div class="row mt-4">
     <div class="col-md-12">
         <div class="faq-section">
             <!-- FAQ Question and Answer -->
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <i class="fa-solid fa-angle-down"></i>How can I get started with this website?
-                <i class="fa-solid fa-arrow-right"></i> <!-- Add your right arrow icon here -->
-            </div>
-            <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                <div class="expanded-color-container">
-                    <div class="solid-square"></div>
-                    <i class="fa-solid fa-angle-down"></i>
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>How can I get started with this website?
+                    <i class="fa-solid fa-arrow-right"></i> <!-- Add your right arrow icon here -->
                 </div>
-                You can start by using the search bar to find what you're looking for.
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
+
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                    <div>Sub-answer 1</div>
+                    <div>Sub-answer 2</div>
+                    </div>
+                </div>
             </div>
-            <div class="faq-sub-answer">
-                <div>Sub-answer 1</div>
-                <div>Sub-answer 2</div>
-            </div>
-            <div class="faq-question"></div>
-            <div class="faq-question" onclick="toggleAnswer(this)">
-                <i class="fa-solid fa-angle-down"></i>Is there a mobile app available?
-                <i class="fa-solid fa-arrow-right"></i> <!-- Add your right arrow icon here -->
-            </div>
-            <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                <i class="fa-solid fa-angle-down"></i>
-                Yes, we have a mobile app available for both Android and iOS.
-            </div>
-            <div class="faq-sub-answer">
-                <div>Sub-answer 1</div>
-                <div>Sub-answer 2</div>
-            </div>
+
             <!-- Add more FAQ items as needed -->
+            
         </div>
     </div>
 </div>
+
 
 
     </div>
@@ -273,28 +296,33 @@
 
 
   
-    <script>
-        // JavaScript function to toggle FAQ answers
-        function toggleAnswer(element) {
-            const answer = element.nextElementSibling;
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                
-            } else {
-                answer.style.display = 'block';
-                
-            }
+  <script>
+    // JavaScript function to toggle FAQ answers and the lower arrow
+    function toggleAnswer(element) {
+        const answer = element.nextElementSibling;
+        const lowerArrow = element.querySelector('.lower-arrow');
+        
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            lowerArrow.classList.remove('fa-angle-up'); // Remove the up arrow class
+            lowerArrow.classList.add('fa-angle-down');    // Add the down arrow class
+        } else {
+            answer.style.display = 'block';
+            lowerArrow.classList.remove('fa-angle-down'); // Remove the down arrow class
+            lowerArrow.classList.add('fa-angle-up');      // Add the up arrow class
         }
-        function toggleSubAnswer(element){
-            const subAnswer = element.nextElementSibling;
-            if(subAnswer.style.display === 'block'){
-                subAnswer.style.display = 'none';
-                
-            }  else{
-                subAnswer.style.display = 'block';
-            }
+    }
+
+    function toggleSubAnswer(element) {
+        const subAnswer = element.nextElementSibling;
+        if (subAnswer.style.display === 'block') {
+            subAnswer.style.display = 'none';
+        } else {
+            subAnswer.style.display = 'block';
         }
-    </script>
+    }
+</script>
+
 
 </body>
 </html>
