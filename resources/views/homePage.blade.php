@@ -101,6 +101,15 @@
         .faq-section {
    background: linear-gradient(to right, #065386 2%, #E8E8E8 2%);
 }
+/* .faq-question::after {
+    content: "\f009"; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: green; 
+} */
 
         .faq-question {
             font-weight: bold;
@@ -179,7 +188,44 @@
     background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%); /* Apply the same yellow background gradient */
 }
 .faq-sub-answer-text{
-    margin-left: 50px;
+    margin-left: 30px;
+}
+
+
+.custom-icon {
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
 
 
@@ -263,9 +309,10 @@
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>How can I get started with this website?
-                    <i class="fa-solid fa-arrow-right"></i> <!-- Add your right arrow icon here -->
-                </div>
+    <i class="fa-solid fa-angle-down lower-arrow"></i>How can I get started with this website?
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
@@ -275,9 +322,10 @@
                 </div>
 
                 <div class="faq-sub-answer">
+                    
                     <div class="faq-sub-answer-text">
-                    <div>Sub-answer 1</div>
-                    <div>Sub-answer 2</div>
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
                     </div>
                 </div>
             </div>
@@ -304,12 +352,11 @@
         
         if (answer.style.display === 'block') {
             answer.style.display = 'none';
-            lowerArrow.classList.remove('fa-angle-up'); // Remove the up arrow class
-            lowerArrow.classList.add('fa-angle-down');    // Add the down arrow class
+            subAnswer.style.display = 'none';
+             // Add the down arrow class
         } else {
             answer.style.display = 'block';
-            lowerArrow.classList.remove('fa-angle-down'); // Remove the down arrow class
-            lowerArrow.classList.add('fa-angle-up');      // Add the up arrow class
+                  // Add the up arrow class
         }
     }
 
@@ -321,6 +368,15 @@
             subAnswer.style.display = 'block';
         }
     }
+    function openPopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
 </script>
 
 

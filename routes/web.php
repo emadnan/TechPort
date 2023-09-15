@@ -17,3 +17,6 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/',[HomeController::class, 'homePage']);
+Route::get('/AdvanceSearch', function () {
+    return view('advanceSearchPage');
+});
