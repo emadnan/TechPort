@@ -176,7 +176,7 @@
 /* Add the background gradient to the faq-answer */
 .faq-answer {
     display: none;
-    margin-left: 20px;
+    margin-left: 23px;
     cursor: pointer;
     background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%); /* Apply yellow background gradient */
 }
@@ -184,7 +184,7 @@
 /* Adjust the FAQ sub-answer styles */
 .faq-sub-answer {
     display: none;
-    margin-left: 20px;
+    margin-left: 23px;
     background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%); /* Apply the same yellow background gradient */
 }
 .faq-sub-answer-text{
@@ -198,6 +198,12 @@
     margin-right: 5px;
     font-size: 18px;
     cursor: pointer;
+}
+/* Define the styles for the divider */
+.divider {
+    height: 1px; /* Adjust the height as needed */
+    background-color: white; /* Set the background color of the divider */
+    
 }
 
 
@@ -248,7 +254,7 @@
 
 <!-- <div class='body-container'> -->
     
-<div class="container mt-4">
+<div class="container">
         <div class="row">
             <div class="col-md-9">
                 <form class="form-inline w-100">
@@ -263,7 +269,7 @@
                 </form>
             </div>
             <div class="col-md-3">
-                <button class="btn custom-button btn-block">Advance Search</button>
+                <a href="{{ url('/AdvanceSearch') }}" class="btn custom-button btn-block">Advance Search</a>
             </div>
         </div>
         <!-- Add a new row for the image container -->
@@ -298,18 +304,120 @@
 
 
 
-          <!-- QA Section -->
 
-
-<!-- QA Section -->
-
-<div class="row mt-4">
+<div class="row">
     <div class="col-md-12">
         <div class="faq-section">
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>How can I get started with this website?
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    TX01.1  Chemical Space Propulsion
+                </div>
+
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>TX01.1  Chemical Space Propulsion</div>
+                    <div><i class="fa-solid fa-angle-down"></i>TX01.1  Chemical Space Propulsion</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX02  Flight Computing and Avionics
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
+
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX03  Aerospace Power and Energy Storage
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
+
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX04  Robotic Systems
     <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
     
 </div>
@@ -336,13 +444,176 @@
     </div>
 </div>
 
+<div class="divider"></div>
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX05  Communications, Navigation, and Orbital Debris Tracking and Characterization Systems
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
 
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
     </div>
+</div>
 
+<div class="divider"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX06  Human Health, Life Support, and Habitation Systems
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
 
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX07  Exploration Destination Systems
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
+
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX08  Sensors and Instruments
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
+
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+    <i class="fa-solid fa-angle-down lower-arrow"></i>TX09  Entry, Descent, and Landing
+    <i class="fa-solid fa-square-poll-vertical custom-icon"></i>
+    
+</div>
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    You can start by using the search bar to find what you're looking for.
+                </div>
+
+                <div class="faq-sub-answer">
+                    
+                    <div class="faq-sub-answer-text">
+                    <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>Sub-answer 1</div>
+                    <div><i class="fa-solid fa-angle-down"></i>Sub-answer 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items as needed -->
+            
+        </div>
+    </div>
+</div>
   
   <script>
     // JavaScript function to toggle FAQ answers and the lower arrow

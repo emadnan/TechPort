@@ -151,12 +151,24 @@ body {
             font-size: 18px;
             margin-bottom: 10px;
         }
+        .faq-answer {
+           padding: 10px;
+            font-size: 16px;
+            /* margin-bottom: 10px; */
+            background: #FCFCFC;
+        }
 
        
         .divider {
     width: 100%;
     height: 1px; 
     background-color: white;
+}
+
+.grey-divider{
+    width: 100%;
+    height: 1px; 
+    background-color: grey;
 }
 .dropdown-menu {
             background: white;
@@ -167,7 +179,7 @@ body {
             font-size: 18px;
         }
         .qa-container {
-            max-width: 600px;
+            max-width: 99%;
             margin: 0 auto;
             font-size: 16px;
         }
@@ -179,13 +191,23 @@ body {
 
         .qa-answer {
             display: none;
-            padding: 10px;
-            border: 1px solid #ddd;
+            margin-left: 20px;
         }
+       
 
-        .qa-question.active {
-            background-color: #ddd;
-        }
+        
+        .faq-toggle-icon {
+    cursor: pointer;
+    font-size: 18px; /* Adjust the font size as needed */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.faq-toggle-icon.rotate {
+    transform: rotate(90deg); /* Rotate the icon when the answer is expanded */
+}
+
+
+       
 </style>
 
 <body>
@@ -232,10 +254,7 @@ body {
                     <div class="text-in-image">
                         Advance Search
                     </div>
-                  
-                    <div class="icon-in-image">
-                    <i class="fa-solid fa-square-poll-vertical"></i>
-                    </div>
+                  <!--  -->
                 </div>
             </div>
         </div>
@@ -250,7 +269,7 @@ body {
 <!-- QA Section -->
 <div class="faq-container">
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Sort Order</div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -265,7 +284,7 @@ body {
     </div>
     <div class="divider"></div>
     <div class="faq-item">
-  <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases</div>
+  <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
   <div class="faq-answer" style="display: none;">
     <div class="row">
       <div class="col-4"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -304,7 +323,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Status</div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Status<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -349,7 +368,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Active Date</div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Active Date<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"> 
         <div class="row">
       <div class="col-2"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -427,14 +446,20 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Technology Area</div>
-        <div class="faq-answer" style="display: none;"> <div class="qa-container">
-        <div class="qa-question">
-            <h3 class="question">What is HTML?</h3>
-            <div class="qa-answer">
-                HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages.
-            </div>
-        </div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Technology Area<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+         <div class="qa-container">
+         <div class="qa-question">
+         
+         <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+</div>
+    <h3 class="question" style="margin-left: 15px;">What is HTML?</h3>
+    <div class="qa-answer" onclick="toggleQASubAnswer(this)">
+        HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages.
+    </div>
+   
+</div>
 
         <div class="qa-question">
             <h3 class="question">What is CSS?</h3>
@@ -455,59 +480,862 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
-    </div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
 
+        <!-- ///////////Multiple check box Starts -->
+        <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
+        <label class="form-check-label" for="flexCheckChecked2">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
+        <label class="form-check-label" for="flexCheckChecked3">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
+        <label class="form-check-label" for="flexCheckChecked2">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
+        <label class="form-check-label" for="flexCheckChecked3">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
+        <label class="form-check-label" for="flexCheckChecked2">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
+        <label class="form-check-label" for="flexCheckChecked3">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
+        <label class="form-check-label" for="flexCheckChecked2">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
+        <label class="form-check-label" for="flexCheckChecked3">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /////////Multiple Check Box Ends Here -->
+
+</div>
+    </div>
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+        <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Start TRL
+        </label>
+      </div>
     </div>
-
-    <div class="divider"></div>
-    <!-- Add more FAQ items as needed -->
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+    <br>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Min: <input type="text" id="name" name="name" value="10" style="width: 50px; border-radius: 5px;">
+        </label>
+      </div>
+    </div> 
+    <div class="col-md-8">
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" style="width: 100%;" id="myRange">
     </div>
-
-    <div class="divider"></div>
-    <!-- Add more FAQ items as needed -->
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
-    </div>
-
-    <div class="divider"></div>
-    <!-- Add more FAQ items as needed -->
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
-    </div>
-
-    <div class="divider"></div>
-    <!-- Add more FAQ items as needed -->
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
-    </div>
-
-    <div class="divider"></div>
-    <!-- Add more FAQ items as needed -->
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
-    </div>
-
-    <div class="divider"></div>
-    <!-- Add more FAQ items as needed -->
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Q3: Can I customize the FAQ section further?</div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
-    </div>
+    <!-- <p>Value: <span id="sliderValue">10</span></p> -->
     
+</div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Max: <input type="text" id="name" name="name" value="10" style="width: 50px; border-radius: 5px;">
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Current TRL
+        </label>
+      </div>
+    </div>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Min: <input type="text" id="name" name="name" value="10" style="width: 50px; border-radius: 5px;">
+        </label>
+      </div>
+    </div> 
+    <div class="col-md-8">
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" style="width: 100%;" id="myRange">
+    </div>
+    <!-- <p>Value: <span id="sliderValue">10</span></p> -->
+    
+</div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Max: <input type="text" id="name" name="name" value="10" style="width: 50px; border-radius: 5px;">
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<br>
+<div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Current TRL
+        </label>
+      </div>
+    </div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Min: <input type="text" id="name" name="name" value="10" style="width: 50px; border-radius: 5px;">
+        </label>
+      </div>
+    </div> 
+    <div class="col-md-8">
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" style="width: 100%;" id="myRange">
+    </div>
+    <!-- <p>Value: <span id="sliderValue">10</span></p> -->
+    
+</div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Max: <input type="text" id="name" name="name" value="10" style="width: 50px; border-radius: 5px;">
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    </div>
+
+    
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    
+  </div>
+</div>
+    </div>
+    </div>
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    </div>
+    </div>
+
+
+
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    </div>
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1" style="color: #065386;">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4" style="color: #065386;">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grey-divider"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Houstan, Texas
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    </div>
+    </div>
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+        <div class="row">
+      <div class="col-4"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+          Filter by organization type
+          </label>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+          Filter by organization name
+          </label>
+        </div>
+      </div>
+      </div>
+
+      <br>
+      <div class="rows">
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      </div>
+    </div>
+    </div>
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+    </div>
+
+    <div class="divider"></div>
+    <!-- Add more FAQ items as needed -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+    </div>
+    <div class="divider"></div>
+<!-- Add more FAQ items as needed -->
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)" class="fas fa-chevron-right faq-toggle-icon"  style="float: right;margin-top:15px;" id="icon"></i></div>
+    <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+</div>
 </div>
 
 
@@ -537,6 +1365,32 @@ questions.forEach(question => {
             answer.style.display = 'block';
         }
     }
+    function toggleQASubAnswer(element1){
+        const subanswers=element.nextElementSibling;
+        if(subanswers.style.display === 'block'){
+            subanswers.style.display = 'none';
+        }else{
+            subanswers.style.display = 'block';
+        }
+    }
+    function myFunction(x) {
+  x.classList.toggle("fas fa-chevron-down");
+}
+function toggleQAAnswer(question) {
+    var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
+    if (subanswer.style.display === "none" || subanswer.style.display === "") {
+        subanswer.style.display = "block"; // Show the sub-answer
+    } else {
+        subanswer.style.display = "none"; // Hide the sub-answer
+    }
+}
+var slider = document.getElementById("myRange");
+    var sliderValueDisplay = document.getElementById("sliderValue");
+
+    // Update the <span> tag with the slider value when the slider is changed
+    slider.addEventListener("input", function() {
+        sliderValueDisplay.textContent = slider.value;
+    });
 </script>
 
 
