@@ -23,3 +23,26 @@ Route::get('/AdvanceSearch', function () {
 Route::get('/locationsPage', function () {
     return view('locationsPage');
 });
+Route::get('/organizations', function () {
+    return view('organizationsPage');
+});
+
+Route::get('/legal-entity-roles', function () {
+    return view('legalEntityRolesPage');
+});
+
+Route::get('/found-sources', function () {
+    return view('foundSourcesPage');
+});
+
+Route::get('/mission-type', function () {
+    return view('missionTypePage');
+});
+
+Route::get('/project-targets', function () {
+    return view('projectTargetsPage');
+});
+
+Route::get('/search-results', function () {
+    return view('searchResultsPage');
+});

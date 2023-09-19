@@ -48,7 +48,7 @@
 
         .custom-image {
             width: 114%;
-            height: auto;
+            height: 300px;
         }
         .second-search-bar {
             position: absolute;
@@ -161,7 +161,7 @@ body {
 
        
         .divider {
-    width: 100%;
+    width:225px;
     height: 1px; 
     background-color: white;
 }
@@ -257,177 +257,42 @@ body {
                     <img src="{{URL('images/Rectangle.png')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
-                        Loading
+                    <section > Search Results </section>
+                    <div class="row">
+    <div class="col-md-6 mb-1">
+        <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort Order: Relevance</button>
+    </div>
+    <div class="col-md-6 mb-0">
+        <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words and Phrases: No Selection</button>
+    </div>
+</div>
+                                <div class="row">
+                                    <div style="width: 200px; height: 200px; border-radius: 20px; background: #FFA800; text-align: center;font-size: 18px;line-height: 1.5;" class="col-md-6 mb-1">
+                                <!-- 16,806<br> -->
+                                <section style="font-weight:bold;font-size: 35;">16,906</section><br>
+                                Projects Found<br>
+                                <button class="btn" style="background-color: white; color: #065386;font-weight:bold; ">Modify Search</button><br>              
+                                </div>
+                                <div class="col-md-6 mb-1">
+                                    <section style="font-size:16px;">Keya search</section>
+                                    <div class="divider"></div>
+                                    <div class="row col-md-6 mb-6">
+                                        <section style="color:yellow;font-size: 12px;" >944</section>
+                                        <section  style="font-size: 12;margin-left:100px">Active</section>
+                                    </div>
+                                </div>
+                    
                     </div>
+        
+                    
+                    
+
+                    </div>
+                   
                   <!--  -->
                 </div>
             </div>
         </div>
-
-
-
-
-
-          <!-- QA Section -->
-
-
-<!-- QA Section -->
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="faq-container">
-
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
-    </div>
-</div>
-
-
-
-
-
 
 </div>
 

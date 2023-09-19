@@ -257,7 +257,7 @@ body {
                     <img src="{{URL('images/Rectangle.png')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
-                        Loading
+                    Legal Entity Roles
                     </div>
                   <!--  -->
                 </div>
@@ -277,7 +277,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -294,7 +294,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -311,7 +311,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -328,7 +328,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -345,7 +345,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -362,7 +362,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -379,7 +379,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -396,7 +396,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -413,7 +413,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Space Technology Mission Directorate (STMD)</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
