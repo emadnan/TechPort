@@ -266,7 +266,7 @@ body {
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words and Phrases: No Selection</button>
     </div>
 </div>
-                                <div class="row">
+                                <di v class="row">
                                     <div style="width: 200px; height: 200px; border-radius: 20px; background: #FFA800; text-align: center;font-size: 18px;line-height: 1.5;" class="col-md-6 mb-1">
                                 <!-- 16,806<br> -->
                                 <section style="font-weight:bold;font-size: 35;">16,906</section><br>
@@ -274,15 +274,32 @@ body {
                                 <button class="btn" style="background-color: white; color: #065386;font-weight:bold; ">Modify Search</button><br>              
                                 </div>
                                 <div class="col-md-6 mb-1">
-                                    <section style="font-size:16px;">Keya search</section>
-                                    <div class="divider"></div>
-                                    <div class="row col-md-6 mb-6">
-                                        <section style="color:yellow;font-size: 12px;" >944</section>
-                                        <section  style="font-size: 12;margin-left:100px">Active</section>
-                                    </div>
+                                <section style="font-size: 16px;">Keya search</section>
+                                <div class="divider"></div>
+                                <div style="margin-left: 4px;line-height: 1;">
+                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
+                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
                                 </div>
+                                <div class="divider"></div>
+                                <div style="margin-left: 4px;line-height: 1;">
+                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
+                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
+                                </div>
+                                <div class="divider"></div>
+                                <div style="margin-left: 4px;line-height: 1;">
+                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
+                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
+                                </div>
+
+                                
+                            </div>
+                            <h5>abc</h5>
+
+                            
+                            
                     
                     </div>
+                    
         
                     
                     
@@ -298,7 +315,6 @@ body {
 
 
     </div>
-
 
 
 
@@ -350,6 +366,7 @@ var slider = document.getElementById("myRange");
         sliderValueDisplay.textContent = slider.value;
     });
 </script>
+
 
 
 </body>
