@@ -48,6 +48,6 @@ Route::get('/search-results', function () {
 });
 
 
-Route::get('/location-clocing', function () {
+Route::get('/location-clicking', function () {
     return view('locationClickingPage');
 });

@@ -354,11 +354,11 @@ body {
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
-            Your additional text goes here.
+        This is a project within the Space Technology Research Grants Program
         </div>
     </div>
     
@@ -415,7 +415,7 @@ body {
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -480,7 +480,7 @@ body {
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -545,7 +545,7 @@ body {
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -612,11 +612,11 @@ body {
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
-            Your additional text goes here.
+        This is a project within the Space Technology Research Grants Program
         </div>
     </div>
     

@@ -137,7 +137,8 @@ body {
             max-width: 100%;
             margin: 0 auto;
             padding: 3px;
-            background: #E8E8E8; /* White background for FAQ container */
+            background: #E8E8E8;
+            margin-bottom: 50px; /* White background for FAQ container */
             /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
             /* border-radius: 5px; */
         }
@@ -152,7 +153,7 @@ body {
             font-weight:bold;
             margin-bottom: 10px;
             margin-left:10px;
-            color:#065386;
+            color:black;
         }
         
         .faq-answer {
@@ -164,9 +165,15 @@ body {
 
        
         .divider {
-    width:225px;
+        width:100%;
+        height: 1px; 
+        background-color: white;
+}
+.divider-within-class{
+    width: 100%;
     height: 1px; 
-    background-color: white;
+    background-color: grey;
+    margin-top: 20px;
 }
 
 .grey-divider{
@@ -225,8 +232,9 @@ body {
 
 .pagination {
   display: inline-block;
-  margin-top:40px;
+  margin-top:25px;
   margin-bottom:40px;
+  font-size:10px
   
 }
 
@@ -352,318 +360,96 @@ body {
 
 <div class="faq-item">
     <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</span>
+        <span class="faq-question">Projects</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-            Your additional text goes here.
-        </div>
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+      
+       
     </div>
     
     <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
+  <div>
+  <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
     
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
 
 
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
   </div>
-    </div>
-</div>
 
 
-</div>
+  <div style="margin-top: 40px;">
 
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
-       
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
     
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
 
 
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
   </div>
-    </div>
-</div>
-
-
-</div>
 
 
 
+  <div style="margin-top: 40px;">
 
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
-       
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
     
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
 
 
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
   </div>
-    </div>
-</div>
 
 
-</div>
+  <div style="margin-top: 40px;">
 
-
-
-
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
-       
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
     
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
 
 
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
   </div>
-    </div>
-</div>
 
 
-</div>
-
-
-
-
-
-
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</span>
-       
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-            Your additional text goes here.
-        </div>
-    </div>
+  <div style="margin-top: 40px;">
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
     
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
 
 
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-</div>
+
+      <div class="divider-within-class"></div> 
 
 
-</div>
-
-<center>
+      <center>
 <div class="pagination">
   <a href="#">&laquo;</a>
   <a href="#" class="active">1</a>
@@ -676,6 +462,490 @@ body {
 </div>
 
 </center>
+  </div>
+    </div>
+
+
+
+
+    
+</div>
+
+
+
+<div class="divider"></div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+        <span class="faq-question">Organisations</span>
+       
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+      
+       
+    </div>
+    
+    <div class="faq-answer" style="display: none;">
+  <div>
+  <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+
+      <div class="divider-within-class"></div> 
+
+
+      <center>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+</center>
+  </div>
+    </div>
+
+
+
+
+    
+</div>
+
+
+
+<div class="divider"></div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+        <span class="faq-question">Mission Type</span>
+       
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+      
+       
+    </div>
+    
+    <div class="faq-answer" style="display: none;">
+  <div>
+  <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+
+      <div class="divider-within-class"></div> 
+
+
+      <center>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+</center>
+  </div>
+    </div>
+
+
+
+
+    
+</div>
+
+
+
+<div class="divider"></div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+        <span class="faq-question">Legal Entity Roles</span>
+       
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+      
+       
+    </div>
+    
+    <div class="faq-answer" style="display: none;">
+  <div>
+  <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+
+      <div class="divider-within-class"></div> 
+
+
+      <center>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+</center>
+  </div>
+    </div>
+
+
+
+
+    
+</div>
+
+<div class="divider"></div>
+
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+        <span class="faq-question">Project Targets</span>
+       
+        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+      
+       
+    </div>
+    
+    <div class="faq-answer" style="display: none;">
+  <div>
+  <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+  </div>
+
+
+  <div style="margin-top: 40px;">
+        <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
+        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
+    </section>
+    
+
+
+      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+        <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
+      </div>
+
+      <div class="divider-within-class"></div> 
+
+
+      <center>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+</center>
+  </div>
+    </div>
+
+
+
+
+    
+</div>
+
+</div>
+
+<div class="divider"></div>          
+
+            
+
+
+
 
 
 
@@ -707,6 +977,15 @@ questions.forEach(question => {
 });
     // JavaScript function to toggle FAQ answers and the lower arrow
     function toggleAnswer(element) {
+        const answer = element.nextElementSibling;
+
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    }
+    function toggleSubAnswer(element) {
         const answer = element.nextElementSibling;
 
         if (answer.style.display === 'block') {
