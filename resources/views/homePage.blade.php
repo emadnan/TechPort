@@ -269,8 +269,8 @@
                 </form>
             </div>
             <div class="col-md-3">
-                <a href="{{ url('/AdvanceSearch') }}" class="btn custom-button btn-block">Advance Search</a>
-            </div>
+    <a href="{{ url('/AdvanceSearch') }}" class="btn custom-button btn-block">Advance Search</a>
+</div>
         </div>
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
@@ -327,7 +327,7 @@
                     
                     <div class="faq-sub-answer-text">
                     <div><div class="solid-square"></div><i class="fa-solid fa-angle-down"></i>TX01.1  Chemical Space Propulsion</div>
-                    <div><i class="fa-solid fa-angle-down"></i>TX01.1  Chemical Space Propulsion</div>
+                    <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);"><i class="fa-solid fa-angle-down"></i>TX01.1  Chemical Space Propulsion</div>
                     </div>
                 </div>
             </div>

@@ -46,3 +46,8 @@ Route::get('/project-targets', function () {
 Route::get('/search-results', function () {
     return view('searchResultsPage');
 });
+
+
+Route::get('/location-clocing', function () {
+    return view('locationClickingPage');
+});

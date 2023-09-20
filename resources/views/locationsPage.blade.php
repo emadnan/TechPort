@@ -196,22 +196,48 @@ body {
         }
        
 
-        
-        .faq-toggle-icon {
-    cursor: pointer;
-    font-size: 18px; /* Adjust the font size as needed */
-    transition: transform 0.3s ease; /* Add a smooth transition effect */
-}
+  
 
-.faq-toggle-icon.rotate {
-    transform: rotate(90deg); /* Rotate the icon when the answer is expanded */
-}
 .square {
   height: 50px;
   width: 50px;
   background-color: #555;
 }
+.toggle-arrow {
+            cursor: pointer;
+            display: inline-block;
+        }
 
+        .toggle-arrow i {
+            transition: transform 0.3s ease-in-out;
+            animation: none; /* Disable the initial animation */
+        }
+
+        .toggle-arrow.collapsed i {
+            transform: rotate(0deg);
+        }
+
+        .toggle-arrow:not(.collapsed) i {
+            animation: rotateArrow 0.3s forwards;
+        }
+
+        @keyframes rotateArrow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(90deg);
+            }
+        }
+
+        .faq-question .fa-chevron-right {
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(0deg);
+}
+
+.faq-question .fa-chevron-right.collapsed {
+    transform: rotate(90deg);
+}
        
 </style>
 
@@ -257,7 +283,7 @@ body {
                     <img src="{{URL('images/Rectangle.png')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
-                        Loading
+                        Locations
                     </div>
                   <!--  -->
                 </div>
@@ -277,7 +303,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -294,7 +320,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -311,7 +337,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -328,7 +354,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -345,7 +371,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -362,7 +388,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -379,7 +405,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -396,7 +422,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -413,7 +439,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -450,14 +476,19 @@ questions.forEach(question => {
 });
     // JavaScript function to toggle FAQ answers and the lower arrow
     function toggleAnswer(element) {
-        const answer = element.nextElementSibling;
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('.fa-chevron-right');
 
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-        } else {
-            answer.style.display = 'block';
-        }
+    if (answer.style.display === 'block' || answer.style.display === '') {
+        answer.style.display = 'none';
+        icon.classList.add('collapsed');
+    } else {
+        answer.style.display = 'block';
+        icon.classList.remove('collapsed');
     }
+}
+
+
     function toggleQASubAnswer(element1){
         const subanswers=element.nextElementSibling;
         if(subanswers.style.display === 'block'){
