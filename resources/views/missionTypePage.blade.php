@@ -254,7 +254,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/Rectangle.png')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{URL('images/rectangle.png')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     Mission Types

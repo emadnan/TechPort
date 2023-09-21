@@ -232,7 +232,7 @@
   position: absolute;
   z-index: 1;
   top: 57%; /* Change this to 'top' instead of 'bottom' */
-  left: -841%;
+  left: -715%;
   margin-left: -80px;
   /* border: 2px solid #065386; */
 }
@@ -271,11 +271,35 @@
   background-color: lightblue;
   margin-top: 20px;
 }
+#rotate-icon {
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  cursor: pointer; /* Change the cursor to a pointer when hovering over the icon */
+}
+.rotate {
+  transform: rotate(180deg); /* Adjust the degrees for the desired rotation */
+}
+
+
+
 </style>
 
 <body>
 
     
+
+<script>
+    const icon = document.getElementById("rotate-icon");
+
+icon.addEventListener("click", () => {
+  // Toggle the rotation by adding or removing a CSS class
+  if (icon.classList.contains("rotate")) {
+    icon.classList.remove("rotate");
+  } else {
+    icon.classList.add("rotate");
+  }
+});
+
+</script>
 
 
 
@@ -319,7 +343,8 @@
                     </div>
                   
                     <div class="icon-in-image" >
-                    <i class="fa-solid fa-square-poll-vertical" ></i>
+                    <div class="graph-icon"><img src="{{URL('images/icon-white.png')}}" ></div>
+                    <!-- <i class="fa-solid fa-square-poll-vertical" ></i> -->
                     </div>
                     
                     <form class="form-inline second-search-bar">
@@ -349,159 +374,60 @@
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                    <!-- </i> -->
+                </div>
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
                     </div>
-                    TX01.1  Chemical Space Propulsion
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
                 </div>
 
                 
-
                 <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                                
+                            </div> </div>
+                        </div>
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
 
 
 
-
-<div class="divider"></div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        </div>
                     </div>
-                    TX01.1  Chemical Space Propulsion
+                    
+                    
                 </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
             </div>
-
             <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
-
-
-<div class="divider"></div>
-
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
         </div>
     </div>
 </div>
@@ -515,341 +441,31 @@
 
 
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
 
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="divider"></div>
-
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-<div class="divider"></div>
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="divider"></div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-<div class="divider"></div>
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<div class="divider"></div>
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
-    <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> 
-    <span class="popuptext" id="myPopup">
-    <img src="{{URL('images/pop-up-graph.png')}}" >
-    </span>
-</i>
-   
-  
-    
-</div>
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    TX01.1  Chemical Space Propulsion
-                </div>
-
-                
-
-                <div class="faq-sub-answer">
-    <div class="faq-sub-answer-text">
-        
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-        </div>
-    </div>
-    
-
-   
-</div>
-            </div>
-
-            <!-- Add more FAQ items as needed -->
-            
-        </div>
-    </div>
-</div>
 
 
 
 <div style="margin-top:100px"></div>
 
   <script>
+//     function myFunctionChildSubanswer() {
+//   var x = document.getElementById("myDIV");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+    var clickableDiv = document.getElementById("myClickableDiv");
+
+    clickableDiv.addEventListener("click", function() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    });
     // JavaScript function to toggle FAQ answers and the lower arrow
     function toggleAnswer(element) {
         const answer = element.nextElementSibling;
@@ -899,7 +515,9 @@ const toggleButton = document.getElementById("toggleButton");
                 abcSection.style.display = "none";
             }
         });
-        function myFunction() {
+
+
+function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
 }

@@ -51,3 +51,7 @@ Route::get('/search-results', function () {
 Route::get('/location-clicking', function () {
     return view('locationClickingPage');
 });
+
+Route::get('/low-evolution', function () {
+    return view('lowEvolutionPage');
+});
