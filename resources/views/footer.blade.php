@@ -13,7 +13,7 @@ footer {
     position: fixed;
     bottom: 0;
     width:100%;
-    height:10%;
+    height:15%;
 
 }
 .footer-style {
@@ -28,7 +28,7 @@ footer {
 <footer>
   <div class="row">
     <div class="col-md-6">
-      <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+      <p>&copy; COPYRIGHT © DRASS ALL RIGHTS RESERVED | PRIVACY POLICY</p>
       
     </div>
     <div class="col-md-6">

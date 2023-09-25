@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: verdana;
+            font-size:13px;
         }
 
         nav {
@@ -43,11 +44,15 @@
         }
 
         .custom-image-container {
-            width: calc(100% - 140px); /* Adjust the width based on your design */
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden; 
+            height: 100px;
         }
 
         .custom-image {
-            width: 114%;
+            width: 114.4%;
             height: auto;
         }
         .second-search-bar {
@@ -136,7 +141,7 @@ body {
         .faq-container {
             max-width: 100%;
             margin: 0 auto;
-            padding: 20px;
+            /* padding: 20px; */
             background-color: #E8E8E8; /* White background for FAQ container */
             /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
             /* border-radius: 5px; */
@@ -149,19 +154,23 @@ body {
         .faq-question {
             font-weight: bold;
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: -10px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-top:5px;
         }
         .faq-answer {
            padding: 10px;
             font-size: 16px;
             /* margin-bottom: 10px; */
             background: #FCFCFC;
+            margin-top:20px
         }
 
        
         .divider {
     width: 100%;
-    height: 1px; 
+    height: 2px; 
     background-color: white;
 }
 
@@ -198,14 +207,21 @@ body {
         
         .faq-toggle-icon {
     cursor: pointer;
-    font-size: 18px; /* Adjust the font size as needed */
+    /* font-size: 18px; Adjust the font size as needed */
     transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
 
 .faq-toggle-icon.rotate {
     transform: rotate(90deg); /* Rotate the icon when the answer is expanded */
 }
-
+.custom-button-1{
+  width:175px;
+  height:40px;
+  background-color:white;
+  color:#065386;
+  border: none;
+  margin-left:420px;
+}
 
        
 </style>
@@ -249,11 +265,23 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.png')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                         Advance Search
+                        
+     
+             <button class="btn btn-primary custom-button-1" style="">Search</button>
+            
+           
+            <button class="btn btn-outline-primary" style="width:200px;height:40px;color:white;border-color: white;">Reset Search Options</button>
+            
+      
+
                     </div>
+
+                    
+                    
                   <!--  -->
                 </div>
             </div>
@@ -269,7 +297,7 @@ body {
 <!-- QA Section -->
 <div class="faq-container">
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -284,7 +312,7 @@ body {
     </div>
     <div class="divider"></div>
     <div class="faq-item">
-  <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+  <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
   <div class="faq-answer" style="display: none;">
     <div class="row">
       <div class="col-4"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -323,7 +351,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Status<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Status<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -368,7 +396,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Active Date<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Active Date<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;"> 
         <div class="row">
       <div class="col-2"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -446,17 +474,22 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Technology Area<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Technology Area<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
          <div class="qa-container">
          <div class="qa-question">
          
-         <div class="form-check">
+         
+    <div class="question" style="margin-left: 15px;font-size:16px;"> <div class="form-check">
+      
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+  
+</div><section style="margin-left:20px">TX01  Propulsion Systems</section></div>
+    <div class="qa-answer" onclick="toggleQASubAnswer(this)">
+    <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
 </div>
-    <h3 class="question" style="margin-left: 15px;">What is HTML?</h3>
-    <div class="qa-answer" onclick="toggleQASubAnswer(this)">
-        HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages.
+   <section style="margin-left:20px;"> TX01.1  Chemical Space Propulsion</section>
     </div>
    
 </div>
@@ -480,7 +513,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
 
         <!-- ///////////Multiple check box Starts -->
@@ -635,7 +668,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="col-md-3">
       <div class="form-check">
@@ -761,7 +794,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -769,7 +802,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        The Sun
         </label>
       </div>
     </div>
@@ -779,7 +812,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Others Inside the Solar System
         </label>
       </div>
     </div>
@@ -792,7 +825,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Earth
         </label>
       </div>
     </div>
@@ -802,7 +835,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Outside the Solar System
         </label>
       </div>
     </div>
@@ -815,7 +848,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        The Moon
         </label>
       </div>
     </div>
@@ -825,7 +858,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Foundational Knowledge
         </label>
       </div>
     </div>
@@ -838,7 +871,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Mars
         </label>
       </div>
     </div>
@@ -853,7 +886,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -861,7 +894,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Aeronautics Research Mission Directorate (ARMD)
         </label>
       </div>
     </div>
@@ -871,7 +904,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Engineer (OCE)
         </label>
       </div>
     </div>
@@ -884,7 +917,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Exploration Systems Development Mission Directorate (ESDMD)
         </label>
       </div>
     </div>
@@ -894,7 +927,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Information Officer (OCIO)
         </label>
       </div>
     </div>
@@ -907,7 +940,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Mission Support Directorate (MSD)
         </label>
       </div>
     </div>
@@ -917,7 +950,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Scientist (OCS)
         </label>
       </div>
     </div>
@@ -930,7 +963,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Office of Diversity and Equal Opportunity (ODEO)
         </label>
       </div>
     </div>
@@ -940,7 +973,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Technologist (OCT)
         </label>
       </div>
     </div>
@@ -953,7 +986,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Office of Education (OoE)
         </label>
       </div>
     </div>
@@ -963,7 +996,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Science Mission Directorate (SMD)
         </label>
       </div>
     </div>
@@ -976,7 +1009,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Office of Safety and Mission Assurance (OSMA)
         </label>
       </div>
     </div>
@@ -986,7 +1019,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Software Assurance Office (SAO)
         </label>
       </div>
     </div>
@@ -999,7 +1032,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Software Assurance Office (SAO)
         </label>
       </div>
     </div>
@@ -1009,7 +1042,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Software Assurance Office (SAO)
         </label>
       </div>
     </div>
@@ -1026,7 +1059,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -1034,7 +1067,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Aeronautics Research Mission Directorate (ARMD)
         </label>
       </div>
     </div>
@@ -1044,7 +1077,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Engineer (OCE)
         </label>
       </div>
     </div>
@@ -1057,7 +1090,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Exploration Systems Development Mission Directorate (ESDMD)
         </label>
       </div>
     </div>
@@ -1067,7 +1100,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Information Officer (OCIO)
         </label>
       </div>
     </div>
@@ -1080,7 +1113,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Mission Support Directorate (MSD)
         </label>
       </div>
     </div>
@@ -1090,7 +1123,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Office of the Chief Scientist (OCS)
         </label>
       </div>
     </div>
@@ -1102,7 +1135,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -1110,7 +1143,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1" style="color: #065386;">
-        Houstan, Texas
+        Acting as Lead Center/Facility
         </label>
       </div>
     </div>
@@ -1120,7 +1153,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4" style="color: #065386;">
-        Houstan, Texas
+        Acting as Supporting Center/Facility
         </label>
       </div>
     </div>
@@ -1133,7 +1166,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Ames Research Center (ARC)
         </label>
       </div>
     </div>
@@ -1143,7 +1176,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Kennedy Space Center (KSC)
         </label>
       </div>
     </div>
@@ -1155,7 +1188,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Armstrong Flight Research Center (AFRC)
         </label>
       </div>
     </div>
@@ -1165,7 +1198,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Langley Research Center (LaRC)
         </label>
       </div>
     </div>
@@ -1177,7 +1210,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Glenn Research Center (GRC)
         </label>
       </div>
     </div>
@@ -1187,7 +1220,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Marshall Space Flight Center (MSFC)
         </label>
       </div>
     </div>
@@ -1199,7 +1232,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Goddard Institute of Space Studies (GISS)
         </label>
       </div>
     </div>
@@ -1209,7 +1242,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Michoud Assembly Facility (MAF)
         </label>
       </div>
     </div>
@@ -1221,7 +1254,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Michoud Assembly Facility (MAF)
         </label>
       </div>
     </div>
@@ -1231,7 +1264,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Headquarters (HQ)
         </label>
       </div>
     </div>
@@ -1243,7 +1276,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Independent Verification and Validation Facility (IV&V)
         </label>
       </div>
     </div>
@@ -1253,7 +1286,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Stennis Space Center (SSC)
         </label>
       </div>
     </div>
@@ -1265,7 +1298,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
         <label class="form-check-label" for="flexCheckChecked1">
-        Houstan, Texas
+        Johnson Space Center (JSC)
         </label>
       </div>
     </div>
@@ -1275,7 +1308,7 @@ body {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
         <label class="form-check-label" for="flexCheckChecked4">
-        Houstan, Texas
+        Wallops Flight Facility (WFF)
         </label>
       </div>
     </div>
@@ -1288,7 +1321,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="row">
       <div class="col-4"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -1320,30 +1353,316 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
     </div>
 
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i class="fas fa-chevron-right" style="float: right;margin-top:15px;"></i></div>
-        <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-answer" style="display: none;">
+
+        <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Alabama
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Kentucky
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        North Carolina
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Wisconsin
+        </label>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Alaska
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Louisiana
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Oklahoma
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      
+      
+      <section style="font-size: 14px;font-weight: bold;">
+      U.S. Territories
+      </section>
+        
+        
+    
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Arizona
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Maine
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Oregon
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        District of Columbia
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Arkansas
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Maryland
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Pennsylvania
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Northern Mariana Islands
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Florida
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        Nevada
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        South Dakota
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Virgin Islands
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Georgia
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        New Jersey
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Texas
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+    <section style="font-weight:bold;font-size:15;">
+    Other Locations
+    </section>
+        
+        
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Indiana
+        </label>
+      </div>
+    </div>
+   
+    
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+        <label class="form-check-label" for="flexCheckChecked4">
+        New York
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Virginia
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+        <label class="form-check-label" for="flexCheckChecked1">
+        Outside United States
+        </label>
+      </div>
+    </div>
+  </div>
+      </div>
     </div>
     <div class="divider"></div>
 <!-- Add more FAQ items as needed -->
 <div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)" class="fas fa-chevron-right faq-toggle-icon"  style="float: right;margin-top:15px;" id="icon"></i></div>
-    <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
+    <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)" class="fas fa-chevron-right faq-toggle-icon"  style="float: right;" id="icon"></i></div>
+    <div class="faq-answer" style="display: none;">
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
+    TechPort ID
+</a> 
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="background-color: white !important;">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</div>
+  </div>
 </div>
 </div>
+<button class="btn btn-primary" style="float:right;width:200px;background:#065386;;margin-top:30px;">Search</button>
 
 
     </div>
 
+   
+   
 
 
-
+<div style="margin-top:500px"></div>
+@include('footer')
   
   <script>
      const questions = document.querySelectorAll('.qa-question');

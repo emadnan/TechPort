@@ -24,7 +24,7 @@
     /* Nav bar ImageContainer Starts */
     .image-container {
         position: relative;
-        left: 15%;
+        left: 9%;
         margin-top: 30px;
     }
     /* Nav bar ImageContainer Ends */
@@ -52,6 +52,8 @@
         .custom-image {
             width: 114.4%;
             height: auto;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
         }
         .second-search-bar {
             position: absolute;
@@ -118,6 +120,7 @@
         }
 
         .faq-answer {
+            padding-bottom:8px;
             display: none;
             margin-left: 20px;
             cursor: pointer;
@@ -343,7 +346,7 @@ icon.addEventListener("click", () => {
                     </div>
                   
                     <div class="icon-in-image" >
-                    <div class="graph-icon"><img src="{{URL('images/icon-white.png')}}" ></div>
+                    <div class="graph-icon"><img src="{{URL('images/icon-white.png')}}" style="height:20px;width20px;" ></div>
                     <!-- <i class="fa-solid fa-square-poll-vertical" ></i> -->
                     </div>
                     
@@ -382,15 +385,111 @@ icon.addEventListener("click", () => {
                             <img src="{{URL('images/pop-up-graph.png')}}">
                         </span>
                         </div>
+                        
                     <!-- </i> -->
                 </div>
+                
+                
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
                         <i class="fa-solid fa-angle-down rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
-                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >TX01.1.1 Integrated Systems and Ancillary Technologies
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:510px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+
+                        
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;font-size:12px;" >
+                        <b>Example Technologies</b><br>
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> TX01.1.1 Integrated Systems and Ancillary Technologies
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:19px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX02 Flight Computing and Avionics
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
                             <img src="{{URL('images/pop-up-graph.png')}}">
@@ -404,9 +503,19 @@ icon.addEventListener("click", () => {
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
                             <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
-                                
-                            </div> </div>
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
                         </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
  
                         
                         <div style="display:flex;display:none;" id="myDIV">
@@ -421,8 +530,16 @@ icon.addEventListener("click", () => {
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                             <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
                         </div>
                     </div>
+                    
                     
                     
                 </div>
@@ -432,6 +549,658 @@ icon.addEventListener("click", () => {
     </div>
 </div>
 <div class="divider"></div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX03 Aerospace Power and Energy Storage
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX04 Robotic Systems
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization Systems
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX06 Human Health, Life Support, and Habitation Systems
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX07 Exploration Destination Systems
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX08 Sensors and Instruments
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX09 Entry, Descent, and Landing
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 
 

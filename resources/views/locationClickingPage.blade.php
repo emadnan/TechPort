@@ -47,7 +47,7 @@
         }
 
         .custom-image {
-            width: 114%;
+            width: 114.4%;
             height: 300px;
         }
         .second-search-bar {
@@ -297,7 +297,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.png')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     <section > Search Results </section>
@@ -378,30 +378,30 @@ body {
     
 
 
-      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+      <div class="sub-answer" style="display: none;margin-left:10px;">
         <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
 
 
-      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+      <div class="sub-answer" style="display: none;margin-left:10px;">
         <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
   </div>
 
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -411,13 +411,13 @@ body {
     
 
 
-      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+      <div class="sub-answer" style="display: none;margin-left:10px;">
         <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -427,13 +427,13 @@ body {
     
 
 
-      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+      <div class="sub-answer" style="display: none;margin-left:10px;">
         <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
         <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
@@ -442,7 +442,7 @@ body {
     
 
 
-      <div class="sub-answer" style="display: none;margin-top:15px;margin-left:10px;">
+      <div class="sub-answer" style="display: none;margin-left:10px;">
         <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
 
@@ -501,7 +501,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
@@ -518,7 +518,7 @@ body {
 
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -534,7 +534,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -550,7 +550,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
         <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
@@ -618,7 +618,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
@@ -635,7 +635,7 @@ body {
 
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -651,7 +651,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -667,7 +667,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
         <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
@@ -735,7 +735,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
@@ -752,7 +752,7 @@ body {
 
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -768,7 +768,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -784,7 +784,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
         <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
@@ -851,7 +851,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
@@ -868,7 +868,7 @@ body {
 
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -884,7 +884,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
@@ -900,7 +900,7 @@ body {
   </div>
 
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
         <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
@@ -963,6 +963,9 @@ body {
     </div>
 
 
+    <div style="margin-top:100px;"></div>
+
+    @include('footer')
 
   
   <script>

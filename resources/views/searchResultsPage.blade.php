@@ -47,8 +47,10 @@
         }
 
         .custom-image {
-            width: 114%;
+            width: 114.5%;
             height: 300px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
         }
         .second-search-bar {
             position: absolute;
@@ -245,7 +247,10 @@ body {
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
-
+.graph-image img{
+    width:190%;
+    border-radius:25px;
+}
 
 
 </style>
@@ -289,7 +294,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.png')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     <section > Search Results </section>
@@ -302,35 +307,10 @@ body {
     </div>
 </div>
                                 <di v class="row">
-                                    <div style="width: 200px; height: 200px; border-radius: 20px; background: #FFA800; text-align: center;font-size: 18px;line-height: 1.5;" class="col-md-6 mb-1">
-                                <!-- 16,806<br> -->
-                                <section style="font-weight:bold;font-size: 35;">16,906</section><br>
-                                Projects Found<br>
-                                <button class="btn" style="background-color: white; color: #065386;font-weight:bold; ">Modify Search</button><br>              
+                                  
+                              <div class="graph-image">
+                                <img src="{{URL('images/graph-image.png')}}" >
                                 </div>
-                                <div class="col-md-6 mb-1">
-                                <section style="font-size: 16px;">Keya search</section>
-                                <div class="divider"></div>
-                                <div style="margin-left: 4px;line-height: 1;">
-                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
-                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
-                                </div>
-                                <div class="divider"></div>
-                                <div style="margin-left: 4px;line-height: 1;">
-                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
-                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
-                                </div>
-                                <div class="divider"></div>
-                                <div style="margin-left: 4px;line-height: 1;">
-                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
-                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
-                                </div>
-
-                                
-                            </div>
-
-                            
-                            
                     
                     </div>
                     

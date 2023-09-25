@@ -43,12 +43,15 @@
         }
 
         .custom-image-container {
-            width: calc(100% - 140px); /* Adjust the width based on your design */
+            width: calc(100% - 140px);
+             /* Adjust the width based on your design */
         }
 
         .custom-image {
-            width: 114%;
-            height: auto;
+            width: 114.5%;
+            height: 148px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
         }
         .second-search-bar {
             position: absolute;
@@ -77,7 +80,7 @@
 
         .text-in-image {
             position: absolute;
-            top: 18px;
+            top: 50px;
             left: 10px;
             margin-left: 4%;
             color: white;
@@ -143,14 +146,15 @@ body {
         }
 
         .faq-item {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .faq-question {
            
             font-size: 18px;
-            margin-bottom: 10px;
-            margin-left:10px;
+            /* margin-bottom: 10px; */
+            margin-left:15px;
+            padding-top:6px;
         }
         .faq-answer {
            padding: 10px;
@@ -238,7 +242,12 @@ body {
 .faq-question .fa-chevron-right.collapsed {
     transform: rotate(90deg);
 }
-       
+.custom-icon-arrow{
+    float: right;
+    margin-top:10px;
+    margin-right:15px;
+    color:#065386;
+}   
 </style>
 
 <body>
@@ -280,7 +289,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.png')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                         Locations
@@ -303,7 +312,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -320,7 +329,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -337,7 +346,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -354,7 +363,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -371,7 +380,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -388,7 +397,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -405,7 +414,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -422,7 +431,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -439,7 +448,7 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Houston, Texas</span><i class="fas fa-chevron-right custom-icon-arrow" ></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
