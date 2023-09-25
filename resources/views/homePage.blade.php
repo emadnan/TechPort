@@ -11,7 +11,8 @@
     * {
         margin: 0;
         padding: 0;
-        font-family: verdana;
+        font-family: 'Open Sans', sans-serif;
+        
     }
 
     nav {
@@ -114,9 +115,15 @@
 } */
 
         .faq-question {
-            font-weight: bold;
+            padding:2px;
+            /* font-weight: bold; */
             cursor: pointer;
             position: relative;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: normal;
+            font-style: normal;
+            letter-spacing: -0.36px;
         }
 
         .faq-answer {
@@ -146,7 +153,7 @@
   align-items: center;
 }
 
-.fa-angle-down {
+.fa-angle-right {
   color: black; 
   font-size: 12px;
   margin-left: 5px;
@@ -167,6 +174,7 @@
 }
 .lower-arrow {
     margin-top: 10px;
+    color:white;
    
 }
 .faq-question + .faq-answer::before {
@@ -319,7 +327,7 @@ icon.addEventListener("click", () => {
     
 <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <form class="form-inline w-100">
                     <div class="input-group w-100">
                         <input type="text" class="form-control w-100" placeholder="Search...">
@@ -331,7 +339,7 @@ icon.addEventListener("click", () => {
                     </div>
                 </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
     <a href="{{ url('/AdvanceSearch') }}" class="btn custom-button btn-block">Advance Search</a>
 </div>
         </div>
@@ -346,7 +354,7 @@ icon.addEventListener("click", () => {
                     </div>
                   
                     <div class="icon-in-image" >
-                    <div class="graph-icon"><img src="{{URL('images/icon-white.png')}}" style="height:20px;width20px;" ></div>
+                    <div class="graph-icon"><img src="{{URL('images/icon-white.png')}}" style="height:30px;width:30px;" ></div>
                     <!-- <i class="fa-solid fa-square-poll-vertical" ></i> -->
                     </div>
                     
@@ -377,7 +385,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX01  Propulsion Systems
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX01  Propulsion Systems
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -393,25 +401,31 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i id="icon" class="fa-solid fa-angle-right" style="color:white;"></i>
                         TX01.1  Chemical Space Propulsion
+                        
                     </div>
                     <!-- <div class="divider"></div> -->
                     <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
                             <img src="{{URL('images/pop-up-graph.png')}}">
                         </span>
                         </div>
+                        
                 </div>
 
                 
                 <div class="faq-sub-answer">
+
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div class="divider"></div>
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >TX01.1.1 Integrated Systems and Ancillary Technologies
-                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:510px;" >
+                        
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;color:white"></i><div >TX01.1.1 Integrated Systems and Ancillary Technologies
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:556px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
                             <img src="{{URL('images/pop-up-graph.png')}}">
@@ -440,7 +454,8 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> TX01.1.1 Integrated Systems and Ancillary Technologies
+                        <div class="divider"></div>
+                            <i class="fa-solid fa-angle-right" id="toggleButton" style="color:white;"></i> TX01.1.1 Integrated Systems and Ancillary Technologies
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:19px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -469,7 +484,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX02 Flight Computing and Avionics
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX02 Flight Computing and Avionics
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -485,7 +500,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -502,7 +517,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -529,7 +544,7 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -560,7 +575,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX03 Aerospace Power and Energy Storage
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX03 Aerospace Power and Energy Storage
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -576,7 +591,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -593,7 +608,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -620,7 +635,7 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -652,7 +667,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX04 Robotic Systems
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX04 Robotic Systems
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -668,7 +683,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -685,7 +700,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -712,100 +727,7 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
-                        
-                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
-                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                        <span class="popuptext" id="myPopup">
-                            <img src="{{URL('images/pop-up-graph.png')}}">
-                        </span>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-            </div>
-            <!-- Add more FAQ items as needed -->
-        </div>
-    </div>
-</div>
-<div class="divider"></div>
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="faq-section">
-            <!-- FAQ Question and Answer -->
-            <div class="faq-container">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization Systems
-
-                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
-                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                        <span class="popuptext" id="myPopup">
-                            <img src="{{URL('images/pop-up-graph.png')}}">
-                        </span>
-                        </div>
-                        
-                    <!-- </i> -->
-                </div>
-                
-                
-                <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                    <div class="expanded-color-container">
-                        <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
-                        TX01.1  Chemical Space Propulsion
-                    </div>
-                    <!-- <div class="divider"></div> -->
-                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
-                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                        <span class="popuptext" id="myPopup">
-                            <img src="{{URL('images/pop-up-graph.png')}}">
-                        </span>
-                        </div>
-                </div>
-
-                
-                <div class="faq-sub-answer">
-                    <div class="faq-sub-answer-text">
-                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                        <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
-                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
-                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                        <span class="popuptext" id="myPopup">
-                            <img src="{{URL('images/pop-up-graph.png')}}">
-                        </span>
-                        </div>
-                            </div>
-                           
-                         </div>
-                         
-                         
-                        </div>
-                                                
- 
-                        
-                        <div style="display:flex;display:none;" id="myDIV">
-                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
-                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
-                        </div></div>
-                        
-                        </div>
-
-
-
-                        <div class="divider"></div>
-                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -838,7 +760,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX06 Human Health, Life Support, and Habitation Systems
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization Systems
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -854,7 +776,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -871,7 +793,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -898,7 +820,7 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -931,7 +853,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX07 Exploration Destination Systems
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX06 Human Health, Life Support, and Habitation Systems
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -947,7 +869,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -964,7 +886,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -991,7 +913,100 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
+                        
+                        <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="faq-section">
+            <!-- FAQ Question and Answer -->
+            <div class="faq-container">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX07 Exploration Destination Systems
+
+                    <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                        
+                    <!-- </i> -->
+                </div>
+                
+                
+                <div class="faq-answer" onclick="toggleSubAnswer(this)">
+                    <div class="expanded-color-container">
+                        <div class="solid-square"></div>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
+                        TX01.1  Chemical Space Propulsion
+                    </div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                </div>
+
+                
+                <div class="faq-sub-answer">
+                    <div class="faq-sub-answer-text">
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                        <div style="display:flex;" id="myClickableDiv">
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
+                    <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
+                        <span class="popuptext" id="myPopup">
+                            <img src="{{URL('images/pop-up-graph.png')}}">
+                        </span>
+                        </div>
+                            </div>
+                           
+                         </div>
+                         
+                         
+                        </div>
+                                                
+ 
+                        
+                        <div style="display:flex;display:none;" id="myDIV">
+                        <div style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);" ><div  style="margin-left: 26px;" >
+                        For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </div></div>
+                        
+                        </div>
+
+
+
+                        <div class="divider"></div>
+                        <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -1025,7 +1040,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX08 Sensors and Instruments
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX08 Sensors and Instruments
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -1041,7 +1056,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -1058,7 +1073,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -1085,7 +1100,7 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -1117,7 +1132,7 @@ icon.addEventListener("click", () => {
             <!-- FAQ Question and Answer -->
             <div class="faq-container">
                 <div class="faq-question" onclick="toggleAnswer(this)">
-                    <i class="fa-solid fa-angle-down lower-arrow"></i>TX09 Entry, Descent, and Landing
+                    <i class="fa-solid fa-angle-right lower-arrow"></i>TX09 Entry, Descent, and Landing
 
                     <div class="graph-icon custom-icon popup"  onclick="myFunction()"><img src="{{URL('images/icon-blue.png')}}" style="width:18px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -1133,7 +1148,7 @@ icon.addEventListener("click", () => {
                 <div class="faq-answer" onclick="toggleSubAnswer(this)">
                     <div class="expanded-color-container">
                         <div class="solid-square"></div>
-                        <i class="fa-solid fa-angle-down rotate-icon"></i>
+                        <i class="fa-solid fa-angle-right rotate-icon"></i>
                         TX01.1  Chemical Space Propulsion
                     </div>
                     <!-- <div class="divider"></div> -->
@@ -1150,7 +1165,7 @@ icon.addEventListener("click", () => {
                     <div class="faq-sub-answer-text">
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
                         <div style="display:flex;" id="myClickableDiv">
-                            <i class="fa-solid fa-angle-down" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
+                            <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i><div >Chemical Space Propulsion 
                             <div class="graph-icon custom-icon popup float-end"  style="align-items: end" onclick="myFunction()"><img src="{{URL('images/icon-black.png')}}" style="width:18px; margin-left:749px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
                         <span class="popuptext" id="myPopup">
@@ -1177,7 +1192,7 @@ icon.addEventListener("click", () => {
 
                         <div class="divider"></div>
                         <div style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                            <i class="fa-solid fa-angle-down" id="toggleButton"></i> Chemical Space Propulsion
+                            <i class="fa-solid fa-angle-right" onclick="changeIcon()"id="icon"></i> Chemical Space Propulsion
                         
                         <div class="graph-icon custom-icon popup float-end"  onclick="myFunction()"><img src="{{URL('images/icon-yellow.png')}}" style="width:22px;" >
                     <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
@@ -1225,6 +1240,20 @@ icon.addEventListener("click", () => {
 //     x.style.display = "none";
 //   }
 // }
+
+function changeIcon() {
+    var icon = document.getElementById("icon").querySelector("i");
+    
+    if (icon.classList.contains("fa-angle-right")) {
+        icon.classList.remove("fa-angle-right");
+        icon.classList.add("fa-angle-down");
+    } else if (icon.classList.contains("fa-angle-down")) {
+        icon.classList.remove("fa-angle-down");
+        icon.classList.add("fa-angle-right");
+    }
+}
+
+
     var clickableDiv = document.getElementById("myClickableDiv");
 
     clickableDiv.addEventListener("click", function() {
