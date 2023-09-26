@@ -1652,7 +1652,7 @@ body {
   </div>
 </div>
 </div>
-<a href="{{ route('your.route.name') }}">
+<a href="{{ route('') }}">
     <button class="btn btn-primary" style="float:right;width:200px;background:#065386;;margin-top:30px;">Search</button>
   </a>
 

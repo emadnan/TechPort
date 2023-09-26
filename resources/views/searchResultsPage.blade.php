@@ -11,7 +11,7 @@
     * {
             margin: 0;
             padding: 0;
-            font-family: verdana;
+            font-family: 'Open Sans', sans-serif;
         }
 
         nav {
@@ -130,7 +130,7 @@
 
 body {
             background-color: white; /* Grey background color */
-            font-family: Arial, sans-serif;
+           
             margin: 0;
             padding: 0;
         }
@@ -252,6 +252,30 @@ body {
     border-radius:25px;
 }
 
+.solid-rectangle {
+    
+    margin-top:20px;
+      width: 108%;
+      height: 170px; 
+      /* background-color: #3498db;  */
+      text-align: center; 
+      color: white; /* Text color */
+      font-size: 18px; /* Font size of the text */
+      /* line-height: 100px; */
+      border-radius: 20px;
+background: #002339; /* Vertically center the text (equal to the height of the rectangle) */
+    }
+    .yellow-square {
+    width: 200px; /* Adjust the width and height as needed */
+    height: 150px;
+    background: #FFA800;
+    border-radius: 20px;
+}
+.btn-custom {
+            background-color: white;
+            border: 2px solid transparent;
+            color: #065386;
+        }
 
 </style>
 
@@ -299,20 +323,85 @@ body {
                     <div class="text-in-image">
                     <section > Search Results </section>
                     <div class="row">
-    <div class="col-md-6 mb-1">
+    <div style="margin-left:20px;">
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort Order: Relevance</button>
     </div>
-    <div class="col-md-6 mb-0">
+    <div style="margin-left:20px;">
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words and Phrases: No Selection</button>
     </div>
 </div>
+                                <div class="solid-rectangle">
+
+                               <div class="row"  style="margin-left:5px;padding:10px;">
+                               <div class="col-md-2.9">
+                               <div class="yellow-square ">
+                                <section style="font-size:40px;">16,806</section>
+                                <section>Projects found</section>
+                                <button class="btn btn-custom">Modify Search</button>
+                                </div>
+                                </div>
+                                
+
+                                <div class="key-stats col-md-2" style="margin-left:20px;line-height:20px;">
+                                    <section style="margin-bottom:10px;">Key Stats</section>
+                                    <div class="divider" style="width:175px"></div>
+                                    <div class="row" style="margin-left:10px;">
+                                    <p style="color:#FFA800">944</p>
+                                    <p style="float:right; margin-left: 50px;">Active</p>
+                                    </div>
+                                    <div class="divider" style="width:175px"></div>
+                                    <div class="row" style="margin-left:10px;">
+                                    <p style="color:#FFA800">944</p>
+                                    <p style="float:right; margin-left: 50px;">Active</p>
+                                    </div>
+                                    <div class="divider" style="width:175px"></div>
+                                    <div class="row" style="margin-left:10px;">
+                                    <p style="color:#FFA800">944</p>
+                                    <p style="float:right; margin-left: 50px;">Active</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-3">
+                                <img src="{{URL('images/ractangle-graph.png')}}" style="height:133px;width:133px;">
+                                </div>
+
+                                <div>
+                                <section style="font-size: 16px;">Technology Areas Represented</section>
+                                <div style="display: flex; gap: 5px;margin-top:10px;">
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX01</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX02</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX03</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX04</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX06</button>
+                                </div>
+                                <div style="display: flex; gap: 5px;margin-top:10px;">
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX07</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX08</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX09</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX010</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX011</button>
+                                </div>
+
+                                
+
+                                </div>
+                                <div class="col-md-1"  style="magin-left:20px;">
+                                    <section>Export</section>
+                                    <i class="fa-regular fa-file-pdf" style="width: 51px;height: 51px;"></i>
+                                </div>
+
+
+                               </div>
+
+
+                                </div>
                                 <di v class="row">
                                   
-                              <div class="graph-image">
-                                <img src="{{URL('images/graph-image.png')}}" >
-                                </div>
+                               
                     
                     </div>
+                    
                     
         
                     
