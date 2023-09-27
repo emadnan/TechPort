@@ -11,7 +11,7 @@
     * {
             margin: 0;
             padding: 0;
-            font-family: verdana;
+            font-family: 'Open Sans', sans-serif;
             font-size:13px;
         }
 
@@ -480,7 +480,8 @@ body {
          <div class="qa-question">
          
          
-    <div class="question" style="margin-left: 15px;font-size:16px;"> <div class="form-check">
+    <div class="question" style="margin-left: 15px;font-size:16px;">
+     <div class="form-check">
       
   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
   
@@ -494,12 +495,7 @@ body {
    
 </div>
 
-        <div class="qa-question">
-            <h3 class="question">What is CSS?</h3>
-            <div class="qa-answer">
-                CSS stands for Cascading Style Sheets. It is used for styling the presentation of web pages written in HTML.
-            </div>
-        </div>
+        
 
         <div class="qa-question">
             <h3 class="question">How can I learn web development?</h3>
@@ -1652,9 +1648,9 @@ body {
   </div>
 </div>
 </div>
-<a href="{{ route('') }}">
+
     <button class="btn btn-primary" style="float:right;width:200px;background:#065386;;margin-top:30px;">Search</button>
-  </a>
+ 
 
 
     </div>

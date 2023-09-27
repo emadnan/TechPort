@@ -155,6 +155,7 @@ body {
             margin-bottom: 10px;
             margin-left:10px;
             color:#065386;
+            
         }
         
         .faq-answer {
@@ -229,6 +230,7 @@ body {
   display: inline-block;
   margin-top:40px;
   margin-bottom:40px;
+  font-size:20px;
   
 }
 
@@ -314,6 +316,13 @@ background: #002339; /* Vertically center the text (equal to the height of the r
                 <button class="btn custom-button btn-block">Advance Search</button>
             </div>
         </div>
+
+
+
+
+
+
+        
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">
@@ -352,12 +361,12 @@ background: #002339; /* Vertically center the text (equal to the height of the r
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:10px;">
                                     <p style="color:#FFA800">944</p>
-                                    <p style="float:right; margin-left: 50px;">Active</p>
+                                    <p style="float:right; margin-left: 17px;">Completed</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:10px;">
                                     <p style="color:#FFA800">944</p>
-                                    <p style="float:right; margin-left: 50px;">Active</p>
+                                    <p style="float:right; margin-left: 15px;">Partnerhips</p>
                                     </div>
                                 </div>
 
@@ -375,7 +384,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
                                 <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX04</button>
                                 <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX06</button>
                                 </div>
-                                <div style="display: flex; gap: 5px;margin-top:10px;">
+                                <div style="display: flex; gap: 5px;margin-top:5px;">
                                 <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX07</button>
                                 <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX08</button>
                                 <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX09</button>
@@ -388,7 +397,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
                                 </div>
                                 <div class="col-md-1"  style="magin-left:20px;">
                                     <section>Export</section>
-                                    <i class="fa-regular fa-file-pdf" style="width: 51px;height: 51px;"></i>
+                                    <i class="fa-regular fa-file-pdf" style="width: 51px;height: 51px;margin-top:10px;"></i>
                                 </div>
 
 

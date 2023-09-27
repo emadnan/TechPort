@@ -11,7 +11,7 @@
     * {
             margin: 0;
             padding: 0;
-            font-family: verdana;
+            font-family: 'Open Sans', sans-serif;
             font-size:14px;
         }
 
@@ -157,7 +157,7 @@ body {
 
 
 .custom-card {
-      background-color: #f0f0f0; /* Replace with your desired grey color */
+      background-color: white; /* Replace with your desired grey color */
       width: 100.1%;
       border-radius: 0;
     }
@@ -207,11 +207,11 @@ body {
                     <div class="text-in-image">
                       <section style="font-size:14px">Small Business Innovation Research/Small Business Tech Transfer</section>
                     <section style="font-size:20px"> Low evaporation rate storage media for cryogenic liquids, Phase I</section>
-                    <div class="row">
-                      <div class="col-md-6 mb-0">
+                    <div class="row" style="margin-left:5px;">
+                      <div class="">
                           <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort Order: Relevance</button>
                       </div>
-                      <div class="col-md-6 mb-0">
+                      <div style="margin-left:20px;">
                           <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words and Phrases: No Selection</button>
                       </div>
                   </div>
@@ -245,7 +245,7 @@ body {
                 Considerable design work has been devoted to the development of cryogenic liquid storage containers. Containers which hold cryogenic liquids such as liquid nitrogen, oxygen, hydrogen, etc. often are double walled vacuum insulated or super insulation flasks, bottles or tanks.
                 </section>
                 <section style="font-weight:bold;margin-top:10px;">Work Locations:</section>
-                <img src="{{URL('images/map-image.png')}}" alt="">
+                <img src="{{URL('images/map-image.png')}}" style="width: 700px;height: 500px;">
                 <img src="{{URL('images/table-data.png')}}" alt=""style="width:90%;margin-top:10px;">
               </div>
 
@@ -275,6 +275,19 @@ body {
                 <img src="{{URL('images/bar-graph.png')}}" alt="" style="margin-top:10px;width:auto;">
                 <section style="font-weight:bold;margin-top:10px;">Technology Areas</section>
                 <section>TX01 Propulsion Systems</section>
+                <div class="row" style="margin-left:10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
+                    <line x1="0.5" y1="2.18561e-08" x2="0.5" y2="7" stroke="black"/>
+                    <line x1="15" y1="7.5" y2="7.5" stroke="black"/>
+                </svg> <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
+                <br>
+               <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
+                <section style="margin-left:5px;">
+                
+                TX01.1 Chemical Space Propulsion</section>
+             
+              
+                </div>
               </div>
             </div>
           </div>
@@ -290,7 +303,7 @@ body {
 <div style="margin-top:200px;"></div>
 
   
-    @include('footer')
+
 
 </body>
 </html>

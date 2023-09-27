@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <style>
     * {
             margin: 0;
             padding: 0;
-            font-family: verdana;
+            font-family: 'Open Sans', sans-serif;
         }
 
         nav {
@@ -28,7 +29,7 @@
         }
 
         .body-container {
-            padding-right: 9.5%;
+            padding-right: 6%;
             padding-bottom: 25px;
             padding-left: 9.4%;
         }
@@ -149,10 +150,11 @@ body {
 
         .faq-question {
            
-            font-size: 14px;
+            font-size: 18px;
             font-weight:bold;
             margin-bottom: 10px;
             margin-left:10px;
+            margin-top:10px;
             color:black;
         }
         
@@ -256,6 +258,31 @@ body {
 
 
 
+.solid-rectangle {
+    
+    margin-top:20px;
+      width: 108%;
+      height: 170px; 
+      /* background-color: #3498db;  */
+      text-align: center; 
+      color: white; /* Text color */
+      font-size: 18px; /* Font size of the text */
+      /* line-height: 100px; */
+      border-radius: 20px;
+background: #002339; /* Vertically center the text (equal to the height of the rectangle) */
+    }
+    .yellow-square {
+    width: 200px; /* Adjust the width and height as needed */
+    height: 150px;
+    background: #FFA800;
+    border-radius: 20px;
+}
+.btn-custom {
+            background-color: white;
+            border: 2px solid transparent;
+            color: #065386;
+        }
+
 </style>
 
 <body>
@@ -277,7 +304,7 @@ body {
     
 <div class="container mt-4">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <form class="form-inline w-100">
                     <div class="input-group w-100">
                         <input type="text" class="form-control w-100" placeholder="Search...">
@@ -289,58 +316,105 @@ body {
                     </div>
                 </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <button class="btn custom-button btn-block">Advance Search</button>
             </div>
         </div>
+
+
+
+
+
+
+        
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
-            <div class="col-md-12">
+        <div class="col-md-12">
                 <div class="custom-image-container">
                     <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     <section > Search Results </section>
                     <div class="row">
-    <div class="col-md-6 mb-1">
+    <div style="margin-left:20px;">
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort Order: Relevance</button>
     </div>
-    <div class="col-md-6 mb-0">
+    <div style="margin-left:20px;">
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words and Phrases: No Selection</button>
     </div>
 </div>
-                                <di v class="row">
-                                    <div style="width: 200px; height: 200px; border-radius: 20px; background: #FFA800; text-align: center;font-size: 18px;line-height: 1.5;" class="col-md-6 mb-1">
-                                <!-- 16,806<br> -->
-                                <section style="font-weight:bold;font-size: 35;">16,906</section><br>
-                                Projects Found<br>
-                                <button class="btn" style="background-color: white; color: #065386;font-weight:bold; ">Modify Search</button><br>              
+                                <div class="solid-rectangle">
+
+                               <div class="row"  style="margin-left:5px;padding:10px;">
+                               <div class="col-md-2.9">
+                               <div class="yellow-square ">
+                                <section style="font-size:40px;">16,806</section>
+                                <section>Projects found</section>
+                                <button class="btn btn-custom">Modify Search</button>
                                 </div>
-                                <div class="col-md-6 mb-1">
-                                <section style="font-size: 16px;">Keya search</section>
-                                <div class="divider"></div>
-                                <div style="margin-left: 4px;line-height: 1;">
-                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
-                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
                                 </div>
-                                <div class="divider"></div>
-                                <div style="margin-left: 4px;line-height: 1;">
-                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
-                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
+                                
+
+                                <div class="key-stats col-md-2" style="margin-left:20px;line-height:20px;">
+                                    <section style="margin-bottom:10px;">Key Stats</section>
+                                    <div class="divider" style="width:175px"></div>
+                                    <div class="row" style="margin-left:2px;">
+                                    <p style="color:#FFA800">944</p>
+                                    <p style="float:right; margin-left: 50px;">Active</p>
+                                    </div>
+                                    <div class="divider" style="width:175px"></div>
+                                    <div class="row" style="margin-left:2px;">
+                                    <p style="color:#FFA800">944</p>
+                                    <p style="float:right; margin-left: 25px;">Completed</p>
+                                    </div>
+                                    <div class="divider" style="width:175px"></div>
+                                    <div class="row" style="margin-left:2px;">
+                                    <p style="color:#FFA800">944</p>
+                                    <p style="float:right; margin-left: 23px;">Partnerhips</p>
+                                    </div>
                                 </div>
-                                <div class="divider"></div>
-                                <div style="margin-left: 4px;line-height: 1;">
-                                    <section style="color: yellow; font-size: 16px; display: inline-block;">944</section>
-                                    <section style="font-size: 16px; margin-left: 120px; display: inline-block;">Active</section>
+
+
+                                <div class="col-md-3">
+                                <img src="{{URL('images/ractangle-graph.png')}}" style="height:133px;width:133px;">
+                                </div>
+
+                                <div>
+                                <section style="font-size: 16px;">Technology Areas Represented</section>
+                                <div style="display: flex; gap: 5px;margin-top:10px;">
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX01</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX02</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX03</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX04</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX06</button>
+                                </div>
+                                <div style="display: flex; gap: 5px;margin-top:5px;">
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX07</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX08</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX09</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX010</button>
+                                <button style="width: 50px; height: 30px; font-size: 12px;" class="btn btn-primary">TX011</button>
                                 </div>
 
                                 
-                            </div>
 
-                            
-                            
+                                </div>
+                                <div class="col-md-1"  style="magin-left:20px;">
+                                    <section>Export</section>
+                                    <i class="fa-regular fa-file-pdf" style="width: 51px;height: 51px;margin-top:10px;"></i>
+                                </div>
+
+
+                               </div>
+
+
+                                </div>
+                                <di v class="row">
+                                  
+                               
                     
                     </div>
+                    
                     
         
                     
@@ -362,7 +436,8 @@ body {
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Projects</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+        <i class="fas fa-chevron-right" id="rotateIcon" style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+
       
        
     </div>
@@ -378,7 +453,7 @@ body {
     
 
 
-      <div class="sub-answer" style="display: none;margin-left:10px;">
+      <div class="sub-answer" style="display: none;margin-left:10px;font-size:12px;">
         <section>For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
       </div>
   </div>
@@ -388,7 +463,7 @@ body {
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
         <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right; color:grey;"></i>
+        <i class="fas fa-chevron-right" style="float: right; color:grey; margin-right: 10px;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -965,7 +1040,7 @@ body {
 
     <div style="margin-top:100px;"></div>
 
-    @include('footer')
+
 
   
   <script>
@@ -979,14 +1054,19 @@ questions.forEach(question => {
     });
 });
     // JavaScript function to toggle FAQ answers and the lower arrow
+    var rotated = false;
+  
     function toggleAnswer(element) {
         const answer = element.nextElementSibling;
 
-        if (answer.style.display === 'block') {
+        if (answer.style.display === 'block' && !rotated) {
             answer.style.display = 'none';
+            icon.style.transform = 'rotate(90deg)';
         } else {
             answer.style.display = 'block';
+            icon.style.transform = 'rotate(0deg)';
         }
+        rotated = !rotated;
     }
     function toggleSubAnswer(element) {
         const answer = element.nextElementSibling;
@@ -1023,6 +1103,13 @@ var slider = document.getElementById("myRange");
     slider.addEventListener("input", function() {
         sliderValueDisplay.textContent = slider.value;
     });
+
+  var icon = document.getElementById('rotateIcon');
+
+
+  icon.addEventListener('click', function() {
+    
+  });
 </script>
 
 
