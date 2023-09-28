@@ -126,7 +126,7 @@
         /* end */
 
         nav {
-            width: 100%;
+            width: 50%;
             height: 50px;
             background-color: white;
             line-height: 50px;
@@ -484,9 +484,9 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-2">
-                <a href="{{ url('/AdvanceSearch') }}" class="btn btn-block btn-lg advance_search_btn">Advanced
-                    Search</a>
+            <div class="col-md-2"> 
+                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-block btn-lg advance_search_btn">Advanced
+                    Search </button></a>
             </div>
         </div>
         {{-- end --}}
