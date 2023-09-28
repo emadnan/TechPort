@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechPort</title>
     
 </head>
 <style>
@@ -1038,8 +1038,11 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     </div>
 
 
-    <div style="margin-top:100px;"></div>
+    <div style="margin-top:200px"></div>
 
+<footer>
+@include('footer')
+</footer>
 
 
   

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechPort</title>
 </head>
 <style>
     * {
@@ -182,7 +182,7 @@ body {
     
 <div class="container mt-4">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <form class="form-inline w-100">
                     <div class="input-group w-100">
                         <input type="text" class="form-control w-100" placeholder="Search...">
@@ -194,7 +194,7 @@ body {
                     </div>
                 </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <button class="btn custom-button btn-block">Advance Search</button>
             </div>
         </div>
@@ -281,7 +281,10 @@ body {
                     <line x1="15" y1="7.5" y2="7.5" stroke="black"/>
                 </svg> <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
                 <br>
-               <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
+                    <line x1="0.5" y1="2.18561e-08" x2="0.5" y2="7" stroke="black"/>
+                    <line x1="15" y1="7.5" y2="7.5" stroke="black"/>
+                </svg> <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
                 <section style="margin-left:5px;">
                 
                 TX01.1 Chemical Space Propulsion</section>

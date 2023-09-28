@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechPort</title>
 </head>
 <style>
     * {
             margin: 0;
             padding: 0;
-            font-family: verdana;
+            font-family: 'Open Sans', sans-serif;
         }
 
         nav {
@@ -312,14 +312,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+     
     </div>
 </div>
 
@@ -329,14 +323,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+      
     </div>
 </div>
 
@@ -346,14 +334,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+       
     </div>
 </div>
 
@@ -363,14 +345,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+       
     </div>
 </div>
 
@@ -380,14 +356,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+       
     </div>
 </div>
 
@@ -397,14 +367,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+     
     </div>
 </div>
 
@@ -414,14 +378,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+       
     </div>
 </div>
 
@@ -431,14 +389,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+       
     </div>
 </div>
 
@@ -448,14 +400,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow" ></i></div>
-        <div class="faq-answer" style="display: none;"><div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-    Relevance
-</a> 
-
-
-</div></div>
+        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow" ></i></div>
+        
     </div>
 </div>
 
@@ -473,59 +419,12 @@ body {
 
 
   
-  <script>
-     const questions = document.querySelectorAll('.qa-question');
-
-questions.forEach(question => {
-    question.addEventListener('click', () => {
-        question.classList.toggle('active');
-        const answer = question.querySelector('.qa-answer');
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-    });
-});
-    // JavaScript function to toggle FAQ answers and the lower arrow
-    function toggleAnswer(element) {
-    const answer = element.nextElementSibling;
-    const icon = element.querySelector('.fa-chevron-right');
-
-    if (answer.style.display === 'block' || answer.style.display === '') {
-        answer.style.display = 'none';
-        icon.classList.add('collapsed');
-    } else {
-        answer.style.display = 'block';
-        icon.classList.remove('collapsed');
-    }
-}
 
 
-    function toggleQASubAnswer(element1){
-        const subanswers=element.nextElementSibling;
-        if(subanswers.style.display === 'block'){
-            subanswers.style.display = 'none';
-        }else{
-            subanswers.style.display = 'block';
-        }
-    }
-    function myFunction(x) {
-  x.classList.toggle("fas fa-chevron-down");
-}
-function toggleQAAnswer(question) {
-    var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
-    if (subanswer.style.display === "none" || subanswer.style.display === "") {
-        subanswer.style.display = "block"; // Show the sub-answer
-    } else {
-        subanswer.style.display = "none"; // Hide the sub-answer
-    }
-}
-var slider = document.getElementById("myRange");
-    var sliderValueDisplay = document.getElementById("sliderValue");
+    <div style="margin-top:200px"></div>
 
-    // Update the <span> tag with the slider value when the slider is changed
-    slider.addEventListener("input", function() {
-        sliderValueDisplay.textContent = slider.value;
-    });
-</script>
-
-
+<footer>
+@include('footer')
+</footer>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechPort</title>
 </head>
 <style>
     * {
@@ -1658,9 +1658,11 @@ body {
    
    
 
+    <div style="margin-top:200px"></div>
 
-<div style="margin-top:500px"></div>
+<footer>
 @include('footer')
+</footer>
   
   <script>
      const questions = document.querySelectorAll('.qa-question');
