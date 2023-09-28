@@ -16,7 +16,7 @@
         }
 
         nav {
-            width: 100%;
+            width: 50%;
             height: 50px;
             background-color: white;
             line-height: 50px;
@@ -250,6 +250,7 @@ body {
                     <div class="input-group w-100">
                         <input type="text" class="form-control w-100" placeholder="Search...">
                         <div class="input-group-append">
+                          
                             <button class="btn custom-button" type="submit">
                                 <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
                             </button>
@@ -258,6 +259,7 @@ body {
                 </form>
             </div>
             <div class="col-md-3">
+              
                 <button class="btn custom-button btn-block">Advance Search</button>
             </div>
         </div>
@@ -270,8 +272,9 @@ body {
                     <div class="text-in-image">
                         Advance Search
                         
-     
+            
              <button class="btn btn-primary custom-button-1" style="">Search</button>
+             
             
            
             <button class="btn btn-outline-primary" style="width:200px;height:40px;color:white;border-color: white;">Reset Search Options</button>
@@ -1649,8 +1652,9 @@ body {
 </div>
 </div>
 
+<a href="{{ url('/search-results') }}">    
     <button class="btn btn-primary" style="float:right;width:200px;background:#065386;;margin-top:30px;">Search</button>
- 
+ </a>
 
 
     </div>

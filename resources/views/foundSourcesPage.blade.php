@@ -15,7 +15,7 @@
         }
 
         nav {
-            width: 100%;
+            width: 50%;
             height: 50px;
             background-color: white;
             line-height: 50px;

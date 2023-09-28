@@ -16,7 +16,7 @@
         }
 
         nav {
-            width: 100%;
+            width: 50%;
             height: 50px;
             background-color: white;
             line-height: 50px;
@@ -334,7 +334,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
                     <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
-                    <section > Search Results </section>
+                    <section > Houstan, Texas </section>
                     <div class="row">
     <div style="margin-left:20px;">
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort Order: Relevance</button>
