@@ -250,7 +250,7 @@ body {
             <th>Description</th>
         </tr>
         <tr>
-            <td><a href="{{ asset('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
+            <td><a href="{{ URL('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
             <td>23044</td>
             <td><a  href="{{ url('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
             <td><a  href="{{ url('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
