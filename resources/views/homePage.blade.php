@@ -10,8 +10,7 @@
 
     <style>
         * {
-            margin: 0;
-            padding: 0;
+            
             font-family: 'Open Sans', sans-serif;
 
         }
@@ -219,241 +218,84 @@
 
         }
 
-        .faq-section {
-            background: linear-gradient(to right, #065386 4%, #E8E8E8 2%);
+      
+
+
+        .faq-container {
+            max-width: 100%;
+            margin: 0 auto;
+            /* padding-left: 10px; */
+            padding-top:5px;
+            background: linear-gradient(to right, #065386 3.5%, #E8E8E8 2%);cursor:pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            /* border-radius: 5px; */
         }
 
+        .faq-item {
+            /* margin-bottom: 20px; */
+        }
 
         .faq-question {
-            /* padding: 2px; */
-            /* font-weight: bold; */
+       
             cursor: pointer;
-            position: relative;
-            font-size: 24px;
-            font-weight: 400;
-            line-height: normal;
-            font-style: normal;
-            letter-spacing: -0.36px;
+            font-size:24px;
         }
 
         .faq-answer {
-            padding-bottom: 8px;
+            margin-left:40px;
             display: none;
-            margin-left: 20px;
+            /* padding: 10px; */
+            /* background-color: #f9f9f9; */
+            /* border-left: 20px solid #007bff; */
+            background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
-            background: linear-gradient(to right, yellow 2%, #E8E8E8 2%);
+            font-size:24px;
         }
 
-        .faq-sub-answer {
-            display: none;
-            margin-left: 50px;
-        }
-
-        .expanded-color-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        /* for handle the rotation */
-        .expanded-color-container .fa-angle-right {
-            transition: transform 0.3s;
-            /* Add a transition for smooth rotation */
-        }
-
-        .expanded {
-            transform: rotate(90deg);
-            /* Rotate the arrow 90 degrees when open */
-        }
-
-        .sub-answer {
-            display: none;
-            /* Initially hide the sub-answer content */
-        }
-
-        /* end */
-
-        .solid-square {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .fa-angle-right {
-            color: black;
-            font-size: 12px;
-            margin-left: 5px;
-            margin-right: 10px;
-        }
-
-        .faq-question .faq-question {
-            margin-top: 10px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-        }
-
-        .faq-question .fa-arrow-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin-top: 10px;
-            margin-right: 10px;
-        }
-
-        .lower-arrow {
-            /* margin-top: 10px; */
-            color: white;
-            transition: transform 0.3s;
-            padding: 10px;
-
-        }
-
-        .open {
-            transform: rotate(90deg);
-            /* Rotate the arrow 90 degrees when open */
-        }
-
-        .faq-question+.faq-answer::before {
-            content: "";
+        .faq-answer.active {
             display: block;
-            height: 1px;
-            background-color: white;
-            /* Choose your preferred divider color */
-            margin-top: 10px;
-            /* Adjust the margin as needed */
         }
-
-        /* Add the background gradient to the faq-answer */
-        .faq-answer {
+        #sub-answer-description.active{
+            display: block;
+        }
+        #sub-answer-description {
+            margin-left:1px;
             display: none;
-            margin-left: 23px;
-            cursor: pointer;
-            background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%);
-            /* Apply yellow background gradient */
+            background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);
         }
-
-        /* Adjust the FAQ sub-answer styles */
-        .faq-sub-answer {
+        .faq-subanswer{
             display: none;
-            margin-left: 23px;
-            background: linear-gradient(to right, #FFA800 2%, #E8E8E8 2%);
-            /* Apply the same yellow background gradient */
+            padding-left: 37px;
+            margin-left:40px;
+            background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
+            cursor:pointer;
+            font-size:24px;
         }
-
-        .faq-sub-answer-text {
-            margin-left: 23px;
+        .faq-subanswer.active{
+            display: block;
         }
+        .fa-angle-right,
+        .fa-angle-down {
+    color: white;
+    padding-left:10px;  
+    font-size:24px;
+}
 
+.divider {
+    width: 100%;
+    height: 1px; 
+    background-color: white;
+}
+    
+    
+     
+.graph-image{
+    margin-right:10px;
+    margin-top:5px;
+    width:24px;
+}
 
-        .custom-icon {
-            float: right;
-            margin-top: 5px;
-            margin-right: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        /* Define the styles for the divider */
-        .divider {
-            height: 1px;
-            /* Adjust the height as needed */
-            background-color: white;
-            /* Set the background color of the divider */
-
-        }
-
-
-        .popup {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            margin-left: 50px;
-        }
-
-        /* The actual popup */
-        /* Popup container */
-        .popup .popuptext {
-            visibility: hidden;
-            width: 0px;
-            height: 0px;
-            background-color: white;
-            color: black;
-            text-align: center;
-            border-radius: 2px;
-            padding: 8px 0;
-            position: absolute;
-            z-index: 1;
-            top: 57%;
-            /* Change this to 'top' instead of 'bottom' */
-            left: -715%;
-            margin-left: -80px;
-            /* border: 2px solid #065386; */
-        }
-
-
-
-        /* Toggle this class - hide and show the popup */
-        .popup .show {
-            visibility: visible;
-            -webkit-animation: fadeIn 1s;
-            animation: fadeIn 1s;
-        }
-
-        /* Add animation (fade in the popup) */
-        @-webkit-keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
-
-        #encapsulation {
-            width: 100%;
-            padding: 50px 0;
-            text-align: center;
-            background-color: lightblue;
-            margin-top: 20px;
-        }
-
-        #rotate-icon {
-            transition: transform 0.3s ease;
-            /* Add a smooth transition effect */
-            cursor: pointer;
-            /* Change the cursor to a pointer when hovering over the icon */
-        }
-
-        .rotate {
-            transform: rotate(180deg);
-            /* Adjust the degrees for the desired rotation */
-        }
+      
     </style>
 </head>
 
@@ -526,1085 +368,290 @@
         {{-- end --}}
 
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX01 Propulsion Systems</span>
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()">
-                                <img src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                            </div>
-                        </div>
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i id="icon" class="fa-solid fa-angle-right" style="color:white;"></i>
-                                TX01.1 Chemical Space Propulsion
-
-                            </div>
-
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                        </div>
-
-                        {{-- sub-answer section --}}
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div class="divider"></div>
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;color:white"></i>
-                                        <div>TX01.1.1 Integrated Systems and Ancillary Technologies
-                                            <div class="graph-icon custom-icon popup float-end" style="align-items: end"
-                                                onclick="myFunction()"><img src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:556px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-
-
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;font-size:12px;">
-                                            <b>Example Technologies</b><br>
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div class="divider"></div>
-                                    <i class="fa-solid fa-angle-right" id="toggleButton" style="color:white;"></i>
-                                    TX01.1.1 Integrated Systems and Ancillary Technologies
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-black.png') }}" style="width:19px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
+        <div class="faq-container">
+        <!-- parent tile -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers1')"> 
+            <div class="arrow-icon" id="icon-togglequestion">  
+            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">TX01 Propulsion Systems</span>
+           
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            
+            
+            </div> 
+            
+            <!-- <div class="graph-image float-right">
+                <img src="{{ URL('images/icon-black.png') }}" alt="" style="width:19px;">
+            </div>  -->
             </div>
+            <div class="faq-answer" id="answers1" onclick="toggleSubAnswers('answers1-1')">
+            <div class="divider"></div>
+             <div class="arrow-icon" id="icon-toggleanswer">
+             <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">TX01.1 Chemical Space Propulsion</span>
+             <img src="{{ URL('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
+             </div>
+            </div>
+            <div class="faq-subanswer" id="answers1-1">
+
+            <div class="divider"></div>
+            <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;" onclick="toggleSubAnswersDescreption('sub-answer-description')">
+            <div  id="icon-toggle-description">  
+            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">TX01.1.1 Integrated Systems and Ancillary Technologies</span>
+            <img src="{{ URL('images/icon-black.png') }}" alt=""  class="float-right graph-image">
+            </div>  
+        </div>
+        <div id="sub-answer-description">
+            <div style="margin-left:50px; font-size:20px;font-weight:bold">Example Technologies</div>
+            <section style="padding-left:50px;font-size:20px;">
+            For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+            </section>
+        </div>
+        <div class="divider"></div> 
+
+            <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+            <div class="arrow-icon" id="icon-togglequestion">  
+            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">TX01.1.2 Earth Storable</span>
+            <img src="{{ URL('images/icon-black.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+            </div>
+
+         
+           
+        <!-- <div class="divider"></div>  -->
+            </div>
+            
+            <div class="faq-answer" id="answers1">
+            <div class="divider"></div> 
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">TX01.2 Electric Space Propulsion</span>
+            <img src="{{ URL('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
+            </div> </div>
         </div>
         <div class="divider"></div>
+        <!-- parent tile ends here-->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers2')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX02 Flight Computing and Avionics</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+            
+        </div>
 
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX02 Flight Computing and Avionics</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+            <!-- <div class="faq-answer" id="answers2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
         <div class="divider"></div>
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX03 Aerospace Power and Energy Storage</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers3')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX03 Aerospace Power and Energy Storage</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+
+
         <div class="divider"></div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX04 Robotic Systems</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers4')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX04 Robotic Systems</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+
+
         <div class="divider"></div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX05 Communications, Navigation, and
-                            Orbital Debris Tracking and Characterization Systems</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers5')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image"></span>
+            
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+
+
         <div class="divider"></div>
-
-
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX06 Human Health, Life Support, and
-                            Habitation Systems</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers6')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX06 Human Health, Life Support, and Habitation Systems</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+
+
         <div class="divider"></div>
-
-
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX07 Exploration Destination Systems</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers7')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX07 Exploration Destination Systems</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+
+
         <div class="divider"></div>
-
-
-
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX08 Sensors and Instruments</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" id="toggleButton"></i> Chemical Space
-                                    Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers8')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX08 Sensors and Instruments</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+
+
         <div class="divider"></div>
-
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="faq-section">
-                    <!-- FAQ Question and Answer -->
-                    <div class="faq-container">
-                        <div class="faq-question" onclick="toggleAnswer(this)">
-                            <i class="fa-solid fa-angle-right lower-arrow"></i><span style="padding-left: 10px;">TX09 Entry, Descent, and Landing</span>
-
-                            <div class="graph-icon custom-icon popup" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-blue.png') }}" style="width:18px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-
-                            <!-- </i> -->
-                        </div>
-
-
-                        <div class="faq-answer" onclick="toggleSubAnswer(this)">
-                            <div class="expanded-color-container">
-                                <div class="solid-square"></div>
-                                <i class="fa-solid fa-angle-right rotate-icon"></i>
-                                TX01.1 Chemical Space Propulsion
-                            </div>
-                            <!-- <div class="divider"></div> -->
-                            <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                    src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                <span class="popuptext" id="myPopup">
-                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="faq-sub-answer">
-                            <div class="faq-sub-answer-text">
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <div style="display:flex;" id="myClickableDiv">
-                                        <i class="fa-solid fa-angle-right" style="margin-top:10px;"></i>
-                                        <div>Chemical Space Propulsion
-                                            <div class="graph-icon custom-icon popup float-end"
-                                                style="align-items: end" onclick="myFunction()"><img
-                                                    src="{{ URL('images/icon-black.png') }}"
-                                                    style="width:18px; margin-left:749px;">
-                                                <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                                <span class="popuptext" id="myPopup">
-                                                    <img src="{{ URL('images/pop-up-graph.png') }}">
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <div style="display:flex;display:none;" id="myDIV">
-                                    <div
-                                        style="margin-left: 0px;background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);">
-                                        <div style="margin-left: 26px;">
-                                            For launch vehicles: Thrust vector control (TVC), main propulsion systems,
-                                            reaction control systems (RCS), roll control systems (RoCS), separation
-                                            motors, ullage settling motors, abort propulsion systems, propellant storage
-                                            and transfer, nanocomposites, green propellants. For in-space propulsion:
-                                            CubeSat propulsion, propellant management devices (PMDs).
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="divider"></div>
-                                <div
-                                    style="background: linear-gradient(to right, #323E48 2%, #E8E8E8 2%);cursor:pointer;">
-                                    <i class="fa-solid fa-angle-right" onclick="changeIcon()"id="icon"></i>
-                                    Chemical Space Propulsion
-
-                                    <div class="graph-icon custom-icon popup float-end" onclick="myFunction()"><img
-                                            src="{{ URL('images/icon-yellow.png') }}" style="width:22px;">
-                                        <!-- <i class="fa-solid fa-square-poll-vertical custom-icon popup" onclick="myFunction()"> -->
-                                        <span class="popuptext" id="myPopup">
-                                            <img src="{{ URL('images/pop-up-graph.png') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswers('answers9')">
+            <div class="arrow-icon" id="icon-togglequestion">
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX09 Entry, Descent, and Landing</span>
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            </div> 
+           </div>
+            <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
         </div>
+    </div>
+    </div>
 
+    <div style="margin-top:200px"></div>
 
-
-        </div>
-        <div style="margin-top:200px"></div>
-
-<footer>
+    <footer>
 @include('footer')
 </footer>
 
-        <script>
-            //     function myFunctionChildSubanswer() {
-            //   var x = document.getElementById("myDIV");
-            //   if (x.style.display === "none") {
-            //     x.style.display = "block";
-            //   } else {
-            //     x.style.display = "none";
-            //   }
-            // }
-            const icon = document.getElementById("rotate-icon");
+    <script>
+       function toggleSubAnswersDescreption(descriptiveAnswer) {
+    const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+    answers.forEach(answer => {
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+}
 
-            icon.addEventListener("click", () => {
-                // Toggle the rotation by adding or removing a CSS class
-                if (icon.classList.contains("rotate")) {
-                    icon.classList.remove("rotate");
-                } else {
-                    icon.classList.add("rotate");
-                }
-            });
+// function toggleSubAnswers(subAnswerGroup) {
+//     const subAnswers = document.querySelectorAll(`#${subAnswerGroup}`);
+//     subAnswers.forEach(subAnswer => {
+//         if (subAnswer.style.display === 'block') {
+//             subAnswer.style.display = 'none';
+//         } else {
+//             subAnswer.style.display = 'block';
+//         }
+//     });
+// }
 
-            function changeIcon() {
-                var icon = document.getElementById("icon").querySelector("i");
+function toggleSubAnswers(subAnswerGroup) {
+    const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+    answers.forEach(answer => {
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
 
-                if (icon.classList.contains("fa-angle-right")) {
-                    icon.classList.remove("fa-angle-right");
-                    icon.classList.add("fa-angle-down");
-                } else if (icon.classList.contains("fa-angle-down")) {
-                    icon.classList.remove("fa-angle-down");
-                    icon.classList.add("fa-angle-right");
-                }
-            }
+    const iconToggle = document.getElementById("icon-toggleanswer");
+    const iconElement = iconToggle.querySelector("i");
 
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
 
-            var clickableDiv = document.getElementById("myClickableDiv");
-
-            clickableDiv.addEventListener("click", function() {
-                var x = document.getElementById("myDIV");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            });
-            // JavaScript function to toggle FAQ answers and the lower arrow
-            // function toggleAnswer(element) {
-            //     const answer = element.nextElementSibling;
-            //     const lowerArrow = element.querySelector('.lower-arrow');
-
-            //     if (answer.style.display === 'block') {
-            //         answer.style.display = 'none';
-            //         subAnswer.style.display = 'none';
-            //         // Add the down arrow class
-            //     } else {
-            //         answer.style.display = 'block';
-            //         // Add the up arrow class
-            //     }
-            // }
-            function toggleAnswer(element) {
-                const answer = element.nextElementSibling;
-                const lowerArrow = element.querySelector('.lower-arrow');
-
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                    lowerArrow.classList.remove('open'); // Remove the open class
-                } else {
-                    answer.style.display = 'block';
-                    lowerArrow.classList.add('open'); // Add the open class to rotate the arrow
-                }
-            }
-
-            // function toggleSubAnswer(element) {
-            //     const subAnswer = element.nextElementSibling;
-            //     if (subAnswer.style.display === 'block') {
-            //         subAnswer.style.display = 'none';
-            //     } else {
-            //         subAnswer.style.display = 'block';
-            //     }
-            // }
-            function toggleSubAnswer(element) {
-                const subAnswer = element.nextElementSibling;
-                const arrowIcon = element.querySelector('.fa-angle-right');
-
-                if (subAnswer.style.display === 'block' || subAnswer.style.display === '') {
-                    subAnswer.style.display = 'none';
-                    arrowIcon.classList.remove('expanded'); // Remove the expanded class
-                } else {
-                    subAnswer.style.display = 'block';
-                    arrowIcon.classList.add('expanded'); // Add the expanded class to rotate the arrow
-                }
-            }
+document.addEventListener("DOMContentLoaded", function () {
+    const iconToggle = document.getElementById("icon-answer");
+    iconToggle.addEventListener("click", function () {
+        toggleAnswersAndIcon("your-answer-group-id"); // Replace with your actual answer group ID
+    });
+});
 
 
-            function openPopup() {
-                const popup = document.getElementById('popup');
-                popup.style.display = 'flex';
-            }
 
-            function closePopup() {
-                const popup = document.getElementById('popup');
-                popup.style.display = 'none';
-            }
+function toggleAnswers(answerGroup) {
+    const answers = document.querySelectorAll(`#${answerGroup}`);
+    answers.forEach(answer => {
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+
+    const iconToggle = document.getElementById("icon-togglequestion");
+    const iconElement = iconToggle.querySelector("i");
+
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const iconToggle = document.getElementById("icon-togglequestion");
+    iconToggle.addEventListener("click", function () {
+        toggleAnswersAndIcon("your-answer-group-id"); // Replace with your actual answer group ID
+    });
+});
 
 
-            const toggleButton = document.getElementById("toggleButton");
-            const abcSection = document.getElementById("abcSection");
 
-            // Add a click event listener to the button
-            toggleButton.addEventListener("click", () => {
-                // Toggle the display property of the encapsulated section
-                if (abcSection.style.display === "none") {
-                    abcSection.style.display = "block";
-                } else {
-                    abcSection.style.display = "none";
-                }
-            });
+function myFunction(popupId) {
+  var popup = document.getElementById(popupId);
+  popup.classList.toggle("show");
+}
 
 
-            function myFunction() {
-                var popup = document.getElementById("myPopup");
-                popup.classList.toggle("show");
-            }
-        </script>
+document.addEventListener("DOMContentLoaded", function () {
+      const iconToggle = document.getElementById("icon-toggle-description");
+      const iconElement = iconToggle.querySelector("i");
+
+      iconToggle.addEventListener("click", function () {
+        if (iconElement.classList.contains("fa-angle-right")) {
+          // Change to the down arrow icon
+          iconElement.classList.remove("fa-angle-right");
+          iconElement.classList.add("fa-angle-down");
+        } else {
+          // Change back to the right arrow icon
+          iconElement.classList.remove("fa-angle-down");
+          iconElement.classList.add("fa-angle-right");
+        }
+      });
+    });
+    </script>
+
 
 </body>
 

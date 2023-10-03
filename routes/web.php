@@ -55,6 +55,6 @@ Route::get('/location-clicking', function () {
 Route::get('/low-evolution', function () {
     return view('lowEvolutionPage');
 });
-Route::get('/header', function () {
-    return view('header');
+Route::get('/demo', function () {
+    return view('demo');
 });

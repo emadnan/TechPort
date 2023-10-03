@@ -233,13 +233,6 @@ body {
 
 
 
-<nav>
-    <div class="image-container">
-        <img src="{{URL('images/DrassLogo1.png')}}" alt="">
-        <br> 
-        <img src="{{URL('images/DrassLogo2.png')}}" alt="">
-    </div>
-</nav>
 
 <!-- <div class='body-container'> -->
     
