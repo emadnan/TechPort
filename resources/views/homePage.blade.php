@@ -438,7 +438,10 @@
             <div class="divider"></div>
             <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;" onclick="toggleSubAnswersDescreption('sub-answer-description')">
             <div  id="icon-toggle-description">  
-            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">TX01.1.1 Integrated Systems and Ancillary Technologies</span>
+            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">
+                <a href="{{ url('/project-targets') }}"style="color:#000000">
+            TX01.1.1 Integrated Systems and Ancillary Technologies</span>
+            </a>
             <img src="{{ asset('images/icon-black.png') }}" alt=""  class="float-right graph-image">
             </div>  
         </div>
