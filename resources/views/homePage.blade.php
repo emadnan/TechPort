@@ -348,9 +348,9 @@
         {{-- Site Logo --}}
         <div class="row mt-5">
             <div class="col-md-10 mt-5 mb-5">
-                <img class="mb-3" src="{{ URL('images/DrassLogo1.png') }}" alt="">
+                <img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt="">
                 <br>
-                <img src="{{ URL('images/DrassLogo2.png') }}" alt="">
+                <img src="{{ asset('images/DrassLogo2.png') }}" alt="">
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -369,7 +369,7 @@
                 </form>
             </div>
             <div class="col-md-3"> 
-                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
+                <a href="{{ asset('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
                     Search </button></a>
             </div>
         </div>
@@ -379,13 +379,13 @@
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{ URL('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
                     <!-- Text inside the image container -->
                     <div class="text-in-image">
                         <b>DRASS Taxonomy</b>
                     </div>
                     <div class="icon-in-image">
-                        <div class="graph-icon"><img src="{{ URL('images/icon-white.png') }}"
+                        <div class="graph-icon"><img src="{{ asset('images/icon-white.png') }}"
                                 style="height:50px;width:50px;"></div>
                     </div>
                 </div>
@@ -417,20 +417,20 @@
             <div class="arrow-icon" id="icon-togglequestion">  
             <i class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">TX01 Propulsion Systems</span>
            
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             
             
             </div> 
             
             <!-- <div class="graph-image float-right">
-                <img src="{{ URL('images/icon-black.png') }}" alt="" style="width:19px;">
+                <img src="{{ asset('images/icon-black.png') }}" alt="" style="width:19px;">
             </div>  -->
             </div>
             <div class="faq-answer" id="answers1" onclick="toggleSubAnswers('answers1-1')">
             <div class="divider"></div>
              <div class="arrow-icon" id="icon-toggleanswer">
              <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">TX01.1 Chemical Space Propulsion</span>
-             <img src="{{ URL('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
+             <img src="{{ asset('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
              </div>
             </div>
             <div class="faq-subanswer" id="answers1-1">
@@ -439,7 +439,7 @@
             <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;" onclick="toggleSubAnswersDescreption('sub-answer-description')">
             <div  id="icon-toggle-description">  
             <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">TX01.1.1 Integrated Systems and Ancillary Technologies</span>
-            <img src="{{ URL('images/icon-black.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-black.png') }}" alt=""  class="float-right graph-image">
             </div>  
         </div>
         <div id="sub-answer-description">
@@ -453,7 +453,7 @@
             <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
             <div class="arrow-icon" id="icon-togglequestion">  
             <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">TX01.1.2 Earth Storable</span>
-            <img src="{{ URL('images/icon-black.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-black.png') }}" alt=""  class="float-right graph-image">
             </div> 
             </div>
 
@@ -466,7 +466,7 @@
             <div class="divider"></div> 
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">TX01.2 Electric Space Propulsion</span>
-            <img src="{{ URL('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
+            <img src="{{ asset('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
             </div> </div>
         </div>
         <div class="divider"></div>
@@ -475,8 +475,8 @@
             <div class="faq-question" onclick="toggleAnswers('answers2')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX02 Flight Computing and Avionics</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image" onclick="showimage()">
-            <img src="{{ URL('images/pop-up-graph.png') }}" alt="" class="popuptext float-right" id="myPopup1" style="display:none; position: absolute;right:195px;">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image" onclick="showimage()">
+            <img src="{{ asset('images/pop-up-graph.png') }}" alt="" class="popuptext float-right" id="myPopup1" style="display:none; position: absolute;right:195px;">
             </div> 
             
         </div>
@@ -489,7 +489,7 @@
             <div class="faq-question" onclick="toggleAnswers('answers3')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX03 Aerospace Power and Energy Storage</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
             <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
@@ -502,7 +502,7 @@
             <div class="faq-question" onclick="toggleAnswers('answers4')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX04 Robotic Systems</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
             <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
@@ -514,7 +514,7 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers5')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image"></span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image"></span>
             
             </div> 
            </div>
@@ -528,7 +528,7 @@
             <div class="faq-question" onclick="toggleAnswers('answers6')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX06 Human Health, Life Support, and Habitation Systems</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
             <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
@@ -541,7 +541,7 @@
             <div class="faq-question" onclick="toggleAnswers('answers7')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX07 Exploration Destination Systems</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
             <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
@@ -554,7 +554,7 @@
             <div class="faq-question" onclick="toggleAnswers('answers8')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX08 Sensors and Instruments</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
             <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
@@ -567,7 +567,7 @@
             <div class="faq-question" onclick="toggleAnswers('answers9')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX09 Entry, Descent, and Landing</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
             <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
