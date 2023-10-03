@@ -149,7 +149,46 @@
             padding-bottom: 25px;
             padding-left: 9.4%;
         }
+        .popup {
+  margin-top: 25%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+/* The actual popup */
+.popup .popuptext {
+  display: none;
+  width: auto; /* Adjust the width as needed */
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  display: block;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
         .custom-button {
             border-radius: 6px;
             background: #065386;
@@ -436,7 +475,8 @@
             <div class="faq-question" onclick="toggleAnswers('answers2')">
             <div class="arrow-icon" id="icon-togglequestion">
             <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX02 Flight Computing and Avionics</span>
-            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
+            <img src="{{ URL('images/icon-blue.png') }}" alt=""  class="float-right graph-image" onclick="showimage()">
+            <img src="{{ URL('images/pop-up-graph.png') }}" alt="" class="popuptext float-right" id="myPopup1" style="display:none; position: absolute;right:195px;">
             </div> 
             
         </div>
@@ -553,7 +593,16 @@
         }
     });
 }
+function showimage(){
+    var check = document.getElementById("myPopup1").style.display;
+    if(check == "none")
+    {
+        document.getElementById("myPopup1").style.display = "block";
+    } else{
+        document.getElementById("myPopup1").style.display= "none";
+    }
 
+}
 // function toggleSubAnswers(subAnswerGroup) {
 //     const subAnswers = document.querySelectorAll(`#${subAnswerGroup}`);
 //     subAnswers.forEach(subAnswer => {
