@@ -259,9 +259,9 @@ body {
 
 <nav>
     <div class="image-container">
-        <img src="{{URL('images/DrassLogo1.png')}}" alt="">
+        <img src="{{asset('images/DrassLogo1.png')}}" alt="">
         <br> 
-        <img src="{{URL('images/DrassLogo2.png')}}" alt="">
+        <img src="{{asset('images/DrassLogo2.png')}}" alt="">
     </div>
 </nav>
 
@@ -289,7 +289,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{asset('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     Project Targets

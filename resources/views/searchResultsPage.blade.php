@@ -307,7 +307,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{asset('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     <section > Search Results </section>
@@ -352,7 +352,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 
                                 <div class="col-md-3">
-                                <img src="{{URL('images/ractangle-graph.png')}}" style="height:133px;width:133px;">
+                                <img src="{{asset('images/ractangle-graph.png')}}" style="height:133px;width:133px;">
                                 </div>
 
                                 <div>
@@ -410,7 +410,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 <div class="faq-item">
     <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a></span>
+        <span class="faq-question"><a href="{{ asset('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a></span>
        
         <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
@@ -426,7 +426,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     
         <div class="col-md-4">
     <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
+        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
     </div>
 </div>
 
@@ -487,7 +487,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     
         <div class="col-md-4">
     <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
+        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
     </div>
 </div>
 
@@ -552,7 +552,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     
         <div class="col-md-4">
     <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
+        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
     </div>
 </div>
 
@@ -617,7 +617,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     
         <div class="col-md-4">
     <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
+        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
     </div>
 </div>
 
@@ -668,7 +668,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 <div class="faq-item">
     <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants </a></span>
+        <span class="faq-question"><a href="{{ asset('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants </a></span>
        
         <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
@@ -684,7 +684,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     
         <div class="col-md-4">
     <div class="planet-image">
-        <img src="{{URL('images/planet.png')}}" alt="" class="planet-img">
+        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
     </div>
 </div>
 

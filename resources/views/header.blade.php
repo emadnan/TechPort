@@ -121,9 +121,9 @@
         {{-- Site Logo --}}
         <div class="row mt-5">
             <div class="col-md-10 mt-5 mb-5">
-                <img class="mb-3" src="{{ URL('images/DrassLogo1.png') }}" alt="">
+                <img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt="">
                 <br>
-                <img src="{{ URL('images/DrassLogo2.png') }}" alt="">
+                <img src="{{ asset('images/DrassLogo2.png') }}" alt="">
             </div>
         </div>
         <div class="col-md-2"></div>

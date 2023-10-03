@@ -369,7 +369,7 @@
                 </form>
             </div>
             <div class="col-md-3"> 
-                <a href="{{ asset('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
+                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
                     Search </button></a>
             </div>
         </div>

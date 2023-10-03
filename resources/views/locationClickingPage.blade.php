@@ -308,7 +308,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
         <div class="row mt-4">
         <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{asset('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                     <section > Houstan, Texas </section>
@@ -353,7 +353,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 
                                 <div class="col-md-3">
-                                <img src="{{URL('images/ractangle-graph.png')}}" style="height:133px;width:133px;">
+                                <img src="{{asset('images/ractangle-graph.png')}}" style="height:133px;width:133px;">
                                 </div>
 
                                 <div>

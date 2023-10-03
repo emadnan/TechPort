@@ -196,7 +196,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{URL('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{asset('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
                       <section style="font-size:14px">Small Business Innovation Research/Small Business Tech Transfer</section>
@@ -239,8 +239,8 @@ body {
                 Considerable design work has been devoted to the development of cryogenic liquid storage containers. Containers which hold cryogenic liquids such as liquid nitrogen, oxygen, hydrogen, etc. often are double walled vacuum insulated or super insulation flasks, bottles or tanks.
                 </section>
                 <section style="font-weight:bold;margin-top:10px;">Work Locations:</section>
-                <img src="{{URL('images/map-image.png')}}" style="width: 700px;height: 410px;">
-                <!-- <img src="{{URL('images/table-data.png')}}" alt=""style="width:90%;margin-top:10px;"> -->
+                <img src="{{asset('images/map-image.png')}}" style="width: 700px;height: 410px;">
+                <!-- <img src="{{asset('images/table-data.png')}}" alt=""style="width:90%;margin-top:10px;"> -->
 
                 <table>
         <tr>
@@ -250,16 +250,16 @@ body {
             <th>Description</th>
         </tr>
         <tr>
-            <td><a href="{{ url('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
+            <td><a href="{{ asset('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
             <td>23044</td>
-            <td><a  href="{{ url('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
-            <td><a  href="{{ url('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
+            <td><a  href="{{ asset('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
+            <td><a  href="{{ asset('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
         </tr>
         <tr>
-            <td><a href="{{ url('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
+            <td><a href="{{ asset('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
             <td>23044</td>
-            <td><a  href="{{ url('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
-            <td><a  href="{{ url('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
+            <td><a  href="{{ asset('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
+            <td><a  href="{{ asset('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
         </tr>
   
       
@@ -275,10 +275,10 @@ body {
 
               <div class="col-md-4">
 
-                <img src="{{URL('images/planet.png')}}" alt="" style="height:200px;width:auto;">
+                <img src="{{asset('images/planet.png')}}" alt="" style="height:200px;width:auto;">
                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Organization:</section>
-                <section ><a  href="{{ url('/locationsPage') }}" style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
-                <section ><a  href="{{ url('/location-clicking') }}" style="color:black;">State University Main Campus</a></section>
+                <section ><a  href="{{ asset('/locationsPage') }}" style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
+                <section ><a  href="{{ asset('/location-clicking') }}" style="color:black;">State University Main Campus</a></section>
 
                 <section style="font-weight:bold;margin-top:30px;">Legal Entity Role</section>
                 <section >State University Main Campus</section>
@@ -292,7 +292,7 @@ body {
                 <section>Drass mission type defined here.</section>
 
                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Maturity (TRL)</section>
-                <img src="{{URL('images/bar-graph.png')}}" alt="" style="margin-top:10px;width:auto;">
+                <img src="{{asset('images/bar-graph.png')}}" alt="" style="margin-top:10px;width:auto;">
                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas</section>
                 <section>TX01 Propulsion Systems</section>
                 <div class="row" style="margin-left:10px;">
