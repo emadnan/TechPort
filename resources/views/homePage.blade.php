@@ -75,21 +75,24 @@
 
         }
 
-        .advance_search_btn {
-            height: 50px;
-            width: auto;
-            margin-left: -50px;
-            font-size: 18px;
+        .btn_primary {
+            /* height: 50px; */
+            /* width: auto; */
+            /* font-size: 20px; */
             /* text-align: center; */
-            border-radius: 0.6rem;
+            /* border-radius: 0.6rem; */
             background: #065386;
             color: white;
-            pointer-events: none;
-            padding-top: 10px;
+            /* pointer-events: none; */
+            /* padding-top: 10px; */
             /* flex-shrink: 0; */
-            font-family: Open Sans !important;
             font-weight: 500;
+            font-family: Open Sans !important;
+            
 
+        }
+        .btn_primary:hover{
+            color:white;
         }
 
         /* MEDIAS */
@@ -316,7 +319,7 @@
 
         {{-- Search Bar goes here --}}
         <div class="row top-search-bar">
-            <div class="col-md-10 mb-2">
+            <div class="col-md-9 mb-2">
                 <form>
                     <div class="search-local">
                         <input type="text" placeholder="Search Project">
@@ -326,8 +329,8 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-2"> 
-                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-block btn-lg advance_search_btn">Advanced
+            <div class="col-md-3"> 
+                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
                     Search </button></a>
             </div>
         </div>

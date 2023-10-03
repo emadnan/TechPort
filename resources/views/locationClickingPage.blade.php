@@ -292,34 +292,11 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 
 
-<nav>
-    <div class="image-container">
-        <img src="{{URL('images/DrassLogo1.png')}}" alt="">
-        <br> 
-        <img src="{{URL('images/DrassLogo2.png')}}" alt="">
-    </div>
-</nav>
 
 <!-- <div class='body-container'> -->
     
 <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-10">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-2">
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+  @include('header')
 
 
 
@@ -436,7 +413,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Projects</span>
        
-        <i class="fas fa-chevron-right" id="rotateIcon" style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+        <i class="fa-solid fa-chevron-down" id="rotateIcon" style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
 
       
        
@@ -446,8 +423,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div>
   <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -462,8 +439,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right; color:grey; margin-right: 10px;"></i>
+        <a style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fa-solid fa-chevron-down" style="float: right; color:grey; margin-right: 10px;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -479,8 +456,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -495,8 +472,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -510,8 +487,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
   <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -554,7 +531,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Organisations</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
       
        
     </div>
@@ -563,8 +540,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div>
   <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -579,8 +556,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -596,8 +573,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -612,8 +589,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -627,8 +604,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
   <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -671,7 +648,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Mission Type</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
       
        
     </div>
@@ -680,8 +657,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div>
   <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -696,8 +673,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -713,8 +690,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -729,8 +706,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -744,8 +721,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
   <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -788,7 +765,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Legal Entity Roles</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
       
        
     </div>
@@ -797,8 +774,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div>
   <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -813,8 +790,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -830,8 +807,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -846,8 +823,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -861,8 +838,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
   <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -904,7 +881,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Project Targets</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px; margin-right:10px;color:grey;"></i>
       
        
     </div>
@@ -913,8 +890,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div>
   <section  class="encapsulated-text">Listing 1 - 20 of 61 </section>
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -929,8 +906,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -946,8 +923,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -962,8 +939,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
   <div style="margin-top: 15px;">
 
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -977,8 +954,8 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
   <div style="margin-top: 15px;">
         <section class="encapsulated-text" onclick="toggleSubAnswer(this)">
-        <a href="#" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px; color:grey;"></i>
+        <a style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
     </section>
     
@@ -1061,23 +1038,26 @@ questions.forEach(question => {
   
     function toggleAnswer(element) {
         const answer = element.nextElementSibling;
-
-        if (answer.style.display === 'block' && !rotated) {
-            answer.style.display = 'none';
-            icon.style.transform = 'rotate(90deg)';
-        } else {
-            answer.style.display = 'block';
-            icon.style.transform = 'rotate(0deg)';
-        }
-        rotated = !rotated;
-    }
-    function toggleSubAnswer(element) {
-        const answer = element.nextElementSibling;
+        const icon = element.querySelector('i.fa-chevron-down');
 
         if (answer.style.display === 'block') {
             answer.style.display = 'none';
+            icon.classList.remove('fa-rotate-180');
         } else {
             answer.style.display = 'block';
+            icon.classList.add('fa-rotate-180');
+        }
+    }
+    function toggleSubAnswer(element) {
+      const answer = element.nextElementSibling;
+        const icon = element.querySelector('i.fa-chevron-down');
+
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            icon.classList.remove('fa-rotate-180');
+        } else {
+            answer.style.display = 'block';
+            icon.classList.add('fa-rotate-180');
         }
     }
     function toggleQASubAnswer(element1){

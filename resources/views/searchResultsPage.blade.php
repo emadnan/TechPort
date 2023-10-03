@@ -290,34 +290,12 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 
 
-<nav>
-    <div class="image-container">
-        <img src="{{URL('images/DrassLogo1.png')}}" alt="">
-        <br> 
-        <img src="{{URL('images/DrassLogo2.png')}}" alt="">
-    </div>
-</nav>
+
 
 <!-- <div class='body-container'> -->
     
 <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-9">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+    @include('header')
 
 
 
@@ -432,9 +410,9 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 <div class="faq-item">
     <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a></span>
+        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a></span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -495,7 +473,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Compleate</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -560,7 +538,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -625,7 +603,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
     <div class="faq-question" onclick="toggleAnswer(this)">
         <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -690,9 +668,9 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 <div class="faq-item">
     <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants </a></span>
+        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants </a></span>
        
-        <i class="fas fa-chevron-right" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
+        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
         <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <!-- Add the text below the span within the same div -->
         <div class="sub-title" style="color: grey;margin-left:10px;">
@@ -788,11 +766,14 @@ questions.forEach(question => {
     // JavaScript function to toggle FAQ answers and the lower arrow
     function toggleAnswer(element) {
         const answer = element.nextElementSibling;
+        const icon = element.querySelector('i.fa-chevron-down');
 
         if (answer.style.display === 'block') {
             answer.style.display = 'none';
+            icon.classList.remove('fa-rotate-180');
         } else {
             answer.style.display = 'block';
+            icon.classList.add('fa-rotate-180');
         }
     }
     function toggleQASubAnswer(element1){

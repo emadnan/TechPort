@@ -236,26 +236,8 @@ body {
 
 <!-- <div class='body-container'> -->
     
-<div class="container mt-4">
-        <div class="row">
-            <div class="col-md-9">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                          
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-              
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+<div class="container">
+  @include('header')
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">
@@ -266,7 +248,7 @@ body {
                         Advance Search
                         
             
-             <button class="btn btn-primary custom-button-1" style="">Search</button>
+             <a href="{{ url('/search-results') }}" type="button" class="btn  custom-button-1" style="">Search</a>
              
             
            
@@ -293,7 +275,7 @@ body {
 <!-- QA Section -->
 <div class="faq-container">
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
     Relevance
@@ -308,7 +290,7 @@ body {
     </div>
     <div class="divider"></div>
     <div class="faq-item">
-  <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+  <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
   <div class="faq-answer" style="display: none;">
     <div class="row">
       <div class="col-4"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -347,7 +329,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Status<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Status<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -392,7 +374,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Active Date<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Active Date<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;"> 
         <div class="row">
       <div class="col-2"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -470,7 +452,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Technology Area<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Technology Area<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
          <div class="qa-container">
          <div class="qa-question">
@@ -505,7 +487,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
 
         <!-- ///////////Multiple check box Starts -->
@@ -660,7 +642,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="col-md-3">
       <div class="form-check">
@@ -786,7 +768,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -878,7 +860,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -1051,7 +1033,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -1127,7 +1109,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="container">
   <div class="row">
@@ -1313,7 +1295,7 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
         <div class="row">
       <div class="col-4"> <!-- Each radio button takes 4 columns (1/3 of the row) -->
@@ -1345,14 +1327,14 @@ body {
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">A3: Yes, you can customize the FAQ section to match your specific design and content requirements. Feel free to add, remove, or modify FAQ items as needed. You can also adjust the styles to align with your website's branding.</div>
     </div>
 
     <div class="divider"></div>
     <!-- Add more FAQ items as needed -->
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i class="fas fa-chevron-right" style="float: right;margin-top:10px;"></i></div>
+        <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
         <div class="faq-answer" style="display: none;">
 
         <div class="row">
@@ -1628,7 +1610,7 @@ body {
     <div class="divider"></div>
 <!-- Add more FAQ items as needed -->
 <div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)" class="fas fa-chevron-right faq-toggle-icon"  style="float: right;" id="icon"></i></div>
+    <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)" class="fa-solid fa-chevron-down faq-toggle-icon"  style="float: right;" id="icon"></i></div>
     <div class="faq-answer" style="display: none;">
     <div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
@@ -1674,11 +1656,14 @@ questions.forEach(question => {
     // JavaScript function to toggle FAQ answers and the lower arrow
     function toggleAnswer(element) {
         const answer = element.nextElementSibling;
+        const icon = element.querySelector('i.fa-chevron-down');
 
         if (answer.style.display === 'block') {
             answer.style.display = 'none';
+            icon.classList.remove('fa-rotate-180');
         } else {
             answer.style.display = 'block';
+            icon.classList.add('fa-rotate-180');
         }
     }
     function toggleQASubAnswer(element1){

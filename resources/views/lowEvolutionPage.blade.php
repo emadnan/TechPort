@@ -186,34 +186,12 @@ body {
 
 
 
-<nav>
-    <div class="image-container">
-        <img src="{{URL('images/DrassLogo1.png')}}" alt="">
-        <br> 
-        <img src="{{URL('images/DrassLogo2.png')}}" alt="">
-    </div>
-</nav>
+
 
 <!-- <div class='body-container'> -->
     
 <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-10">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-2">
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+    @include('header')
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">
@@ -286,6 +264,9 @@ body {
   
       
     </table>
+    <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4">Found Source</section>
+                <section ><p>T220 found source name to be found here</p></section>
+
               </div>
 
               
@@ -295,24 +276,24 @@ body {
               <div class="col-md-4">
 
                 <img src="{{URL('images/planet.png')}}" alt="" style="height:200px;width:auto;">
-                <section style="font-weight:bold;margin-top:30px;">Project Organization:</section>
-                <section >Organisation Performing Work</section>
-                <section >State University Main Campus</section>
+                <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Organization:</section>
+                <section ><a  href="{{ url('/locationsPage') }}" style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
+                <section ><a  href="{{ url('/location-clicking') }}" style="color:black;">State University Main Campus</a></section>
 
                 <section style="font-weight:bold;margin-top:30px;">Legal Entity Role</section>
                 <section >State University Main Campus</section>
 
                 <section style="font-weight:bold;margin-top:30px;">Project</section>
                 <section >Space technology Research Grant</section>
-                <section style="font-weight:bold;margin-top:30px;">Project Duration </section>
+                <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Duration </section>
                 <section ><p>Start: 24 Jan</p> <p>End : 31 Mar, 2025</p></section>
             
-                <section style="font-weight:bold;margin-top:30px;">Mission Type</section>
+                <section style="font-weight:bold;margin-top:30px;font-size:16px">Mission Type</section>
                 <section>Drass mission type defined here.</section>
 
-                <section style="font-weight:bold;margin-top:30px;">Technology Maturity (TRL)</section>
+                <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Maturity (TRL)</section>
                 <img src="{{URL('images/bar-graph.png')}}" alt="" style="margin-top:10px;width:auto;">
-                <section style="font-weight:bold;margin-top:30px;">Technology Areas</section>
+                <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas</section>
                 <section>TX01 Propulsion Systems</section>
                 <div class="row" style="margin-left:10px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">

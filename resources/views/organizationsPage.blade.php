@@ -257,34 +257,12 @@ body {
 
 
 
-<nav>
-    <div class="image-container">
-        <img src="{{URL('images/DrassLogo1.png')}}" alt="">
-        <br> 
-        <img src="{{URL('images/DrassLogo2.png')}}" alt="">
-    </div>
-</nav>
+
 
 <!-- <div class='body-container'> -->
     
 <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-9">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+    @include('header')
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">

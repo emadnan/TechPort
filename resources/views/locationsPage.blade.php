@@ -256,12 +256,12 @@ body {
 
 
 
-@include('header')
+
 
 <!-- <div class='body-container'> -->
     
 <div class="container mt-4">
-      
+@include('header')
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">
