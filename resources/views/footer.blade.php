@@ -31,7 +31,7 @@
       <p>&copy; COPYRIGHT © DRASS ALL RIGHTS RESERVED | PRIVACY POLICY</p>
     </div>
     <div style="font-family:    Roboto">
-      <img src="{{asset('images/white-logo.png')}}" alt="Image Description" class="footer-image">
+      <img src="{{('images/white-logo.png')}}" alt="Image Description" class="footer-image">
     </div>
   </div>
 </footer>

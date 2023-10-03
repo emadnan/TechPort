@@ -252,14 +252,14 @@ body {
         <tr>
             <td><a href="{{ asset('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
             <td>23044</td>
-            <td><a  href="{{ asset('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
-            <td><a  href="{{ asset('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
+            <td><a  href="{{ url('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
+            <td><a  href="{{ url('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
         </tr>
         <tr>
-            <td><a href="{{ asset('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
+            <td><a href="{{ url('/organizations') }}"  style="color:black;">State University Main Campus</a></td>
             <td>23044</td>
-            <td><a  href="{{ asset('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
-            <td><a  href="{{ asset('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
+            <td><a  href="{{ url('/location-clicking') }}" style="color:black;">Houston, Texas</a></td>
+            <td><a  href="{{ url('/locationsPage') }}" style="color:black;">This Organisation is responisble for Project Finance</a></td>
         </tr>
   
       
@@ -277,8 +277,8 @@ body {
 
                 <img src="{{asset('images/planet.png')}}" alt="" style="height:200px;width:auto;">
                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Organization:</section>
-                <section ><a  href="{{ asset('/locationsPage') }}" style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
-                <section ><a  href="{{ asset('/location-clicking') }}" style="color:black;">State University Main Campus</a></section>
+                <section ><a  href="{{ url('/locationsPage') }}" style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
+                <section ><a  href="{{ url('/location-clicking') }}" style="color:black;">State University Main Campus</a></section>
 
                 <section style="font-weight:bold;margin-top:30px;">Legal Entity Role</section>
                 <section >State University Main Campus</section>
