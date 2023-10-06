@@ -345,35 +345,7 @@
 <body>
 
     <div class="container">
-        {{-- Site Logo --}}
-        <div class="row mt-5">
-            <div class="col-md-10 mt-5 mb-5">
-                <img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt="">
-                <br>
-                <img src="{{ asset('images/DrassLogo2.png') }}" alt="">
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-        {{-- End --}}
-
-        {{-- Search Bar goes here --}}
-        <div class="row top-search-bar">
-            <div class="col-md-9 mb-2">
-                <form>
-                    <div class="search-local">
-                        <input type="text" placeholder="Search Project">
-                        <button>
-                            <i class="fas fa-search fa-light fa-sm " style="color:#f4f7fa; "></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3"> 
-                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
-                    Search </button></a>
-            </div>
-        </div>
-        {{-- end --}}
+        @include('header')
 
         {{-- section of Drass Taxonomy with background image --}}
         <div class="row mt-4">
@@ -415,7 +387,9 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers1')"> 
             <div class="arrow-icon" id="icon-togglequestion">  
-            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">TX01 Propulsion Systems</span>
+            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+            <a href="{{ url('/search-results') }}"style="color:#000000">TX01 Propulsion Systems</span>
+            </a>
            
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             
@@ -429,7 +403,9 @@
             <div class="faq-answer" id="answers1" onclick="toggleSubAnswers('answers1-1')">
             <div class="divider"></div>
              <div class="arrow-icon" id="icon-toggleanswer">
-             <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">TX01.1 Chemical Space Propulsion</span>
+             <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+             <a href="{{ url('/search-results') }}"style="color:#000000">TX01.1 Chemical Space Propulsion</span>
+             </a>
              <img src="{{ asset('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
              </div>
             </div>
@@ -439,7 +415,7 @@
             <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;" onclick="toggleSubAnswersDescreption('sub-answer-description')">
             <div  id="icon-toggle-description">  
             <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">
-                <a href="{{ url('/project-targets') }}"style="color:#000000">
+                <a href="{{ url('/search-results') }}"style="color:#000000">
             TX01.1.1 Integrated Systems and Ancillary Technologies</span>
             </a>
             <img src="{{ asset('images/icon-black.png') }}" alt=""  class="float-right graph-image">
@@ -455,7 +431,9 @@
 
             <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
             <div class="arrow-icon" id="icon-togglequestion">  
-            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">TX01.1.2 Earth Storable</span>
+            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">
+            <a href="{{ url('/search-results') }}"style="color:#000000">TX01.1.2 Earth Storable</span>
+            </a>
             <img src="{{ asset('images/icon-black.png') }}" alt=""  class="float-right graph-image">
             </div> 
             </div>
@@ -468,7 +446,9 @@
             <div class="faq-answer" id="answers1">
             <div class="divider"></div> 
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">TX01.2 Electric Space Propulsion</span>
+            <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+            <a href="{{ url('/search-results') }}"style="color:#000000">TX01.2 Electric Space Propulsion</span>
+            </a>
             <img src="{{ asset('images/icon-yellow.png') }}" alt=""  style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
             </div> </div>
         </div>
@@ -477,7 +457,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers2')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX02 Flight Computing and Avionics</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX02 Flight Computing and Avionics</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image" onclick="showimage()">
             <img src="{{ asset('images/pop-up-graph.png') }}" alt="" class="popuptext float-right" id="myPopup1" style="display:none; position: absolute;right:195px;">
             </div> 
@@ -491,7 +472,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers3')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX03 Aerospace Power and Energy Storage</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX03 Aerospace Power and Energy Storage</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
@@ -504,7 +486,9 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers4')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX04 Robotic Systems</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">
+                TX04 Robotic Systems</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
@@ -517,7 +501,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers5')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image"></span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX05 Communications, Navigation, and Orbital Debris Tracking and Characterization</span></a> <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             
             </div> 
            </div>
@@ -530,7 +515,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers6')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX06 Human Health, Life Support, and Habitation Systems</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX06 Human Health, Life Support, and Habitation Systems</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
@@ -543,7 +529,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers7')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX07 Exploration Destination Systems</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX07 Exploration Destination Systems</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
@@ -556,7 +543,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers8')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX08 Sensors and Instruments</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX08 Sensors and Instruments</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
@@ -569,7 +557,8 @@
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswers('answers9')">
             <div class="arrow-icon" id="icon-togglequestion">
-            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">TX09 Entry, Descent, and Landing</span>
+            <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
+                <a href="{{ url('/search-results') }}"style="color:#000000">TX09 Entry, Descent, and Landing</span></a>
             <img src="{{ asset('images/icon-blue.png') }}" alt=""  class="float-right graph-image">
             </div> 
            </div>
