@@ -58,3 +58,18 @@ Route::get('/low-evolution', function () {
 Route::get('/demo', function () {
     return view('demo');
 });
+Route::get('/organization-clicking', function () {
+    return view('organizationClickingPage');
+});
+Route::get('/mission-type-clicking', function () {
+    return view('missionTypeClickingPage');
+});
+Route::get('/found-sources-clicking', function () {
+    return view('foundSourcesClickingPage');
+});
+Route::get('/legal-entity-roles-clicking', function () {
+    return view('legalEntityClickingPage');
+});
+Route::get('/project-target-clicking', function () {
+    return view('projectTargetClickingPage');
+});

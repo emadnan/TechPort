@@ -312,7 +312,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
                     <img src="{{asset('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
                    
                     <div class="text-in-image">
-                    <section >Houstan, Texas</section>
+                    <section >Drass Mission Type 1</section>
                     <div class="row">
     <div style="margin-left:20px;">
         <button class="btn" style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort Order: Relevance</button>
@@ -409,7 +409,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 @include('projectCode')
 @include('organizationCode')
 @include('foundSourcesCode')
-@include('missionTypeCode')
+@include('locationsCode')
 @include('legalRolesCode')
 @include('projectTargetCode')
 

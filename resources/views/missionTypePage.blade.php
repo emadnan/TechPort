@@ -312,9 +312,11 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+        <a href="{{url('/mission-type-clicking')}}">
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span style="color: black;" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
         <div class="faq-answer" style="display: none;"><div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
+        </a>
     Relevance
 </a> 
 
@@ -329,8 +331,9 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-     
+        <a href="{{url('/mission-type-clicking')}}">
+        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+        </a>
     </div>
 </div>
 
@@ -340,8 +343,9 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
     </div>
 </div>
 
@@ -351,8 +355,9 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-      
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
     </div>
 </div>
 
@@ -362,8 +367,9 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
     </div>
 </div>
 
@@ -373,8 +379,9 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
     </div>
 </div>
 
@@ -384,20 +391,26 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div> 
-    </div>
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
+        </div>
 </div>
 <div class="divider"></div>
 <div class="faq-container">
     <div class="faq-item">
-        <div class="faq-question" > <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-    </div>
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
+        </div>
 </div>
 <div class="divider"></div>
 <div class="faq-container">
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow" ></i></div>
-    </div>
+        <a href="{{url('/mission-type-clicking')}}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span style="color: black" class="faq-question">Drass mission type 1</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+            </a>
+        </div>
 </div>
 
 

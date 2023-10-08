@@ -7,8 +7,10 @@
 
   /* Style the footer */
   footer {
-    background-color: #333;
-    color: #fff;
+    background-color:rgba(37, 37, 37, 1);
+;
+    color:rgba(116, 116, 116, 1);
+
     text-align: center;
     padding: 20px;
   }
@@ -28,7 +30,7 @@
 <footer>
   <div class="footer-style">
     <div class="copy-right-text">
-      <p>&copy; COPYRIGHT © DRASS ALL RIGHTS RESERVED | PRIVACY POLICY</p>
+      <p style="font-family: Roboto; font-size:15px">&copy; COPYRIGHT © DRASS ALL RIGHTS RESERVED | PRIVACY POLICY</p>
     </div>
     <div style="font-family:    Roboto">
       <img src="{{asset('images/white-logo.png')}}" alt="Image Description" class="footer-image">

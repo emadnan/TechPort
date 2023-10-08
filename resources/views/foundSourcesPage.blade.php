@@ -312,8 +312,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-     
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>     
     </div>
 </div>
 
@@ -323,8 +323,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-      
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">2</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -334,8 +334,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">3</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -345,8 +345,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">4</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -356,8 +356,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">5</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -367,8 +367,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-     
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">6</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -378,8 +378,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">7</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -389,8 +389,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
-       
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">8</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
@@ -400,8 +400,8 @@ body {
 
 
     <div class="faq-item">
-        <div class="faq-question"> <span class="float-left-text" style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span class="faq-question">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow" ></i></div>
-        
+        <a href="{{ url('/found-sources-clicking') }}">
+            <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">9</span><span class="faq-question" style="color: black;">Source 1 mention</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
     </div>
 </div>
 
