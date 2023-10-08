@@ -490,8 +490,30 @@
                                 Avionics</span></a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage()">
-                        <img src="{{ asset('images/pop-up-graph.png') }}" alt="" class="popuptext float-right"
-                            id="myPopup1" style="display:none; position: absolute;right:195px;">
+                            <div id="myPopup1" style=" border: 1px solid rgba(6, 83, 134, 1); display:none; position: absolute;right:180px; background:white;" >
+                                <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
+                                    <div class="col-8" style="color: white;">
+                                          <section style="font-size: 17px">TX02</section>
+                                          <section style="font-size: 17px; font-weight:500;">Flight Computing and Avionics</section>
+                                    </div>
+                                    <div class="col-4" style="color: white;">
+                                        <img src="{{ asset('images/icon-white.png') }}" width="40px" alt="" class="float-right" style="margin-top:4px">
+                                    </div>
+                                </div>
+                                <section class="my-3 mx-2" style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:17px;">Technology Maturity (TRL)</section>
+                        
+                                <section  style=" display: flex; align-items:center; justify-content: center;">
+                                    <div class = "container">
+                                         <div style="display: flex;">
+                                             <h5 style="display:flex; transform: rotate(-90deg); font-size:15px;align-content:center;flex-wrap:wrap;">Number of Projects</h5>
+                                            <p style=" align-self: center;"><img src="{{ asset('images/graph.png') }}" alt="" class=" float-right" width="300px";></p>
+                                            </div>
+                                            <h5 style="font-size:15px; text-align:center;">Technology Readiness Level</h5>
+                                            <h5 style="color: rgba(6, 83, 134, 1); font-size:17px; font-weight:600;">Projects linked to this taxonomy</h5>
+                                            <button class="btn mb-2" style=" font-size:10px; color:white; background: rgba(6, 83, 134, 1);" ><a href=""></a>Find Linked Projects</button>
+                                        </div>
+                                 </section>
+                        </div >
                     </div>
 
                 </div>
