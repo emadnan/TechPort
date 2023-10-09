@@ -9,243 +9,244 @@
     <title>TechPort</title>
 </head>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+    }
 
-nav {
-    width: 50%;
-    height: 50px;
-    background-color: white;
-    line-height: 50px;
-}
+    nav {
+        width: 50%;
+        height: 50px;
+        background-color: white;
+        line-height: 50px;
+    }
 
-.image-container {
-    position: relative;
-    left: 10%;
-    margin-top: 30px;
-}
-
-.body-container {
-    padding-right: 9.5%;
-    padding-bottom: 25px;
-    padding-left: 9.4%;
-}
-
-.custom-button {
-    border-radius: 6px;
-    background: #065386;
-    color: white;
-}
-
-.custom-button i {
-    color: white !important;
-    /* Set icon color to white */
-}
-
-.custom-image-container {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    overflow: hidden;
-    height: 100px;
-}
-
-.custom-image {
-    width: 114.4%;
-    height: auto;
-}
-
-.second-search-bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    background: transparent;
-    border: 1px solid white;
-    border-radius: 6px;
-}
-
-
-.second-search-bar input,
-.second-search-bar button {
-    background: transparent;
-    border: none;
-    color: white !important;
-}
-
-
-.second-search-bar input::placeholder {
-    color: white;
-    border-radius: 6px;
-}
-
-.text-in-image {
-    position: absolute;
-    top: 18px;
-    left: 10px;
-    margin-left: 4%;
-    color: white;
-    font-size: 28px;
-
-}
-
-.icon-in-image {
-    position: absolute;
-    top: 23px;
-    right: 10px;
-    margin-right: 4%;
-    color: white;
-    font-size: 1.7em;
-
-}
-
-.faq-section {
-    background: linear-gradient(to right, #065386 2%, #E8E8E8 2%);
-}
-
-@media (max-width: 768px) {
-
-    /* Adjust styles for screens up to 768px wide */
     .image-container {
-        left: 5%;
-        margin-top: 10px;
+        position: relative;
+        left: 10%;
+        margin-top: 30px;
     }
 
     .body-container {
-        padding-right: 5%;
-        padding-left: 5%;
+        padding-right: 9.5%;
+        padding-bottom: 25px;
+        padding-left: 9.4%;
     }
 
-    /* Add more responsive styles as needed */
-}
+    .custom-button {
+        border-radius: 6px;
+        background: #065386;
+        color: white;
+    }
 
-@media (max-width: 576px) {
+    .custom-button i {
+        color: white !important;
+        /* Set icon color to white */
+    }
 
-    /* Adjust styles for screens up to 576px wide */
-    .image-container {
-        left: 3%;
+    .custom-image-container {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        height: 100px;
+    }
+
+    .custom-image {
+        width: 114.4%;
+        height: auto;
+    }
+
+    .second-search-bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 6px;
+    }
+
+
+    .second-search-bar input,
+    .second-search-bar button {
+        background: transparent;
+        border: none;
+        color: white !important;
+    }
+
+
+    .second-search-bar input::placeholder {
+        color: white;
+        border-radius: 6px;
+    }
+
+    .text-in-image {
+        position: absolute;
+        top: 18px;
+        left: 10px;
+        margin-left: 4%;
+        color: white;
+        font-size: 28px;
+
+    }
+
+    .icon-in-image {
+        position: absolute;
+        top: 23px;
+        right: 10px;
+        margin-right: 4%;
+        color: white;
+        font-size: 1.7em;
+
+    }
+
+    .faq-section {
+        background: linear-gradient(to right, #065386 2%, #E8E8E8 2%);
+    }
+
+    @media (max-width: 768px) {
+
+        /* Adjust styles for screens up to 768px wide */
+        .image-container {
+            left: 5%;
+            margin-top: 10px;
+        }
+
+        .body-container {
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+
+        /* Add more responsive styles as needed */
+    }
+
+    @media (max-width: 576px) {
+
+        /* Adjust styles for screens up to 576px wide */
+        .image-container {
+            left: 3%;
+        }
+
+
+
+        /* Add more responsive styles as needed */
+    }
+
+    /* background-color: #E8E8E8; */
+
+    body {
+        background-color: white;
+        /* Grey background color */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .faq-container {
+        max-width: 100%;
+        margin: 0 auto;
+        /* padding: 20px; */
+
+        /* White background for FAQ container */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        /* border-radius: 5px; */
+    }
+
+    .faq-item {
+        margin-bottom: 10px;
+    }
+
+    .faq-question {
+        background-color: #E8E8E8;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: -9px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .faq-answer {
+        padding: 10px;
+        font-size: 16px;
+        /* margin-bottom: 10px; */
+        background: white;
+        margin-top: 15px
+    }
+
+
+    .divider {
+        width: 100%;
+        height: 2px;
+        background-color: #E8E8E8;
+    }
+
+    .grey-divider {
+        width: 100%;
+        height: 1px;
+        background-color: grey;
+    }
+
+    .dropdown-menu {
+        background: white;
+        border: 1px solid black;
+        opacity: 0.9;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .qa-container {
+        max-width: 99%;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+
+    .qa-question {
+
+        cursor: pointer;
+    }
+
+    .qa-answer {
+        display: none;
+        margin-left: 20px;
     }
 
 
 
-    /* Add more responsive styles as needed */
-}
+    .faq-toggle-icon {
+        cursor: pointer;
+        /* font-size: 18px; Adjust the font size as needed */
+        transition: transform 0.3s ease;
+        /* Add a smooth transition effect */
+    }
 
-/* background-color: #E8E8E8; */
+    .faq-toggle-icon.rotate {
+        transform: rotate(90deg);
+        /* Rotate the icon when the answer is expanded */
+    }
 
-body {
-    background-color: white;
-    /* Grey background color */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+    .custom-button-1 {
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+        background-color: white;
+        color: #065386;
+        font-weight: bold;
+        border: none;
+        margin-left: 420px;
+    }
 
-.faq-container {
-    max-width: 100%;
-    margin: 0 auto;
-    /* padding: 20px; */
-
-    /* White background for FAQ container */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    /* border-radius: 5px; */
-}
-
-.faq-item {
-    margin-bottom: 10px;
-}
-
-.faq-question {
-    background-color: #E8E8E8;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: -9px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.faq-answer {
-    padding: 10px;
-    font-size: 16px;
-    /* margin-bottom: 10px; */
-    background: white;
-    margin-top: 15px
-}
-
-
-.divider {
-    width: 100%;
-    height: 2px;
-    background-color: #E8E8E8;
-}
-
-.grey-divider {
-    width: 100%;
-    height: 1px;
-    background-color: grey;
-}
-
-.dropdown-menu {
-    background: white;
-    border: 1px solid black;
-    opacity: 0.9;
-}
-
-.question {
-    font-size: 18px;
-}
-
-.qa-container {
-    max-width: 99%;
-    margin: 0 auto;
-    font-size: 16px;
-}
-
-.qa-question {
-
-    cursor: pointer;
-}
-
-.qa-answer {
-    display: none;
-    margin-left: 20px;
-}
-
-
-
-.faq-toggle-icon {
-    cursor: pointer;
-    /* font-size: 18px; Adjust the font size as needed */
-    transition: transform 0.3s ease;
-    /* Add a smooth transition effect */
-}
-
-.faq-toggle-icon.rotate {
-    transform: rotate(90deg);
-    /* Rotate the icon when the answer is expanded */
-}
-
-.custom-button-1 {
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-    background-color: white;
-    color: #065386;
-    font-weight: bold;
-    border: none;
-    margin-left: 420px;
-}
-.reset-btn:hover{
-    background-color:#065386;
-    color: white;
-}
+    .reset-btn:hover {
+        background-color: #065386;
+        color: white;
+    }
 </style>
 
 <body>
@@ -264,7 +265,7 @@ body {
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="custom-image-container">
-                    <img src="{{asset('images/rectangle.jpg')}}" alt="Rectangular Image" class="custom-image">
+                    <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
                         Advance Search
@@ -372,7 +373,8 @@ body {
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked1">
                                     <label class="form-check-label" for="flexCheckChecked1">
                                         Active
                                     </label>
@@ -380,7 +382,8 @@ body {
                             </div>
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked2">
                                     <label class="form-check-label" for="flexCheckChecked2">
                                         Canceled
                                     </label>
@@ -388,7 +391,8 @@ body {
                             </div>
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked3">
                                     <label class="form-check-label" for="flexCheckChecked3">
                                         Completed
                                     </label>
@@ -396,7 +400,8 @@ body {
                             </div>
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked4">
                                     <label class="form-check-label" for="flexCheckChecked4">
                                         Planned
                                     </label>
@@ -505,14 +510,16 @@ body {
                             <div class="question" style="margin-left: 15px;font-size:16px;">
                                 <div class="form-check">
 
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked">
 
                                 </div>
                                 <section style="margin-left:20px">TX01 Propulsion Systems</section>
                             </div>
                             <div class="qa-answer" onclick="toggleQASubAnswer(this)">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked">
                                 </div>
                                 <section style="margin-left:20px;"> TX01.1 Chemical Space Propulsion</section>
                             </div>
@@ -521,1312 +528,1412 @@ body {
 
 
 
-                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-
-                    <!-- ///////////Multiple check box Starts -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
-                                    <label class="form-check-label" for="flexCheckChecked2">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
-                                    <label class="form-check-label" for="flexCheckChecked3">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
-                                    <label class="form-check-label" for="flexCheckChecked2">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
-                                    <label class="form-check-label" for="flexCheckChecked3">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
-                                    <label class="form-check-label" for="flexCheckChecked2">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
-                                    <label class="form-check-label" for="flexCheckChecked3">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2">
-                                    <label class="form-check-label" for="flexCheckChecked2">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
-                                    <label class="form-check-label" for="flexCheckChecked3">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Houstan, Texas
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /////////Multiple Check Box Ends Here -->
-
-                </div>
-            </div>
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                            <label class="form-check-label" for="flexCheckChecked4">
-                                Start TRL
-                            </label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Min: <input type="text" id="name" name="name" value="10"
-                                            style="width: 50px; border-radius: 5px;">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" value="10" style="width: 100%;" id="myRange">
-                                </div>
-                                <!-- <p>Value: <span id="sliderValue">10</span></p> -->
-
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Max: <input type="text" id="name" name="name" value="10"
-                                            style="width: 50px; border-radius: 5px;">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                            <label class="form-check-label" for="flexCheckChecked4">
-                                Current TRL
-                            </label>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Min: <input type="text" id="name" name="name" value="10"
-                                            style="width: 50px; border-radius: 5px;">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" value="10" style="width: 100%;" id="myRange">
-                                </div>
-                                <!-- <p>Value: <span id="sliderValue">10</span></p> -->
-
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Max: <input type="text" id="name" name="name" value="10"
-                                            style="width: 50px; border-radius: 5px;">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <br>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                            <label class="form-check-label" for="flexCheckChecked4">
-                                Current TRL
-                            </label>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Min: <input type="text" id="name" name="name" value="10"
-                                            style="width: 50px; border-radius: 5px;">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" value="10" style="width: 100%;" id="myRange">
-                                </div>
-                                <!-- <p>Value: <span id="sliderValue">10</span></p> -->
-
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Max: <input type="text" id="name" name="name" value="10"
-                                            style="width: 50px; border-radius: 5px;">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        The Sun
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Others Inside the Solar System
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Earth
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Outside the Solar System
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        The Moon
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Foundational Knowledge
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Mars
-                                    </label>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Aeronautics Research Mission Directorate (ARMD)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Engineer (OCE)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Exploration Systems Development Mission Directorate (ESDMD)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Information Officer (OCIO)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Mission Support Directorate (MSD)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Scientist (OCS)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Office of Diversity and Equal Opportunity (ODEO)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Technologist (OCT)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Office of Education (OoE)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Science Mission Directorate (SMD)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Office of Safety and Mission Assurance (OSMA)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Software Assurance Office (SAO)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Software Assurance Office (SAO)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Software Assurance Office (SAO)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Aeronautics Research Mission Directorate (ARMD)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Engineer (OCE)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Exploration Systems Development Mission Directorate (ESDMD)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Information Officer (OCIO)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Mission Support Directorate (MSD)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Office of the Chief Scientist (OCS)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1" style="color: #065386;">
-                                        Acting as Lead Center/Facility
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4" style="color: #065386;">
-                                        Acting as Supporting Center/Facility
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grey-divider"></div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Ames Research Center (ARC)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Kennedy Space Center (KSC)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Armstrong Flight Research Center (AFRC)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Langley Research Center (LaRC)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Glenn Research Center (GRC)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Marshall Space Flight Center (MSFC)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Goddard Institute of Space Studies (GISS)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Michoud Assembly Facility (MAF)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Michoud Assembly Facility (MAF)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Headquarters (HQ)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Independent Verification and Validation Facility (IV&V)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Stennis Space Center (SSC)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                    <label class="form-check-label" for="flexCheckChecked1">
-                                        Johnson Space Center (JSC)
-                                    </label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    <label class="form-check-label" for="flexCheckChecked4">
-                                        Wallops Flight Facility (WFF)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="row">
-                        <div class="col-4">
-                            <!-- Each radio button takes 4 columns (1/3 of the row) -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Filter by organization type
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Filter by organization name
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-                    <div class="rows">
-                        <button type="button" class="btn btn-light">Select all</button>
-                        <button type="button" class="btn btn-light">None</button>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Academia
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Industry
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2 ml-1">
-                        <div class="mt-1 ml-4"></div>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                International Space Agency
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2 ml-1">
-                        <div class="mt-1 ml-4"></div>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Non-Profit Institution
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Bialogical and Physical Sciences
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Center Independent Research & Development
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Digital Transformation
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Earth Science
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Flight Opportunities
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
-                        <div class="form-check ml-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                            <label class="form-check-label ml-2" for="flexCheckChecked1">
-                                Game Changing Development
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
-                <div class="faq-answer" style="display: none;">
-
+        </div>
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fa-solid fa-chevron-down"
+                    style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+
+                <!-- ///////////Multiple check box Starts -->
+                <div class="container">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
                                 <label class="form-check-label" for="flexCheckChecked1">
-                                    Alabama
+                                    Houstan, Texas
                                 </label>
                             </div>
                         </div>
-
-
                         <div class="col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked2">
+                                <label class="form-check-label" for="flexCheckChecked2">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked3">
+                                <label class="form-check-label" for="flexCheckChecked3">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
                                 <label class="form-check-label" for="flexCheckChecked4">
-                                    Kentucky
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    North Carolina
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Wisconsin
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Alaska
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                <label class="form-check-label" for="flexCheckChecked4">
-                                    Louisiana
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Oklahoma
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-
-
-                            <section style="font-size: 14px;font-weight: bold;">
-                                U.S. Territories
-                            </section>
-
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Arizona
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                <label class="form-check-label" for="flexCheckChecked4">
-                                    Maine
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Oregon
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    District of Columbia
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Arkansas
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                <label class="form-check-label" for="flexCheckChecked4">
-                                    Maryland
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Pennsylvania
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Northern Mariana Islands
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Florida
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                <label class="form-check-label" for="flexCheckChecked4">
-                                    Nevada
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    South Dakota
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Virgin Islands
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Georgia
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                <label class="form-check-label" for="flexCheckChecked4">
-                                    New Jersey
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Texas
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <section style="font-weight:bold;font-size:15;">
-                                Other Locations
-                            </section>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Indiana
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                <label class="form-check-label" for="flexCheckChecked4">
-                                    New York
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Virginia
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Outside United States
+                                    Houstan, Texas
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Found Sources<i onclick="myFunction(this)"
-                        class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right;" id="icon"></i></div>
-                <div class="faq-answer" style="display: none;">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
                                 <label class="form-check-label" for="flexCheckChecked1">
-                                    Aeronautics Research Mission Directorate (ARMD)
+                                    Houstan, Texas
                                 </label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Office of the Chef Engineer (OCE)
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked2">
+                                <label class="form-check-label" for="flexCheckChecked2">
+                                    Houstan, Texas
                                 </label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Exploration Systems Developement Misson Directorate (ESDMD)
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked3">
+                                <label class="form-check-label" for="flexCheckChecked3">
+                                    Houstan, Texas
                                 </label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                                <label class="form-check-label" for="flexCheckChecked1">
-                                    Office of the Chef Information Officier (OCIO)
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Houstan, Texas
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="divider"></div>
-            <!-- Add more FAQ items as needed -->
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)"
-                        class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right;" id="icon"></i></div>
-                <div class="faq-answer" style="display: none;">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-                            TechPort ID
-                        </a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked2">
+                                <label class="form-check-label" for="flexCheckChecked2">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked3">
+                                <label class="form-check-label" for="flexCheckChecked3">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked2">
+                                <label class="form-check-label" for="flexCheckChecked2">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked3">
+                                <label class="form-check-label" for="flexCheckChecked3">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Houstan, Texas
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /////////Multiple Check Box Ends Here -->
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"
-                            style="background-color: white !important;">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                        <label class="form-check-label" for="flexCheckChecked4">
+                            Start TRL
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Min: <input type="text" id="name" name="name" value="10"
+                                        style="width: 50px; border-radius: 5px;">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="10"
+                                    style="width: 100%;" id="myRange">
+                            </div>
+                            <!-- <p>Value: <span id="sliderValue">10</span></p> -->
+
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Max: <input type="text" id="name" name="name" value="10"
+                                        style="width: 50px; border-radius: 5px;">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                        <label class="form-check-label" for="flexCheckChecked4">
+                            Current TRL
+                        </label>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Min: <input type="text" id="name" name="name" value="10"
+                                        style="width: 50px; border-radius: 5px;">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="10"
+                                    style="width: 100%;" id="myRange">
+                            </div>
+                            <!-- <p>Value: <span id="sliderValue">10</span></p> -->
+
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Max: <input type="text" id="name" name="name" value="10"
+                                        style="width: 50px; border-radius: 5px;">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <br>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                        <label class="form-check-label" for="flexCheckChecked4">
+                            Current TRL
+                        </label>
+                    </div>
+                </div>
+
+
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Min: <input type="text" id="name" name="name" value="10"
+                                        style="width: 50px; border-radius: 5px;">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="10"
+                                    style="width: 100%;" id="myRange">
+                            </div>
+                            <!-- <p>Value: <span id="sliderValue">10</span></p> -->
+
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Max: <input type="text" id="name" name="name" value="10"
+                                        style="width: 50px; border-radius: 5px;">
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <a href="{{ url('/search-results') }}">
-            <button class="btn btn-primary"
-                style="float:right;width:200px;background:#065386;;margin-top:30px;margin-right: 117px;">Search</button>
-        </a>
+
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    The Sun
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Others Inside the Solar System
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Earth
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Outside the Solar System
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    The Moon
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Foundational Knowledge
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Mars
+                                </label>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fa-solid fa-chevron-down"
+                    style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Aeronautics Research Mission Directorate (ARMD)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Engineer (OCE)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Exploration Systems Development Mission Directorate (ESDMD)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Information Officer (OCIO)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Mission Support Directorate (MSD)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Scientist (OCS)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Office of Diversity and Equal Opportunity (ODEO)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Technologist (OCT)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Office of Education (OoE)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Science Mission Directorate (SMD)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Office of Safety and Mission Assurance (OSMA)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Software Assurance Office (SAO)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Software Assurance Office (SAO)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Software Assurance Office (SAO)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fa-solid fa-chevron-down"
+                    style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Aeronautics Research Mission Directorate (ARMD)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Engineer (OCE)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Exploration Systems Development Mission Directorate (ESDMD)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Information Officer (OCIO)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Mission Support Directorate (MSD)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Office of the Chief Scientist (OCS)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1" style="color: #065386;">
+                                    Acting as Lead Center/Facility
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4" style="color: #065386;">
+                                    Acting as Supporting Center/Facility
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grey-divider"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Ames Research Center (ARC)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Kennedy Space Center (KSC)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Armstrong Flight Research Center (AFRC)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Langley Research Center (LaRC)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Glenn Research Center (GRC)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Marshall Space Flight Center (MSFC)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Goddard Institute of Space Studies (GISS)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Michoud Assembly Facility (MAF)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Michoud Assembly Facility (MAF)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Headquarters (HQ)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Independent Verification and Validation Facility (IV&V)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Stennis Space Center (SSC)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked1">
+                                <label class="form-check-label" for="flexCheckChecked1">
+                                    Johnson Space Center (JSC)
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckChecked4">
+                                <label class="form-check-label" for="flexCheckChecked4">
+                                    Wallops Flight Facility (WFF)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- Each radio button takes 4 columns (1/3 of the row) -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Filter by organization type
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Filter by organization name
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="rows">
+                    <button type="button" class="btn btn-light">Select all</button>
+                    <button type="button" class="btn btn-light">None</button>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Academia
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Industry
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2 ml-1">
+                    <div class="mt-1 ml-4"></div>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            International Space Agency
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2 ml-1">
+                    <div class="mt-1 ml-4"></div>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Non-Profit Institution
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fa-solid fa-chevron-down"
+                    style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Bialogical and Physical Sciences
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Center Independent Research & Development
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Digital Transformation
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Earth Science
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Flight Opportunities
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    <div class="form-check ml-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
+                        <label class="form-check-label ml-2" for="flexCheckChecked1">
+                            Game Changing Development
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+            <div class="faq-answer" style="display: none;">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Alabama
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                Kentucky
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                North Carolina
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Wisconsin
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Alaska
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                Louisiana
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Oklahoma
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+
+
+                        <section style="font-size: 14px;font-weight: bold;">
+                            U.S. Territories
+                        </section>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Arizona
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                Maine
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Oregon
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                District of Columbia
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Arkansas
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                Maryland
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Pennsylvania
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Northern Mariana Islands
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Florida
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                Nevada
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                South Dakota
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Virgin Islands
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Georgia
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                New Jersey
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Texas
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <section style="font-weight:bold;font-size:15;">
+                            Other Locations
+                        </section>
+
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Indiana
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked4">
+                            <label class="form-check-label" for="flexCheckChecked4">
+                                New York
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Virginia
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Outside United States
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Found Sources<i onclick="myFunction(this)"
+                    class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right;" id="icon"></i>
+            </div>
+            <div class="faq-answer" style="display: none;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Aeronautics Research Mission Directorate (ARMD)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Office of the Chef Engineer (OCE)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Exploration Systems Developement Misson Directorate (ESDMD)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked1">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Office of the Chef Information Officier (OCIO)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <!-- Add more FAQ items as needed -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)"
+                    class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right;" id="icon"></i>
+            </div>
+            <div class="faq-answer" style="display: none;">
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
+                        TechPort ID
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"
+                        style="background-color: white !important;">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ url('/search-results') }}">
+        <button class="btn btn-primary"
+            style="float:right;width:200px;background:#065386;;margin-top:30px;margin-right: 117px;">Search</button>
+    </a>
 
 
     </div>
@@ -1841,57 +1948,57 @@ body {
     </footer>
 
     <script>
-    const questions = document.querySelectorAll('.qa-question');
+        const questions = document.querySelectorAll('.qa-question');
 
-    questions.forEach(question => {
-        question.addEventListener('click', () => {
-            question.classList.toggle('active');
-            const answer = question.querySelector('.qa-answer');
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.querySelector('.qa-answer');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
         });
-    });
-    // JavaScript function to toggle FAQ answers and the lower arrow
-    function toggleAnswer(element) {
-        const answer = element.nextElementSibling;
-        const icon = element.querySelector('i.fa-chevron-down');
+        // JavaScript function to toggle FAQ answers and the lower arrow
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i.fa-chevron-down');
 
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-            icon.classList.remove('fa-rotate-180');
-        } else {
-            answer.style.display = 'block';
-            icon.classList.add('fa-rotate-180');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.classList.remove('fa-rotate-180');
+            } else {
+                answer.style.display = 'block';
+                icon.classList.add('fa-rotate-180');
+            }
         }
-    }
 
-    function toggleQASubAnswer(element1) {
-        const subanswers = element.nextElementSibling;
-        if (subanswers.style.display === 'block') {
-            subanswers.style.display = 'none';
-        } else {
-            subanswers.style.display = 'block';
+        function toggleQASubAnswer(element1) {
+            const subanswers = element.nextElementSibling;
+            if (subanswers.style.display === 'block') {
+                subanswers.style.display = 'none';
+            } else {
+                subanswers.style.display = 'block';
+            }
         }
-    }
 
-    function myFunction(x) {
-        x.classList.toggle("fas fa-chevron-down");
-    }
-
-    function toggleQAAnswer(question) {
-        var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
-        if (subanswer.style.display === "none" || subanswer.style.display === "") {
-            subanswer.style.display = "block"; // Show the sub-answer
-        } else {
-            subanswer.style.display = "none"; // Hide the sub-answer
+        function myFunction(x) {
+            x.classList.toggle("fas fa-chevron-down");
         }
-    }
-    var slider = document.getElementById("myRange");
-    var sliderValueDisplay = document.getElementById("sliderValue");
 
-    // Update the <span> tag with the slider value when the slider is changed
-    slider.addEventListener("input", function() {
-        sliderValueDisplay.textContent = slider.value;
-    });
+        function toggleQAAnswer(question) {
+            var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
+            if (subanswer.style.display === "none" || subanswer.style.display === "") {
+                subanswer.style.display = "block"; // Show the sub-answer
+            } else {
+                subanswer.style.display = "none"; // Hide the sub-answer
+            }
+        }
+        var slider = document.getElementById("myRange");
+        var sliderValueDisplay = document.getElementById("sliderValue");
+
+        // Update the <span> tag with the slider value when the slider is changed
+        slider.addEventListener("input", function() {
+            sliderValueDisplay.textContent = slider.value;
+        });
     </script>
 
 
