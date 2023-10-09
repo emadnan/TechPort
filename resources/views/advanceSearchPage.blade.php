@@ -186,7 +186,7 @@
     .grey-divider {
         width: 100%;
         height: 1px;
-        background-color: grey;
+        background-color: E8E8E8;
     }
 
     .dropdown-menu {
@@ -243,6 +243,9 @@
     .reset-btn:hover {
         background-color: #065386;
         color: white;
+    }
+    .fa-solid{
+        margin-right:10px;
     }
 </style>
 
