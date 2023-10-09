@@ -559,8 +559,8 @@
                             <h5
                                 style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
                                 Projects linked to this taxonomy</h5>
-                            <button class="btn my-2"
-                                style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1);"><a
+                            <button class="btn"
+                                style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1);margin-bottom:23px;"><a
                                     style="color:white;" href="{{ url('/search-results') }}">Find Linked
                                     Projects</a></button>
 
