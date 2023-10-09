@@ -504,7 +504,7 @@
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
                             class="float-right graph-image" onclick="showimage()">
                         <div  id="myPopup1"
-                            style=" border: 1px solid rgba(6, 83, 134, 1); display:none; position: absolute; margin-left:60%; background:white; width:300px; margin-top:-34px;">
+                            style=" border: 1px solid rgba(6, 83, 134, 1); display:none; position: absolute; margin-left:60%; background:white; width:300px; margin-top:-38px;">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
                                 <div class="col-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
