@@ -1928,15 +1928,15 @@
                 </div>
             </div>
         </div>
+    
+        <a href="{{ url('/search-results') }}">
+            <button class="btn btn-primary float-right"
+                style="width:200px; background:#065386; margin-top:30px;">Search</button>
+        </a>
     </div>
 
-    <a href="{{ url('/search-results') }}">
-        <button class="btn btn-primary"
-            style="float:right;width:200px;background:#065386;;margin-top:30px;margin-right: 117px;">Search</button>
-    </a>
 
-
-    </div>
+    
 
 
 
