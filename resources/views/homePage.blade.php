@@ -297,7 +297,7 @@
             cursor: pointer;
             font-size: 18px;
             margin-bottom: 7px;
-            padding-top: 6px;
+           
         }
 
         .faq-answer {
@@ -345,12 +345,15 @@
             padding-left: 10px;
             font-size: 24px;
             margin-bottom: 10px;
+            margin-top: 10px;
         }
 
         .fa-angle-down {
             color: white;
             padding-left: 10px;
             font-size: 24px;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
 
 
@@ -367,6 +370,23 @@
             margin-top: 5px;
             width: 24px;
         }
+       
+        .graph-pop{
+            border: 1px solid rgba(6, 83, 134, 1); 
+            display:none;
+             position: absolute;
+              right: 119px; 
+              background:white; 
+              width:300px; 
+            margin-top:-38px;
+        }
+/*     
+        @media(max-width:1199px){
+
+            width: 260px;
+
+
+        } */
     </style>
 </head>
 
@@ -504,7 +524,7 @@
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
                             class="float-right graph-image" onclick="showimage()">
                         <div  id="myPopup1"
-                            style=" border: 1px solid rgba(6, 83, 134, 1); display:none; position: absolute; margin-left:60%; background:white; width:300px; margin-top:-38px;">
+                            class=" graph-pop">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
                                 <div class="col-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
