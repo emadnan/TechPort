@@ -220,12 +220,12 @@
                         <div class="row" style="margin-left:5px;">
                             <div class="">
                                 <button class="btn"
-                                    style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
+                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
                                     Order: Relevance</button>
                             </div>
                             <div style="margin-left:20px;">
                                 <button class="btn"
-                                    style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
+                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
                                     and Phrases: No Selection</button>
                             </div>
                         </div>
@@ -293,8 +293,8 @@
                                         <td>23044</td>
                                         <td><a href="{{ url('/location-clicking') }}" style="color:black;">Houston,
                                                 Texas</a></td>
-                                        <td><a href="{{ url('/organizations') }}" style="color:black;">This Organisation
-                                                is responisble for Project Finance</a></td>
+                                        <td>This Organisation
+                                                is responisble for Project Finance</td>
                                     </tr>
                                     <tr>
                                         <td><a href="{{ url('/organization-clicking') }}" style="color:black;">State
@@ -303,9 +303,8 @@
                                         <td>23044</td>
                                         <td><a href="{{ url('/location-clicking') }}" style="color:black;">Houston,
                                                 Texas</a></td>
-                                        <td><a href="{{ url('/organizations') }}" style="color:black;">This
-                                                Organisation
-                                                is responisble for Project Finance</a></td>
+                                        <td>This Organisation
+                                                is responisble for Project Finance</td>
                                     </tr>
 
 
@@ -342,8 +341,8 @@
                                 <section><a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;">Space Technology Mission 
                                     Directorate (STMD)</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a
-                                        href="{{ url('/low-evolution') }}" style="color:black;">Project</a></section>
-                                <section><a href="{{ url('/organization-clicking') }}" style="color:black;">Space
+                                        href="{{ url('/search-results') }}" style="color:black;">Project</a></section>
+                                <section><a href="{{ url('/search-results') }}" style="color:black;">Space
                                         technology Research Grant</a></section>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Duration
                                 </section>

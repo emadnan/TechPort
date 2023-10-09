@@ -33,21 +33,21 @@
                         <img src="{{ asset('images\STMD-Programs-SBIR 1.png') }}" width="350px">
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px;"><b> Legal Entity Role</b></section>
-                        <section class="mb-2" style="font-size:13px;">Space Technology Mission Directorate (STMD)
+                        <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                        <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{url('/legal-entity-roles-clicking')}}">Space Technology Mission Directorate (STMD) </a>
                         </section>
-                        <section class="mb-2" style="font-size:13px"><b> Organisation Performing Work</b></section>
-                        <section class="mb-2" style="font-size:13px">Johnson Space Center</section>
-                        <section class="mb-2" style="font-size:13px"><b> Primary Technology Area:</b></section>
-                        <section class="mb-2" style="font-size:13px">TX01.1.3 Cryogenic</section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                        <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{url('/organization-clicking')}}">Johnson Space Center</a></section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
+                        <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01.1.3 Cryogenic</a></section>
                         <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
                         <section style="font-size:13px">Jan 2004</section>
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px"><b> Mission Type </b></section>
-                        <section class="mb-2" style="font-size:13px"> Drass mission type defined here.</section>
-                        <section class="mb-2" style="font-size:13px"><b> Found Source </b></section>
-                        <section class="mb-2" style="font-size:13px">Source Name to be found here.</section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                        <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/mission-type-clicking')}}"> Drass mission type defined here.</a></section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
+                        <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/founf-sources-clicking')}}">Source Name to be found here.</a></section>
                         <br><br>
                         <section class="my-2" style="font-size:13px"><b> End: </b></section>
                         <section style="font-size:13px">Jul 2004</section>
@@ -77,25 +77,25 @@
                         <img src="{{ asset('images\STMD-Programs-SBIR 1.png') }}" width="350px">
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px;"><b> Legal Entity Role</b></section>
-                        <section class="mb-2" style="font-size:13px;">Space Technology Mission Directorate (STMD)
-                        </section>
-                        <section class="mb-2" style="font-size:13px"><b> Organisation Performing Work</b></section>
-                        <section class="mb-2" style="font-size:13px">Johnson Space Center</section>
-                        <section class="mb-2" style="font-size:13px"><b> Primary Technology Area:</b></section>
-                        <section class="mb-2" style="font-size:13px">TX01.1.3 Cryogenic</section>
-                        <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
-                        <section style="font-size:13px">Jan 2004</section>
-                    </div>
-                    <div class="col">
-                        <section class="mb-2" style="font-size:13px"><b> Mission Type </b></section>
-                        <section class="mb-2" style="font-size:13px"> Drass mission type defined here.</section>
-                        <section class="mb-2" style="font-size:13px"><b> Found Source </b></section>
-                        <section class="mb-2" style="font-size:13px">Source Name to be found here.</section>
-                        <br><br>
-                        <section class="my-2" style="font-size:13px"><b> End: </b></section>
-                        <section style="font-size:13px">Jul 2004</section>
-                    </div>
+                      <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                      <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{url('/legal-entity-roles-clicking')}}">Space Technology Mission Directorate (STMD) </a>
+                      </section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                      <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{url('/organization-clicking')}}">Johnson Space Center</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01.1.3 Cryogenic</a></section>
+                      <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
+                      <section style="font-size:13px">Jan 2004</section>
+                  </div>
+                  <div class="col">
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/mission-type-clicking')}}"> Drass mission type defined here.</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/founf-sources-clicking')}}">Source Name to be found here.</a></section>
+                      <br><br>
+                      <section class="my-2" style="font-size:13px"><b> End: </b></section>
+                      <section style="font-size:13px">Jul 2004</section>
+                  </div>
                 </div>
             </div>
         </div>
@@ -122,25 +122,25 @@
                         <img src="{{ asset('images\STMD-Programs-SBIR 1.png') }}" width="350px">
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px;"><b> Legal Entity Role</b></section>
-                        <section class="mb-2" style="font-size:13px;">Space Technology Mission Directorate (STMD)
-                        </section>
-                        <section class="mb-2" style="font-size:13px"><b> Organisation Performing Work</b></section>
-                        <section class="mb-2" style="font-size:13px">Johnson Space Center</section>
-                        <section class="mb-2" style="font-size:13px"><b> Primary Technology Area:</b></section>
-                        <section class="mb-2" style="font-size:13px">TX01.1.3 Cryogenic</section>
-                        <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
-                        <section style="font-size:13px">Jan 2004</section>
-                    </div>
-                    <div class="col">
-                        <section class="mb-2" style="font-size:13px"><b> Mission Type </b></section>
-                        <section class="mb-2" style="font-size:13px"> Drass mission type defined here.</section>
-                        <section class="mb-2" style="font-size:13px"><b> Found Source </b></section>
-                        <section class="mb-2" style="font-size:13px">Source Name to be found here.</section>
-                        <br><br>
-                        <section class="my-2" style="font-size:13px"><b> End: </b></section>
-                        <section style="font-size:13px">Jul 2004</section>
-                    </div>
+                      <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                      <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{url('/legal-entity-roles-clicking')}}">Space Technology Mission Directorate (STMD) </a>
+                      </section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                      <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{url('/organization-clicking')}}">Johnson Space Center</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01.1.3 Cryogenic</a></section>
+                      <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
+                      <section style="font-size:13px">Jan 2004</section>
+                  </div>
+                  <div class="col">
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/mission-type-clicking')}}"> Drass mission type defined here.</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/founf-sources-clicking')}}">Source Name to be found here.</a></section>
+                      <br><br>
+                      <section class="my-2" style="font-size:13px"><b> End: </b></section>
+                      <section style="font-size:13px">Jul 2004</section>
+                  </div>
                 </div>
             </div>
         </div>
@@ -168,25 +168,25 @@
                         <img src="{{ asset('images\STMD-Programs-SBIR 1.png') }}" width="350px">
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px;"><b> Legal Entity Role</b></section>
-                        <section class="mb-2" style="font-size:13px;">Space Technology Mission Directorate (STMD)
-                        </section>
-                        <section class="mb-2" style="font-size:13px"><b> Organisation Performing Work</b></section>
-                        <section class="mb-2" style="font-size:13px">Johnson Space Center</section>
-                        <section class="mb-2" style="font-size:13px"><b> Primary Technology Area:</b></section>
-                        <section class="mb-2" style="font-size:13px">TX01.1.3 Cryogenic</section>
-                        <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
-                        <section style="font-size:13px">Jan 2004</section>
-                    </div>
-                    <div class="col">
-                        <section class="mb-2" style="font-size:13px"><b> Mission Type </b></section>
-                        <section class="mb-2" style="font-size:13px"> Drass mission type defined here.</section>
-                        <section class="mb-2" style="font-size:13px"><b> Found Source </b></section>
-                        <section class="mb-2" style="font-size:13px">Source Name to be found here.</section>
-                        <br><br>
-                        <section class="my-2" style="font-size:13px"><b> End: </b></section>
-                        <section style="font-size:13px">Jul 2004</section>
-                    </div>
+                      <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                      <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{url('/legal-entity-roles-clicking')}}">Space Technology Mission Directorate (STMD) </a>
+                      </section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                      <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{url('/organization-clicking')}}">Johnson Space Center</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01.1.3 Cryogenic</a></section>
+                      <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
+                      <section style="font-size:13px">Jan 2004</section>
+                  </div>
+                  <div class="col">
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/mission-type-clicking')}}"> Drass mission type defined here.</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/founf-sources-clicking')}}">Source Name to be found here.</a></section>
+                      <br><br>
+                      <section class="my-2" style="font-size:13px"><b> End: </b></section>
+                      <section style="font-size:13px">Jul 2004</section>
+                  </div>
                 </div>
             </div>
         </div>
@@ -213,25 +213,25 @@
                         <img src="{{ asset('images\STMD-Programs-SBIR 1.png') }}" width="350px">
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px;"><b> Legal Entity Role</b></section>
-                        <section class="mb-2" style="font-size:13px;">Space Technology Mission Directorate (STMD)
-                        </section>
-                        <section class="mb-2" style="font-size:13px"><b> Organisation Performing Work</b></section>
-                        <section class="mb-2" style="font-size:13px">Johnson Space Center</section>
-                        <section class="mb-2" style="font-size:13px"><b> Primary Technology Area:</b></section>
-                        <section class="mb-2" style="font-size:13px">TX01.1.3 Cryogenic</section>
-                        <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
-                        <section style="font-size:13px">Jan 2004</section>
-                    </div>
-                    <div class="col">
-                        <section class="mb-2" style="font-size:13px"><b> Mission Type </b></section>
-                        <section class="mb-2" style="font-size:13px"> Drass mission type defined here.</section>
-                        <section class="mb-2" style="font-size:13px"><b> Found Source </b></section>
-                        <section class="mb-2" style="font-size:13px">Source Name to be found here.</section>
-                        <br><br>
-                        <section class="my-2" style="font-size:13px"><b> End: </b></section>
-                        <section style="font-size:13px">Jul 2004</section>
-                    </div>
+                      <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                      <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{url('/legal-entity-roles-clicking')}}">Space Technology Mission Directorate (STMD) </a>
+                      </section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                      <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{url('/organization-clicking')}}">Johnson Space Center</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01.1.3 Cryogenic</a></section>
+                      <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
+                      <section style="font-size:13px">Jan 2004</section>
+                  </div>
+                  <div class="col">
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/mission-type-clicking')}}"> Drass mission type defined here.</a></section>
+                      <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
+                      <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/founf-sources-clicking')}}">Source Name to be found here.</a></section>
+                      <br><br>
+                      <section class="my-2" style="font-size:13px"><b> End: </b></section>
+                      <section style="font-size:13px">Jul 2004</section>
+                  </div>
                 </div>
             </div>
         </div>
