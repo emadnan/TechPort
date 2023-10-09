@@ -62,7 +62,7 @@ Route::get('/organization-clicking', function () {
     return view('organizationClickingPage');
 });
 Route::get('/mission-type-clicking', function () {
-    return view('missionTypeClickingPage');
+    return view('missionTypeClickingpage');
 });
 Route::get('/found-sources-clicking', function () {
     return view('foundSourcesClickingPage');
