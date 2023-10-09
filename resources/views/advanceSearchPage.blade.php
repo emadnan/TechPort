@@ -450,7 +450,7 @@
                     <div class="container">
                         <div class="row" style="margin-top: 10px;">
 
-                            <p>Start Month</p>
+                            <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>Start Month:</b></h5>
                             <div class="btn-group">
 
 
@@ -472,8 +472,9 @@
                                     </select>
                                 </div>
                             </div>
+                            <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>Start Year:</b> </h5>
                             <div class="btn-group" style="margin-left: 10px;">
-                                <p>Start year</p>
+                               
                                 <div class="form-group" style="margin-left: 10px;">
                                     <select class="form-control" id="year-select">
                                         <option value="2023">2023</option>
