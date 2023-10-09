@@ -471,7 +471,7 @@
                                     TX01.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
                             <img src="{{ asset('images/icon-black.png') }}" alt=""
-                                class=" float-right graph-image" style="margin-right:-27px;">
+                                class=" float-right graph-image" style="">
                         </div>
                     </div>
                     <div id="sub-answer-description">
