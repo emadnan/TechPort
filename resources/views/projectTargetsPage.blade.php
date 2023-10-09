@@ -155,6 +155,7 @@ body {
             /* margin-bottom: 10px; */
             margin-left:15px;
             padding-top:6px;
+            
         }
         .faq-answer {
            padding: 10px;
@@ -291,7 +292,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-        <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
+        <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>
       
     </div>
 </div>
@@ -303,7 +304,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">2</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>       
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">2</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>       
     </div>
 </div>
 
@@ -314,7 +315,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">3</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">3</span><span style="color: black; text-decoration: none;" class="faq-question" >Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
     </div>
 </div>
 
@@ -325,7 +326,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">4</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">4</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
     </div>
 </div>
 
@@ -336,7 +337,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">5</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>  
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">5</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a>  
     </div>
 </div>
 
@@ -347,7 +348,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">6</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">6</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
     </div>
 </div>
 
@@ -358,7 +359,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">7</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">7</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
     </div>
 </div>
 
@@ -369,7 +370,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">8</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">8</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
     </div>
 </div>
 
@@ -380,7 +381,7 @@ body {
 
     <div class="faq-item">
         <a href="{{url('/project-target-clicking')}}">
-            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">9</span><span style="color: black;" class="faq-question">The Sea</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
+            <div class="faq-question"> <span class="float-left-text" style="float: left; margin-right: 10px;color: white; margin-left: 0;">9</span><span style="color: black; text-decoration: none;" class="faq-question">Earth</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div></a> 
     </div>
 </div>
 
