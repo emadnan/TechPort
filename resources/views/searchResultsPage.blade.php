@@ -345,15 +345,15 @@
                         <section> Search Results </section>
                         <div class="row">
                             <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                    Order: Relevance</button>
-                            </div>
-                            <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                    and Phrases: No Selection</button>
-                            </div>
+                                <button class="btn "
+                                style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
+                                Order: Relevance</button>
+                        </div>
+                        <div style="margin-left:20px;">
+                            <button class="btn"
+                                style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
+                                and Phrases: No Selection</button>
+                        </div>
                         </div>
                         <div class="solid-rectangle">
 
@@ -370,19 +370,19 @@
                                 <div class="key-stats col-md-2" style="margin-left:20px;line-height:20px;">
                                     <section style="margin-bottom:10px;">Key Stats</section>
                                     <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:10px;">
-                                        <p style="color:#FFA800">944</p>
-                                        <p style="float:right; margin-left: 50px;">Active</p>
+                                    <div class="row" style="margin-left:2px;">
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
+                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">Active</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:10px;">
-                                        <p style="color:#FFA800">944</p>
-                                        <p style="float:right; margin-left: 17px;">Completed</p>
+                                    <div class="row" style="margin-left:2px;">
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;" >Completed</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:10px;">
-                                        <p style="color:#FFA800">944</p>
-                                        <p style="float:right; margin-left: 15px;">Partnerhips</p>
+                                    <div class="row" style="margin-left:2px;">
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">Partnerhips</p>
                                     </div>
                                 </div>
 

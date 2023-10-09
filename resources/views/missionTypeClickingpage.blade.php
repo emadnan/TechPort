@@ -344,13 +344,13 @@
                         <section>Drass Mission Type 1</section>
                         <div class="row">
                             <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
+                                <button class="btn "
+                                    style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
                                     Order: Relevance</button>
                             </div>
                             <div style="margin-left:20px;">
                                 <button class="btn"
-                                    style="height: 20px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
+                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
                                     and Phrases: No Selection</button>
                             </div>
                         </div>
@@ -370,18 +370,18 @@
                                     <section style="margin-bottom:10px;">Key Stats</section>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="color:#FFA800">944</p>
-                                        <p style="float:right; margin-left: 50px;">Active</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
+                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">Active</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="color:#FFA800">944</p>
-                                        <p style="float:right; margin-left: 25px;">Completed</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;" >Completed</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="color:#FFA800">944</p>
-                                        <p style="float:right; margin-left: 23px;">Partnerhips</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">Partnerhips</p>
                                     </div>
                                 </div>
 
