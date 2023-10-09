@@ -1230,7 +1230,7 @@
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked1">
                                 <label class="form-check-label" for="flexCheckChecked1" style="color: #065386;">
-                                    Acting as Lead Center/Facility
+                                   <b> Acting as Lead Center/Facility</b>
                                 </label>
                             </div>
                         </div>
@@ -1241,7 +1241,7 @@
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="flexCheckChecked4">
                                 <label class="form-check-label" for="flexCheckChecked4" style="color: #065386;">
-                                    Acting as Supporting Center/Facility
+                                   <b> Acting as Supporting Center/Facility</b>
                                 </label>
                             </div>
                         </div>
@@ -1449,12 +1449,12 @@
                 </div>
 
                 <br>
-                <div class="rows">
-                    <button type="button" class="btn btn-light">Select all</button>
-                    <button type="button" class="btn btn-light">None</button>
-                </div>
-                <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                {{-- <div class="rows" style="display: none;">
+                    <button  type="button" class="btn btn-light">Select all</button>
+                    <button style="display: none;" type="button" class="btn btn-light">None</button>
+                </div> --}}
+                <div class="row ">
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1463,7 +1463,7 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1499,7 +1499,7 @@
                     style="float: right;margin-top:10px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1508,7 +1508,7 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1517,7 +1517,7 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1526,7 +1526,7 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1535,7 +1535,7 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1544,7 +1544,7 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
+                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
