@@ -301,7 +301,7 @@
         }
 
         .faq-answer {
-            margin-left: 37px;
+            margin-left: 35px;
             display: none;
             /* padding: 10px; */
             /* background-color: #f9f9f9; */
@@ -328,8 +328,8 @@
 
         .faq-subanswer {
             display: none;
-            padding-left: 35px;
-            margin-left: 37px;
+            padding-left: 32px;
+            margin-left: 35px;
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
@@ -350,7 +350,7 @@
 
         .fa-angle-down {
             color: white;
-            padding-left: 8px;
+            padding-left: 6px;
             font-size: 24px;
             margin-bottom: 10px;
             margin-top: 10px;
@@ -509,7 +509,50 @@
                                 Propulsion</span>
                         </a>
                         <img src="{{ asset('images/icon-yellow.png') }}" alt=""
-                            style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
+                            style="width:30px;margin-right:7px;margin-top:2px;" class="float-right" onclick="showimage()">
+
+                        <div id="myPopup1" class="  graph-pop" style="display: none;">
+                            <div class="row m-0" style=" width:100%; background: #FFA800">
+                                <div class="col-9 px-2" style="color: white;">
+                                    <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                                    <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                    </section>
+                                </div>
+                                <div class="col-3 m-0 px-0"
+                                    style="color: white; padding-top:5px; padding-bottom:8px;">
+                                    <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                        class="float-right"
+                                        style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                        onclick="showimage()">
+                                </div>
+                            </div>
+                            <section class="my-2 mx-2"
+                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                (TRL)</section>
+
+
+
+                            <div class="row my-3">
+                                <div class="col-2 " style="text-align: center;">
+
+                                </div>
+                                <div class="col-10">
+                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                        class=" float-right my-0" width="100%">
+                                </div>
+                            </div>
+                            <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                            </h5>
+                            <h5
+                                style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                Projects linked to this taxonomy</h5>
+                            <button class="btn"
+                                style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    Projects</a></button>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -522,9 +565,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and
                                 Avionics</span></a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage()">
+                            class="float-right graph-image" onclick="showimage1()">
 
-                        <div id="myPopup1" class="  graph-pop" style="display: none;">
+                        <div id="myPopup2" class="graph-pop" style="display: none;">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
                                 <div class="col-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
@@ -536,7 +579,7 @@
                                     <img src="{{ asset('images/icon-white.png') }}"alt=""
                                         class="float-right"
                                         style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
-                                        onclick="showimage()">
+                                        onclick="showimage1()">
                                 </div>
                             </div>
                             <section class="my-2 mx-2"
@@ -715,6 +758,15 @@
                 document.getElementById("myPopup1").style.display = "none";
             }
 
+        }
+
+        function showimage1() {
+            var check = document.getElementById("myPopup2").style.display;
+            if (check == "none") {
+                document.getElementById("myPopup2").style.display = "block";
+            } else {
+                document.getElementById("myPopup2").style.display = "none";
+            }
         }
         // function toggleSubAnswers(subAnswerGroup) {
         //     const subAnswers = document.querySelectorAll(`#${subAnswerGroup}`);
