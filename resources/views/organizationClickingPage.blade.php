@@ -482,8 +482,8 @@
             @include('legalRolesCode')
             @include('projectTargetCode')
 
-
-
+        </div>
+    </div>
 
 
 

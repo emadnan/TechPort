@@ -370,18 +370,24 @@
                                     <section style="margin-bottom:10px;">Key Stats</section>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">Active</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
+                                        </p>
+                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">
+                                            Active</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;" >Completed</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
+                                        </p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;">
+                                            Completed</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">Partnerhips</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
+                                        </p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">
+                                            Partnerhips</p>
                                     </div>
                                 </div>
 
@@ -468,93 +474,93 @@
             @include('missionTypeCode')
             @include('legalRolesCode')
 
+        
+        </div>
 
 
 
+        <div style="margin-top:100px"></div>
+ 
+        <footer>
+            @include('footer')
+        </footer>
+    </div>
 
 
-            <div style="margin-top:100px"></div>
+    <script>
+        const questions = document.querySelectorAll('.qa-question');
 
-            <footer>
-                @include('footer')
-            </footer>
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.querySelector('.qa-answer');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        // JavaScript function to toggle FAQ answers and the lower arrow
+        var rotated = false;
 
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i.fa-chevron-down');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.classList.remove('fa-rotate-180');
+            } else {
+                answer.style.display = 'block';
+                icon.classList.add('fa-rotate-180');
+            }
+        }
 
+        function toggleSubAnswer(element) {
+            const answer = element.parentElement;
+            const answer1 = answer.nextElementSibling;
+            const answer2 = answer1.nextElementSibling;
+            if (answer2.style.display === 'none') {
+                answer2.style.display = 'block';
+                element.classList.remove('fa-rotate-180');
+            } else {
+                answer2.style.display = 'none';
+                element.classList.add('fa-rotate-180');
+            }
+        }
 
-            <script>
-                const questions = document.querySelectorAll('.qa-question');
+        function toggleQASubAnswer(element1) {
+            const subanswers = element.nextElementSibling;
+            if (subanswers.style.display === 'block') {
+                subanswers.style.display = 'none';
+            } else {
+                subanswers.style.display = 'block';
+            }
+        }
 
-                questions.forEach(question => {
-                    question.addEventListener('click', () => {
-                        question.classList.toggle('active');
-                        const answer = question.querySelector('.qa-answer');
-                        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                    });
-                });
-                // JavaScript function to toggle FAQ answers and the lower arrow
-                var rotated = false;
+        function myFunction(x) {
+            x.classList.toggle("fas fa-chevron-down");
+        }
 
-                function toggleAnswer(element) {
-                    const answer = element.nextElementSibling;
-                    const icon = element.querySelector('i.fa-chevron-down');
-                    if (answer.style.display === 'block') {
-                        answer.style.display = 'none';
-                        icon.classList.remove('fa-rotate-180');
-                    } else {
-                        answer.style.display = 'block';
-                        icon.classList.add('fa-rotate-180');
-                    }
-                }
+        function toggleQAAnswer(question) {
+            var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
+            if (subanswer.style.display === "none" || subanswer.style.display === "") {
+                subanswer.style.display = "block"; // Show the sub-answer
+            } else {
+                subanswer.style.display = "none"; // Hide the sub-answer
+            }
+        }
+        var slider = document.getElementById("myRange");
+        var sliderValueDisplay = document.getElementById("sliderValue");
 
-                function toggleSubAnswer(element) {
-                    const answer = element.parentElement;
-                    const answer1 = answer.nextElementSibling;
-                    const answer2 = answer1.nextElementSibling;
-                    if (answer2.style.display === 'none') {
-                        answer2.style.display = 'block';
-                        element.classList.remove('fa-rotate-180');
-                    } else {
-                        answer2.style.display = 'none';
-                        element.classList.add('fa-rotate-180');
-                    }
-                }
+        // Update the <span> tag with the slider value when the slider is changed
+        slider.addEventListener("input", function() {
+            sliderValueDisplay.textContent = slider.value;
+        });
 
-                function toggleQASubAnswer(element1) {
-                    const subanswers = element.nextElementSibling;
-                    if (subanswers.style.display === 'block') {
-                        subanswers.style.display = 'none';
-                    } else {
-                        subanswers.style.display = 'block';
-                    }
-                }
-
-                function myFunction(x) {
-                    x.classList.toggle("fas fa-chevron-down");
-                }
-
-                function toggleQAAnswer(question) {
-                    var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
-                    if (subanswer.style.display === "none" || subanswer.style.display === "") {
-                        subanswer.style.display = "block"; // Show the sub-answer
-                    } else {
-                        subanswer.style.display = "none"; // Hide the sub-answer
-                    }
-                }
-                var slider = document.getElementById("myRange");
-                var sliderValueDisplay = document.getElementById("sliderValue");
-
-                // Update the <span> tag with the slider value when the slider is changed
-                slider.addEventListener("input", function() {
-                    sliderValueDisplay.textContent = slider.value;
-                });
-
-                var icon = document.getElementById('rotateIcon');
+        var icon = document.getElementById('rotateIcon');
 
 
-                icon.addEventListener('click', function() {
+        icon.addEventListener('click', function() {
 
-                });
-            </script>
+        });
+    </script>
 </body>
 
 </html>

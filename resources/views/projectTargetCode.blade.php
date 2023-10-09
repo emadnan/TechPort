@@ -12,14 +12,14 @@
     <div class="faq-answer" style="display: none;">
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-            <section class="encapsulated-text py-3 ">
+            <section class="encapsulated-text  ">
                 <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
             </section>
             <div class="divider-within-class"></div>
         </div>
 
         <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3 ">
+            <section class="encapsulated-text  ">
                 <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
             </section>
         </div>
@@ -27,21 +27,21 @@
 
 
         <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3 ">
+            <section class="encapsulated-text  ">
                 <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
             </section>
         </div>
         <div class="divider-within-class"></div>
 
         <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3 ">
+            <section class="encapsulated-text  ">
                 <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
             </section>
         </div>
         <div class="divider-within-class"></div>
 
         <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3 ">
+            <section class="encapsulated-text  ">
                 <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
             </section>
             <div class="divider-within-class"></div>
@@ -62,12 +62,3 @@
             </center>
         </div>
     </div>
-
-
-
-
-</div>
-
-
-</div>
-</div>

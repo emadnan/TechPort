@@ -475,7 +475,7 @@
 
         </div>
 
-
+@include('footer')
 
 
         <script>

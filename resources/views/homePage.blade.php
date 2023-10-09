@@ -258,7 +258,7 @@
             left: 10px;
             margin-left: 4%;
             color: white;
-            font-size: 40px;
+            font-size: 30px;
 
 
         }
@@ -407,7 +407,7 @@
                     </div>
                     <div class="icon-in-image">
                         <div class="graph-icon"><img src="{{ asset('images/icon-white.png') }}"
-                                style="height:50px;width:50px;"></div>
+                                style="height:40px;width:40px;"></div>
                     </div>
                 </div>
             </div>
@@ -418,7 +418,7 @@
                 <form class="form-inline second-search-bar">
                     <div class="input-group w-100">
                         <input type="text" class="form-control w-100" placeholder="Filter Taxanomy"
-                            style="border-radius: 0; width: 100%; background-color: rgba(0, 0, 0, 0); font-size:20px">
+                            style="border-radius: 0; width: 100%; height:35px; background-color: rgba(0, 0, 0, 0); font-size:20px">
                         <!-- Adjust the width here -->
 
                         <button class="btn" type="submit" style="background-color: rgba(0, 0, 0, 0) !important;">

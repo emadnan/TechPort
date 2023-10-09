@@ -468,9 +468,9 @@
             @include('missionTypeCode')
             @include('projectTargetCode')
 
+        </div>
 
-
-
+    </div>
 
 
             <div style="margin-top:100px"></div>
