@@ -339,9 +339,8 @@
 
                                 <section style="font-weight:bold;margin-top:30px;"><a style="color:black;"
                                         href="{{ url('/legal-entity-roles') }}">Legal Entity Role</a></section>
-                                <section><a href="{{ url('/organization-clicking') }}" style="color:black;">State
-                                        University Main Campus</a></section>
-
+                                <section><a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;">Space Technology Mission 
+                                    Directorate (STMD)</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a
                                         href="{{ url('/low-evolution') }}" style="color:black;">Project</a></section>
                                 <section><a href="{{ url('/organization-clicking') }}" style="color:black;">Space

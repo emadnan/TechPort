@@ -156,35 +156,32 @@
         /* border-radius: 5px; */
     }
 
-    .faq-item {
-        margin-bottom: 10px;
-    }
 
     .faq-question {
         background-color: #E8E8E8;
         font-weight: bold;
         font-size: 18px;
-        margin-bottom: -9px;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
+        margin-top: 1px;
     }
 
     .faq-answer {
         padding: 10px;
         font-size: 16px;
-        /* margin-bottom: 10px; */
+        margin-bottom: 1px;
         background: white;
-        margin-top: 15px
+        border: 1px solid #E8E8E8;
     }
 
 
-    .divider {
+    /* .divider {
         width: 100%;
         height: 2px;
         background-color: #E8E8E8;
-    }
+    } */
 
     .grey-divider {
         width: 100%;
@@ -259,8 +256,9 @@
 
     <!-- <div class='body-container'> -->
 
-    <div class="container">
+    <div class="container mt-4">
         @include('header')
+
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">
