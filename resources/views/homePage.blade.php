@@ -296,8 +296,8 @@
 
             cursor: pointer;
             font-size: 18px;
-            margin-bottom: 7px;
-           
+
+
         }
 
         .faq-answer {
@@ -309,7 +309,7 @@
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
-            
+
         }
 
         .faq-answer.active {
@@ -333,7 +333,7 @@
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
-            
+
         }
 
         .faq-subanswer.active {
@@ -370,19 +370,19 @@
             margin-top: 5px;
             width: 24px;
         }
-       
-        .graph-pop{
-            border: 1px solid rgba(6, 83, 134, 1); 
-            display:none;
-             position: absolute;
-              right: 119px; 
-              background:white; 
-              width:300px; 
-            margin-top:-38px;
-        }
-/*     
-        @media(max-width:1199px){
 
+        .graph-pop {
+            border: 1px solid rgba(6, 83, 134, 1);
+            position: absolute;
+            right: 12%;
+            background: white;
+            width: 300px;
+            margin-top: -43px;
+        }
+
+        /*
+        @media (min-width:1320px){
+            right: 119px;
             width: 260px;
 
 
@@ -393,13 +393,13 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" style="width: 80%">
         @include('header')
 
         {{-- section of Drass Taxonomy with background image --}}
         <div class="row mt-4">
             <div class="col-md-12">
-                <div class="custom-image-container">
+                <div class="custom-image-container w-80">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
                     <!-- Text inside the image container -->
                     <div class="text-in-image">
@@ -431,7 +431,7 @@
         {{-- end --}}
 
 
-        <div class="faq-container">
+        <div class="faq-container m-0" style=" width:99%">
             <!-- parent tile -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswers('answers1')">
@@ -523,8 +523,8 @@
                                 Avionics</span></a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
                             class="float-right graph-image" onclick="showimage()">
-                        <div  id="myPopup1"
-                            class=" graph-pop">
+
+                        <div id="myPopup1" class="  graph-pop" style="display: none;">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
                                 <div class="col-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
@@ -566,6 +566,7 @@
 
 
                         </div>
+
                     </div>
 
                 </div>
