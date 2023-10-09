@@ -301,7 +301,7 @@
         }
 
         .faq-answer {
-            margin-left: 40px;
+            margin-left: 37px;
             display: none;
             /* padding: 10px; */
             /* background-color: #f9f9f9; */
@@ -328,8 +328,8 @@
 
         .faq-subanswer {
             display: none;
-            padding-left: 37px;
-            margin-left: 40px;
+            padding-left: 35px;
+            margin-left: 37px;
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
@@ -350,7 +350,7 @@
 
         .fa-angle-down {
             color: white;
-            padding-left: 10px;
+            padding-left: 8px;
             font-size: 24px;
             margin-bottom: 10px;
             margin-top: 10px;
