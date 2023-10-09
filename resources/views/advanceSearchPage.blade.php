@@ -157,14 +157,14 @@ body {
 }
 
 .faq-item {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .faq-question {
     background-color: #E8E8E8;
     font-weight: bold;
     font-size: 18px;
-    margin-bottom: -10px;
+    margin-bottom: -9px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -176,7 +176,7 @@ body {
     font-size: 16px;
     /* margin-bottom: 10px; */
     background: white;
-    margin-top: 20px
+    margin-top: 15px
 }
 
 
@@ -242,6 +242,10 @@ body {
     border: none;
     margin-left: 420px;
 }
+.reset-btn:hover{
+    background-color:#065386;
+    color: white;
+}
 </style>
 
 <body>
@@ -271,7 +275,7 @@ body {
 
 
 
-                        <button class="btn btn-outline-primary"
+                        <button class="btn reset-btn"
                             style="width:200px;height:40px;color:white;border-color: white;">Reset Search
                             Options</button>
 
@@ -294,7 +298,7 @@ body {
 
 
         <!-- QA Section -->
-        <div class="faq-container">
+        <div class="faq-container mt-1">
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fa-solid fa-chevron-down"
                         style="float: right;margin-top:10px;"></i></div>
@@ -517,12 +521,6 @@ body {
 
 
 
-                        <div class="qa-question">
-                            <h3 class="question">How can I learn web development?</h3>
-                            <div class="qa-answer">
-                                You can learn web development through online courses, tutorials, and by practicing your
-                                coding skills.
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1827,7 +1825,7 @@ body {
 
         <a href="{{ url('/search-results') }}">
             <button class="btn btn-primary"
-                style="float:right;width:200px;background:#065386;;margin-top:30px;">Search</button>
+                style="float:right;width:200px;background:#065386;;margin-top:30px;margin-right: 117px;">Search</button>
         </a>
 
 

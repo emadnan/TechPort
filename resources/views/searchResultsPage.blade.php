@@ -139,22 +139,18 @@ body {
             max-width: 100%;
             margin: 0 auto;
             padding: 3px;
+            margin-bottom: 50px;
             background: #E8E8E8; /* White background for FAQ container */
             /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
             /* border-radius: 5px; */
         }
-
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
         .faq-question {
-           
-            font-size: 14px;
-            font-weight:bold;
-            margin-bottom: 10px;
-            margin-left:10px;
-            color:#065386;
+            font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: black;
             
         }
         
@@ -164,10 +160,15 @@ body {
             /* margin-bottom: 10px; */
             background: #FCFCFC;
         }
-
+        .divider-within-class {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(128, 128, 128 ,0.5);
+    margin-top: 20px;
+}
        
         .divider {
-    width:225px;
+    width:100%;
     height: 1px; 
     background-color: white;
 }
@@ -228,9 +229,9 @@ body {
 
 .pagination {
   display: inline-block;
-  margin-top:40px;
-  margin-bottom:40px;
-  font-size:20px;
+  margin-top:25px;
+  margin-bottom:25px;
+  font-size:10px;
   
 }
 
@@ -385,7 +386,7 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 
                                 </div>
-                                <di v class="row">
+                                
                                   
                                
                     
@@ -406,349 +407,16 @@ background: #002339; /* Vertically center the text (equal to the height of the r
 
 
             
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a></span>
-       
-        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
+<div class="faq-container mt-1">
+    @include('projectCode')
+    @include('organizationCode')
+    @include('locationsCode')
+    @include('foundSourcesCode')
+    @include('missionTypeCode')
+    @include('legalRolesCode')
+    @include('projectTargetCode')
     
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
-
-
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
-      </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
   </div>
-    </div>
-</div>
-
-
-</div>
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
-       
-        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Compleate</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
-    
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
-
-
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
-      </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
-       
-        <i class="fa-solid fa-chevron-down" style="float: right;margin-top:15px;margin-right:10px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
-    
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
-
-
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
-      </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Non-invasive Detection of Liquid Propellant Location During Microgravity Transfer</span>
-       
-        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
-    
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
-
-
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
-      </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="divider"></div>
-
-
-            
-<div class="faq-container">
-
-<div class="faq-item">
-    <div class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question"><a href="{{ url('/low-evolution') }}" style="color:#065386" onclick="event.stopPropagation()">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants </a></span>
-       
-        <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px;margin-top:15px; color:grey;"></i>
-        <button style="float: right; margin-right: 20px; margin-top: 7px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
-        <!-- Add the text below the span within the same div -->
-        <div class="sub-title" style="color: grey;margin-left:10px;">
-        This is a project within the Space Technology Research Grants Program
-        </div>
-    </div>
-    
-    <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text">For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For in-space........ </section>
-        <div class="row" style="margin-left:10px;margin-top:10px;">
-    
-        <div class="col-md-4">
-    <div class="planet-image">
-        <img src="{{asset('images/planet.png')}}" alt="" class="planet-img">
-    </div>
-</div>
-
-
-    <div class="col-md-4">
-      <div class="column">
-        <section style="font-weight:bold;font-size:13px">Legal Entity Role</section>
-        <section style="font-size:12px">Space Technology Mission Directorate (STMD)</section>
-        <section style="font-weight:bold;font-size:13px">Organisation Performing Work</section>
-        <section style="font-size:12px">Johnson Space Center</section>
-        <section style="font-weight:bold;font-size:13px">Primary Technology Area:</section>
-        <section style="font-size:12px">TX01.1.3 Cryogenic</section>
-        <section style="font-weight:bold;font-size:13px">Start:</section>
-        <section style="font-size:12px">Jan 2004</section>
-      </div>
-    </div>
-    <div class="col-md-4">
-    <div class="column">
-        <section style="font-weight:bold;font-size:13px">Mission Type</section>
-        <section style="font-size:12px">Drass mission type defined here.</section>
-        <section style="font-weight:bold;font-size:13px">Found Source</section>
-        <section style="font-size:12px">Source Name to be found here.</section>
-        
-        <div style="margin-top:35px;">
-        <section style="font-weight:bold;font-size:13px">End:</section>
-        <section style="font-size:12px">Jul 2004</section>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-</div>
-
-
-</div>
-
-<center>
-<div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#" class="active">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-</div>
-
-</center>
-
-
-
-
-
-
-
-
-
-        </div>
-
-</div>
-
-
-    </div>
 
 
 
@@ -764,16 +432,29 @@ questions.forEach(question => {
     });
 });
     // JavaScript function to toggle FAQ answers and the lower arrow
+    var rotated = false;
+  
     function toggleAnswer(element) {
         const answer = element.nextElementSibling;
         const icon = element.querySelector('i.fa-chevron-down');
-
         if (answer.style.display === 'block') {
             answer.style.display = 'none';
             icon.classList.remove('fa-rotate-180');
         } else {
             answer.style.display = 'block';
             icon.classList.add('fa-rotate-180');
+        }
+    }
+    function toggleSubAnswer(element) {
+      const answer = element.parentElement;
+      const answer1 = answer.nextElementSibling;
+      const answer2 = answer1.nextElementSibling;
+        if (answer2.style.display === 'none') {
+            answer2.style.display = 'block';
+            element.classList.remove('fa-rotate-180');
+        } else {
+            answer2.style.display = 'none';
+            element.classList.add('fa-rotate-180');
         }
     }
     function toggleQASubAnswer(element1){

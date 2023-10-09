@@ -295,7 +295,10 @@
     .faq-question {
 
         cursor: pointer;
-        font-size: 24px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        padding-top: 6px;
     }
 
     .faq-answer {
@@ -336,12 +339,18 @@
         display: block;
     }
 
-    .fa-angle-right,
+    .fa-angle-right{
+        color: white;
+     
+        font-size: 24px;
+    }
+
     .fa-angle-down {
         color: white;
         padding-left: 10px;
         font-size: 24px;
     }
+   
 
     .divider {
         width: 100%;
@@ -405,7 +414,7 @@
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswers('answers1')">
                     <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                        <i class="fa-solid fa-angle-right p-0"></i> <span style="padding-left:22px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01 Propulsion Systems</span>
                         </a>
 
@@ -421,7 +430,7 @@
                 <div class="faq-answer" id="answers1" onclick="toggleSubAnswers('answers1-1')">
                     <div class="divider"></div>
                     <div class="arrow-icon" id="icon-toggleanswer">
-                        <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                        <i class="fa-solid fa-angle-right p-0"></i><span style="margin-left:20px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 Chemical Space
                                 Propulsion</span>
                         </a>
@@ -435,7 +444,7 @@
                     <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"
                         onclick="toggleSubAnswersDescreption('sub-answer-description')">
                         <div id="icon-toggle-description">
-                            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">
+                            <i class="fa-solid fa-angle-right p-0"></i> <span style="padding-left:30px;">
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX01.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
@@ -455,7 +464,7 @@
 
                     <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
                         <div class="arrow-icon" id="icon-togglequestion">
-                            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:10px;">
+                            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1.2 Earth
                                     Storable</span>
                             </a>
@@ -486,33 +495,36 @@
                 <div class="faq-question" onclick="//toggleAnswers('answers2')">
                     <div class="arrow-icon" id="icon-togglequestion">
                         <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and
-                                Avionics</span></a>
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and Avionics</span></a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage()">
-                            <div id="myPopup1" style=" border: 1px solid rgba(6, 83, 134, 1); display:none; position: absolute;right:180px; background:white;" >
+                            <div id="myPopup1" style=" border: 1px solid rgba(6, 83, 134, 1); display:none; position: absolute; right:119px; background:white; width:300px; margin-top:-34px;" >
                                 <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
-                                    <div class="col-8" style="color: white;">
-                                          <section style="font-size: 17px">TX02</section>
-                                          <section style="font-size: 17px; font-weight:500;">Flight Computing and Avionics</section>
+                                    <div class="col-9 px-2" style="color: white;">
+                                          <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                                          <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics</section>
                                     </div>
-                                    <div class="col-4" style="color: white;">
-                                        <img src="{{ asset('images/icon-white.png') }}" width="40px" alt="" class="float-right" style="margin-top:4px">
+                                    <div class="col-3 m-0 px-0" style="color: white; padding-top:5px; padding-bottom:8px;">
+                                        <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right" style=" margin-right: 5px; width: 30px; margon-bottom:1px;"  onclick="showimage()">
                                     </div>
                                 </div>
-                                <section class="my-3 mx-2" style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:17px;">Technology Maturity (TRL)</section>
+                                <section class="my-2 mx-2" style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity (TRL)</section>
                         
-                                <section  style=" display: flex; align-items:center; justify-content: center;">
-                                    <div class = "container">
-                                         <div style="display: flex;">
-                                             <h5 style="display:flex; transform: rotate(-90deg); font-size:15px;align-content:center;flex-wrap:wrap;">Number of Projects</h5>
-                                            <p style=" align-self: center;"><img src="{{ asset('images/graph.png') }}" alt="" class=" float-right" width="300px";></p>
+                              
+                                   
+                                         <div class="row my-3" >
+                                            <div class="col-2 " style="text-align: center;">
+
+                                         </div>
+                                         <div class="col-10">
+                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"  class=" float-right my-0" width="100%">
                                             </div>
-                                            <h5 style="font-size:15px; text-align:center;">Technology Readiness Level</h5>
-                                            <h5 style="color: rgba(6, 83, 134, 1); font-size:17px; font-weight:600;">Projects linked to this taxonomy</h5>
-                                            <button class="btn mb-2" style=" font-size:10px; color:white; background: rgba(6, 83, 134, 1);" ><a href=""></a>Find Linked Projects</button>
                                         </div>
-                                 </section>
+                                            <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level</h5>
+                                            <h5 style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">Projects linked to this taxonomy</h5>
+                                            <button class="btn my-2" style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1);" ><a style="color:white;" href="{{url('/search-results')}}">Find Linked Projects</a></button>
+                                       
+                                
                         </div >
                     </div>
 

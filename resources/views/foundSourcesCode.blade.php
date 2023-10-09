@@ -7,44 +7,33 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-  <section class="encapsulated-text " >
-  <a href="{{url('/found-sources')}}" style="color:#065386;font-weight:bold;">Found Sources</a>
+  <section class="encapsulated-text py-3 " >
+  <a href="{{url('/found-sources-clicking')}}" style="color:black;font-weight:bold;">Source 1 mention</a>
   </section>
-  <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-  <section>Source 1 mention</section>
-  </div>
+
   </div>
   <div class="divider-within-class"></div> 
   
   <div style="margin-top: 15px;">
-    <section class="encapsulated-text " >
-      <a href="{{url('/found-sources')}}" style="color:#065386;font-weight:bold;">Found Sources</a>
+    <section class="encapsulated-text py-3 " >
+      <a href="{{url('/found-sources-clicking')}}" style="color:black;font-weight:bold;">Source 1 mention</a>
       </section>
-      <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-      <section>Source 1 mention</section>
-      </div>
   </div>
   <div class="divider-within-class"></div> 
   
   
   <div style="margin-top: 15px;">
-    <section class="encapsulated-text " >
-      <a href="{{url('/found-sources')}}" style="color:#065386;font-weight:bold;">Found Sources</a>
+    <section class="encapsulated-text py-3 " >
+      <a href="{{url('/found-sources-clicking')}}" style="color:black;font-weight:bold;">Source 1 mention</a>
       </section>
-      <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-      <section>Source 1 mention</section>
-      </div>
   </div>
   <div class="divider-within-class"></div> 
   
   <div style="margin-top: 15px;">
   
-        <<section class="encapsulated-text " >
-          <a href="{{url('/found-sources')}}" style="color:#065386;font-weight:bold;">Found Sources</a>
-          </section>
-          <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-          <section>Source 1 mention</section>
-          </div>
+    <section class="encapsulated-text py-3 " >
+      <a href="{{url('/found-sources-clicking')}}" style="color:black;font-weight:bold;">Source 1 mention</a>
+      </section>
   </div>
   <div class="divider-within-class"></div> 
   

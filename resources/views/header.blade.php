@@ -33,6 +33,18 @@
         .btn_primary:hover{
             color:white;
         }
+        
+        .custom-button {
+            border-radius: 6px;
+            background: #065386;
+            color: white;
+        }
+        .custom-button:hover{
+            color: white;
+        }
+        .custom-button i {
+            color: white !important; /* Set icon color to white */
+        }
         .search-local {
             width: 95%;
             /* max-width: 175rem; */
@@ -121,29 +133,30 @@
         {{-- Site Logo --}}
         <div class="row mt-5">
             <div class="col-md-10 mt-5 mb-5">
-                <img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt="">
+                <a href="{{url('/')}}"><img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt=""></a>
                 <br>
                 <img src="{{ asset('images/DrassLogo2.png') }}" alt="">
             </div>
         </div>
-        <div class="col-md-2"></div>
+        {{-- <div class="col-md-2"></div> --}}
         {{-- End --}}
 
         {{-- Search Bar goes here --}}
-        <div class="row top-search-bar">
-            <div class="col-md-9 mb-2">
-                <form>
-                    <div class="search-local">
-                        <input type="text" placeholder="Search Project">
-                        <button>
-                            <i class="fas fa-search fa-light fa-sm " style="color:#f4f7fa; "></i>
-                        </button>
+        <div class="row">
+            <div class="col-md-9">
+                <form class="form-inline w-100">
+                    <div class="input-group w-100">
+                        <input style="font-size: 14px;" type="text" class="form-control w-100" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn custom-button" type="submit">
+                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
-            <div class="col-md-3"> 
-                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn btn-lg btn_primary float-right">Advanced
-                    Search </button></a>
+            <div class="col-md-3">
+                <a href="{{ url('/AdvanceSearch') }}"><button type="button"  class="btn custom-button btn-block">Advanced Search </button></a>
             </div>
         </div>
         {{-- end --}}

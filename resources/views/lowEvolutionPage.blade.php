@@ -280,36 +280,35 @@ th {
 
                                 <table>
                                     <tr>
-                                        <th>Organisation Performing Work</th>
+                                        <th><a href="{{url('/organizations')}}" style="color:#fff"> Organisation Performing Work</a></th>
                                         <th>Code</th>
-                                        <th>Location</th>
+                                        <th><a href="{{url('/locationsPage')}}" style="color:#fff;">Location</a></th>
                                         <th>Description</th>
                                     </tr>
                                     <tr>
-                                        <td><a href="{{ url('/organizations') }}" style="color:black;">State University
+                                        <td><a href="{{ url('/organization-clicking') }}" style="color:black;">State University
                                                 Main Campus</a></td>
                                         <td>23044</td>
                                         <td><a href="{{ url('/location-clicking') }}" style="color:black;">Houston,
                                                 Texas</a></td>
-                                        <td><a href="{{ url('/locationsPage') }}" style="color:black;">This Organisation
+                                        <td><a href="{{ url('/organizations') }}" style="color:black;">This Organisation
                                                 is responisble for Project Finance</a></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="{{ url('/organizations') }}" style="color:black;">State University
+                                        <td><a href="{{ url('/organization-clicking') }}" style="color:black;">State University
                                                 Main Campus</a></td>
                                         <td>23044</td>
                                         <td><a href="{{ url('/location-clicking') }}" style="color:black;">Houston,
                                                 Texas</a></td>
-                                        <td><a href="{{ url('/locationsPage') }}" style="color:black;">This Organisation
+                                        <td><a href="{{ url('/organizations') }}" style="color:black;">This Organisation
                                                 is responisble for Project Finance</a></td>
                                     </tr>
 
 
                                 </table>
-                                <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4">Found
-                                    Source</section>
+                                <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4"><a href="{{ url('/found-sources') }}" style="color:black;">Found Source</a></section>
                                 <section>
-                                    <p>T220 found source name to be found here</p>
+                                    <p><a href="{{ url('/found-sources-clicking') }}" style="color:black;">T220 found source name to be found here</a></p>
                                 </section>
 
                             </div>
@@ -321,18 +320,19 @@ th {
                             <div class="col-md-4">
 
                                 <img src="{{asset('images/planet.png')}}" alt="" style="height:200px;width:auto;">
-                                <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Organization:
+                                <section style="font-weight:bold;margin-top:30px;font-size:16px">
+                                    Project Organization:
                                 </section>
-                                <section><a href="{{ url('/locationsPage') }}"
+                                <section><a href="{{ url('/organizations') }}"
                                         style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
-                                <section><a href="{{ url('/location-clicking') }}" style="color:black;">State University
+                                <section><a href="{{ url('/organization-clicking') }}" style="color:black;">State University
                                         Main Campus</a></section>
 
-                                <section style="font-weight:bold;margin-top:30px;">Legal Entity Role</section>
-                                <section>State University Main Campus</section>
+                                <section style="font-weight:bold;margin-top:30px;"><a style="color:black;" href="{{ url('/legal-entity-roles')}}">Legal Entity Role</a></section>
+                                <section><a href="{{ url('/organization-clicking')}}" style="color:black;">State University Main Campus</a></section>
 
-                                <section style="font-weight:bold;margin-top:30px;">Project</section>
-                                <section>Space technology Research Grant</section>
+                                <section style="font-weight:bold;margin-top:30px;"><a href="{{ url('/low-evolution')}}" style="color:black;">Project</a></section>
+                                <section><a href="{{url('/organization-clicking')}}" style="color:black;">Space technology Research Grant</a></section>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Duration
                                 </section>
                                 <section>
@@ -340,8 +340,8 @@ th {
                                     <p>End : 31 Mar, 2025</p>
                                 </section>
 
-                                <section style="font-weight:bold;margin-top:30px;font-size:16px">Mission Type</section>
-                                <section>Drass mission type defined here.</section>
+                                <section style="font-weight:bold;margin-top:30px;font-size:16px"><a href="{{url('/mission-type')}}" style="color:black;">Mission Type</a></section>
+                                <section><a href="{{url('/mission-type-clicking')}}" style="color:black;">Drass mission type defined here.</a></section>
 
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Maturity
                                     (TRL)</section>
@@ -366,14 +366,14 @@ th {
                 TX01.1 Chemical Space Propulsion</section> -->
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas
                                 </section>
-                                <section>TX01 Propulsion Systems</section>
+                                <section><a href="{{url('/search-results')}}" style="color:black;">TX01 Propulsion Systems</a></section>
                                 <div class="row ml-1">
                                     <svg xmlns="htp://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8"
                                         fill="none">
                                         <line x1="0.5" y1="2.18561e-08" x2="0.5" y2="7" stroke="black" />
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
-                                    <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
+                                    <section style="margin-left:5px;"><a href="{{url('/search-results')}}" style="color:black;">TX01.1 Chemical Space Propulsion</a></section>
                                 </div>
                                 <div class="row" style="margin-left:25px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8"
@@ -381,11 +381,11 @@ th {
                                         <line x1="0.5" y1="2.18561e-08" x2="0.5" y2="7" stroke="black" />
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
-                                    <section style="margin-left:5px;">TX01.1.3 Cryogenic</section>
+                                    <section style="margin-left:5px;"><a href="{{url('/search-results')}}" style="color:black;">TX01.1.3 Cryogenic</a></section>
                                 </div>
-                                <section style="font-weight:bold;margin-top:25px;font-size:16px">Project target
+                                <section style="font-weight:bold;margin-top:25px;font-size:16px"><a href="{{url('/project-targets')}}" style="color:black;">Project target</a>
                                 </section>
-                                <section style="margin-left:5px;">Earth</section>
+                                <section style="margin-left:5px;"><a href="{{url('/project-target-clicking')}}" style="color:black;">Earth</a></section>
                             </div>
                         </div>
                     </div>

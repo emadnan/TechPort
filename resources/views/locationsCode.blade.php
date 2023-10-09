@@ -7,44 +7,32 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-  <section class="encapsulated-text " >
-  <a href="{{url('/locationsPage')}}" style="color:#065386;font-weight:bold;">Locations</a>
+  <section class="encapsulated-text py-3 " >
+  <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
   </section>
-  <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-  <section>Houstan, Texas</section>
-  </div>
+ 
   </div>
   <div class="divider-within-class"></div> 
   
   <div style="margin-top: 15px;">
-    <section class="encapsulated-text " >
-      <a href="{{url('/locationsPage')}}" style="color:#065386;font-weight:bold;">Locations</a>
+    <section class="encapsulated-text py-3 " >
+      <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
       </section>
-      <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-      <section>Houstan, Texas</section>
-      </div>
   </div>
   <div class="divider-within-class"></div> 
   
   
   <div style="margin-top: 15px;">
-    <section class="encapsulated-text " >
-      <a href="{{url('/locationsPage')}}" style="color:#065386;font-weight:bold;">Locations</a>
+    <section class="encapsulated-text py-3 " >
+      <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
       </section>
-      <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-      <section>Houstan, Texas</section>
-      </div>
   </div>
   <div class="divider-within-class"></div> 
   
   <div style="margin-top: 15px;">
-  
-        <<section class="encapsulated-text " >
-          <a href="{{url('/locationsPage')}}" style="color:#065386;font-weight:bold;">Locations</a>
-          </section>
-          <div class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">
-          <section>Houstan, Texas</section>
-          </div>
+    <section class="encapsulated-text py-3 " >
+      <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
+      </section>
   </div>
   <div class="divider-within-class"></div> 
   

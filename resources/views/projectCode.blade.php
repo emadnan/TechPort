@@ -12,7 +12,7 @@
   <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
   
   <section class="encapsulated-text " >
-        <a href="{{url('/')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+        <a href="{{url('/low-evolution')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
         <i  class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;" onclick="toggleSubAnswer(this)"  ></i>
         <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
         <section>This is a project within the Space Technology Research Grants Program </section>
@@ -49,7 +49,7 @@
   <div style="margin-top: 15px;">
 
     <section class="encapsulated-text " >
-      <a href="{{url('/')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+      <a href="{{url('/low-evolution')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
       <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;" onclick="toggleSubAnswer(this)"  ></i>
       <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
       <section>This is a project within the Space Technology Research Grants Program </section>
@@ -85,7 +85,7 @@
 <div class="divider-within-class"></div> 
   <div style="margin-top: 15px;">
     <section class="encapsulated-text " >
-      <a href="{{url('/')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+      <a href="{{url('/low-evolution')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
       <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;" onclick="toggleSubAnswer(this)" ></i>
       <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
       <section>This is a project within the Space Technology Research Grants Program </section>
@@ -121,7 +121,7 @@
   <div style="margin-top: 15px;">
 
     <section class="encapsulated-text " >
-      <a href="{{url('/')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+      <a href="{{url('/low-evolution')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
       <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;" onclick="toggleSubAnswer(this)"></i>
       <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
       <section>This is a project within the Space Technology Research Grants Program </section>
@@ -157,7 +157,7 @@
 <div class="divider-within-class"></div> 
   <div style="margin-top: 15px;">
     <section class="encapsulated-text " >
-      <a href="{{url('/')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
+      <a href="{{url('/low-evolution')}}" style="color:#065386;font-weight:bold;">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</a>
       <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;" onclick="toggleSubAnswer(this)"></i>
       <button style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">Active</button>
       <section>This is a project within the Space Technology Research Grants Program </section>
