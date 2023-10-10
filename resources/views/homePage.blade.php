@@ -393,7 +393,7 @@
 
 <body>
 
-    <div class="container" style="width: 80%">
+    <div class="container" style="width: 100%">
         @include('header')
 
         {{-- section of Drass Taxonomy with background image --}}
@@ -431,7 +431,8 @@
         {{-- end --}}
 
 
-        <div class="faq-container m-0" style=" width:99%">
+        <div class="faq-container m-0" style=" width:100%">
+           
             <!-- parent tile -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswers('answers1')">

@@ -455,9 +455,9 @@
             </div>
         </div>
 
-        <div class="container py-4 my-2" style=" font-size:18px;  border:1px groove #E8E8E8;">
-            <h5 style="font-family: Roboto; font-weight: bold;">Organisation Description:</h5>
-            <section class="pb-4">Considerable design work has been devoted to the development of cryogenic liquid
+        <div class="container py-4 my-2" style="   border:1px groove #E8E8E8;">
+            <h5 style="font-family: Roboto; font-weight: bold; font-size:14px;">Organisation Description:</h5>
+            <section class="pb-2" style="font-size:14px;">Considerable design work has been devoted to the development of cryogenic liquid
                 storage containers. Containers which hold cryogenic liquids such as liquid nitrogen, oxygen, hydrogen,
                 etc. often are double walled vacuum insulated or super insulation flasks, bottles or tanks. Vessels so
                 designed for space applications have the lowest cryogen evaporation rates of any available, but research
