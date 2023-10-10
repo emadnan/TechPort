@@ -300,9 +300,9 @@
 
         }
 
-        @media screen and  (min-width:1200px) {
+        @media screen and  (min-width:1440px) {
             .faq-answer {
-           margin-left: 3.65%;
+           margin-left: 3.6%;
             display: none;
             /* padding: 10px; */
             /* background-color: #f9f9f9; */
@@ -315,8 +315,8 @@
         
         .faq-subanswer {
             display: none;
-            padding-left: 3.3%;
-            margin-left: 3.65%;
+            padding-left: 3.4%;
+            margin-left: 3.6%;
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
@@ -348,7 +348,7 @@
 
         } 
 
-        @media (max-width:1998px) {
+        @media (max-width:1024px) {
             .faq-answer {
            margin-left: 3.7%;
             display: none;
@@ -374,7 +374,7 @@
 
         .fa-angle-right {
             color: white;
-            padding-left: 10px;
+            padding-left: 8px;
             font-size: 24px;
             margin-bottom: 10px;
             margin-top: 10px;
@@ -382,7 +382,7 @@
 
         .fa-angle-down {
             color: white;
-            padding-left: 8px;
+            padding-left: 6px;
             font-size: 24px;
             margin-bottom: 10px;
             margin-top: 10px;
@@ -396,9 +396,9 @@
         }
 
 
-        @media ( max-width:992px) {
+        @media ( max-width:768px) {
             .faq-answer {
-           margin-left: 3.7%;
+           margin-left: 3.65%;
             display: none;
             /* padding: 10px; */
             /* background-color: #f9f9f9; */
@@ -412,7 +412,7 @@
         .faq-subanswer {
             display: none;
             padding-left: 3.3%;
-            margin-left: 3.7%;
+            margin-left: 3.6%;
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
