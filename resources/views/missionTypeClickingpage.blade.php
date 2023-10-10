@@ -463,8 +463,8 @@
 
             @include('projectCode')
             @include('organizationCode')
-            @include('foundSourcesCode')
             @include('locationsCode')
+            @include('foundSourcesCode')
             @include('legalRolesCode')
             @include('projectTargetCode')
         </div>
