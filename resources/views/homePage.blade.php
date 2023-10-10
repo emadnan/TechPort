@@ -560,7 +560,7 @@
 
         .graph-image {
             margin-right: 10px;
-            margin-top: 5px;
+            margin-top: 10px;
             width: 24px;
         }
 
@@ -570,7 +570,7 @@
             right: 0%;
             background: white;
             width: 300px;
-            margin-top: -43px;
+            margin-top: -44px;
         }
 
         /*
@@ -628,9 +628,9 @@
            
             <!-- parent tile -->
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswers('answers1')">
+                <div class="faq-question" >
                     <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                        <i onclick="toggleAnswers('answers1')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01 Propulsion Systems</span>
                         </a>
 
@@ -643,10 +643,10 @@
                 <img src="{{ asset('images/icon-blue.png') }}" alt="" style="width:19px;">
             </div>  -->
                 </div>
-                <div class="faq-answer" id="answers1" onclick="toggleSubAnswers('answers1-1')">
+                <div class="faq-answer" id="answers1" >
                     <div class="divider"></div>
-                    <div class="arrow-icon" id="icon-toggleanswer">
-                        <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                    <div  class="arrow-icon" id="icon-toggleanswer">
+                        <i onclick="toggleSubAnswers('answers1-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 Chemical Space
                                 Propulsion</span>
                         </a>
@@ -658,14 +658,14 @@
 
                     <div class="divider"></div>
                     <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"
-                        onclick="toggleSubAnswersDescreption('sub-answer-description')">
-                        <div id="icon-toggle-description">
-                            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                       >
+                        <div  >
+                            <i id="icon-toggle-description"   onclick="toggleSubAnswersDescreption('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX01.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
                             <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                                class=" float-right graph-image" style="">
+                                class=" float-right graph-image" >
                         </div>
                     </div>
                     <div id="sub-answer-description">
@@ -680,13 +680,55 @@
                     <div class="divider"></div>
 
                     <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
-                        <div class="arrow-icon" id="icon-togglequestion">
+                        <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
                             <i class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1.2 Earth
                                     Storable</span>
                             </a>
                             <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                                class="float-right graph-image">
+                                class="float-right graph-image" onclick="showimage1()">
+                                <div id="myPopup1" class="  graph-pop" style="display: none;  z-index:50;">
+                                    <div class="row m-0" style=" width:100%; background: #323E48">
+                                        <div class="col-md-9 px-2" style="color: white;">
+                                            <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                                            <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                            </section>
+                                        </div>
+                                        <div class="col-3 m-0 px-0"
+                                            style="color: white; padding-top:5px; padding-bottom:8px;">
+                                            <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                                class="float-right"
+                                                style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                                onclick="showimage1()">
+                                        </div>
+                                    </div>
+                                    <section class="my-2 mx-2"
+                                        style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                        (TRL)</section>
+        
+        
+        
+                                    <div class="row my-3">
+                                        <div class="col-2 " style="text-align: center;">
+        
+                                        </div>
+                                        <div class="col-10">
+                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                                class=" float-right my-0" width="100%">
+                                        </div>
+                                    </div>
+                                    <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                                    </h5>
+                                    <h5
+                                        style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                        Projects linked to this taxonomy</h5>
+                                    <button class="btn"
+                                        style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                            Projects</a></button>
+        
+        
+                                </div>
                         </div>
                     </div>
 
@@ -703,9 +745,9 @@
                                 Propulsion</span>
                         </a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                           class="float-right graph-image" onclick="showimage()">
+                           class="float-right graph-image" onclick="showimage2()">
 
-                        <div id="myPopup1" class="  graph-pop" style="display: none;">
+                        <div id="myPopup2" class="  graph-pop" style="display: none;  z-index:49;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
@@ -717,7 +759,7 @@
                                     <img src="{{ asset('images/icon-white.png') }}"alt=""
                                         class="float-right"
                                         style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
-                                        onclick="showimage()">
+                                        onclick="showimage2()">
                                 </div>
                             </div>
                             <section class="my-2 mx-2"
@@ -753,15 +795,15 @@
             <div class="divider"></div>
             <!-- parent tile ends here-->
             <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers2')">
+                <div class="faq-question" >
                     <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
                         <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and
                                 Avionics</span></a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage1()">
+                            class="float-right graph-image" onclick="showimage3()">
 
-                        <div id="myPopup2" class="graph-pop" style="display: none;">
+                        <div id="myPopup3" class="graph-pop" style="display: none;  z-index:48;">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
                                 <div class="col-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
@@ -773,7 +815,7 @@
                                     <img src="{{ asset('images/icon-white.png') }}"alt=""
                                         class="float-right"
                                         style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
-                                        onclick="showimage1()">
+                                        onclick="showimage3()">
                                 </div>
                             </div>
                             <section class="my-2 mx-2"
@@ -942,9 +984,20 @@
                     answer.style.display = 'block';
                 }
             });
-        }
+          const iconElement = document.getElementById("icon-toggle-description");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
 
-        function showimage() {
+        function showimage1() {
             var check = document.getElementById("myPopup1").style.display;
             if (check == "none") {
                 document.getElementById("myPopup1").style.display = "block";
@@ -954,12 +1007,20 @@
 
         }
 
-        function showimage1() {
+        function showimage2() {
             var check = document.getElementById("myPopup2").style.display;
             if (check == "none") {
                 document.getElementById("myPopup2").style.display = "block";
             } else {
                 document.getElementById("myPopup2").style.display = "none";
+            }
+        }
+        function showimage3() {
+            var check = document.getElementById("myPopup3").style.display;
+            if (check == "none") {
+                document.getElementById("myPopup3").style.display = "block";
+            } else {
+                document.getElementById("myPopup3").style.display = "none";
             }
         }
         // function toggleSubAnswers(subAnswerGroup) {
@@ -1045,22 +1106,10 @@
         }
 
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const iconToggle = document.getElementById("icon-toggle-description");
-            const iconElement = iconToggle.querySelector("i");
-
-            iconToggle.addEventListener("click", function() {
-                if (iconElement.classList.contains("fa-angle-right")) {
-                    // Change to the down arrow icon
-                    iconElement.classList.remove("fa-angle-right");
-                    iconElement.classList.add("fa-angle-down");
-                } else {
-                    // Change back to the right arrow icon
-                    iconElement.classList.remove("fa-angle-down");
-                    iconElement.classList.add("fa-angle-right");
-                }
-            });
-        });
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     
+           
+        // });
     </script>
 
 
