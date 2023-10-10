@@ -374,7 +374,7 @@
         .graph-pop {
             border: 1px solid rgba(6, 83, 134, 1);
             position: absolute;
-            right: 12%;
+            right: 0%;
             background: white;
             width: 300px;
             margin-top: -43px;
@@ -431,7 +431,7 @@
         {{-- end --}}
 
 
-        <div class="faq-container m-0" style=" width:100%">
+        <div class="faq-container w-100 m-0" >
            
             <!-- parent tile -->
             <div class="faq-item">
@@ -504,7 +504,7 @@
 
                 <div class="faq-answer" id="answers1">
                     <div class="divider"></div>
-                    <div class="arrow-icon" id="icon-togglequestion">
+                    <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
                         <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.2 Electric Space
                                 Propulsion</span>
@@ -514,7 +514,7 @@
 
                         <div id="myPopup1" class="  graph-pop" style="display: none;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
-                                <div class="col-9 px-2" style="color: white;">
+                                <div class="col-md-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
                                     <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
                                     </section>
@@ -561,7 +561,7 @@
             <!-- parent tile ends here-->
             <div class="faq-item">
                 <div class="faq-question" onclick="//toggleAnswers('answers2')">
-                    <div class="arrow-icon" id="icon-togglequestion">
+                    <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
                         <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and
                                 Avionics</span></a>
