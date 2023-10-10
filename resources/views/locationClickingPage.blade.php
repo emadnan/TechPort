@@ -360,9 +360,9 @@
                             <div class="row" style="margin-left:5px;padding:10px;">
                                 <div class="col-md-2.9">
                                     <div class="yellow-square ">
-                                        <section style="font-size:40px;">16,806</section>
-                                        <section>Projects found</section>
-                                        <button class="btn btn-custom">Modify Search</button>
+                                        <section style="font-size:40px; padding-top:0px;">16,806</section>
+                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found</section>
+                                        <button class="btn btn-custom" ><a style="text-decoration: none; color:black;" href="{{url('/AdvanceSearch')}}"> Modify Search</a></button>
                                     </div>
                                 </div>
 
