@@ -246,7 +246,6 @@
     }
     .fa-solid{
         margin-right:10px;
-        
     }
 </style>
 
@@ -304,7 +303,7 @@
         <div class="faq-container mt-1">
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Sort Order<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
+                        style="float: right;margin-top:8px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="dropdown show">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -324,7 +323,7 @@
             <div class="divider"></div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                        class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="row">
                         <div class="col-4">
@@ -369,7 +368,7 @@
             <!-- Add more FAQ items as needed -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Status<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
+                        style="float: right;margin-top:8px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="container">
                         <div class="row">
@@ -419,7 +418,7 @@
             <!-- Add more FAQ items as needed -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Active Date<i class="fa-solid fa-chevron-down"
-                        style="float: right;margin-top:10px;"></i></div>
+                        style="float: right;margin-top:8px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="row">
                         <div class="col-2">
@@ -504,7 +503,7 @@
             <!-- Add more FAQ items as needed -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Technology Area<i
-                        class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                        class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="qa-container">
                         <div class="qa-question">
@@ -540,7 +539,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Locations<i class="fa-solid fa-chevron-down"
-                    style="float: right;margin-top:10px;"></i></div>
+                    style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
 
                 <!-- ///////////Multiple check box Starts -->
@@ -712,7 +711,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Technology Maturity<i
-                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="col-md-3">
                     <div class="form-check">
@@ -854,7 +853,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Target Destinations<i
-                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="container">
                     <div class="row">
@@ -954,7 +953,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Legal Entities<i class="fa-solid fa-chevron-down"
-                    style="float: right;margin-top:10px;"></i></div>
+                    style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="container">
                     <div class="row">
@@ -1142,7 +1141,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Mission Type<i class="fa-solid fa-chevron-down"
-                    style="float: right;margin-top:10px;"></i></div>
+                    style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="container">
                     <div class="row">
@@ -1225,7 +1224,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i
-                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="container">
                     <div class="row">
@@ -1428,7 +1427,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Supporting Organizations<i
-                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="row">
                     <div class="col-4">
@@ -1500,7 +1499,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fa-solid fa-chevron-down"
-                    style="float: right;margin-top:10px;"></i></div>
+                    style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="row mt-2">
                     {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
@@ -1563,7 +1562,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i
-                    class="fa-solid fa-chevron-down" style="float: right;margin-top:10px;"></i></div>
+                    class="fa-solid fa-chevron-down" style="float: right;margin-top:8px;"></i></div>
             <div class="faq-answer" style="display: none;">
 
                 <div class="row">
@@ -1865,7 +1864,7 @@
         <div class="divider"></div>
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Found Sources<i onclick="myFunction(this)"
-                    class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right;" id="icon"></i>
+                    class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right; margin-top:8px;" id="icon"></i>
             </div>
             <div class="faq-answer" style="display: none;">
                 <div class="row">
@@ -1912,7 +1911,7 @@
         <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">TechPort ID <i onclick="myFunction(this)"
-                    class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right;" id="icon"></i>
+                    class="fa-solid fa-chevron-down faq-toggle-icon" style="float: right; margin-top:8px;" id="icon"></i>
             </div>
             <div class="faq-answer" style="display: none;">
                 <div class="dropdown show">
