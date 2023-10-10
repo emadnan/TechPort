@@ -474,7 +474,7 @@
             @include('projectTargetCode')
 
         </div>
-
+</div>
 @include('footer')
 
 
