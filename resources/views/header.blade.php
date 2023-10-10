@@ -141,7 +141,7 @@
     <div class="col-md-10 mt-5 mb-5">
         <a href="{{ url('/') }}"><img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt=""></a>
         <br>
-        <img src="{{ asset('images/DrassLogo2.png') }}" alt="">
+        <a href="{{ url('/') }}"><img src="{{ asset('images/DrassLogo2.png') }}" alt=""></a>
     </div>
 </div>
 {{-- <div class="col-md-2"></div> --}}
