@@ -299,6 +299,53 @@
           
 
         }
+        @media screen and  (min-width:1440px) {
+            .faq-answer {
+           margin-left: 40px;
+            display: none;
+            /* padding: 10px; */
+            /* background-color: #f9f9f9; */
+            /* border-left: 20px solid #007bff; */
+             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
+            cursor: pointer;
+            font-size: 18px;
+          
+        }
+        
+        .faq-subanswer {
+            display: none;
+            padding-left: 38px;
+            margin-left: 40px;
+            background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
+            cursor: pointer;
+            font-size: 18px;
+            
+
+        }
+
+        .fa-angle-right {
+            color: white;
+            padding-left: 10px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .fa-angle-down {
+            color: white;
+            padding-left: 8px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .custom-image {
+    
+            width: 114.4%;
+          
+        }
+
+        } 
 
         @media screen and  (max-width:1440px) {
             .faq-answer {
@@ -593,7 +640,7 @@
                     </div>
 
                     <!-- <div class="graph-image float-right">
-                <img src="{{ asset('images/icon-black.png') }}" alt="" style="width:19px;">
+                <img src="{{ asset('images/icon-blue.png') }}" alt="" style="width:19px;">
             </div>  -->
                 </div>
                 <div class="faq-answer" id="answers1" onclick="toggleSubAnswers('answers1-1')">
@@ -603,8 +650,8 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
-                            style="width:30px;margin-right:7px;margin-top:2px;" class="float-right">
+                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                           class="float-right graph-image">
                     </div>
                 </div>
                 <div class="faq-subanswer" id="answers1-1">
@@ -617,7 +664,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX01.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-black.png') }}" alt=""
+                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
                                 class=" float-right graph-image" style="">
                         </div>
                     </div>
@@ -638,7 +685,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-black.png') }}" alt=""
+                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
                                 class="float-right graph-image">
                         </div>
                     </div>
@@ -655,8 +702,8 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
-                            style="width:30px;margin-right:7px;margin-top:2px;" class="float-right" onclick="showimage()">
+                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                           class="float-right graph-image" onclick="showimage()">
 
                         <div id="myPopup1" class="  graph-pop" style="display: none;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
