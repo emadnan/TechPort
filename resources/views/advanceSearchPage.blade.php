@@ -246,6 +246,7 @@
     }
     .fa-solid{
         margin-right:10px;
+        
     }
 </style>
 
