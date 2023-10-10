@@ -71,5 +71,5 @@ Route::get('/legal-entity-roles-clicking', function () {
     return view('legalEntityClickingPage');
 });
 Route::get('/project-target-clicking', function () {
-    return view('projectTargetClickingpage');
+    return view('projectTargetClickingPage');
 });
