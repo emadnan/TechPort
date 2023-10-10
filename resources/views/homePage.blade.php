@@ -328,8 +328,8 @@
 
         .faq-subanswer {
             display: none;
-            padding-left: 32px;
-            margin-left: 35px;
+            padding-left: 33px;
+            margin-left: 36px;
             background: linear-gradient(to right, #FFA800 3.5%, #E8E8E8 2%);
             cursor: pointer;
             font-size: 18px;
