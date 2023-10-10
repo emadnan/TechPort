@@ -300,7 +300,7 @@
 
         }
 
-        @media screen and  (min-width:1440px) {
+        @media screen and  (max-width:1440px) {
             .faq-answer {
            margin-left: 3.6%;
             display: none;
