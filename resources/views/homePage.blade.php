@@ -3344,14 +3344,14 @@
 
         </div>
 
-   
+    </div>
+
     <div style="margin-top:200px"></div>
 
     <footer>
         @include('footer')
     </footer>
 
-</div>
 
     <script>
         function showimage(element) {

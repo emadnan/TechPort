@@ -477,13 +477,13 @@
         </div>
 
 
-
-        <div style="margin-top:100px"></div>
+    </div>
+        <div style="margin-top:200px"></div>
  
         <footer>
             @include('footer')
         </footer>
-    </div>
+    
 
 
     <script>

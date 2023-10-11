@@ -412,7 +412,7 @@
                 </div>
             </div>
         </div>
-    
+    </div>
     
 
 
@@ -424,7 +424,7 @@
     <footer>
         @include('footer')
     </footer>
-</div>
+
 </body>
 
 </html>

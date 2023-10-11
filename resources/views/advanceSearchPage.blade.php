@@ -1934,7 +1934,7 @@
             <button class="btn btn-primary float-right"
                 style="width:200px; background:#065386; margin-top:30px;">Search</button>
         </a>
-    
+    </div>
 
 
     
@@ -1947,7 +1947,7 @@
     <footer>
         @include('footer')
     </footer>
-</div>
+
     <script>
         const questions = document.querySelectorAll('.qa-question');
 

@@ -87,12 +87,12 @@
 
     .text-in-image {
         position: absolute;
-            top: 25px;
-            left: 10px;
-            margin-left: 4%;
-            color: white;
-            font-size: 28px;
-            font-weight: 700;
+        top: 25px;
+        left: 10px;
+        margin-left: 4%;
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
 
     }
 
@@ -450,7 +450,7 @@
     </div>
 
 
-    </div>
+   
 
 
     <div style="margin-top:200px"></div>
