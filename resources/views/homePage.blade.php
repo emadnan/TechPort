@@ -281,7 +281,7 @@
             max-width: 100%;
             margin: 0 auto;
             /* padding-left: 10px; */
-            padding-top: 5px;
+            padding-top: 0px;
             background: linear-gradient(to right, #065386 3.5%, #E8E8E8 2%);
             cursor: pointer;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -626,71 +626,132 @@
 
         <div class="faq-container w-100 m-0" >
            
+            
             <!-- parent tile -->
+
             <div class="faq-item">
+                
                 <div class="faq-question" >
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i onclick="toggleAnswers('answers1')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                    <div class="arrow-icon" id="icon-togglequestion1" style="position: relative;">
+                        <i onclick="toggleAnswers1('answers1')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01 Propulsion Systems</span>
                         </a>
 
-                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image">
+                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+                       
+                        <div  class="graph-pop" style="display: none;  z-index:50;">
+                            <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                                <div class="col-md-9 px-2" style="color: white;">
+                                    <section style="font-size: 12px; margin-top:4px; ">TX01</section>
+                                    <section style="font-size: 14px; font-weight:500;">Propulsion Systems
+                                    </section>
+                                </div>
+                                <div class="col-3 m-0 px-0"
+                                    style="color: white; padding-top:5px; padding-bottom:8px;">
+                                    <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                        class="float-right"
+                                        style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                        onclick="hideimage(this)">
+                                </div>
+                            </div>
+                            <section class="my-2 mx-2"
+                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                (TRL)</section>
 
 
+                            <div class="row my-3">
+                                <div class="col-2 " style="text-align: center;">
+
+                                </div>
+                                <div class="col-10">
+                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                        class=" float-right my-0" width="100%">
+                                </div>
+                            </div>
+                            <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                            </h5>
+                            <h5
+                                style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                Projects linked to this taxonomy</h5>
+                            <button class="btn"
+                                style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1); margin-bottom:23px;"><a
+                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    Projects</a></button>
+
+
+
+                        </div>
                     </div>
-
-                    <!-- <div class="graph-image float-right">
-                <img src="{{ asset('images/icon-blue.png') }}" alt="" style="width:19px;">
-            </div>  -->
                 </div>
-                <div class="faq-answer" id="answers1" >
+
+                <div class="faq-answer" id="answers1">
                     <div class="divider"></div>
-                    <div  class="arrow-icon" id="icon-toggleanswer">
-                        <i onclick="toggleSubAnswers('answers1-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 Chemical Space
+                    <div class="arrow-icon"  style="position:relative;">
+                        <i id="icon-toggleanswer1" onclick="toggleSubAnswers1('answers1-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1  Chemical Space Propulsion
                                 Propulsion</span>
                         </a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                           class="float-right graph-image">
+                           class="float-right graph-image" onclick="showimage(this)">
+
+                        <div class="  graph-pop" style="display: none;  z-index:49;">
+                            <div class="row m-0" style=" width:100%; background: #FFA800">
+                                <div class="col-md-9 px-2" style="color: white;">
+                                    <section style="font-size: 12px; margin-top:4px; ">TX01.1</section>
+                                    <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                    </section>
+                                </div>
+                                <div class="col-3 m-0 px-0"
+                                    style="color: white; padding-top:5px; padding-bottom:8px;">
+                                    <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                        class="float-right"
+                                        style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                        onclick="hideimage(this)">
+                                </div>
+                            </div>
+                            <section class="my-2 mx-2"
+                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                (TRL)</section>
+
+
+                            <div class="row my-3">
+                                <div class="col-2 " style="text-align: center;">
+
+                                </div>
+                                <div class="col-10">
+                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                        class=" float-right my-0" width="100%">
+                                </div>
+                            </div>
+                            <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                            </h5>
+                            <h5
+                                style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                Projects linked to this taxonomy</h5>
+                            <button class="btn"
+                                style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    Projects</a></button>
+
+
+                        </div>
                     </div>
                 </div>
-                <div class="faq-subanswer" id="answers1-1">
 
+                <div class="faq-subanswer" id="answers1-1" style="position: relative;">
                     <div class="divider"></div>
-                    <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"
-                       >
-                        <div  >
-                            <i id="icon-toggle-description"   onclick="toggleSubAnswersDescreption('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"><div>
+                            <i id="icon-toggle-description1"   onclick="toggleSubAnswersDescreption1('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX01.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
                             <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                                class=" float-right graph-image" >
-                        </div>
-                    </div>
-                    <div id="sub-answer-description">
-                        <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
-                        <section style="padding-left:50px;padding-right:50px;font-size:17px;">
-                            For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
-                            systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
-                            propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
-                            in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
-                        </section>
-                    </div>
-                    <div class="divider"></div>
+                                class=" float-right graph-image" onclick="showimage(this)" >
 
-                    <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
-                        <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
-                            <i class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
-                                <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1.2 Earth
-                                    Storable</span>
-                            </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                                class="float-right graph-image" onclick="showimage1()">
-                                <div id="myPopup1" class="  graph-pop" style="display: none;  z-index:50;">
+                                <div class="graph-pop" style="display: none;  z-index:48;">
                                     <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
-                                            <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                                            <section style="font-size: 12px; margin-top:4px; ">TX01.1.1</section>
                                             <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
                                             </section>
                                         </div>
@@ -699,13 +760,12 @@
                                             <img src="{{ asset('images/icon-white.png') }}"alt=""
                                                 class="float-right"
                                                 style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
-                                                onclick="showimage1()">
+                                                onclick="hideimage(this)">
                                         </div>
                                     </div>
                                     <section class="my-2 mx-2"
                                         style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
                                         (TRL)</section>
-        
         
         
                                     <div class="row my-3">
@@ -728,6 +788,71 @@
                                             Projects</a></button>
         
         
+        
+                                </div>
+
+                        </div>
+                    </div>
+                    <div id="sub-answer-description">
+                        <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
+                        <section style="padding-left:50px;padding-right:50px;font-size:17px;">
+                            For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
+                            systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
+                            propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
+                            in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </section>
+                    </div>
+                    <div class="divider"></div>
+
+                    <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+                        <div class="arrow-icon" style="position:relative;">
+                            <i  id="icon-toggle-description1" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                                <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1.2 Earth
+                                    Storable</span>
+                            </a>
+                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                                class="float-right graph-image" onclick="showimage(this)">
+                                <div class="  graph-pop" style="display: none;  z-index:47;">
+                                    <div class="row m-0" style=" width:100%; background: #323E48">
+                                        <div class="col-md-9 px-2" style="color: white;">
+                                            <section style="font-size: 12px; margin-top:4px; ">TX01.1.2</section>
+                                            <section style="font-size: 14px; font-weight:500;">Earth Storable
+                                            </section>
+                                        </div>
+                                        <div class="col-3 m-0 px-0"
+                                            style="color: white; padding-top:5px; padding-bottom:8px;">
+                                            <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                                class="float-right"
+                                                style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                                onclick="hideimage(this)">
+                                        </div>
+                                    </div>
+                                    <section class="my-2 mx-2"
+                                        style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                        (TRL)</section>
+        
+        
+                                    <div class="row my-3">
+                                        <div class="col-2 " style="text-align: center;">
+        
+                                        </div>
+                                        <div class="col-10">
+                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                                class=" float-right my-0" width="100%">
+                                        </div>
+                                    </div>
+                                    <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                                    </h5>
+                                    <h5
+                                        style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                        Projects linked to this taxonomy</h5>
+                                    <button class="btn"
+                                        style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                            Projects</a></button>
+        
+        
+        
                                 </div>
                         </div>
                     </div>
@@ -739,19 +864,19 @@
 
                 <div class="faq-answer" id="answers1">
                     <div class="divider"></div>
-                    <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
-                        <i class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                    <div class="arrow-icon"  style="position:relative;">
+                        <i id="icon-toggleanswer1" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.2 Electric Space
                                 Propulsion</span>
                         </a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                           class="float-right graph-image" onclick="showimage2()">
+                           class="float-right graph-image" onclick="showimage(this)">
 
-                        <div id="myPopup2" class="  graph-pop" style="display: none;  z-index:49;">
+                        <div class="  graph-pop" style="display: none;  z-index:46;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <section style="font-size: 12px; margin-top:4px; ">TX02</section>
-                                    <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                    <section style="font-size: 12px; margin-top:4px; ">TX01.2</section>
+                                    <section style="font-size: 14px; font-weight:500;">Electric Space Propulsion
                                     </section>
                                 </div>
                                 <div class="col-3 m-0 px-0"
@@ -759,13 +884,12 @@
                                     <img src="{{ asset('images/icon-white.png') }}"alt=""
                                         class="float-right"
                                         style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
-                                        onclick="showimage2()">
+                                        onclick="hideimage(this)">
                                 </div>
                             </div>
                             <section class="my-2 mx-2"
                                 style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
                                 (TRL)</section>
-
 
 
                             <div class="row my-3">
@@ -793,19 +917,23 @@
                 </div>
             </div>
             <div class="divider"></div>
-            <!-- parent tile ends here-->
-            <div class="faq-item">
-                <div class="faq-question" >
-                    <div class="arrow-icon" id="icon-togglequestion" style="position:relative;">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and
-                                Avionics</span></a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage3()">
+            <!-- First menue tx01 ends here-->
 
-                        <div id="myPopup3" class="graph-pop" style="display: none;  z-index:48;">
-                            <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1)">
-                                <div class="col-9 px-2" style="color: white;">
+
+            
+            <div class="faq-item">
+                
+                <div class="faq-question" >
+                    <div class="arrow-icon" id="icon-togglequestion2" style="position: relative;">
+                        <i onclick="toggleAnswers2('answers2')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and Avionics</span>
+                        </a>
+
+                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+                       
+                        <div  class="graph-pop" style="display: none;  z-index:45;">
+                            <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                                <div class="col-md-9 px-2" style="color: white;">
                                     <section style="font-size: 12px; margin-top:4px; ">TX02</section>
                                     <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
                                     </section>
@@ -815,13 +943,12 @@
                                     <img src="{{ asset('images/icon-white.png') }}"alt=""
                                         class="float-right"
                                         style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
-                                        onclick="showimage3()">
+                                        onclick="hideimage(this)">
                                 </div>
                             </div>
                             <section class="my-2 mx-2"
                                 style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
                                 (TRL)</section>
-
 
 
                             <div class="row my-3">
@@ -839,133 +966,1410 @@
                                 style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
                                 Projects linked to this taxonomy</h5>
                             <button class="btn"
-                                style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1);margin-bottom:23px;"><a
+                                style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1); margin-bottom:23px;"><a
+                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    Projects</a></button>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-answer" id="answers2">
+                    <div class="divider"></div>
+                    <div class="arrow-icon"  style="position:relative;">
+                        <i id="icon-toggleanswer2" onclick="toggleSubAnswers2('answers2-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1  Chemical Space Propulsion
+                                Propulsion</span>
+                        </a>
+                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                           class="float-right graph-image" onclick="showimage(this)">
+
+                        <div class="  graph-pop" style="display: none;  z-index:44;">
+                            <div class="row m-0" style=" width:100%; background: #FFA800">
+                                <div class="col-md-9 px-2" style="color: white;">
+                                    <section style="font-size: 12px; margin-top:4px; ">TX02.1</section>
+                                    <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                    </section>
+                                </div>
+                                <div class="col-3 m-0 px-0"
+                                    style="color: white; padding-top:5px; padding-bottom:8px;">
+                                    <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                        class="float-right"
+                                        style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                        onclick="hideimage(this)">
+                                </div>
+                            </div>
+                            <section class="my-2 mx-2"
+                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                (TRL)</section>
+
+
+                            <div class="row my-3">
+                                <div class="col-2 " style="text-align: center;">
+
+                                </div>
+                                <div class="col-10">
+                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                        class=" float-right my-0" width="100%">
+                                </div>
+                            </div>
+                            <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                            </h5>
+                            <h5
+                                style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                Projects linked to this taxonomy</h5>
+                            <button class="btn"
+                                style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
                                     style="color:white;" href="{{ url('/search-results') }}">Find Linked
                                     Projects</a></button>
 
 
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- <div class="faq-answer" id="answers2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
-            </div>
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers3')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX03 Aerospace Power and
-                                Energy
-                                Storage</span></a>
+                <div class="faq-subanswer" id="answers2-1" style="position: relative;">
+                    <div class="divider"></div>
+                    <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"><div>
+                            <i id="icon-toggle-description2"   onclick="toggleSubAnswersDescreption2('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                                <a href="{{ url('/search-results') }}" style="color:#000000">
+                                    TX02.1.1 Integrated Systems and Ancillary Technologies</span>
+                            </a>
+                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                                class=" float-right graph-image" onclick="showimage(this)" >
+
+                                <div class="graph-pop" style="display: none;  z-index:43;">
+                                    <div class="row m-0" style=" width:100%; background: #323E48">
+                                        <div class="col-md-9 px-2" style="color: white;">
+                                            <section style="font-size: 12px; margin-top:4px; ">TX02.1.1</section>
+                                            <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                            </section>
+                                        </div>
+                                        <div class="col-3 m-0 px-0"
+                                            style="color: white; padding-top:5px; padding-bottom:8px;">
+                                            <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                                class="float-right"
+                                                style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                                onclick="hideimage(this)">
+                                        </div>
+                                    </div>
+                                    <section class="my-2 mx-2"
+                                        style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                        (TRL)</section>
+        
+        
+                                    <div class="row my-3">
+                                        <div class="col-2 " style="text-align: center;">
+        
+                                        </div>
+                                        <div class="col-10">
+                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                                class=" float-right my-0" width="100%">
+                                        </div>
+                                    </div>
+                                    <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                                    </h5>
+                                    <h5
+                                        style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                        Projects linked to this taxonomy</h5>
+                                    <button class="btn"
+                                        style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                            Projects</a></button>
+        
+        
+        
+                                </div>
+
+                        </div>
+                    </div>
+                    <div id="sub-answer-description">
+                        <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
+                        <section style="padding-left:50px;padding-right:50px;font-size:17px;">
+                            For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
+                            systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
+                            propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
+                            in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                        </section>
+                    </div>
+                    <div class="divider"></div>
+
+                    <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+                        <div class="arrow-icon" style="position:relative;">
+                            <i id="icon-toggle-description2" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1.2 Earth
+                                    Storable</span>
+                            </a>
+                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                                class="float-right graph-image" onclick="showimage(this)">
+                                <div class="  graph-pop" style="display: none;  z-index:42;">
+                                    <div class="row m-0" style=" width:100%; background: #323E48">
+                                        <div class="col-md-9 px-2" style="color: white;">
+                                            <section style="font-size: 12px; margin-top:4px; ">TX02.1.2</section>
+                                            <section style="font-size: 14px; font-weight:500;">Earth Storable
+                                            </section>
+                                        </div>
+                                        <div class="col-3 m-0 px-0"
+                                            style="color: white; padding-top:5px; padding-bottom:8px;">
+                                            <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                                class="float-right"
+                                                style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                                onclick="hideimage(this)">
+                                        </div>
+                                    </div>
+                                    <section class="my-2 mx-2"
+                                        style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                        (TRL)</section>
+        
+        
+                                    <div class="row my-3">
+                                        <div class="col-2 " style="text-align: center;">
+        
+                                        </div>
+                                        <div class="col-10">
+                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                                class=" float-right my-0" width="100%">
+                                        </div>
+                                    </div>
+                                    <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                                    </h5>
+                                    <h5
+                                        style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                        Projects linked to this taxonomy</h5>
+                                    <button class="btn"
+                                        style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                            Projects</a></button>
+        
+        
+        
+                                </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="divider"></div>  -->
+                </div>
+
+                <div class="faq-answer" id="answers2">
+                    <div class="divider"></div>
+                    <div class="arrow-icon"  style="position:relative;">
+                        <i id="icon-toggleanswer2" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX02.2 Electric Space
+                                Propulsion</span>
+                        </a>
                         <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
+                           class="float-right graph-image" onclick="showimage(this)">
+
+                        <div class="  graph-pop" style="display: none;  z-index:41;">
+                            <div class="row m-0" style=" width:100%; background: #FFA800">
+                                <div class="col-md-9 px-2" style="color: white;">
+                                    <section style="font-size: 12px; margin-top:4px; ">TX02.2</section>
+                                    <section style="font-size: 14px; font-weight:500;">Electric Space Propulsion
+                                    </section>
+                                </div>
+                                <div class="col-3 m-0 px-0"
+                                    style="color: white; padding-top:5px; padding-bottom:8px;">
+                                    <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                        class="float-right"
+                                        style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                        onclick="hideimage(this)">
+                                </div>
+                            </div>
+                            <section class="my-2 mx-2"
+                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                                (TRL)</section>
+
+
+                            <div class="row my-3">
+                                <div class="col-2 " style="text-align: center;">
+
+                                </div>
+                                <div class="col-10">
+                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                        class=" float-right my-0" width="100%">
+                                </div>
+                            </div>
+                            <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                            </h5>
+                            <h5
+                                style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                                Projects linked to this taxonomy</h5>
+                            <button class="btn"
+                                style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    Projects</a></button>
+
+
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
             </div>
-
-
             <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers4')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">
-                                TX04 Robotic Systems</span></a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
+<!-- second menue tx01 ends here-->
+
+<div class="faq-item">
+                
+    <div class="faq-question" >
+        <div class="arrow-icon" id="icon-togglequestion3" style="position: relative;">
+            <i onclick="toggleAnswers3('answers3')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and Avionics</span>
+            </a>
+
+            <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+           
+            <div  class="graph-pop" style="display: none;  z-index:40;">
+                <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
                     </div>
                 </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
-            </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
 
 
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers5')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX05 Communications,
-                                Navigation, and Orbital Debris Tracking and Characterization</span></a> <img
-                            src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
 
                     </div>
-                </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
-            </div>
-
-
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers6')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX06 Human Health, Life
-                                Support, and Habitation Systems</span></a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
                     </div>
                 </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
-            </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1); margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
 
 
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers7')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX07 Exploration Destination
-                                Systems</span></a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
-                    </div>
-                </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
-            </div>
 
-
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers8')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX08 Sensors and
-                                Instruments</span></a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
-                    </div>
-                </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
-            </div>
-
-
-            <div class="divider"></div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="//toggleAnswers('answers9')">
-                    <div class="arrow-icon" id="icon-togglequestion">
-                        <i class="fa-solid fa-angle-right"></i><span style="padding-left:26px">
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX09 Entry, Descent, and
-                                Landing</span></a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image">
-                    </div>
-                </div>
-                <!-- <div class="faq-answer" id="answers3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-            <div class="faq-answer" id="answers3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div> -->
             </div>
         </div>
+    </div>
+
+    <div class="faq-answer" id="answers3">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer3" onclick="toggleSubAnswers3('answers3-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1  Chemical Space Propulsion
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:39;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.1</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-subanswer" id="answers3-1" style="position: relative;">
+        <div class="divider"></div>
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"><div>
+                <i id="icon-toggle-description3"   onclick="toggleSubAnswersDescreption3('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">
+                        TX02.1.1 Integrated Systems and Ancillary Technologies</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class=" float-right graph-image" onclick="showimage(this)" >
+
+                    <div class="graph-pop" style="display: none;  z-index:38;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.1</section>
+                                <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+
+            </div>
+        </div>
+        <div id="sub-answer-description">
+            <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
+            <section style="padding-left:50px;padding-right:50px;font-size:17px;">
+                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
+                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
+                propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
+                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+            </section>
+        </div>
+        <div class="divider"></div>
+
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+            <div class="arrow-icon" style="position:relative;">
+                <i id="icon-toggle-description3" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1.2 Earth
+                        Storable</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class="float-right graph-image" onclick="showimage(this)">
+                    <div class="  graph-pop" style="display: none;  z-index:37;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.2</section>
+                                <section style="font-size: 14px; font-weight:500;">Earth Storable
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="divider"></div>  -->
+    </div>
+
+    <div class="faq-answer" id="answers3">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer3" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.2 Electric Space
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:36;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.2</section>
+                        <section style="font-size: 14px; font-weight:500;">Electric Space Propulsion
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+<div class="faq-item">
+                
+    <div class="faq-question" >
+        <div class="arrow-icon" id="icon-togglequestion4" style="position: relative;">
+            <i onclick="toggleAnswers4('answers4')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and Avionics</span>
+            </a>
+
+            <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+           
+            <div  class="graph-pop" style="display: none;  z-index:35;">
+                <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1); margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-answer" id="answers4">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer4" onclick="toggleSubAnswers4('answers4-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1  Chemical Space Propulsion
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:34;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.1</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-subanswer" id="answers4-1" style="position: relative;">
+        <div class="divider"></div>
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"><div>
+                <i id="icon-toggle-description4"   onclick="toggleSubAnswersDescreption4('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">
+                        TX02.1.1 Integrated Systems and Ancillary Technologies</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class=" float-right graph-image" onclick="showimage(this)" >
+
+                    <div class="graph-pop" style="display: none;  z-index:33;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.1</section>
+                                <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+
+            </div>
+        </div>
+        <div id="sub-answer-description">
+            <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
+            <section style="padding-left:50px;padding-right:50px;font-size:17px;">
+                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
+                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
+                propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
+                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+            </section>
+        </div>
+        <div class="divider"></div>
+
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+            <div class="arrow-icon" style="position:relative;">
+                <i id="icon-toggle-description4" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1.2 Earth
+                        Storable</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class="float-right graph-image" onclick="showimage(this)">
+                    <div class="  graph-pop" style="display: none;  z-index:32;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.2</section>
+                                <section style="font-size: 14px; font-weight:500;">Earth Storable
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="divider"></div>  -->
+    </div>
+
+    <div class="faq-answer" id="answers4">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer4" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.2 Electric Space
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:31;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.2</section>
+                        <section style="font-size: 14px; font-weight:500;">Electric Space Propulsion
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+<div class="faq-item">
+                
+    <div class="faq-question" >
+        <div class="arrow-icon" id="icon-togglequestion5" style="position: relative;">
+            <i onclick="toggleAnswers5('answers5')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and Avionics</span>
+            </a>
+
+            <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+           
+            <div  class="graph-pop" style="display: none;  z-index:30;">
+                <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1); margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-answer" id="answers5">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer5" onclick="toggleSubAnswers5('answers5-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1  Chemical Space Propulsion
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:29;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.1</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-subanswer" id="answers5-1" style="position: relative;">
+        <div class="divider"></div>
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"><div>
+                <i id="icon-toggle-description5"   onclick="toggleSubAnswersDescreption5('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">
+                        TX02.1.1 Integrated Systems and Ancillary Technologies</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class=" float-right graph-image" onclick="showimage(this)" >
+
+                    <div class="graph-pop" style="display: none;  z-index:28;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.1</section>
+                                <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+
+            </div>
+        </div>
+        <div id="sub-answer-description">
+            <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
+            <section style="padding-left:50px;padding-right:50px;font-size:17px;">
+                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
+                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
+                propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
+                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+            </section>
+        </div>
+        <div class="divider"></div>
+
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+            <div class="arrow-icon" style="position:relative;">
+                <i id="icon-toggle-description5" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1.2 Earth
+                        Storable</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class="float-right graph-image" onclick="showimage(this)">
+                    <div class="  graph-pop" style="display: none;  z-index:27;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.2</section>
+                                <section style="font-size: 14px; font-weight:500;">Earth Storable
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="divider"></div>  -->
+    </div>
+
+    <div class="faq-answer" id="answers5">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer5" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.2 Electric Space
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:26;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.2</section>
+                        <section style="font-size: 14px; font-weight:500;">Electric Space Propulsion
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+<div class="faq-item">
+                
+    <div class="faq-question" >
+        <div class="arrow-icon" id="icon-togglequestion6" style="position: relative;">
+            <i onclick="toggleAnswers6('answers6')" class="fa-solid fa-angle-right"></i> <span style="padding-left:22px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02 Flight Computing and Avionics</span>
+            </a>
+
+            <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+           
+            <div  class="graph-pop" style="display: none;  z-index:25;">
+                <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: rgba(6, 83, 134, 1); margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-answer" id="answers6">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer6" onclick="toggleSubAnswers6('answers6-1')" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1  Chemical Space Propulsion
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:24;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.1</section>
+                        <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-subanswer" id="answers6-1" style="position: relative;">
+        <div class="divider"></div>
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;"><div>
+                <i id="icon-toggle-description6"   onclick="toggleSubAnswersDescreption6('sub-answer-description')" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">
+                        TX02.1.1 Integrated Systems and Ancillary Technologies</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class=" float-right graph-image" onclick="showimage(this)" >
+
+                    <div class="graph-pop" style="display: none;  z-index:23;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.1</section>
+                                <section style="font-size: 14px; font-weight:500;">Flight Computing and Avionics
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+
+            </div>
+        </div>
+        <div id="sub-answer-description">
+            <div style="margin-left:50px; font-size:17px;font-weight:bold">Example Technologies</div>
+            <section style="padding-left:50px;padding-right:50px;font-size:17px;">
+                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction control
+                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors, abort
+                propulsion systems, propellant storage and transfer, nanocomposites, green propellants. For
+                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+            </section>
+        </div>
+        <div class="divider"></div>
+
+        <div style="background: linear-gradient(to right, #323E48 4%, #E8E8E8 2%);margin-left:1px;">
+            <div class="arrow-icon" style="position:relative;">
+                <i id="icon-toggle-description6" class="fa-solid fa-angle-right"></i> <span style="padding-left:30px;">
+                    <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1.2 Earth
+                        Storable</span>
+                </a>
+                <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                    class="float-right graph-image" onclick="showimage(this)">
+                    <div class="  graph-pop" style="display: none;  z-index:22;">
+                        <div class="row m-0" style=" width:100%; background: #323E48">
+                            <div class="col-md-9 px-2" style="color: white;">
+                                <section style="font-size: 12px; margin-top:4px; ">TX02.1.2</section>
+                                <section style="font-size: 14px; font-weight:500;">Earth Storable
+                                </section>
+                            </div>
+                            <div class="col-3 m-0 px-0"
+                                style="color: white; padding-top:5px; padding-bottom:8px;">
+                                <img src="{{ asset('images/icon-white.png') }}"alt=""
+                                    class="float-right"
+                                    style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                                    onclick="hideimage(this)">
+                            </div>
+                        </div>
+                        <section class="my-2 mx-2"
+                            style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                            (TRL)</section>
+
+
+                        <div class="row my-3">
+                            <div class="col-2 " style="text-align: center;">
+
+                            </div>
+                            <div class="col-10">
+                                <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                    class=" float-right my-0" width="100%">
+                            </div>
+                        </div>
+                        <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                        </h5>
+                        <h5
+                            style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                            Projects linked to this taxonomy</h5>
+                        <button class="btn"
+                            style="margin-left:10px; font-size:12px; color:white; background: #323E48;margin-bottom:23px;"><a
+                                style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                Projects</a></button>
+
+
+
+                    </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="divider"></div>  -->
+    </div>
+
+    <div class="faq-answer" id="answers6">
+        <div class="divider"></div>
+        <div class="arrow-icon"  style="position:relative;">
+            <i id="icon-toggleanswer6" class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
+                <a href="{{ url('/search-results') }}" style="color:#000000">TX02.2 Electric Space
+                    Propulsion</span>
+            </a>
+            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+               class="float-right graph-image" onclick="showimage(this)">
+
+            <div class="  graph-pop" style="display: none;  z-index:21;">
+                <div class="row m-0" style=" width:100%; background: #FFA800">
+                    <div class="col-md-9 px-2" style="color: white;">
+                        <section style="font-size: 12px; margin-top:4px; ">TX02.2</section>
+                        <section style="font-size: 14px; font-weight:500;">Electric Space Propulsion
+                        </section>
+                    </div>
+                    <div class="col-3 m-0 px-0"
+                        style="color: white; padding-top:5px; padding-bottom:8px;">
+                        <img src="{{ asset('images/icon-white.png') }}"alt=""
+                            class="float-right"
+                            style=" margin-right: 5px; width: 30px; margon-bottom:1px;"
+                            onclick="hideimage(this)">
+                    </div>
+                </div>
+                <section class="my-2 mx-2"
+                    style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:12px;">Technology Maturity
+                    (TRL)</section>
+
+
+                <div class="row my-3">
+                    <div class="col-2 " style="text-align: center;">
+
+                    </div>
+                    <div class="col-10">
+                        <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                            class=" float-right my-0" width="100%">
+                    </div>
+                </div>
+                <h5 style=" margin-top:5px; font-size:11px; text-align:center; ">Technology Readiness Level
+                </h5>
+                <h5
+                    style=" margin-top:1rem; color: rgba(6, 83, 134, 1); font-size:12px; font-weight:600; margin-left:10px;">
+                    Projects linked to this taxonomy</h5>
+                <button class="btn"
+                    style="margin-left:10px; font-size:12px; color:white; background: #FFA800;margin-bottom:23px;"><a
+                        style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                        Projects</a></button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+
+
+    </div>
+
     </div>
 
     <div style="margin-top:200px"></div>
@@ -975,7 +2379,37 @@
     </footer>
 
     <script>
-        function toggleSubAnswersDescreption(descriptiveAnswer) {
+
+
+function showimage(element)
+{
+let show = element.nextElementSibling;
+if(show.style.display =='none')
+{
+    show.style.display = 'block';
+}
+else
+{
+    show.style.display = 'none';
+}
+}
+function hideimage(element1)
+{
+   let x = element1.parentElement;
+   let z = x.parentElement;
+   let hide = z.parentElement;
+   if(hide.style.display =='none')
+{
+    hide.style.display = 'block';
+}
+else
+{
+    hide.style.display = 'none';
+}
+}
+
+
+        function toggleSubAnswersDescreption1(descriptiveAnswer) {
             const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
             answers.forEach(answer => {
                 if (answer.style.display === 'block') {
@@ -984,7 +2418,28 @@
                     answer.style.display = 'block';
                 }
             });
-          const iconElement = document.getElementById("icon-toggle-description");
+          const iconElement = document.getElementById("icon-toggle-description1");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+function toggleSubAnswersDescreption2(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description2");
           
     if (iconElement.classList.contains("fa-angle-right")) {
         // Change to the down arrow icon
@@ -997,44 +2452,187 @@
     }
 }
 
-        function showimage1() {
-            var check = document.getElementById("myPopup1").style.display;
-            if (check == "none") {
-                document.getElementById("myPopup1").style.display = "block";
-            } else {
-                document.getElementById("myPopup1").style.display = "none";
-            }
 
-        }
+function toggleSubAnswersDescreption3(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description3");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
 
-        function showimage2() {
-            var check = document.getElementById("myPopup2").style.display;
-            if (check == "none") {
-                document.getElementById("myPopup2").style.display = "block";
-            } else {
-                document.getElementById("myPopup2").style.display = "none";
-            }
-        }
-        function showimage3() {
-            var check = document.getElementById("myPopup3").style.display;
-            if (check == "none") {
-                document.getElementById("myPopup3").style.display = "block";
-            } else {
-                document.getElementById("myPopup3").style.display = "none";
-            }
-        }
-        // function toggleSubAnswers(subAnswerGroup) {
-        //     const subAnswers = document.querySelectorAll(`#${subAnswerGroup}`);
-        //     subAnswers.forEach(subAnswer => {
-        //         if (subAnswer.style.display === 'block') {
-        //             subAnswer.style.display = 'none';
-        //         } else {
-        //             subAnswer.style.display = 'block';
-        //         }
-        //     });
-        // }
+function toggleSubAnswersDescreption4(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description4");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
 
-        function toggleSubAnswers(subAnswerGroup) {
+function toggleSubAnswersDescreption5(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description5");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+function toggleSubAnswersDescreption5(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description5");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+function toggleSubAnswersDescreption6(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description6");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+function toggleSubAnswersDescreption7(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description7");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+function toggleSubAnswersDescreption8(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description8");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+function toggleSubAnswersDescreption9(descriptiveAnswer) {
+            const answers = document.querySelectorAll(`#${descriptiveAnswer}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+          const iconElement = document.getElementById("icon-toggle-description9");
+          
+    if (iconElement.classList.contains("fa-angle-right")) {
+        // Change to the down arrow icon
+        iconElement.classList.remove("fa-angle-right");
+        iconElement.classList.add("fa-angle-down");
+    } else {
+        // Change back to the right arrow icon
+        iconElement.classList.remove("fa-angle-down");
+        iconElement.classList.add("fa-angle-right");
+    }
+}
+
+
+
+
+        function toggleSubAnswers1(subAnswerGroup) {
             const answers = document.querySelectorAll(`#${subAnswerGroup}`);
             answers.forEach(answer => {
                 if (answer.style.display === 'block') {
@@ -1044,31 +2642,21 @@
                 }
             });
 
-            const iconToggle = document.getElementById("icon-toggleanswer");
-            const iconElement = iconToggle.querySelector("i");
-
-            if (iconElement.classList.contains("fa-angle-right")) {
+            const iconToggle = document.getElementById("icon-toggleanswer1");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
                 // Change to the down arrow icon
-                iconElement.classList.remove("fa-angle-right");
-                iconElement.classList.add("fa-angle-down");
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
             } else {
                 // Change back to the right arrow icon
-                iconElement.classList.remove("fa-angle-down");
-                iconElement.classList.add("fa-angle-right");
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const iconToggle = document.getElementById("icon-answer");
-            iconToggle.addEventListener("click", function() {
-                toggleAnswersAndIcon("your-answer-group-id"); // Replace with your actual answer group ID
-            });
-        });
-
-
-
-        function toggleAnswers(answerGroup) {
-            const answers = document.querySelectorAll(`#${answerGroup}`);
+        function toggleSubAnswers2(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
             answers.forEach(answer => {
                 if (answer.style.display === 'block') {
                     answer.style.display = 'none';
@@ -1077,7 +2665,203 @@
                 }
             });
 
-            const iconToggle = document.getElementById("icon-togglequestion");
+            const iconToggle = document.getElementById("icon-toggleanswer2");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers3(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer3");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers4(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer4");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers5(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer5");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers6(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer6");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers7(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer7");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers8(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer8");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleSubAnswers9(subAnswerGroup) {
+            const answers = document.querySelectorAll(`#${subAnswerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-toggleanswer9");
+            
+            if (iconToggle.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconToggle.classList.remove("fa-angle-right");
+                iconToggle.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconToggle.classList.remove("fa-angle-down");
+                iconToggle.classList.add("fa-angle-right");
+            }
+        }
+
+
+
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     const iconToggle = document.getElementById("icon-answer");
+        //     iconToggle.addEventListener("click", function() {
+        //         toggleAnswersAndIcon("your-answer-group-id"); // Replace with your actual answer group ID
+        //     });
+        // });
+
+
+
+        function toggleAnswers1 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion1");
             const iconElement = iconToggle.querySelector("i");
 
             if (iconElement.classList.contains("fa-angle-right")) {
@@ -1091,19 +2875,239 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const iconToggle = document.getElementById("icon-togglequestion");
-            iconToggle.addEventListener("click", function() {
-                toggleAnswersAndIcon("your-answer-group-id"); // Replace with your actual answer group ID
+        function toggleAnswers2 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
             });
-        });
 
+            const iconToggle = document.getElementById("icon-togglequestion2");
+            const iconElement = iconToggle.querySelector("i");
 
-
-        function myFunction(popupId) {
-            var popup = document.getElementById(popupId);
-            popup.classList.toggle("show");
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
         }
+
+        function toggleAnswers3 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion3");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleAnswers3 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion3");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleAnswers4 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion4");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleAnswers5 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion5");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleAnswers6 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion6");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+        function toggleAnswers7 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion7");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleAnswers8 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion8");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+        function toggleAnswers9 (answerGroup) {
+            const answers = document.querySelectorAll(`#${answerGroup}`);
+            answers.forEach(answer => {
+                if (answer.style.display == 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+
+            const iconToggle = document.getElementById("icon-togglequestion9");
+            const iconElement = iconToggle.querySelector("i");
+
+            if (iconElement.classList.contains("fa-angle-right")) {
+                // Change to the down arrow icon
+                iconElement.classList.remove("fa-angle-right");
+                iconElement.classList.add("fa-angle-down");
+            } else {
+                // Change back to the right arrow icon
+                iconElement.classList.remove("fa-angle-down");
+                iconElement.classList.add("fa-angle-right");
+            }
+        }
+
+
+
+
+
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     const iconToggle = document.getElementById("icon-togglequestion");
+        //     iconToggle.addEventListener("click", function() {
+        //         toggleAnswersAndIcon("your-answer-group-id"); // Replace with your actual answer group ID
+        //     });
+        // });
+
+
+
+        // function myFunction(popupId) {
+        //     var popup = document.getElementById(popupId);
+        //     popup.classList.toggle("show");
+        // }
 
 
         // document.addEventListener("DOMContentLoaded", function() {
