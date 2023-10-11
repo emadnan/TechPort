@@ -693,11 +693,11 @@
                         <i id="icon-toggleanswer1" onclick="toggleSubAnswers1('answers1-1')"
                             class="fa-solid fa-angle-right"></i><span style="margin-left:20px;">
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 Chemical Space
-                                Propulsion
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
-                            onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right "
+                            onclick="showimage(this)" style="margin-right: 7px; margin-top: 6px;
+                             width: 31px;">
 
                         <div class="  graph-pop" style="display: none;  z-index:49;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -751,7 +751,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX01.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:48;">
@@ -819,7 +819,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:47;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -880,8 +880,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX01.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right" style="margin-right: 7px; margin-top: 6px;
+                              width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:46;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -997,8 +998,9 @@
                                 Propulsion
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:44;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1053,7 +1055,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX02.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:43;">
@@ -1121,7 +1123,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX02.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:42;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -1182,8 +1184,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX02.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:41;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1295,8 +1298,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX03.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:39;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1351,7 +1355,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX03.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:38;">
@@ -1419,7 +1423,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX03.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:37;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -1480,8 +1484,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX03.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:36;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1592,8 +1597,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX04.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:34;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1648,7 +1654,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX04.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:33;">
@@ -1716,7 +1722,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX04.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:32;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -1777,8 +1783,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX04.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:31;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1889,8 +1896,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX05.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:29;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -1947,7 +1955,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX02.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:28;">
@@ -2015,7 +2023,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX05.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:27;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -2076,8 +2084,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX05.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:26;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -2193,8 +2202,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX06.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:24;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -2251,7 +2261,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX06.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:23;">
@@ -2319,7 +2329,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX06.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:22;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -2380,7 +2390,7 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX06.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
                             class="float-right graph-image" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:21;">
@@ -2497,8 +2507,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX07.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:19;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -2555,7 +2566,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX07.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:18;">
@@ -2623,7 +2634,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX07.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:17;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -2684,8 +2695,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX07.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:16;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -2800,8 +2812,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX08.1 Chemical Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:14;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -2858,7 +2871,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX08.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:13;">
@@ -2926,7 +2939,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX08.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:12;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -2987,8 +3000,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX08.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:11;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -3105,8 +3119,9 @@
                                 Propulsion
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:9;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
@@ -3163,7 +3178,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">
                                     TX09.1.1 Integrated Systems and Ancillary Technologies</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class=" float-right graph-image" onclick="showimage(this)">
 
                             <div class="graph-pop" style="display: none;  z-index:8;">
@@ -3231,7 +3246,7 @@
                                 <a href="{{ url('/search-results') }}" style="color:#000000">TX09.1.2 Earth
                                     Storable</span>
                             </a>
-                            <img src="{{ asset('images/icon-blue.png') }}" alt=""
+                            <img src="{{ asset('images/icon-black.png') }}" alt=""
                                 class="float-right graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:7;">
                                 <div class="row m-0" style=" width:100%; background: #323E48">
@@ -3292,8 +3307,9 @@
                             <a href="{{ url('/search-results') }}" style="color:#000000">TX09.2 Electric Space
                                 Propulsion</span>
                         </a>
-                        <img src="{{ asset('images/icon-blue.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt=""
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:6;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
