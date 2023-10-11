@@ -2391,7 +2391,8 @@
                                 Propulsion</span>
                         </a>
                         <img src="{{ asset('images/icon-yellow.png') }}" alt=""
-                            class="float-right graph-image" onclick="showimage(this)">
+                            class="float-right graph-image" style="margin-right: 7px; margin-top: 6px;
+                            width: 31px;" onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:21;">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
