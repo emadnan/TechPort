@@ -341,8 +341,8 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section>Space Technology Mission Directorate (STMD)</section>
-                        <div class="row">
+                        <section style="font-weight:700; margin-left:3px;">Space Technology Mission Directorate (STMD)</section>
+                        <div class="row mt-3">
                             <div style="margin-left:20px;">
                                 <button class="btn "
                                     style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort

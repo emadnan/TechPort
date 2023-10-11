@@ -50,7 +50,7 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         overflow: hidden;
-        height: 100px;
+        height: 90px;
     }
 
     .custom-image {
@@ -268,7 +268,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        Advance Search
+                        <span style="font-weight:700; font-size:30px;">Advance Search</span>
 
 
                         <a href="{{ url('/search-results') }}" type="button" class="btn  custom-button-1"
@@ -1934,7 +1934,7 @@
             <button class="btn btn-primary float-right"
                 style="width:200px; background:#065386; margin-top:30px;">Search</button>
         </a>
-    </div>
+    
 
 
     
@@ -1947,7 +1947,7 @@
     <footer>
         @include('footer')
     </footer>
-
+</div>
     <script>
         const questions = document.querySelectorAll('.qa-question');
 

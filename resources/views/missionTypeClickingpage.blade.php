@@ -341,9 +341,9 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section>Drass Mission Type 1</section>
-                        <div class="row">
-                            <div style="margin-left:20px;">
+                        <section style=" margin-left:3px; font-weight:700; ">Drass Mission Type 1</section>
+                        <div class="row mt-3">
+                            <div style="margin-left:20px;  ">
                                 <button class="btn "
                                     style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
                                     Order: Relevance</button>

@@ -350,7 +350,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section> Search Results </section>
+                        <section style="font-weight: 700;margin-bottom: 8px;margin-top: 5px; margin-left: 4px;"> Search Results </section>
                         <div class="row">
                             <div style="margin-left:20px;">
                                 <button class="btn "

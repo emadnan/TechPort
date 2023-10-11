@@ -43,8 +43,11 @@
         }
 
         .custom-image-container {
-            width: calc(100% - 140px);
-             /* Adjust the width based on your design */
+            width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        height: 95px;
         }
 
         .custom-image {
@@ -80,11 +83,13 @@
 
         .text-in-image {
             position: absolute;
-            top: 50px;
+            top: 25px;
             left: 10px;
             margin-left: 4%;
             color: white;
             font-size: 28px;
+            font-weight: 700;
+
 
         }
 
@@ -252,39 +257,13 @@ body {
 
 <body>
 
-    
+ 
 
-
-
-
-<nav>
-    <div class="image-container">
-        <img src="{{asset('images/DrassLogo1.png')}}" alt="">
-        <br> 
-        <img src="{{asset('images/DrassLogo2.png')}}" alt="">
-    </div>
-</nav>
 
 <!-- <div class='body-container'> -->
     
 <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-9">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+    @include('header')
         <!-- Add a new row for the image container -->
         <div class="row mt-4">
             <div class="col-md-12">

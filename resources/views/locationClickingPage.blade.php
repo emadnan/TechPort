@@ -342,7 +342,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section>Houstan, Texas</section>
+                        <section style="font-weight: 700; margin-bottom:10px;">Houstan, Texas</section>
                         <div class="row">
                             <div style="margin-left:20px;">
                                 <button class="btn "

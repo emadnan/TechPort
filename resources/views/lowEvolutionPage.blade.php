@@ -13,7 +13,7 @@
         margin: 0;
         padding: 0;
         font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
+        
     }
 
     nav {
@@ -85,7 +85,7 @@
 
     .text-in-image {
         position: absolute;
-        top: 50px;
+        top: 20px;
         left: 10px;
         margin-left: 4%;
         color: white;
@@ -213,11 +213,10 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section style="font-size:14px">Small Business Innovation Research/Small Business Tech Transfer
+                        <section style="font-size:14px; ">Small Business Innovation Research/Small Business Tech Transfer
                         </section>
-                        <section style="font-size:20px"> Low evaporation rate storage media for cryogenic liquids, Phase
-                            I</section>
-                        <div class="row" style="margin-left:5px;">
+                        <section style="font-size:28px; font-weight:700; margin-top: 3px;"> Low evaporation rate storage media for cryogenic liquids, Phase I</section>
+                        <div class="row mt-3" style="margin-left:0px;">
                             <div class="">
                                 <button class="btn"
                                     style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
@@ -413,11 +412,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+    
+    
 
 
-    </div>
+    
 
 
     <div style="margin-top:200px"></div>
@@ -425,7 +424,7 @@
     <footer>
         @include('footer')
     </footer>
-
+</div>
 </body>
 
 </html>

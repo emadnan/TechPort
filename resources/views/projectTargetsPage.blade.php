@@ -46,8 +46,11 @@
     }
 
     .custom-image-container {
-        width: calc(100% - 140px);
-        /* Adjust the width based on your design */
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        height: 95px;
     }
 
     .custom-image {
@@ -84,11 +87,12 @@
 
     .text-in-image {
         position: absolute;
-        top: 50px;
-        left: 10px;
-        margin-left: 4%;
-        color: white;
-        font-size: 28px;
+            top: 25px;
+            left: 10px;
+            margin-left: 4%;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
 
     }
 
