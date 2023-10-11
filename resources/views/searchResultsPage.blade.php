@@ -7,6 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPort</title>
+    <script>
+          window.onload = function()
+          {
+        let element= document.getElementById('project');
+        let show = element.nextElementSibling;
+        show.style.display = 'block';
+      } 
+    </script>
 </head>
 <style>
     * {
@@ -346,14 +354,14 @@
                         <div class="row">
                             <div style="margin-left:20px;">
                                 <button class="btn "
-                                style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                Order: Relevance</button>
-                        </div>
-                        <div style="margin-left:20px;">
-                            <button class="btn"
-                                style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                and Phrases: No Selection</button>
-                        </div>
+                                    style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
+                                    Order: Relevance</button>
+                            </div>
+                            <div style="margin-left:20px;">
+                                <button class="btn"
+                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
+                                    and Phrases: No Selection</button>
+                            </div>
                         </div>
                         <div class="solid-rectangle">
 
@@ -361,8 +369,10 @@
                                 <div class="col-md-2.9">
                                     <div class="yellow-square ">
                                         <section style="font-size:40px; padding-top:0px;">16,806</section>
-                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found</section>
-                                        <button class="btn btn-custom" ><a style="text-decoration: none; color:black;" href="{{url('/AdvanceSearch')}}"> Modify Search</a></button>
+                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found
+                                        </section>
+                                        <button class="btn btn-custom"><a style="text-decoration: none; color:black;"
+                                                href="{{ url('/AdvanceSearch') }}"> Modify Search</a></button>
                                     </div>
                                 </div>
 
@@ -371,18 +381,24 @@
                                     <section style="margin-bottom:10px;">Key Stats</section>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">Active</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
+                                        </p>
+                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">
+                                            Active</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;" >Completed</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
+                                        </p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;">
+                                            Completed</p>
                                     </div>
                                     <div class="divider" style="width:175px"></div>
                                     <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">Partnerhips</p>
+                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
+                                        </p>
+                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">
+                                            Partnerhips</p>
                                     </div>
                                 </div>
 
@@ -474,77 +490,81 @@
             @include('projectTargetCode')
 
         </div>
-</div>
-@include('footer')
+    </div>
+    <footer>
+        @include('footer')
+    </footer>
 
+    <script>
+        const questions = document.querySelectorAll('.qa-question');
 
-        <script>
-            const questions = document.querySelectorAll('.qa-question');
-
-            questions.forEach(question => {
-                question.addEventListener('click', () => {
-                    question.classList.toggle('active');
-                    const answer = question.querySelector('.qa-answer');
-                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                });
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.querySelector('.qa-answer');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
-            // JavaScript function to toggle FAQ answers and the lower arrow
-            var rotated = false;
+        });
+        // JavaScript function to toggle FAQ answers and the lower arrow
+        var rotated = false;
 
-            function toggleAnswer(element) {
-                const answer = element.nextElementSibling;
-                const icon = element.querySelector('i.fa-chevron-down');
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                    icon.classList.remove('fa-rotate-180');
-                } else {
-                    answer.style.display = 'block';
-                    icon.classList.add('fa-rotate-180');
-                }
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i.fa-chevron-down');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.classList.remove('fa-rotate-180');
+            } else {
+                answer.style.display = 'block';
+                icon.classList.add('fa-rotate-180');
             }
+        }
 
-            function toggleSubAnswer(element) {
-                const answer = element.parentElement;
-                const answer1 = answer.nextElementSibling;
-                const answer2 = answer1.nextElementSibling;
-                if (answer2.style.display === 'none') {
-                    answer2.style.display = 'block';
-                    element.classList.remove('fa-rotate-180');
-                } else {
-                    answer2.style.display = 'none';
-                    element.classList.add('fa-rotate-180');
-                }
+        function toggleSubAnswer(element) {
+            const answer = element.parentElement;
+            const answer1 = answer.nextElementSibling;
+            const answer2 = answer1.nextElementSibling;
+            if (answer2.style.display === 'none') {
+                answer2.style.display = 'block';
+                element.classList.remove('fa-rotate-180');
+            } else {
+                answer2.style.display = 'none';
+                element.classList.add('fa-rotate-180');
             }
+        }
 
-            function toggleQASubAnswer(element1) {
-                const subanswers = element.nextElementSibling;
-                if (subanswers.style.display === 'block') {
-                    subanswers.style.display = 'none';
-                } else {
-                    subanswers.style.display = 'block';
-                }
+        function toggleQASubAnswer(element1) {
+            const subanswers = element.nextElementSibling;
+            if (subanswers.style.display === 'block') {
+                subanswers.style.display = 'none';
+            } else {
+                subanswers.style.display = 'block';
             }
+        }
 
-            function myFunction(x) {
-                x.classList.toggle("fas fa-chevron-down");
+        function myFunction(x) {
+            x.classList.toggle("fas fa-chevron-down");
+        }
+
+        function toggleQAAnswer(question) {
+            var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
+            if (subanswer.style.display === "none" || subanswer.style.display === "") {
+                subanswer.style.display = "block"; // Show the sub-answer
+            } else {
+                subanswer.style.display = "none"; // Hide the sub-answer
             }
+        }
+        var slider = document.getElementById("myRange");
+        var sliderValueDisplay = document.getElementById("sliderValue");
 
-            function toggleQAAnswer(question) {
-                var subanswer = question.nextElementSibling.nextElementSibling; // Select the next sibling (the sub-answer)
-                if (subanswer.style.display === "none" || subanswer.style.display === "") {
-                    subanswer.style.display = "block"; // Show the sub-answer
-                } else {
-                    subanswer.style.display = "none"; // Hide the sub-answer
-                }
-            }
-            var slider = document.getElementById("myRange");
-            var sliderValueDisplay = document.getElementById("sliderValue");
+        // Update the <span> tag with the slider value when the slider is changed
+        slider.addEventListener("input", function() {
+            sliderValueDisplay.textContent = slider.value;
+        });
 
-            // Update the <span> tag with the slider value when the slider is changed
-            slider.addEventListener("input", function() {
-                sliderValueDisplay.textContent = slider.value;
-            });
-        </script>
+    
+       
+    </script>
 
 
 
