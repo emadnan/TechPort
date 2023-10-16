@@ -191,6 +191,26 @@
         color: #fff;
         /* Change this to your desired text color */
     }
+    .breadCrumbs {
+        list-style: none;
+    
+    }
+
+    .breadCrumbs-items {
+        display: inline;
+        font-size: 13px;
+        font-weight: 600;
+        color: #065386;
+       
+    }
+    .breadCrumbs-items a{
+        font-weight: 600;
+        color: #065386;
+    }
+    .breadCrumbs-items a:hover{
+        text-decoration: none;
+        
+    }
 </style>
 
 <body>
@@ -206,8 +226,16 @@
 
     <div class="container mt-4">
         @include('header')
+
+        <ul class="breadCrumbs mb-0">
+            <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/search-results')}}">Search Results</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/low-evolution')}}">Project view</a></li>
+        </ul>
         <!-- Add a new row for the image container -->
-        <div class="row mt-4">
+        <div class="row mt-1">
             <div class="col-md-12">
                 <div class="custom-image-container">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
