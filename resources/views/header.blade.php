@@ -5,6 +5,11 @@
 
     }
 
+    .logo img{
+      
+        margin-bottom: 1rem;
+    }
+
     /* search bar and button */
     :root {
         --font: "Inter", sans-serif;
@@ -103,6 +108,19 @@
 
     /* MEDIAS */
     @media (max-width: 575px) {
+        .logo{
+           
+            margin-top: 10px;
+        }
+        
+        .logo img{
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    .logo a {
+        font-size: 10px;
+    }
+
         .search-local {
             padding-left: 0;
             column-gap: 0.25rem;
@@ -138,8 +156,8 @@
 </style>
 {{-- Site Logo --}}
 <div class="row mt-5">
-    <div class="col-md-10 mt-5 mb-5">
-        <a href="{{ url('/') }}"><img class="mb-3" src="{{ asset('images/DrassLogo1.png') }}" alt=""></a>
+    <div class="col-md-10 mt-5 mb-5 logo">
+        <a href="{{ url('/') }}"><img  src="{{ asset('images/DrassLogo1.png') }}" alt=""></a>
         <br>
         <a href="{{ url('/') }}"><img src="{{ asset('images/DrassLogo2.png') }}" alt=""></a>
     </div>

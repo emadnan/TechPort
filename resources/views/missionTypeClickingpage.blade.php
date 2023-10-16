@@ -341,20 +341,11 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section style=" margin-left:3px; font-weight:700; ">Drass Mission Type 1</section>
-                        <div class="row mt-3">
-                            <div style="margin-left:20px;  ">
-                                <button class="btn "
-                                    style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                    Order: Relevance</button>
-                            </div>
-                            <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                    and Phrases: No Selection</button>
-                            </div>
-                        </div>
-                        <div class="solid-rectangle">
+                        <section style=" margin-left:3px; font-weight:700; ">Mission Type</section>
+
+                        <section style=" font-size:18px; margin-left:3px; font-weight:700; ">Drass Mission Type 1</section>
+                        
+                        <div class="solid-rectangle mt-1">
 
                             <div class="row" style="margin-left:5px;padding:10px;">
                                 <div class="col-md-2.9">

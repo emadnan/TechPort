@@ -19,20 +19,38 @@
     display: flex;
     justify-content: space-between;
     align-items: center; /* Vertically center align content */
+   
   }
 
   .footer-image {
     width: 170px;
     height: 45px;
   }
+  .copy-right-text{
+    font-size:15px;
+  }
+  @media (max-width:575px)
+  {
+    .copy-right-text{
+    font-size:5px;
+  }
+  .footer-image{
+    width: 40px;
+    height: 15px;
+  }
+  .footer-style {
+    align-items: stretch; /* Vertically center align content */
+   
+  }
+  }
 </style>
 
 <footer>
   <div class="footer-style">
     <div class="copy-right-text">
-      <p style="font-family: Roboto; font-size:15px">&copy; COPYRIGHT © DRASS ALL RIGHTS RESERVED | PRIVACY POLICY</p>
+      <p style="font-family: Roboto; ">&copy; COPYRIGHT © DRASS ALL RIGHTS RESERVED | PRIVACY POLICY</p>
     </div>
-    <div style="font-family:    Roboto">
+    <div style="font-family:Roboto">
       <img src="{{asset('images/white-logo.png')}}" alt="Image Description" class="footer-image">
     </div>
   </div>

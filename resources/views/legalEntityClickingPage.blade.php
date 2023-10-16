@@ -53,7 +53,7 @@
 
     .custom-image {
         width: 114.4%;
-        height: 300px;
+        height: 280px;
     }
 
     .second-search-bar {
@@ -341,20 +341,12 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section style="font-weight:700; margin-left:3px;">Space Technology Mission Directorate (STMD)</section>
-                        <div class="row mt-3">
-                            <div style="margin-left:20px;">
-                                <button class="btn "
-                                    style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                    Order: Relevance</button>
-                            </div>
-                            <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                    and Phrases: No Selection</button>
-                            </div>
-                        </div>
-                        <div class="solid-rectangle">
+                        <section style="font-weight:700; margin-left:3px;">Legal Entity Role</section>
+                        
+                        <section style=" font-size:18px; font-weight:700; margin-left:3px;">Space Technology Mission Directorate (STMD)</section>
+                       
+                    
+                        <div class="solid-rectangle mt-1">
 
                             <div class="row" style="margin-left:5px;padding:10px;">
                                 <div class="col-md-2.9">

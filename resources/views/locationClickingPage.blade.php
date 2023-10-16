@@ -342,19 +342,9 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <section style="font-weight: 700; margin-bottom:10px;">Houstan, Texas</section>
-                        <div class="row">
-                            <div style="margin-left:20px;">
-                                <button class="btn "
-                                    style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                    Order: Relevance</button>
-                            </div>
-                            <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                    and Phrases: No Selection</button>
-                            </div>
-                        </div>
+                        <section style=" font-weight: 700; margin-bottom:0px;">Locations</section>
+                        <section style="font-size:17px; font-weight: 700; margin-bottom:10px;">Houstan, Texas</section>
+
                         <div class="solid-rectangle">
 
                             <div class="row" style="margin-left:5px;padding:10px;">
