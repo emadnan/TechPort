@@ -1251,10 +1251,6 @@
 
     <div class="container" style="width: 100%">
         @include('header')
-        <ul class="breadCrumbs mb-0">
-            <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
-        </ul>
-
 
 
         {{-- section of Drass Taxonomy with background image --}}
