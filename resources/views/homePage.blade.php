@@ -1243,6 +1243,28 @@
             height: 1px;
             background-color: white;
         }
+        .breadCrumbs {
+        list-style: none;
+        margin-top: -13px;
+        margin-bottom: 0px;
+    
+    }
+
+    .breadCrumbs-items {
+        display: inline;
+        font-size: 13px;
+        font-weight: 600;
+        color: #065386;
+       
+    }
+    .breadCrumbs-items a{
+        font-weight: 600;
+        color: #065386;
+    }
+    .breadCrumbs-items a:hover{
+        text-decoration: none;
+        
+    }
     </style>
 </head>
 
@@ -1251,6 +1273,11 @@
 
     <div class="container" style="width: 100%">
         @include('header')
+
+        <ul class="breadCrumbs px-0">
+            <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
+            <li class="breadCrumbs-items">></li>
+        </ul>
 
 
         {{-- section of Drass Taxonomy with background image --}}
