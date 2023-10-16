@@ -314,6 +314,27 @@
         color: white;
         text-decoration: none;
     }
+
+    .breadCrumbs {
+        list-style: none;
+    
+    }
+
+    .breadCrumbs-items {
+        display: inline;
+        font-size: 13px;
+        font-weight: 600;
+        color: #065386;
+       
+    }
+    .breadCrumbs-items a{
+        font-weight: 600;
+        color: #065386;
+    }
+    .breadCrumbs-items a:hover{
+        text-decoration: none;
+        
+    }
 </style>
 
 <body>
@@ -329,6 +350,17 @@
     <div class="container mt-4">
         @include('header')
 
+        <ul class="breadCrumbs mb-0">
+            <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/search-results')}}">Search Results</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/low-evolution')}}">Project view</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/locationsPage')}}">Locaion index</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/location-clicking')}}">Location view</a></li>
+        </ul>
 
 
 
@@ -336,7 +368,7 @@
 
 
         <!-- Add a new row for the image container -->
-        <div class="row mt-4">
+        <div class="row mt-1">
             <div class="col-md-12">
                 <div class="custom-image-container">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
@@ -351,8 +383,10 @@
                                 <div class="col-md-2.9">
                                     <div class="yellow-square ">
                                         <section style="font-size:40px; padding-top:0px;">16,806</section>
-                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found</section>
-                                        <button class="btn btn-custom" ><a style="text-decoration: none; color:black;" href="{{url('/AdvanceSearch')}}"> Modify Search</a></button>
+                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found
+                                        </section>
+                                        <button class="btn btn-custom"><a style="text-decoration: none; color:black;"
+                                                href="{{ url('/AdvanceSearch') }}"> Modify Search</a></button>
                                     </div>
                                 </div>
 
@@ -470,11 +504,11 @@
     </div>
     </div>
     <div style="margin-top:100px"></div>
-        <footer>
-            @include('footer')
-        </footer>
+    <footer>
+        @include('footer')
+    </footer>
 
-    
+
 
     <script>
         const questions = document.querySelectorAll('.qa-question');
