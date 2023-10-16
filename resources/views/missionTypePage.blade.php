@@ -268,45 +268,45 @@
         margin-right: 15px;
         color: #065386;
     }
+    .breadCrumbs {
+        list-style: none;
+    
+    }
+
+    .breadCrumbs-items {
+        display: inline;
+        font-size: 13px;
+        font-weight: 600;
+        color: #065386;
+       
+    }
+    .breadCrumbs-items a{
+        font-weight: 600;
+        color: #065386;
+    }
+    .breadCrumbs-items a:hover{
+        text-decoration: none;
+        
+    }
 </style>
 
 <body>
 
-
-
-
-
-
-    <nav>
-        <div class="image-container">
-            <img src="{{ asset('images/DrassLogo1.png') }}" alt="">
-            <br>
-            <img src="{{ asset('images/DrassLogo2.png') }}" alt="">
-        </div>
-    </nav>
-
-    <!-- <div class='body-container'> -->
-
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-9">
-                <form class="form-inline w-100">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn custom-button" type="submit">
-                                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <button class="btn custom-button btn-block">Advance Search</button>
-            </div>
-        </div>
+        @include('header')
+
+        <ul class="breadCrumbs mb-0">
+            <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/search-results')}}">Search Results</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/low-evolution')}}">Project view</a></li>
+            <li class="breadCrumbs-items">></li>
+            <li class="breadCrumbs-items"><a href="{{url('/mission-type')}}">Mission Type index</a></li>
+        </ul>
+
         <!-- Add a new row for the image container -->
-        <div class="row mt-4">
+        <div class="row mt-1">
             <div class="col-md-12">
                 <div class="custom-image-container">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">

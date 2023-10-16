@@ -1243,15 +1243,6 @@
             height: 1px;
             background-color: white;
         }
-
-
-        /*
-        @media (min-width:1320px){
-            right: 119px;
-            width: 260px;
-
-
-        } */
     </style>
 </head>
 
@@ -1260,9 +1251,14 @@
 
     <div class="container" style="width: 100%">
         @include('header')
+        <ul class="breadCrumbs mb-0">
+            <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
+        </ul>
+
+
 
         {{-- section of Drass Taxonomy with background image --}}
-        <div class="row mt-4">
+        <div class="row mt-1">
             <div class="col-md-12">
                 <div class="custom-image-container w-80">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
