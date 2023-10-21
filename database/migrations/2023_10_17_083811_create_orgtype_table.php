@@ -17,6 +17,7 @@ class CreateOrgtypeTable extends Migration
             $table->id();
             $table->string('type');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

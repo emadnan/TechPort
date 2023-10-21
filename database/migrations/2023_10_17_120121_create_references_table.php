@@ -17,6 +17,7 @@ class CreateReferencesTable extends Migration
             $table->id();
             $table->string('reference');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

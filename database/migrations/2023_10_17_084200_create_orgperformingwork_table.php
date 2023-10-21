@@ -22,6 +22,7 @@ class CreateOrgperformingworkTable extends Migration
             $table->unsignedBigInteger('id_type'); $table->foreign('id_type')->references('id')->on('orgtype');
             $table->unsignedBigInteger('id_humanentity'); $table->foreign('id_humanentity')->references('id')->on('humanentity');
             $table->unsignedBigInteger('id_location'); $table->foreign('id_location')->references('id')->on('location');
+            $table->timestamps();
         });
     }
 

@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('description');
             $table->string('benifit');
             $table->string('image');
-            $table->integer('id_doc');
+            $table->integer('id_doc')->nullable();
             $table->date('startdate');
             $table->date('enddate');
             $table->string('projecttarget');
@@ -32,6 +32,7 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('id_foundsource'); $table->foreign('id_foundsource')->references('id')->on('foundingsources');
             $table->unsignedBigInteger('id_status'); $table->foreign('id_status')->references('id')->on('status');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

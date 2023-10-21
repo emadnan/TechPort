@@ -19,6 +19,7 @@ class CreateDefinitionsTable extends Migration
             $table->string('definition');
             $table->string('report');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

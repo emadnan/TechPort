@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,9 @@ use App\Http\Controllers\HomeController;
 
 
 
-Route::get('/',[HomeController::class, 'homePage']);
+Route::get('/',function(){
+    return view('homepage');
+});
 Route::get('/AdvanceSearch', function () {
     return view('advanceSearchPage');
 });
@@ -73,3 +78,15 @@ Route::get('/legal-entity-roles-clicking', function () {
 Route::get('/project-target-clicking', function () {
     return view('projectTargetClickingPage');
 });
+// Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
+// Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');
+// Route::get('/user/login' ,[UserController::class , 'login'])->name('user.login');
+// Route::get('/user/register' ,[UserController::class , 'register'])->name('user.register');
+// Route::post('/user/save' ,[UserController::class , 'save'])->name('user.save');
+// Route::post('/user/check' ,[UserController::class , 'check'])->name('user.check');
+// Route::get('/dashboard' ,[UserController::class , 'dashboard'])->name('dashboard');
+
+// Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+

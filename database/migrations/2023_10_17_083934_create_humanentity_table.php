@@ -21,7 +21,7 @@ class CreateHumanentityTable extends Migration
             $table->string('tel');
             $table->string('email');
             $table->string('note');
-           
+            $table->timestamps();
         });
     }
 

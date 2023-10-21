@@ -18,6 +18,7 @@ class CreateEquipmentTable extends Migration
             $table->integer('id_pn'); 
             $table->string('equipment'); 
             $table->string('note'); 
+            $table->timestamps();
         });
     }
 

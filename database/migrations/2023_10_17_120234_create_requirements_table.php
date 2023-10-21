@@ -18,6 +18,7 @@ class CreateRequirementsTable extends Migration
             $table->unsignedBigInteger('id_reference'); $table->foreign('id_reference')->references('id')->on('references');
             $table->string('description');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

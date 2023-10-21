@@ -18,7 +18,7 @@ class CreateLocationTable extends Migration
             $table->string('state');
             $table->string('region');
             $table->string('city');
-      
+            $table->timestamps();
         });
     }
 

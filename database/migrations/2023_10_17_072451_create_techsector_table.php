@@ -17,10 +17,10 @@ class CreateTechsectorTable extends Migration
             $table->id();
             $table->string('techsector');
             $table->string('techsectordescription');
-            $table->integer('id_dm');
-            $table->integer('otme');
-            $table->string('note');
-          
+            $table->integer('id_dm')->nullable();
+            $table->integer('otme')->nullable();
+            $table->string('note')->nullable();
+            $table->timestamps();
         });
     }
 

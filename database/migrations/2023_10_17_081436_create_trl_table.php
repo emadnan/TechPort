@@ -19,6 +19,7 @@ class CreateTrlTable extends Migration
             $table->string('trldescription');
             $table->string('trlexample');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

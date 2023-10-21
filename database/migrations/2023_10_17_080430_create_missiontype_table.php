@@ -18,6 +18,7 @@ class CreateMissiontypeTable extends Migration
             $table->string('type');
             $table->string('discription');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

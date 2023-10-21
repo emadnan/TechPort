@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\techsector;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,8 +12,15 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run() : void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+        humanentitySeeder::class,
+        projectSeeder::class,
+        techareaSeeder::class,
+        techsector::class,
+        techrefferedSeeder::class,
+        referenceSeeder::class
+        ]);  
     }
 }

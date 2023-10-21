@@ -18,7 +18,7 @@ class CreateLegalentityroleTable extends Migration
             $table->string('name');
             $table->string('discription');
             $table->string('note');
-            
+            $table->timestamps();
         });
     }
 

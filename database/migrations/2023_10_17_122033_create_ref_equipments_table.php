@@ -17,6 +17,7 @@ class CreateRefEquipmentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_equipment'); $table->foreign('id_equipment')->references('id')->on('equipment');
             $table->unsignedBigInteger('id_product'); $table->foreign('id_product')->references('id')->on('products');
+            $table->timestamps();
         });
     }
 

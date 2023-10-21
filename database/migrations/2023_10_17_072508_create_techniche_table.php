@@ -17,10 +17,10 @@ class CreateTechnicheTable extends Migration
             $table->id();
             $table->string('techniche');
             $table->string('technichedescription');
-            $table->integer('id_dm');
-            $table->integer('otme');
-            $table->string('note');
-        
+            $table->integer('id_dm')->nullable();
+            $table->integer('otme')->nullable();
+            $table->string('note')->nullable();
+            $table->timestamps();
         });
     }
 

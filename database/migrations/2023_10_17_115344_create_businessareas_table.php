@@ -18,6 +18,7 @@ class CreateBusinessareasTable extends Migration
             $table->string('businessarea');
             $table->string('description');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

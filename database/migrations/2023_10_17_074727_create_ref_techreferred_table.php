@@ -18,7 +18,7 @@ class CreateRefTechreferredTable extends Migration
             $table->unsignedBigInteger('id_techarea'); $table->foreign('id_techarea')->references('id')->on('techareas');
             $table->unsignedBigInteger('id_techsector'); $table->foreign('id_techsector')->references('id')->on('techsector');
             $table->unsignedBigInteger('id_techniche'); $table->foreign('id_techniche')->references('id')->on('techniche');
-       
+            $table->timestamps();
         });
     }
 

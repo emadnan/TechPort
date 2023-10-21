@@ -17,7 +17,7 @@ class CreateStatusTable extends Migration
             $table->id();
             $table->string('status');
             $table->string('note');
-
+            $table->timestamps();
         });
     }
 

@@ -17,6 +17,7 @@ class CreatePrioritiesTable extends Migration
             $table->id();
             $table->string('priority');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

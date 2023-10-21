@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('note'); 
             $table->unsignedBigInteger('id_techreferred'); $table->foreign('id_techreferred')->references('id')->on('ref_techreferred');
             $table->unsignedBigInteger('id_requirement'); $table->foreign('id_requirement')->references('id')->on('requirements');
+            $table->timestamps();
         });
     }
 

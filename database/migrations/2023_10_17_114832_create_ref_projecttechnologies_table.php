@@ -18,6 +18,7 @@ class CreateRefProjecttechnologiesTable extends Migration
             $table->unsignedBigInteger('id_project'); $table->foreign('id_project')->references('id')->on('projects');
             $table->unsignedBigInteger('id_technology'); $table->foreign('id_technology')->references('id')->on('technologies');
             $table->date('date');
+            $table->timestamps();
         });
     }
 

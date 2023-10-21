@@ -376,8 +376,8 @@
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Duration
                                 </section>
                                 <section>
-                                    <p>Start: 24 Jan</p>
-                                    <p>End : 31 Mar, 2025</p>
+                                    <p>Start: 24 Jan 2023</p>
+                                    <p>End : 31 Mar  2025</p>
                                 </section>
 
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px"><a

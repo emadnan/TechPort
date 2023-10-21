@@ -20,6 +20,7 @@ class CreateOrganizationunitTable extends Migration
             $table->string('description');
             $table->string('releventcompany');
             $table->string('note');
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateRefProjectorganizationTable extends Migration
             $table->unsignedBigInteger('id_orgperformingwork'); $table->foreign('id_orgperformingwork')->references('id')->on('orgperformingwork');
             $table->unsignedBigInteger('id_legalentityrole'); $table->foreign('id_legalentityrole')->references('id')->on('legalentityrole');
             $table->unsignedBigInteger('id_project'); $table->foreign('id_project')->references('id')->on('projects');
+            $table->timestamps();
         });
     }
 
