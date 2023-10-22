@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BusinessAreaController;
 
 
 /*
@@ -84,9 +85,17 @@ Route::get('/project-target-clicking', function () {
 // Route::get('/user/register' ,[UserController::class , 'register'])->name('user.register');
 // Route::post('/user/save' ,[UserController::class , 'save'])->name('user.save');
 // Route::post('/user/check' ,[UserController::class , 'check'])->name('user.check');
-// Route::get('/dashboard' ,[UserController::class , 'dashboard'])->name('dashboard');
+// Route::get('/dashboardview' ,[UserController::class , 'dashboard'])->name('dashboard');
 
-// Auth::routes();
+Auth::routes();
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-
+Route::controller(BusinessAreaController::class)->group(function () {
+  Route::post('/businessAreaCreate',  'create')->name('businessAreaCreate');
+  Route::get('/businessAreaRead/{id}' , 'read')->name('businessAreaRead');
+  Route::post('/businessAreaUpdate/{id}',  'update')->name('businessAreaUpdate');
+  Route::get('/businessAreaDelete/{id}',  'delete')->name('businessAreaDelete');
+  Route::get('/addBusiness',  'createPage')->name('addBusiness');
+  Route::get('/businessArea' , 'readPage')->name('businessArea');
+  Route::get('/updateBusiness/{id}' , 'updatePage')->name('updateBusiness');
+});

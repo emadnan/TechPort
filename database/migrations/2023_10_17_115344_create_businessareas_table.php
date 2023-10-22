@@ -17,7 +17,7 @@ class CreateBusinessareasTable extends Migration
             $table->id();
             $table->string('businessarea');
             $table->string('description');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

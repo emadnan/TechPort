@@ -23,6 +23,7 @@
 
 </head>
 <body>
+    @include('bootStrap')
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="padding-left:240px;">
             <div class="container">

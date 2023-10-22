@@ -65,37 +65,38 @@
                 </ul>
               </li>
 
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item ">
+                <a href="{{route('businessArea')}}" class="nav-link">
                   <i class="nav-icon fas fa-edit"></i>
                   <p>
-                    Business Area Management
-                    <i class="fas fa-angle-left right"></i>
+                    Business Area 
+                    
                   </p>
                 </a>
+              </li>
   
-                <ul class="nav nav-treeview">
+                {{-- <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('addBusiness')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Create Business Area</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('businessAreaUpdate')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Update Business Area</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('businessAreaDelete')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Delete Business Area
                       </p>
                     </a>
                   </li>
                   </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                   <a href="#" class="nav-link">
