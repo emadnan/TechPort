@@ -15,8 +15,8 @@ class CreatePrioritiesTable extends Migration
     {
         Schema::create('priorities', function (Blueprint $table) {
             $table->id();
-            $table->string('priority');
-            $table->string('note');
+            $table->string('priority')->nullable();
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ class CreateMissiontypeTable extends Migration
         Schema::create('missiontype', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('discription');
-            $table->string('note');
+            $table->longText('discription');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

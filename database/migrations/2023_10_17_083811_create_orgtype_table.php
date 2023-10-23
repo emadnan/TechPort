@@ -16,7 +16,7 @@ class CreateOrgtypeTable extends Migration
         Schema::create('orgtype', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('note');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

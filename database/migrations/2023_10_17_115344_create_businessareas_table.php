@@ -16,8 +16,8 @@ class CreateBusinessareasTable extends Migration
         Schema::create('businessareas', function (Blueprint $table) {
             $table->id();
             $table->string('businessarea');
-            $table->string('description');
-            $table->string('note')->nullable();
+            $table->longText('description');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

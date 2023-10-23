@@ -17,12 +17,14 @@ class CreateOrgperformingworkTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('description');
-            $table->string('typeoflocation');
+            $table->longText('description');
+            $table->string('typeoflocation')->nullable();
             $table->unsignedBigInteger('id_type'); $table->foreign('id_type')->references('id')->on('orgtype');
             $table->unsignedBigInteger('id_humanentity'); $table->foreign('id_humanentity')->references('id')->on('humanentity');
             $table->unsignedBigInteger('id_location'); $table->foreign('id_location')->references('id')->on('location');
+            $table->longText('note')->nullable();
             $table->timestamps();
+
         });
     }
 

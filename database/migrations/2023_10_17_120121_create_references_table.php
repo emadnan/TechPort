@@ -15,8 +15,8 @@ class CreateReferencesTable extends Migration
     {
         Schema::create('references', function (Blueprint $table) {
             $table->id();
-            $table->string('reference');
-            $table->string('note');
+            $table->string('reference')->nullable();
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

@@ -16,10 +16,10 @@ class CreateTechnicheTable extends Migration
         Schema::create('techniche', function (Blueprint $table) {
             $table->id();
             $table->string('techniche');
-            $table->string('technichedescription');
+            $table->longText('technichedescription');
             $table->integer('id_dm')->nullable();
-            $table->integer('otme')->nullable();
-            $table->string('note')->nullable();
+            $table->integer('otme');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

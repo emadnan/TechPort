@@ -16,10 +16,10 @@ class CreateTechsectorTable extends Migration
         Schema::create('techsector', function (Blueprint $table) {
             $table->id();
             $table->string('techsector');
-            $table->string('techsectordescription');
+            $table->longText('techsectordescription');
             $table->integer('id_dm')->nullable();
-            $table->integer('otme')->nullable();
-            $table->string('note')->nullable();
+            $table->integer('otme');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateTechnologiesTable extends Migration
             $table->id();
             $table->string('technology');
             $table->integer('id_dm');
-            $table->string('note');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

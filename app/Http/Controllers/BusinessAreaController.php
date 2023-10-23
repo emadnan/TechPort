@@ -31,9 +31,14 @@ class BusinessAreaController extends Controller
 
     public function create(Request $req)
     {
+        $req->validate([
+            'businessarea'=> 'required',
+            'description'=> 'required',
+        ]);
+
         $busCreate = DB::table('businessareas')->insert(
             [
-                'businessArea'=> $req->businessArea,
+                'businessarea'=> $req->businessArea,
                 'description'=> $req->description,
                 'note'=> $req->note,
 
@@ -57,7 +62,7 @@ class BusinessAreaController extends Controller
     {
         $upBusiness = DB::table('businessareas')->where('id', $id)->update(
             [
-                'businessArea'=> $req->businessArea,
+                'businessarea'=> $req->businessArea,
                 'description'=> $req->description,
                 'note'=> $req->note,
 
@@ -84,7 +89,7 @@ class BusinessAreaController extends Controller
         } 
         else
         {
-            echo '<h1>Data Did Not Deleted From Database</h1>';
+            echo '<h1>Data Was Not Deleted From Database</h1>';
         }
     }
 }

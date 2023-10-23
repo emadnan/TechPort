@@ -17,8 +17,8 @@ class CreateDefinitionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('definition');
-            $table->string('report');
-            $table->string('note');
+            $table->longText('report');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

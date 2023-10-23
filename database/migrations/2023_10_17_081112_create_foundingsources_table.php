@@ -17,7 +17,7 @@ class CreateFoundingsourcesTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

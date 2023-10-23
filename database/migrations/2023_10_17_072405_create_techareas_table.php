@@ -16,10 +16,10 @@ class CreateTechareasTable extends Migration
         Schema::create('techareas', function (Blueprint $table) {
             $table->id();
             $table->string('techarea');
-            $table->string('techareadescription');
+            $table->longText('techareadescription');
             $table->integer('id_dm')->nullable();
-            $table->integer('otme')->nullable();
-            $table->string('note')->nullable();
+            $table->integer('otme');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

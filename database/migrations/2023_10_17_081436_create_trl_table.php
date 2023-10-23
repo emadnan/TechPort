@@ -16,9 +16,9 @@ class CreateTrlTable extends Migration
         Schema::create('trl', function (Blueprint $table) {
             $table->id();
             $table->integer('trllevel');
-            $table->string('trldescription');
+            $table->longText('trldescription');
             $table->string('trlexample');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }
