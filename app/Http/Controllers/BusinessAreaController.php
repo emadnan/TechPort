@@ -32,7 +32,7 @@ class BusinessAreaController extends Controller
     public function create(Request $req)
     {
         $req->validate([
-            'businessarea'=> 'required',
+            'businessArea'=> 'required',
             'description'=> 'required',
         ]);
 
@@ -60,8 +60,14 @@ class BusinessAreaController extends Controller
     }
     public function update(Request $req , $id)
     {
+        $req->validate([
+            'businessArea'=> 'required',
+            'description'=> 'required',
+        ]);
+
         $upBusiness = DB::table('businessareas')->where('id', $id)->update(
             [
+                
                 'businessarea'=> $req->businessArea,
                 'description'=> $req->description,
                 'note'=> $req->note,

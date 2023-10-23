@@ -17,9 +17,9 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->longText('description')->nullable();
+            $table->longText('description');
             $table->longText('benifit')->nullable();
-            $table->string('image')-nullable();
+            $table->string('image');
             $table->integer('id_doc')->nullable();
             $table->date('startdate');
             $table->date('enddate');
@@ -31,7 +31,7 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('id_trlfinal'); $table->foreign('id_trlfinal')->references('id')->on('trl');
             $table->unsignedBigInteger('id_foundsource'); $table->foreign('id_foundsource')->references('id')->on('foundingsources');
             $table->unsignedBigInteger('id_status'); $table->foreign('id_status')->references('id')->on('status');
-            $table->string('note')->nullable();
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }
