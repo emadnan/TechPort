@@ -5,7 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BusinessAreaController;
-
+use App\Http\Controllers\DefinitionController;
+use App\Http\Controllers\EquipmentController;
+use App\Http\Controllers\FoundingSourcesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +101,34 @@ Route::controller(BusinessAreaController::class)->group(function () {
   Route::get('/businessArea' , 'readPage')->name('businessArea');
   Route::get('/updateBusiness/{id}' , 'updatePage')->name('updateBusiness');
 });
+
+Route::controller(DefinitionController::class)->group(function(){
+    Route::get('/definitionPage' , 'definitionPage')->name('definitionPage');
+    Route::get('/addDefinition' , 'addPage')->name('addDefinition');
+    Route::post('/definitionCreate' , 'create')->name('definitionCreate');
+    Route::get('/definitionRead/{id}' , 'read')->name('definitionRead');
+    Route::get('/definitionUpdatePage/{id}' , 'updatePage')->name('definitionUpdatePage');
+    Route::post('/definitionUpdate/{id}' , 'update')->name('definitionUpdate');
+    Route::get('/definitionDelete/{id}' , 'delete')->name('definitionDelete');
+});
+
+Route::controller(EquipmentController::class)->group(function(){
+    Route::get('/equipmentPage' , 'equipmentPage')->name('equipmentPage');
+    Route::get('/addEquipment' , 'addPage')->name('addEquipment');
+    Route::post('/equipmentCreate' , 'create')->name('equipmentCreate');
+    Route::get('/equipmentRead/{id}' , 'read')->name('equipmentRead');
+    Route::get('/equipmentUpdatePage/{id}' , 'updatePage')->name('equipmentUpdatePage');
+    Route::post('/equipmentUpdate/{id}' , 'update')->name('equipmentUpdate');
+    Route::get('/equipmentDelete/{id}' , 'delete')->name('equipmentDelete');
+});
+
+Route::controller(FoundingSourcesController::class)->group(function(){
+    Route::get('/foundSourceForm' , 'foundSourcePage')->name('foundSourceForm');
+    Route::get('/addFoundSource' , 'addPage')->name('addFoundSource');
+    Route::post('/foundSourceCreate' , 'create')->name('foundSourceCreate');
+    Route::get('/foundSourceRead/{id}' , 'read')->name('foundSourceRead');
+    Route::get('/foundSourceUpdatePage/{id}' , 'updatePage')->name('foundSourceUpdatePage');
+    Route::post('/foundSourceUpdate/{id}' , 'update')->name('foundSourceUpdate');
+    Route::get('/foundSourceDelete/{id}' , 'delete')->name('foundSourceDelete');
+});
+

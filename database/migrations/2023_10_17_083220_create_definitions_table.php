@@ -16,7 +16,7 @@ class CreateDefinitionsTable extends Migration
         Schema::create('definitions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('definition');
+            $table->text('definition');
             $table->longText('report');
             $table->string('note')->nullable();
             $table->timestamps();

@@ -98,16 +98,17 @@
                   </ul>
                 </li> --}}
 
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                      Definitions Management
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
+                
+              <li class="nav-item ">
+                <a href="{{route('definitionPage')}}" class="nav-link">
+                  <i class="nav-icon fas fa-edit"></i>
+                  <p>
+                         Definition
+                  </p>
+                </a>
+              </li>
     
-                  <ul class="nav nav-treeview">
+                  {{-- <ul class="nav nav-treeview">
                     <li class="nav-item">
                       <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
@@ -127,18 +128,18 @@
                       </a>
                     </li>
                     </ul>
-                  </li>
+                  </li> --}}
 
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
+                  <li class="nav-item ">
+                    <a href="{{route('equipmentPage')}}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
-                        Equipment Management
-                        <i class="fas fa-angle-left right"></i>
+                             Equipments
                       </p>
                     </a>
+                  </li>
       
-                    <ul class="nav nav-treeview">
+                    {{-- <ul class="nav nav-treeview">
                       <li class="nav-item">
                         <a href="#" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
@@ -158,18 +159,18 @@
                         </a>
                       </li>
                       </ul>
+                    </li> --}}
+
+                    <li class="nav-item ">
+                      <a href="{{route('foundSourceForm')}}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                               Found Sources
+                        </p>
+                      </a>
                     </li>
 
-                    <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
-                <p>
-                  Found Sources Management
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-
-              <ul class="nav nav-treeview">
+              {{-- <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -190,7 +191,7 @@
                   </a>
                 </li>
                 </ul>
-              </li>
+              </li> --}}
 
               <li class="nav-item">
                 <a href="#" class="nav-link">
