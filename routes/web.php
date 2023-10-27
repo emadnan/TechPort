@@ -8,6 +8,18 @@ use App\Http\Controllers\BusinessAreaController;
 use App\Http\Controllers\DefinitionController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\FoundingSourcesController;
+use App\Http\Controllers\HumanEntityController;
+use App\Http\Controllers\LegalEntityController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\MissionTypeController;
+use App\Http\Controllers\OrganizationTypeController;
+use App\Http\Controllers\PriorityController;
+use App\Http\Controllers\ReferenceController;
+use App\Http\Controllers\TechAreaController;
+use App\Http\Controllers\TechnologyController;
+use App\Http\Controllers\TechSectorController;
+use App\Http\Controllers\TechSubSectorController;
+use App\Http\Controllers\TrlController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,7 +107,7 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::controller(BusinessAreaController::class)->group(function () {
   Route::post('/businessAreaCreate',  'create')->name('businessAreaCreate');
   Route::get('/businessAreaRead/{id}' , 'read')->name('businessAreaRead');
-  Route::post('/businessAreaUpdate/{id}',  'update')->name('businessAreaUpdate');
+  Route::post('/businessAreaUpdate',  'update')->name('businessAreaUpdate');
   Route::get('/businessAreaDelete/{id}',  'delete')->name('businessAreaDelete');
   Route::get('/addBusiness',  'createPage')->name('addBusiness');
   Route::get('/businessArea' , 'readPage')->name('businessArea');
@@ -108,7 +120,7 @@ Route::controller(DefinitionController::class)->group(function(){
     Route::post('/definitionCreate' , 'create')->name('definitionCreate');
     Route::get('/definitionRead/{id}' , 'read')->name('definitionRead');
     Route::get('/definitionUpdatePage/{id}' , 'updatePage')->name('definitionUpdatePage');
-    Route::post('/definitionUpdate/{id}' , 'update')->name('definitionUpdate');
+    Route::post('/definitionUpdate' , 'update')->name('definitionUpdate');
     Route::get('/definitionDelete/{id}' , 'delete')->name('definitionDelete');
 });
 
@@ -118,7 +130,7 @@ Route::controller(EquipmentController::class)->group(function(){
     Route::post('/equipmentCreate' , 'create')->name('equipmentCreate');
     Route::get('/equipmentRead/{id}' , 'read')->name('equipmentRead');
     Route::get('/equipmentUpdatePage/{id}' , 'updatePage')->name('equipmentUpdatePage');
-    Route::post('/equipmentUpdate/{id}' , 'update')->name('equipmentUpdate');
+    Route::post('/equipmentUpdate' , 'update')->name('equipmentUpdate');
     Route::get('/equipmentDelete/{id}' , 'delete')->name('equipmentDelete');
 });
 
@@ -128,7 +140,126 @@ Route::controller(FoundingSourcesController::class)->group(function(){
     Route::post('/foundSourceCreate' , 'create')->name('foundSourceCreate');
     Route::get('/foundSourceRead/{id}' , 'read')->name('foundSourceRead');
     Route::get('/foundSourceUpdatePage/{id}' , 'updatePage')->name('foundSourceUpdatePage');
-    Route::post('/foundSourceUpdate/{id}' , 'update')->name('foundSourceUpdate');
+    Route::post('/foundSourceUpdate' , 'update')->name('foundSourceUpdate');
     Route::get('/foundSourceDelete/{id}' , 'delete')->name('foundSourceDelete');
 });
 
+Route::controller(HumanEntityController::class)->group(function(){
+    Route::get('/humanEntityPage' , 'humanEntityPage')->name('humanEntityPage');
+    Route::get('/addHumanEntity' , 'addPage')->name('addHumanEntity');
+    Route::post('/humanEntityCreate' , 'create')->name('humanEntityCreate');
+    Route::get('/humanEntityRead/{id}' , 'read')->name('humanEntityRead');
+    Route::get('/humanEntityUpdatePage/{id}' , 'updatePage')->name('humanEntityUpdatePage');
+    Route::post('/humanEntityUpdate' , 'update')->name('humanEntityUpdate');
+    Route::get('/humanEntityDelete/{id}' , 'delete')->name('humanEntityDelete');
+});
+
+Route::controller(LegalEntityController::class)->group(function(){
+    Route::get('/legalEntityForm' , 'legalEntityPage')->name('legalEntityForm');
+    Route::get('/addLegalEntity' , 'addPage')->name('addLegalEntity');
+    Route::post('/legalEntityCreate' , 'create')->name('legalEntityCreate');
+    Route::get('/legalEntityRead/{id}' , 'read')->name('legalEntityRead');
+    Route::get('/legalEntityUpdatePage/{id}' , 'updatePage')->name('legalEntityUpdatePage');
+    Route::post('/legalEntityUpdate' , 'update')->name('legalEntityUpdate');
+    Route::get('/legalEntityDelete/{id}' , 'delete')->name('legalEntityDelete');
+});
+
+Route::controller(LocationController::class)->group(function(){
+    Route::get('/locationForm' , 'locationPage')->name('locationForm');
+    Route::get('/addLocation' , 'addPage')->name('addLocation');
+    Route::post('/locationCreate' , 'create')->name('locationCreate');
+    Route::get('/locationRead/{id}' , 'read')->name('locationRead');
+    Route::get('/locationUpdatePage/{id}' , 'updatePage')->name('locationUpdatePage');
+    Route::post('/locationUpdate' , 'update')->name('locationUpdate');
+    Route::get('/locationDelete/{id}' , 'delete')->name('locationDelete');
+});
+
+Route::controller(MissionTypeController::class)->group(function(){
+    Route::get('/missionTypeForm' , 'missionTypePage')->name('missionTypeForm');
+    Route::get('/addMissionType' , 'addPage')->name('addMissionType');
+    Route::post('/missionTypeCreate' , 'create')->name('missionTypeCreate');
+    Route::get('/missionTypeRead/{id}' , 'read')->name('missionTypeRead');
+    Route::get('/missionTypeUpdatePage/{id}' , 'updatePage')->name('missionTypeUpdatePage');
+    Route::post('/missionTypeUpdate' , 'update')->name('missionTypeUpdate');
+    Route::get('/missionTypeDelete/{id}' , 'delete')->name('missionTypeDelete');
+});
+
+Route::controller(OrganizationTypeController::class)->group(function(){
+    Route::get('/organizationTypePage' , 'organizationTypePage')->name('organizationTypePage');
+    Route::get('/addOrganizationType' , 'addPage')->name('addOrganizationType');
+    Route::post('/organizationTypeCreate' , 'create')->name('organizationTypeCreate');
+    Route::get('/organizationTypeRead/{id}' , 'read')->name('organizationTypeRead');
+    Route::get('/organizationTypeUpdatePage/{id}' , 'updatePage')->name('organizationTypeUpdatePage');
+    Route::post('/organizationTypeUpdate' , 'update')->name('organizationTypeUpdate');
+    Route::get('/organizationTypeDelete/{id}' , 'delete')->name('organizationTypeDelete');
+});
+
+Route::controller(PriorityController::class)->group(function(){
+    Route::get('/priorityPage' , 'priorityPage')->name('priorityPage');
+    Route::get('/addPriority' , 'addPage')->name('addPriority');
+    Route::post('/priorityCreate' , 'create')->name('priorityCreate');
+    Route::get('/priorityRead/{id}' , 'read')->name('priorityRead');
+    Route::get('/priorityUpdatePage/{id}' , 'updatePage')->name('priorityUpdatePage');
+    Route::post('/priorityUpdate' , 'update')->name('priorityUpdate');
+    Route::get('/priorityDelete/{id}' , 'delete')->name('priorityDelete');
+});
+
+Route::controller(ReferenceController::class)->group(function(){
+    Route::get('/referencePage' , 'referencePage')->name('referencePage');
+    Route::get('/addReference' , 'addPage')->name('addReference');
+    Route::post('/referenceCreate' , 'create')->name('referenceCreate');
+    Route::get('/referenceRead/{id}' , 'read')->name('referenceRead');
+    Route::get('/referenceUpdatePage/{id}' , 'updatePage')->name('referenceUpdatePage');
+    Route::post('/referenceUpdate' , 'update')->name('referenceUpdate');
+    Route::get('/referenceDelete/{id}' , 'delete')->name('referenceDelete');
+});
+
+Route::controller(TechAreaController::class)->group(function(){
+    Route::get('/techAreaPage' , 'techAreaPage')->name('techAreaPage');
+    Route::get('/addTechArea' , 'addPage')->name('addTechArea');
+    Route::post('/techAreaCreate' , 'create')->name('techAreaCreate');
+    Route::get('/techAreaRead/{id}' , 'read')->name('techAreaRead');
+    Route::get('/techAreaUpdatePage/{id}' , 'updatePage')->name('techAreaUpdatePage');
+    Route::post('/techAreaUpdate' , 'update')->name('techAreaUpdate');
+    Route::get('/techAreaDelete/{id}' , 'delete')->name('techAreaDelete');
+});
+
+Route::controller(TechSectorController::class)->group(function(){
+    Route::get('/techSectorPage' , 'techSectorPage')->name('techSectorPage');
+    Route::get('/addTechSector' , 'addPage')->name('addTechSector');
+    Route::post('/techSectorCreate' , 'create')->name('techSectorCreate');
+    Route::get('/techSectorRead/{id}' , 'read')->name('techSectorRead');
+    Route::get('/techSectorUpdatePage/{id}' , 'updatePage')->name('techSectorUpdatePage');
+    Route::post('/techSectorUpdate' , 'update')->name('techSectorUpdate');
+    Route::get('/techSectorDelete/{id}' , 'delete')->name('techSectorDelete');
+});
+
+Route::controller(TechSubSectorController::class)->group(function(){
+    Route::get('/techSubSectorPage' , 'techSubSectorPage')->name('techSubSectorPage');
+    Route::get('/addTechSubSector' , 'addPage')->name('addTechSubSector');
+    Route::post('/techSubSectorCreate' , 'create')->name('techSubSectorCreate');
+    Route::get('/techSubSectorRead/{id}' , 'read')->name('techSubSectorRead');
+    Route::get('/techSubSectorUpdatePage/{id}' , 'updatePage')->name('techSubSectorUpdatePage');
+    Route::post('/techSubSectorUpdate' , 'update')->name('techSubSectorUpdate');
+    Route::get('/techSubSectorDelete/{id}' , 'delete')->name('techSubSectorDelete');
+});
+
+Route::controller(TechnologyController::class)->group(function(){
+    Route::get('/technologyPage' , 'technologyPage')->name('technologyPage');
+    Route::get('/addTechnology' , 'addPage')->name('addTechnology');
+    Route::post('/technologyCreate' , 'create')->name('technologyCreate');
+    Route::get('/technologyRead/{id}' , 'read')->name('technologyRead');
+    Route::get('/technologyUpdatePage/{id}' , 'updatePage')->name('technologyUpdatePage');
+    Route::post('/technologyUpdate' , 'update')->name('technologyUpdate');
+    Route::get('/technologyDelete/{id}' , 'delete')->name('technologyDelete');
+});
+
+Route::controller(TrlController::class)->group(function(){
+    Route::get('/trlPage' , 'trlPage')->name('trlPage');
+    Route::get('/addTrl' , 'addPage')->name('addTrl');
+    Route::post('/trlCreate' , 'create')->name('trlCreate');
+    Route::get('/trlRead/{id}' , 'read')->name('trlRead');
+    Route::get('/trlUpdatePage/{id}' , 'updatePage')->name('trlUpdatePage');
+    Route::post('/trlUpdate' , 'update')->name('trlUpdate');
+    Route::get('/trlDelete/{id}' , 'delete')->name('trlDelete');
+});

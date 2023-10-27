@@ -60,8 +60,10 @@ class EquipmentController extends Controller
         return view('updateEquipment' , ['data'=>$upEquipment]);
     }
 
-    public function update(Request $req , $id)
+    public function update(Request $req)
     {
+        $id = $req->id;
+
         $req->validate([
             'equipment'=> 'required',
         ]);

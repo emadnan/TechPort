@@ -60,8 +60,9 @@ class FoundingSourcesController extends Controller
         return view('updateFoundSource' , ['data'=>$upSource]);
     }
 
-    public function update(Request $req , $id)
+    public function update(Request $req)
     {
+        $id = $req->id;
         $req->validate([
             'name'=> 'required',
             'code'=>'required',   

@@ -9,8 +9,12 @@
                 <div class="card-header"><b>{{ __('Update Found Sorce') }}</b></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('foundSourceUpdate' , $data->id ) }}">
+                    <form method="POST" action="{{ route('foundSourceUpdate') }}">
                         @csrf
+
+                        <div class="col-md-6">
+                            <input id="id" type="hidden" class="form-control" name="id" value="{{ $data->id }}" >
+                        </div>
 
                         <div class="row mb-3">
                             <label for="code" class="col-md-4 col-form-label text-md-end">{{ __('Code') }}</label>

@@ -1,7 +1,24 @@
 @extends('layouts.app')
 @include('sidebar')
 @section('content')
-<div class="content-wrapper" style="min-height: 1302.12px;">
+
+{{-- <div class="row" style="display: block;">
+  <div class="col-md-10 offset-2">
+    <table class="table table-bordered table-striped" >
+      <thead>
+          <th class="py-1">Business Area</th>
+          <th class="py-1">Description</th>
+          <th class="py-1">Note</th>
+      </thead>
+      <tbody>
+    <tr id="get-result">
+    </tr>
+    </tbody>
+    </table>
+  </div>
+</div> --}}
+
+<div class="content-wrapper" style="min-height: 1302.12px; display:block;">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -13,7 +30,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
+             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -271,7 +288,7 @@
     </div>
     <!-- /.content -->
   </div>
-  <script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
@@ -283,4 +300,25 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
+
+{{-- <script>
+  $(document).ready(function() {
+        $('#businessArea').click(function() {
+            $.ajax({
+                type: 'GET',
+                url: '{{ route("businessArea") }}',
+
+                success: function(data) {
+                    var result = $('#get-result');
+                    result.empty();
+                    $.each(data, function(index, item) {
+                        result.append('<td>' + item. businessarea + '</td>');
+                        result.append('<td>' + item.  description + '</td>');
+                        result.append('<td>' + item. note + '</td>');
+                    });
+                }
+            });
+        });
+    });
+</script> --}}
 @endsection

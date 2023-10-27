@@ -46,20 +46,24 @@ class BusinessAreaController extends Controller
 
             if($busCreate)
             {
-              return redirect()->route('businessArea');
+                return redirect()->route('businessArea');
+            //   return response()->json(['message' => 'Business Area Added successfully']);
             }
             else {
-                echo '<h1>Data Did Not Enter Database</h1>';
+                return redirect()->route('businessArea');
+                // return response()->json(['message' => 'Business Area Did Not Added successfully']);
             }
     }
 
     public function updatePage(string $id)
     {
         $busUpdate = DB::table('businessareas')->find($id);
+                // return response()->json([$busUpdate]);
         return view('updateBusiness' , ['data' => $busUpdate]);
     }
-    public function update(Request $req , $id)
+    public function update(Request $req)
     {
+        $id = $req->id;
         $req->validate([
             'businessArea'=> 'required',
             'description'=> 'required',

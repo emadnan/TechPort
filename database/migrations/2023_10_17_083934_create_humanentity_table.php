@@ -20,7 +20,7 @@ class CreateHumanentityTable extends Migration
             $table->string('role')->nullable();
             $table->string('tel')->nullable();
             $table->string('email')->nullable();
-            $table->string('note')->nullable();
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

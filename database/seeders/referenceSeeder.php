@@ -14,11 +14,6 @@ class referenceSeeder extends Seeder
      */
     public function run()
     {
-        reference::insert(
-            [
-                'reference'=>'null',
-                'note'=>'null',
-            ]
-            );
+        
     }
 }

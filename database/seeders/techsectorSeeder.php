@@ -17,8 +17,7 @@ class techsectorSeeder extends Seeder
     {
         techsector::insert(
             [
-                'techsector'=>'TX01.1',
-                'techsectordescription'=>' Chemical Space Propulsion'
+               
             ]
             );
     }

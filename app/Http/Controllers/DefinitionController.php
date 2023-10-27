@@ -66,8 +66,9 @@ class DefinitionController extends Controller
         return view('updateDefinition' , ['data'=>$upDefinition]);
     }
 
-    public function update(Request $req , $id)
+    public function update(Request $req)
     {
+        $id = $req->id;
         $req->validate([
             'name'=> 'required',
             'definition'=> 'required',

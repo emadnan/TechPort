@@ -15,10 +15,6 @@ class techareaSeeder extends Seeder
      */
     public function run()
     {
-        techarea::insert(
-            [
-                'techarea' => 'TX01',
-                'techareadescription' => 'Propulsion Systems'
-            ]);
+    
     }
 }

@@ -16,7 +16,7 @@ class CreateLegalentityroleTable extends Migration
         Schema::create('legalentityrole', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('discription');
+            $table->longText('description');
             $table->longText('note')->nullable();
             $table->timestamps();
         });

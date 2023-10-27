@@ -14,10 +14,6 @@ class requirementSeeder extends Seeder
      */
     public function run()
     {
-        requirement::insert(
-            [
-
-            ]
-            );
+        
     }
 }

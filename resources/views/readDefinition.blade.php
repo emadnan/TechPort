@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><b>{{ __('Business Area Details') }}</b></div>
+                <div class="card-header"><b>{{ __('Definition Details') }}</b></div>
                 <div class="card-body">
                   @foreach ($data as $id=>$readDefinition )
                   <p ><span style="font-weight:700;">Name : </span> {{$readDefinition->name}} </p>
