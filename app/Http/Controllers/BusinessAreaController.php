@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\businessarea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class BusinessAreaController extends Controller
 {
@@ -20,7 +23,7 @@ class BusinessAreaController extends Controller
     public function read(string $id)
     {
         $busShow = DB::table('businessareas')->where('id',$id)->get();
-        return view('readBusiness' , ['data'=> $busShow]);
+        return response()->json(['data'=>$busShow]);
     }
 
     public function createPage()
@@ -31,10 +34,15 @@ class BusinessAreaController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'businessArea'=> 'required',
             'description'=> 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
+
 
         $busCreate = DB::table('businessareas')->insert(
             [
@@ -46,30 +54,37 @@ class BusinessAreaController extends Controller
 
             if($busCreate)
             {
-                return redirect()->route('businessArea');
-            //   return response()->json(['message' => 'Business Area Added successfully']);
+                $latestID = businessarea::latest()->value('id');
+                $newRow = DB::table('businessareas')->where('id', $latestID)->get();
+                // return redirect()->route('businessArea');
+              return response()->json(['message' => 'Business Area Added successfully' , 'newRow'=>$newRow]);
             }
             else {
-                return redirect()->route('businessArea');
-                // return response()->json(['message' => 'Business Area Did Not Added successfully']);
+                // return redirect()->route('businessArea');
+                return response()->json(['message' => 'Business Area Was Not Added successfully']);
             }
     }
 
     public function updatePage(string $id)
     {
-        $busUpdate = DB::table('businessareas')->find($id);
-                // return response()->json([$busUpdate]);
-        return view('updateBusiness' , ['data' => $busUpdate]);
+        $busUpdate = DB::table('businessareas')->where('id',$id)->get();
+                return response()->json(['row'=>$busUpdate]);
+        // return view('updateBusiness' , ['data' => $busUpdate]);
     }
+    
     public function update(Request $req)
     {
-        $id = $req->id;
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'businessArea'=> 'required',
             'description'=> 'required',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
-        $upBusiness = DB::table('businessareas')->where('id', $id)->update(
+        $id = $req->id;
+        $upRows = DB::table('businessareas')->where('id', $id)->update(
             [
                 
                 'businessarea'=> $req->businessArea,
@@ -77,14 +92,17 @@ class BusinessAreaController extends Controller
                 'note'=> $req->note,
 
             ]);
-            if($upBusiness)
+            if($upRows)
             {
-        //    echo '<script>';
-        //    echo 'alert("hello")';
-              return redirect()->route('businessArea');
+                $update = DB::table('businessareas')->where('id', $id)->get();
+                  if($update)
+                  {
+                    return response()->json(['message' => 'Business Area Updated Successfully' , 'update'=>$update]);
+                  }
             }
-            else {
-                return redirect()->route('businessArea');
+            else 
+            {
+                return response()->json(['message' => 'Business Area Was Not Updated Successfully']);
             }
             
     }
@@ -95,11 +113,11 @@ class BusinessAreaController extends Controller
      
         if($deleteBusiness)
         {
-           return redirect()->route('businessArea');
+            return response()->json(['message' => 'Business Area Deleted Successfully' , 'data'=>$deleteBusiness]);
         } 
         else
         {
-            echo '<h1>Data Was Not Deleted From Database</h1>';
+            return response()->json(['message' => 'Business Area Was Not Deleted Successfully']);
         }
     }
 }

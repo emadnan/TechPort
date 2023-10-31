@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foundingsource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class FoundingSourcesController extends Controller
 {
@@ -21,8 +23,7 @@ class FoundingSourcesController extends Controller
     public function read (string $id)
     {
         $fsRead = Db::table('foundingsources')->where('id',$id)->get();
-
-        return view('readFoundSource', ['data' => $fsRead]);
+        return response()->json(['data'=>$fsRead]);
     }
 
     public function addPage()
@@ -32,10 +33,15 @@ class FoundingSourcesController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
              'code'=>'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $fsCreate = DB::table('foundingsources')->insert([
             'code'=> $req->code,
@@ -45,29 +51,34 @@ class FoundingSourcesController extends Controller
 
         if($fsCreate)
         {
-            return redirect()->route('foundSourceForm');
+            $latestID = foundingsource::latest()->value('id');
+            $fsRow = DB::table('foundingsources')->where('id', $latestID)->get();
+          return response()->json(['message' => 'Source Added successfully' , 'fsRow'=>$fsRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Source Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upSource = DB::table('foundingsources')->find($id);
-
-        return view('updateFoundSource' , ['data'=>$upSource]);
+        $fsUpdate = DB::table('foundingsources')->where('id',$id)->get();
+                return response()->json(['row'=>$fsUpdate]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
-            'code'=>'required',   
+            'code'=>'required', 
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
+        $id = $req->id;
         $fsUpdate = DB::table('foundingsources')->where('id',$id)->update([
             'code'=> $req->code,
             'name'=> $req->name,
@@ -75,11 +86,15 @@ class FoundingSourcesController extends Controller
         ]);
         if($fsUpdate)
         {
-            return redirect()->route('foundSourceForm');
+            $updateFS = DB::table('foundingsources')->where('id', $id)->get();
+                  if($updateFS)
+                  {
+                    return response()->json(['message' => 'Source Updated Successfully' , 'updateFS'=>$updateFS]);
+                  }
         }
         else
         {
-            return redirect()->route('foundSourceForm')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Source Was No Updated Successfully' ]);
         }
 
     }
@@ -89,7 +104,15 @@ class FoundingSourcesController extends Controller
         $fsDelete = DB::table('foundingsources')->where('id',$id)->delete();
         if($fsDelete)
         {
-            return redirect()->route('foundSourceForm');
+            return response()->json(['message' => 'Source Deleted Successfully' , 'data'=>$fsDelete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Source Was Not Deleted Successfully']);
         }
     }
 }
+
+
+
+//          |-----------------------------------------------------------------------------------------|

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Validator;
 use App\Models\humanentity;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HumanEntityController extends Controller
 {
@@ -23,7 +23,7 @@ class HumanEntityController extends Controller
     {
         $heRead = Db::table('humanentity')->where('id',$id)->get();
 
-        return view('readHumanEntity', ['data' => $heRead]);
+        return response()->json(['data'=>$heRead]);
     }
 
     public function addPage()
@@ -33,12 +33,16 @@ class HumanEntityController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
             'surname'=>'required',
             'email'=>'email | unique:humanentity,email',
             'tel'=>'size:11 | nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $heCreate = DB::table('humanentity')->insert([
             'name'=> $req->name,
@@ -51,31 +55,36 @@ class HumanEntityController extends Controller
 
         if($heCreate)
         {
-            return redirect()->route('humanEntityPage');
+            $latestID = humanentity::latest()->value('id');
+            $heRow = DB::table('humanentity')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Human Entity  Added successfully' , 'heRow'=>$heRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Human Entity  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upEntity = DB::table('humanentity')->find($id);
-
-        return view('updateHumanEntity' , ['data'=>$upEntity]);
+        $upEntity = DB::table('humanentity')->where('id', $id)->get();
+        return response()->json(['row'=>$upEntity]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
 
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
             'surname'=>'required',
             'email' => 'email|unique:humanentity,email,'.$id,
             'tel'=>'size:11 |  nullable',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
         $heUpdate = DB::table('humanentity')->where('id',$id)->update([
             'name'=> $req->name,
@@ -87,21 +96,29 @@ class HumanEntityController extends Controller
         ]);
         if($heUpdate)
         {
-            return redirect()->route('humanEntityPage');
+            $update = DB::table('humanentity')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Human Entity Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('humanEntityPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Human Entity Was Not Updated Successfully']);
         }
 
     }
 
     public function delete(string $id)
     {
-        $heDelete = DB::table('humanentity')->where('id',$id)->delete();
-        if($heDelete)
+        $Delete = DB::table('humanentity')->where('id',$id)->delete();
+        if($Delete)
         {
-            return redirect()->route('humanEntityPage');
+            return response()->json(['message' => 'Human Entity  Deleted Successfully' , 'data'=>$Delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Human Entity  Was Not Deleted Successfully']);
         }
     }
 }

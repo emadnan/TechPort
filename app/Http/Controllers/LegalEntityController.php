@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\legalentityrole;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LegalEntityController extends Controller
 {
@@ -22,7 +24,7 @@ class LegalEntityController extends Controller
     {
         $heRead = Db::table('legalentityrole')->where('id',$id)->get();
 
-        return view('readLegalEntity', ['data' => $heRead]);
+        return response()->json(['data'=>$heRead]);
     }
 
     public function addPage()
@@ -32,42 +34,60 @@ class LegalEntityController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        // return response()->json(['message'=>'tempp test'])
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
             'description'=> 'required',
+
         ]);
 
-        $Create = DB::table('legalentityrole')->insert([
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
+
+        $create = DB::table('legalentityrole')->insert([
             'name'=> $req->name,
             'description'=> $req->description,
             'note'=> $req->note,
         ]);
-
-        if($Create)
+        
+        if($create)
         {
-            return redirect()->route('legalEntityForm');
+            $latestID = legalentityrole::latest()->value('id');
+            $row = DB::table('legalentityrole')->where('id', $latestID)->get();
+
+            return response()->json(['message' => 'Legal Entity  Added successfully' , 'Row'=>$row]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Legal Entity  Was Not Added successfully']);
         }
+        // $legalentityrole = new legalentityrole;
+        // $legalentityrole->id = $req->id;
+        // $legalentityrole->name = $req->name;
+        // $legalentityrole->description = $req->description;
+        // $legalentityrole->save();
+        // return response()->json(['message'=>'Legal Entity Added successfully' , 'Row'=>$legalentityrole]);
     }
 
     public function updatePage(string $id)
     {
-        $upEntity = DB::table('legalentityrole')->find($id);
-
-        return view('updateLegalEntity' , ['data'=>$upEntity]);
+        $upEntity = DB::table('legalentityrole')->where('id',$id)->get();
+        return response()->json(['row'=>$upEntity]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
             'description'=> 'required',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
+
+        $id = $req->id;
 
         $Update = DB::table('legalentityrole')->where('id',$id)->update([
             'name'=> $req->name,
@@ -76,11 +96,14 @@ class LegalEntityController extends Controller
         ]);
         if($Update)
         {
-            return redirect()->route('legalEntityForm');
-        }
+            $update = DB::table('legalentityrole')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Legal Entity Role Updated Successfully' , 'update'=>$update]);
+            }        }
         else
         {
-            return redirect()->route('legalEntityForm')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Legal Entity Role Not Updated Successfully']);
         }
 
     }
@@ -90,7 +113,11 @@ class LegalEntityController extends Controller
         $Delete = DB::table('legalentityrole')->where('id',$id)->delete();
         if($Delete)
         {
-            return redirect()->route('legalEntityForm');
+            return response()->json(['message' => 'Legal Entity Role  Deleted Successfully' , 'data'=>$Delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Legal Entity Role  Was Not Deleted Successfully']);
         }
     }
 }

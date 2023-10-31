@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Error;
+use App\Models\definition;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DefinitionController extends Controller
 {
@@ -25,7 +26,7 @@ class DefinitionController extends Controller
     {
         $defRead = Db::table('definitions')->where('id',$id)->get();
 
-        return view('readDefinition', ['data' => $defRead]);
+        return response()->json(['data'=>$defRead]);
     }
 
     public function addPage()
@@ -35,12 +36,16 @@ class DefinitionController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
             'definition'=> 'required',
             'report'=> 'required',
-            // 'note'=> 'required',
+          
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $defCreate = DB::table('definitions')->insert([
             'name'=> $req->name,
@@ -51,31 +56,37 @@ class DefinitionController extends Controller
 
         if($defCreate)
         {
-            return redirect()->route('definitionPage');
+            $latestID = definition::latest()->value('id');
+            $defRow = DB::table('definitions')->where('id', $latestID)->get();
+            // return redirect()->route('businessArea');
+          return response()->json(['message' => 'Business Area Added successfully' , 'addRow'=>$defRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Business Area Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upDefinition = DB::table('definitions')->find($id);
-
-        return view('updateDefinition' , ['data'=>$upDefinition]);
+        $upDefinition = DB::table('definitions')->where('id',$id)->get();
+        return response()->json(['row'=>$upDefinition]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
-        $req->validate([
+        
+        $validator = Validator::make($req->all(),[
             'name'=> 'required',
             'definition'=> 'required',
             'report'=> 'required',
-            // 'note'=> 'required',
         ]);
 
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
+
+        $id = $req->id;
         $defUpdate = DB::table('definitions')->where('id',$id)->update([
             'name'=> $req->name,
             'definition'=> $req->definition,
@@ -84,11 +95,12 @@ class DefinitionController extends Controller
         ]);
         if($defUpdate)
         {
-            return redirect()->route('definitionPage');
+            $updateDEF = DB::table('definitions')->where('id', $id)->get();
+            return response()->json(['message' => 'Definition Updated Successfully' , 'updateDEF'=>$updateDEF]);
         }
         else
         {
-            return redirect()->route('definitionPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Definition Was Not Updated Successfully']);
         }
 
     }
@@ -98,7 +110,11 @@ class DefinitionController extends Controller
         $defDelete = DB::table('definitions')->where('id',$id)->delete();
         if($defDelete)
         {
-            return redirect()->route('definitionPage');
+            return response()->json(['message' => 'Definition  Deleted Successfully' , 'data'=>$defDelete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Definition  Was Not Deleted Successfully']);
         }
     }
 }

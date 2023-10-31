@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\equipment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class EquipmentController extends Controller
 {
@@ -22,7 +24,7 @@ class EquipmentController extends Controller
     {
         $eqRead = Db::table('equipment')->where('id',$id)->get();
 
-        return view('readEquipment', ['data' => $eqRead]);
+        return response()->json(['data'=>$eqRead]);
     }
 
     public function addPage()
@@ -32,10 +34,13 @@ class EquipmentController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'equipment'=> 'required',
-           
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $eqCreate = DB::table('equipment')->insert([
             'id_pn'=> $req->id_pn,
@@ -45,29 +50,33 @@ class EquipmentController extends Controller
 
         if($eqCreate)
         {
-            return redirect()->route('equipmentPage');
+            $latestID = equipment::latest()->value('id');
+            $eqRow = DB::table('equipment')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Equipment  Added successfully' , 'eqRow'=>$eqRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Equipment  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upEquipment = DB::table('equipment')->find($id);
-
-        return view('updateEquipment' , ['data'=>$upEquipment]);
+        $upEquipment = DB::table('equipment')->where('id',$id)->get();
+                return response()->json(['row'=>$upEquipment]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'equipment'=> 'required',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
+        $id = $req->id;
         $eqUpdate = DB::table('equipment')->where('id',$id)->update([
             'id_pn'=> $req->id_pn,
             'equipment'=> $req->equipment,
@@ -75,11 +84,16 @@ class EquipmentController extends Controller
         ]);
         if($eqUpdate)
         {
-            return redirect()->route('equipmentPage');
+            $updateEQ = DB::table('equipment')->where('id', $id)->get();
+            if($updateEQ)
+            {
+              return response()->json(['message' => 'Equipment Area Updated Successfully' , 'updateEQ'=>$updateEQ]);
+            }
+
         }
         else
         {
-            return redirect()->route('equipmentPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Equipment Was Not Updated Successfully']);
         }
 
     }
@@ -89,7 +103,11 @@ class EquipmentController extends Controller
         $eqDelete = DB::table('equipment')->where('id',$id)->delete();
         if($eqDelete)
         {
-            return redirect()->route('equipmentPage');
+            return response()->json(['message' => 'Equipment  Deleted Successfully' , 'data'=>$eqDelete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Equipment  Was Not Deleted Successfully']);
         }
     }
 }
