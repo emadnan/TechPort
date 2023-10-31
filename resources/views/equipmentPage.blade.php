@@ -201,7 +201,7 @@ $('#form').submit(function(){
                             var alert = $('.alert')
                         setTimeout(function() {
                            alert.alert("close");
-                        }, 5000);
+                        }, 2000);
 
                         var data = $('#data-table tbody');
                         $.each(response.updateEQ , function(index , item){
@@ -264,7 +264,7 @@ $('#form').submit(function(){
                             var alert = $('.alert')
                         setTimeout(function() {
                            alert.alert("close");
-                        }, 5000);
+                        }, 2000);
                         var data1 = $('#data-table tbody');
                  $.each(response.eqRow , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
@@ -339,7 +339,7 @@ $('body').on('click' , '#delete-btn' , function(){
                             var alert = $('.alert')
                         setTimeout(function() {
                            alert.alert("close");
-                        }, 5000);
+                        }, 2000);
             }
     });
 });

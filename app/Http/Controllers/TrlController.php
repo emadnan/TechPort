@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\trl;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 class TrlController extends Controller
 {
     public function trlPage ()
@@ -15,9 +16,8 @@ class TrlController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('trl')->where('id',$id)->get();
-
-        return view('readTrl', ['data' => $Read]);
+        $read = Db::table('trl')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -27,12 +27,17 @@ class TrlController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+
+        $validator = Validator::make($req->all(),[
             'trllevel'=> 'required',
             'trldescription'=> 'required',
             'trlexample'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('trl')->insert([
             'trllevel'=> $req->trllevel,
@@ -43,31 +48,35 @@ class TrlController extends Controller
 
         if($Create)
         {
-            return redirect()->route('trlPage');
+            $latestID = trl::latest()->value('id');
+            $eqRow = DB::table('trl')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Technology Readiness Level(TRL) Added successfully' , 'eqRow'=>$eqRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Technology Readiness Level(TRL) Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upArea = DB::table('trl')->find($id);
-
-        return view('updateTrl' , ['data'=>$upArea]);
+        $upArea = DB::table('trl')->where('id', $id)->get();
+        return response()->json(['row'=>$upArea]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'trllevel'=> 'required',
             'trldescription'=> 'required',
             'trlexample'=> 'required',
             'note'=> 'nullable',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
         $Update = DB::table('trl')->where('id',$id)->update([
             'trllevel'=> $req->trllevel,
@@ -78,21 +87,31 @@ class TrlController extends Controller
 
         if($Update)
         {
-            return redirect()->route('trlPage');
+            $updateEQ = DB::table('trl')->where('id', $id)->get();
+            if($updateEQ)
+            {
+              return response()->json(['message' => 'Technology Readiness Level (TRL) Updated Successfully' , 'updateEQ'=>$updateEQ]);
+            }
+
         }
         else
         {
-            return redirect()->route('trlPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Technology Readiness Level (TRL) Was Not Updated Successfully']);
         }
+
 
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('trl')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('trl')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('trlPage');
+            return response()->json(['message' => 'Technology Readiness Level(TRL)  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Technology Readiness Level(TRL)  Was Not Deleted Successfully']);
         }
     }       
 }

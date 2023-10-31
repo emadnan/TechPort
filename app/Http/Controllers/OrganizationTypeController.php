@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\orgtype;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OrganizationTypeController extends Controller
 {
@@ -20,9 +22,8 @@ class OrganizationTypeController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('orgtype')->where('id',$id)->get();
-
-        return view('readOrganizationtype', ['data' => $Read]);
+        $read = Db::table('orgtype')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -32,10 +33,15 @@ class OrganizationTypeController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+
+        $validator = Validator::make($req->all(),[
             'type'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('orgtype')->insert([
             'type'=> $req->type,
@@ -43,30 +49,35 @@ class OrganizationTypeController extends Controller
         ]);
 
         if($Create)
-        {
-            return redirect()->route('organizationTypePage');
+        {$latestID = orgtype::latest()->value('id');
+            $newRow = DB::table('orgtype')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Organization Type  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Organization Type  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upOrganization = DB::table('orgtype')->find($id);
+        $upOrganization = DB::table('orgtype')->where('id', $id)->get();
 
-        return view('updateOrganizationType' , ['data'=>$upOrganization]);
+        return response()->json(['row'=>$upOrganization]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'type'=> 'required',
             'note'=> 'nullable',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
+
+        $id = $req->id;
 
         $Update = DB::table('orgtype')->where('id',$id)->update([
             'type'=> $req->type,
@@ -75,21 +86,28 @@ class OrganizationTypeController extends Controller
 
         if($Update)
         {
-            return redirect()->route('organizationTypePage');
+            $update = DB::table('orgtype')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Organization Type  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('organizationTypePage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Organization Type Not Updated Successfully']);
         }
-
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('orgtype')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('orgtype')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('organizationTypePage');
+            return response()->json(['message' => 'Organization Type  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Organization Type  Was Not Deleted Successfully']);
         }
     }
 }

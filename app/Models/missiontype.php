@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class missiontype extends Model
 {
     use HasFactory;
+    protected $table = "missiontype";
 }

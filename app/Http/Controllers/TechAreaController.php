@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\techarea;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TechAreaController extends Controller
 {
@@ -20,9 +22,8 @@ class TechAreaController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('techareas')->where('id',$id)->get();
-
-        return view('readTechArea', ['data' => $Read]);
+        $read = Db::table('techareas')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -32,13 +33,17 @@ class TechAreaController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'techarea'=> 'required',
             'techareadescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('techareas')->insert([
             'techarea'=> $req->techarea,
@@ -50,33 +55,38 @@ class TechAreaController extends Controller
 
         if($Create)
         {
-            return redirect()->route('techAreaPage');
+            $latestID = techarea::latest()->value('id');
+            $newRow = DB::table('techareas')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Technology Area  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Technology Area  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upArea = DB::table('techareas')->find($id);
-
-        return view('updateTechArea' , ['data'=>$upArea]);
+        $upArea = DB::table('techareas')->where('id', $id)->get();
+        return response()->json(['row'=>$upArea]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
-
-        $req->validate([
+        
+        $validator = Validator::make($req->all(),[
             'techarea'=> 'required',
             'techareadescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
         ]);
-
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
+        
         $Update = DB::table('techareas')->where('id',$id)->update([
             'techarea'=> $req->techarea,
             'techareadescription'=> $req->techareadescription,
@@ -87,21 +97,28 @@ class TechAreaController extends Controller
 
         if($Update)
         {
-            return redirect()->route('techAreaPage');
+            $update = DB::table('techareas')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Technology Area  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('techAreaPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Technology Area Not Updated Successfully']);
         }
-
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('techareas')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('techareas')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('techAreaPage');
+            return response()->json(['message' => 'Technology Area  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Technology Area  Was Not Deleted Successfully']);
         }
     }
 }

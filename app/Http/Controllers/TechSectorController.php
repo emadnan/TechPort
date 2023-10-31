@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\techsector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 class TechSectorController extends Controller
 {
     public function techSectorPage ()
@@ -15,9 +16,8 @@ class TechSectorController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('techsector')->where('id',$id)->get();
-
-        return view('readTechSector', ['data' => $Read]);
+        $read = Db::table('techsector')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -27,13 +27,17 @@ class TechSectorController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'techsector'=> 'required',
             'techsectordescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('techsector')->insert([
             'techsector'=> $req->techsector,
@@ -45,32 +49,36 @@ class TechSectorController extends Controller
 
         if($Create)
         {
-            return redirect()->route('techSectorPage');
+            $latestID = techsector::latest()->value('id');
+            $newRow = DB::table('techsector')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Technology Sector  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Technology Sector  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upArea = DB::table('techsector')->find($id);
-
-        return view('updateTechSector' , ['data'=>$upArea]);
+        $upArea = DB::table('techsector')->where('id', $id)->get();
+        return response()->json(['row'=>$upArea]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'techsector'=> 'required',
             'techsectordescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
         $Update = DB::table('techsector')->where('id',$id)->update([
             'techsector'=> $req->techsector,
@@ -82,21 +90,28 @@ class TechSectorController extends Controller
 
         if($Update)
         {
-            return redirect()->route('techSectorPage');
+            $update = DB::table('techsector')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Technology Sector  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('techSectorPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Technology Sector Not Updated Successfully']);
         }
-
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('techsector')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('techsector')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('techSectorPage');
+            return response()->json(['message' => 'Technology Sector  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Technology Sector  Was Not Deleted Successfully']);
         }
     }
 }

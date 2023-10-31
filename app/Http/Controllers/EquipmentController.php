@@ -22,7 +22,7 @@ class EquipmentController extends Controller
 
     public function read (string $id)
     {
-        $eqRead = Db::table('equipment')->where('id',$id)->get();
+        $eqRead = DB::table('equipment')->where('id',$id)->get();
 
         return response()->json(['data'=>$eqRead]);
     }

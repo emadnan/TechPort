@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class orgtype extends Model
 {
     use HasFactory;
+    protected $table = "orgtype";
+
 }

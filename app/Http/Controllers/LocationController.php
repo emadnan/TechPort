@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Error;
+use App\Models\location;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -21,9 +22,9 @@ class LocationController extends Controller
 
     public function read (string $id)
     {
-        $Read = Db::table('location')->where('id',$id)->get();
+        $read = Db::table('location')->where('id',$id)->get();
 
-        return view('readLocation', ['data' => $Read]);
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -33,11 +34,15 @@ class LocationController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'state'=> 'nullable',
             'region'=> 'nullable',
             'city'=> 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('location')->insert([
             'state'=> $req->state,
@@ -47,54 +52,67 @@ class LocationController extends Controller
 
         if($Create)
         {
-            return redirect()->route('locationForm');
+            $latestID = location::latest()->value('id');
+            $newRow = DB::table('location')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Location  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Location  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upLocation = DB::table('location')->find($id);
-
-        return view('updateLocation' , ['data'=>$upLocation]);
+        $upLocation = DB::table('location')->where('id', $id)->get();
+                return response()->json(['row'=>$upLocation]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
 
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'state'=> 'nullable',
             'region'=> 'nullable',
             'city'=> 'required',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
-        $Update = DB::table('location')->where('id',$id)->update([
+        $id = $req->id;
+        $locUpdate = DB::table('location')->where('id',$id)->update([
             'state'=> $req->state,
             'region'=> $req->region,
             'city'=> $req->city,
         ]);
 
-        if($Update)
+        if($locUpdate)
         {
-            return redirect()->route('locationForm');
+            $update = DB::table('location')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Location  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('locationForm')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Location Not Updated Successfully']);
         }
 
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('location')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('location')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('locationForm');
+            return response()->json(['message' => 'Location  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Location  Was Not Deleted Successfully']);
         }
     }
 }

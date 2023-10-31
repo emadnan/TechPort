@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\techniche;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Validator;
 class TechSubSectorController extends Controller
 {
     public function techSubSectorPage ()
@@ -15,9 +16,8 @@ class TechSubSectorController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('techniche')->where('id',$id)->get();
-
-        return view('readTechSubSector', ['data' => $Read]);
+        $read = Db::table('techniche')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -27,13 +27,18 @@ class TechSubSectorController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+
+        $validator = Validator::make($req->all(),[
             'techniche'=> 'required',
             'technichedescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('techniche')->insert([
             'techniche'=> $req->techniche,
@@ -45,32 +50,37 @@ class TechSubSectorController extends Controller
 
         if($Create)
         {
-            return redirect()->route('techSubSectorPage');
+            $latestID = techniche::latest()->value('id');
+            $newRow = DB::table('techniche')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Technology Sub Sector  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Technology Sub Sector  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upArea = DB::table('techniche')->find($id);
-
-        return view('updateTechSubSector' , ['data'=>$upArea]);
+        $upArea = DB::table('techniche')->where('id', $id)->get();
+        return response()->json(['row'=>$upArea]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
 
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'techniche'=> 'required',
             'technichedescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
 
         $Update = DB::table('techniche')->where('id',$id)->update([
             'techniche'=> $req->techniche,
@@ -82,21 +92,28 @@ class TechSubSectorController extends Controller
 
         if($Update)
         {
-            return redirect()->route('techSubSectorPage');
+            $update = DB::table('techniche')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Technology Sub Sector  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('techSubSectorPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Technology Sub Sector Not Updated Successfully']);
         }
-
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('techniche')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('techniche')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('techSubSectorPage');
+            return response()->json(['message' => 'Technology Sub Sector  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Technology Sub Sector  Was Not Deleted Successfully']);
         }
     }    
 }

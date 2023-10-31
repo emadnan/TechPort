@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\priority;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class PriorityController extends Controller
 {
@@ -20,9 +22,9 @@ class PriorityController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('priorities')->where('id',$id)->get();
+        $read = Db::table('priorities')->where('id',$id)->get();
 
-        return view('readPriority', ['data' => $Read]);
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -32,10 +34,14 @@ class PriorityController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
-            'priority'=> 'nullable',
+        $validator = Validator::make($req->all(),[
+            'priority'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('priorities')->insert([
             'priority'=> $req->priority,
@@ -44,29 +50,36 @@ class PriorityController extends Controller
 
         if($Create)
         {
-            return redirect()->route('priorityPage');
+            
+            $latestID = priority::latest()->value('id');
+            $newRow = DB::table('priorities')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Priority  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Priority  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upPriority = DB::table('priorities')->find($id);
+        $upPriority = DB::table('priorities')->where('id' , $id)->get();
 
-        return view('updatePriority' , ['data'=>$upPriority]);
+        return response()->json(['row'=>$upPriority]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
 
-        $req->validate([
-            'priority'=> 'nullable',
+        $validator = Validator::make($req->all(),[
+            'priority'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Update = DB::table('priorities')->where('id',$id)->update([
             'priority'=> $req->priority,
@@ -75,21 +88,29 @@ class PriorityController extends Controller
 
         if($Update)
         {
-            return redirect()->route('priorityPage');
+            $update = DB::table('priorities')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Priority  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('priorityPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Priority Not Updated Successfully']);
         }
 
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('priorities')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('priorities')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('priorityPage');
+            return response()->json(['message' => 'Priority  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Priority  Was Not Deleted Successfully']);
         }
     }
 }

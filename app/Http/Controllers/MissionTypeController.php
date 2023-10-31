@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\missiontype;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class MissionTypeController extends Controller
@@ -20,9 +22,8 @@ class MissionTypeController extends Controller
 
     public function read (string $id)
     {
-        $Read = Db::table('missiontype')->where('id',$id)->get();
-
-        return view('readMissionType', ['data' => $Read]);
+        $read = Db::table('missiontype')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -32,11 +33,15 @@ class MissionTypeController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'type'=> 'required',
-            'description'=> 'nullable',
+            'description'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('missiontype')->insert([
             'type'=> $req->type,
@@ -46,30 +51,35 @@ class MissionTypeController extends Controller
 
         if($Create)
         {
-            return redirect()->route('missionTypeForm');
+            $latestID = missiontype::latest()->value('id');
+            $newRow = DB::table('missiontype')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Mission Type  Added successfully' , 'newRow'=>$newRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Mission Type  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upMission = DB::table('missiontype')->find($id);
-
-        return view('updateMissionType' , ['data'=>$upMission]);
+        $upMission = DB::table('missiontype')->where('id', $id)->get();
+        return response()->json(['row'=>$upMission]);
     }
 
     public function update(Request $req)
     {
-        $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'type'=> 'required',
-            'description'=> 'nullable',
+            'description'=> 'required',
             'note'=> 'nullable',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
+
+        $id = $req->id;
 
         $Update = DB::table('missiontype')->where('id',$id)->update([
             'type'=> $req->type,
@@ -79,21 +89,29 @@ class MissionTypeController extends Controller
 
         if($Update)
         {
-            return redirect()->route('missionTypeForm');
+            $update = DB::table('missiontype')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Mission Type  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
-            return redirect()->route('missionTypeForm')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Mission Type Not Updated Successfully']);
         }
 
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('missiontype')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('missiontype')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('missionTypeForm');
+            return response()->json(['message' => 'Mission Type  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Mission Type  Was Not Deleted Successfully']);
         }
     }
 }

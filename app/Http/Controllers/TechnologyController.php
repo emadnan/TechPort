@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\technology;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Validator;
 class TechnologyController extends Controller
 {
     public function technologyPage ()
@@ -15,9 +16,8 @@ class TechnologyController extends Controller
 
     public function read (string $id)   
     {
-        $Read = Db::table('technologies')->where('id',$id)->get();
-
-        return view('readTechnology', ['data' => $Read]);
+        $read = Db::table('technologies')->where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function addPage()
@@ -27,11 +27,15 @@ class TechnologyController extends Controller
 
     public function create(Request $req)
     {
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'technology'=> 'required',
             'id_dm'=> 'required',
             'note'=> 'nullable',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
         $Create = DB::table('technologies')->insert([
             'technology'=> $req->technology,
@@ -41,31 +45,35 @@ class TechnologyController extends Controller
 
         if($Create)
         {
-            return redirect()->route('technologyPage');
+            $latestID = technology::latest()->value('id');
+            $eqRow = DB::table('technologies')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Technology  Added successfully' , 'eqRow'=>$eqRow]);
         }
         else 
         {
-            echo '<h1>Data Did Not Enter Database</h1>';
+            return response()->json(['message' => 'Technology  Was Not Added successfully']);
         }
     }
 
     public function updatePage(string $id)
     {
-        $upArea = DB::table('technologies')->find($id);
-
-        return view('updateTechnology' , ['data'=>$upArea]);
+        $upArea = DB::table('technologies')->where('id' , $id)->get();
+        return response()->json(['row'=>$upArea]);
     }
 
     public function update(Request $req)
     {
         $id = $req->id;
-
-        $req->validate([
+        $validator = Validator::make($req->all(),[
             'technology'=> 'required',
             'id_dm'=> 'required',
             'note'=> 'nullable',
         ]);
-
+        
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
+        }
+    
         $Update = DB::table('technologies')->where('id',$id)->update([
             'technology'=> $req->technology,
             'id_dm'=> $req->id_dm,
@@ -74,21 +82,30 @@ class TechnologyController extends Controller
 
         if($Update)
         {
-            return redirect()->route('technologyPage');
+            $updateEQ = DB::table('technologies')->where('id', $id)->get();
+            if($updateEQ)
+            {
+              return response()->json(['message' => 'Technology Area Updated Successfully' , 'updateEQ'=>$updateEQ]);
+            }
+
         }
         else
         {
-            return redirect()->route('technologyPage')->with('alert' , 'Data Did Not Updated in DataBase');
+            return response()->json(['message' => 'Technology Was Not Updated Successfully']);
         }
 
     }
 
     public function delete(string $id)
     {
-        $Delete = DB::table('technologies')->where('id',$id)->delete();
-        if($Delete)
+        $delete = DB::table('technologies')->where('id',$id)->delete();
+        if($delete)
         {
-            return redirect()->route('technologyPage');
+            return response()->json(['message' => 'Technology  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Technology  Was Not Deleted Successfully']);
         }
     }       
 }
