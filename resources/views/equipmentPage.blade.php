@@ -160,6 +160,9 @@ $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
             var inpID = $('#id').val();
+            $("#id_pnError").text('');
+            $("#equipmentError").text('');
+            $("#noteError").text('');
             if(inpID)
             {
                 $.ajax({
@@ -218,9 +221,7 @@ $('#form').submit(function(){
                             $('#form-modal').modal('hide');
                             $('#form').trigger('reset');
                             $('#id').val(null);
-                            $("#id_pnError").text('');
-                            $("#equipmentError").text('');
-                            $("#noteError").text('');
+                           
                     }
                     },
                 });
@@ -281,9 +282,6 @@ $('#form').submit(function(){
                      $('#form-modal').modal('hide');
                      $('#form').trigger('reset');
                      $('#id').val(null);
-                     $("#id_pnError").text('');
-                     $("#equipmentError").text('');
-                     $("#noteError").text('');
                     }
                     }
                 });

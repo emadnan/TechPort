@@ -201,6 +201,13 @@ $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
             var inpID = $('#id').val();
+
+            $("#nameError").text('');
+            $("#surnameError").text('');
+            $("#emailError").text('');
+            $("#telError").text('');
+            $("#roleError").text('');
+            $("#noteError").text('');
             if(inpID)
             {
                 $.ajax({
@@ -268,12 +275,6 @@ $('#form').submit(function(){
                             $('#form-modal').modal('hide');
                             $('#form').trigger('reset');
                             $('#id').val(null);
-                            $("#nameError").text('');
-                            $("#surnameError").text('');
-                            $("#emailError").text('');
-                            $("#telError").text('');
-                            $("#roleError").text('');
-                            $("#noteError").text('');
                     }
                     },
                 });
@@ -343,12 +344,6 @@ $('#form').submit(function(){
                      $('#form-modal').modal('hide');
                      $('#form').trigger('reset');
                      $('#id').val(null);
-                     $("#nameError").text('');
-                     $("#surnameError").text('');
-                     $("#emailError").text('');
-                     $("#telError").text('');
-                     $("#roleError").text('');
-                     $("#noteError").text('');
                     }
                     }
                 });

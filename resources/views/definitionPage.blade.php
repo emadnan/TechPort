@@ -176,6 +176,10 @@ $('#form').submit(function(){
           event.preventDefault();
           var formData = $(this).serialize();
           var inpID = $('#id').val();
+          $("#nameError").text('');
+          $("#definitionError").text('');
+          $("#reportError").text('');
+          $("#noteError").text('');
           if(inpID)
           {
               $.ajax({
@@ -237,10 +241,6 @@ $('#form').submit(function(){
                       $('#definition-modal').modal('hide');
                      $('#form').trigger('reset');
                      $('#id').val(null);
-                     $("#nameError").text('');
-                     $("#definitionError").text('');
-                     $("#reportError").text('');
-                    $("#noteError").text('');
                   }
                   },
               });
@@ -303,10 +303,6 @@ $('#form').submit(function(){
                      $('#definition-modal').modal('hide');
                      $('#form').trigger('reset');
                      $('#id').val(null);
-                     $("#nameError").text('');
-                     $("#definitionError").text('');
-                     $("#reportError").text('');
-                    $("#noteError").text('');
     }
                     }
                 });

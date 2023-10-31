@@ -166,6 +166,9 @@ $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
             var inpID = $('#id').val();
+            $("#areaError").text('');
+            $("#descriptionError").text('');
+            $("#noteError").text('');
             if(inpID)
             {
                 $.ajax({
@@ -224,9 +227,6 @@ $('#form').submit(function(){
                         $('#business-modal').modal('hide');
                        $('#form').trigger('reset');
                        $('#id').val(null);
-                       $("#areaError").text('');
-                       $("#descriptionError").text('');
-                       $("#noteError").text('');
                     }
                     },
                 });
@@ -286,9 +286,6 @@ $('#form').submit(function(){
                        $('#business-modal').modal('hide');
                        $('#form').trigger('reset');
                        $('#id').val(null);
-                       $("#areaError").text('');
-                       $("#descriptionError").text('');
-                       $("#noteError").text('');
                     }
                 }
                 });
