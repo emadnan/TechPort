@@ -9,9 +9,13 @@ use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
-    public function __construct()
+  
+    public function index()
     {
-        $this->middleware('auth');
+        $locations = location::get();
+        
+        // return response()->json(['locations'=>$locations]);
+    return view('locationsPage' , ['data'=>$locations]);
     }
 
     public function locationPage ()
@@ -114,5 +118,9 @@ class LocationController extends Controller
         {
             return response()->json(['message' => 'Location  Was Not Deleted Successfully']);
         }
+    }
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
     }
 }

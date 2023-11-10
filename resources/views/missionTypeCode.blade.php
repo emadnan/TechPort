@@ -6,14 +6,17 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-        <section class="encapsulated-text " >
-        <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">Drass mission type 1</a>
+  @foreach ($missions as $mission )
+  <div style="margin-top: 15px;">
+    <section class="encapsulated-text " >
+        <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">{{$mission-> type}}</a>
     </section>
   </div>
   <div class="divider-within-class"></div> 
+  @endforeach
+</div>
   
   <div style="margin-top: 15px;">
-  
     <section class="encapsulated-text " >
       <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">Drass mission type 1</a>
   </section>

@@ -14,9 +14,12 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MissionTypeController;
 use App\Http\Controllers\OrganizationTypeController;
 use App\Http\Controllers\PriorityController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ReferenceController;
+use App\Http\Controllers\SearchReultsController;
 use App\Http\Controllers\TechAreaController;
 use App\Http\Controllers\TechnologyController;
+use App\Http\Controllers\TechReferredController;
 use App\Http\Controllers\TechSectorController;
 use App\Http\Controllers\TechSubSectorController;
 use App\Http\Controllers\TrlController;
@@ -33,48 +36,29 @@ use App\Http\Controllers\TrlController;
 */
 
 
-
-Route::get('/',function(){
-    return view('homepage');
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/' , 'homePage')->name('homePage');
 });
+
 Route::get('/AdvanceSearch', function () {
     return view('advanceSearchPage');
 });
-Route::get('/locationsPage', function () {
-    return view('locationsPage');
-});
+
 Route::get('/organizations', function () {
     return view('organizationsPage');
-});
-
-Route::get('/legal-entity-roles', function () {
-    return view('legalEntityRolesPage');
-});
-
-Route::get('/found-sources', function () {
-    return view('foundSourcesPage');
-});
-
-Route::get('/mission-type', function () {
-    return view('missionTypePage');
 });
 
 Route::get('/project-targets', function () {
     return view('projectTargetsPage');
 });
-
-Route::get('/search-results', function () {
-    return view('searchResultsPage');
-});
+Route::get('/search-results', [SearchReultsController::class , 'index'])->name('searchResultsPage');
 
 
 Route::get('/location-clicking', function () {
     return view('locationClickingPage');
 });
 
-Route::get('/low-evolution', function () {
-    return view('lowEvolutionPage');
-});
+
 Route::get('/demo', function () {
     return view('demo');
 });
@@ -93,6 +77,7 @@ Route::get('/legal-entity-roles-clicking', function () {
 Route::get('/project-target-clicking', function () {
     return view('projectTargetClickingPage');
 });
+
 // Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
 // Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');
 // Route::get('/user/login' ,[UserController::class , 'login'])->name('user.login');
@@ -103,6 +88,17 @@ Route::get('/project-target-clicking', function () {
 
 Auth::routes();
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+Route::controller(ProjectController::class)->group(function () {
+    Route::get('/low-evolution', 'index')->name('projectPage');
+    Route::get('/projectForm' , 'projectPage')->name('projectForm');
+    Route::get('/addProject' , 'addPage')->name('addProject');
+    Route::post('/projectCreate' , 'create')->name('projectCreate');
+    Route::get('/projectRead/{id}' , 'read')->name('projectRead');
+    Route::get('/projectUpdatePage/{id}' , 'updatePage')->name('projectUpdatePage');
+    Route::post('/projectUpdate' , 'update')->name('projectUpdate');
+    Route::get('/projectDelete/{id}' , 'delete')->name('projectDelete');
+  });
 
 Route::controller(BusinessAreaController::class)->group(function () {
   Route::post('/businessAreaCreate',  'create')->name('businessAreaCreate');
@@ -135,6 +131,7 @@ Route::controller(EquipmentController::class)->group(function(){
 });
 
 Route::controller(FoundingSourcesController::class)->group(function(){
+    Route::get('/found-sources' , 'index')->name('found-source');
     Route::get('/foundSourceForm' , 'foundSourcePage')->name('foundSourceForm');
     Route::get('/addFoundSource' , 'addPage')->name('addFoundSource');
     Route::post('/foundSourceCreate' , 'create')->name('foundSourceCreate');
@@ -155,6 +152,7 @@ Route::controller(HumanEntityController::class)->group(function(){
 });
 
 Route::controller(LegalEntityController::class)->group(function(){
+    Route::get('/legal-entity-roles', 'index')->name('legalEntityRolesPage');
     Route::get('/legalEntityForm' , 'legalEntityPage')->name('legalEntityForm');
     Route::get('/addLegalEntity' , 'addPage')->name('addLegalEntity');
     Route::post('/legalEntityCreate' , 'create')->name('legalEntityCreate');
@@ -165,6 +163,7 @@ Route::controller(LegalEntityController::class)->group(function(){
 });
 
 Route::controller(LocationController::class)->group(function(){
+    Route::get('/locationsPage', 'index')->name('locationsPage');
     Route::get('/locationForm' , 'locationPage')->name('locationForm');
     Route::get('/addLocation' , 'addPage')->name('addLocation');
     Route::post('/locationCreate' , 'create')->name('locationCreate');
@@ -175,6 +174,7 @@ Route::controller(LocationController::class)->group(function(){
 });
 
 Route::controller(MissionTypeController::class)->group(function(){
+    Route::get('/mission-type', 'index')->name('missionTypePage');
     Route::get('/missionTypeForm' , 'missionTypePage')->name('missionTypeForm');
     Route::get('/addMissionType' , 'addPage')->name('addMissionType');
     Route::post('/missionTypeCreate' , 'create')->name('missionTypeCreate');
@@ -262,4 +262,15 @@ Route::controller(TrlController::class)->group(function(){
     Route::get('/trlUpdatePage/{id}' , 'updatePage')->name('trlUpdatePage');
     Route::post('/trlUpdate' , 'update')->name('trlUpdate');
     Route::get('/trlDelete/{id}' , 'delete')->name('trlDelete');
+});
+
+Route::controller(TechReferredController::class)->group(function(){
+    Route::get('/techPage' ,'techPage')->name('techPage');
+    Route::post('/techReferredSave' , 'saveData')->name('techReferredSave');
+    Route::get('/getTechArea' ,'getTechAreas')->name('getTechArea');
+});
+
+Route::get('/test' , function()
+{
+    return view('newtestview');
 });

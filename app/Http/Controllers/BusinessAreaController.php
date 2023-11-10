@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Validator;
 class BusinessAreaController extends Controller
 {
     //
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function readPage()
     {
         $business  = DB::table('businessareas')->get();
@@ -120,4 +115,10 @@ class BusinessAreaController extends Controller
             return response()->json(['message' => 'Business Area Was Not Deleted Successfully']);
         }
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }

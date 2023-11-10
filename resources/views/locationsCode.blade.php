@@ -7,13 +7,14 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
-  <section class="encapsulated-text" >
-  <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
+  @foreach ($locations as $location )
+  <div style="margin-top: 15px;">
+    <section class="encapsulated-text" >
+  <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">{{$location->city}} , {{$location->state}}</a>
   </section>
- 
   </div>
   <div class="divider-within-class"></div> 
-  
+  @endforeach
   <div style="margin-top: 15px;">
     <section class="encapsulated-text " >
       <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>

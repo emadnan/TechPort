@@ -9,4 +9,5 @@ class techreferred extends Model
 {
     use HasFactory;
     protected $table = 'ref_techreferred';
+
 }

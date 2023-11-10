@@ -337,18 +337,19 @@
 
         <div class="faq-container">
 
-
+@foreach ($data as $sources => $source )    
             <div class="faq-item">
                 <a href="{{ url('/found-sources-clicking') }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
+                            class="faq-question" style="color: black;">{{$source-> name}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
             </div>
+        <div class="divider"></div>
+        @endforeach
         </div>
 
-        <div class="divider"></div>
 
         <div class="faq-container">
 

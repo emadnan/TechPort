@@ -15,13 +15,13 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
-            $table->string('name');
-            $table->longText('description');
+            $table->string('code')->nullable();
+            $table->string('name')->nullable();
+            $table->longText('description')->nullable();
             $table->longText('benifit')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('id_doc')->nullable();
-            $table->date('startdate');
+            $table->date('startdate')->nullable();
             $table->date('enddate');
             $table->string('projecttarget');
             $table->unsignedBigInteger('id_techreferred'); $table->foreign('id_techreferred')->references('id')->on('ref_techreferred');

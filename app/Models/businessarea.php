@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class businessarea extends Model
 {
     use HasFactory;
+
+    // function getbusinessarea() {
+    //     return $this->hasMany('App\Models\definition','id','definition_id');
+        
+    // }
 }

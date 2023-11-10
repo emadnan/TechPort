@@ -329,33 +329,22 @@
         <!-- QA Section -->
 
         <div class="faq-container">
-
-
+@foreach ($data as $missions=> $mission )
             <div class="faq-item">
                 <a href="{{ url('/mission-type-clicking') }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
-                            style="color: black;" class="faq-question">Drass mission type 1</span><i
+                            style="color: black;" class="faq-question"> {{$mission-> type}} </span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                    <div class="faq-answer" style="display: none;">
-                        <div class="dropdown show">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
-                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-                            </a>
-                            Relevance
                 </a>
-
-
             </div>
-        </div>
-    </div>
-    </div>
-
     <div class="divider"></div>
+    @endforeach
+
+        </div>
+
 
     <div class="faq-container">
-
 
         <div class="faq-item">
             <a href="{{ url('/mission-type-clicking') }}">
@@ -370,7 +359,6 @@
     <div class="divider"></div>
 
     <div class="faq-container">
-
 
         <div class="faq-item">
             <a href="{{ url('/mission-type-clicking') }}">

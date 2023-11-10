@@ -52,16 +52,17 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Project Management
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
+             <li class="nav-item ">
+                <a href="{{route('projectForm')}}" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Projects
 
-                    <ul class="nav nav-treeview">
+                    </p>
+                </a>
+            </li>
+
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -81,7 +82,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
@@ -636,15 +637,15 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('techPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Technology Referred Management
-                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                </li>
 
-                    <ul class="nav nav-treeview">
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -664,7 +665,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">

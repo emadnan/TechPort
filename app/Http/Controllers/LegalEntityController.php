@@ -14,6 +14,13 @@ class LegalEntityController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $entities = legalentityrole::get();
+     return view('legalEntityRolesPage' , ['data'=>$entities]); 
+        // return response()->json(['data'=>$entities]);
+    }
+
     public function legalEntityPage ()
     {
         $entity = DB::table('legalentityrole')->get();

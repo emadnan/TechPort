@@ -14,6 +14,13 @@ class FoundingSourcesController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $sources = foundingsource::get();
+        // return response()->json(['data'=>$sources]);
+        return view('foundSourcesPage' , ['data' => $sources]);
+    }
+
     public function foundSourcePage ()
     {
         $sources = DB::table('foundingsources')->get();

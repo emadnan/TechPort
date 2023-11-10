@@ -226,7 +226,7 @@
 
     <div class="container mt-4">
         @include('header')
-
+@foreach ( $projects as $project)
         <ul class="breadCrumbs mt-2 mb-0">
             <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
             <li class="breadCrumbs-items">></li>
@@ -245,7 +245,7 @@
                         </section>
                         <section style="font-size:14px; ">Small Business Innovation Research/Small Business Tech Transfer
                         </section>
-                        <section style="font-size:18px; font-weight:600; margin-bottom:10px; ">Development and Optimization of a Bimodal Ion-Chemical Thruster System Using Novel Ionic Liquid Monopropellants</section>
+                        <section style="font-size:18px; font-weight:600; margin-bottom:10px; ">{{$project->name}}</section>
                         <div class="row " style="margin-left:0px;" >
                             <div class="">
                                 <button class="btn"
@@ -279,30 +279,10 @@
 
 
                                 <section style="font-weight:bold;">Project Description</section>
-                                <section>
-                                    Considerable design work has been devoted to the development of cryogenic liquid
-                                    storage containers. Containers which hold cryogenic liquids such as liquid nitrogen,
-                                    oxygen, hydrogen, etc. often are double walled vacuum insulated or super insulation
-                                    flasks, bottles or tanks. Vessels so designed for space applications have the lowest
-                                    cryogen evaporation rates of any available, but research is ongoing to render these
-                                    containers less permeable to heat flux. We propose a different approach to
-                                    increasing the cryogenic liquid hold time. We propose increasing the heat needed to
-                                    drive off the cryogenic liquid by fundamentally changing the heat needed to cause
-                                    evaporation of the cryogenic liquid. Our unique approach should not be confused with
-                                    technology developed to support cryogens during shipping or other mechanical
-                                    gyrations, exploits the unique physics and chemistry of nanomaterials and their
-                                    interaction with the cryogenic liquid. Successful development of the proposed
-                                    technology will result in longer hold times, decreased payload mass, lower volume,
-                                    increased safety and decreased energy utilization.
-                                </section>
+                                <section>{{$project->description}}</section>
 
                                 <section style="font-weight:bold;margin-top:10px;">Benefit:</section>
-                                <section>
-                                    Considerable design work has been devoted to the development of cryogenic liquid
-                                    storage containers. Containers which hold cryogenic liquids such as liquid nitrogen,
-                                    oxygen, hydrogen, etc. often are double walled vacuum insulated or super insulation
-                                    flasks, bottles or tanks.
-                                </section>
+                                <section>{{$project->benifit}} </section>
                                 <section style="font-weight:bold;margin-top:10px;">Work Locations:</section>
                                 <img src="{{ asset('images/map-image.png') }}" style="width: 700px;height: 410px;">
                                 <!-- <img src="{{ asset('images/table-data.png') }}" alt=""style="width:90%;margin-top:10px;"> -->
@@ -342,8 +322,7 @@
                                         href="{{ url('/found-sources') }}" style="color:black;">Found Source</a>
                                 </section>
                                 <section>
-                                    <p><a href="{{ url('/found-sources-clicking') }}" style="color:black;">T220 found
-                                            source name to be found here</a></p>
+                                    <p><a href="{{ url('/found-sources-clicking') }}" style="color:black;">{{$project->sourceName}} </a></p>
                                 </section>
 
                             </div>
@@ -354,8 +333,8 @@
 
                             <div class="col-md-4">
 
-                                <img src="{{ asset('images/planet.png') }}" alt=""
-                                    style="height:200px;width:auto;">
+                                {{-- <img src="{{ asset('{{$project-> image}}') }}" alt=""
+                                    style="height:200px;width:auto;"> --}}
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">
                                     Project Organization:
                                 </section>
@@ -384,7 +363,7 @@
                                         href="{{ url('/mission-type') }}" style="color:black;">Mission Type</a>
                                 </section>
                                 <section><a href="{{ url('/mission-type-clicking') }}" style="color:black;">Drass
-                                        mission type defined here.</a></section>
+                                        Mission type defined here.</a></section>
 
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Maturity
                                     (TRL)</section>
@@ -450,6 +429,7 @@
 
 
     <div style="margin-top:200px"></div>
+    @endforeach
 
     <footer>
         @include('footer')

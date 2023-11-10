@@ -1318,13 +1318,14 @@
 
 
             <!-- parent tile -->
-
+@foreach ($techRef as $techs=>$tech )
+    
             <div class="faq-item">
 
                 <div class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
                         <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01 Propulsion Systems</span>
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01 {{$tech-> techarea}}</span>
                         </a>
 
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
@@ -1334,7 +1335,7 @@
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>TX01</section>
-                                    <section>Propulsion Systems
+                                    <section>{{$tech-> techarea}}
                                     </section>
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
@@ -1378,8 +1379,7 @@
                     <div name="answer1" class="arrow-icon" style="position:relative;">
                         <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i>
                         <span>
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 Chemical Space
-                                Propulsion</a></span>
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 {{$tech-> techsector}}</a></span>
                         <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
                             onclick="showimage(this)">
 
@@ -1433,7 +1433,7 @@
                                 <i onclick="toggleSubAnswersDescreption(this)" class="fa-solid fa-angle-right"></i>
                                 <span >
                                     <a href="{{ url('/search-results') }}" style="color:#000000">
-                                        TX01.1.1 Integrated Systems and Ancillary Technologies</span>
+                                        TX01.1.1 {{$tech-> techniche}}</span>
                                 </a>
                                 <img src="{{ asset('images/icon-black.png') }}" alt=""
                                     class=" float-right graph-image" onclick="showimage(this)">
@@ -1442,8 +1442,7 @@
                                     <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
                                             <section>TX01.1.1</section>
-                                            <section>Flight Computing and
-                                                Avionics
+                                            <section>{{$tech-> techniche}}
                                             </section>
                                         </div>
                                         <div class="col-3 m-0 px-0"
@@ -1490,13 +1489,7 @@
                             <div class="divider"></div>
                             <div style="margin-left:40px;font-weight:bold">Example Technologies</div>
                             <section style="padding-left:40px;padding-right:40px">
-                                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction
-                                control
-                                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors,
-                                abort
-                                propulsion systems, propellant storage and transfer, nanocomposites, green propellants.
-                                For
-                                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
+                                {{$tech-> technichedescription}}
                             </section>
                         </div>
 
@@ -1792,9 +1785,8 @@
 
                 </div>
             </div>
-
             <div class="divider"></div>
-
+            @endforeach
             <div class="faq-item">
 
                 <div class="faq-question">

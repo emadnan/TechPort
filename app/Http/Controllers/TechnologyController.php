@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 class TechnologyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function technologyPage ()
     {
         $sector = DB::table('technologies')->get();

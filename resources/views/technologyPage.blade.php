@@ -91,7 +91,7 @@
                         </thead>
                         <tbody>
                             @foreach ($data as $id=>$tech )
-                            <tr  id="row_{{$tech-> id}}">
+                            <tr id="row_{{$tech-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> technology}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> id_dm}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> note}}</td>

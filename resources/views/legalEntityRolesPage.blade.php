@@ -324,29 +324,23 @@
             </div>
         </div>
 
-
-
-
-
-        <!-- QA Section -->
-
-
         <!-- QA Section -->
 
         <div class="faq-container">
 
-
+@foreach ($data as $entities => $entity)
             <div class="faq-item">
                 <a href="{{ url('/legal-entity-roles-clicking') }}">
                     <div class="faq-question"> <span class="float-left-text"
                             style="float: left;color: white; margin-right: 10px; margin-left: 0;">1</span><span
-                            style="color: black;" class="faq-question">Space Technology Mission Directorate
-                            (STMD)</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
+                            style="color: black;" class="faq-question">{{$entity-> name}}</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
             </div>
+<div class="divider"></div>
+@endforeach
+
         </div>
 
-        <div class="divider"></div>
 
         <div class="faq-container">
 

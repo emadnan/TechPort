@@ -14,6 +14,12 @@ class MissionTypeController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $missions = missiontype::get();
+        return view('missionTypePage' , ['data'=> $missions]);
+    }
+
     public function missionTypePage ()
     {
         $mission = DB::table('missiontype')->get();
