@@ -18,7 +18,7 @@ class DefinitionController extends Controller
     {
         
         $definitions = Db::table('definitions')->get();
-        return view('definitionPage' , ['data'=>$definitions]);
+        return view('dashboard.definitionPage' , ['data'=>$definitions]);
 
     }
 
@@ -31,7 +31,7 @@ class DefinitionController extends Controller
 
     public function addPage()
     {
-        return view('createDefinition');
+        return view('dashboard.createDefinition');
     }
 
     public function create(Request $req)

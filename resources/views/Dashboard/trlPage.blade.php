@@ -149,7 +149,7 @@
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Equipment');
+    $('#modal_title').html('Update TRL');
     $("#trllevelError").text('');
     $("#trldescriptionError").text('');
     $("#trlexampleError").text('');

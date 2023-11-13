@@ -11,7 +11,7 @@ class TrlController extends Controller
     public function trlPage ()
     {
         $sector = DB::table('trl')->get();
-        return view('trlPage' , ['data'=>$sector]);
+        return view('dashboard.trlPage' , ['data'=>$sector]);
     }
 
     public function read (string $id)   
@@ -22,7 +22,7 @@ class TrlController extends Controller
 
     public function addPage()
     {
-        return view('createTrl');
+        return view('dashboard.createTrl');
     }
 
     public function create(Request $req)

@@ -15,7 +15,7 @@ class TechnologyController extends Controller
     public function technologyPage ()
     {
         $sector = DB::table('technologies')->get();
-        return view('technologyPage' , ['data'=>$sector]);
+        return view('dashboard.technologyPage' , ['data'=>$sector]);
     }
 
     public function read (string $id)   
@@ -26,7 +26,7 @@ class TechnologyController extends Controller
 
     public function addPage()
     {
-        return view('createTechnolgy');
+        return view('dashboard.createTechnolgy');
     }
 
     public function create(Request $req)

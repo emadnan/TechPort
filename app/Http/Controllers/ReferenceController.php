@@ -17,7 +17,7 @@ class ReferenceController extends Controller
     public function referencePage ()
     {
         $reference = DB::table('references')->get();
-        return view('referencePage' , ['data'=>$reference]);
+        return view('dashboard.referencePage' , ['data'=>$reference]);
     }
 
     public function read (string $id)   
@@ -28,7 +28,7 @@ class ReferenceController extends Controller
 
     public function addPage()
     {
-        return view('createReference');
+        return view('dashboard.createReference');
     }
 
     public function create(Request $req)

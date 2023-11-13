@@ -17,7 +17,7 @@ class OrganizationTypeController extends Controller
     public function organizationTypePage ()
     {
         $organization = DB::table('orgtype')->get();
-        return view('organizationTypePage' , ['data'=>$organization]);
+        return view('dashboard.organizationTypePage' , ['data'=>$organization]);
     }
 
     public function read (string $id)   
@@ -28,7 +28,7 @@ class OrganizationTypeController extends Controller
 
     public function addPage()
     {
-        return view('createOrganizationType');
+        return view('dashboard.createOrganizationType');
     }
 
     public function create(Request $req)

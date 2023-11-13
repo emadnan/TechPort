@@ -17,14 +17,13 @@ class FoundingSourcesController extends Controller
     public function index()
     {
         $sources = foundingsource::get();
-        // return response()->json(['data'=>$sources]);
         return view('foundSourcesPage' , ['data' => $sources]);
     }
 
     public function foundSourcePage ()
     {
         $sources = DB::table('foundingsources')->get();
-        return view('foundSourceForm' , ['data'=>$sources]);
+        return view('dashboard.foundSourceForm' , ['data'=>$sources]);
     }
 
     public function read (string $id)
@@ -35,7 +34,7 @@ class FoundingSourcesController extends Controller
 
     public function addPage()
     {
-        return view('createFoundSource');
+        return view('dashboard.createFoundSource');
     }
 
     public function create(Request $req)

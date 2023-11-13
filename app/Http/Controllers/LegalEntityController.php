@@ -24,7 +24,7 @@ class LegalEntityController extends Controller
     public function legalEntityPage ()
     {
         $entity = DB::table('legalentityrole')->get();
-        return view('legalEntityForm' , ['data'=>$entity]);
+        return view('dashboard.legalEntityForm' , ['data'=>$entity]);
     }
 
     public function read (string $id)
@@ -36,7 +36,7 @@ class LegalEntityController extends Controller
 
     public function addPage()
     {
-        return view('createLegalEntity');
+        return view('dashboard.createLegalEntity');
     }
 
     public function create(Request $req)

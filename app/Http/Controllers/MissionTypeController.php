@@ -23,7 +23,7 @@ class MissionTypeController extends Controller
     public function missionTypePage ()
     {
         $mission = DB::table('missiontype')->get();
-        return view('missionTypeForm' , ['data'=>$mission]);
+        return view('dashboard.missionTypeForm' , ['data'=>$mission]);
     }
 
     public function read (string $id)

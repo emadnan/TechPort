@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+@include('sidebar')
 @section('content')
 <div class="container" >
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 offset-3 my-3">
             <div class="card">
                 <b><div class="card-header">{{ __('Create Technology Referred') }}</div></b>
 

@@ -17,7 +17,7 @@ class PriorityController extends Controller
     public function priorityPage ()
     {
         $priority = DB::table('priorities')->get();
-        return view('priorityPage' , ['data'=>$priority]);
+        return view('dashboard.priorityPage' , ['data'=>$priority]);
     }
 
     public function read (string $id)   
@@ -29,7 +29,7 @@ class PriorityController extends Controller
 
     public function addPage()
     {
-        return view('createPriority');
+        return view('dashboard.createPriority');
     }
 
     public function create(Request $req)

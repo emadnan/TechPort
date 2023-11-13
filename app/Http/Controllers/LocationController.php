@@ -21,7 +21,7 @@ class LocationController extends Controller
     public function locationPage ()
     {
         $location = DB::table('location')->get();
-        return view('locationForm' , ['data'=>$location]);
+        return view('dashboard.locationForm' , ['data'=>$location]);
     }
 
     public function read (string $id)

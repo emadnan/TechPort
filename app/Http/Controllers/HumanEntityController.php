@@ -16,7 +16,7 @@ class HumanEntityController extends Controller
     public function humanEntityPage ()
     {
         $entity = DB::table('humanentity')->get();
-        return view('humanEntityPage' , ['data'=>$entity]);
+        return view('dashboard.humanEntityPage' , ['data'=>$entity]);
     }
 
     public function read (string $id)
@@ -28,7 +28,7 @@ class HumanEntityController extends Controller
 
     public function addPage()
     {
-        return view('createHumanEntity');
+        return view('dashboard.createHumanEntity');
     }
 
     public function create(Request $req)

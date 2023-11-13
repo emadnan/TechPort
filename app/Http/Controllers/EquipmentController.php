@@ -17,7 +17,7 @@ class EquipmentController extends Controller
     public function equipmentPage ()
     {
         $equipments = DB::table('equipment')->get();
-        return view('equipmentPage' , ['data'=>$equipments]);
+        return view('dashboard.equipmentPage' , ['data'=>$equipments]);
     }
 
     public function read (string $id)
@@ -29,7 +29,7 @@ class EquipmentController extends Controller
 
     public function addPage()
     {
-        return view('createEquipment');
+        return view('dashboard.createEquipment');
     }
 
     public function create(Request $req)

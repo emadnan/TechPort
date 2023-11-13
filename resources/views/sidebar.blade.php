@@ -640,7 +640,7 @@
                     <a href="{{route('techPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Technology Referred Management
+                            Technology Referred
                         </p>
                     </a>
                 </li>
@@ -668,15 +668,14 @@
                 </li> --}}
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('projectTechnologyPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Project Technology Management
-                            <i class="fas fa-angle-left right"></i>
+                           Project Technology
                         </p>
                     </a>
-
-                    <ul class="nav nav-treeview">
+                </li>
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -696,7 +695,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">

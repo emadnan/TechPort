@@ -44,7 +44,7 @@ class ProjectController extends Controller
         $trls = trl::get();
         $sources = foundingsource::get();
         $statuses = status::get();
-        return view('projectForm' , compact('projects' , 'techRefs' , 'missions' , 'trls' , 'sources' , 'statuses'));
+        return view('dashboard.projectForm' , compact('projects' , 'techRefs' , 'missions' , 'trls' , 'sources' , 'statuses'));
     }
     public function read( string $id)
     {

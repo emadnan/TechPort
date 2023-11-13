@@ -13,7 +13,7 @@ class BusinessAreaController extends Controller
     public function readPage()
     {
         $business  = DB::table('businessareas')->get();
-        return view('businessArea',['data'=> $business]);
+        return view('dashboard.businessArea',['data'=> $business]);
     }
     public function read(string $id)
     {
@@ -24,7 +24,7 @@ class BusinessAreaController extends Controller
     public function createPage()
     {
      
-        return view('createBusiness');
+        return view('dashboard.createBusiness');
     }
 
     public function create(Request $req)

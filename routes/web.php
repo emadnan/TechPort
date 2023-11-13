@@ -15,6 +15,7 @@ use App\Http\Controllers\MissionTypeController;
 use App\Http\Controllers\OrganizationTypeController;
 use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectTechnologyController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\SearchReultsController;
 use App\Http\Controllers\TechAreaController;
@@ -78,12 +79,12 @@ Route::get('/project-target-clicking', function () {
     return view('projectTargetClickingPage');
 });
 
-// Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
-// Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');
-// Route::get('/user/login' ,[UserController::class , 'login'])->name('user.login');
-// Route::get('/user/register' ,[UserController::class , 'register'])->name('user.register');
-// Route::post('/user/save' ,[UserController::class , 'save'])->name('user.save');
-// Route::post('/user/check' ,[UserController::class , 'check'])->name('user.check');
+Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
+Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');
+Route::get('/user/login' ,[UserController::class , 'login'])->name('user.login');
+Route::get('/user/register' ,[UserController::class , 'register'])->name('user.register');
+Route::post('/user/save' ,[UserController::class , 'save'])->name('user.save');
+Route::post('/user/check' ,[UserController::class , 'check'])->name('user.check');
 // Route::get('/dashboardview' ,[UserController::class , 'dashboard'])->name('dashboard');
 
 Auth::routes();
@@ -270,7 +271,12 @@ Route::controller(TechReferredController::class)->group(function(){
     Route::get('/getTechArea' ,'getTechAreas')->name('getTechArea');
 });
 
-Route::get('/test' , function()
-{
-    return view('newtestview');
+Route::controller(ProjectTechnologyController::class)->group(function(){
+    Route::get('/projectTechnologyPage' , 'projectTechnologyPage')->name('projectTechnologyPage');
+    Route::get('/addProjectTechnology' , 'addPage')->name('addProjectTechnology');
+    Route::post('/projectTechnologyCreate' , 'create')->name('projectTechnologyCreate');
+    Route::get('/projectTechnologyRead/{id}' , 'read')->name('projectTechnologyRead');
+    Route::get('/projectTechnologyUpdatePage/{id}' , 'updatePage')->name('projectTechnologyUpdatePage');
+    Route::post('/projectTechnologyUpdate' , 'update')->name('projectTechnologyUpdate');
+    Route::get('/projectTechnologyDelete/{id}' , 'delete')->name('projectTechnologyDelete');
 });
