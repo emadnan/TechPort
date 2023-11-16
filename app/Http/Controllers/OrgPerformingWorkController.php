@@ -2,15 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foundingsource;
 use App\Models\humanentity;
+use App\Models\legalentityrole;
 use App\Models\location;
+use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\orgtype;
+use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class OrgPerformingWorkController extends Controller
 {
+    public function organizationClickingPage (string $id)
+    {
+        $locations = location::get();
+        $sources = foundingsource::get();
+        $missions = missiontype::get();
+        $orgs = orgperformingwork::where('id' , $id)->get();
+        $entities = legalentityrole::get();
+        $projects = project::get();
+        return view('organizationClickingPage' , compact('locations' , 'sources' , 'missions' , 'orgs' , 'entities' , 'projects'));
+    }
+
+    public function index()
+    {
+        $orgs = orgperformingwork::get();
+        return view('organizationsPage' , compact('orgs'));
+
+    }
+
     public function orgPerformingWorkPage()
     {
         $organizations = orgperformingwork::select('orgtype.type' , 'humanentity.name as humanName' , 'humanentity.surname as humanSurName' , 'location.city' , 'orgperformingwork.*')
@@ -153,7 +175,7 @@ class OrgPerformingWorkController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('index');
     }
 }
 

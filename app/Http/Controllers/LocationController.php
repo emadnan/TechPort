@@ -2,13 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foundingsource;
+use App\Models\legalentityrole;
 use App\Models\location;
+use App\Models\missiontype;
+use App\Models\orgperformingwork;
+use App\Models\project;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
+    public function locationsClickingPage (string $id)
+    {
+        $locations = location::where('id' , $id)->get();
+        $sources = foundingsource::get();
+        $missions = missiontype::get();
+        $orgs = orgperformingwork::get();
+        $entities = legalentityrole::get();
+        $projects = project::get();
+// return response()->json(compact('locations'));
+    return view('locationClickingPage' , compact('locations' , 'sources' , 'missions' , 'orgs' , 'entities' , 'projects') );
+    }
   
     public function index()
     {

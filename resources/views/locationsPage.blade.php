@@ -341,9 +341,9 @@
 @foreach ($data as $locations=>$location )
     
             <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
+                <a href="{{ route('locationsClickingPage', ['id' => $location->id]) }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
+                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
                             class="faq-question"style="color: black;">{{$location-> city}} , {{$location-> state}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>

@@ -373,9 +373,9 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700; margin-left:5px;">Organization</section>
-    
-                        <section class="mt-2" style=" font-size:18px; font-weight:700; margin-left:5px;">State University Main Campus</section>
-                    
+                    @foreach ($orgs as $org )
+                        <section class="mt-2" style=" font-size:18px; font-weight:700; margin-left:5px;">{{$org->name}}</section>
+                    @endforeach                    
                         <div class="solid-rectangle mt-1">
 
                             <div class="row" style="margin-left:5px;padding:10px;">
@@ -478,19 +478,10 @@
         </div>
 
         <div class="container py-4 my-2" style="   border:1px groove #E8E8E8;">
-            <h5 class="px-2" style="font-family: Roboto; font-weight: bold; font-size:14px;">Organisation Description:</h5>
-            <section class="pb-2 px-2" style="font-size:14px;">Considerable design work has been devoted to the development of cryogenic liquid
-                storage containers. Containers which hold cryogenic liquids such as liquid nitrogen, oxygen, hydrogen,
-                etc. often are double walled vacuum insulated or super insulation flasks, bottles or tanks. Vessels so
-                designed for space applications have the lowest cryogen evaporation rates of any available, but research
-                is ongoing to render these containers less permeable to heat flux. We propose a different approach to
-                increasing the cryogenic liquid hold time. We propose increasing the heat needed to drive off the
-                cryogenic liquid by fundamentally changing the heat needed to cause evaporation of the cryogenic liquid.
-                Our unique approach should not be confused with technology developed to support cryogens during shipping
-                or other mechanical gyrations, exploits the unique physics and chemistry of nanomaterials and their
-                interaction with the cryogenic liquid. Successful development of the proposed technology will result in
-                longer hold times, decreased payload mass, lower volume, increased safety and decreased energy
-                utilization.</section>
+            <h5 class="px-2" style="font-family: Roboto; font-weight: bold; font-size:14px;">Organization Description:</h5>
+          @foreach ($orgs as $org )
+            <section class="pb-2 px-2" style="font-size:14px;">{{$org->description}}</section>
+          @endforeach
         </div>
 
 

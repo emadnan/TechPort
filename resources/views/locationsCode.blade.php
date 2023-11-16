@@ -10,7 +10,7 @@
   @foreach ($locations as $location )
   <div style="margin-top: 15px;">
     <section class="encapsulated-text" >
-  <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">{{$location->city}} , {{$location->state}}</a>
+  <a href="{{ route('locationsClickingPage', ['id' => $location->id]) }}" style="color:black;font-weight:bold;">{{$location->city}} , {{$location->state}}</a>
   </section>
   </div>
   <div class="divider-within-class"></div> 

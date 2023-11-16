@@ -375,7 +375,9 @@
 
                     <div class="text-in-image">
                         <section style=" font-weight: 700; margin-bottom:0px;">Locations</section>
-                        <section style="font-size:17px; font-weight: 700; margin-bottom:10px;">Houstan, Texas</section>
+                        @foreach ($locations as $location )
+                        <section style="font-size:17px; font-weight: 700; margin-bottom:10px;">{{$location->state}} , {{$location->city}}</section>
+                        @endforeach
 
                         <div class="solid-rectangle">
 

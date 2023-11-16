@@ -337,25 +337,23 @@
 
 
         <!-- QA Section -->
-
+        @foreach ($orgs as $org)
         <div class="faq-container">
-
             <div class="faq-item">
-                <a href="{{ url('/organization-clicking') }}">
+                <a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
-                            class="faq-question" style="color: black;">State University Main Campus</span><i
+                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
+                            class="faq-question" style="color: black;">{{$org->name}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
-
             </div>
         </div>
-
         <div class="divider"></div>
 
+        @endforeach
+
+        <div class="divider"></div>
         <div class="faq-container">
-
-
             <div class="faq-item">
                 <a href="{{ url('/organization-clicking') }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"

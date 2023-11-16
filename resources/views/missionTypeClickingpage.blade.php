@@ -373,8 +373,9 @@
 
                     <div class="text-in-image">
                         <section style=" margin-left:3px; font-weight:700; ">Mission Type</section>
-
-                        <section style=" font-size:18px; margin-left:3px; font-weight:700; ">Drass Mission Type 1</section>
+                    @foreach ($missions as $mission )
+                        <section style=" font-size:18px; margin-left:3px; font-weight:700; ">{{$mission->type}}</section>
+                    @endforeach
                         
                         <div class="solid-rectangle mt-1">
 

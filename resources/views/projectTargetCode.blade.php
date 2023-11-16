@@ -12,10 +12,12 @@
     <div class="faq-answer" style="display: none;">
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+          @foreach ($projects as $project )
             <section class="encapsulated-text  ">
-                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
+                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">{{$project-> projecttarget}}</a>
             </section>
             <div class="divider-within-class"></div>
+            @endforeach
         </div>
 
         <div style="margin-top: 15px;">

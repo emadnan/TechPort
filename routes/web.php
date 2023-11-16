@@ -52,9 +52,6 @@ Route::get('/AdvanceSearch', function () {
     return view('advanceSearchPage');
 });
 
-Route::get('/organizations', function () {
-    return view('organizationsPage');
-});
 
 Route::get('/project-targets', function () {
     return view('projectTargetsPage');
@@ -62,20 +59,7 @@ Route::get('/project-targets', function () {
 Route::get('/search-results', [SearchReultsController::class , 'index'])->name('searchResultsPage');
 
 
-Route::get('/location-clicking', function () {
-    return view('locationClickingPage');
-});
 
-
-Route::get('/demo', function () {
-    return view('demo');
-});
-Route::get('/organization-clicking', function () {
-    return view('organizationClickingPage');
-});
-Route::get('/mission-type-clicking', function () {
-    return view('missionTypeClickingpage');
-});
 Route::get('/found-sources-clicking', function () {
     return view('foundSourcesClickingPage');
 });
@@ -179,6 +163,7 @@ Route::controller(LocationController::class)->group(function(){
     Route::get('/locationUpdatePage/{id}' , 'updatePage')->name('locationUpdatePage');
     Route::post('/locationUpdate' , 'update')->name('locationUpdate');
     Route::get('/locationDelete/{id}' , 'delete')->name('locationDelete');
+    Route::get('/location-clicking/{id}', 'locationsClickingPage')->name('locationsClickingPage');
 });
 
 Route::controller(MissionTypeController::class)->group(function(){
@@ -190,6 +175,7 @@ Route::controller(MissionTypeController::class)->group(function(){
     Route::get('/missionTypeUpdatePage/{id}' , 'updatePage')->name('missionTypeUpdatePage');
     Route::post('/missionTypeUpdate' , 'update')->name('missionTypeUpdate');
     Route::get('/missionTypeDelete/{id}' , 'delete')->name('missionTypeDelete');
+    Route::get('/mission-type-clicking/{id}' , 'missionTypeClickingPage')->name('missionTypeClickingPage');
 });
 
 Route::controller(OrganizationTypeController::class)->group(function(){
@@ -296,6 +282,8 @@ Route::controller(OrgPerformingWorkController::class)->group(function(){
     Route::get('/orgPerformingWorkUpdatePage/{id}' , 'updatePage')->name('orgPerformingWorkUpdatePage');
     Route::post('/orgPerformingWorkUpdate' , 'update')->name('orgPerformingWorkUpdate');
     Route::get('/orgPerformingWorkDelete/{id}' , 'delete')->name('orgPerformingWorkDelete');
+    Route::get('/organizations' , 'index')->name('organizationsPage');
+    Route::get('/organization-clicking/{id}', 'organizationClickingPage')->name('organizationClickingPage');
 });
 
 Route::controller(ProjectOrganizationController::class)->group(function(){

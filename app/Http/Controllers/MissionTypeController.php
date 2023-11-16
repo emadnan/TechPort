@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foundingsource;
+use App\Models\legalentityrole;
+use App\Models\location;
 use App\Models\missiontype;
+use App\Models\orgperformingwork;
+use App\Models\project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -14,6 +19,17 @@ class MissionTypeController extends Controller
     {
         $missions = missiontype::get();
         return view('missionTypePage' , ['data'=> $missions]);
+    }
+
+    public function missionTypeClickingPage(string $id)
+    {
+        $locations = location::get();
+        $sources = foundingsource::get();
+        $missions = missiontype::where('id' , $id)->get();
+        $orgs = orgperformingwork::get();
+        $entities = legalentityrole::get();
+        $projects = project::get();
+        return view('missionTypeClickingPage' , compact('locations' , 'sources' , 'missions' , 'orgs' , 'entities' , 'projects'));
     }
 
     public function missionTypePage ()
