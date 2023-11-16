@@ -25,6 +25,14 @@
                         <span class="text-danger small" id="typeError"></span>
                     </div>
                 </div>
+                
+                <div class="row mb-3">
+                    <label for="unitcode" class="col-md-4 col-form-label text-md-end">{{ __('Unit Code') }}</label>
+                    <div class="col-md-6">
+                        <input id="unitcode" type="text" class="form-control @error('unitcode') is-invalid @enderror" name="unitcode" value= "{{ old ('unitcode') }}" autocomplete="unitcode" autofocus>
+                        <span class="text-danger small" id="unitcodeError"></span>
+                    </div>
+                </div>
 
                 <div class="row mb-3">
                     <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
@@ -33,6 +41,15 @@
                         <span class="text-danger small" id="descriptionError"></span>
                     </div>
                 </div>
+
+                <div class="row mb-3">
+                    <label for="releventcompany" class="col-md-4 col-form-label text-md-end">{{ __('Relevent Company') }}</label>
+                    <div class="col-md-6">
+                        <input id="releventcompany" type="text" class="form-control @error('releventcompany') is-invalid @enderror" name="releventcompany" value="{{ old('releventcompany') }}">
+                        <span class="text-danger small" id="releventcompanyError"></span>
+                    </div>
+                </div>
+
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
                     <div class="col-md-6">
@@ -50,13 +67,13 @@
     </div>
   </div>
 
-<!--View Modal content-->
+  <!--View Modal content-->
 
 <div class="modal fade " id="view-modal" role="dialog">
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Mission Type Details</h4>
+          <h4 class="modal-title">Organization Unit Details</h4>
         </div>
         <div class="modal-body" id="details">
         </div>
@@ -68,34 +85,38 @@
     </div>
   </div>
 
-<div class="container" >
+  <div class="container" >
     <div class="row justify-content-center">
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Mission Types') }}</b>
+                    <b>{{ __('Organization Unit') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Mission Type</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Organizatoin Unit</button>
                     </div>
                 </div>
                 <div class="card-body">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
                             <th class="py-1">Type</th>
+                            <th class="py-1">Unit Code</th>
                             <th class="py-1">Description</th>
+                            <th class="py-1">Relevent Company</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($data as $id=>$mission )
-                            <tr  id="row_{{$mission-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$mission -> type}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$mission -> description}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$mission -> note}}</td>
+                            @foreach ($data as $id=>$org )
+                            <tr  id="row_{{$org-> id}}">
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> type}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> unitcode}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> description}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> releventcompany}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
-                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$mission-> id}}"> <span style="color:black;">|</span> </i>
-                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$mission-> id}}"> <span style="color:black;">|</span> </i> 
-                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$mission-> id}}"></i>
+                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$org-> id}}"> <span style="color:black;">|</span> </i>
+                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$org-> id}}"> <span style="color:black;">|</span> </i> 
+                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$org-> id}}"></i>
                                 </td>
                             </tr>
                             @endforeach
@@ -110,21 +131,26 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-$(document).ready(function(){
+
+<script>
+    $(document).ready(function(){
         
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
                  }
             });
+     });
 
-    $('#add-btn').click(function(){
+     $('#add-btn').click(function(){
+        $('#id').val('');
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Mission Type');
+    $('#modal_title').html('Add Organization Unit');
     $("#typeError").text('');
+    $("#unitcodeError").text('');
     $("#descriptionError").text('');
+    $("#releventcompanyError").text('');
     $("#noteError").text('');
     }) // create click event end
 
@@ -132,12 +158,15 @@ $(document).ready(function(){
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Misision Type');
+    $('#modal_title').html('Update Organization Unit');
     $("#typeError").text('');
+    $("#unitcodeError").text('');
     $("#descriptionError").text('');
+    $("#releventcompanyError").text('');
     $("#noteError").text('');
+    $('#id').val('');
     var rowID = $(this).data('id');
-    var url = 'missionTypeUpdatePage/'+rowID;
+    var url = 'organizationUnitUpdatePage/'+rowID;
             $.ajax({
                 type: 'GET',
                 url: url,
@@ -145,7 +174,9 @@ $('body').on('click' , '#update-btn' , function(){
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
                         $('#type').val(item.type);
+                        $('#unitcode').val(item.unitcode);
                         $('#description').val(item.description);
+                        $('#releventcompany').val(item.releventcompany);
                         $('#note').val(item.note);
                     });
                 },
@@ -158,13 +189,15 @@ $('#form').submit(function(){
             var formData = $(this).serialize();
             var inpID = $('#id').val();
             $("#typeError").text('');
+            $("#unitcodeError").text('');
             $("#descriptionError").text('');
+            $("#releventcompanyError").text('');
             $("#noteError").text('');
             if(inpID)
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("missionTypeUpdate") }}',
+                    url: '{{ route("organizationUnitUpdate") }}',
                     data: formData,
 
                     success: function(response)
@@ -173,11 +206,15 @@ $('#form').submit(function(){
                         if(response.errors)
                         {
                             $("#typeError").text(response.errors.type);
+                            $("#unitcodeError").text(response.errors.unitcode);
                             $("#descriptionError").text(response.errors.description);
+                            $("#releventcompanyError").text(response.errors.releventcompany);
                             $("#noteError").text(response.errors.note);
 
                             $("#type").val(response.oldInput.type);
+                            $("#unitcode").val(response.oldInput.unitcode);
                             $("#description").val(response.oldInput.description);
+                            $("#releventcompany").val(response.oldInput.releventcompany);
                             $("#note").val(response.oldInput.note);
 
                         }
@@ -204,7 +241,9 @@ $('#form').submit(function(){
                             var row1 = 
                             '<tr id="row_'+item.id+'">'+
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>' +
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.unitcode + '</td>' +
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>'+ 
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.releventcompany + '</td>' +
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -216,7 +255,9 @@ $('#form').submit(function(){
                         });
                             $('#form-modal').modal('hide');
                             $('#form').trigger('reset');
+                            $('#id').val('');
                             $('#id').val(null);
+                            
                            
                     }
                     },
@@ -227,7 +268,7 @@ $('#form').submit(function(){
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("missionTypeCreate") }}',
+                    url: '{{ route("organizationUnitCreate") }}',
                     data: formData,
 
                     success: function(response)
@@ -235,13 +276,16 @@ $('#form').submit(function(){
                         if(response.errors)
                         {
                             $("#typeError").text(response.errors.type);
+                            $("#unitcodeError").text(response.errors.unitcode);
                             $("#descriptionError").text(response.errors.description);
+                            $("#releventcompanyError").text(response.errors.releventcompany);
                             $("#noteError").text(response.errors.note);
 
                             $("#type").val(response.oldInput.type);
+                            $("#unitcode").val(response.oldInput.unitcode);
                             $("#description").val(response.oldInput.description);
+                            $("#releventcompany").val(response.oldInput.releventcompany);
                             $("#note").val(response.oldInput.note);
-
                         }
                         else
                         {
@@ -265,7 +309,9 @@ $('#form').submit(function(){
                  $.each(response.newRow , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>' +
+                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.unitcode + '</td>' +
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>'+ 
+                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.releventcompany + '</td>' +
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                  '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -277,6 +323,7 @@ $('#form').submit(function(){
                      });
                      $('#form-modal').modal('hide');
                      $('#form').trigger('reset');
+                            $('#id').val('');
                      $('#id').val(null);
                     }
                     }
@@ -289,7 +336,7 @@ $('body').on('click' , '#view-btn' , function(){
              var id = $(this).data('id');
             var data = $('#details');
             data.empty(); 
-            var url = 'missionTypeRead/' + id;
+            var url = 'organizationUnitRead/' + id;
              $.ajax({
                 type: 'GET',
                 url: url,
@@ -300,8 +347,12 @@ $('body').on('click' , '#view-btn' , function(){
                         var descp ='<p>'+ 
                 '<span style="font-weight:700;">Type : </span>'
                 +item.type+ '</p>'+
+                '<span style="font-weight:700;">Unit Code : </span>'
+                +item.unitcode+ '</p>'+
                 '<p>'+ '<span  style="font-weight:700;">Description : </span>'
                 +item.description+'</p>'+
+                '<span style="font-weight:700;">Relevent Company : </span>'
+                +item.releventcompany+ '</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';
                 data.append(descp);
                 });
@@ -313,7 +364,7 @@ $('body').on('click' , '#view-btn' , function(){
 
 $('body').on('click' , '#delete-btn' , function(){
     var id = $(this).data('id');
-    var url = 'missionTypeDelete/' + id;
+    var url = 'organizationUnitDelete/' + id;
     $.ajax({
                 type: 'GET',
                 url: url,
@@ -340,6 +391,6 @@ $('body').on('click' , '#delete-btn' , function(){
     });
 });
 
-}); // document.ready end
-  </script>
+
+</script>
 @endsection

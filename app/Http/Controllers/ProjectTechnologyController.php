@@ -26,8 +26,13 @@ class ProjectTechnologyController extends Controller
 
     public function read (string $id)   
     {
-        $read = ref_projecttechnology::where('id',$id)->get();
-        return response()->json(['data'=>$read]);
+        $projTechs = ref_projecttechnology::select('projects.name as projectName' , 'projects.id as projectsID' , 'technologies.id as technologyID' , 'technologies.technology' , 'ref_projecttechnologies.*' )
+        ->join('projects' , 'projects.id' , '=' , 'ref_projecttechnologies.id_project')
+        ->join('technologies' , 'technologies.id' , '=' , 'ref_projecttechnologies.id_technology')
+        ->where('ref_projecttechnologies.id',$id)
+        ->get();
+        // $read = ref_projecttechnology::where('id',$id)->get();
+        return response()->json(['data'=>$projTechs]);
     }
     public function create(Request $req)
     {
@@ -62,7 +67,7 @@ class ProjectTechnologyController extends Controller
         }
         else 
         {
-            return response()->json(['message' => 'Project TRechnology Was Not Added successfully']);
+            return response()->json(['message' => 'Project Technology Was Not Added successfully']);
         }
     }
 
@@ -77,7 +82,7 @@ class ProjectTechnologyController extends Controller
         $id = $req->id;
         $validator = Validator::make($req->all(),[
             'project'=> 'nullable',
-            'echnology'=> 'nullable',
+            'technology'=> 'nullable',
             'date'=> 'nullable',
         ]);
         
@@ -123,4 +128,9 @@ class ProjectTechnologyController extends Controller
             return response()->json(['message' => 'Project Technology Was Not Deleted Successfully']);
         }
     }       
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

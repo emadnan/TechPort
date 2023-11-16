@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ref_organizationunit extends Model
 {
     use HasFactory;
+    protected $table = "ref_organizationunit";
+
 }

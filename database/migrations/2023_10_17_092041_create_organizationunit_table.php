@@ -17,9 +17,9 @@ class CreateOrganizationunitTable extends Migration
             $table->id();
             $table->string('type');
             $table->string('unitcode');
-            $table->string('description');
+            $table->longText('description');
             $table->string('releventcompany');
-            $table->string('note')->nullable();
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }

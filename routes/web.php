@@ -13,10 +13,17 @@ use App\Http\Controllers\LegalEntityController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MissionTypeController;
 use App\Http\Controllers\OrganizationTypeController;
+use App\Http\Controllers\OrganizationUnitController;
+use App\Http\Controllers\OrgPerformingWorkController;
 use App\Http\Controllers\PriorityController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectOrganizationController;
 use App\Http\Controllers\ProjectTechnologyController;
+use App\Http\Controllers\Ref_EquipmentController;
+use App\Http\Controllers\Ref_OrganizationUnitController;
 use App\Http\Controllers\ReferenceController;
+use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\SearchReultsController;
 use App\Http\Controllers\TechAreaController;
 use App\Http\Controllers\TechnologyController;
@@ -279,4 +286,74 @@ Route::controller(ProjectTechnologyController::class)->group(function(){
     Route::get('/projectTechnologyUpdatePage/{id}' , 'updatePage')->name('projectTechnologyUpdatePage');
     Route::post('/projectTechnologyUpdate' , 'update')->name('projectTechnologyUpdate');
     Route::get('/projectTechnologyDelete/{id}' , 'delete')->name('projectTechnologyDelete');
+});
+
+Route::controller(OrgPerformingWorkController::class)->group(function(){
+    Route::get('/orgPerformingWorkPage' , 'orgPerformingWorkPage')->name('orgPerformingWorkPage');
+    Route::get('/addOrgPerformingWork' , 'addPage')->name('addOrgPerformingWork');
+    Route::post('/orgPerformingWorkCreate' , 'create')->name('orgPerformingWorkCreate');
+    Route::get('/orgPerformingWorkRead/{id}' , 'read')->name('orgPerformingWorkRead');
+    Route::get('/orgPerformingWorkUpdatePage/{id}' , 'updatePage')->name('orgPerformingWorkUpdatePage');
+    Route::post('/orgPerformingWorkUpdate' , 'update')->name('orgPerformingWorkUpdate');
+    Route::get('/orgPerformingWorkDelete/{id}' , 'delete')->name('orgPerformingWorkDelete');
+});
+
+Route::controller(ProjectOrganizationController::class)->group(function(){
+    Route::get('/projectOrganizationPage' , 'projectOrganizationPage')->name('projectOrganizationPage');
+    Route::get('/addProjectOrganization' , 'addPage')->name('addProjectOrganization');
+    Route::post('/projectOrganizationCreate' , 'create')->name('projectOrganizationCreate');
+    Route::get('/projectOrganizationRead/{id}' , 'read')->name('projectOrganizationRead');
+    Route::get('/projectOrganizationUpdatePage/{id}' , 'updatePage')->name('projectOrganizationUpdatePage');
+    Route::post('/projectOrganizationUpdate' , 'update')->name('projectOrganizationUpdate');
+    Route::get('/projectOrganizationDelete/{id}' , 'delete')->name('projectOrganizationDelete');
+});
+
+Route::controller(OrganizationUnitController::class)->group(function(){
+    Route::get('/organizationUnitPage' , 'organizationUnitPage')->name('organizationUnitPage');
+    Route::get('/addOrganizationUnit' , 'addPage')->name('addOrganizationUnit');
+    Route::post('/organizationUnitCreate' , 'create')->name('organizationUnitCreate');
+    Route::get('/organizationUnitRead/{id}' , 'read')->name('organizationUnitRead');
+    Route::get('/organizationUnitUpdatePage/{id}' , 'updatePage')->name('organizationUnitUpdatePage');
+    Route::post('/organizationUnitUpdate' , 'update')->name('organizationUnitUpdate');
+    Route::get('/organizationUnitDelete/{id}' , 'delete')->name('organizationUnitDelete');
+});
+
+Route::controller(Ref_OrganizationUnitController::class)->group(function(){
+    Route::get('/ref_OrganizationUnitPage' , 'ref_OrganizationUnitPage')->name('ref_OrganizationUnitPage');
+    Route::get('/addRef_OrganizationUnit' , 'addPage')->name('addRef_OrganizationUnit');
+    Route::post('/ref_OrganizationUnitCreate' , 'create')->name('ref_OrganizationUnitCreate');
+    Route::get('/ref_OrganizationUnitRead/{id}' , 'read')->name('ref_OrganizationUnitRead');
+    Route::get('/ref_OrganizationUnitUpdatePage/{id}' , 'updatePage')->name('ref_OrganizationUnitUpdatePage');
+    Route::post('/ref_OrganizationUnitUpdate' , 'update')->name('ref_OrganizationUnitUpdate');
+    Route::get('/ref_OrganizationUnitDelete/{id}' , 'delete')->name('ref_OrganizationUnitDelete');
+});
+
+Route::controller(RequirementController::class)->group(function(){
+    Route::get('/requirementPage' , 'requirementPage')->name('requirementPage');
+    Route::get('/addRequirement' , 'addPage')->name('addRequirement');
+    Route::post('/requirementCreate' , 'create')->name('requirementCreate');
+    Route::get('/requirementRead/{id}' , 'read')->name('requirementRead');
+    Route::get('/requirementUpdatePage/{id}' , 'updatePage')->name('requirementUpdatePage');
+    Route::post('/requirementUpdate' , 'update')->name('requirementUpdate');
+    Route::get('/requirementDelete/{id}' , 'delete')->name('requirementDelete');
+});
+
+Route::controller(Ref_EquipmentController::class)->group(function(){
+    Route::get('/ref_EquipmentPage' , 'ref_EquipmentPage')->name('ref_EquipmentPage');
+    Route::get('/addRef_Equipment' , 'addPage')->name('addRef_Equipment');
+    Route::post('/ref_EquipmentCreate' , 'create')->name('ref_EquipmentCreate');
+    Route::get('/ref_EquipmentRead/{id}' , 'read')->name('ref_EquipmentRead');
+    Route::get('/ref_EquipmentUpdatePage/{id}' , 'updatePage')->name('ref_EquipmentUpdatePage');
+    Route::post('/ref_EquipmentUpdate' , 'update')->name('ref_EquipmentUpdate');
+    Route::get('/ref_EquipmentDelete/{id}' , 'delete')->name('ref_EquipmentDelete');
+});
+
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/productPage' , 'productPage')->name('productPage');
+    Route::get('/addProduct' , 'addPage')->name('addProduct');
+    Route::post('/productCreate' , 'create')->name('productCreate');
+    Route::get('/productRead/{id}' , 'read')->name('productRead');
+    Route::get('/productUpdatePage/{id}' , 'updatePage')->name('rproductUpdatePage');
+    Route::post('/productUpdate' , 'update')->name('productUpdate');
+    Route::get('/productDelete/{id}' , 'delete')->name('productDelete');
 });

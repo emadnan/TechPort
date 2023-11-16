@@ -4,6 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
 <!-- Create/Update Modal content-->
 <div class="modal fade" id="form-modal" role="dialog">
     <div class="modal-dialog">
@@ -19,36 +20,31 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label for="project" class="col-md-4 col-form-label text-md-end">{{ __('Project') }}</label>
+                    <label for="reference" class="col-md-4 col-form-label text-md-end">{{ __('Reference') }}</label>
                     <div class="col-md-6">
-                        <select id="project" type="text" class="form-control @error('project') is-invalid @enderror" name="project" value="{{ old('project') }}">
+                        <select id="reference" type="text" class="form-control @error('reference') is-invalid @enderror" name="reference" value="{{ old('reference') }}">
                             <option selected value="">SELECT</option>
-                            @foreach ($projects as $project)
-                            <option value="{{$project ->id}}">{{$project->name}} </option>
+                            @foreach ($references as $reference)
+                            <option value="{{$reference ->id}}">{{$reference->reference}} </option>
                             @endforeach
                         </select>
-                        <span class="text-danger small" id="projectError"></span>
+                        <span class="text-danger small" id="referenceError"></span>
                     </div>
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="technology" class="col-md-4 col-form-label text-md-end">{{ __('Technology') }}</label>
+                    <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                     <div class="col-md-6">
-                        <select id="technology" type="text" class="form-control @error('technology') is-invalid @enderror" name="technology" value= "{{ old ('technology') }}" autocomplete="technology" autofocus>
-                            <option selected value="">SELECT</option>
-                            @foreach ($techs as $tech)
-                            <option value="{{$tech ->id}}">{{$tech ->technology}} </option>
-                            @endforeach
-                        </select>
-                            <span class="text-danger small" id="technologyError"></span>
+                        <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value= "{{ old ('description') }}" autocomplete="description" autofocus>
+                            <span class="text-danger small" id="descriptionError"></span>
                     </div>
                 </div>
 
                 <div class="row mb-3">
-                    <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('Date') }}</label>
+                    <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
                     <div class="col-md-6">
-                        <input id="date" type="text" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" >
-                        <span class="text-danger small" id="dateError"></span>
+                        <textarea id="note" type="text" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" ></textarea> 
+                        <span class="text-danger small" id="noteError"></span>
                     </div>
                 </div>
         </div>
@@ -67,7 +63,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Project Tecnology Details</h4>
+          <h4 class="modal-title">Requirement Details</h4>
         </div>
         <div class="modal-body" id="details">
            
@@ -85,31 +81,30 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Project Technology') }}</b>
+                    <b>{{ __('Reuirements') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Project Technology</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Requirement</button>
                     </div>
                 </div>
 
                 <div class="card-body">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Project</th>
-                            <th class="py-1">Technology</th>
-                            <th class="py-1">Date</th>
-                            {{-- <th class="py-1">Note</th> --}}
+                            <th class="py-1">Reference</th>
+                            <th class="py-1">Description</th>
+                            <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($projTechs as $projTech )
-                            <tr id="row_{{$projTech-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$projTech -> projectName}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$projTech -> technology}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$projTech -> date}}</td>
+                            @foreach ($requirements as $requirement )
+                            <tr id="row_{{$requirement-> id}}">
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$requirement -> reference}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$requirement -> description}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$requirement -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
-                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$projTech-> id}}"> <span style="color:black;">|</span> </i>
-                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$projTech-> id}}"> <span style="color:black;">|</span> </i> 
-                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$projTech-> id}}"></i>
+                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$requirement-> id}}"> <span style="color:black;">|</span> </i>
+                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$requirement-> id}}"> <span style="color:black;">|</span> </i> 
+                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$requirement-> id}}"></i>
                                 </td>
                             </tr>
                             @endforeach
@@ -124,6 +119,7 @@
         </div>
     </div>
 </div>
+
 <script type='text/javascript'>
     $(document).ready(function()
     {
@@ -136,30 +132,30 @@
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Project Technology');
-    $("#projectError").text('');
-    $("#technologyError").text('');
-    $("#dateError").text('');
+    $('#modal_title').html('Add Requirement');
+    $("#referenceError").text('');
+    $("#descriptionError").text('');
+    $("#noteError").text('');
     }) // create click event end
 
     $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Project Technology');
-    $("#projectError").text('');
-    $("#technologyError").text('');
-    $("#dateError").text('');
+    $('#modal_title').html('Update Requirement');
+    $("#referenceError").text('');
+    $("#descriptionError").text('');
+    $("#noteError").text('');
     var rowID = $(this).data('id');
-    var url = 'projectTechnologyUpdatePage/'+rowID;
+    var url = 'requirementUpdatePage/'+rowID;
             $.ajax({
                 type: 'GET',
                 url: url,
                 success: function(response) {
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
-                        $('#project').val(item.id_project);
-                        $('#technology').val(item.id_technology);
-                        $('#date').val(item.date);
+                        $('#reference').val(item.id_reference);
+                        $('#description').val(item.description);
+                        $('#note').val(item.note);
                     });
                 },
             });
@@ -171,14 +167,14 @@ $('#form').submit(function(){
           event.preventDefault();
           var formData = $(this).serialize();
           var inpID = $('#id').val();
-          $("#projectError").text('');
-          $("#technologyError").text('');
-          $("#dateError").text('');
+          $("#referenceError").text('');
+          $("#descriptionError").text('');
+          $("#noteError").text('');
           if(inpID)
           {
               $.ajax({
                   type: 'POST',
-                  url: '{{ route("projectTechnologyUpdate") }}',
+                  url: '{{ route("requirementUpdate") }}',
                   data: formData,
 
                   success: function(response)
@@ -186,13 +182,13 @@ $('#form').submit(function(){
 
                       if(response.errors)
                       {
-                          $("#projectError").text(response.errors.id_project);
-                          $("#technologyError").text(response.errors.id_technology);
-                          $("#dateError").text(response.errors.date);
+                          $("#referenceError").text(response.errors.id_reference);
+                          $("#descriptionError").text(response.errors.description);
+                          $("#noteError").text(response.errors.note);
 
-                          $("#project").val(response.oldInput.id_project);
-                          $("#technology").val(response.oldInput.id_technology);
-                          $("#date").val(response.oldInput.date);
+                          $("#refernce").val(response.oldInput.id_reference);
+                          $("#description").val(response.oldInput.description);
+                          $("#note").val(response.oldInput.note);
 
                       }
                       else
@@ -218,9 +214,9 @@ $('#form').submit(function(){
                       $.each(response.updateEQ , function(index , item){
                           var row1 = 
                           '<tr id="row_'+item.id+'">'+
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.projectName + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.technology + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.date + '</td>' +
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.reference + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.note + '</td>' +
                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                   '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -242,20 +238,20 @@ $('#form').submit(function(){
           {
               $.ajax({
                   type: 'POST',
-                  url: '{{ route("projectTechnologyCreate") }}',
+                  url: '{{ route("requirementCreate") }}',
                   data: formData,
 
                   success: function(response)
                   {
                       if(response.errors)
-                      {
-                        $("#projectError").text(response.errors.id_project);
-                          $("#technologyError").text(response.errors.id_technology);
-                          $("#dateError").text(response.errors.date);
+                      { 
+                          $("#referenceError").text(response.errors.id_reference);
+                          $("#descriptionError").text(response.errors.description);
+                          $("#noteError").text(response.errors.note);
 
-                          $("#project").val(response.oldInput.id_project);
-                          $("#technology").val(response.oldInput.id_technology);
-                          $("#date").val(response.oldInput.date);
+                          $("#refernce").val(response.oldInput.id_reference);
+                          $("#description").val(response.oldInput.description);
+                          $("#note").val(response.oldInput.note);
 
                       }
                       else
@@ -278,9 +274,9 @@ $('#form').submit(function(){
                       var data1 = $('#data-table tbody');
                $.each(response.eqRow , function(index , item){
                    var row = '<tr id="row_'+item.id+'">'+
-                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.projectName + '</td>'+ 
-                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.technology + '</td>' +
-                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.date + '</td>'+ 
+                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.reference + '</td>'+ 
+                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>' +
+                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.note + '</td>'+ 
                                '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                   '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -303,7 +299,7 @@ $('#form').submit(function(){
              var id = $(this).data('id');
             var data = $('#details');
             data.empty(); 
-            var url = 'projectTechnologyRead/' + id;
+            var url = 'requirementRead/' + id;
              $.ajax({
                 type: 'GET',
                 url: url,
@@ -312,12 +308,12 @@ $('#form').submit(function(){
 
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
-                '<span style="font-weight:700;">Project: </span>'
-                +item.projectName+ '</p>'+
-                '<p>'+ '<span  style="font-weight:700;">Technology : </span>'
-                +item.technology+'</p>'+
-                '<p>'+ '<span  style="font-weight:700;">Date : </span>'
-                +item.date+'</p>';
+                '<span style="font-weight:700;">Reference: </span>'
+                +item.reference+ '</p>'+
+                '<p>'+ '<span  style="font-weight:700;">Description : </span>'
+                +item.description+'</p>'+
+                '<p>'+ '<span  style="font-weight:700;">Note : </span>'
+                +item.note+'</p>';
                 data.append(descp);
                 });
 
@@ -326,7 +322,7 @@ $('#form').submit(function(){
         });
         $('body').on('click' , '#delete-btn' , function(){
     var id = $(this).data('id');
-    var url = 'projectTechnologyDelete/' + id;
+    var url = 'requirementDelete/' + id;
     $.ajax({
                 type: 'GET',
                 url: url,

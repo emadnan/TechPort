@@ -52,6 +52,7 @@
                     <label for="image" class="col-md-2 col-form-label text-md-end">{{ __('Image') }}</label>
                     <div class="col-md-4">
                         <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image" value= "{{ old ('image') }}" autocomplete="image" autofocus>
+                        <div id="old-image"></div>
                         <span class="text-danger small" id="imageError"></span>
                     </div>
 
@@ -88,7 +89,7 @@
                         <select id="techreferred" type="text" class="form-control @error('techreferred') is-invalid @enderror" name="techreferred" value= "{{ old ('techreferred') }}" autocomplete="techreferred" autofocus>
                             <option selected value="" >REF</option>
                             @foreach ($techRefs as $techRef )
-                            <option value="{{$techRef-> id}}"> {{$techRef-> id_techarea }} </option>
+                            <option value="{{$techRef-> id}}"> {{$techRef->techarea }} </option>
                             @endforeach
                         </select>
                         <span class="text-danger small" id="techreferredError"></span>
@@ -276,9 +277,7 @@
 function getRows ()
     {
         var projects = @json( $projects );
-        // console.log(projects);
         $.each(projects , function(index , item){
-            // console.log(item);
         var row = 
                           '<tr id="row_'+item.id+'">'+
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
@@ -288,7 +287,7 @@ function getRows ()
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_status + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -336,7 +335,6 @@ $(document).ready(function(){
                    $('#name').val(item.name);
                    $('#description').val(item.description);
                    $('#benifit').val(item.benifit);
-                   $('#image').val(item.image);
                    $('#id_doc').val(item.id_doc);
                    $('#startdate').val(item.startdate);
                    $('#enddate').val(item.enddate);
@@ -349,13 +347,8 @@ $(document).ready(function(){
                    $('#foundsource').val(item.id_foundsource);
                    $('#status').val(item.id_status);
                    $('#note').val(item.note);
+                   $('#old-image').text(item.image);
 
-                    // $.each(response.row , function(index , item){
-                    //     $('#id').val(item.id);
-                    //     $('#businessArea').val(item.businessarea);
-                    //     $('#description').val(item.description);
-                    //     $('#note').val(item.note);
-                    // });
                 },
             });
 }); // update click event end
@@ -365,19 +358,19 @@ $(document).ready(function(){
     $('#form').submit(function(){
           
           event.preventDefault();
-          var formData = $(this).serialize();
+        //   var form = $('#form')[0];
+        //   var formData = $(this).serialize();
+        var formData = new FormData(this);
           var inpID = $('#id').val();
-        //   $.(each)
-        //   $("#areaError").text('');
-        //   $("#descriptionError").text('');
-        //   $("#noteError").text('');
+       
           if(inpID)
           {
               $.ajax({
                   type: 'POST',
                   url: '{{ route("projectUpdate") }}',
                   data: formData,
-
+                  contentType:false,
+                  processData:false,
                   success: function(response)
                   {
 
@@ -414,7 +407,7 @@ $(document).ready(function(){
                       }, 5000);
 
                       var data = $('#data-table tbody');
-                      var item = response.data;
+                      $.each(response.data , function(index , item){
                           var row1 = 
                           '<tr id="row_'+item.id+'">'+
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
@@ -424,7 +417,7 @@ $(document).ready(function(){
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_status + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -433,6 +426,7 @@ $(document).ready(function(){
                               '</td>'+
                           '</tr>';
                           var row_id = $('#row_'+item.id).replaceWith(row1);
+                          });
                       $('#business-modal').modal('hide');
                      $('#form').trigger('reset');
                      $('#id').val(null);
@@ -447,6 +441,8 @@ $(document).ready(function(){
                   type: 'POST',
                   url: '{{ route("projectCreate") }}',
                   data: formData,
+                  contentType:false,
+                  processData:false,
 
                   success: function(response)
                   {
@@ -483,7 +479,10 @@ $(document).ready(function(){
                          alert.alert("close");
                       }, 2000);
                       var data1 = $('#data-table tbody');
-                var item = response.project;
+
+                // var item = response.project;
+                $.each(response.project , function(index , item){
+
                    var row = 
                    '<tr id="row_'+item.id+'">'+
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
@@ -493,7 +492,7 @@ $(document).ready(function(){
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_status + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -502,6 +501,8 @@ $(document).ready(function(){
                               '</td>'+
                           '</tr>';
                                   data1.append(row);
+
+                     });
                      $('#business-modal').modal('hide');
                      $('#form').trigger('reset');
                      $('#id').val(null);
@@ -532,10 +533,18 @@ $(document).ready(function(){
                 '<p>'+ '<span  style="font-weight:700;">Description : </span>'
                 +item.description+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Benifit : </span>'+item.benifit+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Image : </span>'+'<img src="images/'+item.image+'" width="300px">'+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> ID_DOC : </span>'+item.id_doc+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Start Date : </span>'+item.startdate+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> End Date : </span>'+item.enddate+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> Status : </span>'+item.id_status+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Project Target : </span>'+item.projecttarget+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Technology Ref : </span>'+item.techarea+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Mission Type : </span>'+item.type+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> TRL Start : </span>'+item.trllevel+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> TRL Actual : </span>'+item.trllevel+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> TRL Final : </span>'+item.trllevel+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Found Sources : </span>'+item.sourceName+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Status : </span>'+item.status+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';
                 data.append(descp);
                 });

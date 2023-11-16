@@ -606,37 +606,6 @@
                 </li> --}}
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Requirement Management
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create Requirements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Update Requirements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Delete Requirements</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item">
                     <a href="{{route('techPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -698,16 +667,45 @@
                 </li> --}}
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Project Organization Management
-                            <i class="fas fa-angle-left right"></i>
+                           Working Organizations
                         </p>
                     </a>
-
-                    <ul class="nav nav-treeview">
+                </li>
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Create Project Technology</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Update Project Technology</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Delete Project Technology</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li> --}}
+
+                <li class="nav-item">
+                    <a href="{{route('projectOrganizationPage')}}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                           Project Organizations
+                        </p>
+                    </a>
+                </li>
+                    {{-- <ul class="nav nav-treeview"> --}}
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create Project Organization</p>
@@ -726,18 +724,17 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-
+                </li> --}}
+                
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('organizationUnitPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Organization Unit Management
-                            <i class="fas fa-angle-left right"></i>
+                            Organization Units
                         </p>
                     </a>
-
-                    <ul class="nav nav-treeview">
+                </li>
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -757,18 +754,81 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Equipment Ref Management
-                            <i class="fas fa-angle-left right"></i>
+                           Ref Organization Units
                         </p>
                     </a>
+                </li>
 
-                    <ul class="nav nav-treeview">
+                {{-- <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create Organization Unit Ref</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Update Organization Unit Ref</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Delete Organization Unit Ref</p>
+                        </a>
+                    </li>
+                </ul>
+            </li> --}}
+
+            
+            <li class="nav-item">
+                <a href="{{route('requirementPage')}}" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                       Requirements
+                    </p>
+                </a>
+            </li>
+
+                {{-- <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create Requirements</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Update Requirements</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Delete Requirements</p>
+                        </a>
+                    </li>
+                </ul>
+            </li> --}}
+            
+            <li class="nav-item">
+                <a href="{{route('ref_EquipmentPage')}}" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Ref Equipments
+                    </p>
+                </a>
+            </li>
+
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -788,18 +848,17 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('productPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Product Management
-                            <i class="fas fa-angle-left right"></i>
+                            Products
                         </p>
                     </a>
-
-                    <ul class="nav nav-treeview">
+                </li>
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -819,75 +878,10 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Organization Management
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create Organizations</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Update Organizations</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Delete Organizations</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Organization Unit Ref Management
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create Organization Unit Ref</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Update Organization Unit Ref</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Delete Organization Unit Ref</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-
-
-
-
-                <li class="nav-item">
+              
+                {{-- <li class="nav-item">
                     <a href="pages/widgets.html" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
@@ -1489,7 +1483,7 @@
                         <p>Informational</p>
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </nav>
         <!-- /.sidebar-menu -->
     </div>

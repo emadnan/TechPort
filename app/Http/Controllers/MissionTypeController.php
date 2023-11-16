@@ -9,11 +9,7 @@ use Illuminate\Http\Request;
 
 class MissionTypeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     public function index()
     {
         $missions = missiontype::get();
@@ -120,4 +116,11 @@ class MissionTypeController extends Controller
             return response()->json(['message' => 'Mission Type  Was Not Deleted Successfully']);
         }
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+
 }
+
