@@ -373,8 +373,9 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700;margin-left:3px;">Found Sources</section>
-                        
-                        <section class="mt-2" style="font-size:18px; font-weight:700;margin-left:3px;">Source 1 Mention</section>
+                        @foreach ($sources as $source )
+                        <section class="mt-2" style="font-size:18px; font-weight:700;margin-left:3px;">{{$source->name}}</section>
+                        @endforeach
                     
                         <div class="solid-rectangle mt-1">
 

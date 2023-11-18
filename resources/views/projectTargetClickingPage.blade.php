@@ -374,8 +374,9 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700; margin-left:3px;">Project Targets</section>
-
-                        <section style="font-size:18px; font-weight:700; margin-left:3px;">Earth</section>
+                    @foreach ($projects as $project)
+                        <section style="font-size:18px; font-weight:700; margin-left:3px;">{{$project->projecttarget}}</section>
+                    @endforeach
                         
                         <div class="solid-rectangle mt-1">
 

@@ -295,34 +295,20 @@
                                         <th><a href="{{ url('/locationsPage') }}" style="color:#fff;">Location</a></th>
                                         <th>Description</th>
                                     </tr>
+                                    @foreach ($organizations as $organization )
                                     <tr>
-                                        <td><a href="{{ url('/organization-clicking') }}" style="color:black;">State
-                                                University
-                                                Main Campus</a></td>
-                                        <td>23044</td>
-                                        <td><a href="{{ url('/location-clicking') }}" style="color:black;">Houston,
-                                                Texas</a></td>
-                                        <td>This Organisation
-                                                is responisble for Project Finance</td>
+                                        <td><a href="{{ route('organizationClickingPage', ['id' => $organization->id]) }}" style="color:black;">{{$organization->name}}</a></td>
+                                        <td>{{$organization->code}}</td>
+                                        <td><a href="{{ route('locationsClickingPage', ['id' => $organization->id]) }}" style="color:black;">{{$organization->state}},{{$organization->city}}</a></td>
+                                        <td>{{$organization->description}}</td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="{{ url('/organization-clicking') }}" style="color:black;">State
-                                                University
-                                                Main Campus</a></td>
-                                        <td>23044</td>
-                                        <td><a href="{{ url('/location-clicking') }}" style="color:black;">Houston,
-                                                Texas</a></td>
-                                        <td>This Organisation
-                                                is responisble for Project Finance</td>
-                                    </tr>
-
-
+                                    @endforeach
                                 </table>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4"><a
                                         href="{{ url('/found-sources') }}" style="color:black;">Found Source</a>
                                 </section>
                                 <section>
-                                    <p><a href="{{ url('/found-sources-clicking') }}" style="color:black;">{{$project->sourceName}} </a></p>
+                                    <p><a href="{{ route('foundSourcesClickingPage', ['id' => $project->sourceID]) }}" style="color:black;">{{$project->sourceName}} </a></p>
                                 </section>
 
                             </div>
@@ -333,43 +319,38 @@
 
                             <div class="col-md-4">
 
-                                {{-- <img src="{{ asset('{{$project-> image}}') }}" alt=""
-                                    style="height:200px;width:auto;"> --}}
+                                <img src="images/{{$project->image}}" alt=""
+                                    style="height:200px;width:auto;">
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">
                                     Project Organization:
                                 </section>
                                 <section><a href="{{ url('/organizations') }}"
-                                        style="color:black;font-weight:bold;">Organisation Performing Work</a></section>
-                                <section><a href="{{ url('/organization-clicking') }}" style="color:black;">State
-                                        University
-                                        Main Campus</a></section>
-
+                                        style="color:black;font-weight:bold;">Organization Performing Work</a></section>
+                            @foreach ($projOrgs as $projOrg )
+                                <section><a href="{{route('organizationClickingPage', ['id' => $projOrg->orgID])}}" style="color:black;">{{$projOrg->orgName}}</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a style="color:black;"
                                         href="{{ url('/legal-entity-roles') }}">Legal Entity Role</a></section>
-                                <section><a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;">Space Technology Mission 
-                                    Directorate (STMD)</a></section>
+                                <section><a href="{{ route('legalEntityClickingPage', ['id' => $projOrg->legalID]) }}" style="color:black;">{{$projOrg->legalName}}</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a
                                         href="{{ url('/search-results') }}" style="color:black;">Project</a></section>
-                                <section><a href="{{ url('/search-results') }}" style="color:black;">Space
-                                        technology Research Grant</a></section>
+                                <section><a href="{{ url('/search-results') }}" style="color:black;">{{$projOrg->projectName}}</a></section>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Project Duration
                                 </section>
                                 <section>
-                                    <p>Start: 24 Jan 2023</p>
-                                    <p>End : 31 Mar  2025</p>
+                                    <p>Start: {{$projOrg->startdate}}</p>
+                                    <p>End : {{$projOrg->enddate}}</p>
                                 </section>
 
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px"><a
                                         href="{{ url('/mission-type') }}" style="color:black;">Mission Type</a>
                                 </section>
-                                <section><a href="{{ url('/mission-type-clicking') }}" style="color:black;">Drass
-                                        Mission type defined here.</a></section>
+                                <section><a href="{{ route('missionTypeClickingPage', ['id' => $projOrg->missionID]) }}" style="color:black;">{{$projOrg->missionType}}</a></section>
 
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Maturity
                                     (TRL)</section>
-                                <section><strong>Start:</strong>&nbsp;2</section>
-                                <section><strong>Current:</strong> 2</section>
-                                <section><strong>Estimated End:</strong> 3</section>
+                                <section><strong>Start:</strong>&nbsp;{{$projOrg->trllevel}}</section>
+                                <section><strong>Current:</strong>{{$projOrg->trllevel}}</section>
+                                <section><strong>Estimated End:</strong>{{$projOrg->trllevel}}</section>
                                 <img src="{{ asset('images/Group 153 (1).png') }}" alt="" width="100%">
                                 <!-- <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas</section>
                 <section>TX01 Propulsion Systems</section>
@@ -388,8 +369,7 @@
                 TX01.1 Chemical Space Propulsion</section> -->
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas
                                 </section>
-                                <section><a href="{{ url('/search-results') }}" style="color:black;">TX01 Propulsion
-                                        Systems</a></section>
+                                <section><a href="{{ url('/search-results') }}" style="color:black;">TX01 {{$projOrg->techarea}}</a></section>
                                 <div class="row ml-1">
                                     <svg xmlns="htp://www.w3.org/2000/svg" width="15" height="8"
                                         viewBox="0 0 15 8" fill="none">
@@ -398,7 +378,7 @@
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
                                     <section style="margin-left:5px;"><a href="{{ url('/search-results') }}"
-                                            style="color:black;">TX01.1 Chemical Space Propulsion</a></section>
+                                            style="color:black;">TX01.1 {{$projOrg->techsector}}</a></section>
                                 </div>
                                 <div class="row" style="margin-left:25px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8"
@@ -408,13 +388,14 @@
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
                                     <section style="margin-left:5px;"><a href="{{ url('/search-results') }}"
-                                            style="color:black;">TX01.1.3 Cryogenic</a></section>
+                                            style="color:black;">TX01.1.3 {{$projOrg->techniche}}</a></section>
                                 </div>
                                 <section style="font-weight:bold;margin-top:25px;font-size:16px"><a
                                         href="{{ url('/project-targets') }}" style="color:black;">Project target</a>
                                 </section>
-                                <section style="margin-left:5px;"><a href="{{ url('/project-target-clicking') }}"
-                                        style="color:black;">Earth</a></section>
+                                <section style="margin-left:5px;"><a href="{{ route('projectTargetClickingPage', ['id' => $projOrg->projectID]) }}"
+                                        style="color:black;">{{$projOrg->projecttarget}}</a></section>
+                            @endforeach
                             </div>
                         </div>
                     </div>

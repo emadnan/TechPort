@@ -15,7 +15,7 @@
        @foreach ($entities as $entity)
             <div style="margin-top: 15px;">
             <section class="encapsulated-text py-3">
-                <a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;font-weight:bold;">{{$entity -> name}}</a>
+                <a href="{{ route('legalEntityClickingPage', ['id' => $entity->id]) }}" style="color:black;font-weight:bold;">{{$entity -> name}}</a>
             </section>
         </div>
         <div class="divider-within-class"></div>

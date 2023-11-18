@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\foundingsource;
+use App\Models\legalentityrole;
+use App\Models\location;
 use App\Models\missiontype;
+use App\Models\orgperformingwork;
 use App\Models\project;
+use App\Models\ref_projectorganization;
 use App\Models\status;
 use App\Models\techreferred;
 use App\Models\trl;
@@ -13,11 +17,63 @@ use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
+    public function projectTargetsPage()
+    {
+        $projects = project::get();
+        return view('projectTargetsPage' , compact('projects'));
+    }
 
-  public function index()
+    public function projectTargetClickingPage(string $id)
+    {
+        $locations = location::get();
+        $sources = foundingsource::get();
+        $missions = missiontype::get();
+        $orgs = orgperformingwork::get();
+        $entities = legalentityrole::get();
+        $projects = project::where('id' , $id)->get();
+
+        $projOrgs = ref_projectorganization::select('projects.*' ,  'projects.name as projectName' , 'projects.id as projectID' , 'projects.description as projectDescription' , 'status.status' , 'techsector.techsector' , 'techareas.techarea' , 'techniche.techniche' , 'trl.trllevel', 'missionType.type as missionType' , 'missionType.id as missionID' , 'orgperformingwork.name as orgName' ,'orgperformingwork.id as orgID' , 'legalentityrole.name as legalName' ,'legalentityrole.id as legalID' , 'foundingsources.name as sourceName' , 'foundingsources.id as sourceID' , 'ref_projectorganization.*' )
+        ->join('projects' , 'projects.id' , '=' , 'ref_projectorganization.id_project') 
+            ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
+            ->join('trl' , function($join){
+                $join->on('trl.id' , '=' ,'projects.id_trlstart');
+                $join->on('trl.id' , '=' ,'projects.id_trlactual');
+                $join->on('trl.id' , '=' ,'projects.id_trlfinal');
+            })
+            ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
+            ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
+            ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
+            ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
+            ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+            ->join('status' , 'status.id' , '=' , 'projects.id_status')
+        ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
+        ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
+        ->get();
+
+        return view('projectTargetClickingPage' , compact('locations' , 'sources' , 'missions' , 'orgs' , 'entities' , 'projects' , 'projOrgs') );
+    }
+
+  public function index(string $id)
   {
+    $projOrgs = ref_projectorganization::select('projects.name as projectName' , 'projects.id as projectID' , 'projects.projecttarget' , 'techsector.techsector' , 'techareas.techarea' , 'techniche.techniche' , 'trl.trllevel', 'missionType.type as missionType' , 'missionType.id as missionID' , 'projects.startdate' , 'projects.enddate' , 'orgperformingwork.name as orgName' ,'orgperformingwork.id as orgID' , 'legalentityrole.name as legalName' ,'legalentityrole.id as legalID' , 'ref_projectorganization.*' )
+    ->join('projects' , 'projects.id' , '=' , 'ref_projectorganization.id_project') 
+        ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
+        ->join('trl' , function($join){
+            $join->on('trl.id' , '=' ,'projects.id_trlstart');
+            $join->on('trl.id' , '=' ,'projects.id_trlactual');
+            $join->on('trl.id' , '=' ,'projects.id_trlfinal');
+        })
+        ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
+        ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
+        ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
+        ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
+        ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+        ->join('status' , 'status.id' , '=' , 'projects.id_status')
+    ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
+    ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
+    ->get();
 
-     $projects = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'projects.*')
+     $projects = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName', 'foundingsources.id as sourceID','status.status' , 'projects.*')
      ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
      ->join('trl' , function($join){
         $join->on('trl.id' , '=' ,'projects.id_trlstart');
@@ -31,8 +87,14 @@ class ProjectController extends Controller
      ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
      ->join('status' , 'status.id' , '=' , 'projects.id_status')
      ->get();
+
+     $organizations = orgperformingwork::select('orgtype.type' , 'humanentity.name as humanName' , 'humanentity.surname as humanSurName' , 'location.city' ,'location.state' , 'orgperformingwork.*')
+        ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
+        ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
+        ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
+        ->get();
 // return response()->json($projects);
-    return view('lowEvolutionPage' , compact('projects'));
+    return view('lowEvolutionPage' , compact('projects' , 'organizations' , 'projOrgs'));
 
   }
 
@@ -292,7 +354,7 @@ class ProjectController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('index' , 'projectTargetsPage' , 'projectTargetClickingPage');
     }
 }
 

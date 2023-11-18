@@ -375,8 +375,9 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700; margin-left:3px;">Legal Entity Role</section>
-                        
-                        <section style=" font-size:18px; font-weight:700; margin-left:3px;">Space Technology Mission Directorate (STMD)</section>
+                        @foreach ($entities as $entity)
+                        <section style=" font-size:18px; font-weight:700; margin-left:3px;">{{$entity->name}}</section>
+                        @endforeach
                        
                     
                         <div class="solid-rectangle mt-1">

@@ -330,7 +330,7 @@
 
 @foreach ($data as $entities => $entity)
             <div class="faq-item">
-                <a href="{{ url('/legal-entity-roles-clicking') }}">
+                <a href="{{ route('legalEntityClickingPage', ['id' => $entity->id]) }}">
                     <div class="faq-question"> <span class="float-left-text"
                             style="float: left;color: white; margin-right: 10px; margin-left: 0;">1</span><span
                             style="color: black;" class="faq-question">{{$entity-> name}}</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>

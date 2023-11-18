@@ -13,9 +13,11 @@
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
           @foreach ($projects as $project )
+        <div style="margin-top: 15px;">
             <section class="encapsulated-text  ">
-                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">{{$project-> projecttarget}}</a>
+                <a href="{{ route('projectTargetClickingPage', ['id' => $project->id]) }}" style="color:black;font-weight:bold;">{{$project-> projecttarget}}</a>
             </section>
+        </div>
             <div class="divider-within-class"></div>
             @endforeach
         </div>

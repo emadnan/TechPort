@@ -9,7 +9,7 @@
   @foreach ($missions as $mission )
   <div style="margin-top: 15px;">
     <section class="encapsulated-text " >
-        <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">{{$mission-> type}}</a>
+        <a href="{{route('missionTypeClickingPage' , ['id' => $mission->id])}}" style="color:black;font-weight:bold;">{{$mission-> type}}</a>
     </section>
   </div>
   <div class="divider-within-class"></div> 

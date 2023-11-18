@@ -51,38 +51,22 @@ Route::controller(HomeController::class)->group(function(){
 Route::get('/AdvanceSearch', function () {
     return view('advanceSearchPage');
 });
-
-
-Route::get('/project-targets', function () {
-    return view('projectTargetsPage');
-});
 Route::get('/search-results', [SearchReultsController::class , 'index'])->name('searchResultsPage');
 
-
-
-Route::get('/found-sources-clicking', function () {
-    return view('foundSourcesClickingPage');
-});
-Route::get('/legal-entity-roles-clicking', function () {
-    return view('legalEntityClickingPage');
-});
-Route::get('/project-target-clicking', function () {
-    return view('projectTargetClickingPage');
-});
-
-Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
-Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');
-Route::get('/user/login' ,[UserController::class , 'login'])->name('user.login');
-Route::get('/user/register' ,[UserController::class , 'register'])->name('user.register');
-Route::post('/user/save' ,[UserController::class , 'save'])->name('user.save');
-Route::post('/user/check' ,[UserController::class , 'check'])->name('user.check');
+//                Routes for Users without AUTH AdminLte 
+// Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
+// Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');
+// Route::get('/user/login' ,[UserController::class , 'login'])->name('user.login');
+// Route::get('/user/register' ,[UserController::class , 'register'])->name('user.register');
+// Route::post('/user/save' ,[UserController::class , 'save'])->name('user.save');
+// Route::post('/user/check' ,[UserController::class , 'check'])->name('user.check');
 // Route::get('/dashboardview' ,[UserController::class , 'dashboard'])->name('dashboard');
 
 Auth::routes();
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::controller(ProjectController::class)->group(function () {
-    Route::get('/low-evolution', 'index')->name('projectPage');
+    Route::get('/low-evolution/{id}', 'index')->name('projectPage');
     Route::get('/projectForm' , 'projectPage')->name('projectForm');
     Route::get('/addProject' , 'addPage')->name('addProject');
     Route::post('/projectCreate' , 'create')->name('projectCreate');
@@ -90,6 +74,8 @@ Route::controller(ProjectController::class)->group(function () {
     Route::get('/projectUpdatePage/{id}' , 'updatePage')->name('projectUpdatePage');
     Route::post('/projectUpdate' , 'update')->name('projectUpdate');
     Route::get('/projectDelete/{id}' , 'delete')->name('projectDelete');
+    Route::get('/project-targets' , 'projectTargetsPage')->name('projectTargetsPage');
+    Route::get('/project-target-clicking/{id}' , 'projectTargetClickingPage')->name('projectTargetClickingPage');
   });
 
 Route::controller(BusinessAreaController::class)->group(function () {
@@ -131,6 +117,7 @@ Route::controller(FoundingSourcesController::class)->group(function(){
     Route::get('/foundSourceUpdatePage/{id}' , 'updatePage')->name('foundSourceUpdatePage');
     Route::post('/foundSourceUpdate' , 'update')->name('foundSourceUpdate');
     Route::get('/foundSourceDelete/{id}' , 'delete')->name('foundSourceDelete');
+    Route::get('/found-sources-clicking/{id}' , 'foundSourcesClickingPage')->name('foundSourcesClickingPage');
 });
 
 Route::controller(HumanEntityController::class)->group(function(){
@@ -152,6 +139,7 @@ Route::controller(LegalEntityController::class)->group(function(){
     Route::get('/legalEntityUpdatePage/{id}' , 'updatePage')->name('legalEntityUpdatePage');
     Route::post('/legalEntityUpdate' , 'update')->name('legalEntityUpdate');
     Route::get('/legalEntityDelete/{id}' , 'delete')->name('legalEntityDelete');
+    Route::get('/legal-entity-roles-clicking/{id}' , 'legalEntityClickingPage')->name('legalEntityClickingPage');
 });
 
 Route::controller(LocationController::class)->group(function(){

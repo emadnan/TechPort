@@ -338,22 +338,19 @@
 
 
         <!-- QA Section -->
-
+    @foreach ($projects as $project)
         <div class="faq-container">
-
-
             <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
+                <a href="{{ route('projectTargetClickingPage', ['id' => $project->id])}}">
                     <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
+                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
+                            style="color: black; text-decoration: none;" class="faq-question">{{$project->projecttarget}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
-
             </div>
         </div>
-
         <div class="divider"></div>
+        @endforeach
 
         <div class="faq-container">
 

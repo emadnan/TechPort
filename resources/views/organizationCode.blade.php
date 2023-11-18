@@ -14,7 +14,7 @@
             @foreach ($orgs as $org )
             <div style="margin-top: 15px;">
             <section class="encapsulated-text ">
-                <a href="{{ url('/organization-clicking') }}" style="color:black;font-weight:bold;">{{$org-> name}}</a>
+                <a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}" style="color:black;font-weight:bold;">{{$org-> name}}</a>
             </section>
         </div>
         <div class="divider-within-class"></div>

@@ -11,7 +11,7 @@
         @foreach ($sources as $source )
             <div style="margin-top: 15px;">
             <section class="encapsulated-text ">
-                <a href="{{ url('/found-sources-clicking') }}" style="color:black;font-weight:bold;"> {{$source-> name}} </a>
+                <a href="{{ route('foundSourcesClickingPage', ['id' => $source->id]) }}" style="color:black;font-weight:bold;"> {{$source-> name}} </a>
             </section>
         </div>
         <div class="divider-within-class"></div>
