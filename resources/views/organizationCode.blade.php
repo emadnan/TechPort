@@ -11,10 +11,10 @@
 
     <div class="faq-answer" style="display: none;">
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-            @foreach ($orgs as $org )
+            @foreach ($projOrgs as $projOrg )
             <div style="margin-top: 15px;">
             <section class="encapsulated-text ">
-                <a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}" style="color:black;font-weight:bold;">{{$org-> name}}</a>
+                <a href="{{ route('organizationClickingPage', ['id' => $projOrg->orgID]) }}" style="color:black;font-weight:bold;">{{$projOrg-> orgName}}</a>
             </section>
         </div>
         <div class="divider-within-class"></div>

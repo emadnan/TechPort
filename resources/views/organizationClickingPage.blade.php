@@ -373,9 +373,8 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700; margin-left:5px;">Organization</section>
-                    @foreach ($orgs as $org )
-                        <section class="mt-2" style=" font-size:18px; font-weight:700; margin-left:5px;">{{$org->name}}</section>
-                    @endforeach                    
+                    @foreach ($projOrgs as $projOrg )
+                        <section class="mt-2" style=" font-size:18px; font-weight:700; margin-left:5px;">{{$projOrg->orgName}}</section>
                         <div class="solid-rectangle mt-1">
 
                             <div class="row" style="margin-left:5px;padding:10px;">
@@ -479,9 +478,9 @@
 
         <div class="container py-4 my-2" style="   border:1px groove #E8E8E8;">
             <h5 class="px-2" style="font-family: Roboto; font-weight: bold; font-size:16px;">Organization Description:</h5>
-          @foreach ($orgs as $org )
-            <section class="pb-2 px-2" style="font-size:14px;">{{$org->description}}</section>
-          @endforeach
+            <section class="pb-2 px-2" style="font-size:14px;">{{$projOrg->orgDescription}}</section>
+            @break
+            @endforeach
         </div>
 
 

@@ -12,10 +12,10 @@
     <div class="faq-answer" style="display: none;">
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-          @foreach ($projects as $project )
+          @foreach ($projOrgs as $projOrg )
         <div style="margin-top: 15px;">
             <section class="encapsulated-text  ">
-                <a href="{{ route('projectTargetClickingPage', ['id' => $project->id]) }}" style="color:black;font-weight:bold;">{{$project-> projecttarget}}</a>
+                <a href="{{ route('projectTargetClickingPage', ['id' => $projOrg->id]) }}" style="color:black;font-weight:bold;">{{$projOrg-> projecttarget}}</a>
             </section>
         </div>
             <div class="divider-within-class"></div>
@@ -66,3 +66,5 @@
             </center>
         </div>
     </div>
+</div>
+<div class="divider"></div>

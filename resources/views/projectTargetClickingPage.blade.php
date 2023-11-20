@@ -374,9 +374,8 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700; margin-left:3px;">Project Targets</section>
-                    @foreach ($projects as $project)
-                        <section style="font-size:18px; font-weight:700; margin-left:3px;">{{$project->projecttarget}}</section>
-                    @endforeach
+@foreach ($projOrgs as $projOrg)
+                        <section style="font-size:18px; font-weight:700; margin-left:3px;">{{$projOrg->projecttarget}}</section>
                         
                         <div class="solid-rectangle mt-1">
 
@@ -473,10 +472,8 @@
 
                         </div>
                     </div>
-
-
-
-
+                    @break
+@endforeach
 
 
                 </div>
@@ -499,6 +496,7 @@
 
         
         </div>
+    </div>
 
 
     </div>

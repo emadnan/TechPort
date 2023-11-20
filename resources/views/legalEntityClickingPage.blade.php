@@ -375,8 +375,9 @@
 
                     <div class="text-in-image">
                         <section style="font-weight:700; margin-left:3px;">Legal Entity Role</section>
-                        @foreach ($entities as $entity)
-                        <section style=" font-size:18px; font-weight:700; margin-left:3px;">{{$entity->name}}</section>
+                        @foreach ($projOrgs as $projOrg)
+                        <section style=" font-size:18px; font-weight:700; margin-left:3px;">{{$projOrg->legalName}}</section>
+                        @break
                         @endforeach
                        
                     

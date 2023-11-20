@@ -373,10 +373,10 @@
 
                     <div class="text-in-image">
                         <section style=" margin-left:3px; font-weight:700; ">Mission Type</section>
-                    @foreach ($missions as $mission )
-                        <section style=" font-size:18px; margin-left:3px; font-weight:700; ">{{$mission->type}}</section>
-                    @endforeach
-                        
+                    @foreach ($projOrgs as $projOrg )
+                        <section style=" font-size:18px; margin-left:3px; font-weight:700; ">{{$projOrg->missionType}}</section>
+                        @break
+                        @endforeach
                         <div class="solid-rectangle mt-1">
 
                             <div class="row" style="margin-left:5px;padding:10px;">
@@ -387,7 +387,6 @@
                                         <button class="btn btn-custom" ><a style="text-decoration: none; color:black;" href="{{url('/AdvanceSearch')}}"> Modify Search</a></button>
                                     </div>
                                 </div>
-
 
                                 <div class="key-stats col-md-2" style="margin-left:20px;line-height:20px;">
                                     <section style="margin-bottom:10px;">Key Stats</section>

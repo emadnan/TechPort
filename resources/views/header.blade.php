@@ -154,6 +154,11 @@
         line-height: 50px;
     }
 </style>
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {{-- Site Logo --}}
 <div class="row mt-5">
     <div class="col-md-10 mt-5 mb-5 logo">
@@ -168,9 +173,10 @@
 {{-- Search Bar goes here --}}
 <div class="row">
     <div class="col-md-9">
-        <form class="form-inline w-100">
+        <form class="form-inline w-100" method="POST" id="form">
+            @csrf
             <div class="input-group w-100">
-                <input style="font-size: 14px;" type="text" class="form-control w-100" placeholder="Search...">
+                <input style="font-size: 14px;" type="text" class="form-control w-100" placeholder="Search Projects" name="searchBar" , id="searchBar">
                 <div class="input-group-append">
                     <button class="btn custom-button" type="submit">
                         <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
@@ -185,3 +191,38 @@
     </div>
 </div>
 {{-- end --}}
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.ajaxSetup({
+                headers: { 
+                    'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
+                 }
+            });
+      $('#form').submit(function(){
+          event.preventDefault();
+          var search = $('#searchBar').val().toLowerCase();
+          console.log(search);
+        //   $('.faq-container').filter(function(){
+        //    $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+        //    $('.divider').hide();
+        $.ajax({
+            type: 'POST',
+            url : '{{route("searchProjects")}}',
+            data: {'searchBar': search} ,
+            success : function(response)
+            {
+                console.log("error");
+            }
+        });
+  });
+  
+//   if ($('.faq-container:visible').length > 1) {
+//             $('.divider').show();
+//         } else {
+//             $('.divider').hide();
+//         }
+          });
+// });
+</script>

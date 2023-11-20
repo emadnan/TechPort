@@ -336,28 +336,25 @@
 
         <!-- QA Section -->
 
-        <div class="faq-container">
 
 @foreach ($data as $locations=>$location )
     
-            <div class="faq-item">
+        <div class="faq-container">
                 <a href="{{ route('locationsClickingPage', ['id' => $location->id]) }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
                             class="faq-question"style="color: black;">{{$location-> city}} , {{$location-> state}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
-
-            </div>
-            <div class="divider"></div>
-            @endforeach
         </div>
+        <div class="divider"></div>
+        @endforeach
 
         
-        <div class="faq-container">
+        {{-- <div class="faq-container"> --}}
 
 
-            <div class="faq-item">
+            {{-- <div class="faq-item">
                 <a href="{{ url('/location-clicking') }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span
@@ -368,9 +365,9 @@
             </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider"></div> --}}
 
-        <div class="faq-container">
+        {{-- <div class="faq-container">
 
 
             <div class="faq-item">
@@ -477,7 +474,7 @@
                 </a>
 
             </div>
-        </div>
+        </div> --}}
 
 
 
@@ -496,7 +493,23 @@
     <footer>
         @include('footer')
     </footer>
-
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#form').submit(function(){
+          event.preventDefault();
+          var search = $('#searchBar').val().toLowerCase();
+          $('.faq-container').filter(function(){
+           var abcd = $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+        //    $('.divider').hide();
+  });
+  
+  if ($('.faq-container:visible').length > 1) {
+            $('.divider').show();
+        } else {
+            $('.divider').hide();
+        }
+          });
+});
+</script>
 </html>

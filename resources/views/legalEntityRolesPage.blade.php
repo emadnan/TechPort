@@ -326,21 +326,17 @@
 
         <!-- QA Section -->
 
-        <div class="faq-container">
 
 @foreach ($data as $entities => $entity)
-            <div class="faq-item">
+        <div class="faq-container">
                 <a href="{{ route('legalEntityClickingPage', ['id' => $entity->id]) }}">
                     <div class="faq-question"> <span class="float-left-text"
                             style="float: left;color: white; margin-right: 10px; margin-left: 0;">1</span><span
                             style="color: black;" class="faq-question">{{$entity-> name}}</span><i class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
-            </div>
+        </div>
 <div class="divider"></div>
 @endforeach
-
-        </div>
-
 
         <div class="faq-container">
 
@@ -483,5 +479,22 @@
     </footer>
 
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#form').submit(function(){
+          event.preventDefault();
+          var search = $('#searchBar').val().toLowerCase();
+          $('.faq-container').filter(function(){
+           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+        //    $('.divider').hide();
+  });
+  
+  if ($('.faq-container:visible').length > 1) {
+            $('.divider').show();
+        } else {
+            $('.divider').hide();
+        }
+          });
+});
+</script>
 </html>

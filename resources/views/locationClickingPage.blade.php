@@ -375,8 +375,9 @@
 
                     <div class="text-in-image">
                         <section style=" font-weight: 700; margin-bottom:0px;">Locations</section>
-                        @foreach ($locations as $location )
-                        <section style="font-size:17px; font-weight: 700; margin-bottom:10px;">{{$location->state}} , {{$location->city}}</section>
+                        @foreach ($projOrgs as $projOrg )
+                        <section style="font-size:17px; font-weight: 700; margin-bottom:10px;">{{$projOrg->state}} , {{$projOrg->city}}</section>
+                        @break
                         @endforeach
 
                         <div class="solid-rectangle">
@@ -504,8 +505,9 @@
 
 
     </div>
-    </div>
+
     <div style="margin-top:100px"></div>
+  
     <footer>
         @include('footer')
     </footer>

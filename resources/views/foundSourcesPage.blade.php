@@ -335,10 +335,8 @@
 
         <!-- QA Section -->
 
-        <div class="faq-container">
-
 @foreach ($data as $sources => $source )    
-            <div class="faq-item">
+        <div class="faq-container">
                 <a href="{{  route('foundSourcesClickingPage', ['id' => $source->id]) }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
@@ -348,7 +346,6 @@
             </div>
         <div class="divider"></div>
         @endforeach
-        </div>
 
 
         <div class="faq-container">
@@ -491,5 +488,22 @@
         @include('footer')
     </footer>
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#form').submit(function(){
+          event.preventDefault();
+          var search = $('#searchBar').val().toLowerCase();
+          $('.faq-container').filter(function(){
+           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+        //    $('.divider').hide();
+  });
+  
+  if ($('.faq-container:visible').length > 1) {
+            $('.divider').show();
+        } else {
+            $('.divider').hide();
+        }
+          });
+});
+</script>
 </html>

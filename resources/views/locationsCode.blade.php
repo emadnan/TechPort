@@ -7,10 +7,10 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
-  @foreach ($locations as $location )
+  @foreach ($projOrgs as $projOrg )
   <div style="margin-top: 15px;">
     <section class="encapsulated-text" >
-  <a href="{{ route('locationsClickingPage', ['id' => $location->id]) }}" style="color:black;font-weight:bold;">{{$location->city}} , {{$location->state}}</a>
+  <a href="{{ route('locationsClickingPage', ['id' => $projOrg->locationID]) }}" style="color:black;font-weight:bold;">{{$projOrg->city}} , {{$projOrg->state}}</a>
   </section>
   </div>
   <div class="divider-within-class"></div> 

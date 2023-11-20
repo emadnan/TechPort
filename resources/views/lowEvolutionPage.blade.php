@@ -226,7 +226,7 @@
 
     <div class="container mt-4">
         @include('header')
-@foreach ( $projects as $project)
+@foreach ( $projOrgs as $projOrg)
         <ul class="breadCrumbs mt-2 mb-0">
             <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
             <li class="breadCrumbs-items">></li>
@@ -245,7 +245,7 @@
                         </section>
                         <section style="font-size:14px; ">Small Business Innovation Research/Small Business Tech Transfer
                         </section>
-                        <section style="font-size:18px; font-weight:600; margin-bottom:10px; ">{{$project->name}}</section>
+                        <section style="font-size:18px; font-weight:600; margin-bottom:10px; ">{{$projOrg->projectName}}</section>
                         <div class="row " style="margin-left:0px;" >
                             <div class="">
                                 <button class="btn"
@@ -279,10 +279,10 @@
 
 
                                 <section style="font-weight:bold;">Project Description</section>
-                                <section>{{$project->description}}</section>
+                                <section>{{$projOrg->projectDescription}}</section>
 
                                 <section style="font-weight:bold;margin-top:10px;">Benefit:</section>
-                                <section>{{$project->benifit}} </section>
+                                <section>{{$projOrg->benifit}} </section>
                                 <section style="font-weight:bold;margin-top:10px;">Work Locations:</section>
                                 <img src="{{ asset('images/map-image.png') }}" style="width: 700px;height: 410px;">
                                 <!-- <img src="{{ asset('images/table-data.png') }}" alt=""style="width:90%;margin-top:10px;"> -->
@@ -295,20 +295,18 @@
                                         <th><a href="{{ url('/locationsPage') }}" style="color:#fff;">Location</a></th>
                                         <th>Description</th>
                                     </tr>
-                                    @foreach ($organizations as $organization )
                                     <tr>
-                                        <td><a href="{{ route('organizationClickingPage', ['id' => $organization->id]) }}" style="color:black;">{{$organization->name}}</a></td>
-                                        <td>{{$organization->code}}</td>
-                                        <td><a href="{{ route('locationsClickingPage', ['id' => $organization->id]) }}" style="color:black;">{{$organization->state}},{{$organization->city}}</a></td>
-                                        <td>{{$organization->description}}</td>
+                                        <td><a href="{{ route('organizationClickingPage', ['id' => $projOrg->orgID]) }}" style="color:black;">{{$projOrg->orgName}}</a></td>
+                                        <td>{{$projOrg->orgCode}}</td>
+                                        <td><a href="{{ route('locationsClickingPage', ['id' => $projOrg->locationID]) }}" style="color:black;">{{$projOrg->state}},{{$projOrg->city}}</a></td>
+                                        <td>{{$projOrg->orgDescription}}</td>
                                     </tr>
-                                    @endforeach
                                 </table>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4"><a
                                         href="{{ url('/found-sources') }}" style="color:black;">Found Source</a>
                                 </section>
                                 <section>
-                                    <p><a href="{{ route('foundSourcesClickingPage', ['id' => $project->sourceID]) }}" style="color:black;">{{$project->sourceName}} </a></p>
+                                    <p><a href="{{ route('foundSourcesClickingPage', ['id' => $projOrg->sourceID]) }}" style="color:black;">{{$projOrg->sourceName}} </a></p>
                                 </section>
 
                             </div>
@@ -319,14 +317,13 @@
 
                             <div class="col-md-4">
 
-                                <img src="images/{{$project->image}}" alt=""
+                                <img src="{{ asset('images/' . $projOrg->image) }}" alt=""
                                     style="height:200px;width:auto;">
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">
                                     Project Organization:
                                 </section>
                                 <section><a href="{{ url('/organizations') }}"
                                         style="color:black;font-weight:bold;">Organization Performing Work</a></section>
-                            @foreach ($projOrgs as $projOrg )
                                 <section><a href="{{route('organizationClickingPage', ['id' => $projOrg->orgID])}}" style="color:black;">{{$projOrg->orgName}}</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a style="color:black;"
                                         href="{{ url('/legal-entity-roles') }}">Legal Entity Role</a></section>
@@ -393,9 +390,8 @@
                                 <section style="font-weight:bold;margin-top:25px;font-size:16px"><a
                                         href="{{ url('/project-targets') }}" style="color:black;">Project target</a>
                                 </section>
-                                <section style="margin-left:5px;"><a href="{{ route('projectTargetClickingPage', ['id' => $projOrg->projectID]) }}"
+                                <section style="margin-left:5px;"><a href=""
                                         style="color:black;">{{$projOrg->projecttarget}}</a></section>
-                            @endforeach
                             </div>
                         </div>
                     </div>

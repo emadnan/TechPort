@@ -339,14 +339,12 @@
         <!-- QA Section -->
         @foreach ($orgs as $org)
         <div class="faq-container">
-            <div class="faq-item">
                 <a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
                             class="faq-question" style="color: black;">{{$org->name}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
-            </div>
         </div>
         <div class="divider"></div>
 
@@ -487,5 +485,22 @@
 
 
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#form').submit(function(){
+          event.preventDefault();
+          var search = $('#searchBar').val().toLowerCase();
+          $('.faq-container').filter(function(){
+           var abcd = $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+        //    $('.divider').hide();
+  });
+  
+  if ($('.faq-container:visible').length > 1) {
+            $('.divider').show();
+        } else {
+            $('.divider').hide();
+        }
+          });
+});
+</script>
 </html>
