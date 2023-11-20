@@ -364,6 +364,31 @@
 
             }
 
+            .second-search-bar {
+            position: absolute;
+            margin-top: -5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            /* background: transparent; */
+            border: 1px solid white;
+            border-radius: 6px;
+        }
+
+
+        .second-search-bar input,
+        .second-search-bar button {
+            background: transparent;
+            border: none;
+            color: white !important;
+        }
+
+
+        .second-search-bar input::placeholder {
+            color: white;
+            border-radius: 6px;
+        }
+
         }
 
         @media screen and (max-width:1440px) {
@@ -421,6 +446,31 @@
                 width: 114.4%;
 
             }
+
+            .second-search-bar {
+            position: absolute;
+            margin-top: -5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            /* background: transparent; */
+            border: 1px solid white;
+            border-radius: 6px;
+        }
+
+
+        .second-search-bar input,
+        .second-search-bar button {
+            background: transparent;
+            border: none;
+            color: white !important;
+        }
+
+
+        .second-search-bar input::placeholder {
+            color: white;
+            border-radius: 6px;
+        }
 
         }
 
@@ -1298,17 +1348,17 @@
         {{-- Row for second search bar --}}
         <div class="row">
             <div class="col-md-12">
-                <form class="form-inline second-search-bar">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control w-100" placeholder="Filter Taxanomy"
+                {{-- <form class="form-inline second-search-bar"> --}}
+                    <div class="input-group  second-search-bar ">
+                        <input type="text" id="filterTax" class="form-control w-100" placeholder="Filter Taxanomy"
                             style="border-radius: 0; width: 100%;  background-color: rgba(0, 0, 0, 0); ">
                         <!-- Adjust the width here -->
 
-                        <button class="btn" type="submit" style="background-color: rgba(0, 0, 0, 0) !important;">
+                        {{-- <button class="btn" type="submit" style="background-color: rgba(0, 0, 0, 0) !important;">
                             <i class="fas fa-search"></i>
-                        </button>
+                        </button> --}}
                     </div>
-                </form>
+                {{-- </form> --}}
             </div>
         </div>
         {{-- end --}}
@@ -5673,6 +5723,23 @@
                 hide.style.display = 'none';
             }
         }
+
+    $(document).ready(function(){
+      $('#filterTax').on('keyup' , function(){
+        //   event.preventDefault();
+          var search = $(this).val().toLowerCase();
+          $('.faq-question').filter(function(){
+           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+           $('.divider').hide();
+  });
+  
+  if ($('.faq-question:visible').length > 1) {
+            $('.divider').show();
+        } else {
+            $('.divider').hide();
+        }
+          });
+});
     </script>
 </body>
 

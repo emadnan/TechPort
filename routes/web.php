@@ -52,6 +52,7 @@ Route::get('/AdvanceSearch', function () {
     return view('advanceSearchPage');
 });
 Route::get('/search-results', [SearchReultsController::class , 'index'])->name('searchResultsPage');
+Route::post('/searchProjects', [SearchReultsController::class , 'searchProjects'])->name('searchProjects');
 
 //                Routes for Users without AUTH AdminLte 
 // Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
