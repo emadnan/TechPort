@@ -9,4 +9,9 @@ class techsector extends Model
 {
     use HasFactory;
     protected $table = 'techsector';
+
+    public function techreferred()
+    {
+        return $this->hasMany(techreferred::class , 'id_techsector');
+    }
 }

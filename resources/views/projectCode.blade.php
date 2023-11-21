@@ -54,7 +54,7 @@
         <div class="divider-within-class"></div>
 
 @endforeach
-        {{-- <div style="margin-top: 15px;">
+        <div style="margin-top: 15px;">
 
             <section class="encapsulated-text ">
                 <a href="{{ url('/low-evolution') }}" style="color:#065386;font-weight:bold;">Development and
@@ -234,7 +234,7 @@
             </div>
         </div>
 
-        <div class="divider-within-class"></div> --}}
+        <div class="divider-within-class"></div>
 
 
         <center>

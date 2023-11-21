@@ -173,7 +173,7 @@
 {{-- Search Bar goes here --}}
 <div class="row">
     <div class="col-md-9">
-        <form class="form-inline w-100" method="POST" id="form">
+        <form class="form-inline w-100" method="POST" id="form" action="{{ route('searchProjects')}}">
             @csrf
             <div class="input-group w-100">
                 <input style="font-size: 14px;" type="text" class="form-control w-100" placeholder="Search Projects" name="searchBar" , id="searchBar">
@@ -200,29 +200,5 @@
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
                  }
             });
-      $('#form').submit(function(){
-          event.preventDefault();
-          var search = $('#searchBar').val().toLowerCase();
-          console.log(search);
-        //   $('.faq-container').filter(function(){
-        //    $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-        //    $('.divider').hide();
-        $.ajax({
-            type: 'POST',
-            url : '{{route("searchProjects")}}',
-            data: {'searchBar': search} ,
-            success : function(response)
-            {
-                console.log("error");
-            }
-        });
-  });
-  
-//   if ($('.faq-container:visible').length > 1) {
-//             $('.divider').show();
-//         } else {
-//             $('.divider').hide();
-//         }
           });
-// });
 </script>

@@ -507,12 +507,12 @@
 
         <div class="faq-container mt-1">
             @include('projectCode')
-            @include('organizationCode')
+            {{-- @include('organizationCode')
             @include('locationsCode')
             @include('foundSourcesCode')
             @include('missionTypeCode')
             @include('legalRolesCode')
-            @include('projectTargetCode')
+            @include('projectTargetCode') --}}
 
         </div>
     </div>

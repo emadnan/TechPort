@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use App\Models\foundingsource;
 use App\Models\legalentityrole;
 use App\Models\location;
@@ -53,10 +54,12 @@ class LocationController extends Controller
   
     public function index()
     {
-        $locations = location::get();
+        $perPage = 1;
+        $locations = location::paginate(1);
         
         // return response()->json(['locations'=>$locations]);
-    return view('locationsPage' , ['data'=>$locations]);
+        // dd(get_class($locations));
+    return view('locationsPage' , compact('locations'));
     }
 
     public function locationPage ()

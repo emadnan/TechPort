@@ -337,7 +337,7 @@
         <!-- QA Section -->
 
 
-@foreach ($data as $locations=>$location )
+@foreach ($locations as $location )
     
         <div class="faq-container">
                 <a href="{{ route('locationsClickingPage', ['id' => $location->id]) }}">
@@ -350,6 +350,7 @@
         <div class="divider"></div>
         @endforeach
 
+       
         
         {{-- <div class="faq-container"> --}}
 
@@ -486,13 +487,16 @@
 
     
 
-
+    <div class="row justify-content-center">
+        {{ $locations->links() }}
+    </div>
 
     <div style="margin-top:200px"></div>
-
+    
     <footer>
         @include('footer')
     </footer>
+    
 </body>
 <script type="text/javascript">
     $(document).ready(function(){

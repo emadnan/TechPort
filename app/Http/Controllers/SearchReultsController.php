@@ -40,15 +40,15 @@ class SearchReultsController extends Controller
            })
            ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
            ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-           ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-           ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-           ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+                ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
+                ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
+                ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
            ->join('status' , 'status.id' , '=' , 'projects.id_status')
        ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
            ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
            ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
            ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
-           ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
+        ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
     //    ->where('projects.id' , $id)
        ->get();
         return view('searchResultsPage' , compact('locations' ,'missions' , 'sources' , 'entities' , 'orgs' , 'projects' , 'projOrgs'));
@@ -56,9 +56,36 @@ class SearchReultsController extends Controller
 
     public function searchProjects(Request $req)
     {
-        $search = project::where('name' , 'like' , '%' . $req->searchBar . '%')->get();
-        return response()->json($search);
 
-        return view('searchResultsPage' , compact('search'));
+        $projOrgs = ref_projectorganization::select(  'legalentityrole.name as legalName', 'legalentityrole.id as legalID',
+        'orgperformingwork.name as orgName', 'orgperformingwork.id as orgID',
+        'status.status' , 'techareas.techarea' , 'missiontype.type as misisonType' ,
+        'missiontype.id as missionID' , 'foundingsources.id as sourceID' , 'foundingsources.name as sourceName' ,
+        'projects.name as projectName' , 'projects.id as projectID' , 'projects.description as projectDescription' , 'projects.*' )
+        ->join('projects' , 'projects.id' , '=' , 'ref_projectorganization.id_project')
+              ->join('missiontype' , 'missiontype.id' , '=' , 'projects.id_missiontype')
+              ->join('trl' , function($join){
+                $join->on('trl.id' , '=' ,'projects.id_trlstart');
+                $join->on('trl.id' , '=' ,'projects.id_trlactual');
+                $join->on('trl.id' , '=' ,'projects.id_trlfinal');
+            })
+              ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
+              ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
+                 ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
+                 ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
+                 ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
+              ->join('status' , 'status.id' , '=' , 'projects.id_status')
+        ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
+              ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
+              ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
+              ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
+        ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
+        ->where('projects.name' , 'like' , '%' . $req->searchBar . '%')->orWhere('projects.description' , 'like' , '%' . $req->searchBar . '%')
+        ->get();
+
+        // $search = project::where('name' , 'like' , '%' . $req->searchBar . '%')->get();
+        // return response()->json($projOrgs);
+
+        return view('searchResultsPage' , compact('projOrgs'));
     }
 }
