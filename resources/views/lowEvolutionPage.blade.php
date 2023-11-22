@@ -6,6 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <title>TechPort</title>
 </head>
 <style>
@@ -284,8 +287,7 @@
                                 <section style="font-weight:bold;margin-top:10px;">Benefit:</section>
                                 <section>{{$projOrg->benifit}} </section>
                                 <section style="font-weight:bold;margin-top:10px;">Work Locations:</section>
-                                <img src="{{ asset('images/map-image.png') }}" style="width: 700px;height: 410px;">
-                                <!-- <img src="{{ asset('images/table-data.png') }}" alt=""style="width:90%;margin-top:10px;"> -->
+                                <div id="regions_div"></div>
 
                                 <table>
                                     <tr>
@@ -401,7 +403,7 @@
     </div>
     
 
-
+    <div style="width: 900px; height: 500px;"></div>
     
 
 
@@ -411,7 +413,62 @@
     <footer>
         @include('footer')
     </footer>
+    
 
 </body>
+ <script type="text/javascript">
+ $(document).ready(function(){     
+    
+     google.charts.load('current', {
+        'packages':['geochart'],
+      });
 
+        google.charts.setOnLoadCallback(function () {
+    
+            var projOrgs = @json($projOrgs);
+
+            var rows = projOrgs.map(function (projOrg) {
+            return [projOrg.state];
+        });
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'State');
+
+        // Add rows to the data table
+        
+        data.addRows(rows);
+        drawRegionsMap(data);
+
+    })
+       
+    function drawRegionsMap(data)
+    {
+
+        var options = {
+      region: 'US',
+      displayMode: 'regions',
+      resolution: 'provinces',
+      backgroundColor: '#ededed',
+      datalessRegionColor: '#c2c2c2',
+      defaultColor: '#065386',
+      boundaryColor: '#ffffff',
+      boundaryOpacity: 0.5
+       };
+
+       var container = document.getElementById('regions_div');
+        var chart = new google.visualization.GeoChart(container);
+
+        google.visualization.events.addListener(chart, 'ready', function () {
+    // Get all <path> elements inside the chart container
+    var countries = container.getElementsByTagName('path');
+
+    // Loop through each path and set its stroke color to red
+    Array.prototype.forEach.call(countries, function(path) {
+        path.setAttribute('stroke', 'white');
+    });
+});
+        chart.draw(data, options);
+    }
+    });
+    </script>
 </html>

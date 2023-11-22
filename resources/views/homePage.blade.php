@@ -6,7 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechPort</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+{{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+
+<title>TechPort</title>
 
     <style>
         * {
@@ -294,7 +300,7 @@
             position: absolute;
             right: 0%;
             background: white;
-            width: 300px;
+            width: 350px;
             margin-top: -44px;
             font-size: 14px;
         }
@@ -1381,7 +1387,7 @@
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)">
 
-                        <div class="graph-pop" style="display: none;  z-index:1000;">
+                        <div class="graph-pop" style="display: none;  z-index:1000; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>TX01</section>
@@ -1399,13 +1405,11 @@
                                 (TRL)</section>
 
 
-                            <div class="row my-3">
-                                <div class="col-2 " style="text-align: center;">
-
-                                </div>
-                                <div class="col-10">
-                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                        class=" float-right my-0" width="100%">
+                            <div class="row m-0">
+                               
+                                <div class="col" >
+                                    <div id="columnchart_values" ></div>
+                                    {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"width="100%"> --}}
                                 </div>
                             </div>
                             <h5 style="text-align:center; ">Technology Readiness Level
@@ -1434,7 +1438,7 @@
                         <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
                             onclick="showimage(this)">
 
-                        <div class="  graph-pop" style="display: none;  z-index:999;">
+                        <div class="  graph-pop" style="display: none;  z-index:999; ">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>TX01.1</section>
@@ -1856,6 +1860,8 @@
 </footer>
 
 
+<div id="abcd" style="width: 200px; height: 100px;"></div>
+
     <script>
         function toggleAnswers(element) {
 
@@ -1941,7 +1947,7 @@
           $('.faq-question').filter(function(){
            $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
            $('.divider').hide();
-  });
+        });
   
   if ($('.faq-question:visible').length > 1) {
             $('.divider').show();
@@ -1949,8 +1955,78 @@
             $('.divider').hide();
         }
           });
+
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+         ['Level', 'Density', { role: 'style' }],
+         ['1', 8.94, '#3366CC'],
+         ['2', 10.49, '#3366CC'],
+         ['3', 19.30, '#3366CC' ],
+         ['4', 21.45, '#3366CC'],
+         ['5', 50, '#3366CC'],
+         ['6', 21.45, '#3366CC'],
+         ['7', 21.45, '#3366CC'],
+         ['8', 21.45, '#3366CC'],
+         ['9', 21.45, '#3366CC'],
+      ]);
+
+      var view = new google.visualization.DataView(data);
+    //   view.setColumns([0, 1,
+    //                    { calc: "stringify",
+    //                      sourceColumn: 1,
+    //                      type: "string",
+    //                      role: "annotation" },
+    //                    2]);
+
+      var options = {
+        chartArea: { width: '70%', height: '70%' },
+        width: 320,
+        height: 200,
+        bar: {groupWidth: "65%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("abcd"));
+      chart.draw(view, options);
+  }
 });
     </script>
 </body>
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Level", "Projects", { role: "style" } ],
+        ["1", 8.94, "#3366CC"],
+        ["2", 10.49, "#3366CC"],
+        ["3", 19.30, "#3366CC"],
+        ["4", 21.45, "#3366CC"],
+        ["5", 30.45, "#3366CC"],
+        ["6", 21.45, "#3366CC"],
+        ["7", 50.45, "#3366CC"],
+        ["8", 21.45, "#3366CC"],
+        ["9", 40.45, "#3366CC"],
+      ]);
 
+      var view = new google.visualization.DataView(data);
+    //   view.setColumns([0, 1,
+    //                    { calc: "stringify",
+    //                      sourceColumn: 1,
+    //                      type: "string",
+    //                      role: "annotation" },
+    //                    2]);
+
+      var options = {
+        chartArea: { width: '90%', height: '80%' },
+        width: 320,
+        height: 200,
+        bar: {groupWidth: "65%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
 </html>
