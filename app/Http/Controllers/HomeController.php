@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function homePage()
     {
         
-            $tech = techreferred::select('techareas.*','ref_techreferred.*','techsector.*','techniche.*')
+            $tech = techreferred::select('techareas.*','techareas.id as techareaID','techsector.*','techsector.id as techsectorID','techniche.*' , 'techniche.id as technicheID','ref_techreferred.*')
             ->join('techareas','techareas.id','=','ref_techreferred.id_techarea')
             ->join('techsector','techsector.id','=','ref_techreferred.id_techsector')
             ->join('techniche','techniche.id','=','ref_techreferred.id_techniche')

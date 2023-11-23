@@ -1408,14 +1408,13 @@
                             <div class="row m-0">
                                
                                 <div class="col" >
-                                    <div id="columnchart_values" ></div>
+                                    <div id="columnchart_values_{{$tech->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"width="100%"> --}}
                                 </div>
                             </div>
-                            <h5 style="text-align:center; ">Technology Readiness Level
-                            </h5>
+                            
                             <h5
-                                style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
+                                style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px; font-size:14px;">
                                 Projects linked to this taxonomy</h5>
                             <button class="btn"
                                 style="margin-left:10px; color:white; background: rgba(6, 83, 134, 1);"><a
@@ -1457,12 +1456,10 @@
 
 
                             <div class="row my-3">
-                                <div class="col-2 " style="text-align: center;">
-
-                                </div>
-                                <div class="col-10">
-                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                        class=" float-right my-0" width="100%">
+                                <div class="col">
+                                    <div id="columnchart_values_{{$tech->id}}{{$tech->techsectorID}}" ></div>
+                                    {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                        class=" float-right my-0" width="100%"> --}}
                                 </div>
                             </div>
                             <h5 style="text-align:center; ">Technology Readiness Level
@@ -1514,12 +1511,10 @@
 
 
                                     <div class="row my-3">
-                                        <div class="col-2 " style="text-align: center;">
-
-                                        </div>
                                         <div class="col-10">
-                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                                class=" float-right my-0" width="100%">
+                                    <div id="columnchart_values_{{$tech->id}}{{$tech->techsectorID}}{{$tech->technicheID}}" ></div>
+                                    {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                                class=" float-right my-0" width="100%"> --}}
                                         </div>
                                     </div>
                                     <h5 style="text-align:center; ">Technology
@@ -1860,7 +1855,6 @@
 </footer>
 
 
-<div id="abcd" style="width: 200px; height: 100px;"></div>
 
     <script>
         function toggleAnswers(element) {
@@ -1956,20 +1950,20 @@
         }
           });
 
-    google.charts.load("current", {packages:['corechart']});
+          google.charts.load("45", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-         ['Level', 'Density', { role: 'style' }],
-         ['1', 8.94, '#3366CC'],
-         ['2', 10.49, '#3366CC'],
-         ['3', 19.30, '#3366CC' ],
-         ['4', 21.45, '#3366CC'],
-         ['5', 50, '#3366CC'],
-         ['6', 21.45, '#3366CC'],
-         ['7', 21.45, '#3366CC'],
-         ['8', 21.45, '#3366CC'],
-         ['9', 21.45, '#3366CC'],
+      var data = google.visualization.arrayToDataTable([
+        ["Level", "Projects", { role: "style" } ],
+        ["1", 8.94, "#ff691c"],
+        ["2", 10.49, "#ff691c"],
+        ["3", 19.30, "#ff691c"],
+        ["4", 21.45, "#008fd4"],
+        ["5", 30.45, "#008fd4"],
+        ["6", 21.45, "#008fd4"],
+        ["7", 50.45, "#0058a2"],
+        ["8", 21.45, "#0058a2"],
+        ["9", 40.45, "#0058a2"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1981,33 +1975,55 @@
     //                    2]);
 
       var options = {
-        chartArea: { width: '70%', height: '70%' },
-        width: 320,
-        height: 200,
-        bar: {groupWidth: "65%"},
+        chartArea: { width: '80%' , left:50 , right:20},
+        width: 330,
+        height: 233,
+        bar: {groupWidth: "60%"},
         legend: { position: "none" },
+        hAxis: {
+        title: 'Technology Readiness Level',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,    
+        italic:false,   
+                        }
+               },
+        vAxis: {
+        title: 'Number of Projects',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,
+        italic:false,   
+                        }
+               },
       };
-      var chart = new google.visualization.ColumnChart(document.getElementById("abcd"));
-      chart.draw(view, options);
+      var techRef = @json($techRef);
+      techRef.forEach(function(tech){
+        var container = document.getElementById("columnchart_values_"+tech.id+tech.techsectorID);
+          var chart = new google.visualization.ColumnChart(container);
+          chart.draw(view, options);
+    })
   }
 });
     </script>
 </body>
 <script type="text/javascript">
-    google.charts.load("current", {packages:['corechart']});
+    google.charts.load("45", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Level", "Projects", { role: "style" } ],
-        ["1", 8.94, "#3366CC"],
-        ["2", 10.49, "#3366CC"],
-        ["3", 19.30, "#3366CC"],
-        ["4", 21.45, "#3366CC"],
-        ["5", 30.45, "#3366CC"],
-        ["6", 21.45, "#3366CC"],
-        ["7", 50.45, "#3366CC"],
-        ["8", 21.45, "#3366CC"],
-        ["9", 40.45, "#3366CC"],
+        ["1", 8.94, "#ff691c"],
+        ["2", 10.49, "#ff691c"],
+        ["3", 19.30, "#ff691c"],
+        ["4", 21.45, "#008fd4"],
+        ["5", 30.45, "#008fd4"],
+        ["6", 21.45, "#008fd4"],
+        ["7", 50.45, "#0058a2"],
+        ["8", 21.45, "#0058a2"],
+        ["9", 40.45, "#0058a2"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2019,14 +2035,96 @@
     //                    2]);
 
       var options = {
-        chartArea: { width: '90%', height: '80%' },
-        width: 320,
-        height: 200,
-        bar: {groupWidth: "65%"},
+        chartArea: { width: '80%' , left:50 , right:20},
+        width: 330,
+        height: 233,
+        bar: {groupWidth: "60%"},
         legend: { position: "none" },
+        hAxis: {
+        title: 'Technology Readiness Level',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,    
+        italic:false,   
+                        }
+               },
+        vAxis: {
+        title: 'Number of Projects',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,
+        italic:false,   
+                        }
+               },
       };
-      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-      chart.draw(view, options);
+      var techRef = @json($techRef);
+      techRef.forEach(function(tech){
+        var container = document.getElementById("columnchart_values_"+tech.id+tech.techsectorID+tech.technicheID);
+          var chart = new google.visualization.ColumnChart(container);
+          chart.draw(view, options);
+    })
   }
   </script>
+  
+<script type="text/javascript">
+    google.charts.load("45", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Level", "Projects", { role: "style" } ],
+        ["1", 8.94, "#ff691c"],
+        ["2", 10.49, "#ff691c"],
+        ["3", 19.30, "#ff691c"],
+        ["4", 21.45, "#008fd4"],
+        ["5", 30.45, "#008fd4"],
+        ["6", 21.45, "#008fd4"],
+        ["7", 50.45, "#0058a2"],
+        ["8", 21.45, "#0058a2"],
+        ["9", 40.45, "#0058a2"],
+      ]);
+
+      var view = new google.visualization.DataView(data);
+    //   view.setColumns([0, 1,
+    //                    { calc: "stringify",
+    //                      sourceColumn: 1,
+    //                      type: "string",
+    //                      role: "annotation" },
+    //                    2]);
+
+      var options = {
+        chartArea: { width: '80%' , left:50 , right:20},
+        width: 330,
+        height: 233,
+        bar: {groupWidth: "60%"},
+        legend: { position: "none" },
+        hAxis: {
+        title: 'Technology Readiness Level',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,    
+        italic:false,   
+                        }
+               },
+        vAxis: {
+        title: 'Number of Projects',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,
+        italic:false,   
+                        }
+               },
+      };
+      var techRef = @json($techRef);
+      techRef.forEach(function(tech){
+        var container = document.getElementById("columnchart_values_"+tech.id);
+          var chart = new google.visualization.ColumnChart(container);
+          chart.draw(view, options);
+    })
+  }
+  </script>
+  
 </html>

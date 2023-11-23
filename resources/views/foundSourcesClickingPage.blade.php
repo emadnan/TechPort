@@ -7,7 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPort</title>
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 </head>
 <style>
     * {
@@ -366,7 +368,7 @@
 
 
         <!-- Add a new row for the image container -->
-        <div class="row mt-1">
+        {{-- <div class="row mt-1">
             <div class="col-md-12">
                 <div class="custom-image-container">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
@@ -477,10 +479,10 @@
 
                 <!--  -->
             </div>
-        </div>
+        </div> --}}
 
 
-
+@include('layouts.image')
 
 
         <div class="faq-container mt-1">
@@ -508,6 +510,13 @@
 
 
             <script>
+
+             var projOrgs = @json($projOrgs);
+             projOrgs.forEach(function(projOrg){
+             $('#page_title').html('Found Sources');
+             var log = $('#dynamic_title').html(projOrg.sourceName);
+})
+
                 const questions = document.querySelectorAll('.qa-question');
 
                 questions.forEach(question => {
@@ -582,5 +591,78 @@
                 });
             </script>
 </body>
+<script type="text/javascript">
+    google.charts.load("45", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Level", "Projects", { role: "style" } ],
+        ["1", 8.94, "#065386"],
+        ["2", 10.49, "#065386"],
+        ["3", 19.30, "#065386"],
+        ["4", 21.45, "#065386"],
+        ["5", 30.45, "#065386"],
+        ["6", 21.45, "#065386"],
+        ["7", 50.45, "#065386"],
+        ["8", 21.45, "#065386"],
+        ["9", 40.45, "#065386"],
+      ]);
 
+      var view = new google.visualization.DataView(data);
+    //   view.setColumns([0, 1,
+    //                    { calc: "stringify",
+    //                      sourceColumn: 1,
+    //                      type: "string",
+    //                      role: "annotation" },
+    //                    2]);
+
+      var options = {
+        chartArea: { width: '100%' , height:'50%' , left:15, top:40
+ },
+        title: 'Technology Maturity:',
+         titleTextStyle: {
+         color: 'white',  // Change the color of the chart title
+         fontSize: 18 ,     // Adjust the font size if needed
+         bold:false,
+    },
+        width: 210,
+        height: 150,
+        backgroundColor: {
+            fill: 'transparent'
+    },
+        bar: {groupWidth: "80%"},
+        legend: { position: "none" },
+        hAxis: {
+        // titleTextStyle: {
+        // color: '#0058a2',  // Text color
+        // fontSize: 12,    // Font size
+        // bold:true,    
+        // italic:false,   
+        //                 }
+        textStyle: {
+      color: 'white'  // Change the color of x-axis labels
+    }
+               },
+        vAxis: {
+        // title: 'Number of Projects',
+        // titleTextStyle: {
+        // color: '#0058a2',  // Text color
+        // fontSize: 12,    // Font size
+        // bold:true,
+        // italic:false,   
+        //                 }
+        textStyle: {
+      color: 'white'  // Change the color of x-axis labels
+    }
+               },
+      };
+      var projOrgs = @json($projOrgs);
+        var container = document.getElementById("columnchart_values");
+          var chart = new google.visualization.ColumnChart(container);
+          chart.draw(view, options);
+
+          container.style.backgroundColor = 'rgba(248, 248, 248, 0)';
+
+  }
+  </script>
 </html>

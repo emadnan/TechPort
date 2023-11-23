@@ -45,8 +45,10 @@ class LegalEntityController extends Controller
         ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
         ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
         ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
-    ->where('legalentityrole.id' , $id)
-    ->get();
+        ->where('legalentityrole.id' , $id)
+        ->get();
+    // $legal = legalentityrole::where('id' , $id)->get();
+    // return response()->json($projOrgs);
         return view('legalEntityClickingPage' , compact('projOrgs') );
     }
 

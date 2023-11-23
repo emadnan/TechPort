@@ -316,13 +316,6 @@
             </div>
         </div>
 
-
-
-
-
-        <!-- QA Section -->
-
-
         <!-- QA Section -->
         <div class="faq-container mt-1">
             <div class="faq-item">
@@ -330,17 +323,12 @@
                         style="float: right;margin-top:4px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        <select class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
                             style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-                            Relevance
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"
-                            style="background-color: white !important;">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                            <option selected value="">Relevance</option>
+                            <option value="">Alpha Numeric</option>
+                            <option value="">Start Date</option>
+                    </select>
                     </div>
                 </div>
             </div>
@@ -504,20 +492,25 @@
                                
                                 <div class="form-group" style="margin-left: 10px;">
                                     <select class="form-control" id="year-select">
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
+                                        <option value="2023">2023</option> <option value="2022">2022</option>
+                                        <option value="2021">2021</option> <option value="2020">2020</option>
+                                        <option value="2019">2019</option> <option value="2018">2018</option>
+                                        <option value="2017">2017</option> <option value="2016">2016</option>
+                                        <option value="2015">2015</option> <option value="2014">2014</option>
+                                        <option value="2013">2013</option> <option value="2012">2012</option>
+                                        <option value="2011">2011</option> <option value="2010">2010</option>
+                                        <option value="2009">2009</option> <option value="2008">2008</option>
+                                        <option value="2007">2007</option> <option value="2006">2006</option>
+                                        <option value="2005">2005</option> <option value="2004">2004</option>
+                                        <option value="2003">2003</option> <option value="2002">2002</option>
+                                        <option value="2001">2001</option> <option value="2000">2000</option>
+                                        <option value="1999">1999</option> <option value="1998">1998</option>
+                                        <option value="1997">1997</option> <option value="1996">1996</option>
                                         <!-- Add more years as needed -->
                                     </select>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
                 </div>
 
@@ -531,16 +524,13 @@
                 <div class="faq-answer" style="display: none;">
                     <div class="qa-container">
                         <div class="qa-question">
-
-
-                            <div class="question" style="margin-left: 15px;font-size:16px;">
-                                <div class="form-check">
-
+                            <div class="question" style="margin-left:15px; font-size:16px;">
+                                <i class="fa-solid fa-chevron-down" style="float: left;margin-top:4px;"></i>
+                                <div class="form-check" style="margin-left:20px">
                                     <input class="form-check-input" type="checkbox" value=""
                                         id="flexCheckChecked">
-
                                 </div>
-                                <section style="margin-left:20px">TX01 Propulsion Systems</section>
+                                <section class="toggleArow" style="margin-left:40px">TX01 Propulsion Systems</section>
                             </div>
                             <div class="qa-answer" onclick="toggleQASubAnswer(this)">
                                 <div class="form-check">
@@ -549,11 +539,25 @@
                                 </div>
                                 <section style="margin-left:20px;"> TX01.1 Chemical Space Propulsion</section>
                             </div>
-
                         </div>
 
-
-
+                         <div class="qa-question">
+                            <div class="question" style="margin-left:15px; font-size:16px;">
+                                <i class="fa-solid fa-chevron-down" style="float: left;margin-top:4px;"></i>
+                                <div class="form-check" style="margin-left:20px">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked">
+                                </div>
+                                <section style="margin-left:40px">TX01 Propulsion Systems</section>
+                            </div>
+                            <div class="qa-answer" onclick="toggleQASubAnswer(this)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckChecked">
+                                </div>
+                                <section style="margin-left:20px;"> TX01.1 Chemical Space Propulsion</section>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1977,8 +1981,8 @@
         const questions = document.querySelectorAll('.qa-question');
 
         questions.forEach(question => {
+            
             question.addEventListener('click', () => {
-                question.classList.toggle('active');
                 const answer = question.querySelector('.qa-answer');
                 answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });

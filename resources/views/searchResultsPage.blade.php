@@ -7,6 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPort</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
     <script>
           window.onload = function()
           {
@@ -363,146 +367,7 @@
             <li class="breadCrumbs-items"><a href="{{url('/search-results')}}">Search Results</a></li>
         </ul>
 
-
-
-
-
-
-        <!-- Add a new row for the image container -->
-        <div class="row mt-1">
-            <div class="col-md-12">
-                <div class="custom-image-container">
-                    <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
-
-                    <div class="text-in-image">
-                        <section style="font-weight: 700;margin-bottom: 8px;margin-top: 5px; margin-left: 4px;"> Search Results </section>
-                        <div class="row">
-                            <div style="margin-left:20px;">
-                                <button class="btn "
-                                    style="  height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                    Order: Relevance</button>
-                            </div>
-                            <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                    and Phrases: No Selection</button>
-                            </div>
-                        </div>
-                        <div class="solid-rectangle">
-
-                            <div class="row" style="margin-left:5px;padding:10px;">
-                                <div class="col-md-2.9">
-                                    <div class="yellow-square ">
-                                        <section style="font-size:40px; padding-top:0px;">16,806</section>
-                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found
-                                        </section>
-                                        <button class="btn btn-custom"><a style="text-decoration: none; color:black;"
-                                                href="{{ url('/AdvanceSearch') }}"> Modify Search</a></button>
-                                    </div>
-                                </div>
-
-
-                                <div class="key-stats col-md-2" style="margin-left:20px;line-height:20px;">
-                                    <section style="margin-bottom:10px;">Key Stats</section>
-                                    <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
-                                        </p>
-                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">
-                                            Active</p>
-                                    </div>
-                                    <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
-                                        </p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;">
-                                            Completed</p>
-                                    </div>
-                                    <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944
-                                        </p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">
-                                            Partnerhips</p>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-3">
-                                    <h5 style="font-size: 18px;">Technology Maturity</h5>
-                                    <img src="{{ asset('images/Group 154.svg') }}" style="height:140px;width:180px;">
-                                </div>
-
-                                <div>
-                                    <section style="font-size: 16px;">Technology Areas Represented</section>
-                                    <div style="display: flex; gap: 5px;margin-top:10px;">
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX01</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX02</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX03</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX05</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX06</a></button>
-                                    </div>
-                                    <div style="display: flex; gap: 5px;margin-top:5px;">
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX07</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX08</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX09</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary p-0"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX010</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary p-0"><a class="btn-hover" style="color: white;"
-                                                href="{{ url('/') }}">TX011</a></button>
-                                    </div>
-
-
-
-                                </div>
-                                <div class="col-md-1" style="magin-left:20px;">
-                                    <section>Export</section>
-                                    <i class="fa-regular fa-file-pdf"
-                                        style="width: 51px;height: 51px;margin-top:10px;"></i>
-                                </div>
-
-
-                            </div>
-
-
-                        </div>
-
-
-
-
-                    </div>
-
-
-
-
-
-
-                </div>
-
-                <!--  -->
-            </div>
-        </div>
-
-
-
+@include('layouts.image')
 
 
         <div class="faq-container mt-1">
@@ -524,6 +389,12 @@
     </footer>
 
     <script>
+
+
+
+$('#page_title').html('Search Results');
+
+
         const questions = document.querySelectorAll('.qa-question');
 
         questions.forEach(question => {
@@ -597,5 +468,75 @@
 
 
 </body>
+<script type="text/javascript">
+    google.charts.load("45", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Level", "Projects", { role: "style" } ],
+        ["1", 8.94, "#065386"],
+        ["2", 10.49, "#065386"],
+        ["3", 19.30, "#065386"],
+        ["4", 21.45, "#065386"],
+        ["5", 30.45, "#065386"],
+        ["6", 21.45, "#065386"],
+        ["7", 50.45, "#065386"],
+        ["8", 21.45, "#065386"],
+        ["9", 40.45, "#065386"],
+      ]);
 
+      var view = new google.visualization.DataView(data);
+    //   view.setColumns([0, 1,
+    //                    { calc: "stringify",
+    //                      sourceColumn: 1,
+    //                      type: "string",
+    //                      role: "annotation" },
+    //                    2]);
+
+      var options = {
+        chartArea: { width: '100%' , height:'50%' , left:15, top:40
+ },
+        title: 'Technology Maturity:',
+         titleTextStyle: {
+         color: 'white',  // Change the color of the chart title
+         fontSize: 18 ,     // Adjust the font size if needed
+         bold:false,
+    },
+        width: 210,
+        height: 150,
+        backgroundColor: {
+            fill: 'transparent'
+    },
+        bar: {groupWidth: "80%"},
+        legend: { position: "none" },
+        hAxis: {
+        // titleTextStyle: {
+        // color: '#0058a2',  // Text color
+        // fontSize: 12,    // Font size
+        // bold:true,    
+        // italic:false,   
+        //                 }
+        textStyle: {
+      color: 'white'  // Change the color of x-axis labels
+    }
+               },
+        vAxis: {
+        // title: 'Number of Projects',
+        // titleTextStyle: {
+        // color: '#0058a2',  // Text color
+        // fontSize: 12,    // Font size
+        // bold:true,
+        // italic:false,   
+        //                 }
+        textStyle: {
+      color: 'white'  // Change the color of x-axis labels
+    }
+               },
+      };
+      var projOrgs = @json($projOrgs);
+        var container = document.getElementById("columnchart_values");
+          var chart = new google.visualization.ColumnChart(container);
+          chart.draw(view, options);
+  }
+  </script>
 </html>
