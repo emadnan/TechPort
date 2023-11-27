@@ -9,4 +9,9 @@ class location extends Model
 {
     use HasFactory;
     protected $table = "location";
+
+    public function orgperformingworks()
+    {
+        return $this->hasMany(orgperformingwork::class , 'id_location');
+    }
 }

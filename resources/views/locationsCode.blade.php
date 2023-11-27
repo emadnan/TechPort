@@ -7,35 +7,30 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
-  @foreach ($projOrgs as $projOrg )
+  @php
+    $locationID = 0;
+  @endphp
+
+  @foreach ($projOrg->projects as $project )
+  @foreach ($project->orgperformingworks as $org )
+  @if ($org->location->id == $locationID)
+    
+  @else
   <div style="margin-top: 15px;">
     <section class="encapsulated-text" >
-  <a href="{{ route('locationsClickingPage', ['id' => $projOrg->locationID]) }}" style="color:black;font-weight:bold;">{{$projOrg->city}} , {{$projOrg->state}}</a>
+  <a href="{{ route('locationsClickingPage', ['id' => $org->location->id]) }}" style="color:black;font-weight:bold;">{{$org->location->city}} , {{$org->location->state}}</a>
   </section>
   </div>
   <div class="divider-within-class"></div> 
+  @php
+    $locationID = $org->location->id;
+  @endphp
+  @endif
   @endforeach
-  <div style="margin-top: 15px;">
-    <section class="encapsulated-text " >
-      <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
-      </section>
-  </div>
-  <div class="divider-within-class"></div> 
+  @endforeach
   
   
-  <div style="margin-top: 15px;">
-    <section class="encapsulated-text  " >
-      <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
-      </section>
-  </div>
-  <div class="divider-within-class"></div> 
   
-  <div style="margin-top: 15px;">
-    <section class="encapsulated-text  " >
-      <a href="{{url('/location-clicking')}}" style="color:black;font-weight:bold;">Houstan, Texas</a>
-      </section>
-  </div>
-  <div class="divider-within-class"></div> 
   
   <div style="margin-top: 15px;">
       <center>

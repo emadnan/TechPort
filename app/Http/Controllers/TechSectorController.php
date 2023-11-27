@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\techarea;
+use App\Models\techreferred;
 use App\Models\techsector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -10,8 +12,10 @@ class TechSectorController extends Controller
 {
     public function techSectorPage ()
     {
-        $sector = DB::table('techsector')->get();
-        return view('dashboard.techSectorPage' , ['data'=>$sector]);
+        $sectors = techsector::get();
+        $areas = techarea::get();
+
+        return view('dashboard.techSectorPage' , compact('areas' , 'sectors'));
     }
 
     public function read (string $id)   
@@ -39,15 +43,24 @@ class TechSectorController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $Create = DB::table('techsector')->insert([
-            'techsector'=> $req->techsector,
-            'techsectordescription'=> $req->techsectordescription,
-            'id_dm'=> $req->id_dm,
-            'otme'=> $req->otme,
-            'note'=> $req->note,
-        ]);
+        // $techArea = TechArea::find($req->input('id_techarea'));
 
-        if($Create)
+
+        $techSector = new techsector;
+        $techSector->techsector = $req->techsector;
+        $techSector->techsectordescription = $req->techsectordescription;
+        $techSector->id_dm = $req->id_dm;
+        $techSector->otme = $req->otme;
+        $techSector->note = $req->note;
+        $techSector->save();
+        // $techArea->techsectors()->create();
+        
+        // $techReferred = new techreferred;
+        // $techReferred->techareas()->associate($techArea->id);
+        // $techReferred->techsectors()->associate($techSector->id);
+        // $techSector->techareas()->attach($techArea->id);
+        
+        if($techSector)
         {
             $latestID = techsector::latest()->value('id');
             $newRow = DB::table('techsector')->where('id', $latestID)->get();

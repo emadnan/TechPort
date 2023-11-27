@@ -9,4 +9,9 @@ class status extends Model
 {
     use HasFactory;
     protected $table = 'status';
+
+    public function projects()
+    {
+        return $this->hasMany(project::class , 'id_status');
+    }
 }

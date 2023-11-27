@@ -9,4 +9,9 @@ class humanentity extends Model
 {
     use HasFactory;
     protected $table = "humanentity";
+
+    public function orgperformingworks()
+    {
+        return $this->hasMany(orgperformingwork::class , 'id_humanentity');
+    }
 }

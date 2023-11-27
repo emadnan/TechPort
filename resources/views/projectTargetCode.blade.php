@@ -12,45 +12,27 @@
     <div class="faq-answer" style="display: none;">
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-          @foreach ($projOrgs as $projOrg )
+            @php
+                $projectID = 0;
+            @endphp
+          @foreach ($projOrg->projects as $project )
+          @if ($project->id == $projectID)
+              
+          @else
         <div style="margin-top: 15px;">
             <section class="encapsulated-text  ">
-                <a href="{{ route('projectTargetClickingPage', ['id' => $projOrg->id]) }}" style="color:black;font-weight:bold;">{{$projOrg-> projecttarget}}</a>
+                <a href="{{ route('projectTargetClickingPage', ['id' => $project->id]) }}" style="color:black;font-weight:bold;">{{$project->projecttarget}}</a>
             </section>
         </div>
             <div class="divider-within-class"></div>
-            @endforeach
+            @php
+                $projectID = $project->id;
+            @endphp
+          @endif
+          @endforeach
         </div>
 
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text  ">
-                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text  ">
-                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text  ">
-                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text  ">
-                <a href="{{ url('/project-target-clicking') }}" style="color:black;font-weight:bold;">Earth</a>
-            </section>
-            <div class="divider-within-class"></div>
-
-
+        
             <center>
                 <div class="pagination">
                     <a href="#">&laquo;</a>

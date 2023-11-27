@@ -10,9 +10,19 @@ class project extends Model
     use HasFactory;
     protected $table = 'projects';
 
-    public function ref_projectorganization()
+    public function ref_projectorganizations()
     {
         return $this->hasMany(ref_projectorganization::class , 'id_project');
+    }
+
+    public function orgperformingworks()
+    {
+        return $this->hasManyThrough(orgperformingwork::class , ref_projectorganization::class , 'id_project', 'id','id','id_orgperformingwork');
+    }
+
+    public function legalentityroles()
+    {
+        return $this->hasManyThrough(legalentityrole::class , ref_projectorganization::class , 'id_project', 'id','id','id_legalentityrole');
     }
      
     public function missiontype()
@@ -20,7 +30,7 @@ class project extends Model
         return $this->belongsTo(missiontype::class , 'id_missiontype');
     }
 
-    public function foundingsources()
+    public function foundingsource()
     {
         return $this->belongsTo(foundingsource::class , 'id_foundsource');
     }
@@ -48,5 +58,10 @@ class project extends Model
     public function techreferred()
     {
         return $this->belongsTo(techreferred::class , 'id_techreferred');
+    }
+
+    public function techareas()
+    {
+        return $this->belongsTo(techarea::class , 'id_techarea');
     }
 }

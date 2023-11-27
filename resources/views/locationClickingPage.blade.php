@@ -393,11 +393,12 @@
 
     <script>
 
-    $('#page_title').html('Locations');
-var projOrgs = @json($projOrgs);
-projOrgs.forEach(function(projOrg){
-    var log = $('#dynamic_title').html(projOrg.state+ ' , ' +projOrg.city );
-})
+var title = $('#page_title').html('Locations');
+var projOrg = @json($projOrg);
+$(document).ready(function() {
+        $('#dynamic_title').html(projOrg.state , projOrg.city);
+});
+
 
 
         const questions = document.querySelectorAll('.qa-question');

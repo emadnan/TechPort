@@ -14,4 +14,23 @@ class orgperformingwork extends Model
     {
         return $this->hasMany(ref_projectorganization::class , 'id_orgperformingwork');
     }
+
+    public function orgtype()
+    {
+        return $this->belongsTo(orgtype::class , 'id_type');
+    }
+
+    public function humanentity()
+    {
+        return $this->belongsTo(humanentity::class , 'id_humanentity');
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(location::class , 'id_location');
+    }
+    public function projects()
+    {
+        return $this->hasManyThrough(project::class , ref_projectorganization::class , 'id_orgperformingwork', 'id','id','id_project');
+    }
 }

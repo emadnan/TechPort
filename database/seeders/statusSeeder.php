@@ -20,7 +20,11 @@ class statusSeeder extends Seeder
     [
         'status' => 'Completed',
 
-    ]];
+        ],
+    [
+        'status' => 'Partnership',
+        ],
+];
         foreach ($data as $item) {
             status::create($item);
          }

@@ -9,9 +9,18 @@ class techniche extends Model
 {
     use HasFactory;
     protected $table = "techniche";
+    protected $primaryKey = 'id';
 
-    public function techreferred()
+    public function techreferreds()
     {
-        return $this->hasMany(techreferred::class , 'id_techniche');
+        return $this->hasMany(
+            techreferred::class,
+            'id_techniche', // Foreign key on the mapping table for TechNiche
+        );
+    }
+
+    public function techsectors()
+    {
+        return $this->belongsTo(techsector::class, 'id_techniche');
     }
 }

@@ -1426,14 +1426,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="faq-answer" style="display:none;">
-                    <div class="divider"></div>
+                @foreach ($tech->techsectors as $techsector )
+                <div class="divider"></div>
                     <div name="answer1" class="arrow-icon" style="position:relative;">
                         <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i>
                         <span>
-                           
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 {{$tech-> techsector}}</a></span>
+                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 {{$techsector-> techsector}}</a></span>
                         <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
                             onclick="showimage(this)">
 
@@ -1441,7 +1440,7 @@
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>TX01.1</section>
-                                    <section>{{$tech-> techsector}}
+                                    <section>{{$techsector-> techsector}}
                                     </section>
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
@@ -1457,7 +1456,7 @@
 
                             <div class="row my-3">
                                 <div class="col">
-                                    <div id="columnchart_values_{{$tech->id}}{{$tech->techsectorID}}" ></div>
+                                    <div id="columnchart_values_{{$tech->id}}{{$techsector->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
                                         class=" float-right my-0" width="100%"> --}}
                                 </div>
@@ -1475,17 +1474,16 @@
 
                         </div>
                     </div>
-
-
                     <div class="faq-subanswer" style="position: relative; display:none;">
                         <div class="divider"></div>
+@foreach ($techsector->techniches as $techniche)
                         <div name="subAnswer1" 
                             style="margin-left:1px;">
                             <div>
                                 <i onclick="toggleSubAnswersDescreption(this)" class="fa-solid fa-angle-right"></i>
                                 <span >
                                     <a href="{{ url('/search-results') }}" style="color:#000000">
-                                        TX01.1.1 {{$tech-> techniche}}</span>
+                                        TX01.1.1 {{$techniche-> techniche}}</span>
                                 </a>
                                 <img src="{{ asset('images/icon-black.png') }}" alt=""
                                     class=" float-right graph-image" onclick="showimage(this)">
@@ -1494,7 +1492,7 @@
                                     <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
                                             <section>TX01.1.1</section>
-                                            <section>{{$tech-> techniche}}
+                                            <section>{{$techniche-> techniche}}
                                             </section>
                                         </div>
                                         <div class="col-3 m-0 px-0"
@@ -1512,10 +1510,10 @@
 
                                     <div class="row my-3">
                                         <div class="col-10">
-                                    <div id="columnchart_values_{{$tech->id}}{{$tech->techsectorID}}{{$tech->technicheID}}" ></div>
+                                    <div id="columnchart_values_{{$tech->id}}{{$techsector->id}}{{$techniche->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
                                                 class=" float-right my-0" width="100%"> --}}
-                                        </div>
+                                         </div>
                                     </div>
                                     <h5 style="text-align:center; ">Technology
                                         Readiness
@@ -1539,11 +1537,28 @@
                             <div class="divider"></div>
                             <div style="margin-left:40px;font-weight:bold">Example Technologies</div>
                             <section style="padding-left:40px;padding-right:40px">
-                                {{$tech-> technichedescription}}
+                                {{$techniche-> technichedescription}}
                             </section>
                         </div>
+                    @endforeach
+                    <div class="divider"></div>
+                </div>
 
+                    @endforeach
+                </div>
+                
+            </div>
+            <div class="divider"></div>
+            @endforeach
 
+        </div>
+    </div>
+
+    <div style="margin-top:200px"></div>
+
+    <footer>
+    @include('footer')
+</footer>
                         {{-- <div nane="subAnswer2"
                             style="margin-left:1px;">
                             <div>
@@ -1620,9 +1635,7 @@
  --}}
 
                         <!-- <div class="divider"></div>  -->
-                    </div>
-
-                    <div class="divider"></div>
+                   
 
                     {{-- <div name="answer2" class="arrow-icon" style="position:relative;">
                         <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i><span>
@@ -1832,27 +1845,6 @@
 
 
 
-
-                </div>
-            </div>
-            <div class="divider"></div>
-            @endforeach
-
-        </div>
-    </div>
-
-
-   
-
-
-
-
-    <div style="margin-top:200px"></div>
-
-    
-    <footer>
-    @include('footer')
-</footer>
 
 
 

@@ -25,4 +25,8 @@ class techreferred extends Model
         return $this->belongsTo(techniche::class , 'id_techniche');
     }
 
+    public function projects()
+    {
+        return $this->hasMany(project::class , 'id_techreferred');
+    }
 }

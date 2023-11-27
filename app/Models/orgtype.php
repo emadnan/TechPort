@@ -10,4 +10,9 @@ class orgtype extends Model
     use HasFactory;
     protected $table = "orgtype";
 
+    public function orgperformingworks()
+    {
+        return $this->hasMany(orgperformingwork::class , 'id_type');
+    }
+
 }

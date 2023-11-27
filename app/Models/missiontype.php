@@ -9,4 +9,9 @@ class missiontype extends Model
 {
     use HasFactory;
     protected $table = "missiontype";
+
+    public function projects()
+    {
+        return $this->hasMany(project::class , 'id_missiontype');
+    }
 }

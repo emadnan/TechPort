@@ -16,7 +16,7 @@
                     <div class="row" style="margin-left:5px;padding:10px;">
                         <div class="col-md-2.9">
                             <div class="yellow-square ">
-                                <section style="font-size:40px; padding-top:0px;">16,806</section>
+                                <section style="font-size:40px; padding-top:0px;">{{$count}}</section>
                                 <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found
                                 </section>
                                 <button class="btn btn-custom"><a style="text-decoration: none; color:black;"
@@ -29,21 +29,21 @@
                             <section style="margin-bottom:10px;">Key Stats</section>
                             <div class="divider" style="width:140px"></div>
                             <div class="row" style="margin-left:2px;">
-                                <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px; font-size:14px;">944
+                                <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px; font-size:14px;">{{$active}}
                                 </p>
                                 <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; font-size:14px;">
                                     Active</p>
                             </div>
                             <div class="divider" style="width:140px"></div>
                             <div class="row" style="margin-left:2px;">
-                                <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px; font-size:14px;">944
+                                <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px; font-size:14px;">{{$complete}}
                                 </p>
                                 <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; font-size:14px;">
                                     Completed</p>
                             </div>
                             <div class="divider" style="width:140px"></div>
                             <div class="row" style="margin-left:2px;">
-                                <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px; font-size:14px;">944
+                                <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px; font-size:14px;">{{$partnership}}
                                 </p>
                                 <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; font-size:14px; ">
                                     Partnerhips</p>

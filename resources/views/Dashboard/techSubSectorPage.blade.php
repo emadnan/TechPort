@@ -49,11 +49,23 @@
                     </div>
                 </div>
 
+                {{-- <div class="row mb-3">
+                    <label for="id_techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Sector') }}</label>
+                <div class="col-md-6">
+                    <select id="id_techsector" type="text" class="form-control @error('id_techsector') is-invalid @enderror" name="id_techsector" value="{{ old('id_techsector') }}" autocomplete="id_techsector" autofocus required>
+                        <option selected value="">SELECT</option>
+                        @foreach ($sectors as $sector )
+                        <option value="{{$sector-> id}}">{{$sector->techsector}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                </div> --}}
+
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
 
                     <div class="col-md-6">
-                        <textniche id="note" type="text" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" ></textniche>
+                        <textarea id="note" type="text" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" ></textarea>
                         <span class="text-danger small" id="noteError"></span>
 
                     </div>
@@ -108,17 +120,17 @@
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($data as $id=>$sector )
-                            <tr id="row_{{$sector-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> techniche}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> technichedescription}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> id_dm}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> otme}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> note}}</td>
+                            @foreach ($niches as $niche )
+                            <tr id="row_{{$niche-> id}}">
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> techniche}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> technichedescription}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> id_dm}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> otme}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
-                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$sector-> id}}"> <span style="color:black;">|</span> </i>
-                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$sector-> id}}"> <span style="color:black;">|</span> </i> 
-                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$sector-> id}}"></i>
+                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$niche-> id}}"> <span style="color:black;">|</span> </i>
+                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$niche-> id}}"> <span style="color:black;">|</span> </i> 
+                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$niche-> id}}"></i>
                                 </td>
                             </tr>
                             @endforeach

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\techniche;
+use App\Models\techreferred;
+use App\Models\techsector;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -10,8 +12,10 @@ class TechSubSectorController extends Controller
 {
     public function techSubSectorPage ()
     {
-        $sector = DB::table('techniche')->get();
-        return view('dashboard.techSubSectorPage' , ['data'=>$sector]);
+        $sectors = techsector::get();
+        $niches = techniche::get();
+        
+        return view('dashboard.techSubSectorPage' , compact('sectors' , 'niches' ));
     }
 
     public function read (string $id)   
@@ -40,15 +44,30 @@ class TechSubSectorController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $Create = DB::table('techniche')->insert([
-            'techniche'=> $req->techniche,
-            'technichedescription'=> $req->technichedescription,
-            'id_dm'=> $req->id_dm,
-            'otme'=> $req->otme,
-            'note'=> $req->note,
-        ]);
+        // $Create = DB::table('techniche')->insert([
+        //     'techniche'=> $req->techniche,
+        //     'technichedescription'=> $req->technichedescription,
+        //     'id_dm'=> $req->id_dm,
+        //     'otme'=> $req->otme,
+        //     'note'=> $req->note,
+        // ]);
 
-        if($Create)
+        // $techSector = techsector::find($req->input('id_techsector'));
+
+        $techniches  = new techniche;
+        $techniches->techniche = $req->techniche;
+        $techniches->technichedescription = $req->technichedescription;
+        $techniches->id_dm = $req->id_dm;
+        $techniches->otme = $req->otme;
+        $techniches->note = $req->note;
+        $techniches->save();
+
+        // $techReferred = new techreferred();
+        // $techReferred->techsectors()->associate($techSector->id);
+        // $techReferred->techniches()->associate($techniches->id);
+        // $techniches->techsectors()->attach($req->input('id_techsector'));
+
+        if($techniches)
         {
             $latestID = techniche::latest()->value('id');
             $newRow = DB::table('techniche')->where('id', $latestID)->get();

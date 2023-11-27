@@ -12,48 +12,31 @@
     <div class="faq-answer" style="display: none;">
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-       @foreach ($projOrgs as $projOrg)
+            @php
+                $legalID = 0;
+            @endphp
+       @foreach ($projOrg->projects as $project)
+       @foreach ($project->legalentityroles as $role)
+       @if ($role->id == $legalID)
+           
+       @else
             <div style="margin-top: 15px;">
             <section class="encapsulated-text py-3">
-                <a href="{{ route('legalEntityClickingPage', ['id' => $projOrg->legalID]) }}" style="color:black;font-weight:bold;">{{$projOrg -> legalName}}</a>
+                <a href="{{ route('legalEntityClickingPage', ['id' => $role->id]) }}" style="color:black;font-weight:bold;">{{$role->name}}</a>
             </section>
         </div>
         <div class="divider-within-class"></div>
+        @php
+            $legalID = $role->id;
+        @endphp
+        @endif
+        @endforeach
         @endforeach
     </div>
 
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3">
-                <a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;font-weight:bold;">Space
-                    Technology Mission Directorate (STMD)</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
 
 
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3">
-                <a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;font-weight:bold;">Space
-                    Technology Mission Directorate (STMD)</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3">
-                <a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;font-weight:bold;">Space
-                    Technology Mission Directorate (STMD)</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text py-3">
-                <a href="{{ url('/legal-entity-roles-clicking') }}" style="color:black;font-weight:bold;">Space
-                    Technology Mission Directorate (STMD)</a>
-            </section>
-            <div class="divider-within-class"></div>
-
+    
 
             <center>
                 <div class="pagination">
@@ -72,6 +55,5 @@
 
         </div>
     </div>
-</div>
 
 <div class="divider"></div>

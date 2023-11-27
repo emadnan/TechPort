@@ -394,11 +394,11 @@
 
 
             <script>
-    $('#page_title').html('Mission Types');
-var projOrgs = @json($projOrgs);
-projOrgs.forEach(function(projOrg){
-    var log = $('#dynamic_title').html(projOrg.missionType);
-})
+        var title = $('#page_title').html('Mission Type');
+var projOrg = @json($projOrg);
+$(document).ready(function() {
+        $('#dynamic_title').html(projOrg.type);
+});
                 const questions = document.querySelectorAll('.qa-question');
 
                 questions.forEach(question => {
@@ -538,7 +538,7 @@ projOrgs.forEach(function(projOrg){
     }
                },
       };
-      var projOrgs = @json($projOrgs);
+      var projOrg = @json($projOrg);
         var container = document.getElementById("columnchart_values");
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(view, options);

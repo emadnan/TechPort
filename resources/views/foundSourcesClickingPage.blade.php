@@ -362,126 +362,6 @@
             <li class="breadCrumbs-items"><a href="{{url('/found-sources-clicking')}}">Found Sources view</a></li>
         </ul>
 
-
-
-
-
-
-        <!-- Add a new row for the image container -->
-        {{-- <div class="row mt-1">
-            <div class="col-md-12">
-                <div class="custom-image-container">
-                    <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
-
-                    <div class="text-in-image">
-                        <section style="font-weight:700;margin-left:3px;">Found Sources</section>
-                        @foreach ($projOrgs as $projOrg )
-                        <section class="mt-2" style="font-size:18px; font-weight:700;margin-left:3px;">{{$projOrg->sourceName}}</section>
-                       @break
-                        @endforeach
-                    
-                        <div class="solid-rectangle mt-1">
-
-                            <div class="row" style="margin-left:5px;padding:10px;">
-                                <div class="col-md-2.9">
-                                    <div class="yellow-square ">
-                                        <section style="font-size:40px; padding-top:0px;">16,806</section>
-                                        <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found</section>
-                                        <button class="btn btn-custom" ><a style="text-decoration: none; color:black;" href="{{url('/AdvanceSearch')}}"> Modify Search</a></button>
-                                    </div>
-                                </div>
-
-
-                                <div class="key-stats col-md-2" style="margin-left:20px;line-height:20px;">
-                                    <section style="margin-bottom:10px;">Key Stats</section>
-                                    <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-top:6px; margin-bottom:6px; ">Active</p>
-                                    </div>
-                                    <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px;" >Completed</p>
-                                    </div>
-                                    <div class="divider" style="width:175px"></div>
-                                    <div class="row" style="margin-left:2px;">
-                                        <p style="float:left;  color:#FFA800; margin-top:6px; margin-bottom:6px;">944</p>
-                                        <p style="float:right; margin-left: 25px; margin-bottom:6px; margin-top:6px; ">Partnerhips</p>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-3">
-                                    <h5 style="font-size: 18px;">Technology Maturity</h5>
-                                    <img src="{{ asset('images/Group 154.svg') }}" style="height:140px;width:180px;">
-                                </div>
-
-                                <div>
-                                    <section style="font-size: 16px;">Technology Areas Represented</section>
-                                    <div style="display: flex; gap: 5px;margin-top:10px;">
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a style="color:white;" class="btn-hover"
-                                                href="{{ url('/') }}">TX01</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX02</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX03</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX05</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX06</a></button>
-                                    </div>
-                                    <div style="display: flex; gap: 5px;margin-top:5px;">
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX07</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX08</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX09</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary p-0"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX010</a></button>
-                                        <button style="width: 50px; height: 30px; font-size: 12px;"
-                                            class="btn btn-primary p-0"><a class="btn-hover" style="color:white;"
-                                                href="{{ url('/') }}">TX011</a></button>
-                                    </div>
-
-
-
-                                </div>
-                                <div class="col-md-1" style="magin-left:20px;">
-                                    <section>Export</section>
-                                    <i class="fa-regular fa-file-pdf"
-                                        style="width: 51px;height: 51px;margin-top:10px;"></i>
-                                </div>
-
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
-
-
-
-
-                </div>
-
-                <!--  -->
-            </div>
-        </div> --}}
-
-
 @include('layouts.image')
 
 
@@ -511,11 +391,12 @@
 
             <script>
 
-             var projOrgs = @json($projOrgs);
-             projOrgs.forEach(function(projOrg){
-             $('#page_title').html('Found Sources');
-             var log = $('#dynamic_title').html(projOrg.sourceName);
-})
+
+var title = $('#page_title').html('Found Sources');
+var projOrg = @json($projOrg);
+$(document).ready(function() {
+        $('#dynamic_title').html(projOrg.name);
+});
 
                 const questions = document.querySelectorAll('.qa-question');
 
@@ -656,7 +537,7 @@
     }
                },
       };
-      var projOrgs = @json($projOrgs);
+      var projOrgs = @json($projOrg);
         var container = document.getElementById("columnchart_values");
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(view, options);

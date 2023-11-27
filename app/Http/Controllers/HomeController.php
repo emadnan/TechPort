@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\techarea;
 use App\Models\techreferred;
 use Illuminate\Http\Request;
 
@@ -25,11 +26,15 @@ class HomeController extends Controller
     public function homePage()
     {
         
-            $tech = techreferred::select('techareas.*','techareas.id as techareaID','techsector.*','techsector.id as techsectorID','techniche.*' , 'techniche.id as technicheID','ref_techreferred.*')
-            ->join('techareas','techareas.id','=','ref_techreferred.id_techarea')
-            ->join('techsector','techsector.id','=','ref_techreferred.id_techsector')
-            ->join('techniche','techniche.id','=','ref_techreferred.id_techniche')
-            ->get();
+            // $tech = techreferred::select('techareas.*','techareas.id as techareaID','techsector.*','techsector.id as techsectorID','techniche.*' , 'techniche.id as technicheID','ref_techreferred.*')
+            // ->join('techareas','techareas.id','=','ref_techreferred.id_techarea')
+            // ->join('techsector','techsector.id','=','ref_techreferred.id_techsector')
+            // ->join('techniche','techniche.id','=','ref_techreferred.id_techniche')
+            // ->get();
+            
+            $tech = techarea::with('techsectors.techniches')->get();
+
+            // return response()->json($tech);
             return view('homePage' ,  ['techRef' => $tech]);
     }
     public function __construct()

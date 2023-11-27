@@ -365,13 +365,360 @@
 @include('layouts.image')
 
         <div class="faq-container mt-1">
-            @include('projectCode')
-            @include('organizationCode')
-            @include('locationsCode')
-            @include('foundSourcesCode')
-            @include('missionTypeCode')
-            @include('legalRolesCode')
-
+            <div class="faq-item">
+                <div id="project" class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="faq-question">Projects</span>
+                    <i class="fa-solid fa-chevron-down" id="rotateIcon"
+                        style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+            
+            
+            
+                </div>
+            
+                <div class="faq-answer" style="display: none;">
+                    <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+                    @php
+                        $projectID = 0;
+                    @endphp
+            @if ($projectID == $projOrg->id)
+                
+            @else
+                    <div style="margin-top: 15px;">
+                        <section class="encapsulated-text ">
+                            <a href="{{ route('projectPage', ['id'=> $projOrg->id]) }}" style="color:#065386;font-weight:bold;">{{$projOrg->name}}</a>
+                            <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"
+                                onclick="toggleSubAnswer(this)"></i>
+                            <button
+                                style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">{{$projOrg->status->status}}</button>
+                            <section>This is a project within the Space Technology Research Grants Program </section>
+                        </section>
+                        <section class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">{{$projOrg->description}}</section>
+            
+                        <div class="sub-answer mt-2 mb-4"
+                            style=" display:none; margin-left:10px;font-size:15px; padding-right:4rem">
+                            <div class="row my-4">
+                                <div class="col">
+                                    <img src="{{ asset('images/' . $projOrg->image) }}" width="350px">
+                                </div>
+                                <div class="col">
+                                    <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                                    @foreach ($projOrg->legalentityroles as $role )
+                                    <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$role->id])}}">{{$role->name}}</a>
+                                    </section>
+                                    @endforeach
+                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                                    @foreach ($projOrg->orgperformingworks as $org )
+                                    <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
+                                    @endforeach
+                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
+                                    <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01 {{$projOrg->techreferred->techarea->techarea}}</a></section>
+                                    <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
+                                    <section style="font-size:13px">{{$projOrg->startdate}}</section>
+                                </div>
+                                <div class="col">
+                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                                    <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{route('missionTypeClickingPage' , ['id'=>$projOrg->missiontype->id])}}"> {{$projOrg->missiontype->type}}</a></section>
+                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
+                                    <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{route('foundSourcesClickingPage' , ['id'=>$projOrg->foundingsource->id])}}">{{$projOrg->foundingsource->name}}</a></section>
+                                    <br><br>
+                                    <section class="my-2" style="font-size:13px"><b> End: </b></section>
+                                    <section style="font-size:13px">{{$projOrg->enddate}}</section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider-within-class"></div>
+            @php
+                $projectID = $projOrg->id;
+            @endphp
+            
+            @endif    
+                   
+            
+                    <center>
+                        <div class="pagination">
+                            <a href="#">&laquo;</a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">&raquo;</a>
+                        </div>
+            
+                    </center>
+                
+            
+                </div>
+                
+            </div>
+            
+            <div class="divider"></div>
+          
+            <div class="faq-item">
+                <div id="organization" class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="faq-question">Organizations</span><a id="organize"></a>
+            
+                    <i class="fa-solid fa-chevron-down" id="rotateIcon"
+                        style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+            
+            
+            
+                </div>
+            
+                <div class="faq-answer" style="display: none;">
+                        <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+                        @php
+                             $projectID = 0;
+                        @endphp
+            @if ($projectID == $projOrg->id)
+            @else
+                        <div style="margin-top: 15px;">
+                        <section class="encapsulated-text ">
+                            <a href="{{ route('organizationClickingPage', ['id' => $projOrg->orgperformingworks[0]->id]) }}" style="color:black;font-weight:bold;">{{$projOrg->orgperformingworks[0]->name}}</a>
+                        </section>
+                    </div>
+                    <div class="divider-within-class"></div>
+                    @php
+                          $projectID = $projOrg->id;
+                    @endphp
+            @endif    
+            
+            
+            
+                    <div style="margin-top: 15px;">
+            
+                        <center>
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">&raquo;</a>
+                            </div>
+            
+                        </center>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="divider"></div>
+            <div class="faq-item">
+                <div id="foundSources" class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="faq-question">Locations</span>
+                    <i class="fa-solid fa-chevron-down" id="rotateIcon" style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+                </div>
+                
+                <div class="faq-answer" style="display: none;">
+              <div>
+              <section  class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
+              @php
+                $locationID = 0;
+              @endphp
+            
+              @foreach ($projOrg->orgperformingworks as $org )
+              @if ($org->location->id == $locationID)
+                
+              @else
+              <div style="margin-top: 15px;">
+                <section class="encapsulated-text" >
+              <a href="{{ route('locationsClickingPage', ['id' => $org->location->id]) }}" style="color:black;font-weight:bold;">{{$org->location->city}} , {{$org->location->state}}</a>
+              </section>
+              </div>
+              <div class="divider-within-class"></div> 
+              @php
+                $locationID = $org->location->id;
+              @endphp
+              @endif
+              @endforeach
+              
+              
+              
+              
+              <div style="margin-top: 15px;">
+                  <center>
+              <div class="pagination">
+              <a href="#">&laquo;</a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">&raquo;</a>
+              </div>
+              
+              </center>
+              </div>
+                </div>
+              </div>
+              
+              
+              <div class="divider"></div>
+              <div class="faq-item">
+                <div id="foundSources" class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="faq-question">Found sources</span>
+                    <i class="fa-solid fa-chevron-down" id="rotateIcon"
+                        style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+                </div>
+            
+                <div class="faq-answer" style="display: none;">
+                    <div>
+                        <section class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
+                        @php
+                            $sourceID = 0;
+                        @endphp
+                    @if ($projOrg->foundingsource->id == $sourceID)
+                        
+                    @else
+                        <div style="margin-top: 15px;">
+                        <section class="encapsulated-text ">
+                            <a href="{{ route('foundSourcesClickingPage', ['id' => $projOrg->foundingsource->id]) }}" style="color:black;font-weight:bold;"> {{$projOrg->foundingsource->name}} </a>
+                        </section>
+                    </div>
+                    <div class="divider-within-class"></div>
+                    @php
+                        $sourceID = $projOrg->foundingsource->id;
+                    @endphp
+                    @endif
+                </div>
+            
+                    
+                    <div style="margin-top: 15px;">
+                        <center>
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">&raquo;</a>
+                            </div>
+            
+                        </center>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="divider"></div>
+            <div class="faq-item " >
+                <div id="missionType" class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="faq-question">Mission Type</span>
+                    <i class="fa-solid fa-chevron-down" id="rotateIcon" style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+                </div>
+                <div class="faq-answer" style="display: none;">
+              <div>
+              <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+              @php
+                $missionID = 0;
+              @endphp
+              @if ($projOrg->missiontype->id == $missionID)
+                
+              @else
+              <div style="margin-top: 15px;">
+                <section class="encapsulated-text " >
+                    <a href="{{route('missionTypeClickingPage' , ['id' => $projOrg->missiontype->id])}}" style="color:black;font-weight:bold;">{{$projOrg->missiontype->type}}</a>
+                </section>
+              </div>
+              <div class="divider-within-class"></div> 
+            @php
+              $missionID = $projOrg->missiontype->id;
+            @endphp
+              @endif
+            </div>
+              
+              
+              
+                  <center>
+              <div class="pagination">
+              <a href="#">&laquo;</a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">&raquo;</a>
+              </div>
+              
+              </center>
+              </div>
+                </div>
+              
+              
+              
+              
+              
+                  
+              </div>
+              
+              <div class="divider"></div>
+              <div class="faq-item">
+                <div id="legalRoles" class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="faq-question">Legal Entity Roles</span>
+            
+                    <i class="fa-solid fa-chevron-down" id="rotateIcon"
+                        style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
+            
+            
+            
+                </div>
+            
+                <div class="faq-answer" style="display: none;">
+                    <div>
+                        <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+                        @php
+                            $legalID = 0;
+                        @endphp
+                   @foreach ($projOrg->legalentityroles as $role)
+                   @if ($role->id == $legalID)
+                       
+                   @else
+                        <div style="margin-top: 15px;">
+                        <section class="encapsulated-text py-3">
+                            <a href="{{ route('legalEntityClickingPage', ['id' => $role->id]) }}" style="color:black;font-weight:bold;">{{$role->name}}</a>
+                        </section>
+                    </div>
+                    <div class="divider-within-class"></div>
+                    @php
+                        $legalID = $role->id;
+                    @endphp
+                    @endif
+                    @endforeach
+                </div>
+            
+            
+            
+                
+            
+                        <center>
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">&raquo;</a>
+                            </div>
+            
+                        </center>
+            
+            
+                    </div>
+                </div>
+            
+            <div class="divider"></div>
+            
         
         </div>
     </div>
@@ -389,11 +736,11 @@
     <script>
 
 
-$('#page_title').html('Project Target');
-var projOrgs = @json($projOrgs);
-projOrgs.forEach(function(projOrg){
-    var log = $('#dynamic_title').html(projOrg.projecttarget);
-})
+var title = $('#page_title').html('Project Target');
+var projOrg = @json($projOrg);
+$(document).ready(function() {
+        $('#dynamic_title').html(projOrg.projecttarget);
+});
         const questions = document.querySelectorAll('.qa-question');
 
         questions.forEach(question => {
@@ -533,7 +880,7 @@ projOrgs.forEach(function(projOrg){
     }
                },
       };
-      var projOrgs = @json($projOrgs);
+      var projOrg = @json($projOrg);
         var container = document.getElementById("columnchart_values");
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(view, options);

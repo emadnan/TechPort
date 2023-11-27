@@ -389,11 +389,9 @@
             <script>
 
     var title = $('#page_title').html('Legal Entity Roles');
-var projOrgs = @json($projOrgs);
+var projOrg = @json($projOrg);
 $(document).ready(function() {
-    $.each(projOrgs, function(index, item) {
-        $('#dynamic_title').html(item.legalName);
-    });
+        $('#dynamic_title').html(projOrg.name);
 });
         
     //   })
@@ -522,7 +520,7 @@ $(document).ready(function() {
     }
                },
       };
-      var projOrgs = @json($projOrgs);
+      var projOrg = @json($projOrg);
         var container = document.getElementById("columnchart_values");
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(view, options);

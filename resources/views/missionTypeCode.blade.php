@@ -6,45 +6,26 @@
     <div class="faq-answer" style="display: none;">
   <div>
   <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-  @foreach ($projOrgs as $projOrg )
+  @php
+    $missionID = 0;
+  @endphp
+  @foreach ($projOrg->projects as $project )
+  @if ($project->missiontype->id == $missionID)
+    
+  @else
   <div style="margin-top: 15px;">
     <section class="encapsulated-text " >
-        <a href="{{route('missionTypeClickingPage' , ['id' => $projOrg->missionID])}}" style="color:black;font-weight:bold;">{{$projOrg-> missionType}}</a>
+        <a href="{{route('missionTypeClickingPage' , ['id' => $project->missiontype->id])}}" style="color:black;font-weight:bold;">{{$project->missiontype->type}}</a>
     </section>
   </div>
   <div class="divider-within-class"></div> 
+@php
+  $missionID = $project->missiontype->id;
+@endphp
+  @endif
   @endforeach
 </div>
   
-  <div style="margin-top: 15px;">
-    <section class="encapsulated-text " >
-      <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">Drass mission type 1</a>
-  </section>
-  </div>
-  <div class="divider-within-class"></div> 
-  
-  
-  <div style="margin-top: 15px;">
-  
-    <section class="encapsulated-text " >
-      <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">Drass mission type 1</a>
-  </section>     
-  </div>
-  <div class="divider-within-class"></div> 
-  
-  <div style="margin-top: 15px;">
-  
-    <section class="encapsulated-text  " >
-      <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">Drass mission type 1</a>
-  </section>
-  </div>
-  
-  <div class="divider-within-class"></div> 
-  <div style="margin-top: 15px;">
-    <section class="encapsulated-text  " >
-      <a href="{{url('/mission-type-clicking')}}" style="color:black;font-weight:bold;">Drass mission type 1</a>
-  </section>
-      <div class="divider-within-class"></div> 
   
   
       <center>

@@ -11,39 +11,24 @@
 
     <div class="faq-answer" style="display: none;">
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
-            @foreach ($projOrgs as $projOrg )
+            @php
+                 $projectID = 0;
+            @endphp
+            @foreach ($projOrg->projects as $project )
+@if ($projectID == $project->id)
+@else
             <div style="margin-top: 15px;">
             <section class="encapsulated-text ">
-                <a href="{{ route('organizationClickingPage', ['id' => $projOrg->orgID]) }}" style="color:black;font-weight:bold;">{{$projOrg-> orgName}}</a>
+                <a href="{{ route('organizationClickingPage', ['id' => $project->orgperformingworks[0]->id]) }}" style="color:black;font-weight:bold;">{{$project->orgperformingworks[0]->name}}</a>
             </section>
         </div>
         <div class="divider-within-class"></div>
-            @endforeach
+        @php
+              $projectID = $project->id;
+        @endphp
+@endif    
+        @endforeach
 
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text ">
-                <a href="{{ url('/organization-clicking') }}" style="color:black;font-weight:bold;">State University
-                    Main Campus</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text ">
-                <a href="{{ url('/organization-clicking') }}" style="color:black;font-weight:bold;">State University
-                    Main Campus</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
-
-        <div style="margin-top: 15px;">
-            <section class="encapsulated-text ">
-                <a href="{{ url('/organization-clicking') }}" style="color:black;font-weight:bold;">State University
-                    Main Campus</a>
-            </section>
-        </div>
-        <div class="divider-within-class"></div>
 
 
         <div style="margin-top: 15px;">

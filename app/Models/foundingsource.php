@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class foundingsource extends Model
 {
     use HasFactory;
+
+    public function projects()
+    {
+        return $this->hasMany(project::class , 'id_foundsource');
+    }
 }

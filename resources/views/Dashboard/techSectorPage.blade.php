@@ -49,11 +49,22 @@
                     </div>
                 </div>
 
+                {{-- <div class="row mb-3">
+                    <label for="id_techarea" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Area') }}</label>
+                <div class="col-md-6">
+                    <select id="id_techarea" type="text" class="form-control @error('id_techarea') is-invalid @enderror" name="id_techarea" value="{{ old('id_techarea') }}" autocomplete="id_techarea" autofocus required>
+                        <option selected value="">SELECT</option>
+                        @foreach ($areas as $area )
+                        <option value="{{$area-> id}}">{{$area->techarea}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                </div>
+                 --}}
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
-
                     <div class="col-md-6">
-                        <textsector id="note" type="text" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" ></textsector>
+                        <textarea id="note" type="text" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" ></textarea>
                         <span class="text-danger small" id="noteError"></span>
 
                     </div>
@@ -109,7 +120,7 @@
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($data as $id=>$sector )
+                            @foreach ($sectors as $sector )
                             <tr id="row_{{$sector-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> techsector}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> techsectordescription}}</td>

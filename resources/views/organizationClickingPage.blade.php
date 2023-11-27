@@ -374,10 +374,7 @@
 
         <div class="container py-4 my-2" style="   border:1px groove #E8E8E8;">
             <h5 class="px-2" style="font-family: Roboto; font-weight: bold; font-size:16px;">Organization Description:</h5>
-            @foreach ($projOrgs as $projOrg )
-            <section class="pb-2 px-2" style="font-size:14px;">{{$projOrg->orgDescription}}</section>
-            @break
-            @endforeach
+            <section class="pb-2 px-2" style="font-size:14px;">{{$projOrg->description}}</section>
         </div>
 
 
@@ -407,11 +404,11 @@
             <script>
 
                 
-    $('#page_title').html('Organizations');
-var projOrgs = @json($projOrgs);
-projOrgs.forEach(function(projOrg){
-    var log = $('#dynamic_title').html(projOrg.orgName);
-})
+var title = $('#page_title').html('Organizations');
+var projOrg = @json($projOrg);
+$(document).ready(function() {
+        $('#dynamic_title').html(projOrg.name);
+});
                 const questions = document.querySelectorAll('.qa-question');
 
                 questions.forEach(question => {
@@ -551,7 +548,7 @@ projOrgs.forEach(function(projOrg){
     }
                },
       };
-      var projOrgs = @json($projOrgs);
+      var projOrg = @json($projOrg);
         var container = document.getElementById("columnchart_values");
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(view, options);
