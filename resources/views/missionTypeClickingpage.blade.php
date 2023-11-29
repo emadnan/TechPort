@@ -474,40 +474,69 @@ $(document).ready(function() {
             </script>
 </body>
 <script type="text/javascript">
+
     google.charts.load("45", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["Level", "Projects", { role: "style" } ],
-        ["1", 8.94, "#065386"],
-        ["2", 10.49, "#065386"],
-        ["3", 19.30, "#065386"],
-        ["4", 21.45, "#065386"],
-        ["5", 30.45, "#065386"],
-        ["6", 21.45, "#065386"],
-        ["7", 50.45, "#065386"],
-        ["8", 21.45, "#065386"],
-        ["9", 40.45, "#065386"],
-      ]);
+google.charts.setOnLoadCallback(function () {
+    var allTrls = @json($allTrls); 
+    var projOrg = @json($projOrg); 
 
-      var view = new google.visualization.DataView(data);
-    //   view.setColumns([0, 1,
-    //                    { calc: "stringify",
-    //                      sourceColumn: 1,
-    //                      type: "string",
-    //                      role: "annotation" },
-    //                    2]);
+    // Create an array to store data for the chart
+    var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
+let numberOfProjects = 0;
 
+    // Iterate through each TRL model
+    function fetchDataForTrl(trl) {
+    var baseUrl = '/getProjectsLengthByMissionID';
+    var missionID = projOrg.id;
+    var trlID = trl.id;
+    var url = baseUrl + '/' + missionID + '/' + trlID;
+
+    return fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            var numberOfProjects = data.project;
+            return numberOfProjects;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            return 0; // Handle the error case by returning a default value
+        });
+}
+
+// Use Promise.all to wait for all fetch operations to complete
+Promise.all(allTrls.map(fetchDataForTrl))
+    .then(numberOfProjectsArray => {
+        // All fetch operations have completed here
+        for (var i = 0; i < allTrls.length; i++) {
+            var trl = allTrls[i];
+            var numberOfProjects = numberOfProjectsArray[i];
+
+            chartData.push([trl.trllevel.toString(), numberOfProjects, "#065386"]);
+            // Add other chart-related logic here if needed
+        }
+
+        // Continue with other logic that depends on the completed chartData array
+        console.log(chartData);
+        // Call the drawChart function or any other logic here
+        drawChart(google.visualization.arrayToDataTable(chartData));
+    // drawChart(data);
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+});
+    function drawChart(data) {
       var options = {
-        chartArea: { width: '100%' , height:'50%' , left:15, top:40
+        chartArea: { width: '100%' , height:'50%' , left:30, top:40
  },
+
         title: 'Technology Maturity:',
          titleTextStyle: {
          color: 'white',  // Change the color of the chart title
          fontSize: 18 ,     // Adjust the font size if needed
          bold:false,
     },
-        width: 210,
+        width: 220,
         height: 150,
         backgroundColor: {
             fill: 'transparent'
@@ -523,8 +552,9 @@ $(document).ready(function() {
         //                 }
         textStyle: {
       color: 'white'  // Change the color of x-axis labels
-    }
-               },
+    },
+
+    },
         vAxis: {
         // title: 'Number of Projects',
         // titleTextStyle: {
@@ -538,10 +568,10 @@ $(document).ready(function() {
     }
                },
       };
-      var projOrg = @json($projOrg);
+    //   var projOrg = @json($projOrg);
         var container = document.getElementById("columnchart_values");
           var chart = new google.visualization.ColumnChart(container);
-          chart.draw(view, options);
+          chart.draw(data, options);
   }
   </script>
 </html>

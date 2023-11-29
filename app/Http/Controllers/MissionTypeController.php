@@ -9,6 +9,7 @@ use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\project;
 use App\Models\ref_projectorganization;
+use App\Models\trl;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -56,8 +57,9 @@ class MissionTypeController extends Controller
     // ->where('missiontype.id' , $id)
     // ->get();
 
-    $projOrg = missiontype::with('projects.legalentityroles' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location')
+    $projOrg = missiontype::with('projects.legalentityroles' , 'projects.trlactual' ,'projects.foundingsource','projects.status'  , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location')
     // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype')
+    ->with('trls.projects.trlactual')
     ->where('id' , $id)
     ->first();
 
@@ -66,11 +68,23 @@ class MissionTypeController extends Controller
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
 
+    $allTrls = trl::with('projects.trlactual')->get();
+
 
     // return response()->json($projOrg);
 
-        return view('missionTypeClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership'));
+        return view('missionTypeClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
     }
+
+    public function getProjectsLengthByMissionID(string $missionID ,string $trlID)
+    {
+        $project = project::where('id_missiontype' , $missionID)
+                   ->where('id_trlactual' , $trlID)
+                   ->count();
+        
+        return response()->json(compact('project'));
+    }
+    
 
     public function missionTypePage ()
     {

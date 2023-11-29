@@ -15,11 +15,12 @@
                  $projectID = 0;
             @endphp
             @foreach ($projOrg->projects as $project )
+            @foreach ($project->orgperformingworks as $org )
 @if ($projectID == $project->id)
 @else
             <div style="margin-top: 15px;">
             <section class="encapsulated-text ">
-                <a href="{{ route('organizationClickingPage', ['id' => $project->orgperformingworks[0]->id]) }}" style="color:black;font-weight:bold;">{{$project->orgperformingworks[0]->name}}</a>
+                <a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}" style="color:black;font-weight:bold;">{{$org->name}}</a>
             </section>
         </div>
         <div class="divider-within-class"></div>
@@ -27,6 +28,7 @@
               $projectID = $project->id;
         @endphp
 @endif    
+        @endforeach
         @endforeach
 
 

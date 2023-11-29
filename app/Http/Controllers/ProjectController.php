@@ -12,6 +12,7 @@ use App\Models\ref_projectorganization;
 use App\Models\status;
 use App\Models\techreferred;
 use App\Models\trl;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,12 +27,13 @@ class ProjectController extends Controller
     public function projectTargetClickingPage(string $id)
     {
         $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles')
-        // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype'
         ->where('id' , $id)
         ->first();
 
+    $allTrls = trl::with('projects.trlactual')->get();
+
         if ($projOrg) {
-        $count = $projOrg->groupBy ('id')->count();
+        $count = $projOrg->groupBy('id')->count();
         
             // Count the number of occurrences of each status
         $active = $projOrg->status->where('status' , 'Active')->count();
@@ -44,43 +46,42 @@ class ProjectController extends Controller
     
     
         //   return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership'));
-        return view('projectTargetClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership'));
+        return view('projectTargetClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
     }
+
+    public function getProjectsLengthByProjectTargetID(string $projectID ,string $trlID)
+    {
+        $project = project::where('id' , $projectID)
+                   ->where('id_trlactual' , $trlID)
+                   ->count();
+        
+        return response()->json(compact('project'));
+    }
+
 
   public function index(string $id)
   {
-    $projOrgs = ref_projectorganization::select('orgtype.type as orgtype' , 'humanentity.name as humanName' ,
-     'humanentity.surname as humanSurName' , 'location.city' ,'location.state' ,'location.id as locationID' ,
-     'projects.name as projectName' , 'projects.description as projectDescription' ,
-     'techsector.techsector' , 'techareas.techarea' , 'techniche.techniche' , 'trl.trllevel', 
-     'missionType.type as missionType' , 'missionType.id as missionID' , 'orgperformingwork.name as orgName' , 
-     'orgperformingwork.description as orgDescription' , 'orgperformingwork.id as orgID' , 'orgperformingwork.code as orgCode' , 
-     'foundingSources.id as sourceID' , 'foundingSources.name as sourceName' , 
-     'legalentityrole.name as legalName' ,'legalentityrole.id as legalID' , 'ref_projectorganization.*' , 'projects.*' )
-
-    ->join('projects' , 'projects.id' , '=' , 'ref_projectorganization.id_project') 
-        ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
-        ->join('trl' , function($join){
-            $join->on('trl.id' , '=' ,'projects.id_trlstart');
-            $join->on('trl.id' , '=' ,'projects.id_trlactual');
-            $join->on('trl.id' , '=' ,'projects.id_trlfinal');
-        })
-        ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
-        ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-        ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-        ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-        ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
-        ->join('status' , 'status.id' , '=' , 'projects.id_status')
-    ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
-        ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
-        ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
-        ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
-        ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
-    ->where('projects.id' , $id)
-    ->get();
+    $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles')
+    ->where('id' , $id)
+    ->first();
     
-// return response()->json($projOrgs);
-    return view('lowEvolutionPage' , compact('projOrgs'));
+// return response()->json($projOrg);
+    return view('lowEvolutionPage' , compact('projOrg'));
+
+  }
+
+  public function downloadPdf(string $id)
+  {
+    $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles')
+    ->where('id' , $id)
+    ->first();
+
+    $pdf = Pdf::loadView('downloadPdf.projectPdf', compact('projOrg'))->setOptions(['defaultFont' => 'sans-serif']);
+    return $pdf->stream();
+
+    
+// return response()->json($projOrg);
+    // return view('lowEvolutionPage' , compact('projOrg'));
 
   }
 

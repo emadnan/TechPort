@@ -1374,7 +1374,7 @@
 
 
             <!-- parent tile -->
-@foreach ($techRef as $techs=>$tech )
+@foreach ($techs as $tech )
     
             <div class="faq-item">
 
@@ -1427,7 +1427,13 @@
                     </div>
                 </div>
                 <div class="faq-answer" style="display:none;">
+                    @php
+                        $sectorID = 0;
+                    @endphp
                 @foreach ($tech->techsectors as $techsector )
+                @if ($techsector->id == $sectorID)
+                    
+                @else
                 <div class="divider"></div>
                     <div name="answer1" class="arrow-icon" style="position:relative;">
                         <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i>
@@ -1543,12 +1549,17 @@
                     @endforeach
                     <div class="divider"></div>
                 </div>
-
+                @php
+                $sectorID = $techsector->id;
+            @endphp
+            @endif
                     @endforeach
                 </div>
                 
             </div>
             <div class="divider"></div>
+            
+
             @endforeach
 
         </div>
@@ -1942,83 +1953,53 @@
         }
           });
 
-          google.charts.load("45", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["Level", "Projects", { role: "style" } ],
-        ["1", 8.94, "#ff691c"],
-        ["2", 10.49, "#ff691c"],
-        ["3", 19.30, "#ff691c"],
-        ["4", 21.45, "#008fd4"],
-        ["5", 30.45, "#008fd4"],
-        ["6", 21.45, "#008fd4"],
-        ["7", 50.45, "#0058a2"],
-        ["8", 21.45, "#0058a2"],
-        ["9", 40.45, "#0058a2"],
-      ]);
 
-      var view = new google.visualization.DataView(data);
-    //   view.setColumns([0, 1,
-    //                    { calc: "stringify",
-    //                      sourceColumn: 1,
-    //                      type: "string",
-    //                      role: "annotation" },
-    //                    2]);
-
-      var options = {
-        chartArea: { width: '80%' , left:50 , right:20},
-        width: 330,
-        height: 233,
-        bar: {groupWidth: "60%"},
-        legend: { position: "none" },
-        hAxis: {
-        title: 'Technology Readiness Level',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,    
-        italic:false,   
-                        }
-               },
-        vAxis: {
-        title: 'Number of Projects',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,
-        italic:false,   
-                        }
-               },
-      };
-      var techRef = @json($techRef);
-      techRef.forEach(function(tech){
-        var container = document.getElementById("columnchart_values_"+tech.id+tech.techsectorID);
-          var chart = new google.visualization.ColumnChart(container);
-          chart.draw(view, options);
-    })
-  }
 });
     </script>
 </body>
-<script type="text/javascript">
-    google.charts.load("45", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["Level", "Projects", { role: "style" } ],
-        ["1", 8.94, "#ff691c"],
-        ["2", 10.49, "#ff691c"],
-        ["3", 19.30, "#ff691c"],
-        ["4", 21.45, "#008fd4"],
-        ["5", 30.45, "#008fd4"],
-        ["6", 21.45, "#008fd4"],
-        ["7", 50.45, "#0058a2"],
-        ["8", 21.45, "#0058a2"],
-        ["9", 40.45, "#0058a2"],
-      ]);
 
-      var view = new google.visualization.DataView(data);
+<script type="text/javascript">
+var allTrls = @json($allTrls);
+
+    google.charts.load("45", {packages:['corechart']});
+    google.charts.setOnLoadCallback(function () {
+    var allTrls = @json($allTrls); // Assuming $trls is an array of trl models
+
+    // Create an array to store data for the chart
+    var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
+
+    // Iterate through each TRL model
+    for (var i = 0; i < allTrls.length; i++) {
+        var trl = allTrls[i];
+
+        // Count the number of projects for the current TRL level
+        var numberOfProjects = trl.projects.length;
+
+        // Add data to the chart array
+        chartData.push([trl.trllevel.toString(), numberOfProjects , "#065386"]);
+    }
+
+    // Create a DataTable from the chart data
+    var data = google.visualization.arrayToDataTable(chartData);
+
+    // Draw the chart
+    drawChart(data);
+});
+    function drawChart(data) {
+    //   var data = google.visualization.arrayToDataTable([
+    //     ["Level", "Projects", { role: "style" } ],
+    //     ["1", 8.94, "#ff691c"],
+    //     ["2", 10.49, "#ff691c"],
+    //     ["3", 19.30, "#ff691c"],
+    //     ["4", 21.45, "#008fd4"],
+    //     ["5", 30.45, "#008fd4"],
+    //     ["6", 21.45, "#008fd4"],
+    //     ["7", 50.45, "#0058a2"],
+    //     ["8", 21.45, "#0058a2"],
+    //     ["9", 40.45, "#0058a2"],
+    //   ]);
+
+    //   var view = new google.visualization.DataView(data);
     //   view.setColumns([0, 1,
     //                    { calc: "stringify",
     //                      sourceColumn: 1,
@@ -2051,72 +2032,176 @@
                         }
                },
       };
-      var techRef = @json($techRef);
-      techRef.forEach(function(tech){
-        var container = document.getElementById("columnchart_values_"+tech.id+tech.techsectorID+tech.technicheID);
-          var chart = new google.visualization.ColumnChart(container);
-          chart.draw(view, options);
-    })
-  }
-  </script>
-  
-<script type="text/javascript">
-    google.charts.load("45", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["Level", "Projects", { role: "style" } ],
-        ["1", 8.94, "#ff691c"],
-        ["2", 10.49, "#ff691c"],
-        ["3", 19.30, "#ff691c"],
-        ["4", 21.45, "#008fd4"],
-        ["5", 30.45, "#008fd4"],
-        ["6", 21.45, "#008fd4"],
-        ["7", 50.45, "#0058a2"],
-        ["8", 21.45, "#0058a2"],
-        ["9", 40.45, "#0058a2"],
-      ]);
-
-      var view = new google.visualization.DataView(data);
-    //   view.setColumns([0, 1,
-    //                    { calc: "stringify",
-    //                      sourceColumn: 1,
-    //                      type: "string",
-    //                      role: "annotation" },
-    //                    2]);
-
-      var options = {
-        chartArea: { width: '80%' , left:50 , right:20},
-        width: 330,
-        height: 233,
-        bar: {groupWidth: "60%"},
-        legend: { position: "none" },
-        hAxis: {
-        title: 'Technology Readiness Level',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,    
-        italic:false,   
-                        }
-               },
-        vAxis: {
-        title: 'Number of Projects',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,
-        italic:false,   
-                        }
-               },
-      };
-      var techRef = @json($techRef);
-      techRef.forEach(function(tech){
+      var techs = @json($techs);
+      techs.forEach(function(tech){
         var container = document.getElementById("columnchart_values_"+tech.id);
           var chart = new google.visualization.ColumnChart(container);
-          chart.draw(view, options);
+          chart.draw(data, options);
     })
   }
   </script>
-  
+  <script type="text/javascript">
+    var allTrls = @json($allTrls);
+    
+        google.charts.load("45", {packages:['corechart']});
+        google.charts.setOnLoadCallback(function () {
+        var allTrls = @json($allTrls); // Assuming $trls is an array of trl models
+    
+        // Create an array to store data for the chart
+        var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
+    
+        // Iterate through each TRL model
+        for (var i = 0; i < allTrls.length; i++) {
+            var trl = allTrls[i];
+    
+            // Count the number of projects for the current TRL level
+            var numberOfProjects = trl.projects.length;
+    
+            // Add data to the chart array
+            chartData.push([trl.trllevel.toString(), numberOfProjects , "#065386"]);
+        }
+    
+        // Create a DataTable from the chart data
+        var data = google.visualization.arrayToDataTable(chartData);
+    
+        // Draw the chart
+        drawChart(data);
+    });
+        function drawChart(data) {
+        //   var data = google.visualization.arrayToDataTable([
+        //     ["Level", "Projects", { role: "style" } ],
+        //     ["1", 8.94, "#ff691c"],
+        //     ["2", 10.49, "#ff691c"],
+        //     ["3", 19.30, "#ff691c"],
+        //     ["4", 21.45, "#008fd4"],
+        //     ["5", 30.45, "#008fd4"],
+        //     ["6", 21.45, "#008fd4"],
+        //     ["7", 50.45, "#0058a2"],
+        //     ["8", 21.45, "#0058a2"],
+        //     ["9", 40.45, "#0058a2"],
+        //   ]);
+    
+        //   var view = new google.visualization.DataView(data);
+        //   view.setColumns([0, 1,
+        //                    { calc: "stringify",
+        //                      sourceColumn: 1,
+        //                      type: "string",
+        //                      role: "annotation" },
+        //                    2]);
+    
+          var options = {
+            chartArea: { width: '80%' , left:50 , right:20},
+            width: 330,
+            height: 233,
+            bar: {groupWidth: "60%"},
+            legend: { position: "none" },
+            hAxis: {
+            title: 'Technology Readiness Level',
+            titleTextStyle: {
+            color: '#0058a2',  // Text color
+            fontSize: 12,    // Font size
+            bold:true,    
+            italic:false,   
+                            }
+                   },
+            vAxis: {
+            title: 'Number of Projects',
+            titleTextStyle: {
+            color: '#0058a2',  // Text color
+            fontSize: 12,    // Font size
+            bold:true,
+            italic:false,   
+                            }
+                   },
+          };
+          var techs = @json($techs);
+          techs.forEach(function(tech){
+            var container = document.getElementById("columnchart_values_"+tech.id);
+              var chart = new google.visualization.ColumnChart(container);
+              chart.draw(data, options);
+        })
+      }
+      </script>
+      <script type="text/javascript">
+        var allTrls = @json($allTrls);
+        
+            google.charts.load("45", {packages:['corechart']});
+            google.charts.setOnLoadCallback(function () {
+            var allTrls = @json($allTrls); // Assuming $trls is an array of trl models
+        
+            // Create an array to store data for the chart
+            var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
+        
+            // Iterate through each TRL model
+            for (var i = 0; i < allTrls.length; i++) {
+                var trl = allTrls[i];
+        
+                // Count the number of projects for the current TRL level
+                var numberOfProjects = trl.projects.length;
+        
+                // Add data to the chart array
+                chartData.push([trl.trllevel.toString(), numberOfProjects , "#065386"]);
+            }
+        
+            // Create a DataTable from the chart data
+            var data = google.visualization.arrayToDataTable(chartData);
+        
+            // Draw the chart
+            drawChart(data);
+        });
+            function drawChart(data) {
+            //   var data = google.visualization.arrayToDataTable([
+            //     ["Level", "Projects", { role: "style" } ],
+            //     ["1", 8.94, "#ff691c"],
+            //     ["2", 10.49, "#ff691c"],
+            //     ["3", 19.30, "#ff691c"],
+            //     ["4", 21.45, "#008fd4"],
+            //     ["5", 30.45, "#008fd4"],
+            //     ["6", 21.45, "#008fd4"],
+            //     ["7", 50.45, "#0058a2"],
+            //     ["8", 21.45, "#0058a2"],
+            //     ["9", 40.45, "#0058a2"],
+            //   ]);
+        
+            //   var view = new google.visualization.DataView(data);
+            //   view.setColumns([0, 1,
+            //                    { calc: "stringify",
+            //                      sourceColumn: 1,
+            //                      type: "string",
+            //                      role: "annotation" },
+            //                    2]);
+        
+              var options = {
+                chartArea: { width: '80%' , left:50 , right:20},
+                width: 330,
+                height: 233,
+                bar: {groupWidth: "60%"},
+                legend: { position: "none" },
+                hAxis: {
+                title: 'Technology Readiness Level',
+                titleTextStyle: {
+                color: '#0058a2',  // Text color
+                fontSize: 12,    // Font size
+                bold:true,    
+                italic:false,   
+                                }
+                       },
+                vAxis: {
+                title: 'Number of Projects',
+                titleTextStyle: {
+                color: '#0058a2',  // Text color
+                fontSize: 12,    // Font size
+                bold:true,
+                italic:false,   
+                                }
+                       },
+              };
+              var techs = @json($techs);
+              techs.forEach(function(tech){
+                var container = document.getElementById("columnchart_values_"+tech.id);
+                  var chart = new google.visualization.ColumnChart(container);
+                  chart.draw(data, options);
+            })
+          }
+          </script>
 </html>

@@ -243,17 +243,8 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        <div class="row">
-                            <div class="col-10"><section style="font-size:22px; font-weight:700;">PROJECTS
-                            </section></div>
-                            <div class="col-2" style="margin-right:-30px;"> <section style="font-size: 12px">Export</section>
-                                <a href="{{route('downloadPdf', ['id' => $projOrg->id])}}">  <i class="fa-regular fa-file-pdf" 
-                                    style="width: 21px;height: 21px;margin-top:10px; color:white;"></i></a>
-                            </div>
-                        </div>
-                        
-                        
-                           
+                        <section style="font-size:22px; font-weight:700;">PROJECTS
+                        </section>
                         <section style="font-size:14px; ">Small Business Innovation Research/Small Business Tech Transfer
                         </section>
                         <section style="font-size:18px; font-weight:600; margin-bottom:10px; ">{{$projOrg->name}}</section>

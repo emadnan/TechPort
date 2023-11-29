@@ -9,4 +9,10 @@ class trl extends Model
 {
     use HasFactory;
     protected $table = "trl";
+
+    
+    public function projects()
+    {
+        return $this->hasMany(project::class , 'id_trlactual');
+    }
 }

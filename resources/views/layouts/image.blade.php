@@ -95,11 +95,7 @@
                                         href="{{ url('/') }}">TX011</a></button>
                             </div>
                         </div>
-                        <div class="col-md-1" style="magin-left:20px;">
-                            <section>Export</section>
-                            <i class="fa-regular fa-file-pdf"
-                                style="width: 51px;height: 51px;margin-top:10px;"></i>
-                        </div>
+                        
 
 
                     </div>

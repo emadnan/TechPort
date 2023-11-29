@@ -28,4 +28,9 @@ class techarea extends Model
             'id_techsector' // Foreign key on the TechSector table
         );
     }
+
+    public function projects()
+    {
+        return $this->hasManyThrough(project::class , techreferred::class , 'id_techarea', 'id_techreferred','id','id');
+    }
 }

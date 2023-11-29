@@ -33,4 +33,9 @@ class orgperformingwork extends Model
     {
         return $this->hasManyThrough(project::class , ref_projectorganization::class , 'id_orgperformingwork', 'id','id','id_project');
     }
+
+    public function legalentityroles()
+    {
+        return $this->hasManyThrough(legalentityrole::class , ref_projectorganization::class , 'id_orgperformingwork', 'id','id','id_legalentityrole');
+    }
 }

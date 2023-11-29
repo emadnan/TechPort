@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\project;
 use App\Models\techarea;
 use App\Models\techreferred;
+use App\Models\techsector;
+use App\Models\trl;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,22 +27,44 @@ class HomeController extends Controller
         return view('dashboard');
     }
     public function homePage()
-    {
-        
-            // $tech = techreferred::select('techareas.*','techareas.id as techareaID','techsector.*','techsector.id as techsectorID','techniche.*' , 'techniche.id as technicheID','ref_techreferred.*')
-            // ->join('techareas','techareas.id','=','ref_techreferred.id_techarea')
-            // ->join('techsector','techsector.id','=','ref_techreferred.id_techsector')
-            // ->join('techniche','techniche.id','=','ref_techreferred.id_techniche')
-            // ->get();
-            
-            $tech = techarea::with('techsectors.techniches')->get();
+    {       
+            $techs = techarea::with('techsectors.techniches')->get();
+            // $refs = techreferred::with('techarea.techsectors.techniches')->get();
+            $refs = techarea::with('projects' , 'techsectors.techniches')->get();
+            // $refs = techsector::with('projects')->get();
+            $allTrls = trl::with('projects.trlactual')->get();
 
-            // return response()->json($tech);
-            return view('homePage' ,  ['techRef' => $tech]);
+        // $project = project::with('techareas')->get();
+
+            // return response()->json($techs);
+            return view('homePage' ,  compact('techs' , 'allTrls'));
     }
+
+    public function getProjectsLengthByTechID(string $techID ,string $trlID)
+    {
+        $project = project::with('techreferred.techarea')
+        ->whereHas('techreferred', function ($query) use ($techID) {
+          // Use a closure to apply conditions on the relationship
+          $query->where('id_techarea', $techID);
+      })
+                   ->where('id_trlactual' , $trlID)
+                   ->count();
+        
+        return response()->json(compact('project'));
+    }
+
+
     public function __construct()
     {
       $this->middleware('auth')->except('homePage');
     }
 
 }
+
+
+
+
+
+#ff691c 
+#008fd4
+#0058a2

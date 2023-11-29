@@ -60,8 +60,15 @@ class project extends Model
         return $this->belongsTo(techreferred::class , 'id_techreferred');
     }
 
+    // public function techareas()
+    // {
+    //     return $this->belongsTo(techarea::class , 'id_techarea');
+    // }
+
     public function techareas()
     {
-        return $this->belongsTo(techarea::class , 'id_techarea');
+        return $this->hasManyThrough(techarea::class , techreferred::class , 'id', 'id','id_techreferred','id_techarea');
     }
 }
+
+

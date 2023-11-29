@@ -46,6 +46,7 @@ use App\Http\Controllers\TrlController;
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/' , 'homePage')->name('homePage');
+    Route::get('/getProjectsLengthByTechID/{techID}/{trlID}' , 'getProjectsLengthByTechID')->name('getProjectsLengthByTechID');
 });
 
 Route::get('/AdvanceSearch', function () {
@@ -77,7 +78,9 @@ Route::controller(ProjectController::class)->group(function () {
     Route::get('/projectDelete/{id}' , 'delete')->name('projectDelete');
     Route::get('/project-targets' , 'projectTargetsPage')->name('projectTargetsPage');
     Route::get('/project-target-clicking/{id}' , 'projectTargetClickingPage')->name('projectTargetClickingPage');
-  });
+    Route::get('/downloadPdf/{id}', 'downloadPdf')->name('downloadPdf');
+    Route::get('/getProjectsLengthByProjectTargetID/{projectID}/{trlID}' , 'getProjectsLengthByProjectTargetID')->name('getProjectsLengthByProjectTargetID');
+});
 
 Route::controller(BusinessAreaController::class)->group(function () {
   Route::post('/businessAreaCreate',  'create')->name('businessAreaCreate');
@@ -119,6 +122,7 @@ Route::controller(FoundingSourcesController::class)->group(function(){
     Route::post('/foundSourceUpdate' , 'update')->name('foundSourceUpdate');
     Route::get('/foundSourceDelete/{id}' , 'delete')->name('foundSourceDelete');
     Route::get('/found-sources-clicking/{id}' , 'foundSourcesClickingPage')->name('foundSourcesClickingPage');
+    Route::get('/getProjectsLengthBySourceID/{sourceID}/{trlID}' , 'getProjectsLengthBySourceID')->name('getProjectsLengthBySourceID');
 });
 
 Route::controller(HumanEntityController::class)->group(function(){
@@ -141,6 +145,7 @@ Route::controller(LegalEntityController::class)->group(function(){
     Route::post('/legalEntityUpdate' , 'update')->name('legalEntityUpdate');
     Route::get('/legalEntityDelete/{id}' , 'delete')->name('legalEntityDelete');
     Route::get('/legal-entity-roles-clicking/{id}' , 'legalEntityClickingPage')->name('legalEntityClickingPage');
+    Route::get('/getProjectsLengthByRoleID/{roleID}/{trlID}' , 'getProjectsLengthByRoleID')->name('getProjectsLengthByRoleID');
 });
 
 Route::controller(LocationController::class)->group(function(){
@@ -153,6 +158,7 @@ Route::controller(LocationController::class)->group(function(){
     Route::post('/locationUpdate' , 'update')->name('locationUpdate');
     Route::get('/locationDelete/{id}' , 'delete')->name('locationDelete');
     Route::get('/location-clicking/{id}', 'locationsClickingPage')->name('locationsClickingPage');
+    Route::get('/getProjectsLengthByLocationID/{locationID}/{trlID}' , 'getProjectsLengthByLocationID')->name('getProjectsLengthByLocationID');
 });
 
 Route::controller(MissionTypeController::class)->group(function(){
@@ -165,6 +171,7 @@ Route::controller(MissionTypeController::class)->group(function(){
     Route::post('/missionTypeUpdate' , 'update')->name('missionTypeUpdate');
     Route::get('/missionTypeDelete/{id}' , 'delete')->name('missionTypeDelete');
     Route::get('/mission-type-clicking/{id}' , 'missionTypeClickingPage')->name('missionTypeClickingPage');
+    Route::get('/getProjectsLengthByMissionID/{missionID}/{trlID}' , 'getProjectsLengthByMissionID')->name('getProjectsLengthByMissionID');
 });
 
 Route::controller(OrganizationTypeController::class)->group(function(){
@@ -273,6 +280,7 @@ Route::controller(OrgPerformingWorkController::class)->group(function(){
     Route::get('/orgPerformingWorkDelete/{id}' , 'delete')->name('orgPerformingWorkDelete');
     Route::get('/organizations' , 'index')->name('organizationsPage');
     Route::get('/organization-clicking/{id}', 'organizationClickingPage')->name('organizationClickingPage');
+    Route::get('/getProjectsLengthByOrgID/{orgID}/{trlID}' , 'getProjectsLengthByOrgID')->name('getProjectsLengthByOrgID');
 });
 
 Route::controller(ProjectOrganizationController::class)->group(function(){

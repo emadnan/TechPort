@@ -10,6 +10,7 @@ use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\project;
 use App\Models\ref_projectorganization;
+use App\Models\trl;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -18,56 +19,55 @@ class LocationController extends Controller
 {
     public function locationsClickingPage (string $id)
     {
-    //     $projOrgs = ref_projectorganization::select('orgtype.type as orgtype' , 'humanentity.name as humanName' ,
-    //  'humanentity.surname as humanSurName' , 'location.city' ,'location.state' ,'location.id as locationID' ,
-    //  'projects.name as projectName' , 'projects.description as projectDescription' , 'status.status as status',
-    //  'techsector.techsector' , 'techareas.techarea' , 'techniche.techniche' , 'trl.trllevel', 
-    //  'missiontype.type as missionType' , 'missiontype.id as missionID' , 'orgperformingwork.name as orgName' , 
-    //  'orgperformingwork.description as orgDescription' , 'orgperformingwork.id as orgID' , 'orgperformingwork.code as orgCode' , 
-    //  'foundingSources.id as sourceID' , 'foundingSources.name as sourceName' , 
-    //  'legalentityrole.name as legalName' ,'legalentityrole.id as legalID' , 'ref_projectorganization.*' , 'projects.*' )
 
-    // ->join('projects' , 'projects.id' , '=' , 'ref_projectorganization.id_project') 
-    //     ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
-    //     ->join('trl' , function($join){
-    //         $join->on('trl.id' , '=' ,'projects.id_trlstart');
-    //         $join->on('trl.id' , '=' ,'projects.id_trlactual');
-    //         $join->on('trl.id' , '=' ,'projects.id_trlfinal');
-    //     })
-    //     ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
-    //     ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-    //     ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-    //     ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-    //     ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
-    //     ->join('status' , 'status.id' , '=' , 'projects.id_status')
-    // ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
-    //     ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
-    //     ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
-    //     ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
-    //     ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
-    // ->where('location.id' , $id)
-    // ->get();
-
-    $projOrg = location::with('projects.legalentityroles' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks')
-    // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype')
+    $projOrg = location::with( 'orgperformingworks.projects.missiontype' , 'orgperformingworks.projects.foundingsource' , 'orgperformingworks.projects.status' ,'orgperformingworks.projects.techreferred.techarea' ,  'orgperformingworks.legalentityroles'  ,  'orgperformingworks.location' ,  'orgperformingworks.projects.trlactual' )
     ->where('id' , $id)
     ->first();
 
-    $count = $projOrg->projects->unique('id')->count();
-    $active = $projOrg->projects->where('status.status' , 'Active')->count();
-    $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
-    $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
+    $allTrls = trl::with('projects.trlactual')->get();
 
 
+    if($projOrg)
+    {
+        $count = $projOrg->orgperformingworks->flatMap(function($orgperformingwork){
+            return $orgperformingwork->projects;
+        })->unique('id')->count();
 
-// return response()->json($projOrgs);
-        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership') );
+        $active = $projOrg->orgperformingworks->flatMap(function($orgperformingwork){
+            return $orgperformingwork->projects->where('status.status' , 'Active');
+        })->unique('id')->count();
+
+        $complete = $projOrg->orgperformingworks->flatMap(function($orgperformingwork){
+            return $orgperformingwork->projects->where('status.status' , 'Completed');
+        })->unique('id')->count();
+
+        $partnership = $projOrg->orgperformingworks->flatMap(function($orgperformingwork){
+            return $orgperformingwork->projects->where('status.status' , 'Partnership');
+        })->unique('id')->count();
+    }
+
+
+// return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership') );
+        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls') );
+    }
+
+    public function getProjectsLengthByLocationID(string $locationID ,string $trlID)
+    {
+        $project = project::with('orgperformingworks.location')
+            ->whereHas('orgperformingworks', function ($query) use ($locationID) {
+            // Use a closure to apply conditions on the relationship
+            $query->where('id_location', $locationID);
+        })
+            ->where('id_trlactual' , $trlID)
+            ->count();
+        
+        return response()->json(compact('project'));
     }
   
     public function index()
     {
-        $perPage = 1;
-        $locations = location::paginate(1);
+        $perPage = 20;
+        $locations = location::paginate(20);
         
         // return response()->json(['locations'=>$locations]);
         // dd(get_class($locations));

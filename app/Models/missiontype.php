@@ -14,4 +14,9 @@ class missiontype extends Model
     {
         return $this->hasMany(project::class , 'id_missiontype');
     }
+
+    public function trls()
+    {
+        return $this->hasManyThrough(trl::class , project::class , 'id_missiontype', 'id','id','id_trlactual');
+    }
 }

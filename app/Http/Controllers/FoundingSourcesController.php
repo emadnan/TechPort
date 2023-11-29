@@ -9,6 +9,7 @@ use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\project;
 use App\Models\ref_projectorganization;
+use App\Models\trl;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -60,16 +61,26 @@ class FoundingSourcesController extends Controller
 
 
     $projOrg = foundingsource::with('projects.missiontype','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location' , 'projects.legalentityroles')
-    // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype')
     ->where('id' , $id)
     ->first();
+
+    $allTrls = trl::with('projects.trlactual')->get();
 
     $count = $projOrg->projects->unique('id')->count();
     $active = $projOrg->projects->where('status.status' , 'Active')->count();
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
 
-        return view('foundSourcesClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership') );
+        return view('foundSourcesClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' ) );
+    }
+
+    public function getProjectsLengthBySourceID(string $sourceID ,string $trlID)
+    {
+        $project = project::where('id_foundsource' , $sourceID)
+                   ->where('id_trlactual' , $trlID)
+                   ->count();
+        
+        return response()->json(compact('project'));
     }
 
     public function index()
