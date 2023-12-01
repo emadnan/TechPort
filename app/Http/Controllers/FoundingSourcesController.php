@@ -189,7 +189,7 @@ class FoundingSourcesController extends Controller
     
 public function __construct()
 {
-    $this->middleware('auth')->except('index' , 'foundSourcesClickingPage');
+    $this->middleware('auth')->except('index' , 'foundSourcesClickingPage' , 'getProjectsLengthBySourceID');
 }
 }
 

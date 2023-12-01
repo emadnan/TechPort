@@ -315,7 +315,7 @@
                 </div>
             </div>
         </div>
-
+<form action= '#', method="GET">
         <!-- QA Section -->
         <div class="faq-container mt-1">
             <div class="faq-item">
@@ -323,11 +323,12 @@
                         style="float: right;margin-top:4px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="dropdown show">
-                        <select class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
+                        <select name="order" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
                             style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
-                            <option selected value="">Relevance</option>
-                            <option value="">Alpha Numeric</option>
-                            <option value="">Start Date</option>
+                            <option selected value="">-- SELECT --</option>
+                            <option  value="Relevance">Relevance</option>
+                            <option value="AlphaNumeric">Alpha Numeric</option>
+                            <option value="StartDate">Start Date</option>
                     </select>
                     </div>
                 </div>
@@ -1959,11 +1960,11 @@
             </div>
         </div>
     
-        <a href="{{ url('/search-results') }}">
-            <button class="btn btn-primary float-right"
+        
+            <button class="btn btn-primary float-right " type="submit"
                 style="width:200px; background:#065386; margin-top:30px;">Search</button>
-        </a>
     </div>
+</form>
 
 
     

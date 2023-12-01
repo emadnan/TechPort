@@ -341,7 +341,7 @@ class ProjectController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'projectTargetsPage' , 'projectTargetClickingPage');
+        $this->middleware('auth')->except('index' , 'projectTargetsPage' , 'projectTargetClickingPage' , 'getProjectsLengthByProjectTargetID' , 'downloadPdf');
     }
 }
 

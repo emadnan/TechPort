@@ -405,10 +405,12 @@
                                     @foreach ($projOrg->legalentityroles as $role )
                                     <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$role->id])}}">{{$role->name}}</a>
                                     </section>
+                                    @break
                                     @endforeach
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
                                     @foreach ($projOrg->orgperformingworks as $org )
                                     <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
+                                    @break
                                     @endforeach
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
                                     <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01 {{$projOrg->techreferred->techarea->techarea}}</a></section>

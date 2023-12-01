@@ -177,6 +177,6 @@ class LocationController extends Controller
     }
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'locationsClickingPage');
+        $this->middleware('auth')->except('index' , 'locationsClickingPage' , 'getProjectsLengthByLocationID');
     }
 }

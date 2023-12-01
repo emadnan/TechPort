@@ -409,8 +409,11 @@
                                 </div>
                                 <div class="col">
                                     <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
-                                    <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$org->id])}}">{{$org->name}}</a>
+                                    @foreach ($org->legalentityroles as $role )
+                                    <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$role->id])}}">{{$role->name}}</a>
                                     </section>
+                                    @break
+                                    @endforeach
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
                                     <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
@@ -838,7 +841,6 @@ google.charts.setOnLoadCallback(function () {
     var locationID = projOrg.id;
     var trlID = trl.id;
     var url = baseUrl + '/' + locationID + '/' + trlID;
-
     return fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -858,16 +860,13 @@ Promise.all(allTrls.map(fetchDataForTrl))
         for (var i = 0; i < allTrls.length; i++) {
             var trl = allTrls[i];
             var numberOfProjects = numberOfProjectsArray[i];
-
             chartData.push([trl.trllevel.toString(), numberOfProjects, "#065386"]);
             // Add other chart-related logic here if needed
         }
 
-        // Continue with other logic that depends on the completed chartData array
-        console.log(chartData);
+        // console.log(chartData);
         // Call the drawChart function or any other logic here
         drawChart(google.visualization.arrayToDataTable(chartData));
-    // drawChart(data);
     })
     .catch(error => {
         console.error('Error fetching data:', error);

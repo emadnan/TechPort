@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\project;
 use App\Models\techarea;
+use App\Models\techniche;
 use App\Models\techreferred;
 use App\Models\techsector;
 use App\Models\trl;
@@ -28,35 +29,67 @@ class HomeController extends Controller
     }
     public function homePage()
     {       
-            $techs = techarea::with('techsectors.techniches')->get();
-            // $refs = techreferred::with('techarea.techsectors.techniches')->get();
-            $refs = techarea::with('projects' , 'techsectors.techniches')->get();
-            // $refs = techsector::with('projects')->get();
+            // $techs = techarea::with('techsectors.techniches')->get();
+            $techs = techarea::with('projects' , 'techsectors.techniches')->get();
+            $sectors = techsector::with('projects' , 'techniches')->get();
+            $niches = techniche::with('projects')->get();
+           
             $allTrls = trl::with('projects.trlactual')->get();
 
-        // $project = project::with('techareas')->get();
 
-            // return response()->json($techs);
-            return view('homePage' ,  compact('techs' , 'allTrls'));
+            // return response()->json($niches );
+            return view('homePage' ,  compact('techs' , 'allTrls' , 'sectors' , 'niches'));
     }
 
-    public function getProjectsLengthByTechID(string $techID ,string $trlID)
+    public function getProjectsLengthByTechAreaID(Request $req)
     {
-        $project = project::with('techreferred.techarea')
-        ->whereHas('techreferred', function ($query) use ($techID) {
-          // Use a closure to apply conditions on the relationship
-          $query->where('id_techarea', $techID);
-      })
-                   ->where('id_trlactual' , $trlID)
-                   ->count();
-        
-        return response()->json(compact('project'));
+
+    $projects = $req->input('projects');
+    $trlID = $req->input('trlID');
+
+$filteredProjects = collect($projects)->filter(function ($project) use ($trlID) {
+    return $project['id_trlactual'] == $trlID;
+});
+    $numberOfProjects = $filteredProjects->count();
+   
+        return response()->json(compact('numberOfProjects' , 'trlID'));
+
+    }
+
+    public function getProjectsLengthByTechSectorID(Request $req)
+    {
+
+    $projects = $req->input('projects');
+    $trlID = $req->input('trlID');
+
+$filteredProjects = collect($projects)->filter(function ($project) use ($trlID) {
+    return $project['id_trlactual'] == $trlID;
+});
+    $numberOfProjects = $filteredProjects->count();
+   
+        return response()->json(compact('numberOfProjects' , 'trlID'));
+
+    }
+
+    public function getProjectsLengthByTechNicheID(Request $req)
+    {
+
+    $projects = $req->input('projects');
+    $trlID = $req->input('trlID');
+
+$filteredProjects = collect($projects)->filter(function ($project) use ($trlID) {
+    return $project['id_trlactual'] == $trlID;
+});
+    $numberOfProjects = $filteredProjects->count();
+   
+        return response()->json(compact('numberOfProjects' , 'trlID'));
+
     }
 
 
     public function __construct()
     {
-      $this->middleware('auth')->except('homePage');
+      $this->middleware('auth')->except('homePage' , 'getProjectsLengthByTechAreaID' , 'getProjectsLengthByTechSectorID' , 'getProjectsLengthByTechNicheID');
     }
 
 }

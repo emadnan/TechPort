@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdvanceSearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -46,15 +47,21 @@ use App\Http\Controllers\TrlController;
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/' , 'homePage')->name('homePage');
-    Route::get('/getProjectsLengthByTechID/{techID}/{trlID}' , 'getProjectsLengthByTechID')->name('getProjectsLengthByTechID');
+    Route::post('/getProjectsLengthByTechAreaID' , 'getProjectsLengthByTechAreaID')->name('getProjectsLengthByTechAreaID');
+    Route::post('/getProjectsLengthByTechSectorID' , 'getProjectsLengthByTechSectorID')->name('getProjectsLengthByTechSectorID');
+    Route::post('/getProjectsLengthByTechNicheID' , 'getProjectsLengthByTechNicheID')->name('getProjectsLengthByTechNicheID');
 });
 
-Route::get('/AdvanceSearch', function () {
-    return view('advanceSearchPage');
+Route::controller(AdvanceSearchController::class)->group(function(){
+    Route::get('/advanceSearch' , 'index')->name('advanceSearch');
+    Route::get('/getProjectsByAdvanceSearch', 'getProjectsByAdvanceSearch')->name('getProjectsByAdvanceSearch');
 });
-Route::get('/search-results', [SearchReultsController::class , 'index'])->name('searchResultsPage');
-Route::post('/searchProjects', [SearchReultsController::class , 'searchProjects'])->name('searchProjects');
 
+Route::controller(SearchReultsController::class)->group(function(){
+    Route::get('/search-results','index')->name('searchResultsPage');
+Route::post('/searchProjects','searchProjects')->name('searchProjects');
+Route::post('/getProjectsLengthBySearchID', 'getProjectsLengthBySearchID')->name('getProjectsLengthBySearchID');
+});
 //                Routes for Users without AUTH AdminLte 
 // Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
 // Route::get('/admintable' ,[UserController::class , 'admintable'])->name('admintable');

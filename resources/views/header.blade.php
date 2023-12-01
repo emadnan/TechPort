@@ -186,7 +186,7 @@
         </form>
     </div>
     <div class="col-md-3">
-        <a href="{{ url('/AdvanceSearch') }}"><button type="button" class="btn custom-button btn-block">Advanced Search
+        <a href="{{ url('/advanceSearch') }}"><button type="button" class="btn custom-button btn-block">Advanced Search
             </button></a>
     </div>
 </div>

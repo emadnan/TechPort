@@ -1408,7 +1408,7 @@
                             <div class="row m-0">
                                
                                 <div class="col" >
-                                    <div id="columnchart_values_{{$tech->id}}" ></div>
+                                    <div id="columnchart_area_{{$tech->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"width="100%"> --}}
                                 </div>
                             </div>
@@ -1428,11 +1428,11 @@
                 </div>
                 <div class="faq-answer" style="display:none;">
                     @php
-                        $sectorID = 0;
+                        $sectorID = [];
                     @endphp
                 @foreach ($tech->techsectors as $techsector )
-                @if ($techsector->id == $sectorID)
-                    
+                @if ( in_array( $techsector->id, $sectorID))
+                
                 @else
                 <div class="divider"></div>
                     <div name="answer1" class="arrow-icon" style="position:relative;">
@@ -1462,7 +1462,7 @@
 
                             <div class="row my-3">
                                 <div class="col">
-                                    <div id="columnchart_values_{{$tech->id}}{{$techsector->id}}" ></div>
+                                    <div id="columnchart_sector_{{$techsector->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
                                         class=" float-right my-0" width="100%"> --}}
                                 </div>
@@ -1516,7 +1516,7 @@
 
                                     <div class="row my-3">
                                         <div class="col-10">
-                                    <div id="columnchart_values_{{$tech->id}}{{$techsector->id}}{{$techniche->id}}" ></div>
+                                    <div id="columnchart_niche_{{$techniche->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
                                                 class=" float-right my-0" width="100%"> --}}
                                          </div>
@@ -1539,18 +1539,19 @@
 
                             </div>
                         </div>
-                        <div class="sub-answer-description" style="display: none;">
+                    <div class="divider"></div>
+                    <div class="sub-answer-description" style="display: none;">
                             <div class="divider"></div>
-                            <div style="margin-left:40px;font-weight:bold">Example Technologies</div>
+                            <div style="margin-left:40px;font-weight:bold">Description</div>
                             <section style="padding-left:40px;padding-right:40px">
                                 {{$techniche-> technichedescription}}
                             </section>
-                        </div>
+                </div>
                     @endforeach
                     <div class="divider"></div>
                 </div>
                 @php
-                $sectorID = $techsector->id;
+                array_push($sectorID, $techsector->id)
             @endphp
             @endif
                     @endforeach
@@ -1570,294 +1571,6 @@
     <footer>
     @include('footer')
 </footer>
-                        {{-- <div nane="subAnswer2"
-                            style="margin-left:1px;">
-                            <div>
-                                <i onclick="toggleSubAnswersDescreption(this)" class="fa-solid fa-angle-right"></i>
-                                <span>
-                                    <a href="{{ url('/search-results') }}" style="color:#000000">
-                                        TX01.1.2 Earth Storable</span>
-                                </a>
-                                <img src="{{ asset('images/icon-black.png') }}" alt=""
-                                    class=" float-right graph-image" onclick="showimage(this)">
-
-                                <div class="graph-pop" style="display: none;  z-index:997;">
-                                    <div class="row m-0" style=" width:100%; background: #323E48">
-                                        <div class="col-md-9 px-2" style="color: white;">
-                                            <section>TX01.1.2</section>
-                                            <section>Earth Storable
-                                            </section>
-                                        </div>
-                                        <div class="col-3 m-0 px-0"
-                                            style="color: white; padding-top:3px; padding-bottom:0px;">
-                                            <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                                style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
-                                                onclick="hideimage(this)">
-                                        </div>
-                                    </div>
-                                    <section class="my-2 mx-2"
-                                        style="color:rgba(6, 83, 134, 1); font-weight:600;">Technology
-                                        Maturity
-                                        (TRL)</section>
-
-
-                                    <div class="row my-3">
-                                        <div class="col-2 " style="text-align: center;">
-
-                                        </div>
-                                        <div class="col-10">
-                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                                class=" float-right my-0" width="100%">
-                                        </div>
-                                    </div>
-                                    <h5 style="text-align:center; ">Technology
-                                        Readiness
-                                        Level
-                                    </h5>
-                                    <h5
-                                        style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
-                                        Projects linked to this taxonomy</h5>
-                                    <button class="btn"
-                                        style="margin-left:10px;color:white; background: #323E48;"><a
-                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
-                                            Projects</a></button>
-
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div id="sub-answer-description1" class="sub-answer-description" style="display: none;">
-                            <div class="divider"></div>
-                            <div style="margin-left:40px;font-weight:bold">Example Technologies</div>
-                            <section style="padding-left:40px;padding-right:40px">
-                                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction
-                                control
-                                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors,
-                                abort
-                                propulsion systems, propellant storage and transfer, nanocomposites, green propellants.
-                                For
-                                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
-                            </section>
-                        </div>
-
-
- --}}
-
-                        <!-- <div class="divider"></div>  -->
-                   
-
-                    {{-- <div name="answer2" class="arrow-icon" style="position:relative;">
-                        <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i><span>
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.2 Electric Space
-                                Propulsion</span>
-                        </a>
-                        <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
-                            onclick="showimage(this)">
-
-                        <div class="  graph-pop" style="display: none;  z-index:996;">
-                            <div class="row m-0" style=" width:100%; background: #FFA800">
-                                <div class="col-md-9 px-2" style="color: white;">
-                                    <section>TX01.2</section>
-                                    <section>Electric Space Propulsion
-                                    </section>
-                                </div>
-                                <div class="col-3 m-0 px-0"
-                                    style="color: white; padding-top:5px; padding-bottom:8px2">
-                                   <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
-                                        onclick="hideimage(this)">
-                                </div>
-                            </div>
-                            <section class="mx-2"
-                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:9px;">Technology Maturity
-                                (TRL)</section>
-
-
-                            <div class="row my-3">
-                                <div class="col-2 " style="text-align: center;">
-
-                                </div>
-                                <div class="col-10">
-                                    <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                        class=" float-right my-0" width="100%">
-                                </div>
-                            </div>
-                            <h5 style="text-align:center; ">Technology Readiness Level
-                            </h5>
-                            <h5
-                                style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
-                                Projects linked to this taxonomy</h5>
-                            <button class="btn"
-                                style="margin-left:10px;color:white; background: #FFA800;"><a
-                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
-                                    Projects</a></button>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="faq-subanswer" style="position: relative; display:none;">
-                        <div class="divider"></div>
-                        <div name="subAnswer1"
-                            style="margin-left:1px;">
-                            <div>
-                                <i id="icon-toggle-description1" onclick="toggleSubAnswersDescreption(this)"
-                                    class="fa-solid fa-angle-right"></i> <span>
-                                    <a href="{{ url('/search-results') }}" style="color:#000000">
-                                        TX01.2.1 Integrated Systems and Ancillary Technologies</span>
-                                </a>
-                                <img src="{{ asset('images/icon-black.png') }}" alt=""
-                                    class=" float-right graph-image" onclick="showimage(this)">
-
-                                <div class="graph-pop" style="display: none;  z-index:995;">
-                                    <div class="row m-0" style=" width:100%; background: #323E48">
-                                        <div class="col-md-9 px-2" style="color: white;">
-                                            <section>TX01.2.1</section>
-                                            <section>Flight Computing and
-                                                Avionics
-                                            </section>
-                                        </div>
-                                        <div class="col-3 m-0 px-0"
-                                            style="color: white; padding-top:3px; padding-bottom:0px;">
-                                            <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                                style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
-                                                onclick="hideimage(this)">
-                                        </div>
-                                    </div>
-                                    <section class="my-2 mx-2"
-                                        style="color:rgba(6, 83, 134, 1); font-weight:600;">Technology
-                                        Maturity
-                                        (TRL)</section>
-
-
-                                    <div class="row my-3">
-                                        <div class="col-2 " style="text-align: center;">
-
-                                        </div>
-                                        <div class="col-10">
-                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                                class=" float-right my-0" width="100%">
-                                        </div>
-                                    </div>
-                                    <h5 style="text-align:center; ">Technology
-                                        Readiness
-                                        Level
-                                    </h5>
-                                    <h5
-                                        style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
-                                        Projects linked to this taxonomy</h5>
-                                    <button class="btn"
-                                        style="margin-left:10px;color:white; background: #323E48;"><a
-                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
-                                            Projects</a></button>
-
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div id="sub-answer-description1" class="sub-answer-description" style="display: none;">
-                            <div class="divider"></div>
-                            <div style="margin-left:40px;font-weight:bold">Example Technologies</div>
-                            <section style="padding-left:40px;padding-right:40px">
-                                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction
-                                control
-                                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors,
-                                abort
-                                propulsion systems, propellant storage and transfer, nanocomposites, green propellants.
-                                For
-                                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
-                            </section>
-                        </div>
-
-
-                        <div name="subAnswer2"
-                            style="margin-left:1px;">
-                            <div>
-                                <i id="icon-toggle-description1" onclick="toggleSubAnswersDescreption(this)"
-                                    class="fa-solid fa-angle-right"></i> <span>
-                                    <a href="{{ url('/search-results') }}" style="color:#000000">
-                                        TX01.2.2 Earth Storable</span>
-                                </a>
-                                <img src="{{ asset('images/icon-black.png') }}" alt=""
-                                    class=" float-right graph-image" onclick="showimage(this)">
-
-                                <div class="graph-pop" style="display: none;  z-index:994;">
-                                    <div class="row m-0" style=" width:100%; background: #323E48">
-                                        <div class="col-md-9 px-2" style="color: white;">
-                                            <section>TX01.2.2</section>
-                                            <section>Earth Storable
-                                            </section>
-                                        </div>
-                                        <div class="col-3 m-0 px-0"
-                                            style="color: white; padding-top:3px; padding-bottom:0px;">
-                                            <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                                style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
-                                                onclick="hideimage(this)">
-                                        </div>
-                                    </div>
-                                    <section class="my-2 mx-2"
-                                        style="color:rgba(6, 83, 134, 1); font-weight:600;">Technology
-                                        Maturity
-                                        (TRL)</section>
-
-
-                                    <div class="row my-3">
-                                        <div class="col-2 " style="text-align: center;">
-
-                                        </div>
-                                        <div class="col-10">
-                                            <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
-                                                class=" float-right my-0" width="100%">
-                                        </div>
-                                    </div>
-                                    <h5 style="text-align:center; ">Technology
-                                        Readiness
-                                        Level
-                                    </h5>
-                                    <h5
-                                        style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
-                                        Projects linked to this taxonomy</h5>
-                                    <button class="btn"
-                                        style="margin-left:10px;color:white; background: #323E48;"><a
-                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
-                                            Projects</a></button>
-
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="sub-answer-description" style="display: none;">
-                            <div class="divider"></div>
-                            <div style="margin-left:40px;font-weight:bold">Example Technologies</div>
-                            <section style="padding-left:40px;padding-right:40px">
-                                For launch vehicles: Thrust vector control (TVC), main propulsion systems, reaction
-                                control
-                                systems (RCS), roll control systems (RoCS), separation motors, ullage settling motors,
-                                abort
-                                propulsion systems, propellant storage and transfer, nanocomposites, green propellants.
-                                For
-                                in-space propulsion: CubeSat propulsion, propellant management devices (PMDs).
-                            </section>
-                        </div>
-
-
-
-                        <!-- <div class="divider"></div>  -->
-                    </div> --}}
-
-
-
-
-
-
-
 
     <script>
         function toggleAnswers(element) {
@@ -1960,53 +1673,195 @@
 
 <script type="text/javascript">
 var allTrls = @json($allTrls);
+var techs = @json($techs);
 
     google.charts.load("45", {packages:['corechart']});
-    google.charts.setOnLoadCallback(function () {
-    var allTrls = @json($allTrls); // Assuming $trls is an array of trl models
+    google.charts.setOnLoadCallback( async function () {
+    var allTrls = @json($allTrls);
+    var techs = @json($techs);
+    // console.log(techs);
 
-    // Create an array to store data for the chart
-    var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
+    function getProjectsData(tech , trl)
+    {
+        const projects = tech.projects;
 
-    // Iterate through each TRL model
-    for (var i = 0; i < allTrls.length; i++) {
-        var trl = allTrls[i];
+        var jsonData = {
+            'trlID' : trl.id,
+            'projects' : projects
+        };
 
-        // Count the number of projects for the current TRL level
-        var numberOfProjects = trl.projects.length;
+        return new Promise(function ( resolve , reject )
+        {
+            $.ajax({
+                    contentType: 'application/json; charset=utf-8',
+                    type: 'POST',
+                    url: "{{url('/getProjectsLengthByTechAreaID')}}",
+                    dataType: 'json',
+                    data: JSON.stringify(jsonData),
+                    success: function(response)
+                    {
+                        resolve([response.trlID , response.numberOfProjects , "#065386"])
+                    },
+            error: function (error) {
+                reject(error);
+            }
 
-        // Add data to the chart array
-        chartData.push([trl.trllevel.toString(), numberOfProjects , "#065386"]);
+         });
+      });
     }
 
-    // Create a DataTable from the chart data
-    var data = google.visualization.arrayToDataTable(chartData);
+    for (let i = 0; i < techs.length; i++) {
+        const tech = techs[i];
+        // const projects = tech.projects;
+        // console.log(tech);
+        
+        var chartData = [['TRL Level', 'Number of Projects', { role: "style" }]];
+        await Promise.all(allTrls.map( async function (trl){
+            try {
+            var data = await getProjectsData(tech, trl);
+            chartData.push(data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+        }));
 
-    // Draw the chart
-    drawChart(data);
+       drawChart(google.visualization.arrayToDataTable(chartData), tech.id);
+    }
+
+
+    // // Create an array to store data for the chart
+    // for (let i = 0; i < techs.length; i++) {
+    // var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
+    //     const tech = techs[i];
+    //     const projects = tech.projects;
+    //     console.log(tech);
+
+    //     for(var j = 0 ; j<=allTrls.length ; j++)
+    // {
+    //     var trl = allTrls[j];
+    //     var trlID = trl.id;
+    //     // console.log(trl.id);
+    //     var jsonData = {
+    //         'trlID' : trl.id,
+    //         'projects' : projects
+    //     }
+    //     var data = JSON.stringify(jsonData);
+    //     // console.log(data);
+    //     $.ajax({
+    //                 contentType: 'application/json; charset=utf-8',
+    //                 type: 'POST',
+    //                 url: "{{url('/getProjectsLengthByTechAreaID')}}",
+    //                 dataType: 'json',
+    //                 data: data,
+    //                 success: function(response)
+    //                 {
+    //                     // console.log(response.numberOfProjects);
+    //                     chartData.push([response.trlID, response.numberOfProjects, "#065386"]);
+    //                    drawChart(google.visualization.arrayToDataTable(chartData), tech.id);
+    //                 }
+
+    // })
+    // }
+        
+    function drawChart(data ,techId) {
+//   console.log('Draw Chart');
+  var options = {
+    chartArea: { width: '80%' , left:50 , right:20},
+    width: 330,
+    height: 233,
+    bar: {groupWidth: "60%"},
+    legend: { position: "none" },
+    hAxis: {
+    title: 'Technology Readiness Level',
+    titleTextStyle: {
+    color: '#0058a2',  // Text color
+    fontSize: 12,    // Font size
+    bold:true,    
+    italic:false,   
+                    }
+           },
+    vAxis: {
+    title: 'Number of Projects',
+    titleTextStyle: {
+    color: '#0058a2',  // Text color
+    fontSize: 12,    // Font size
+    bold:true,
+    italic:false,   
+                    }
+           },
+  };
+    var container = document.getElementById("columnchart_area_"+techId);
+    // console.log(container);
+      var chart = new google.visualization.ColumnChart(container);
+      chart.draw(data, options);
+}
+    // }
+   
 });
-    function drawChart(data) {
-    //   var data = google.visualization.arrayToDataTable([
-    //     ["Level", "Projects", { role: "style" } ],
-    //     ["1", 8.94, "#ff691c"],
-    //     ["2", 10.49, "#ff691c"],
-    //     ["3", 19.30, "#ff691c"],
-    //     ["4", 21.45, "#008fd4"],
-    //     ["5", 30.45, "#008fd4"],
-    //     ["6", 21.45, "#008fd4"],
-    //     ["7", 50.45, "#0058a2"],
-    //     ["8", 21.45, "#0058a2"],
-    //     ["9", 40.45, "#0058a2"],
-    //   ]);
 
-    //   var view = new google.visualization.DataView(data);
-    //   view.setColumns([0, 1,
-    //                    { calc: "stringify",
-    //                      sourceColumn: 1,
-    //                      type: "string",
-    //                      role: "annotation" },
-    //                    2]);
+  
 
+  </script>
+
+<script type="text/javascript">
+    var allTrls = @json($allTrls);
+    var sectors = @json($sectors);
+    
+        google.charts.load("45", {packages:['corechart']});
+        google.charts.setOnLoadCallback( async function () {
+        var allTrls = @json($allTrls);
+        var sectors = @json($sectors);
+        // console.log(sectors);
+    
+        function getProjectsData(sector , trl)
+        {
+            const projects = sector.projects;
+    
+            var jsonData = {
+                'trlID' : trl.id,
+                'projects' : projects
+            };
+    
+            return new Promise(function ( resolve , reject )
+            {
+                $.ajax({
+                        contentType: 'application/json; charset=utf-8',
+                        type: 'POST',
+                        url: "{{url('/getProjectsLengthByTechSectorID')}}",
+                        dataType: 'json',
+                        data: JSON.stringify(jsonData),
+                        success: function(response)
+                        {
+                            resolve([response.trlID , response.numberOfProjects , "#065386"])
+                        },
+                error: function (error) {
+                    reject(error);
+                }
+    
+             });
+          });
+        }
+    
+        for (let i = 0; i < sectors.length; i++) {
+            const sector = sectors[i];
+            // const projects = tech.projects;
+            // console.log(sector);
+            
+            var chartData = [['TRL Level', 'Number of Projects', { role: "style" }]];
+            await Promise.all(allTrls.map( async function (trl){
+                try {
+                var data = await getProjectsData(sector, trl);
+                chartData.push(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+            }));
+    
+           drawChart(google.visualization.arrayToDataTable(chartData), sector.id);
+        }
+    
+        function drawChart(data ,sectorId) {
+    //   console.log('Draw Chart');
       var options = {
         chartArea: { width: '80%' , left:50 , right:20},
         width: 330,
@@ -2032,15 +1887,117 @@ var allTrls = @json($allTrls);
                         }
                },
       };
-      var techs = @json($techs);
-      techs.forEach(function(tech){
-        var container = document.getElementById("columnchart_values_"+tech.id);
+        var container = document.getElementById("columnchart_sector_"+sectorId);
+        // console.log(container);
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(data, options);
-    })
-  }
-  </script>
-  <script type="text/javascript">
+    }
+        // }
+       
+    });
+    
+      
+    
+      </script>
+
+<script type="text/javascript">
+         var allTrls = @json($allTrls);
+        var niches = @json($niches);
+        google.charts.load("45", {packages:['corechart']});
+        google.charts.setOnLoadCallback( async function (trl) {
+
+        console.log(niches);
+    
+        function getProjectsData(niche , trl)
+        {
+            const projects = niche.projects;
+    
+            var jsonData = {
+                'trlID' : trl.id,
+                'projects' : projects
+            };
+    
+            return new Promise(function ( resolve , reject )
+            {
+                $.ajax({
+                        contentType: 'application/json; charset=utf-8',
+                        type: 'POST',
+                        url: "{{url('/getProjectsLengthByTechNicheID')}}",
+                        dataType: 'json',
+                        data: JSON.stringify(jsonData),
+                        success: function(response)
+                        {
+                            resolve([response.trlID , response.numberOfProjects , "#065386"])
+                        },
+                error: function (error) {
+                    reject(error);
+                }
+    
+             });
+          });
+        }
+    
+        for (let i = 0; i < niches.length; i++) {
+            const niche = niches[i];
+            // const projects = tech.projects;
+            console.log(niche);
+            
+            var chartData = [['TRL Level', 'Number of Projects', { role: "style" }]];
+            await Promise.all(allTrls.map( async function (trl){
+                try {
+                var data = await getProjectsData(niche, trl);
+                chartData.push(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+            }));
+    
+           drawChart(google.visualization.arrayToDataTable(chartData), niche.id);
+        }
+    
+        function drawChart(data ,nicheId) {
+      var options = {
+        chartArea: { width: '80%' , left:50 , right:20},
+        width: 330,
+        height: 233,
+        bar: {groupWidth: "60%"},
+        legend: { position: "none" },
+        hAxis: {
+        title: 'Technology Readiness Level',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,    
+        italic:false,   
+                        }
+               },
+        vAxis: {
+        title: 'Number of Projects',
+        titleTextStyle: {
+        color: '#0058a2',  // Text color
+        fontSize: 12,    // Font size
+        bold:true,
+        italic:false,   
+                        }
+               },
+      };
+        if(document.getElementById("columnchart_niche_"+nicheId))
+        {
+        var container = document.getElementById("columnchart_niche_"+nicheId);
+        console.log(container);
+          var chart = new google.visualization.ColumnChart(container);
+          chart.draw(data, options);
+        }
+    }
+        // }
+       
+    });
+    
+      
+    
+      </script>
+
+  {{-- <script type="text/javascript">
     var allTrls = @json($allTrls);
     
         google.charts.load("45", {packages:['corechart']});
@@ -2068,26 +2025,6 @@ var allTrls = @json($allTrls);
         drawChart(data);
     });
         function drawChart(data) {
-        //   var data = google.visualization.arrayToDataTable([
-        //     ["Level", "Projects", { role: "style" } ],
-        //     ["1", 8.94, "#ff691c"],
-        //     ["2", 10.49, "#ff691c"],
-        //     ["3", 19.30, "#ff691c"],
-        //     ["4", 21.45, "#008fd4"],
-        //     ["5", 30.45, "#008fd4"],
-        //     ["6", 21.45, "#008fd4"],
-        //     ["7", 50.45, "#0058a2"],
-        //     ["8", 21.45, "#0058a2"],
-        //     ["9", 40.45, "#0058a2"],
-        //   ]);
-    
-        //   var view = new google.visualization.DataView(data);
-        //   view.setColumns([0, 1,
-        //                    { calc: "stringify",
-        //                      sourceColumn: 1,
-        //                      type: "string",
-        //                      role: "annotation" },
-        //                    2]);
     
           var options = {
             chartArea: { width: '80%' , left:50 , right:20},
@@ -2121,8 +2058,8 @@ var allTrls = @json($allTrls);
               chart.draw(data, options);
         })
       }
-      </script>
-      <script type="text/javascript">
+      </script> --}}
+      {{-- <script type="text/javascript">
         var allTrls = @json($allTrls);
         
             google.charts.load("45", {packages:['corechart']});
@@ -2150,27 +2087,7 @@ var allTrls = @json($allTrls);
             drawChart(data);
         });
             function drawChart(data) {
-            //   var data = google.visualization.arrayToDataTable([
-            //     ["Level", "Projects", { role: "style" } ],
-            //     ["1", 8.94, "#ff691c"],
-            //     ["2", 10.49, "#ff691c"],
-            //     ["3", 19.30, "#ff691c"],
-            //     ["4", 21.45, "#008fd4"],
-            //     ["5", 30.45, "#008fd4"],
-            //     ["6", 21.45, "#008fd4"],
-            //     ["7", 50.45, "#0058a2"],
-            //     ["8", 21.45, "#0058a2"],
-            //     ["9", 40.45, "#0058a2"],
-            //   ]);
-        
-            //   var view = new google.visualization.DataView(data);
-            //   view.setColumns([0, 1,
-            //                    { calc: "stringify",
-            //                      sourceColumn: 1,
-            //                      type: "string",
-            //                      role: "annotation" },
-            //                    2]);
-        
+           
               var options = {
                 chartArea: { width: '80%' , left:50 , right:20},
                 width: 330,
@@ -2203,5 +2120,5 @@ var allTrls = @json($allTrls);
                   chart.draw(data, options);
             })
           }
-          </script>
+          </script> --}}
 </html>

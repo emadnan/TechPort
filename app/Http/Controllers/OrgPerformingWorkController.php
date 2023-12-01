@@ -200,7 +200,7 @@ class OrgPerformingWorkController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'organizationClickingPage');
+        $this->middleware('auth')->except('index' , 'organizationClickingPage' , 'getProjectsLengthByOrgID');
     }
 }
 

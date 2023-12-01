@@ -23,4 +23,8 @@ class techniche extends Model
     {
         return $this->belongsTo(techsector::class, 'id_techniche');
     }
+    public function projects()
+    {
+        return $this->hasManyThrough(project::class , techreferred::class , 'id_techniche', 'id_techreferred','id','id');
+    }
 }

@@ -189,7 +189,7 @@ class MissionTypeController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'missionTypeClickingPage');
+        $this->middleware('auth')->except('index' , 'missionTypeClickingPage' , 'getProjectsLengthByMissionID');
     }
 
 }
