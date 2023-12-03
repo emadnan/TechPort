@@ -38,17 +38,17 @@
                         <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
                         <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$projOrg->id])}}">{{$projOrg->name}}</a>
                         </section>
-                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}">Lead Organization</a></b></section>
                         @foreach ($project->orgperformingworks as $org )
                         <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
                         @endforeach
                         <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
-                        <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01 {{$project->techreferred->techarea->techarea}}</a></section>
+                        <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">{{$project->techreferred->techarea->techarea}}</a></section>
                         <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
                         <section style="font-size:13px">{{$project->startdate}}</section>
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Mission Type </a></b></section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/mission-type')}}"> Responsible Mission Directorate: </a></b></section>
                         <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{route('missionTypeClickingPage' , ['id'=>$project->missiontype->id])}}"> {{$project->missiontype->type}}</a></section>
                         <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
                         <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{route('foundSourcesClickingPage' , ['id'=>$project->foundingsource->id])}}">{{$project->foundingsource->name}}</a></section>
