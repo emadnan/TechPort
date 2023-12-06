@@ -36,7 +36,12 @@
                 <div class="row mb-3">
                     <label for="id_dm" class="col-md-4 col-form-label text-md-end">{{ __('ID_DM') }}</label>
                     <div class="col-md-6">
-                        <input id="id_dm" type="text" class="form-control @error('id_dm') is-invalid @enderror" name="id_dm" value="{{ old('id_dm') }}" >
+                        <input id="id_dm" type="text" class="form-control dropdown-toggle @error('id_dm') is-invalid @enderror" name="id_dm" value="{{ old('id_dm') }}"  >
+                        {{-- <div class="dropdown-menu" aria-labelledby="id_dm">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div> --}}
                         <span class="text-danger small" id="id_dmError"></span>
                     </div>
                 </div>
@@ -134,6 +139,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
    $(document).ready(function(){
         

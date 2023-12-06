@@ -61,7 +61,7 @@ class ProjectController extends Controller
 
   public function index(string $id)
   {
-    $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles')
+    $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles','trlactual' , 'trlstart' , 'trlfinal')
     ->where('id' , $id)
     ->first();
     

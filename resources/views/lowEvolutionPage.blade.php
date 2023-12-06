@@ -214,6 +214,24 @@
         text-decoration: none;
         
     }
+    .frame {
+    width: 443px;
+    height: 178px;
+  }
+  .frame .overlap-group {
+    position: relative;
+    width: 380px;
+    height: 252px;
+    top: -20px;
+    left: 0px;
+  }
+  .frame .rectangle {
+  position: absolute;
+  width: 380px;
+  height: 141px;
+  top: 6px;
+  left: -2px;
+}
 </style>
 
 <body>
@@ -246,29 +264,17 @@
                         <div class="row">
                             <div class="col-10"><section style="font-size:22px; font-weight:700;">PROJECTS
                             </section></div>
-                            <div class="col-2" style="margin-right:-30px;"> <section style="font-size: 12px">Export</section>
+                            {{-- <div class="col-2" style="margin-right:-30px;"> <section style="font-size: 12px">Export</section> 
                                 <a href="{{route('downloadPdf', ['id' => $projOrg->id])}}">  <i class="fa-regular fa-file-pdf" 
                                     style="width: 21px;height: 21px;margin-top:10px; color:white;"></i></a>
-                            </div>
+                                </div> --}}
                         </div>
                         
                         
                            
-                        <section style="font-size:14px; ">Small Business Innovation Research/Small Business Tech Transfer
-                        </section>
-                        <section style="font-size:18px; font-weight:600; margin-bottom:10px; ">{{$projOrg->name}}</section>
-                        <div class="row " style="margin-left:0px;" >
-                            <div class="">
-                                <button class="btn"
-                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Sort
-                                    Order: Relevance</button>
-                            </div>
-                            <div style="margin-left:20px;">
-                                <button class="btn"
-                                    style="height: 25px;width:230px; padding: 0; font-size: 10px; background-color: white; color: black; line-height: 1;">Words
-                                    and Phrases: No Selection</button>
-                            </div>
-                        </div>
+                        {{-- <section style="font-size:14px; ">Small Business Innovation Research/Small Business Tech Transfer
+                        </section> --}}
+                        <section style="font-size:22px; font-weight:600; margin-bottom:10px; ">{{$projOrg->name}}</section>
                     </div>
                     <!--  -->
                 </div>
@@ -356,10 +362,294 @@
 
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Maturity
                                     (TRL)</section>
-                                <section><strong>Start:</strong>&nbsp;{{$projOrg->trllevel}}</section>
-                                <section><strong>Current:</strong>{{$projOrg->trllevel}}</section>
-                                <section><strong>Estimated End:</strong>{{$projOrg->trllevel}}</section>
-                                <img src="{{ asset('images/Group 153 (1).png') }}" alt="" width="100%">
+                                <section><strong style="padding-right: 10px">Start:</strong>{{$projOrg->trlstart->trllevel}}</section>
+                                <section><strong style="padding-right: 10px">Current:</strong>{{$projOrg->trlactual->trllevel}}</section>
+                                <section><strong style="padding-right: 10px">Estimated End:</strong>{{$projOrg->trlfinal->trllevel}}</section>
+
+                                <div class="frame">
+                                    <div class="overlap-group">
+                                        <svg class="rectangle" xmlns="http://www.w3.org/2000/svg" width="488" height="142" viewBox="0 0 488 142" fill="none">
+                                            <path d="M0.58609 0.27L455.524 0.251974L455.084 21.2701L0.586036 150.142L0.58609 31.27Z" fill="#FFFFFF"/>
+                                            </svg>
+                                            <svg id="rect_1" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                <rect width="100%" height="100%" fill="#E8E8E8"/>
+                                                <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">1</text>
+                                            </svg>
+                                            <svg id="rect_2" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">2</text>
+                                            </svg>
+                                                <svg id="rect_3" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                    <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">3</text>
+                                            </svg>
+                                                    <svg id="rect_4" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                        <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>065386
+                                                            <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">4</text>
+                                                        </svg>
+                                                        <svg id="rect_5" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                            <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                                 <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">5</text>
+                                                            </svg>
+                                                            <svg id="rect_6" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                                <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                                <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">6</text>
+                                                                </svg>
+                                                                <svg id="rect_7" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                                    <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                                    <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">7</text>
+                                                                </svg>
+                                                                    <svg id="rect_8" xmlns="http://www.w3.org/2000/svg" width="35" height="221" viewBox="0 0 51 221" fill="none">
+                                                                        <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                                    <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">8</text>
+                                                                </svg>
+                                                                        <svg id="rect_9" xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 51 221" fill="none">
+                                                                            <path d="M0 0H51V221H0V0Z" fill="#E8E8E8"/>
+                                                                            <text x="20" y="205" font-family="Arial" font-size="20" font-weight="bold" fill="black">9</text>
+                                                                </svg>  
+                                        </div>
+                                    <div style="display: flex; top:-82px; position:relative;" >
+                                        <div style="width: 114px; height:50px; background-color:#E8E8E8; margin-right:3px;"><p style="margin-left: 25px;">Applied Research</p></div>
+                                        <div style="width: 114px; height:50px; background-color:#E8E8E8; margin-right:3px;"><p style="margin-left: 5px;">Development</p></div>
+                                        <div style="width: 114px; height:50px; background-color:#E8E8E8; margin-right:3px;"><p style="margin-left: 8px;">Demo & Test</p></div>
+                                    </div>
+                                
+                                  </div>
+<script>
+    var project = @json($projOrg);
+
+    switch (project.trlstart.trllevel) {
+    case 1:
+        var rect = document.getElementById("rect_1");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 2:
+        var rect = document.getElementById("rect_2");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 3:
+        var rect = document.getElementById("rect_3");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 4:
+        var rect = document.getElementById("rect_4");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 5:
+        var rect = document.getElementById("rect_5");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 6:
+        var rect = document.getElementById("rect_6");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 7:
+        var rect = document.getElementById("rect_7");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 8:
+        var rect = document.getElementById("rect_8");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 9:
+        var rect = document.getElementById("rect_9");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    default:
+        console.log("No valid TRls");
+}
+
+switch (project.trlactual.trllevel) {
+    case 1:
+        var rect = document.getElementById("rect_1");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 2:
+        var rect = document.getElementById("rect_2");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 3:
+        var rect = document.getElementById("rect_3");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 4:
+        var rect = document.getElementById("rect_4");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 5:
+        var rect = document.getElementById("rect_5");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 6:
+        var rect = document.getElementById("rect_6");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 7:
+        var rect = document.getElementById("rect_7");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 8:
+        var rect = document.getElementById("rect_8");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 9:
+        var rect = document.getElementById("rect_9");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    default:
+        console.log("No valid TRls");
+}
+
+switch (project.trlfinal.trllevel) {
+    case 1:
+        var rect = document.getElementById("rect_1");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 2:
+        var rect = document.getElementById("rect_2");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 3:
+        var rect = document.getElementById("rect_3");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 4:
+        var rect = document.getElementById("rect_4");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 5:
+        var rect = document.getElementById("rect_5");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 6:
+        var rect = document.getElementById("rect_6");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 7:
+        var rect = document.getElementById("rect_7");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 8:
+        var rect = document.getElementById("rect_8");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    case 9:
+        var rect = document.getElementById("rect_9");
+        var path = rect.firstElementChild;
+        var text = path.nextElementSibling;
+        path.setAttribute("fill", "#065386");
+        text.setAttribute("fill", "white");
+        break;
+
+    default:
+        console.log("No valid TRls");
+}
+</script>
+                                {{-- <img src="{{ asset('images/Group 153 (1).png') }}" alt="" width="100%"> --}}
                                 <!-- <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas</section>
                 <section>TX01 Propulsion Systems</section>
                 <div class="row" style="margin-left:10px;">
@@ -375,7 +665,7 @@
                 <section style="margin-left:5px;">
                 
                 TX01.1 Chemical Space Propulsion</section> -->
-                                <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas
+                                <section style="font-weight:bold;margin-top:80px;font-size:16px">Technology Areas
                                 </section>
                                 <section><a href="{{ url('/search-results') }}" style="color:black;">TX01 {{$projOrg->techreferred->techarea->techarea}}</a></section>
                                 <div class="row ml-1">

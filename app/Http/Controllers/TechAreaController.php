@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\techarea;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 
 class TechAreaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 
     public function techAreaPage ()
     {
@@ -24,11 +22,6 @@ class TechAreaController extends Controller
     {
         $read = Db::table('techareas')->where('id',$id)->get();
         return response()->json(['data'=>$read]);
-    }
-
-    public function addPage()
-    {
-        return view('dashboard.createTechArea');
     }
 
     public function create(Request $req)
@@ -121,4 +114,32 @@ class TechAreaController extends Controller
             return response()->json(['message' => 'Technology Area  Was Not Deleted Successfully']);
         }
     }
+
+    public function fetchDataFromApi(Request $req)
+    {
+        $dm = $req->input('dm');
+        $tk = $req->input('tk');
+
+        $url = 'https://api.drass.it/GetDM/read.php';
+        $params = [
+            'dm' => $dm ,
+            'tk' => $tk
+        ];
+
+        $response = Http::get($url , $params);
+        
+        if ($response->failed()) {
+            // Handle the HTTP error
+            return response()->json(['error' => 'Failed to fetch data from API'], $response->status());
+        }
+
+        $data = $response->json();
+        return response()->json($data);
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
+

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    {{-- <link rel="stylesheet" type="text/css" href="https://techport.nasa.gov/styles/project-viewer.css?v=3.12.1/styles/project-viewer.css?v=3.12.1" /> --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 
@@ -1321,6 +1322,8 @@
         text-decoration: none;
         
     }
+
+ 
     </style>
 </head>
 
@@ -1539,16 +1542,15 @@
 
                             </div>
                         </div>
-                    <div class="divider"></div>
                     <div class="sub-answer-description" style="display: none;">
                             <div class="divider"></div>
                             <div style="margin-left:40px;font-weight:bold">Description</div>
                             <section style="padding-left:40px;padding-right:40px">
-                                {{$techniche-> technichedescription}}
+                                {{$techniche->technichedescription}}
                             </section>
                 </div>
-                    @endforeach
                     <div class="divider"></div>
+                    @endforeach
                 </div>
                 @php
                 array_push($sectorID, $techsector->id)
@@ -1571,8 +1573,8 @@
     <footer>
     @include('footer')
 </footer>
-
-    <script>
+ 
+<script>
         function toggleAnswers(element) {
 
             let x = element.parentElement;

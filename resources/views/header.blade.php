@@ -186,12 +186,11 @@
         </form>
     </div>
     <div class="col-md-3">
-        <a href="{{ url('/advanceSearch') }}"><button type="button" class="btn custom-button btn-block">Advanced Search
+        <a href="{{ url('/advanceSearch') }}"><button type="button" class="btn custom-button btn-block" >Advanced Search
             </button></a>
     </div>
 </div>
 {{-- end --}}
-
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -201,4 +200,19 @@
                  }
             });
           });
+
+        //   function advanceSearch(element)
+        //   {
+        //       var searchBar = document.getElementById('searchBar').value;
+        //       var link = element.parentElement;
+        //       var url ='/advanceSearch/'+searchBar;
+        //       if(searchBar == null)
+        //       {
+        //       link.href = ' ';
+        //       }
+        //       else
+        //       {
+        //       link.href = url;
+        //       }
+        //   }
 </script>

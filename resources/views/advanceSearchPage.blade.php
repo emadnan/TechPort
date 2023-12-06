@@ -235,13 +235,13 @@
 
     .custom-button-1 {
         padding: 10px;
-        width: 200px;
+        width: 300px;
         text-align: center;
         background-color: white;
-        color: #065386;
-        font-weight: bold;
-        border: none;
-        margin-left: 420px;
+        color: black;
+        font-weight: 500;
+        border: 1px solid black;
+        margin-left: 300px;
     }
 
     .reset-btn:hover {
@@ -391,22 +391,19 @@ input[type="range"]:active::-webkit-slider-thumb{
             <div class="col-md-12">
                 <div class="custom-image-container">
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
-
+                <form action= '{{route("getProjectsByAdvanceSearch")}}', method="GET">
                     <div class="text-in-image">
                         <span style="font-weight:700; font-size:30px;">Advance Search</span>
 
 
-                        <a href="{{ url('/search-results') }}" type="button" class="btn  custom-button-1"
-                            style="">Search</a>
-
+                        {{-- <a href="{{ url('/search-results') }}" type="button" class="btn  custom-button-1"
+                            style="">Search</a> --}}
+                        <input class="btn custom-button-1" type="text" id="search" name="search" placeholder="Search" >
 
 
                         <button class="btn reset-btn"
                             style="width:200px;height:40px;color:white;border-color: white;">Reset Search
                             Options</button>
-
-
-
                     </div>
 
 
@@ -415,7 +412,6 @@ input[type="range"]:active::-webkit-slider-thumb{
                 </div>
             </div>
         </div>
-<form action= '#', method="GET">
         <!-- QA Section -->
         <div class="faq-container mt-1">
             <div class="faq-item">
@@ -423,7 +419,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                         style="float: right;margin-top:4px;"></i></div>
                 <div class="faq-answer" style="display: none;">
                     <div class="dropdown show">
-                        <select name="order" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
+                        <select id="order-input" name="order" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
                             style="background-color: white; border: 1px solid grey; color: black;font-size: 14px;">
                             <option selected value="">-- SELECT --</option>
                             <option  value="Relevance">Relevance</option>
@@ -433,6 +429,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                     </div>
                 </div>
             </div>
+
             <div class="divider"></div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Words and Phrases<i
@@ -443,7 +440,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                             <!-- Each radio button takes 4 columns (1/3 of the row) -->
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="searchType"
-                                    id="flexRadioDefault1" value="">
+                                    id="flexRadioDefault1" value="all-words">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Items containing all search terms
                                 </label>
@@ -452,7 +449,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                         <div class="col-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="searchType"
-                                    id="flexRadioDefault2" value="">
+                                    id="flexRadioDefault2" value="any-words">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Items containing any of the terms
                                 </label>
@@ -461,7 +458,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                         <div class="col-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="searchType"
-                                    id="flexRadioDefault3" value="">
+                                    id="flexRadioDefault3" value="exact-words">
                                 <label class="form-check-label" for="flexRadioDefault3">
                                     Items containing the exact phrase
                                 </label>
@@ -469,13 +466,13 @@ input[type="range"]:active::-webkit-slider-thumb{
                         </div>
                     </div>
                     <div class="input-group rounded" style="margin-top:10px;">
-                        <input type="search" id="words_search_bar" class="form-control rounded" placeholder="Search" aria-label="Search"
-                            aria-describedby="search-addon" oninput="updateRadioValue()" />
+                        <input type="search" name="words_search_bar" id="words_search_bar" class="form-control rounded" placeholder="Keywords" aria-label="Search"
+                            aria-describedby="search-addon"  />
 
                     </div>
                 </div>
             </div>
-<script>
+{{-- <script>
     function updateRadioValue()
     {
       var searchInput = document.getElementById('words_search_bar').value;
@@ -488,7 +485,7 @@ input[type="range"]:active::-webkit-slider-thumb{
         }
       }
     }
-</script>
+</script> --}}
 
             <div class="divider"></div>
             <!-- Add more FAQ items as needed -->
@@ -498,19 +495,21 @@ input[type="range"]:active::-webkit-slider-thumb{
                 <div class="faq-answer" style="display: none;">
                     <div class="container">
                         <div class="row">
+                            @foreach ($statuses as $status )
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Active"
-                                        id="flexCheckChecked1" name="Status">
+                                    <input class="form-check-input" type="checkbox"  value="{{$status->id}}"
+                                        id="flexCheckChecked1" name="{{$status->status}}">
                                     <label class="form-check-label" for="flexCheckChecked1">
-                                        Active
+                                        {{$status->status}}
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            @endforeach
+                            {{-- <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Completed"
-                                        id="flexCheckChecked3" name="Status">
+                                    <input class="form-check-input" type="checkbox"  value="2"
+                                        id="flexCheckChecked3" name="completed">
                                     <label class="form-check-label" for="flexCheckChecked3">
                                         Completed
                                     </label>
@@ -518,13 +517,13 @@ input[type="range"]:active::-webkit-slider-thumb{
                             </div>
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Partnerships"
-                                        id="flexCheckChecked4" name="Status">
+                                    <input class="form-check-input" type="checkbox" value="3"
+                                        id="flexCheckChecked4" name="partnerships">
                                     <label class="form-check-label" for="flexCheckChecked4">
                                         Partnerships
                                     </label>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -541,8 +540,8 @@ input[type="range"]:active::-webkit-slider-thumb{
                         <div class="col-2">
                             <!-- Each radio button takes 4 columns (1/3 of the row) -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="active-date-type"
-                                    id="flexRadioDefault1" value="active-after">
+                                <input class="form-check-input" type="radio" name="active_date" value="after"
+                                    id="flexRadioDefault1" onclick="toggleActiveAfterDate()">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Active after
                                 </label>
@@ -550,8 +549,8 @@ input[type="range"]:active::-webkit-slider-thumb{
                         </div>
                         <div class="col-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="active-date-type"
-                                    id="flexRadioDefault2" value="active-before">
+                                <input class="form-check-input" type="radio" name="active_date" value="before"
+                                    id="flexRadioDefault2" onclick="toggleActiveBeforeDate()" >
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Active before
                                 </label>
@@ -559,8 +558,8 @@ input[type="range"]:active::-webkit-slider-thumb{
                         </div>
                         <div class="col-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="active-date-type"
-                                    id="flexRadioDefault3" value="active-between">
+                                <input class="form-check-input" type="radio" name="active_date" value="between"
+                                    id="flexRadioDefault3" onclick="toggleActiveBetweenDate()">
                                 <label class="form-check-label" for="flexRadioDefault3">
                                     Active between
                                 </label>
@@ -568,15 +567,21 @@ input[type="range"]:active::-webkit-slider-thumb{
                         </div>
                     </div>
                     <div class="container">
-                        <div class="row" style="margin-top: 10px;">
-
-                            <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>Start Month:</b></h5>
+                        <div class="row" id="date_row" style="margin-top: 10px; display:none;">
+                               <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>Date:</b></h5>
                             <div class="btn-group">
-
-
                                 <div class="form-group col-md-12">
+                                    <input class="form-control" id="date" name="date" type="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="between_date_row" style="margin-top: 10px; display:none;">
+                                <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>Start Date:</b></h5>
+                            <div class="btn-group">
+                                <div class="form-group col-md-12">
+                                    <input class="form-control" name="start-date" type="date">
 
-                                    <select class="form-control" id="month-select" onchange="updateActiveDateRadioValueMonth()">
+                                    {{-- <select class="form-control" name="month" id="month-select" >
                                         <option selected value="">--Select Month</option>
                                         <option value="1">January</option>
                                         <option value="2">February</option>
@@ -590,14 +595,18 @@ input[type="range"]:active::-webkit-slider-thumb{
                                         <option value="10">October</option>
                                         <option value="11">November</option>
                                         <option value="12">December</option>
-                                    </select>
+                                    </select> --}}
                                 </div>
                             </div>
-                            <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>Start Year:</b> </h5>
+                            <h5 style="font-size: 13px; align-content:center; display:flex; flex-wrap:wrap;"><b>End Date:</b> </h5>
                             <div class="btn-group" style="margin-left: 10px;">
                                
                                 <div class="form-group" style="margin-left: 10px;">
-                                    <select class="form-control" id="year-select" onchange="updateActiveDateRadioValueYear()">
+                                    <input class="form-control" name="end-date" type="date">
+
+
+                                    
+                                    {{-- <select class="form-control" name="year" id="year-select" >
                                         <option selected value="">--Select Year</option>
                                         <option value="2023">2023</option> <option value="2022">2022</option>
                                         <option value="2021">2021</option> <option value="2020">2020</option>
@@ -614,7 +623,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                                         <option value="1999">1999</option> <option value="1998">1998</option>
                                         <option value="1997">1997</option> <option value="1996">1996</option>
                                         <!-- Add more years as needed -->
-                                    </select>
+                                    </select> --}}
                                 </div>
                             </div>
                         </div>
@@ -622,24 +631,45 @@ input[type="range"]:active::-webkit-slider-thumb{
                 </div>
             </div>
 <script>
-    function updateActiveDateRadioValueMonth() {
-      var month = document.getElementById('month-select').value;
-      var year = document.getElementById('year-select').value;
-      var radioButtons = document.getElementsByName('active-date-type');
-
-      for (var i = 0; i < radioButtons.length; i++) {
-          radioButtons[i].value = radioButtons[i].value + ' ' + month;
-      }
+        const date = document.getElementById('date_row');
+        const between_date = document.getElementById('between_date_row');
+    function toggleActiveAfterDate()
+    {
+        date.style.display = 'block';
+        between_date.style.display = 'none';
     }
-    function updateActiveDateRadioValueYear() {
-      var month = document.getElementById('month-select').value;
-      var year = document.getElementById('year-select').value;
-      var radioButtons = document.getElementsByName('active-date-type');
 
-      for (var i = 0; i < radioButtons.length; i++) {
-          radioButtons[i].value = radioButtons[i].value + ' ' + year;
-      }
+    function toggleActiveBeforeDate()
+    {
+        date.style.display = 'block';
+        between_date.style.display = 'none';
     }
+
+    function toggleActiveBetweenDate()
+    {
+        date.style.display = 'none';
+        between_date.style.display = 'flex';
+    }
+
+
+    // function updateActiveDateRadioValueMonth() {
+    //   var month = document.getElementById('month-select').value;
+    //   var year = document.getElementById('year-select').value;
+    //   var radioButtons = document.getElementsByName('active-date-type');
+
+    //   for (var i = 0; i < radioButtons.length; i++) {
+    //       radioButtons[i].value = radioButtons[i].value + ' ' + month;
+    //   }
+    // }
+    // function updateActiveDateRadioValueYear() {
+    //   var month = document.getElementById('month-select').value;
+    //   var year = document.getElementById('year-select').value;
+    //   var radioButtons = document.getElementsByName('active-date-type');
+
+    //   for (var i = 0; i < radioButtons.length; i++) {
+    //       radioButtons[i].value = radioButtons[i].value + ' ' + year;
+    //   }
+    // }
 </script>
             <div class="divider"></div>
             <!-- Add more FAQ items as needed -->
@@ -653,9 +683,9 @@ input[type="range"]:active::-webkit-slider-thumb{
                                 <i class="fa-solid fa-chevron-down" style="float: left;margin-top:4px;"></i>
                                 <div class="form-check" style="margin-left:20px">
                                     <input class="form-check-input" type="checkbox" value="{{$tech->id}}"
-                                        id="flexCheckChecked">
+                                        id="flexCheckChecked" name="areas">
                                     <label class="form-check-label" for="flexRadioDefault3">
-                                        TX0{{$loop->index+1}} {{$tech->techarea}}
+                                        {{$tech->techarea}}
                                     </label>
                                 </div>
                             </div>
@@ -669,18 +699,18 @@ input[type="range"]:active::-webkit-slider-thumb{
                             <div class="form-check" onclick="toggleQASubAnswer(this)" >
                                 <i class="fa-solid fa-chevron-down" style="float: left;margin-top:4px; padding-right:15px;"></i>
                                 <input class="form-check-input" type="checkbox" value="{{$sector->id}}"
-                                        id="flexCheckChecked">
+                                        id="flexCheckChecked" name="sectors">
                                         <label class="form-check-label" for="flexRadioDefault3">
-                                            TX01.{{$loop->index+1}} {{$sector->techsector}}
+                                             {{$sector->techsector}}
                                         </label>
                                 </div>
                                 <div class="qa-sub-answer" >
                                 @foreach ($sector->techniches as $niche )
                                 <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="{{$niche->id}}"
-                                                id="flexCheckChecked">
+                                                id="flexCheckChecked" name="niches">
                                                 <label class="form-check-label" for="flexRadioDefault3">
-                                                    TX01.1.{{$loop->index+1}} {{$niche->techniche}}
+                                                     {{$niche->techniche}}
                                                 </label>
                                     </div>
                                    
@@ -731,7 +761,7 @@ input[type="range"]:active::-webkit-slider-thumb{
             <div class="faq-answer" style="display: none;">
                 <div class="col-md-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="start-trl" name="start-trl">
+                        <input class="form-check-input" type="checkbox" value="1 9" id="start-trl" name="start_trl">
                         <label class="form-check-label" for="start-trl">
                             Start TRL
                         </label>
@@ -766,7 +796,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                 <br>
                 <div class="col-md-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="current-trl" name="current-trl">
+                        <input class="form-check-input" type="checkbox" value="1 9" id="current-trl" name="current_trl">
                         <label class="form-check-label" for="current-trl">
                             Current TRL
                         </label>
@@ -801,7 +831,7 @@ input[type="range"]:active::-webkit-slider-thumb{
                 <br>
                 <div class="col-md-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="final-trl" name="final-trl">
+                        <input class="form-check-input" type="checkbox" value="1 9" id="final-trl" name="final_trl">
                         <label class="form-check-label" for="final-trl">
                             Final TRL
                         </label>
@@ -947,11 +977,10 @@ function startTrl()
     var childElement2 = childElement1.firstElementChild;
     var checkBoxDiv = childElement2.nextElementSibling;
     var checkboxes = checkBoxDiv.querySelectorAll('input[type="range"]');
-    let checkboxesArray = [];
+    start_trl.value = '';
     checkboxes.forEach(function(checkbox){
-        checkboxesArray.push(checkbox.value);
+        start_trl.value =  start_trl.value+ ' ' +checkbox.value ;
     })
-    start_trl.value = checkboxesArray;
     console.log(start_trl.value);
 }
 
@@ -965,11 +994,10 @@ function currentTrl()
     var childElement2 = childElement1.firstElementChild;
     var checkBoxDiv = childElement2.nextElementSibling;
     var checkboxes = checkBoxDiv.querySelectorAll('input[type="range"]');
-    let checkboxesArray = [];
+    current_trl.value = '';
     checkboxes.forEach(function(checkbox){
-        checkboxesArray.push(checkbox.value);
+        current_trl.value = current_trl.value+ ' ' +checkbox.value;
     })
-    current_trl.value = checkboxesArray;
     console.log(current_trl.value);
 }
 
@@ -983,11 +1011,10 @@ function finalTrl()
     var childElement2 = childElement1.firstElementChild;
     var checkBoxDiv = childElement2.nextElementSibling;
     var checkboxes = checkBoxDiv.querySelectorAll('input[type="range"]');
-    let checkboxesArray = [];
+    final_trl.value = '';
     checkboxes.forEach(function(checkbox){
-        checkboxesArray.push(checkbox.value);
+        final_trl.value = final_trl.value + ' ' + checkbox.value;
     })
-    final_trl.value = checkboxesArray;
     console.log(final_trl.value);
 }
     </script>
@@ -1002,7 +1029,7 @@ function finalTrl()
                         @foreach ($projects as $target)
                             <div class="form-check" style="padding-right: 100px; margin-right: 30px;">
                                 <input class="form-check-input" type="checkbox" value="{{$target->id}}"
-                                    id="flexCheckChecked1" name="target">
+                                    id="flexCheckChecked1" name="targets">
                                 <label class="form-check-label" for="flexCheckChecked1">
                                     {{$target->projecttarget}}
                                 </label>
@@ -1024,7 +1051,7 @@ function finalTrl()
                         @foreach ($roles as $role )
                             <div class="form-check" style="padding-right: 80px; margin-right: 20px;">
                                 <input class="form-check-input" type="checkbox" value="{{$role->id}} "
-                                    id="flexCheckChecked1" name="legal entity">
+                                    id="flexCheckChecked1" name="legal_entities">
                                 <label class="form-check-label" for="flexCheckChecked1">
                                     {{$role->name}}
                                 </label>
@@ -1046,7 +1073,7 @@ function finalTrl()
                         @foreach ($missions as $mission)
                         <div class="form-check" style="padding-right: 80px; margin-right: 20px;">
                             <input class="form-check-input" type="checkbox" value="{{$mission->id}}"
-                                id="flexCheckChecked1" name="mission type">
+                                id="flexCheckChecked1" name="mission_types">
                             <label class="form-check-label" for="flexCheckChecked1">
                                 {{$mission->type}}
                             </label>
@@ -1058,7 +1085,7 @@ function finalTrl()
         </div>
         <div class="divider"></div>
 
-        <!-- Add more FAQ items as needed -->
+        {{-- <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Centers and Facilities<i
                     class="fa-solid fa-chevron-down" style="float: right;margin-top:4px;"></i></div>
@@ -1258,7 +1285,7 @@ function finalTrl()
                 </div>
 
             </div>
-        </div>
+        </div> --}}
 
         <div class="divider"></div>
         <!-- Add more FAQ items as needed -->
@@ -1270,7 +1297,7 @@ function finalTrl()
                     <div class="col-4">
                         <!-- Each radio button takes 4 columns (1/3 of the row) -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                            <input class="form-check-input" type="radio" name="organization" value="byType"
                                 id="flexRadioDefault1" onclick="toggleOrgtype(this)">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Filter by organization type
@@ -1279,7 +1306,7 @@ function finalTrl()
                     </div>
                     <div class="col-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                            <input class="form-check-input" type="radio" name="organization" value="byName"
                                 id="flexRadioDefault2" onclick="toggleOrgName(this)">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Filter by organization name
@@ -1296,7 +1323,7 @@ function finalTrl()
                     <div class="row " onclick="subAnswer(this)">
                     <div class="form-check ml-3">
                     <i class="fa-solid fa-chevron-down mt-1 pr-2 ml-0" ></i>
-                    <input class="form-check-input" type="checkbox" value="{{$orgtype->id}}" id="flexCheckChecked1" name="organizationType" onclick="toggleCheckBox(this)">
+                    <input class="form-check-input" type="checkbox" value="{{$orgtype->id}}" id="flexCheckChecked1" name="orgTypes" onclick="toggleCheckBox(this)">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
                             {{$orgtype->type}}
                         </label>
@@ -1305,7 +1332,7 @@ function finalTrl()
                 <div class="col ml-5" style="display: none;">
                 @foreach ($orgtype->orgperformingworks as $organization )
                     <div class="form-check ml-3" >
-                        <input class="form-check-input" type="checkbox" value="{{$organization->id}}" id="flexCheckChecked1" name="orgTypeName">
+                        <input class="form-check-input" type="checkbox" value="{{$organization->id}}" id="flexCheckChecked1" name="orgNames">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
                             {{$organization->name}}
                         </label>
@@ -1317,7 +1344,7 @@ function finalTrl()
 
                 <div class="row" style="display:none; margin-top:10px;">
                     <div class="col-md-6">
-                         <input class="form-control" type="text" name="orgName" placeholder="Organization Name">
+                         <input class="form-control" type="text" name="org_name_search" placeholder="Organization Name">
                     </div>
                 </div>
             </div>
@@ -1419,13 +1446,13 @@ function finalTrl()
     
         </script>
         <div class="divider"></div>
-        <!-- Add more FAQ items as needed -->
+        {{-- <!-- Add more FAQ items as needed -->
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Programs<i class="fa-solid fa-chevron-down"
                     style="float: right;margin-top:4px;"></i></div>
             <div class="faq-answer" style="display: none;">
                 <div class="row mt-2">
-                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1434,7 +1461,7 @@ function finalTrl()
                     </div>
                 </div>
                 <div class="row mt-2">
-                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1443,7 +1470,7 @@ function finalTrl()
                     </div>
                 </div>
                 <div class="row mt-2">
-                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1452,7 +1479,7 @@ function finalTrl()
                     </div>
                 </div>
                 <div class="row mt-2">
-                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1461,7 +1488,7 @@ function finalTrl()
                     </div>
                 </div>
                 <div class="row mt-2">
-                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1470,7 +1497,7 @@ function finalTrl()
                     </div>
                 </div>
                 <div class="row mt-2">
-                    {{-- <i class="fa-solid fa-chevron-right mt-1 ml-4"></i> --}}
+                    <i class="fa-solid fa-chevron-right mt-1 ml-4"></i>
                     <div class="form-check ml-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
                         <label class="form-check-label ml-2" for="flexCheckChecked1">
@@ -1481,10 +1508,10 @@ function finalTrl()
             </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider"></div> --}}
         <!-- Add more FAQ items as needed -->
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i
+        {{-- <div class="faq-item">
+            {{--<div class="faq-question" onclick="toggleAnswer(this)">Mission Directorates and Offices<i
                     class="fa-solid fa-chevron-down" style="float: right;margin-top:4px;"></i></div>
             <div class="faq-answer" style="display: none;">
 
@@ -1783,7 +1810,7 @@ function finalTrl()
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="divider"></div>
         <div class="faq-item">
             <div class="faq-question" onclick="toggleAnswer(this)">Found Sources<i onclick="myFunction(this)"
@@ -1795,39 +1822,12 @@ function finalTrl()
                     @foreach ($sources as $source)
                         <div class="form-check" style="padding-right: 80px; margin-right: 20px;">
                             <input class="form-check-input" type="checkbox" value="{{$source->id}}"
-                                id="flexCheckChecked1" name="found source">
+                                id="flexCheckChecked1" name="found_sources">
                             <label class="form-check-label" for="flexCheckChecked1">
                                {{$source->name}}
                             </label>
                         </div>
                     @endforeach
-                    {{-- <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
-                                id="flexCheckChecked1">
-                            <label class="form-check-label" for="flexCheckChecked1">
-                                Office of the Chef Engineer (OCE)
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
-                                id="flexCheckChecked1">
-                            <label class="form-check-label" for="flexCheckChecked1">
-                                Exploration Systems Developement Misson Directorate (ESDMD)
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
-                                id="flexCheckChecked1">
-                            <label class="form-check-label" for="flexCheckChecked1">
-                                Office of the Chef Information Officier (OCIO)
-                            </label>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>

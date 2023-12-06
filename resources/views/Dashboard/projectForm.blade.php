@@ -66,13 +66,13 @@
                 <div class="row mb-2">
                     <label for="startdate" class="col-md-2 col-form-label text-md-end">{{ __('Start Date ') }}</label>
                     <div class="col-md-4">
-                        <input id="startdate" type="text" class="form-control @error('startdate') is-invalid @enderror" name="startdate" value= "{{ old ('startdate') }}" autocomplete="startdate" autofocus>
+                        <input id="startdate" type="date" class="form-control @error('startdate') is-invalid @enderror" name="startdate" value= "{{ old ('startdate') }}" autocomplete="startdate" autofocus>
                         <span class="text-danger small" id="startdateError"></span>
                     </div>
 
                     <label for="enddate" class="col-md-2 col-form-label text-md-end">{{ __('End Date') }}</label>
                     <div class="col-md-4">
-                        <input id="enddate" type="text" class="form-control @error('enddate') is-invalid @enderror" name="enddate" value= "{{ old ('enddate') }}" autocomplete="enddate" autofocus>
+                        <input id="enddate" type="date" class="form-control @error('enddate') is-invalid @enderror" name="enddate" value= "{{ old ('enddate') }}" autocomplete="enddate" autofocus>
                         <span class="text-danger small" id="enddateError"></span>
                     </div>
                 </div>
