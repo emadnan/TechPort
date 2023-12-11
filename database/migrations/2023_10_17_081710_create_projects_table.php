@@ -23,7 +23,7 @@ class CreateProjectsTable extends Migration
             $table->integer('id_doc')->nullable();
             $table->date('startdate')->nullable();
             $table->date('enddate');
-            $table->string('projecttarget');
+            $table->unsignedBigInteger('id_project_target');$table->foreign('id_project_target')->references('id')->on('project_targets');
             $table->unsignedBigInteger('id_techreferred'); $table->foreign('id_techreferred')->references('id')->on('ref_techreferred');
             $table->unsignedBigInteger('id_missiontype'); $table->foreign('id_missiontype')->references('id')->on('missiontype');
             $table->unsignedBigInteger('id_trlstart'); $table->foreign('id_trlstart')->references('id')->on('trl');

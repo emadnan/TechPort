@@ -35,6 +35,11 @@ class project extends Model
         return $this->belongsTo(foundingsource::class , 'id_foundsource');
     }
 
+    public function project_target()
+    {
+        return $this->belongsTo(Project_target::class , 'id_project_target');
+    }
+
     public function status()
     {
         return $this->belongsTo(status::class , 'id_status');

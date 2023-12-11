@@ -8,6 +8,7 @@ use App\Models\location;
 use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\project;
+use App\Models\Project_target;
 use App\Models\ref_projectorganization;
 use App\Models\status;
 use App\Models\techreferred;
@@ -18,47 +19,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
-    public function projectTargetsPage()
-    {
-        $projects = project::get();
-        return view('projectTargetsPage' , compact('projects'));
-    }
-
-    public function projectTargetClickingPage(string $id)
-    {
-        $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles')
-        ->where('id' , $id)
-        ->first();
-
-    $allTrls = trl::with('projects.trlactual')->get();
-
-        if ($projOrg) {
-        $count = $projOrg->groupBy('id')->count();
-        
-            // Count the number of occurrences of each status
-        $active = $projOrg->status->where('status' , 'Active')->count();
-        $complete = $projOrg->status->where('status' , 'Completed')->count();
-        $partnership = $projOrg->status->where('status' , 'Partnership')->count();
-        } else {
-            // Handle the case where the project with the specified ID does not exist
-            $count = $active = $complete = $partnership = 0;
-        }
-    
-    
-        //   return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership'));
-        return view('projectTargetClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
-    }
-
-    public function getProjectsLengthByProjectTargetID(string $projectID ,string $trlID)
-    {
-        $project = project::where('id' , $projectID)
-                   ->where('id_trlactual' , $trlID)
-                   ->count();
-        
-        return response()->json(compact('project'));
-    }
-
-
   public function index(string $id)
   {
     $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles','trlactual' , 'trlstart' , 'trlfinal')
@@ -87,50 +47,65 @@ class ProjectController extends Controller
 
     public function projectPage()
     {
-        $projects = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'projects.*')
+        // $projects = project::with('foundingsource' , 'missiontype', 'status' , 'techareas' , 'orgperformingworks.location' , 'legalentityroles' , 'project_target')
+
+
+        $projects = project::select('techareas.techarea' ,
+        'missiontype.type',
+        'foundingsources.name as sourceName',
+        'status.status' , 'project_targets.name as target',
+        'trl_start.trllevel as trlstartlevel' ,'trl_actual.trllevel as trlactuallevel' ,'trl_final.trllevel as trlfinallevel' , 
+        'projects.*')
+        ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
         ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
-        ->join('trl' , function($join){
-           $join->on('trl.id' , '=' ,'projects.id_trlstart');
-           $join->on('trl.id' , '=' ,'projects.id_trlactual');
-           $join->on('trl.id' , '=' ,'projects.id_trlfinal');
-        })
+        ->join('trl as trl_start', 'trl_start.id', '=', 'projects.id_trlstart')
+        ->join('trl as trl_actual', 'trl_actual.id', '=', 'projects.id_trlactual')
+        ->join('trl as trl_final', 'trl_final.id', '=', 'projects.id_trlfinal')
         ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
         ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-        ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-        ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-        ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+               ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
+               ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
+               ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
         ->join('status' , 'status.id' , '=' , 'projects.id_status')
         ->get();
+
         $techRefs = techreferred::select('techareas.techarea' , 'techsector.techsector' , 'techniche.techniche' , 'ref_techreferred.*')
         ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
         ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
         ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
         ->get();
+        $targets = Project_target::get();
         $missions = missiontype::get();
         $trls = trl::get();
         $sources = foundingsource::get();
         $statuses = status::get();
-        return view('dashboard.projectForm' , compact('projects' , 'techRefs' , 'missions' , 'trls' , 'sources' , 'statuses'));
+        // return response()->json(compact('projects'));
+        return view('dashboard.projectForm' , compact('projects' , 'techRefs' , 'missions' , 'trls' , 'sources' , 'statuses' , 'targets'));
     }
     public function read( string $id)
     {
 
-        $project = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'projects.*')
+        $project = project::select('techareas.techarea' ,
+        'missiontype.type',
+        'foundingsources.name as sourceName',
+        'status.status' , 'project_targets.name as target',
+        'trl_start.trllevel as trlstartlevel' ,'trl_actual.trllevel as trlactuallevel' ,'trl_final.trllevel as trlfinallevel' , 
+        'projects.*')
+        ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
         ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
-        ->join('trl' , function($join){
-           $join->on('trl.id' , '=' ,'projects.id_trlstart');
-           $join->on('trl.id' , '=' ,'projects.id_trlactual');
-           $join->on('trl.id' , '=' ,'projects.id_trlfinal');
-        })
+        ->join('trl as trl_start', 'trl_start.id', '=', 'projects.id_trlstart')
+        ->join('trl as trl_actual', 'trl_actual.id', '=', 'projects.id_trlactual')
+        ->join('trl as trl_final', 'trl_final.id', '=', 'projects.id_trlfinal')
         ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
         ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-        ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-        ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-        ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+               ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
+               ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
+               ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
         ->join('status' , 'status.id' , '=' , 'projects.id_status')
         ->where('projects.id', $id)
         ->get();
         
+
         return response()->json(['data'=> $project]);
     }
 
@@ -181,7 +156,7 @@ class ProjectController extends Controller
         $project->image = $filename;
         $project->startdate = $req->startdate;
         $project->enddate = $req->enddate;
-        $project->projecttarget = $req->projecttarget;
+        $project->id_project_target = $req->projecttarget;
         $project->id_techreferred = $req->techreferred;
         $project->id_missiontype = $req->missiontype;
         $project->id_trlstart = $req->trlstart;
@@ -195,7 +170,8 @@ class ProjectController extends Controller
         $id = $project->id;
         if($project)
         {
-            $project = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'projects.*')
+            $project = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'project_targets.name as target' , 'projects.*')
+            ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
             ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
             ->join('trl' , function($join){
                $join->on('trl.id' , '=' ,'projects.id_trlstart');
@@ -270,7 +246,7 @@ class ProjectController extends Controller
         $project->id_doc = $req->id_doc;
         $project->startdate = $req->startdate;
         $project->enddate = $req->enddate;
-        $project->projecttarget = $req->projecttarget;
+        $project->id_project_target = $req->projecttarget;
         $project->id_techreferred = $req->techreferred;
         $project->id_missiontype = $req->missiontype;
         $project->id_trlstart = $req->trlstart;
@@ -341,7 +317,7 @@ class ProjectController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'projectTargetsPage' , 'projectTargetClickingPage' , 'getProjectsLengthByProjectTargetID' , 'downloadPdf');
+        $this->middleware('auth')->except('index' , 'downloadPdf');
     }
 }
 

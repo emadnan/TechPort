@@ -80,7 +80,12 @@
                 <div class="row mb-2">
                     <label for="projecttarget" class="col-md-2 col-form-label text-md-end">{{ __('Project Target') }}</label>
                     <div class="col-md-4">
-                        <input id="projecttarget" type="text" class="form-control @error('projecttarget') is-invalid @enderror" name="projecttarget" value= "{{ old ('projecttarget') }}" autocomplete="projecttarget" autofocus>
+                        <select id="projecttarget" type="text" class="form-control @error('projecttarget') is-invalid @enderror" name="projecttarget" value= "{{ old ('projecttarget') }}" autocomplete="projecttarget" autofocus>
+                            <option selected value="" >Project Targets</option>
+                            @foreach ($targets as $target )
+                            <option value="{{$target-> id}}"> {{$target->name }} </option>
+                            @endforeach
+                        </select>
                         <span class="text-danger small" id="projecttargetError"></span>
                     </div>
 
@@ -89,7 +94,7 @@
                         <select id="techreferred" type="text" class="form-control @error('techreferred') is-invalid @enderror" name="techreferred" value= "{{ old ('techreferred') }}" autocomplete="techreferred" autofocus>
                             <option selected value="" >REF</option>
                             @foreach ($techRefs as $techRef )
-                            <option value="{{$techRef-> id}}"> {{$techRef->techarea }} </option>
+                            <option value="{{$techRef-> id}}"> {{$techRef->techarea }} ( {{$techRef->techsector }} ) ( {{$techRef->techniche }} ) </option>
                             @endforeach
                         </select>
                         <span class="text-danger small" id="techreferredError"></span>
@@ -148,7 +153,7 @@
                     <label for="foundsource" class="col-md-2 col-form-label text-md-end">{{ __('Found Source') }}</label>
                     <div class="col-md-4">
                         <select id="foundsource" type="text" class="form-control @error('foundsource') is-invalid @enderror" name="foundsource" value= "{{ old ('foundsource') }}" autocomplete="foundsource" autofocus>
-                            <option selected value="" >Found Source</option>
+                            <option selected value="" >Found Sources</option>
                             @foreach ($sources as $source)
                             <option value="{{$source-> id}}">{{$source-> name}} </option>
                             @endforeach
@@ -223,10 +228,10 @@
                             <th class="py-1">Code</th>
                             <th class="py-1">Name</th>
                             <th class="py-1">Description</th>
-                            <th class="py-1">Benifit</th>
-                            <th class="py-1">ID_DOC</th>
+                            {{-- <th class="py-1">Benifit</th> --}}
+                            {{-- <th class="py-1">ID_DOC</th> --}}
                             {{-- <th class="py-1">Image</th> --}}
-                            <th class="py-1">Start Date</th>
+                            {{-- <th class="py-1">Start Date</th> --}}
                             <th class="py-1">End Date </th>
                             {{-- <th class="py-1">Technology Ref</th>
                             <th class="py-1">Project Target</th>
@@ -240,24 +245,24 @@
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($projects as $project )
+                            @foreach ($projects as $project )
                             <tr id="row_{{$project-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$project -> code}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$project -> name}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> description}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> benifit}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> id_doc}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> startdate}}</td>
+                                {{-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> benifit}}</td> --}}
+                                {{-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> id_doc}}</td> --}}
+                                {{-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> startdate}}</td> --}}
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> enddate}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> id_status}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> status}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$project -> note}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; ">
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$project-> id}}"> <span style="color:black;">|</span> </i>
                                     <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$project-> id}}"> <span style="color:black;">|</span> </i> 
                                     <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$project-> id}}"></i>
                                 </td>
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                     <div class="row justify-content-center py-3">
@@ -283,9 +288,9 @@ function getRows ()
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.name + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.description + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
@@ -295,13 +300,14 @@ function getRows ()
                                   '<i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="'+item.id+'"></i>'+
                               '</td>'+
                           '</tr>'; 
-                        $('#data-table tbody').append(row);
+
+                          $('#data-table tbody').append(row);
 
                         });
-    }
+                    }
 
 $(document).ready(function(){
-    getRows();
+    // getRows();
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
@@ -338,7 +344,7 @@ $(document).ready(function(){
                    $('#id_doc').val(item.id_doc);
                    $('#startdate').val(item.startdate);
                    $('#enddate').val(item.enddate);
-                   $('#projecttarget').val(item.projecttarget);
+                   $('#projecttarget').val(item.id_project_target);
                    $('#techreferred').val(item.id_techreferred);
                    $('#missiontype').val(item.id_missiontype);
                    $('#trlstart').val(item.id_trlstart);
@@ -413,9 +419,9 @@ $(document).ready(function(){
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.name + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.description + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
@@ -488,9 +494,9 @@ $(document).ready(function(){
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.name + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.description + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
@@ -537,12 +543,12 @@ $(document).ready(function(){
                 '<p>'+ '<span style="font-weight:700;"> ID_DOC : </span>'+item.id_doc+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Start Date : </span>'+item.startdate+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> End Date : </span>'+item.enddate+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> Project Target : </span>'+item.projecttarget+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Project Target : </span>'+item.target+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Technology Ref : </span>'+item.techarea+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Mission Type : </span>'+item.type+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> TRL Start : </span>'+item.trllevel+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> TRL Actual : </span>'+item.trllevel+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> TRL Final : </span>'+item.trllevel+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> TRL Start : </span>'+item.trlstartlevel+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> TRL Actual : </span>'+item.trlactuallevel+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> TRL Final : </span>'+item.trlfinallevel+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Found Sources : </span>'+item.sourceName+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Status : </span>'+item.status+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';

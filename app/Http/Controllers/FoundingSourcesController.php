@@ -60,7 +60,7 @@ class FoundingSourcesController extends Controller
     // $projOrg = foundingsource::with('projects.missiontype','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks')
 
 
-    $projOrg = foundingsource::with('projects.missiontype','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location' , 'projects.legalentityroles')
+    $projOrg = foundingsource::with('projects.missiontype','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location' , 'projects.legalentityroles' , 'projects.project_target')
     ->where('id' , $id)
     ->first();
 

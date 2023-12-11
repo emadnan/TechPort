@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\project;
 use App\Models\techarea;
+use App\Models\trl;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -134,12 +136,33 @@ class TechAreaController extends Controller
         }
 
         $data = $response->json();
-        return response()->json($data);
+        return response()->json(['data'=>$data]);
+    }
+
+    public function searchProjectsByTechArea(string $id)
+    {
+        $projOrgs = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'techareas' , 'orgperformingworks.location' , 'legalentityroles')
+        ->whereHas('techareas', function ($query) use ($id) {
+            $query->where('techareas.id', $id);
+        })
+        ->get();
+
+        $allTrls = trl::with('projects.trlactual')->get();
+
+
+        $count = $projOrgs->unique('id')->count();
+        $active = $projOrgs->where('status.status' , 'Active')->count();
+        $complete = $projOrgs->where('status.status' , 'Completed')->count();
+        $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
+        
+        // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
+
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
     }
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('searchProjectsByTechArea');
     }
 }
 

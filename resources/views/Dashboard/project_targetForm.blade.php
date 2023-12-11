@@ -19,47 +19,26 @@
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technology Sub sector') }}</label>
+                    <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
                     <div class="col-md-6">
-                        <input id="techniche" type="text" class="form-control @error('techniche') is-invalid @enderror" name="techniche" value= "{{ old ('techniche') }}" autocomplete="techniche" autofocus>
-                        <span class="text-danger small" id="technicheError"></span>
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="technichedescription" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
-                    <div class="col-md-6">
-                        <input id="technichedescription" type="text" class="form-control @error('technichedescription') is-invalid @enderror" name="technichedescription" value="{{ old('technichedescription') }}">
-                        <span class="text-danger small" id="technichedescriptionError"></span>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}">
+                        <span class="text-danger small" id="nameError"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="id_dm" class="col-md-4 col-form-label text-md-end">{{ __('ID_DM') }}</label>
+                    <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                     <div class="col-md-6">
-                        <input id="id_dm" type="text" class="form-control @error('id_dm') is-invalid @enderror" name="id_dm" value="{{ old('id_dm') }}" >
-                            <div id="dm_dropdown" style="display:none; overflow-y: auto; overflow-x:hidden; max-height:100px; min-width: 218px; border:1px solid #CED4DA; border-bottom:none;"></div>
-                            <span class="text-danger small" id="id_dmError"></span>
+                        <input id="description" type="text" class="form-control @error('code') is-invalid @enderror" name="description" value= "{{ old ('description') }}" autocomplete="code" autofocus>
+                        <span class="text-danger small" id="descriptionError"></span>
                     </div>
                 </div>
-
-                <div class="row mb-3">
-                    <label for="otme" class="col-md-4 col-form-label text-md-end">{{ __('OTME') }}</label>
-                    <div class="col-md-6">
-                        <input id="otme" type="text" class="form-control @error('otme') is-invalid @enderror" name="otme" value="{{ old('otme') }}" >
-                        <span class="text-danger small" id="otmeError"></span>
-                    </div>
-                </div>
-
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
-
                     <div class="col-md-6">
                         <textarea id="note" type="text" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" ></textarea>
                         <span class="text-danger small" id="noteError"></span>
-
                     </div>
                 </div>
-
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success btn-sm">Submit</button>
@@ -67,6 +46,7 @@
         </div>
     </form>
       </div>
+      
     </div>
   </div>
 
@@ -76,14 +56,16 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Technology Sub sector Details</h4>
+          <h4 class="modal-title">Project Target Details</h4>
         </div>
         <div class="modal-body" id="details">
+           
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
         </div>
       </div>
+      
     </div>
   </div>
 
@@ -92,34 +74,30 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Technology Niche') }}</b>
+                    <b>{{ __('Project Targets ') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Technology Sub sector</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Project Target</button>
                     </div>
                 </div>
 
                 <div class="card-body">
-                    <table id="data-table" class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped" id="data-table">
                         <thead>
-                            <th class="py-1">Technology Niche</th>
+                            <th class="py-1">Name</th>
                             <th class="py-1">Description</th>
-                            <th class="py-1">Id_dm</th>
-                            <th class="py-1">Otme</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($niches as $niche )
-                            <tr id="row_{{$niche-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> techniche}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> technichedescription}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> id_dm}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> otme}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$niche -> note}}</td>
+                            @foreach ($targets as $target )
+                            <tr id="row_{{$target-> id}}">
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$target -> name}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$target -> description}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$target -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
-                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$niche-> id}}"> <span style="color:black;">|</span> </i>
-                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$niche-> id}}"> <span style="color:black;">|</span> </i> 
-                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$niche-> id}}"></i>
+                                    <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$target-> id}}"> <span style="color:black;">|</span> </i>
+                                    <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$target-> id}}"> <span style="color:black;">|</span> </i> 
+                                    <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$target-> id}}"></i>
                                 </td>
                             </tr>
                             @endforeach
@@ -134,8 +112,9 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
-    $(document).ready(function(){
+$(document).ready(function(){
         
         $.ajaxSetup({
                 headers: { 
@@ -146,11 +125,9 @@
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Technology Sub Sector');
-    $("#technicheError").text('');
-    $("#technichedescriptionError").text('');
-    $("#id_dmError").text('');
-    $("#otmeError").text('');
+    $('#modal_title').html('Add Project Target');
+    $("#nameError").text('');
+    $("#descriptionError").text('');
     $("#noteError").text('');
     }) // create click event end
 
@@ -158,24 +135,20 @@
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Technology Sub Sector');
-    $("#technicheError").text('');
-    $("#technichedescriptionError").text('');
-    $("#id_dmError").text('');
-    $("#otmeError").text('');
+    $('#modal_title').html('Update Project Target');
+    $("#nameError").text('');
+    $("#descriptionError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
-    var url = 'techSubSectorUpdatePage/'+rowID;
+    var url = 'projectTargetUpdatePage/'+rowID;
             $.ajax({
                 type: 'GET',
                 url: url,
                 success: function(response) {
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
-                        $('#techniche').val(item.techniche);
-                        $('#technichedescription').val(item.technichedescription);
-                        $('#id_dm').val(item.id_dm);
-                        $('#otme').val(item.otme);
+                        $('#name').val(item.name);
+                        $('#description').val(item.description);
                         $('#note').val(item.note);
                     });
                 },
@@ -187,16 +160,14 @@ $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
             var inpID = $('#id').val();
-            $("#technicheError").text('');
-            $("#technichedescriptionError").text('');
-            $("#id_dmError").text('');
-            $("#otmeError").text('');
+            $("#nameError").text('');
+            $("#descriptionError").text('');
             $("#noteError").text('');
             if(inpID)
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("techSubSectorUpdate") }}',
+                    url: '{{ route("projectTargetUpdate") }}',
                     data: formData,
 
                     success: function(response)
@@ -204,18 +175,14 @@ $('#form').submit(function(){
 
                         if(response.errors)
                         {
-                            $("#technicheError").text(response.errors.techniche);
-                            $("#technichedescriptionError").text(response.errors.technichedescription);
-                            $("#id_dmError").text(response.errors.id_dm);
-                            $("#otmeError").text(response.errors.otme);
+                            $("#nameError").text(response.errors.name);
+                            $("#descriptionError").text(response.errors.description);
                             $("#noteError").text(response.errors.note);
 
-                            $("#techniche").val(response.oldInput.techniche);
-                            $("#technichedescription").val(response.oldInput.technichedescription);
-                            $("#id_dm").val(response.oldInput.id_dm);
-                            $("#otme").val(response.oldInput.otme);
+                            $("#name").val(response.oldInput.name);
+                            $("#description").val(response.oldInput.description);
                             $("#note").val(response.oldInput.note);
-
+                            
                         }
                         else
                         {
@@ -234,17 +201,16 @@ $('#form').submit(function(){
                             var alert = $('.alert')
                         setTimeout(function() {
                            alert.alert("close");
-                        }, 2000);
+                        }, 5000);
 
+                        var data = $('#data-table tbody');
                         $.each(response.update , function(index , item){
                             var row1 = 
                             '<tr id="row_'+item.id+'">'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techniche + '</td>' +
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.technichedescription + '</td>'+ 
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_dm+'</td>'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.otme+'</td>'+
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>' +
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
-                                '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
+                                '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                     '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
                                     '<i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="'+item.id+'"></i>'+
@@ -252,10 +218,9 @@ $('#form').submit(function(){
                             '</tr>';
                             var row_id = $('#row_'+item.id).replaceWith(row1);
                         });
-                            $('#form-modal').modal('hide');
-                            $('#form').trigger('reset');
-                            $('#id').val(null);
-                           
+                        $('#form-modal').modal('hide');
+                        $('#form').trigger('reset');
+                        $('#id').val(null);
                     }
                     },
                 });
@@ -265,24 +230,21 @@ $('#form').submit(function(){
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("techSubSectorCreate") }}',
+                    url: '{{ route("projectTargetCreate") }}',
                     data: formData,
 
                     success: function(response)
                     {
                         if(response.errors)
                         {
-                            $("#technicheError").text(response.errors.techniche);
-                            $("#technichedescriptionError").text(response.errors.technichedescription);
-                            $("#id_dmError").text(response.errors.id_dm);
-                            $("#otmeError").text(response.errors.otme);
+                            $("#nameError").text(response.errors.name);
+                            $("#descriptionError").text(response.errors.description);
                             $("#noteError").text(response.errors.note);
 
-                            $("#techniche").val(response.oldInput.techniche);
-                            $("#technichedescription").val(response.oldInput.technichedescription);
-                            $("#id_dm").val(response.oldInput.id_dm);
-                            $("#otme").val(response.oldInput.otme);
+                            $("#name").val(response.oldInput.name);
+                            $("#description").val(response.oldInput.description);
                             $("#note").val(response.oldInput.note);
+
                         }
                         else
                         {
@@ -300,28 +262,29 @@ $('#form').submit(function(){
                             var alert = $('.alert')
                         setTimeout(function() {
                            alert.alert("close");
-                        }, 2000);
-                        var data = $('#data-table tbody');
-                 $.each(response.newRow , function(index , item){
+                        }, 5000);
+                        
+                        var data1 = $('#data-table tbody');
+                 $.each(response.row , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techniche + '</td>' +
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.technichedescription + '</td>'+ 
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_dm+'</td>'+
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.otme+'</td>'+
+                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
+                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>' +
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
-                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
+                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                     '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
                                     '<i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="'+item.id+'"></i>'+
                                 '</td>'+
                                '</tr>';
-                                    data.append(row);
+                                    data1.append(row);
                      });
                      $('#form-modal').modal('hide');
-                     $('#form').trigger('reset');
-                     $('#id').val(null);
+                        $('#form').trigger('reset');
+                        $('#id').val(null);
+                       
+
                     }
-                    }
+                }
                 });
             }
         }); 
@@ -331,7 +294,7 @@ $('body').on('click' , '#view-btn' , function(){
              var id = $(this).data('id');
             var data = $('#details');
             data.empty(); 
-            var url = 'techSubSectorRead/' + id;
+            var url = 'projectTargetRead/' + id;
              $.ajax({
                 type: 'GET',
                 url: url,
@@ -340,12 +303,10 @@ $('body').on('click' , '#view-btn' , function(){
                    
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
-                '<span style="font-weight:700;">Technology Sub Sector : </span>'
-                +item.techniche+ '</p>'+
-                '<p>'+ '<span  style="font-weight:700;">Description : </span>'
-                +item.technichedescription+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_dm+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> OTME : </span>'+item.otme+'</p>'+
+                '<span style="font-weight:700;">Code : </span>'
+                +item.name+ '</p>'+
+                '<p>'+ '<span  style="font-weight:700;">Name : </span>'
+                +item.description+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';
                 data.append(descp);
                 });
@@ -357,7 +318,7 @@ $('body').on('click' , '#view-btn' , function(){
 
 $('body').on('click' , '#delete-btn' , function(){
     var id = $(this).data('id');
-    var url = 'techSubSectorDelete/' + id;
+    var url = 'projectTargetDelete/' + id;
     $.ajax({
                 type: 'GET',
                 url: url,
@@ -379,51 +340,12 @@ $('body').on('click' , '#delete-btn' , function(){
                             var alert = $('.alert')
                         setTimeout(function() {
                            alert.alert("close");
-                        }, 2000);
+                        }, 5000);
             }
     });
 });
 
-$('body').on('keyup' , '#id_dm' , function(){
-    let dm_input = $(this).val();
-    let tk = 'pky8SjkAVP6!UfTYMWY2--thnO8WKukhOkQGTzf4JVh!EvKN6jpSd7?Iqeln7lof';
-    let data = {
-        'dm' : dm_input,
-        'tk' : tk,
-    }
-    $.ajax({
-                type: 'POST',
-                url: '/fetchDataFromApi',
-                data: data,
-                success: function(response){
-                    
-                    var dropdown = $('#dm_dropdown');
-                    dropdown.show();
-                    dropdown.empty();
-                    var array = response.data.records;
-                    if(array)
-                    {
-                        $.each(array , function(index , item){
-                        var row = '<a style="border-bottom:1px solid #CED4DA" class="dropdown-item p-2" >'+item.DM+'</a>'
-                        // console.log(dropdown);
-                       
-                        dropdown.append(row);
-                        // var $row = $(row);
-                      
-
-                    });
-                    }
-                }
-            });
- 
-});
-
-$('#dm_dropdown').on('click', 'a' ,  function() {
-   var list =  $(this).html();
-    $("#id_dm").val(list);
-    $('#dm_dropdown').hide();
-});
-
 }); // document.ready end
-  </script>
+</script>
 @endsection
+

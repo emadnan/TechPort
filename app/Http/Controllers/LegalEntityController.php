@@ -20,7 +20,7 @@ class LegalEntityController extends Controller
     {
 
 
-    $projOrg = legalentityrole::with('projects.missiontype' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location')
+    $projOrg = legalentityrole::with('projects.missiontype' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location', 'projects.project_target')
     ->where('id' , $id)
     ->first();
 

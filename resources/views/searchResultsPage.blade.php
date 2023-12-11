@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>TechPort</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
@@ -765,20 +766,20 @@
                     <div>
                         <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
                         @php
-                            $projectID = 0;
+                            $targetID = 0;
                         @endphp
                       @foreach ($projOrgs as $project )
-                      @if ($project->id == $projectID)
+                      @if ($project->project_target->id == $targetID)
                           
                       @else
                     <div style="margin-top: 15px;">
                         <section class="encapsulated-text  ">
-                            <a href="{{ route('projectTargetClickingPage', ['id' => $project->id]) }}" style="color:black;font-weight:bold;">{{$project->projecttarget}}</a>
+                            <a href="{{ route('projectTargetClickingPage', ['id' => $project->project_target->id]) }}" style="color:black;font-weight:bold;">{{$project->project_target->name}}</a>
                         </section>
                     </div>
                         <div class="divider-within-class"></div>
                         @php
-                            $projectID = $project->id;
+                            $targetID = $project->project_target->id;
                         @endphp
                       @endif
                       @endforeach
@@ -906,31 +907,56 @@ google.charts.setOnLoadCallback(function () {
     var projOrgs = @json($projOrgs); 
 
     var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
-    
-    for(var i = 0 ; i<=allTrls.length ; i++)
-    {
-        var trl = allTrls[i];
-        var trlID = trl.id;
-        var jsonData = {
-            'trlID' : trl.id,
+
+    function fetchDataForTrl(trl) {
+    var url = '/getProjectsLengthBySearchID';
+    var trlID = trl.id;
+    var jsonData = {
+            'trlID' : trlID,
             'projOrgs' : projOrgs
         }
         var data = JSON.stringify(jsonData);
-        console.log(data);
-        $.ajax({
-                    contentType: 'application/json; charset=utf-8',
-                    type: 'POST',
-                    url: "{{url('/getProjectsLengthBySearchID')}}",
-                    dataType: 'json',
-                    data: data,
-                    success: function(response)
-                    {
-                        trllevel = response.trl.trllevel;
-                        chartData.push([response.trllevel, response.projects, "#065386"]);
-                        drawChart(google.visualization.arrayToDataTable(chartData));
-                    }
+
+    return fetch(url,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Add any other headers if needed
+            'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
+        },
+        body: data,
     })
-    }
+        .then(response => response.json())
+        .then(data => {
+            var numberOfProjects = data.projects;
+            return numberOfProjects;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            return 0; // Handle the error case by returning a default value
+        });
+}
+
+Promise.all(allTrls.map(fetchDataForTrl))
+    .then(numberOfProjectsArray => {
+        // All fetch operations have completed here
+        for (var i = 0; i < allTrls.length; i++) {
+            var trl = allTrls[i];
+            var numberOfProjects = numberOfProjectsArray[i];
+
+            chartData.push([trl.trllevel.toString(), numberOfProjects, "#065386"]);
+            // Add other chart-related logic here if needed
+        }
+
+        // Continue with other logic that depends on the completed chartData array
+        // console.log(chartData);
+        // Call the drawChart function or any other logic here
+        drawChart(google.visualization.arrayToDataTable(chartData));
+    // drawChart(data);
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
     
 });
     function drawChart(data) {
@@ -964,13 +990,9 @@ google.charts.setOnLoadCallback(function () {
 
     },
         vAxis: {
-        // title: 'Number of Projects',
-        // titleTextStyle: {
-        // color: '#0058a2',  // Text color
-        // fontSize: 12,    // Font size
-        // bold:true,
-        // italic:false,   
-        //                 }
+        minValue: 4,                    
+            viewWindow:{min:0}, /*this also makes 0 = min value*/         
+            format: '0',  
         textStyle: {
       color: 'white'  // Change the color of x-axis labels
     }
@@ -981,5 +1003,64 @@ google.charts.setOnLoadCallback(function () {
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(data, options);
   }
+  var projects = @json($projOrgs);
+  projects.forEach(function(project){
+    var area = project.techreferred.techarea.techarea;
+    if(area.includes('TX01'))
+    {
+    var area_btn =  document.getElementById('btn_tx01');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX02'))
+    {
+    var area_btn =  document.getElementById('btn_tx02');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX03'))
+    {
+    var area_btn =  document.getElementById('btn_tx03');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX04'))
+    {
+    var area_btn =  document.getElementById('btn_tx04');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX05'))
+    {
+    var area_btn =  document.getElementById('btn_tx05');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX06'))
+    {
+    var area_btn =  document.getElementById('btn_tx06');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX07'))
+    {
+    var area_btn =  document.getElementById('btn_tx07');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX08'))
+    {
+    var area_btn =  document.getElementById('btn_tx08');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX09'))
+    {
+    var area_btn =  document.getElementById('btn_tx09');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX010'))
+    {
+    var area_btn =  document.getElementById('btn_tx010');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX011'))
+    {
+    var area_btn =  document.getElementById('btn_tx011');
+    area_btn.style.display = 'block';
+    }
+  });
   </script>
 </html>

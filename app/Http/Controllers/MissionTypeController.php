@@ -57,7 +57,7 @@ class MissionTypeController extends Controller
     // ->where('missiontype.id' , $id)
     // ->get();
 
-    $projOrg = missiontype::with('projects.legalentityroles' , 'projects.trlactual' ,'projects.foundingsource','projects.status'  , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location')
+    $projOrg = missiontype::with('projects.legalentityroles' , 'projects.trlactual' ,'projects.foundingsource','projects.status'  , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location', 'projects.project_target')
     // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype')
     ->with('trls.projects.trlactual')
     ->where('id' , $id)

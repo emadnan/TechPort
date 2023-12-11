@@ -1384,7 +1384,7 @@
                 <div class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
                         <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01 {{$tech-> techarea}}</span>
+                            <a style="color:#000000">TX01 {{$tech-> techarea}}</span>
                         </a>
 
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
@@ -1421,7 +1421,7 @@
                                 Projects linked to this taxonomy</h5>
                             <button class="btn"
                                 style="margin-left:10px; color:white; background: rgba(6, 83, 134, 1);"><a
-                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    style="color:white;" href="{{ route('searchProjectsByTechArea', ['id' => $tech->id]) }}">Find Linked
                                     Projects</a></button>
 
 
@@ -1441,7 +1441,7 @@
                     <div name="answer1" class="arrow-icon" style="position:relative;">
                         <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i>
                         <span>
-                            <a href="{{ url('/search-results') }}" style="color:#000000">TX01.1 {{$techsector-> techsector}}</a></span>
+                            <a style="color:#000000">TX01.1 {{$techsector-> techsector}}</a></span>
                         <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
                             onclick="showimage(this)">
 
@@ -1459,25 +1459,23 @@
                                 </div>
                             </div>
                             <section class="mx-2"
-                                style="color:rgba(6, 83, 134, 1); font-weight:600; font-size:9px;">Technology Maturity
+                                style="color:rgba(6, 83, 134, 1); font-weight:600;">Technology Maturity
                                 (TRL)</section>
 
 
-                            <div class="row my-3">
+                            <div class="row my-0">
                                 <div class="col">
                                     <div id="columnchart_sector_{{$techsector->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
                                         class=" float-right my-0" width="100%"> --}}
                                 </div>
                             </div>
-                            <h5 style="text-align:center; ">Technology Readiness Level
-                            </h5>
                             <h5
                                 style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
                                 Projects linked to this taxonomy</h5>
                             <button class="btn"
                                 style="margin-left:10px;color:white; background: #FFA800;"><a
-                                    style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                    style="color:white;" href="{{ route('searchProjectsByTechSector', ['id' => $techsector->id]) }}">Find Linked
                                     Projects</a></button>
 
 
@@ -1491,7 +1489,7 @@
                             <div>
                                 <i onclick="toggleSubAnswersDescreption(this)" class="fa-solid fa-angle-right"></i>
                                 <span >
-                                    <a href="{{ url('/search-results') }}" style="color:#000000">
+                                    <a style="color:#000000">
                                         TX01.1.1 {{$techniche-> techniche}}</span>
                                 </a>
                                 <img src="{{ asset('images/icon-black.png') }}" alt=""
@@ -1517,23 +1515,19 @@
                                         (TRL)</section>
 
 
-                                    <div class="row my-3">
+                                    <div class="row my-">
                                         <div class="col-10">
                                     <div id="columnchart_niche_{{$techniche->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
                                                 class=" float-right my-0" width="100%"> --}}
                                          </div>
                                     </div>
-                                    <h5 style="text-align:center; ">Technology
-                                        Readiness
-                                        Level
-                                    </h5>
                                     <h5
                                         style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
                                         Projects linked to this taxonomy</h5>
                                     <button class="btn"
                                         style="margin-left:10px;color:white; background: #323E48;"><a
-                                            style="color:white;" href="{{ url('/search-results') }}">Find Linked
+                                            style="color:white;" href="{{ route('searchProjectsByTechNiche', ['id' => $techniche->id]) }}">Find Linked
                                             Projects</a></button>
 
 
@@ -1682,13 +1676,13 @@ var techs = @json($techs);
     var allTrls = @json($allTrls);
     var techs = @json($techs);
     // console.log(techs);
-
+     
     function getProjectsData(tech , trl)
     {
         const projects = tech.projects;
-
+        const trlID = trl.id;
         var jsonData = {
-            'trlID' : trl.id,
+            'trlID' : trlID,
             'projects' : projects
         };
 
@@ -1702,7 +1696,7 @@ var techs = @json($techs);
                     data: JSON.stringify(jsonData),
                     success: function(response)
                     {
-                        resolve([response.trlID , response.numberOfProjects , "#065386"])
+                        resolve([response.trl.trllevel.toString() , response.numberOfProjects , "#FF691C"])
                     },
             error: function (error) {
                 reject(error);
@@ -1726,49 +1720,21 @@ var techs = @json($techs);
             console.error("Error fetching data:", error);
         }
         }));
+        chartData.sort(function (a, b) {
+        // Skip sorting if the first element is a header
+        if (typeof a[0] === 'string' && a[0].toLowerCase() === 'trl level') return -1;
+        if (typeof b[0] === 'string' && b[0].toLowerCase() === 'trl level') return 1;
+        return a[0].localeCompare(b[0]);
+    });
+
 
        drawChart(google.visualization.arrayToDataTable(chartData), tech.id);
     }
 
-
-    // // Create an array to store data for the chart
-    // for (let i = 0; i < techs.length; i++) {
-    // var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
-    //     const tech = techs[i];
-    //     const projects = tech.projects;
-    //     console.log(tech);
-
-    //     for(var j = 0 ; j<=allTrls.length ; j++)
-    // {
-    //     var trl = allTrls[j];
-    //     var trlID = trl.id;
-    //     // console.log(trl.id);
-    //     var jsonData = {
-    //         'trlID' : trl.id,
-    //         'projects' : projects
-    //     }
-    //     var data = JSON.stringify(jsonData);
-    //     // console.log(data);
-    //     $.ajax({
-    //                 contentType: 'application/json; charset=utf-8',
-    //                 type: 'POST',
-    //                 url: "{{url('/getProjectsLengthByTechAreaID')}}",
-    //                 dataType: 'json',
-    //                 data: data,
-    //                 success: function(response)
-    //                 {
-    //                     // console.log(response.numberOfProjects);
-    //                     chartData.push([response.trlID, response.numberOfProjects, "#065386"]);
-    //                    drawChart(google.visualization.arrayToDataTable(chartData), tech.id);
-    //                 }
-
-    // })
-    // }
-        
     function drawChart(data ,techId) {
 //   console.log('Draw Chart');
   var options = {
-    chartArea: { width: '80%' , left:50 , right:20},
+    chartArea: { width: '70%' , left:50 , right:20},
     width: 330,
     height: 233,
     bar: {groupWidth: "60%"},
@@ -1788,13 +1754,30 @@ var techs = @json($techs);
     color: '#0058a2',  // Text color
     fontSize: 12,    // Font size
     bold:true,
-    italic:false,   
-                    }
+    italic:false,    
+    },
+    minValue: 4,                    
+    viewWindow:{min:0}, /*this also makes 0 = min value*/         
+    format: '0', 
            },
   };
     var container = document.getElementById("columnchart_area_"+techId);
     // console.log(container);
       var chart = new google.visualization.ColumnChart(container);
+
+    //   var colors = ['#FF691C', '#008FD4', '#0058A2']; // Add more colors as needed
+    // var colorIndex = 0;
+
+    // google.visualization.events.addListener(chart, 'ready', function () {
+    //     // Change bar colors after every third bar
+    //     var bars = container.getElementsByTagName('rect');
+    //     for (var i = 0; i < bars.length; i++) {
+    //         if (i % 3 === 0) {
+    //             colorIndex = (colorIndex + 1) % colors.length;
+    //             bars[i].setAttribute('fill', colors[colorIndex]);
+    //         }
+    //     }
+    // });
       chart.draw(data, options);
 }
     // }
@@ -1834,7 +1817,7 @@ var techs = @json($techs);
                         data: JSON.stringify(jsonData),
                         success: function(response)
                         {
-                            resolve([response.trlID , response.numberOfProjects , "#065386"])
+                            resolve([response.trl.trllevel.toString() , response.numberOfProjects , "#065386"])
                         },
                 error: function (error) {
                     reject(error);
@@ -1858,37 +1841,47 @@ var techs = @json($techs);
                 console.error("Error fetching data:", error);
             }
             }));
+
+            chartData.sort(function (a, b) {
+        // Skip sorting if the first element is a header
+        if (typeof a[0] === 'string' && a[0].toLowerCase() === 'trl level') return -1;
+        if (typeof b[0] === 'string' && b[0].toLowerCase() === 'trl level') return 1;
+        return a[0].localeCompare(b[0]);
+    });
     
            drawChart(google.visualization.arrayToDataTable(chartData), sector.id);
         }
     
         function drawChart(data ,sectorId) {
     //   console.log('Draw Chart');
-      var options = {
-        chartArea: { width: '80%' , left:50 , right:20},
-        width: 330,
-        height: 233,
-        bar: {groupWidth: "60%"},
-        legend: { position: "none" },
-        hAxis: {
-        title: 'Technology Readiness Level',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,    
-        italic:false,   
-                        }
-               },
-        vAxis: {
-        title: 'Number of Projects',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,
-        italic:false,   
-                        }
-               },
-      };
+    var options = {
+    chartArea: { width: '70%' , left:50 , right:20},
+    width: 330,
+    height: 233,
+    bar: {groupWidth: "60%"},
+    legend: { position: "none" },
+    hAxis: {
+    title: 'Technology Readiness Level',
+    titleTextStyle: {
+    color: '#0058a2',  // Text color
+    fontSize: 12,    // Font size
+    bold:true,    
+    italic:false,   
+                    }
+           },
+    vAxis: {
+    title: 'Number of Projects',
+    titleTextStyle: {
+    color: '#0058a2',  // Text color
+    fontSize: 12,    // Font size
+    bold:true,
+    italic:false,    
+    },
+    minValue: 4,                    
+    viewWindow:{min:0}, /*this also makes 0 = min value*/         
+    format: '0', 
+           },
+  };
         var container = document.getElementById("columnchart_sector_"+sectorId);
         // console.log(container);
           var chart = new google.visualization.ColumnChart(container);
@@ -1908,7 +1901,7 @@ var techs = @json($techs);
         google.charts.load("45", {packages:['corechart']});
         google.charts.setOnLoadCallback( async function (trl) {
 
-        console.log(niches);
+        // console.log(niches);
     
         function getProjectsData(niche , trl)
         {
@@ -1929,7 +1922,7 @@ var techs = @json($techs);
                         data: JSON.stringify(jsonData),
                         success: function(response)
                         {
-                            resolve([response.trlID , response.numberOfProjects , "#065386"])
+                            resolve([response.trl.trllevel.toString() , response.numberOfProjects , "#065386"])
                         },
                 error: function (error) {
                     reject(error);
@@ -1942,7 +1935,7 @@ var techs = @json($techs);
         for (let i = 0; i < niches.length; i++) {
             const niche = niches[i];
             // const projects = tech.projects;
-            console.log(niche);
+            // console.log(niche);
             
             var chartData = [['TRL Level', 'Number of Projects', { role: "style" }]];
             await Promise.all(allTrls.map( async function (trl){
@@ -1953,40 +1946,50 @@ var techs = @json($techs);
                 console.error("Error fetching data:", error);
             }
             }));
+
+            chartData.sort(function (a, b) {
+        // Skip sorting if the first element is a header
+        if (typeof a[0] === 'string' && a[0].toLowerCase() === 'trl level') return -1;
+        if (typeof b[0] === 'string' && b[0].toLowerCase() === 'trl level') return 1;
+        return a[0].localeCompare(b[0]);
+    });
     
            drawChart(google.visualization.arrayToDataTable(chartData), niche.id);
         }
     
         function drawChart(data ,nicheId) {
-      var options = {
-        chartArea: { width: '80%' , left:50 , right:20},
-        width: 330,
-        height: 233,
-        bar: {groupWidth: "60%"},
-        legend: { position: "none" },
-        hAxis: {
-        title: 'Technology Readiness Level',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,    
-        italic:false,   
-                        }
-               },
-        vAxis: {
-        title: 'Number of Projects',
-        titleTextStyle: {
-        color: '#0058a2',  // Text color
-        fontSize: 12,    // Font size
-        bold:true,
-        italic:false,   
-                        }
-               },
-      };
+            var options = {
+    chartArea: { width: '70%' , left:50 , right:20},
+    width: 330,
+    height: 233,
+    bar: {groupWidth: "60%"},
+    legend: { position: "none" },
+    hAxis: {
+    title: 'Technology Readiness Level',
+    titleTextStyle: {
+    color: '#0058a2',  // Text color
+    fontSize: 12,    // Font size
+    bold:true,    
+    italic:false,   
+                    }
+           },
+    vAxis: {
+    title: 'Number of Projects',
+    titleTextStyle: {
+    color: '#0058a2',  // Text color
+    fontSize: 12,    // Font size
+    bold:true,
+    italic:false,    
+    },
+    minValue: 4,                    
+    viewWindow:{min:0}, /*this also makes 0 = min value*/         
+    format: '0', 
+           },
+  };
         if(document.getElementById("columnchart_niche_"+nicheId))
         {
         var container = document.getElementById("columnchart_niche_"+nicheId);
-        console.log(container);
+        // console.log(container);
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(data, options);
         }
@@ -1994,133 +1997,5 @@ var techs = @json($techs);
         // }
        
     });
-    
-      
-    
       </script>
-
-  {{-- <script type="text/javascript">
-    var allTrls = @json($allTrls);
-    
-        google.charts.load("45", {packages:['corechart']});
-        google.charts.setOnLoadCallback(function () {
-        var allTrls = @json($allTrls); // Assuming $trls is an array of trl models
-    
-        // Create an array to store data for the chart
-        var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
-    
-        // Iterate through each TRL model
-        for (var i = 0; i < allTrls.length; i++) {
-            var trl = allTrls[i];
-    
-            // Count the number of projects for the current TRL level
-            var numberOfProjects = trl.projects.length;
-    
-            // Add data to the chart array
-            chartData.push([trl.trllevel.toString(), numberOfProjects , "#065386"]);
-        }
-    
-        // Create a DataTable from the chart data
-        var data = google.visualization.arrayToDataTable(chartData);
-    
-        // Draw the chart
-        drawChart(data);
-    });
-        function drawChart(data) {
-    
-          var options = {
-            chartArea: { width: '80%' , left:50 , right:20},
-            width: 330,
-            height: 233,
-            bar: {groupWidth: "60%"},
-            legend: { position: "none" },
-            hAxis: {
-            title: 'Technology Readiness Level',
-            titleTextStyle: {
-            color: '#0058a2',  // Text color
-            fontSize: 12,    // Font size
-            bold:true,    
-            italic:false,   
-                            }
-                   },
-            vAxis: {
-            title: 'Number of Projects',
-            titleTextStyle: {
-            color: '#0058a2',  // Text color
-            fontSize: 12,    // Font size
-            bold:true,
-            italic:false,   
-                            }
-                   },
-          };
-          var techs = @json($techs);
-          techs.forEach(function(tech){
-            var container = document.getElementById("columnchart_values_"+tech.id);
-              var chart = new google.visualization.ColumnChart(container);
-              chart.draw(data, options);
-        })
-      }
-      </script> --}}
-      {{-- <script type="text/javascript">
-        var allTrls = @json($allTrls);
-        
-            google.charts.load("45", {packages:['corechart']});
-            google.charts.setOnLoadCallback(function () {
-            var allTrls = @json($allTrls); // Assuming $trls is an array of trl models
-        
-            // Create an array to store data for the chart
-            var chartData = [['TRL Level', 'Number of Projects' , { role: "style" }]];
-        
-            // Iterate through each TRL model
-            for (var i = 0; i < allTrls.length; i++) {
-                var trl = allTrls[i];
-        
-                // Count the number of projects for the current TRL level
-                var numberOfProjects = trl.projects.length;
-        
-                // Add data to the chart array
-                chartData.push([trl.trllevel.toString(), numberOfProjects , "#065386"]);
-            }
-        
-            // Create a DataTable from the chart data
-            var data = google.visualization.arrayToDataTable(chartData);
-        
-            // Draw the chart
-            drawChart(data);
-        });
-            function drawChart(data) {
-           
-              var options = {
-                chartArea: { width: '80%' , left:50 , right:20},
-                width: 330,
-                height: 233,
-                bar: {groupWidth: "60%"},
-                legend: { position: "none" },
-                hAxis: {
-                title: 'Technology Readiness Level',
-                titleTextStyle: {
-                color: '#0058a2',  // Text color
-                fontSize: 12,    // Font size
-                bold:true,    
-                italic:false,   
-                                }
-                       },
-                vAxis: {
-                title: 'Number of Projects',
-                titleTextStyle: {
-                color: '#0058a2',  // Text color
-                fontSize: 12,    // Font size
-                bold:true,
-                italic:false,   
-                                }
-                       },
-              };
-              var techs = @json($techs);
-              techs.forEach(function(tech){
-                var container = document.getElementById("columnchart_values_"+tech.id);
-                  var chart = new google.visualization.ColumnChart(container);
-                  chart.draw(data, options);
-            })
-          }
-          </script> --}}
 </html>

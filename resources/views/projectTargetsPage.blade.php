@@ -266,7 +266,7 @@
 
     .custom-icon-arrow {
         float: right;
-        margin-top: 10px;
+        margin-top: 0px;
         margin-right: 15px;
         color: #065386;
     }
@@ -338,141 +338,20 @@
 
 
         <!-- QA Section -->
-    @foreach ($projects as $project)
+    @foreach ($targets as $target)
         <div class="faq-container">
-                <a href="{{ route('projectTargetClickingPage', ['id' => $project->id])}}">
+                <a href="{{ route('projectTargetClickingPage', ['id' => $target->id])}}">
                     <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">{{$project->projecttarget}}</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
+                        style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span>
+                        <span style="color: black; text-decoration: none;" class="faq-question">{{$target->name}}</span>
+                        <i class="fas fa-chevron-right custom-icon-arrow"></i>
+                    </div>
                 </a>
         </div>
         <div class="divider"></div>
         @endforeach
 
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">2</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">3</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">4</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">5</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">6</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">7</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">8</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/project-target-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">9</span><span
-                            style="color: black; text-decoration: none;" class="faq-question">Earth</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-
-
-
-
-
+        
     </div>
 
 

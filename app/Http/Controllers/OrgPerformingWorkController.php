@@ -21,7 +21,7 @@ class OrgPerformingWorkController extends Controller
     {
 
    
-    $projOrg = orgperformingwork::with('projects.legalentityroles' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location')
+    $projOrg = orgperformingwork::with('projects.missiontype' , 'projects.legalentityroles' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location', 'projects.project_target')
     // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype')
     ->where('id' , $id)
     ->first();

@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foundingsource;
+use App\Models\legalentityrole;
+use App\Models\location;
+use App\Models\missiontype;
+use App\Models\orgperformingwork;
+use App\Models\product;
 use App\Models\project;
+use App\Models\Project_target;
 use App\Models\techarea;
 use App\Models\techniche;
 use App\Models\techreferred;
@@ -25,7 +32,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $projects = project::count();
+        $organizations = orgperformingwork::count();
+        $locations = location::count();
+        $found_sources = foundingsource::count();
+        $mission_types = missiontype::count();
+        $legal_entities = legalentityrole::count();
+        $products = product::count();
+        $project_targets = Project_target::count();
+        return view('dashboard' , compact('projects' , 'organizations' , 'locations' , 'found_sources' , 'mission_types' , 'legal_entities' , 'project_targets' , 'products'));
     }
     public function homePage()
     {       
@@ -46,13 +61,14 @@ class HomeController extends Controller
 
     $projects = $req->input('projects');
     $trlID = $req->input('trlID');
-
+    $trl = trl::where('id', $trlID)->first();
+// dd($trl);
 $filteredProjects = collect($projects)->filter(function ($project) use ($trlID) {
     return $project['id_trlactual'] == $trlID;
 });
     $numberOfProjects = $filteredProjects->count();
    
-        return response()->json(compact('numberOfProjects' , 'trlID'));
+        return response()->json(compact('numberOfProjects' , 'trl'));
 
     }
 
@@ -61,13 +77,14 @@ $filteredProjects = collect($projects)->filter(function ($project) use ($trlID) 
 
     $projects = $req->input('projects');
     $trlID = $req->input('trlID');
+    $trl = trl::where('id', $trlID)->first();
 
 $filteredProjects = collect($projects)->filter(function ($project) use ($trlID) {
     return $project['id_trlactual'] == $trlID;
 });
     $numberOfProjects = $filteredProjects->count();
    
-        return response()->json(compact('numberOfProjects' , 'trlID'));
+        return response()->json(compact('numberOfProjects' , 'trl'));
 
     }
 
@@ -76,13 +93,14 @@ $filteredProjects = collect($projects)->filter(function ($project) use ($trlID) 
 
     $projects = $req->input('projects');
     $trlID = $req->input('trlID');
+    $trl = trl::where('id', $trlID)->first();
 
 $filteredProjects = collect($projects)->filter(function ($project) use ($trlID) {
     return $project['id_trlactual'] == $trlID;
 });
     $numberOfProjects = $filteredProjects->count();
    
-        return response()->json(compact('numberOfProjects' , 'trlID'));
+        return response()->json(compact('numberOfProjects' , 'trl'));
 
     }
 

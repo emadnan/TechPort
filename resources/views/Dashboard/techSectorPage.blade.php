@@ -37,7 +37,8 @@
                     <label for="id_dm" class="col-md-4 col-form-label text-md-end">{{ __('ID_DM') }}</label>
                     <div class="col-md-6">
                         <input id="id_dm" type="text" class="form-control @error('id_dm') is-invalid @enderror" name="id_dm" value="{{ old('id_dm') }}" >
-                        <span class="text-danger small" id="id_dmError"></span>
+                            <div id="dm_dropdown" style="display:none; overflow-y: auto; overflow-x:hidden; max-height:100px; min-width: 218px; border:1px solid #CED4DA; border-bottom:none;"></div>
+                            <span class="text-danger small" id="id_dmError"></span>
                     </div>
                 </div>
 
@@ -393,6 +394,46 @@ $('body').on('click' , '#delete-btn' , function(){
                         }, 2000);
             }
     });
+});
+
+$('body').on('keyup' , '#id_dm' , function(){
+    let dm_input = $(this).val();
+    let tk = 'pky8SjkAVP6!UfTYMWY2--thnO8WKukhOkQGTzf4JVh!EvKN6jpSd7?Iqeln7lof';
+    let data = {
+        'dm' : dm_input,
+        'tk' : tk,
+    }
+    $.ajax({
+                type: 'POST',
+                url: '/fetchDataFromApi',
+                data: data,
+                success: function(response){
+                    
+                    var dropdown = $('#dm_dropdown');
+                    dropdown.show();
+                    dropdown.empty();
+                    var array = response.data.records;
+                    if(array)
+                    {
+                        $.each(array , function(index , item){
+                        var row = '<a style="border-bottom:1px solid #CED4DA" class="dropdown-item p-2" >'+item.DM+'</a>'
+                        // console.log(dropdown);
+                       
+                        dropdown.append(row);
+                        // var $row = $(row);
+                      
+
+                    });
+                    }
+                }
+            });
+ 
+});
+
+$('#dm_dropdown').on('click', 'a' ,  function() {
+   var list =  $(this).html();
+   console.log(list);
+    $('#dm_dropdown').hide();
 });
 
 }); // document.ready end

@@ -18,7 +18,7 @@ class SearchReultsController extends Controller
     public function index()
     {
 
-    $projOrgs = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles')
+    $projOrgs = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles' , 'project_target')
     ->get();
     
     $allTrls = trl::with('projects.trlactual')->get();
@@ -57,11 +57,11 @@ class SearchReultsController extends Controller
 
     public function getProjectsLengthBySearchID(Request $req)
     {
-       
-        
+        // dd('ERROR');
+
         $projOrgs = $req->input('projOrgs');
         $trlID = $req->input('trlID');
-$trl = trl::where('id' , $trlID);
+        $trl = trl::where('id' , $trlID);
 
     $filteredProjects = collect($projOrgs)->filter(function ($project) use ($trlID) {
         return $project['id_trlactual'] == $trlID;
@@ -73,3 +73,4 @@ $trl = trl::where('id' , $trlID);
         return response()->json(compact('projOrgs' , 'trl' , 'projects'));
     }
 }
+

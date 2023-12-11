@@ -20,7 +20,7 @@ class LocationController extends Controller
     public function locationsClickingPage (string $id)
     {
 
-    $projOrg = location::with( 'orgperformingworks.projects.missiontype' , 'orgperformingworks.projects.foundingsource' , 'orgperformingworks.projects.status' ,'orgperformingworks.projects.techreferred.techarea' ,  'orgperformingworks.legalentityroles'  ,  'orgperformingworks.location' ,  'orgperformingworks.projects.trlactual' )
+    $projOrg = location::with( 'orgperformingworks.projects.missiontype' , 'orgperformingworks.projects.foundingsource' , 'orgperformingworks.projects.status' ,'orgperformingworks.projects.techreferred.techarea' ,  'orgperformingworks.legalentityroles'  ,  'orgperformingworks.location' ,  'orgperformingworks.projects.trlactual', 'orgperformingworks.projects.project_target' )
     ->where('id' , $id)
     ->first();
 

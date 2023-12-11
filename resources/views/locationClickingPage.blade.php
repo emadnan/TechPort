@@ -693,21 +693,21 @@
                     <div>
                         <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
                         @php
-                            $projectID = 0;
+                            $targetID = 0;
                         @endphp
                       @foreach ($projOrg->orgperformingworks as $org )
                       @foreach ($org->projects as $project )
-                      @if ($project->id == $projectID)
+                      @if ($project->project_target->id == $targetID)
                           
                       @else
                     <div style="margin-top: 15px;">
                         <section class="encapsulated-text  ">
-                            <a href="{{ route('projectTargetClickingPage', ['id' => $project->id]) }}" style="color:black;font-weight:bold;">{{$project->projecttarget}}</a>
+                            <a href="{{ route('projectTargetClickingPage', ['id' => $project->project_target->id]) }}" style="color:black;font-weight:bold;">{{$project->project_target->name}}</a>
                         </section>
                     </div>
                         <div class="divider-within-class"></div>
                         @php
-                            $projectID = $project->id;
+                            $targetID = $project->project_target->id;
                         @endphp
                       @endif
                       @endforeach
@@ -910,6 +910,9 @@ Promise.all(allTrls.map(fetchDataForTrl))
         // bold:true,
         // italic:false,   
         //                 }
+        minValue: 4,                    
+            viewWindow:{min:0}, /*this also makes 0 = min value*/         
+            format: '0',  
         textStyle: {
       color: 'white'  // Change the color of x-axis labels
     }
@@ -920,6 +923,70 @@ Promise.all(allTrls.map(fetchDataForTrl))
           var chart = new google.visualization.ColumnChart(container);
           chart.draw(data, options);
   }
+
+  var projOrg = @json($projOrg);
+  var orgs = projOrg.orgperformingworks;
+  orgs.forEach(function(org){
+  var projects = org.projects;
+  projects.forEach(function(project){
+    var area = project.techreferred.techarea.techarea;
+    if(area.includes('TX01'))
+    {
+    var area_btn =  document.getElementById('btn_tx01');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX02'))
+    {
+    var area_btn =  document.getElementById('btn_tx02');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX03'))
+    {
+    var area_btn =  document.getElementById('btn_tx03');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX04'))
+    {
+    var area_btn =  document.getElementById('btn_tx04');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX05'))
+    {
+    var area_btn =  document.getElementById('btn_tx05');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX06'))
+    {
+    var area_btn =  document.getElementById('btn_tx06');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX07'))
+    {
+    var area_btn =  document.getElementById('btn_tx07');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX08'))
+    {
+    var area_btn =  document.getElementById('btn_tx08');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX09'))
+    {
+    var area_btn =  document.getElementById('btn_tx09');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX010'))
+    {
+    var area_btn =  document.getElementById('btn_tx010');
+    area_btn.style.display = 'block';
+    }
+    if(area.includes('TX011'))
+    {
+    var area_btn =  document.getElementById('btn_tx011');
+    area_btn.style.display = 'block';
+    }
+  });
+  });
   </script>
 
 </html>

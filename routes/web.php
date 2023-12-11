@@ -20,6 +20,7 @@ use App\Http\Controllers\PriorityController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectOrganizationController;
+use App\Http\Controllers\ProjectTargetController;
 use App\Http\Controllers\ProjectTechnologyController;
 use App\Http\Controllers\Ref_EquipmentController;
 use App\Http\Controllers\Ref_OrganizationUnitController;
@@ -83,10 +84,7 @@ Route::controller(ProjectController::class)->group(function () {
     Route::get('/projectUpdatePage/{id}' , 'updatePage')->name('projectUpdatePage');
     Route::post('/projectUpdate' , 'update')->name('projectUpdate');
     Route::get('/projectDelete/{id}' , 'delete')->name('projectDelete');
-    Route::get('/project-targets' , 'projectTargetsPage')->name('projectTargetsPage');
-    Route::get('/project-target-clicking/{id}' , 'projectTargetClickingPage')->name('projectTargetClickingPage');
     Route::get('/downloadPdf/{id}', 'downloadPdf')->name('downloadPdf');
-    Route::get('/getProjectsLengthByProjectTargetID/{projectID}/{trlID}' , 'getProjectsLengthByProjectTargetID')->name('getProjectsLengthByProjectTargetID');
 });
 
 Route::controller(BusinessAreaController::class)->group(function () {
@@ -130,6 +128,19 @@ Route::controller(FoundingSourcesController::class)->group(function(){
     Route::get('/foundSourceDelete/{id}' , 'delete')->name('foundSourceDelete');
     Route::get('/found-sources-clicking/{id}' , 'foundSourcesClickingPage')->name('foundSourcesClickingPage');
     Route::get('/getProjectsLengthBySourceID/{sourceID}/{trlID}' , 'getProjectsLengthBySourceID')->name('getProjectsLengthBySourceID');
+});
+
+Route::controller(ProjectTargetController::class)->group(function(){
+    Route::get('/project-targets' , 'index')->name('projectTargetsPage');
+    Route::get('/projectTargetForm' , 'projectTargetPage')->name('projectTargetForm');
+    Route::get('/addProjectTarget' , 'addPage')->name('addProjectTarget');
+    Route::post('/projectTargetCreate' , 'create')->name('projectTargetCreate');
+    Route::get('/projectTargetRead/{id}' , 'read')->name('projectTargetRead');
+    Route::get('/projectTargetUpdatePage/{id}' , 'updatePage')->name('projectTargetUpdatePage');
+    Route::post('/projectTargetUpdate' , 'update')->name('projectTargetUpdate');
+    Route::get('/projectTargetDelete/{id}' , 'delete')->name('projectTargetDelete');
+    Route::get('/project-target-clicking/{id}' , 'projectTargetClickingPage')->name('projectTargetClickingPage');
+    Route::get('/getProjectsLengthByProjectTargetID/{projectID}/{trlID}' , 'getProjectsLengthByProjectTargetID')->name('getProjectsLengthByProjectTargetID');
 });
 
 Route::controller(HumanEntityController::class)->group(function(){
@@ -219,6 +230,8 @@ Route::controller(TechAreaController::class)->group(function(){
     Route::get('/techAreaUpdatePage/{id}' , 'updatePage')->name('techAreaUpdatePage');
     Route::post('/techAreaUpdate' , 'update')->name('techAreaUpdate');
     Route::get('/techAreaDelete/{id}' , 'delete')->name('techAreaDelete');
+    Route::get('/searchProjectsByTechArea/{id}' , 'searchProjectsByTechArea')->name('searchProjectsByTechArea');
+    Route::post('/fetchDataFromApi' , 'fetchDataFromApi')->name('fetchDataFromApi');
 });
 
 Route::controller(TechSectorController::class)->group(function(){
@@ -229,6 +242,7 @@ Route::controller(TechSectorController::class)->group(function(){
     Route::get('/techSectorUpdatePage/{id}' , 'updatePage')->name('techSectorUpdatePage');
     Route::post('/techSectorUpdate' , 'update')->name('techSectorUpdate');
     Route::get('/techSectorDelete/{id}' , 'delete')->name('techSectorDelete');
+    Route::get('/searchProjectsByTechSector/{id}' , 'searchProjectsByTechSector')->name('searchProjectsByTechSector');
 });
 
 Route::controller(TechSubSectorController::class)->group(function(){
@@ -239,6 +253,7 @@ Route::controller(TechSubSectorController::class)->group(function(){
     Route::get('/techSubSectorUpdatePage/{id}' , 'updatePage')->name('techSubSectorUpdatePage');
     Route::post('/techSubSectorUpdate' , 'update')->name('techSubSectorUpdate');
     Route::get('/techSubSectorDelete/{id}' , 'delete')->name('techSubSectorDelete');
+    Route::get('/searchProjectsByTechNiche/{id}' , 'searchProjectsByTechNiche')->name('searchProjectsByTechNiche');
 });
 
 Route::controller(TechnologyController::class)->group(function(){

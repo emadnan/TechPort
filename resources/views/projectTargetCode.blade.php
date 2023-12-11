@@ -13,20 +13,20 @@
         <div>
             <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
             @php
-                $projectID = 0;
+                $targetID = 0;
             @endphp
           @foreach ($projOrg->projects as $project )
-          @if ($project->id == $projectID)
+          @if ($project->project_target->id == $targetID)
               
           @else
         <div style="margin-top: 15px;">
             <section class="encapsulated-text  ">
-                <a href="{{ route('projectTargetClickingPage', ['id' => $project->id]) }}" style="color:black;font-weight:bold;">{{$project->projecttarget}}</a>
+                <a href="{{ route('projectTargetClickingPage', ['id' => $project->project_target->id]) }}" style="color:black;font-weight:bold;">{{$project->project_target->name}}</a>
             </section>
         </div>
             <div class="divider-within-class"></div>
             @php
-                $projectID = $project->id;
+                $targetID = $project->project_target->id;
             @endphp
           @endif
           @endforeach
