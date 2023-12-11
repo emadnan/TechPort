@@ -1692,7 +1692,7 @@ var techs = @json($techs);
                     data: JSON.stringify(jsonData),
                     success: function(response)
                     {
-                        resolve([response.trl.trllevel.toString() , response.numberOfProjects , "#FF691C"])
+                        resolve([response.trl.trllevel.toString() , response.numberOfProjects , "#065386"])
                     },
             error: function (error) {
                 reject(error);
@@ -1761,19 +1761,19 @@ var techs = @json($techs);
     // console.log(container);
       var chart = new google.visualization.ColumnChart(container);
 
-      var colors = ['#FF691C', '#008FD4', '#0058A2']; // Add more colors as needed
-    var colorIndex = 0;
+    //   var colors = ['#FF691C', '#008FD4', '#0058A2']; // Add more colors as needed
+    // var colorIndex = 0;
 
-    google.visualization.events.addListener(chart, 'ready', function () {
-        // Change bar colors after every third bar
-        var bars = container.getElementsByTagName('rect');
-        for (var i = 0; i < bars.length; i++) {
-            if (i % 3 === 0) {
-                colorIndex = (colorIndex + 1) % colors.length;
-                bars[i].setAttribute('fill', colors[colorIndex]);
-            }
-        }
-    });
+    // google.visualization.events.addListener(chart, 'ready', function () {
+    //     // Change bar colors after every third bar
+    //     var bars = container.getElementsByTagName('rect');
+    //     for (var i = 0; i < bars.length; i++) {
+    //         if (i % 3 === 0) {
+    //             colorIndex = (colorIndex + 1) % colors.length;
+    //             bars[i].setAttribute('fill', colors[colorIndex]);
+    //         }
+    //     }
+    // });
       chart.draw(data, options);
 }
     // }
