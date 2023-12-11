@@ -10,7 +10,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="dist\img\png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png"
+                <img src="public\dist\img\png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png"
                     class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
