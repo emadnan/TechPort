@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@include('sidebar')
 @section('content')
+@include('sidebar')
 
 {{-- <div class="row" style="display: block;">
   <div class="col-md-10 offset-2">
