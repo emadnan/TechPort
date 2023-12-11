@@ -1384,7 +1384,7 @@
                 <div class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
                         <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
-                            <a style="color:#000000">TX01 {{$tech-> techarea}}</span>
+                            <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
@@ -1393,7 +1393,6 @@
                         <div class="graph-pop" style="display: none;  z-index:1000; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <section>TX01</section>
                                     <section>{{$tech-> techarea}}
                                     </section>
                                 </div>
@@ -1441,14 +1440,13 @@
                     <div name="answer1" class="arrow-icon" style="position:relative;">
                         <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i>
                         <span>
-                            <a style="color:#000000">TX01.1 {{$techsector-> techsector}}</a></span>
+                            <a style="color:#000000">{{$techsector-> techsector}}</a></span>
                         <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
                             onclick="showimage(this)">
 
                         <div class="  graph-pop" style="display: none;  z-index:999; ">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <section>TX01.1</section>
                                     <section>{{$techsector-> techsector}}
                                     </section>
                                 </div>
@@ -1488,9 +1486,8 @@
                             style="margin-left:1px;">
                             <div>
                                 <i onclick="toggleSubAnswersDescreption(this)" class="fa-solid fa-angle-right"></i>
-                                <span >
-                                    <a style="color:#000000">
-                                        TX01.1.1 {{$techniche-> techniche}}</span>
+                                <a style="color:#000000">
+                                    <span >{{$techniche-> techniche}}</span>
                                 </a>
                                 <img src="{{ asset('images/icon-black.png') }}" alt=""
                                     class=" float-right graph-image" onclick="showimage(this)">
@@ -1498,7 +1495,6 @@
                                 <div class="graph-pop" style="display: none;  z-index:998;">
                                     <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
-                                            <section>TX01.1.1</section>
                                             <section>{{$techniche-> techniche}}
                                             </section>
                                         </div>
@@ -1765,19 +1761,19 @@ var techs = @json($techs);
     // console.log(container);
       var chart = new google.visualization.ColumnChart(container);
 
-    //   var colors = ['#FF691C', '#008FD4', '#0058A2']; // Add more colors as needed
-    // var colorIndex = 0;
+      var colors = ['#FF691C', '#008FD4', '#0058A2']; // Add more colors as needed
+    var colorIndex = 0;
 
-    // google.visualization.events.addListener(chart, 'ready', function () {
-    //     // Change bar colors after every third bar
-    //     var bars = container.getElementsByTagName('rect');
-    //     for (var i = 0; i < bars.length; i++) {
-    //         if (i % 3 === 0) {
-    //             colorIndex = (colorIndex + 1) % colors.length;
-    //             bars[i].setAttribute('fill', colors[colorIndex]);
-    //         }
-    //     }
-    // });
+    google.visualization.events.addListener(chart, 'ready', function () {
+        // Change bar colors after every third bar
+        var bars = container.getElementsByTagName('rect');
+        for (var i = 0; i < bars.length; i++) {
+            if (i % 3 === 0) {
+                colorIndex = (colorIndex + 1) % colors.length;
+                bars[i].setAttribute('fill', colors[colorIndex]);
+            }
+        }
+    });
       chart.draw(data, options);
 }
     // }

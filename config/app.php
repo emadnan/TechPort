@@ -232,4 +232,8 @@ return [
 
     ],
 
+    'pagination' => [
+        'views' => 'vendor.pagination.bootstrap-4',
+    ],
+
 ];

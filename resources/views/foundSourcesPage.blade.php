@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPort</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
     * {
@@ -167,7 +168,7 @@
 
         font-size: 18px;
         /* margin-bottom: 10px; */
-        margin-left: 15px;
+        /* margin-left: 0px; */
         padding-top: 6px;
     }
 
@@ -266,7 +267,7 @@
 
     .custom-icon-arrow {
         float: right;
-        margin-top: 10px;
+        margin-top: 0px;
         margin-right: 15px;
         color: #065386;
     }
@@ -335,175 +336,27 @@
 
         <!-- QA Section -->
 
-@foreach ($data as $sources => $source )    
+@foreach ($sources as $source )    
         <div class="faq-container">
                 <a href="{{  route('foundSourcesClickingPage', ['id' => $source->id]) }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">1</span><span
+                    <div class="faq-question " onclick="toggleAnswer(this)"> <span class="float-left-text"
+                            style="float: left; padding-left:15px; margin-right: 30px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
                             class="faq-question" style="color: black;">{{$source-> name}}</span><i
                             class="fas fa-chevron-right custom-icon-arrow"></i></div>
                 </a>
             </div>
         <div class="divider"></div>
         @endforeach
-
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">2</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">3</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">4</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">5</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">6</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">7</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">8</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/found-sources-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left; margin-right: 10px;color: white; margin-left: 0;">9</span><span
-                            class="faq-question" style="color: black;">Source 1 mention</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-            </div>
-        </div>
-
-
-
-
-
-
     </div>
 
-
-   
-
-
-
-
-
-
-
+        <div class="row justify-content-center">
+            <p style="margin-left:400px;">{{ $sources->links() }}</p>
+        </div>
+        
     <div style="margin-top:200px"></div>
-
     <footer>
         @include('footer')
     </footer>
 </body>
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#form').submit(function(){
-          event.preventDefault();
-          var search = $('#searchBar').val().toLowerCase();
-          $('.faq-container').filter(function(){
-           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-        //    $('.divider').hide();
-  });
-  
-  if ($('.faq-container:visible').length > 1) {
-            $('.divider').show();
-        } else {
-            $('.divider').hide();
-        }
-          });
-});
-</script>
+
 </html>

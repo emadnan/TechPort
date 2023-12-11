@@ -19,44 +19,12 @@ class MissionTypeController extends Controller
     
     public function index()
     {
-        $missions = missiontype::get();
-        return view('missionTypePage' , ['data'=> $missions]);
+        $missions = missiontype::paginate(10);
+        return view('missionTypePage' , compact('missions'));
     }
 
     public function missionTypeClickingPage(string $id)
     {
-      
-
-    //     $projOrgs = ref_projectorganization::select('orgtype.type as orgtype' , 'humanentity.name as humanName' ,
-    //  'humanentity.surname as humanSurName' , 'location.city' ,'location.state' ,'location.id as locationID' ,
-    //  'projects.name as projectName' , 'projects.description as projectDescription' , 'status.status as status',
-    //  'techsector.techsector' , 'techareas.techarea' , 'techniche.techniche' , 'trl.trllevel', 
-    //  'missiontype.type as missionType' , 'missiontype.id as missionID' , 'orgperformingwork.name as orgName' , 
-    //  'orgperformingwork.description as orgDescription' , 'orgperformingwork.id as orgID' , 'orgperformingwork.code as orgCode' , 
-    //  'foundingSources.id as sourceID' , 'foundingSources.name as sourceName' , 
-    //  'legalentityrole.name as legalName' ,'legalentityrole.id as legalID' , 'projects.*' , 'missiontype.*')
-
-    // ->join('projects' , 'projects.id' , '=' , 'ref_projectorganization.id_project') 
-    //     ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
-    //     ->join('trl' , function($join){
-    //         $join->on('trl.id' , '=' ,'projects.id_trlstart');
-    //         $join->on('trl.id' , '=' ,'projects.id_trlactual');
-    //         $join->on('trl.id' , '=' ,'projects.id_trlfinal');
-    //     })
-    //     ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
-    //     ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-    //     ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-    //     ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-    //     ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
-    //     ->join('status' , 'status.id' , '=' , 'projects.id_status')
-    // ->join('orgperformingwork' , 'orgperformingwork.id' , '=' , 'ref_projectorganization.id_orgperformingwork')
-    //     ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
-    //     ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
-    //     ->join('location' , 'location.id' , '=' , 'orgperformingwork.id_location')
-    //     ->join('legalentityrole' , 'legalentityrole.id' , '=' , 'ref_projectorganization.id_legalentityrole')
-    // ->where('missiontype.id' , $id)
-    // ->get();
-
     $projOrg = missiontype::with('projects.legalentityroles' , 'projects.trlactual' ,'projects.foundingsource','projects.status'  , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location', 'projects.project_target')
     // ->with('orgperformingworks.location' , 'orgperformingworks.humanentity' , 'orgperformingworks.orgtype')
     ->with('trls.projects.trlactual')

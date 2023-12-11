@@ -66,8 +66,7 @@ class LocationController extends Controller
   
     public function index()
     {
-        $perPage = 20;
-        $locations = location::paginate(20);
+        $locations = location::paginate(10);
         
         // return response()->json(['locations'=>$locations]);
         // dd(get_class($locations));

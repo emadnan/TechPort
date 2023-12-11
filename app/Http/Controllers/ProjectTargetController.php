@@ -38,7 +38,7 @@ class ProjectTargetController extends Controller
 
     public function index()
     {
-        $targets = Project_target::get();
+        $targets = Project_target::paginate(10);
         return view('projectTargetsPage' , compact('targets'));
     }
 

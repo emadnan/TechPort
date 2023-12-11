@@ -50,8 +50,8 @@ class LegalEntityController extends Controller
 
     public function index()
     {
-        $entities = legalentityrole::get();
-     return view('legalEntityRolesPage' , ['data'=>$entities]); 
+        $entities = legalentityrole::paginate(10);
+     return view('legalEntityRolesPage' , compact('entities')); 
         // return response()->json(['data'=>$entities]);
     }
 

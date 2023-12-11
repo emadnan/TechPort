@@ -53,7 +53,7 @@ class OrgPerformingWorkController extends Controller
 
     public function index()
     {
-        $orgs = orgperformingwork::get();
+        $orgs = orgperformingwork::paginate(10);
         return view('organizationsPage' , compact('orgs'));
 
     }

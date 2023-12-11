@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPort</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
     * {
@@ -353,11 +354,9 @@
 
         
     </div>
-
-
-   
-
-
+    <div class="row justify-content-center">
+        <p style="margin-left:400px;">{{ $targets->links() }}</p>
+    </div>
     <div style="margin-top:200px"></div>
 
     <footer>
@@ -365,22 +364,4 @@
     </footer>
 
 </body>
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#form').submit(function(){
-          event.preventDefault();
-          var search = $('#searchBar').val().toLowerCase();
-          $('.faq-container').filter(function(){
-           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-        //    $('.divider').hide();
-  });
-  
-  if ($('.faq-container:visible').length > 1) {
-            $('.divider').show();
-        } else {
-            $('.divider').hide();
-        }
-          });
-});
-</script>
 </html>

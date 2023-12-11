@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPort</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <style>
     * {
@@ -264,7 +266,7 @@
 
     .custom-icon-arrow {
         float: right;
-        margin-top: 10px;
+        margin-top: 0px;
         margin-right: 15px;
         color: #065386;
     }
@@ -349,146 +351,10 @@
         </div>
         <div class="divider"></div>
         @endforeach
-
-       
-        
-        {{-- <div class="faq-container"> --}}
-
-
-            {{-- <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">2</span><span
-                            class="faq-question " style="color: black; ">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div> --}}
-
-        {{-- <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">3</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">4</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">5</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">6</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">7</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }}">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">8</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="faq-container">
-
-
-            <div class="faq-item">
-                <a href="{{ url('/location-clicking') }} ">
-                    <div class="faq-question"> <span class="float-left-text"
-                            style="float: left;color: white; margin-right: 10px; margin-left: 0;">9</span><span
-                            class="faq-question" style="color: black;">Houston, Texas</span><i
-                            class="fas fa-chevron-right custom-icon-arrow"></i></div>
-                </a>
-
-            </div>
-        </div> --}}
-
-
-
-
-
-
     </div>
 
-
-    
-
     <div class="row justify-content-center">
-        {{ $locations->links() }}
+        <p>{{ $locations->links() }}</p>
     </div>
 
     <div style="margin-top:200px"></div>
@@ -498,22 +364,4 @@
     </footer>
     
 </body>
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#form').submit(function(){
-          event.preventDefault();
-          var search = $('#searchBar').val().toLowerCase();
-          $('.faq-container').filter(function(){
-           var abcd = $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-        //    $('.divider').hide();
-  });
-  
-  if ($('.faq-container:visible').length > 1) {
-            $('.divider').show();
-        } else {
-            $('.divider').hide();
-        }
-          });
-});
-</script>
 </html>
