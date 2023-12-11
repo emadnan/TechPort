@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->longText('description')->nullable();
             $table->longText('benifit')->nullable();
             $table->string('image')->nullable();
-            $table->integer('id_doc')->nullable();
+            $table->integer('id_doc')->nullable(); 
             $table->date('startdate')->nullable();
             $table->date('enddate');
             $table->unsignedBigInteger('id_project_target'); $table->foreign('id_project_target')->references('id')->on('project_targets');

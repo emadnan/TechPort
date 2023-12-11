@@ -13,7 +13,7 @@ class CreateOrganizationunitTable extends Migration
      */
     public function up()
     {
-        Schema::create('organizationunit',  function (Blueprint $table) {
+        Schema::create('organizationunit', function (Blueprint $table) {
             $table->id();
             $table->string('type');
             $table->string('unitcode');

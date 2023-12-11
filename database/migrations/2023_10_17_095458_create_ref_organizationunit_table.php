@@ -13,7 +13,7 @@ class CreateRefOrganizationunitTable extends Migration
      */
     public function up()
     {
-        Schema::create('ref_organizationunit' , function (Blueprint $table) {
+        Schema::create('ref_organizationunit', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_organizationunit'); $table->foreign('id_organizationunit')->references('id')->on('organizationunit');
             $table->unsignedBigInteger('id_project'); $table->foreign('id_project')->references('id')->on('projects');
