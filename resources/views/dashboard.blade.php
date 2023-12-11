@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@include('layouts.app')
 @include('sidebar')
 @section('content')
 
@@ -87,4 +87,19 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
-@endsection
+<script>
+  function logout(element){
+      let x = element.nextElementSibling;
+     if(x.style.display = 'none'){
+      x.style.display='block'
+     } else{
+      x.style.display = 'none'
+     }
+  }
+</script>
+      <main class="py-4" >
+          {{-- @yield('content') --}}
+      </main>
+  </div>
+</body>
+</html>     
