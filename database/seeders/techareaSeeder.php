@@ -13,4 +13,8 @@ class techareaSeeder extends Seeder
      *
      * @return void
      */
+    public function run():void
+    {
+    
+    }
 }
