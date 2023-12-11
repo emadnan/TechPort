@@ -14,10 +14,5 @@ class technicheSeeder extends Seeder
      */
     public function run()
     {
-        techniche::insert(
-            [
-              
-            ]
-            );
     }
 }

@@ -14,10 +14,5 @@ class techreferredSeeder extends Seeder
      */
     public function run()
     {
-        techreferred::insert(
-            [
-                
-            ]
-            );
     }
 }

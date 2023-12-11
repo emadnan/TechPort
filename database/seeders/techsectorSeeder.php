@@ -15,10 +15,5 @@ class techsectorSeeder extends Seeder
      */
     public function run()
     {
-        techsector::insert(
-            [
-               
-            ]
-            );
     }
 }
