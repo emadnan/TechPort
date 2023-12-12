@@ -431,7 +431,8 @@ $('body').on('keyup' , '#id_dm' , function(){
 });
 
 $('#dm_dropdown').on('click', 'a' ,  function() {
-   var list =  $(this).html();
+    var list =  $(this).html();
+   $("#id_dm").val(list);
    console.log(list);
     $('#dm_dropdown').hide();
 });

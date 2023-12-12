@@ -400,8 +400,8 @@ $('body').on('keyup' , '#id_dm' , function(){
                 success: function(response){
                     
                     var dropdown = $('#dm_dropdown');
-                    dropdown.show();
                     dropdown.empty();
+                    dropdown.show();
                     var array = response.data.records;
                     if(array)
                     {
@@ -422,6 +422,7 @@ $('body').on('keyup' , '#id_dm' , function(){
 
 $('#dm_dropdown').on('click', 'a' ,  function() {
    var list =  $(this).html();
+   $("#id_dm").val(list);
    console.log(list);
     $('#dm_dropdown').hide();
 });
