@@ -392,7 +392,7 @@ $('body').on('keyup' , '#id_dm' , function(){
     let data = {
         'dm' : dm_input,
         'tk' : tk,
-    }
+    } 
     $.ajax({
                 type: 'POST',
                 url: '/fetchDataFromApi',
