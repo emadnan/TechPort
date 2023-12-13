@@ -35,7 +35,7 @@
                 <div class="row mb-2">
                     <label for="description" class="col-md-2 col-form-label text-md-end">{{ __('Description') }}</label>
                     <div class="col-md-10">
-                        <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}"></textarea>
+                        <textarea id="description" type="text" style="height: 100px;" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}"></textarea>
                         <span class="text-danger small" id="descriptionError"></span>
                     </div>
                 </div>

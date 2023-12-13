@@ -436,36 +436,6 @@
                 </li> --}}
 
                 <li class="nav-item ">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Status</p>
-                    </a>
-                </li>
-
-                    {{-- <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create Status</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Update Status</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Delete Status</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
-
-                <li class="nav-item ">
                     <a href="{{ route('techAreaPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
