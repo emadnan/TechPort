@@ -28,7 +28,7 @@
                 <div class="row mb-3">
                     <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                     <div class="col-md-6">
-                        <input id="description" type="text" class="form-control @error('code') is-invalid @enderror" name="description" value= "{{ old ('description') }}" autocomplete="code" autofocus>
+                        <textarea id="description" type="text" class="form-control @error('code') is-invalid @enderror" name="description" value= "{{ old ('description') }}" autocomplete="description" autofocus></textarea>
                         <span class="text-danger small" id="descriptionError"></span>
                     </div>
                 </div>

@@ -273,10 +273,9 @@
         color: white;
     }
 
-    .pagination a:hover:not(.active) {
+    .pagination a:hover:not(.prevPage , .active , .prevOrgPage , .prevLocationsPage, .prevSourcePage , .prevMissionPage ,  .prevTargetPage , .prevEntityPage) {
         background-color: #ddd;
     }
-
 
 
 

@@ -49,9 +49,10 @@ class SearchReultsController extends Controller
         $complete = $projOrgs->where('status.status' , 'Completed')->count();
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
         
+     
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' ));
 
     }
 
@@ -72,5 +73,10 @@ class SearchReultsController extends Controller
   
         return response()->json(compact('projOrgs' , 'trl' , 'projects'));
     }
+
+    // public function projectPaginations()
+    // {
+
+    // }
 }
 

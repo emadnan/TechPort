@@ -275,7 +275,7 @@
         color: white;
     }
 
-    .pagination a:hover:not(.active) {
+    .pagination a:hover:not(.prevPage , .active , .prevOrgPage , .prevLocationsPage, .prevSourcePage , .prevMissionPage ,  .prevTargetPage , .prevEntityPage) {
         background-color: #ddd;
     }
 
@@ -384,13 +384,14 @@
                     <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
                     @php
                         $projectID = 0;
+                        $countProjects = 0;
                     @endphp
             @foreach ($projOrg->orgperformingworks as $org )
             @foreach ($org->projects as $project )
             @if ($projectID == $project->id)
                 
             @else
-                    <div style="margin-top: 15px;">
+                    <div class="project" style="margin-top: 15px;">
                         <section class="encapsulated-text ">
                             <a href="{{ route('projectPage', ['id'=> $project->id]) }}" style="color:#065386;font-weight:bold;">{{$project->name}}</a>
                             <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"
@@ -399,7 +400,7 @@
                                 style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">{{$project->status->status}}</button>
                             <section>This is a project within the Space Technology Research Grants Program </section>
                         </section>
-                        <section class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem">{{$project->description}}</section>
+                        <section class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem; max-height:70px; overflow:auto;">{{$project->description}}</section>
             
                         <div class="sub-answer mt-2 mb-4"
                             style=" display:none; margin-left:10px;font-size:15px; padding-right:4rem">
@@ -436,32 +437,214 @@
                     <div class="divider-within-class"></div>
             @php
                 $projectID = $project->id;
+            $countProjects++;
             @endphp
             
             @endif    
             @endforeach
             @endforeach
-                   
-            
-                    <center>
-                        <div class="pagination">
-                            <a href="#">&laquo;</a>
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                            <a href="#">&raquo;</a>
-                        </div>
-            
-                    </center>
-                
-            
+            <center>
+                <div class="project_pagination pagination">
+                    <a id="prevPage" class="prevPage">&laquo;</a>
+                    @php $numPages = ceil($countProjects / 10); @endphp
+                    @for ($i = 1; $i <= $numPages; $i++)
+                        @if ($i>10)
+                            <a class="pages" style="display:none;" onclick="showPage({{$i}})">{{$i}}</a>
+                        @else
+                            <a class="pages" onclick="showPage({{$i}})">{{$i}}</a>
+                        @endif
+                    @endfor
+                    <a id="nextPage" class="nextPage">&raquo;</a>
                 </div>
-                
+
+                <div class="row justify-content-center">
+                    <label for="selectPage" style="color: #065386;"><b>Select Specific Page:</b></label>
+                    <input  id="selectPage" name="selectPage" type="text" style=" border-radius:5px; border:1px solid #E8E8E8; width:40px;height:30px;margin-left: 10px; margin-right: 10px;">
+                    <button class=" btn btn-small " style=" background-color: #065386; color:#fff;height:30px;padding-top: 1px;" type="submit" onclick="showSelectedPage(this)">Go</button>
+                </div>
+            </center>
+                </div>
             </div>
-            
+            <script>
+
+                function showSelectedPage(element)
+                {
+                    var selectedPageElement = element.previousElementSibling;
+                    var selectedPage = parseInt(selectedPageElement.value, 10);
+                    if (selectedPage <= {{$numPages}}) {
+                        var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
+                        var endPage = Math.min(startPage + 9, {{$numPages}});
+
+                        $('.project_pagination a.pages').hide();
+                        $('.project').hide();
+                        prevPageHover(selectedPage);
+                        nextPageHover(selectedPage);
+                        $('.project').slice((selectedPage - 1) * 10, selectedPage * 10).show();
+                        var pages = $(".project_pagination").find('a');
+                        pages.each(function(){
+                            var page = parseInt($(this).text(), 10);
+                            if(page == selectedPage)
+                                {
+                                   $(this).addClass('active');
+                                   $("#selectPage").val(selectedPage);
+                                       // console.log( $("#selectPage").val());
+                                }
+                               else
+                                {
+                                   $(this).removeClass('active')
+                                }
+                            if (page >= startPage && page <= endPage) {
+                                $(this).show();
+                            }
+                            
+                        });
+                    }
+                }
+                function prevPageHover(currentPage)
+                    {
+                        if(currentPage == 1)
+                        {
+                            $('#prevPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#prevPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+
+                    function nextPageHover(currentPage)
+                    {
+                        if(currentPage < {{$numPages}})
+                        {
+                            $('#nextPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#nextPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+               
+                $(document).ready(function() {
+                    var currentPage = 1;
+                    var pages = $(".project_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == currentPage)
+                        {
+                            $(this).addClass('active');
+                            $("#selectPage").val(currentPage);
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+
+                    $('.project').slice(0, 10).show();
+
+                    $('#prevPage').click(function() {
+                        var currentPage = parseInt($('.project_pagination a.active').text()) || 1;
+                        if (currentPage > 1) {
+                           if(currentPage % 10 === 1)
+                           {
+                               prevPageGroup(currentPage);
+                           }
+                        currentPage--;
+                        showPage(currentPage);   
+                        }
+                        
+                    });
+
+                    $('#nextPage').click(function() {
+                        var currentPage = parseInt($('.project_pagination a.active').text()) || 1;
+                        let maxButtons = 10;
+
+                        if(currentPage % 10 === 0)
+                        {
+                            nextPageGroup(currentPage);
+                        }
+                        if (currentPage < {{$numPages}}) {
+                        currentPage++;
+                        showPage(currentPage);
+                        }
+                        
+                    });
+                });
+                
+                function showPage(pageNumber) {
+                    // Hide all projects
+                    $('.project').hide();
+                    prevPageHover(pageNumber);
+                    nextPageHover(pageNumber);
+                    // Show projects for the selected page
+                    $('.project').slice((pageNumber - 1) * 10, pageNumber * 10).show();
+                    var pages = $(".project_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == pageNumber)
+                        {
+                            $(this).addClass('active');
+                            $("#selectPage").val(pageNumber);
+                            // console.log( $("#selectPage").val());
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+                }
+
+                function nextPageGroup(pageNumber)
+                {
+                    $('.project_pagination a.pages').hide();
+                    let maxButtons = 10;
+                    let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
+                            let endPage = Math.min(startPage + maxButtons - 1 , {{$numPages}});
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.project_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+                function prevPageGroup(pageNumber)
+                {
+                    let maxButtons = 10;
+                    let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
+                            let startPage = Math.min(endPage - maxButtons + 1 , {{$numPages}});
+                    $('.project_pagination a.pages').hide();
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.project_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+            </script>
             <div class="divider"></div>
             
             <div class="faq-item">
@@ -470,20 +653,18 @@
             
                     <i class="fa-solid fa-chevron-down" id="rotateIcon"
                         style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
-            
-            
-            
                 </div>
             
                 <div class="faq-answer" style="display: none;">
                         <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
                         @php
-                             $orgID = 0;
+                              $orgID = 0;
+                             $countOrgs=0;
                         @endphp
                         @foreach ($projOrg->orgperformingworks as $org )
             @if ($orgID == $org->id)
             @else
-                        <div style="margin-top: 15px;">
+                        <div class="organization" style="margin-top: 15px;">
                         <section class="encapsulated-text ">
                             <a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}" style="color:black;font-weight:bold;">{{$org->name}}</a>
                         </section>
@@ -491,31 +672,218 @@
                     <div class="divider-within-class"></div>
                     @php
                           $orgID = $org->id;
+                          $countOrgs++;
                     @endphp
             @endif    
                     @endforeach
-            
-            
-            
                     <div style="margin-top: 15px;">
-            
                         <center>
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#" class="active">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
+                            <div class="pagination organization_pagination ">
+                                <a id="prevOrgPage" class="prevOrgPage">&laquo;</a>
+                                {{-- @php $numPages = ceil(count($projOrgs) / 10); @endphp --}}
+                                @php
+                                $numOrgPages = ceil($countOrgs / 10);
+                            @endphp
+                                @for ($i = 1; $i <= $numOrgPages; $i++)
+                                    @if ($i>10)
+                                        <a class="pages" style="display:none;" onclick="showOrgPage({{$i}})">{{$i}}</a>
+                                    @else
+                                        <a class="pages" onclick="showOrgPage({{$i}})">{{$i}}</a>
+                                    @endif
+                                @endfor
+                                <a id="nextOrgPage" class="nextOrgPage">&raquo;</a>
                             </div>
-            
+    
+                            <div class="row justify-content-center">
+                                <label for="selectOrgPage" style="color: #065386;"><b>Select Specific Page:</b></label>
+                                <input  id="selectOrgPage" name="selectOrgPage" type="text" style=" border-radius:5px; border:1px solid #E8E8E8; width:40px;height:30px;margin-left: 10px; margin-right: 10px;">
+                                <button class=" btn btn-small " style=" background-color: #065386; color:#fff;height:30px;padding-top: 1px;" type="submit" onclick="showSelectedOrgPage(this)">Go</button>
+                            </div>
                         </center>
                     </div>
                 </div>
             </div>
             
+            <script>
+                function showSelectedOrgPage(element)
+                {
+                    var selectedOrgPageElement = element.previousElementSibling;
+                    var selectedOrgPage = parseInt(selectedOrgPageElement.value, 10);
+                    console.log(selectedOrgPageElement);
+                    if (selectedOrgPage <= {{$numOrgPages}}) {
+                        var startPage = Math.floor((selectedOrgPage - 1) / 10) * 10 + 1;
+                        var endPage = Math.min(startPage + 9, {{$numOrgPages}});
+
+                        $('.organization_pagination a.pages').hide();
+                        $('.organization').hide();
+                        prevOrgPageHover(selectedOrgPage);
+                        nextOrgPageHover(selectedOrgPage);
+                        $('.organization').slice((selectedOrgPage - 1) * 10, selectedOrgPage * 10).show();
+                        var pages = $(".organization_pagination").find('a');
+                        pages.each(function(){
+                            var page = parseInt($(this).text(), 10);
+                            if(page == selectedOrgPage)
+                                {
+                                   $(this).addClass('active');
+                                   $("#selectOrgPage").val(selectedOrgPage);
+                                       // console.log( $("#selectOrgPage").val());
+                                }
+                               else
+                                {
+                                   $(this).removeClass('active')
+                                }
+                            if (page >= startPage && page <= endPage) {
+                                $(this).show();
+                            }
+                            
+                        });
+                    }
+                }
+                function prevOrgPageHover(currentPage)
+                    {
+                        if(currentPage == 1)
+                        {
+                            $('#prevOrgPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#prevOrgPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+
+                    function nextOrgPageHover(currentPage)
+                    {
+                        if(currentPage < {{$numOrgPages}})
+                        {
+                            $('#nextOrgPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#nextOrgPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+               
+                $(document).ready(function() {
+                    var currentPage = 1;
+                    var pages = $(".organization_pagination").find('a');
+                    pages.each(function(){
+                    console.log($(this));
+
+                        if($(this).text() == currentPage)
+                        {
+                            $(this).addClass('active');
+                            $("#selectOrgPage").val(currentPage);
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+
+                    $('.organization').slice(0, 10).show();
+
+                    $('#prevOrgPage').click(function() {
+                        var currentPage = parseInt($('.organization_pagination a.active').text()) || 1;
+                        if (currentPage > 1) {
+                           if(currentPage % 10 === 1)
+                           {
+                               prevOrgPageGroup(currentPage);
+                           }
+                        currentPage--;
+                        showPage(currentPage);   
+                        }
+                        
+                    });
+
+                    $('#nextOrgPage').click(function() {
+                        var currentPage = parseInt($('.organization_pagination a.active').text()) || 1;
+                        let maxButtons = 10;
+
+                        if(currentPage % 10 === 0)
+                        {
+                            nextOrgPageGroup(currentPage);
+                        }
+                        if (currentPage < {{$numOrgPages}}) {
+                        currentPage++;
+                        showPage(currentPage);
+                        }
+                        
+                    });
+                });
+                
+                function showOrgPage(pageNumber) {
+                    $('.organization').hide();
+                    prevOrgPageHover(pageNumber);
+                    nextOrgPageHover(pageNumber);
+                    $('.organization').slice((pageNumber - 1) * 10, pageNumber * 10).show();
+                    var pages = $(".organization_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == pageNumber)
+                        {
+                            $(this).addClass('active');
+                            $("#selectOrgPage").val(pageNumber);
+                            // console.log( $("#selectOrgPage").val());
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+                }
+
+                function nextOrgPageGroup(pageNumber)
+                {
+                    $('.organization_pagination a.pages').hide();
+                    let maxButtons = 10;
+                    let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
+                            let endPage = Math.min(startPage + maxButtons - 1 , {{$numOrgPages}});
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.organization_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+                function prevOrgPageGroup(pageNumber)
+                {
+                    let maxButtons = 10;
+                    let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
+                            let startPage = Math.min(endPage - maxButtons + 1 , {{$numOrgPages}});
+                    $('.organization_pagination a.pages').hide();
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.organization_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+            </script>
             
             <div class="divider"></div>
             
@@ -531,13 +899,14 @@
                         <section class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
                         @php
                             $sourceID = 0;
+                            $countSource = 0;
                         @endphp
                     @foreach ($projOrg->orgperformingworks as $org )
                     @foreach ($org->projects as $project )
                     @if ($project->foundingsource->id == $sourceID)
                         
                     @else
-                        <div style="margin-top: 15px;">
+                        <div class="source" style="margin-top: 15px;">
                         <section class="encapsulated-text ">
                             <a href="{{ route('foundSourcesClickingPage', ['id' => $project->foundingsource->id]) }}" style="color:black;font-weight:bold;"> {{$project->foundingsource->name}} </a>
                         </section>
@@ -545,31 +914,217 @@
                     <div class="divider-within-class"></div>
                     @php
                         $sourceID = $project->foundingsource->id;
+                        $countSource++;
                     @endphp
                     @endif
                     @endforeach
                     @endforeach
                 </div>
-            
-                    
                     <div style="margin-top: 15px;">
                         <center>
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#" class="active">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
+                            <div class="source_pagination pagination">
+                                <a id="prevSourcePage" class="prevSourcePage">&laquo;</a>
+                                @php $numSourcePages = ceil($countSource / 10); @endphp
+                                @for ($i = 1; $i <= $numSourcePages; $i++)
+                                    @if ($i>10)
+                                        <a class="pages" style="display:none;" onclick="showSourcePage({{$i}})">{{$i}}</a>
+                                    @else
+                                        <a class="pages" onclick="showSourcePage({{$i}})">{{$i}}</a>
+                                    @endif
+                                @endfor
+                                <a id="nextSourcePage" class="nextSourcePage">&raquo;</a>
                             </div>
-            
+    
+                            <div class="row justify-content-center">
+                                <label for="selectSourcePage" style="color: #065386;"><b>Select Specific Page:</b></label>
+                                <input  id="selectSourcePage" name="selectSourcePage" type="text" style=" border-radius:5px; border:1px solid #E8E8E8; width:40px;height:30px;margin-left: 10px; margin-right: 10px;">
+                                <button class=" btn btn-small " style=" background-color: #065386; color:#fff;height:30px;padding-top: 1px;" type="submit" onclick="showSelectedSourcePage(this)">Go</button>
+                            </div>
                         </center>
                     </div>
                 </div>
             </div>
             
+            <script>
+
+                function showSelectedSourcePage(element)
+                {
+                    var selectedPageElement = element.previousElementSibling;
+                    var selectedPage = parseInt(selectedPageElement.value, 10);
+                    if (selectedPage <= {{$numSourcePages}}) {
+                        var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
+                        var endPage = Math.min(startPage + 9, {{$numSourcePages}});
+
+                        $('.source_pagination a.pages').hide();
+                        $('.source').hide();
+                        prevSourcePageHover(selectedPage);
+                        nextSourcePageHover(selectedPage);
+                        $('.source').slice((selectedPage - 1) * 10, selectedPage * 10).show();
+                        var pages = $(".source_pagination").find('a');
+                        pages.each(function(){
+                            var page = parseInt($(this).text(), 10);
+                            if(page == selectedPage)
+                                {
+                                   $(this).addClass('active');
+                                   $("#selectSourcePage").val(selectedPage);
+                                       // console.log( $("#selectSourcePage").val());
+                                }
+                               else
+                                {
+                                   $(this).removeClass('active')
+                                }
+                            if (page >= startPage && page <= endPage) {
+                                $(this).show();
+                            }
+                            
+                        });
+                    }
+                }
+                function prevSourcePageHover(currentPage)
+                    {
+                        if(currentPage == 1)
+                        {
+                            $('#prevSourcePage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#prevSourcePage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+
+                    function nextSourcePageHover(currentPage)
+                    {
+                        if(currentPage < {{$numSourcePages}})
+                        {
+                            $('#nextSourcePage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#nextSourcePage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+               
+                $(document).ready(function() {
+                    var currentPage = 1;
+                    var pages = $(".source_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == currentPage)
+                        {
+                            $(this).addClass('active');
+                            $("#selectSourcePage").val(currentPage);
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+
+                    $('.source').slice(0, 10).show();
+
+                    $('#prevSourcePage').click(function() {
+                        var currentPage = parseInt($('.source_pagination a.active').text()) || 1;
+                        if (currentPage > 1) {
+                           if(currentPage % 10 === 1)
+                           {
+                            prevSourcePageGroup(currentPage);
+                           }
+                        currentPage--;
+                        showSourcePage(currentPage);   
+                        }
+                        
+                    });
+
+                    $('#nextSourcePage').click(function() {
+                        var currentPage = parseInt($('.source_pagination a.active').text()) || 1;
+                        let maxButtons = 10;
+
+                        if(currentPage % 10 === 0)
+                        {
+                            nextSourcePageGroup(currentPage);
+                        }
+                        if (currentPage < {{$numSourcePages}}) {
+                        currentPage++;
+                        showSourcePage(currentPage);
+                        }
+                        
+                    });
+                });
+                
+                function showSourcePage(pageNumber) {
+                    // Hide all source
+                    $('.source').hide();
+                    prevSourcePageHover(pageNumber);
+                    nextSourcePageHover(pageNumber);
+                    // Show source for the selected page
+                    $('.source').slice((pageNumber - 1) * 10, pageNumber * 10).show();
+                    var pages = $(".source_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == pageNumber)
+                        {
+                            $(this).addClass('active');
+                            $("#selectSourcePage").val(pageNumber);
+                            // console.log( $("#selectSourcePage").val());
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+                }
+
+                function nextSourcePageGroup(pageNumber)
+                {
+                    $('.source_pagination a.pages').hide();
+                    let maxButtons = 10;
+                    let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
+                            let endPage = Math.min(startPage + maxButtons - 1 , {{$numSourcePages}});
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.source_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+                function prevSourcePageGroup(pageNumber)
+                {
+                    let maxButtons = 10;
+                    let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
+                            let startPage = Math.min(endPage - maxButtons + 1 , {{$numSourcePages}});
+                    $('.source_pagination a.pages').hide();
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.source_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+            </script>
             
             <div class="divider"></div>
             
@@ -583,13 +1138,14 @@
               <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
               @php
                 $missionID = 0;
+                $countMission = 0;
               @endphp
               @foreach ($projOrg->orgperformingworks as $org )
               @foreach ($org->projects as $project )
               @if ($project->missiontype->id == $missionID)
                 
               @else
-              <div style="margin-top: 15px;">
+              <div class="mission" style="margin-top: 15px;">
                 <section class="encapsulated-text " >
                     <a href="{{route('missionTypeClickingPage' , ['id' => $project->missiontype->id])}}" style="color:black;font-weight:bold;">{{$project->missiontype->type}}</a>
                 </section>
@@ -597,30 +1153,217 @@
               <div class="divider-within-class"></div> 
             @php
               $missionID = $project->missiontype->id;
+                $countMission++;
             @endphp
               @endif
               @endforeach
               @endforeach
             </div>
-              
-              
-              
-                  <center>
-              <div class="pagination">
-              <a href="#">&laquo;</a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">&raquo;</a>
-              </div>
-              
-              </center>
+            <center>
+                <div class="mission_pagination pagination">
+                    <a id="prevMissionPage" class="prevMissionPage">&laquo;</a>
+                    @php $numMissionPages = ceil($countMission / 10); @endphp
+                    @for ($i = 1; $i <= $numMissionPages; $i++)
+                        @if ($i>10)
+                            <a class="pages" style="display:none;" onclick="showMissionPage({{$i}})">{{$i}}</a>
+                        @else
+                            <a class="pages" onclick="showMissionPage({{$i}})">{{$i}}</a>
+                        @endif
+                    @endfor
+                    <a id="nextMissionPage" class="nextMissionPage">&raquo;</a>
+                </div>
+
+                <div class="row justify-content-center">
+                    <label for="selectMissionPage" style="color: #065386;"><b>Select Specific Page:</b></label>
+                    <input  id="selectMissionPage" name="selectMissionPage" type="text" style=" border-radius:5px; border:1px solid #E8E8E8; width:40px;height:30px;margin-left: 10px; margin-right: 10px;">
+                    <button class=" btn btn-small " style=" background-color: #065386; color:#fff;height:30px;padding-top: 1px;" type="submit" onclick="showSelectedMissionPage(this)">Go</button>
+                </div>
+            </center>
               </div>
                 </div>
               
+                
+              <script>
+
+                function showSelectedMissionPage(element)
+                {
+                    var selectedPageElement = element.previousElementSibling;
+                    var selectedPage = parseInt(selectedPageElement.value, 10);
+                    if (selectedPage <= {{$numMissionPages}}) {
+                        var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
+                        var endPage = Math.min(startPage + 9, {{$numMissionPages}});
+
+                        $('.mission_pagination a.pages').hide();
+                        $('.mission').hide();
+                        prevMissionPageHover(selectedPage);
+                        nextMissionPageHover(selectedPage);
+                        $('.mission').slice((selectedPage - 1) * 10, selectedPage * 10).show();
+                        var pages = $(".mission_pagination").find('a');
+                        pages.each(function(){
+                            var page = parseInt($(this).text(), 10);
+                            if(page == selectedPage)
+                                {
+                                   $(this).addClass('active');
+                                   $("#selectMissionPage").val(selectedPage);
+                                       // console.log( $("#selectMissionPage").val());
+                                }
+                               else
+                                {
+                                   $(this).removeClass('active')
+                                }
+                            if (page >= startPage && page <= endPage) {
+                                $(this).show();
+                            }
+                            
+                        });
+                    }
+                }
+                function prevMissionPageHover(currentPage)
+                    {
+                        if(currentPage == 1)
+                        {
+                            $('#prevMissionPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#prevMissionPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+
+                    function nextMissionPageHover(currentPage)
+                    {
+                        if(currentPage < {{$numMissionPages}})
+                        {
+                            $('#nextMissionPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#nextMissionPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+               
+                $(document).ready(function() {
+                    var currentPage = 1;
+                    var pages = $(".mission_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == currentPage)
+                        {
+                            $(this).addClass('active');
+                            $("#selectMissionPage").val(currentPage);
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+
+                    $('.mission').slice(0, 10).show();
+
+                    $('#prevMissionPage').click(function() {
+                        var currentPage = parseInt($('.mission_pagination a.active').text()) || 1;
+                        if (currentPage > 1) {
+                           if(currentPage % 10 === 1)
+                           {
+                               prevMissionPageGroup(currentPage);
+                           }
+                        currentPage--;
+                        showMissionPage(currentPage);   
+                        }
+                        
+                    });
+
+                    $('#nextMissionPage').click(function() {
+                        var currentPage = parseInt($('.mission_pagination a.active').text()) || 1;
+                        let maxButtons = 10;
+
+                        if(currentPage % 10 === 0)
+                        {
+                            nextMissionPageGroup(currentPage);
+                        }
+                        if (currentPage < {{$numMissionPages}}) {
+                        currentPage++;
+                        showMissionPage(currentPage);
+                        }
+                        
+                    });
+                });
+                
+                function showMissionPage(pageNumber) {
+                    // Hide all mission
+                    $('.mission').hide();
+                    prevMissionPageHover(pageNumber);
+                    nextMissionPageHover(pageNumber);
+                    // Show mission for the selected page
+                    $('.mission').slice((pageNumber - 1) * 10, pageNumber * 10).show();
+                    var pages = $(".mission_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == pageNumber)
+                        {
+                            $(this).addClass('active');
+                            $("#selectMissionPage").val(pageNumber);
+                            // console.log( $("#selectMissionPage").val());
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+                }
+
+                function nextMissionPageGroup(pageNumber)
+                {
+                    $('.mission_pagination a.pages').hide();
+                    let maxButtons = 10;
+                    let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
+                            let endPage = Math.min(startPage + maxButtons - 1 , {{$numMissionPages}});
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.mission_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+                function prevMissionPageGroup(pageNumber)
+                {
+                    let maxButtons = 10;
+                    let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
+                            let startPage = Math.min(endPage - maxButtons + 1 , {{$numMissionPages}});
+                    $('.mission_pagination a.pages').hide();
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.mission_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+            </script>
+
               <div class="divider"></div>
               
               <div class="faq-item">
@@ -639,13 +1382,14 @@
                         <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
                         @php
                             $legalID = 0;
+                            $countEntity = 0;
                         @endphp
                    @foreach ($projOrg->orgperformingworks as $org)
                    @foreach ($org->legalentityroles as $role)
                    @if ($role->id == $legalID)
                        
                    @else
-                        <div style="margin-top: 15px;">
+                        <div class="entity" style="margin-top: 15px;">
                         <section class="encapsulated-text py-3">
                             <a href="{{ route('legalEntityClickingPage', ['id' => $role->id]) }}" style="color:black;font-weight:bold;">{{$role->name}}</a>
                         </section>
@@ -653,30 +1397,215 @@
                     <div class="divider-within-class"></div>
                     @php
                         $legalID = $role->id;
+                        $countEntity++;
                     @endphp
                     @endif
                     @endforeach
                     @endforeach
                 </div>
-            
-                        <center>
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#" class="active">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-            
-                        </center>
-            
-            
+                <center>
+                    <div class="entity_pagination pagination">
+                        <a id="prevEntityPage" class="prevEntityPage">&laquo;</a>
+                        @php $numEntityPages = ceil($countEntity / 10); @endphp
+                        @for ($i = 1; $i <= $numEntityPages; $i++)
+                            @if ($i>10)
+                                <a class="pages" style="display:none;" onclick="showEntityPage({{$i}})">{{$i}}</a>
+                            @else
+                                <a class="pages" onclick="showEntityPage({{$i}})">{{$i}}</a>
+                            @endif
+                        @endfor
+                        <a id="nextEntityPage" class="nextEntityPage">&raquo;</a>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <label for="selectEntityPage" style="color: #065386;"><b>Select Specific Page:</b></label>
+                        <input  id="selectEntityPage" name="selectEntityPage" type="text" style=" border-radius:5px; border:1px solid #E8E8E8; width:40px;height:30px;margin-left: 10px; margin-right: 10px;">
+                        <button class=" btn btn-small " style=" background-color: #065386; color:#fff;height:30px;padding-top: 1px;" type="submit" onclick="showSelectedEntityPage(this)">Go</button>
+                    </div>
+                </center>
                     </div>
                 </div>
             
+                <script>
+
+                    function showSelectedEntityPage(element)
+                    {
+                        var selectedPageElement = element.previousElementSibling;
+                        var selectedPage = parseInt(selectedPageElement.value, 10);
+                        if (selectedPage <= {{$numEntityPages}}) {
+                            var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
+                            var endPage = Math.min(startPage + 9, {{$numEntityPages}});
+    
+                            $('.entity_pagination a.pages').hide();
+                            $('.entity').hide();
+                            prevEntityPageHover(selectedPage);
+                            nextEntityPageHover(selectedPage);
+                            $('.entity').slice((selectedPage - 1) * 10, selectedPage * 10).show();
+                            var pages = $(".entity_pagination").find('a');
+                            pages.each(function(){
+                                var page = parseInt($(this).text(), 10);
+                                if(page == selectedPage)
+                                    {
+                                       $(this).addClass('active');
+                                       $("#selectEntityPage").val(selectedPage);
+                                           // console.log( $("#selectEntityPage").val());
+                                    }
+                                   else
+                                    {
+                                       $(this).removeClass('active')
+                                    }
+                                if (page >= startPage && page <= endPage) {
+                                    $(this).show();
+                                }
+                                
+                            });
+                        }
+                    }
+                    function prevEntityPageHover(currentPage)
+                        {
+                            if(currentPage == 1)
+                            {
+                                $('#prevEntityPage').hover(function(){
+                                $(this).css('background-color' , '#fff');
+                            } ,
+                            function(){
+                                $(this).css('background-color' , '#fff');
+                            });
+                            }
+                            else
+                            {
+                                $('#prevEntityPage').hover(function(){
+                                $(this).css('background-color' , '#ddd');
+                            } ,
+                            function(){
+                                $(this).css('background-color' , '#fff');
+                            });
+                            }
+                        }
+    
+                        function nextEntityPageHover(currentPage)
+                        {
+                            if(currentPage < {{$numEntityPages}})
+                            {
+                                $('#nextEntityPage').hover(function(){
+                                $(this).css('background-color' , '#ddd');
+                            } ,
+                            function(){
+                                $(this).css('background-color' , '#fff');
+                            });
+                            }
+                            else
+                            {
+                                $('#nextEntityPage').hover(function(){
+                                $(this).css('background-color' , '#fff');
+                            } ,
+                            function(){
+                                $(this).css('background-color' , '#fff');
+                            });
+                            }
+                        }
+                   
+                    $(document).ready(function() {
+                        var currentPage = 1;
+                        var pages = $(".entity_pagination").find('a');
+                        pages.each(function(){
+                            if($(this).text() == currentPage)
+                            {
+                                $(this).addClass('active');
+                                $("#selectEntityPage").val(currentPage);
+                            }
+                            else
+                            {
+                                $(this).removeClass('active')
+    
+                            }
+                        })
+    
+                        $('.entity').slice(0, 10).show();
+    
+                        $('#prevEntityPage').click(function() {
+                            var currentPage = parseInt($('.entity_pagination a.active').text()) || 1;
+                            if (currentPage > 1) {
+                               if(currentPage % 10 === 1)
+                               {
+                                prevEntityPageGroup(currentPage);
+                               }
+                            currentPage--;
+                            showEntityPage(currentPage);   
+                            }
+                            
+                        });
+    
+                        $('#nextEntityPage').click(function() {
+                            var currentPage = parseInt($('.entity_pagination a.active').text()) || 1;
+                            let maxButtons = 10;
+    
+                            if(currentPage % 10 === 0)
+                            {
+                                nextEntityPageGroup(currentPage);
+                            }
+                            if (currentPage < {{$numEntityPages}}) {
+                            currentPage++;
+                            showEntityPage(currentPage);
+                            }
+                            
+                        });
+                    });
+                    
+                    function showEntityPage(pageNumber) {
+                        // Hide all entity
+                        $('.entity').hide();
+                        prevEntityPageHover(pageNumber);
+                        nextEntityPageHover(pageNumber);
+                        // Show entity for the selected page
+                        $('.entity').slice((pageNumber - 1) * 10, pageNumber * 10).show();
+                        var pages = $(".entity_pagination").find('a');
+                        pages.each(function(){
+                            if($(this).text() == pageNumber)
+                            {
+                                $(this).addClass('active');
+                                $("#selectEntityPage").val(pageNumber);
+                                // console.log( $("#selectEntityPage").val());
+                            }
+                            else
+                            {
+                                $(this).removeClass('active')
+    
+                            }
+                        })
+                    }
+    
+                    function nextEntityPageGroup(pageNumber)
+                    {
+                        $('.entity_pagination a.pages').hide();
+                        let maxButtons = 10;
+                        let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
+                                let endPage = Math.min(startPage + maxButtons - 1 , {{$numEntityPages}});
+                                for (let i = startPage; i <= endPage; i++)
+                                {
+                                    var selected =  $('.entity_pagination a').filter(function () {
+                                        return parseInt($(this).text(), 10) === i;
+                                    });
+                                    selected.show();
+                                }
+                    }
+    
+                    function prevEntityPageGroup(pageNumber)
+                    {
+                        let maxButtons = 10;
+                        let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
+                                let startPage = Math.min(endPage - maxButtons + 1 , {{$numEntityPages}});
+                        $('.entity_pagination a.pages').hide();
+                                for (let i = startPage; i <= endPage; i++)
+                                {
+                                    var selected =  $('.entity_pagination a').filter(function () {
+                                        return parseInt($(this).text(), 10) === i;
+                                    });
+                                    selected.show();
+                                }
+                    }
+    
+                </script>
             <div class="divider"></div>
             <div class="faq-item">
                 <div id="projectTargets" class="faq-question" onclick="toggleAnswer(this)">
@@ -694,13 +1623,14 @@
                         <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
                         @php
                             $targetID = 0;
+                            $countTarget = 0;
                         @endphp
                       @foreach ($projOrg->orgperformingworks as $org )
                       @foreach ($org->projects as $project )
                       @if ($project->project_target->id == $targetID)
                           
                       @else
-                    <div style="margin-top: 15px;">
+                    <div class="target" style="margin-top: 15px;">
                         <section class="encapsulated-text  ">
                             <a href="{{ route('projectTargetClickingPage', ['id' => $project->project_target->id]) }}" style="color:black;font-weight:bold;">{{$project->project_target->name}}</a>
                         </section>
@@ -708,29 +1638,215 @@
                         <div class="divider-within-class"></div>
                         @php
                             $targetID = $project->project_target->id;
+                            $countTarget++;
                         @endphp
                       @endif
                       @endforeach
                       @endforeach
                     </div>
-            
-                    
-                        <center>
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#" class="active">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-            
-                        </center>
+                    <center>
+                        <div class="target_pagination pagination">
+                            <a id="prevTargetPage" class="prevTargetPage">&laquo;</a>
+                            @php $numTargetPages = ceil($countTarget / 10); @endphp
+                            @for ($i = 1; $i <= $numTargetPages; $i++)
+                                @if ($i>10)
+                                    <a class="pages" style="display:none;" onclick="showTargetPage({{$i}})">{{$i}}</a>
+                                @else
+                                    <a class="pages" onclick="showTargetPage({{$i}})">{{$i}}</a>
+                                @endif
+                            @endfor
+                            <a id="nextTargetPage" class="nextTargetPage">&raquo;</a>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <label for="selectTargetPage" style="color: #065386;"><b>Select Specific Page:</b></label>
+                            <input  id="selectTargetPage" name="selectTargetPage" type="text" style=" border-radius:5px; border:1px solid #E8E8E8; width:40px;height:30px;margin-left: 10px; margin-right: 10px;">
+                            <button class=" btn btn-small " style=" background-color: #065386; color:#fff;height:30px;padding-top: 1px;" type="submit" onclick="showSelectedTargetPage(this)">Go</button>
+                        </div>
+                    </center>
                     </div>
                 </div>
             </div>
+            <script>
+
+                function showSelectedTargetPage(element)
+                {
+                    var selectedPageElement = element.previousElementSibling;
+                    var selectedPage = parseInt(selectedPageElement.value, 10);
+                    if (selectedPage <= {{$numTargetPages}}) {
+                        var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
+                        var endPage = Math.min(startPage + 9, {{$numTargetPages}});
+
+                        $('.target_pagination a.pages').hide();
+                        $('.target').hide();
+                        prevTargetPageHover(selectedPage);
+                        nextTargetPageHover(selectedPage);
+                        $('.target').slice((selectedPage - 1) * 10, selectedPage * 10).show();
+                        var pages = $(".target_pagination").find('a');
+                        pages.each(function(){
+                            var page = parseInt($(this).text(), 10);
+                            if(page == selectedPage)
+                                {
+                                   $(this).addClass('active');
+                                   $("#selectTargetPage").val(selectedPage);
+                                       // console.log( $("#selectTargetPage").val());
+                                }
+                               else
+                                {
+                                   $(this).removeClass('active')
+                                }
+                            if (page >= startPage && page <= endPage) {
+                                $(this).show();
+                            }
+                            
+                        });
+                    }
+                }
+                function prevTargetPageHover(currentPage)
+                    {
+                        if(currentPage == 1)
+                        {
+                            $('#prevTargetPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#prevTargetPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+
+                    function nextTargetPageHover(currentPage)
+                    {
+                        if(currentPage < {{$numTargetPages}})
+                        {
+                            $('#nextTargetPage').hover(function(){
+                            $(this).css('background-color' , '#ddd');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                        else
+                        {
+                            $('#nextTargetPage').hover(function(){
+                            $(this).css('background-color' , '#fff');
+                        } ,
+                        function(){
+                            $(this).css('background-color' , '#fff');
+                        });
+                        }
+                    }
+               
+                $(document).ready(function() {
+                    var currentPage = 1;
+                    var pages = $(".target_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == currentPage)
+                        {
+                            $(this).addClass('active');
+                            $("#selectTargetPage").val(currentPage);
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+
+                    $('.target').slice(0, 10).show();
+
+                    $('#prevTargetPage').click(function() {
+                        var currentPage = parseInt($('.target_pagination a.active').text()) || 1;
+                        if (currentPage > 1) {
+                           if(currentPage % 10 === 1)
+                           {
+                            prevTargetPageGroup(currentPage);
+                           }
+                        currentPage--;
+                        showTargetPage(currentPage);   
+                        }
+                        
+                    });
+
+                    $('#nextTargetPage').click(function() {
+                        var currentPage = parseInt($('.target_pagination a.active').text()) || 1;
+                        let maxButtons = 10;
+
+                        if(currentPage % 10 === 0)
+                        {
+                            nextTargetPageGroup(currentPage);
+                        }
+                        if (currentPage < {{$numTargetPages}}) {
+                        currentPage++;
+                        showTargetPage(currentPage);
+                        }
+                        
+                    });
+                });
+                
+                function showTargetPage(pageNumber) {
+                    // Hide all target
+                    $('.target').hide();
+                    prevTargetPageHover(pageNumber);
+                    nextTargetPageHover(pageNumber);
+                    // Show target for the selected page
+                    $('.target').slice((pageNumber - 1) * 10, pageNumber * 10).show();
+                    var pages = $(".target_pagination").find('a');
+                    pages.each(function(){
+                        if($(this).text() == pageNumber)
+                        {
+                            $(this).addClass('active');
+                            $("#selectTargetPage").val(pageNumber);
+                            // console.log( $("#selectTargetPage").val());
+                        }
+                        else
+                        {
+                            $(this).removeClass('active')
+
+                        }
+                    })
+                }
+
+                function nextTargetPageGroup(pageNumber)
+                {
+                    $('.target_pagination a.pages').hide();
+                    let maxButtons = 10;
+                    let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
+                            let endPage = Math.min(startPage + maxButtons - 1 , {{$numTargetPages}});
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.target_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+                function prevTargetPageGroup(pageNumber)
+                {
+                    let maxButtons = 10;
+                    let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
+                            let startPage = Math.min(endPage - maxButtons + 1 , {{$numTargetPages}});
+                    $('.target_pagination a.pages').hide();
+                            for (let i = startPage; i <= endPage; i++)
+                            {
+                                var selected =  $('.target_pagination a').filter(function () {
+                                    return parseInt($(this).text(), 10) === i;
+                                });
+                                selected.show();
+                            }
+                }
+
+            </script>
             <div class="divider"></div>
 
         </div>
