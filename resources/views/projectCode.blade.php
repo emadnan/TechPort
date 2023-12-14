@@ -3,9 +3,6 @@
         <span class="faq-question">Projects</span>
         <i class="fa-solid fa-chevron-down" id="rotateIcon"
             style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
-
-
-
     </div>
 
     <div class="faq-answer" style="display: none;">
