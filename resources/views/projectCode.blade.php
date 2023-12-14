@@ -24,9 +24,8 @@
                 <i class="fa-solid fa-chevron-down" style="float: right;margin-right:10px; color:grey;"
                     onclick="toggleSubAnswer(this)"></i>
                 <button
-                    style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; width: 80px; border-radius: 5px;">{{$project->status->status}}</button>
-                <section>This is a project within the Space Technology Research Grants Program </section>
-            </section>
+                class="px-2" style="float: right; margin-right: 20px; background-color: white; border: 1px solid grey; color: grey; height: 30px; min-width: 80px; border-radius: 5px;">{{$project->status->status}}</button>
+                    <section><br></section>
             <section class="sub-answer mt-2 mb-4" style="margin-left:10px;font-size:15px; padding-right:4rem;  max-height:70px; overflow:auto;">{{$project->description}}</section>
 
             <div class="sub-answer mt-2 mb-4"
