@@ -11,7 +11,7 @@
 
     <div class="faq-answer" style="display: none;">
         <div>
-            <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+            <section id="targetPagesList" class="encapsulated-text mt-2 mb-4"></section>
             @php
                 $targetID = 0;
                 $countTarget = 0;
@@ -60,6 +60,9 @@
 
 <script>
 
+var list = 'Listing 1-10 of '+{{$numTargetPages}};
+                    $('#targetPagesList').text(list);
+
     function showSelectedTargetPage(element)
     {
         var selectedPageElement = element.previousElementSibling;
@@ -67,7 +70,8 @@
         if (selectedPage <= {{$numTargetPages}}) {
             var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numTargetPages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numTargetPages}};
+                    $('#targetPagesList').text(list);
             $('.target_pagination a.pages').hide();
             $('.target').hide();
             prevTargetPageHover(selectedPage);
@@ -213,6 +217,8 @@
         let maxButtons = 10;
         let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
                 let endPage = Math.min(startPage + maxButtons - 1 , {{$numTargetPages}});
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numTargetPages}};
+                    $('#targetPagesList').text(list);
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.target_pagination a').filter(function () {
@@ -226,9 +232,11 @@
     {
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
-                let startPage = Math.min(endPage - maxButtons + 1 , {{$numTargetPages}});
+        let startPage = Math.min(endPage - maxButtons + 1 , {{$numTargetPages}});
+        var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numTargetPages}};
+        $('#targetPagesList').text(list);
         $('.target_pagination a.pages').hide();
-                for (let i = startPage; i <= endPage; i++)
+            for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.target_pagination a').filter(function () {
                         return parseInt($(this).text(), 10) === i;

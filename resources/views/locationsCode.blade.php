@@ -6,7 +6,7 @@
     
     <div class="faq-answer" style="display: none;">
   <div>
-  <section  class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
+  <section id="locationPagesList" class="encapsulated-text mt-2 mb-3"></section>
   @php
     $locationID = 0;
     $countLocations = 0;
@@ -62,6 +62,9 @@
 
   <script>
 
+            var list = 'Listing 1-10 of '+{{$numLocationsPages}};
+                $('#locationPagesList').text(list);
+
     function showSelectedLocationsPage(element)
     {
         var selectedPageElement = element.previousElementSibling;
@@ -69,7 +72,8 @@
         if (selectedPage <= {{$numLocationsPages}}) {
             var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numLocationsPages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numLocationsPages}};
+            $('#locationPagesList').text(list);
             $('.location_pagination a.pages').hide();
             $('.location').hide();
             prevLocationsPageHover(selectedPage);
@@ -215,6 +219,8 @@
         let maxButtons = 10;
         let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
                 let endPage = Math.min(startPage + maxButtons - 1 , {{$numLocationsPages}});
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numLocationsPages}};
+                $('#locationPagesList').text(list);
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.location_pagination a').filter(function () {
@@ -229,7 +235,9 @@
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
                 let startPage = Math.min(endPage - maxButtons + 1 , {{$numLocationsPages}});
-        $('.location_pagination a.pages').hide();
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numLocationsPages}};
+                $('#locationPagesList').text(list);
+                $('.location_pagination a.pages').hide();
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.location_pagination a').filter(function () {

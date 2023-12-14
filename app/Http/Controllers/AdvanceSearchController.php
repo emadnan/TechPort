@@ -12,8 +12,10 @@ use App\Models\project;
 use App\Models\status;
 use App\Models\techarea;
 use App\Models\trl;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class AdvanceSearchController extends Controller
 {
@@ -238,6 +240,14 @@ class AdvanceSearchController extends Controller
         {
             $min_max_values = preg_split('/\s+/', $req->final_trl, -1, PREG_SPLIT_NO_EMPTY); 
             $projOrgs = $projOrgs->whereBetween('id_trlfinal' , [$min_max_values[0] , $min_max_values[1]]);
+        }
+
+        if($req->techport_id !== null)
+        {
+            $validator = Validator::make($req->all(),[
+                'techport_id'=> 'integer',
+            ]);
+            $projOrgs = $projOrgs->where('id' , $req->techport_id);
         }
 $projOrgs = $projOrgs->get();
         if ($req->order == 'Relevance') {

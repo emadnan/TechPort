@@ -9,7 +9,7 @@
     </div>
 
     <div class="faq-answer" style="display: none;">
-        <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+        <section id="projectPagesList" class="encapsulated-text mt-2 mb-4"></section>
         @php
             $projectID = 0;
             $countProjects = 0;
@@ -93,6 +93,9 @@
 <div class="divider"></div>
 
 <script>
+    
+    var list = 'Listing 1-10 of '+{{$numPages}};
+        $('#projectPagesList').text(list);
 
     function showSelectedPage(element)
     {
@@ -101,7 +104,8 @@
         if (selectedPage <= {{$numPages}}) {
             var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numPages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numPages}};
+            $('#projectPagesList').text(list);
             $('.project_pagination a.pages').hide();
             $('.project').hide();
             prevPageHover(selectedPage);
@@ -247,6 +251,8 @@
         let maxButtons = 10;
         let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
                 let endPage = Math.min(startPage + maxButtons - 1 , {{$numPages}});
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numPages}};
+                $('#projectPagesList').text(list);
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.project_pagination a').filter(function () {
@@ -261,7 +267,9 @@
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
                 let startPage = Math.min(endPage - maxButtons + 1 , {{$numPages}});
-        $('.project_pagination a.pages').hide();
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numPages}};
+                $('#projectPagesList').text(list);
+                $('.project_pagination a.pages').hide();
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.project_pagination a').filter(function () {

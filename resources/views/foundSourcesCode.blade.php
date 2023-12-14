@@ -7,7 +7,7 @@
 
     <div class="faq-answer" style="display: none;">
         <div>
-            <section class="encapsulated-text mt-2 mb-3">Listing 1 - 20 of 61 </section>
+            <section id="sourePagesList" class="encapsulated-text mt-2 mb-3"></section>
             @php
                 $sourceID = 0;
                 $countSource = 0;
@@ -61,6 +61,9 @@
 
 <script>
 
+var list = 'Listing 1-10 of '+{{$numSourcePages}};
+    $('#sourcePagesList').text(list);
+
     function showSelectedSourcePage(element)
     {
         var selectedPageElement = element.previousElementSibling;
@@ -68,7 +71,8 @@
         if (selectedPage <= {{$numSourcePages}}) {
             var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numSourcePages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numSourcePages}};
+            $('#sourcePagesList').text(list);
             $('.source_pagination a.pages').hide();
             $('.source').hide();
             prevSourcePageHover(selectedPage);
@@ -214,6 +218,8 @@
         let maxButtons = 10;
         let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
                 let endPage = Math.min(startPage + maxButtons - 1 , {{$numSourcePages}});
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numSourcePages}};
+            $('#sourcePagesList').text(list);
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.source_pagination a').filter(function () {
@@ -228,7 +234,9 @@
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
                 let startPage = Math.min(endPage - maxButtons + 1 , {{$numSourcePages}});
-        $('.source_pagination a.pages').hide();
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numSourcePages}};
+                $('#sourcePagesList').text(list);
+                $('.source_pagination a.pages').hide();
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.source_pagination a').filter(function () {

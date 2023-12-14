@@ -11,7 +11,7 @@
 
     <div class="faq-answer" style="display: none;">
         <div>
-            <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+            <section id="entityPagesList" class="encapsulated-text mt-2 mb-4"></section>
             @php
                 $legalID = 0;
                 $countEntity = 0;
@@ -61,6 +61,9 @@
 
 <script>
 
+                var list = 'Listing 1-10 of '+{{$numEntityPages}};
+                    $('#entityPagesList').text(list);
+
     function showSelectedEntityPage(element)
     {
         var selectedPageElement = element.previousElementSibling;
@@ -68,7 +71,8 @@
         if (selectedPage <= {{$numEntityPages}}) {
             var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numEntityPages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numEntityPages}};
+            $('#entityPagesList').text(list);
             $('.entity_pagination a.pages').hide();
             $('.entity').hide();
             prevEntityPageHover(selectedPage);
@@ -214,6 +218,8 @@
         let maxButtons = 10;
         let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
                 let endPage = Math.min(startPage + maxButtons - 1 , {{$numEntityPages}});
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numEntityPages}};
+                $('#entityPagesList').text(list);
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.entity_pagination a').filter(function () {
@@ -228,7 +234,9 @@
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
                 let startPage = Math.min(endPage - maxButtons + 1 , {{$numEntityPages}});
-        $('.entity_pagination a.pages').hide();
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numEntityPages}};
+                $('#entityPagesList').text(list);
+                $('.entity_pagination a.pages').hide();
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.entity_pagination a').filter(function () {

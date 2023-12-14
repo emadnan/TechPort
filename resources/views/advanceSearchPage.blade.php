@@ -1841,7 +1841,7 @@ function finalTrl()
             <div class="faq-answer" style="display: none;">
                 <div class="row">
                     <div class="col-md-3">
-                        <input class="form-control" type="text" name="techport id" id="techport_id" placeholder="TechPort ID">
+                        <input class="form-control" type="text" name="techport_id" id="techport_id" placeholder="TechPort ID">
                     </div>
                 </div>
             </div>

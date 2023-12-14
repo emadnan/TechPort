@@ -10,7 +10,7 @@
     </div>
 
     <div class="faq-answer" style="display: none;">
-            <section class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+            <section id="organizationPagesList" class="encapsulated-text mt-2 mb-4"></section>
             @php
                  $orgID = 0;
                  $projectID = 0;
@@ -67,6 +67,8 @@
 </div>
 <div class="divider"></div>
 <script>
+    var list = 'Listing 1-10 of '+{{$numOrgPages}};
+    $('#organizationPagesList').text(list);
     function showSelectedOrgPage(element)
     {
         var selectedOrgPageElement = element.previousElementSibling;
@@ -75,7 +77,8 @@
         if (selectedOrgPage <= {{$numOrgPages}}) {
             var startPage = Math.floor((selectedOrgPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numOrgPages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numOrgPages}};
+            $('#organizationPagesList').text(list);
             $('.organization_pagination a.pages').hide();
             $('.organization').hide();
             prevOrgPageHover(selectedOrgPage);
@@ -219,9 +222,11 @@
     {
         $('.organization_pagination a.pages').hide();
         let maxButtons = 10;
-        let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
-                let endPage = Math.min(startPage + maxButtons - 1 , {{$numOrgPages}});
-                for (let i = startPage; i <= endPage; i++)
+        let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;   
+        let endPage = Math.min(startPage + maxButtons - 1 , {{$numOrgPages}});
+        var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numOrgPages}};
+        $('#organizationPagesList').text(list);
+             for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.organization_pagination a').filter(function () {
                         return parseInt($(this).text(), 10) === i;
@@ -234,7 +239,9 @@
     {
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
-                let startPage = Math.min(endPage - maxButtons + 1 , {{$numOrgPages}});
+        let startPage = Math.min(endPage - maxButtons + 1 , {{$numOrgPages}});
+        var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numOrgPages}};
+        $('#organizationPagesList').text(list);
         $('.organization_pagination a.pages').hide();
                 for (let i = startPage; i <= endPage; i++)
                 {

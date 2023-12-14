@@ -5,7 +5,7 @@
     </div>
     <div class="faq-answer" style="display: none;">
   <div>
-  <section  class="encapsulated-text mt-2 mb-4">Listing 1 - 20 of 61 </section>
+  <section id="missionPagesList" class="encapsulated-text mt-2 mb-4"></section>
   @php
     $missionID = 0;
     $countMission = 0;
@@ -58,6 +58,9 @@
 
   <script>
 
+            var list = 'Listing 1-10 of '+{{$numMissionPages}};
+                $('#missionPagesList').text(list);
+
     function showSelectedMissionPage(element)
     {
         var selectedPageElement = element.previousElementSibling;
@@ -65,7 +68,8 @@
         if (selectedPage <= {{$numMissionPages}}) {
             var startPage = Math.floor((selectedPage - 1) / 10) * 10 + 1;
             var endPage = Math.min(startPage + 9, {{$numMissionPages}});
-
+            var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numMissionPages}};
+            $('#missionPagesList').text(list);
             $('.mission_pagination a.pages').hide();
             $('.mission').hide();
             prevMissionPageHover(selectedPage);
@@ -211,6 +215,8 @@
         let maxButtons = 10;
         let startPage = Math.floor(pageNumber / maxButtons) * maxButtons + 1;
                 let endPage = Math.min(startPage + maxButtons - 1 , {{$numMissionPages}});
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numMissionPages}};
+            $('#missionPagesList').text(list);
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.mission_pagination a').filter(function () {
@@ -225,7 +231,9 @@
         let maxButtons = 10;
         let endPage = Math.floor(pageNumber / maxButtons) * maxButtons;
                 let startPage = Math.min(endPage - maxButtons + 1 , {{$numMissionPages}});
-        $('.mission_pagination a.pages').hide();
+                var list = 'Listing '+startPage+'-'+endPage+' of '+{{$numMissionPages}};
+                $('#missionPagesList').text(list);
+                $('.mission_pagination a.pages').hide();
                 for (let i = startPage; i <= endPage; i++)
                 {
                     var selected =  $('.mission_pagination a').filter(function () {
