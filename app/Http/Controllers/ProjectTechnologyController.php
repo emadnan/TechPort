@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ref_projecttechnology;
 use App\Models\technology;
-use App\Models\Project;
+use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
