@@ -14,7 +14,7 @@ class ProjectTechnologyController extends Controller
     public function projectTechnologyPage ()
     {
         // $projTechs = ref_projecttechnology::get();
-        $projects = Project::get();
+        $projects = project::get();
         $techs = technology::get();
         $projTechs = ref_projecttechnology::select('projects.name as projectName' , 'projects.id as projectsID' , 'technologies.id as technologyID' , 'technologies.technology' , 'ref_projecttechnologies.*' )
         ->join('projects' , 'projects.id' , '=' , 'ref_projecttechnologies.id_project')
