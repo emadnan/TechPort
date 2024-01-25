@@ -143,7 +143,10 @@
                 {
                     scrollTop: $menuTechReferred.offset().top
                 },
-                800
+                800, 
+                function() {
+                    console.log('error');
+                }
             );
         }
     });
