@@ -141,9 +141,9 @@
                 success: function(response) {
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
-                        $('#techarea').val(item.techarea);
-                        $('#techsector').val(item.techsector);
-                        $('#techniche').val(item.techniche);
+                        $('#techarea').val(item.id_techarea);
+                        $('#techsector').val(item.id_techsector);
+                        $('#techniche').val(item.id_techniche);
                     });
                 },
             });
