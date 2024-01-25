@@ -64,7 +64,7 @@
             </li>
 
 
-                <li class="nav-item ">
+                <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -74,7 +74,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li  id='menu_definitions' class="nav-item ">
                     <a href="{{ route('definitionPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -83,7 +83,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li id='menu_equipments' class="nav-item ">
                     <a href="{{ route('equipmentPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -93,7 +93,7 @@
                 </li>
 
 
-                <li class="nav-item ">
+                <li  id='menu_sources' class="nav-item ">
                     <a href="{{ route('foundSourceForm') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -102,7 +102,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li  id='menu_targets' class="nav-item ">
                     <a href="{{ route('projectTargetForm') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -112,7 +112,7 @@
                 </li>
 
 
-                <li class="nav-item ">
+                <li  id='menu_entities' class="nav-item ">
                     <a href="{{ route('humanEntityPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -128,7 +128,7 @@
                   </a>
               </li>
 
-                <li class="nav-item ">
+                <li  id='menu_locations' class="nav-item ">
                   <a href="{{ route('locationForm') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
@@ -136,7 +136,7 @@
                   </a>
               </li>
 
-                <li class="nav-item ">
+                <li  id='menu_missiontypes' class="nav-item ">
                   <a href="{{ route('missionTypeForm') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
@@ -144,7 +144,7 @@
                   </a>
               </li>
 
-                <li class="nav-item ">
+                <li  id='menu_orgtypes' class="nav-item ">
                   <a href="{{ route('organizationTypePage') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
@@ -152,7 +152,7 @@
                   </a>
               </li>
 
-                <li class="nav-item ">
+                <li  id='menu_priorities' class="nav-item ">
                   <a href="{{ route('priorityPage') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
@@ -161,7 +161,7 @@
               </li>
 
 
-                <li class="nav-item ">
+                <li  id='menu_reference' class="nav-item ">
                   <a href="{{ route('referencePage') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
@@ -170,7 +170,7 @@
               </li>
 
 
-                <li class="nav-item ">
+                <li  id='menu_techarea' class="nav-item ">
                     <a href="{{ route('techAreaPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -178,7 +178,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li  id='menu_techsector' class="nav-item ">
                     <a href="{{ route('techSectorPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -186,7 +186,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li  id='menu_techniche' class="nav-item ">
                     <a href="{{ route('techSubSectorPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -194,7 +194,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li  id='menu_technologies' class="nav-item ">
                     <a href="{{ route('technologyPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -202,7 +202,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li  id='menu_trl' class="nav-item ">
                     <a href="{{ route('trlPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -219,7 +219,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li  id='menu_projecttechnology' class="nav-item">
                     <a href="{{route('projectTechnologyPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -228,7 +228,7 @@
                     </a>
                 </li>
                    
-                <li class="nav-item">
+                <li  id='menu_workingOrganizations' class="nav-item">
                     <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -237,7 +237,7 @@
                     </a>
                 </li>
                   
-                <li class="nav-item">
+                <li  id='menu_projectOrganizations' class="nav-item">
                     <a href="{{route('projectOrganizationPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -246,7 +246,7 @@
                     </a>
                 </li>
                 
-                <li class="nav-item">
+                <li  id='menu_organzationUnits' class="nav-item">
                     <a href="{{route('organizationUnitPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -255,7 +255,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li id='menu_refOrganizationUnits' class="nav-item">
                     <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -264,7 +264,7 @@
                     </a>
                 </li>
 
-            <li class="nav-item">
+            <li  id='menu_requirements' class="nav-item">
                 <a href="{{route('requirementPage')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
@@ -273,7 +273,7 @@
                 </a>
             </li>
             
-            <li class="nav-item">
+            <li  id='menu_refEquipments' class="nav-item">
                 <a href="{{route('ref_EquipmentPage')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
@@ -282,7 +282,7 @@
                 </a>
             </li>
 
-                <li class="nav-item">
+                <li  id='menu_products' class="nav-item">
                     <a href="{{route('productPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
