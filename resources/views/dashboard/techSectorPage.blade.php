@@ -150,7 +150,7 @@
     $(document).ready(function(){
         $(window).on('load', function() {
         // Check if the element with ID "menu_techreferred" exists.
-            $$('#menu_techsector').addClass('bg-primary');
+            $('#menu_techsector').addClass('bg-primary');
     });
         $.ajaxSetup({
                 headers: { 

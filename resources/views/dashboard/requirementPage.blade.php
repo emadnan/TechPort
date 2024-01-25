@@ -125,7 +125,7 @@
     {
         $(window).on('load', function() {
         // Check if the element with ID "menu_techreferred" exists.
-            $$('#menu_requirements').addClass('bg-primary');
+            $('#menu_requirements').addClass('bg-primary');
     });
         $.ajaxSetup({
                 headers: { 
