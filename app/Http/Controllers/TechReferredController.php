@@ -12,10 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class TechReferredController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+ 
     public function techPage ()
     {
         $areas = techarea::get();
@@ -26,6 +23,12 @@ class TechReferredController extends Controller
 
         // return response()->json(['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
         return view('dashboard.techreferredPage' , ['areas'=>$areas , 'sectors'=>$sectors , 'niches'=>$niches , 'techrefs'=>$techrefs ]);
+    }
+    
+    public function read (string $id)   
+    {
+        $read = techreferred::where('id',$id)->get();
+        return response()->json(['data'=>$read]);
     }
 
     public function create( Request $req)
@@ -96,5 +99,22 @@ class TechReferredController extends Controller
         }
     }
 
+    public function delete(string $id)
+    {
+        $delete = techreferred::where('id',$id)->delete();
+        if($delete)
+        {
+            return response()->json(['message' => 'Technology Sector  Deleted Successfully' , 'data'=>$delete]);
+        } 
+        else
+        {
+            return response()->json(['message' => 'Technology Sector  Was Not Deleted Successfully']);
+        }
+    }
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
  
 }
