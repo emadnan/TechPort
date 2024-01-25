@@ -170,7 +170,7 @@ class ProjectController extends Controller
         $id = $project->id;
         if($project)
         {
-            $project = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'project_targets.name as target' , 'projects.*')
+            $newProject = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'project_targets.name as target' , 'projects.*')
             ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
             ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
             ->join('trl' , function($join){
@@ -187,7 +187,7 @@ class ProjectController extends Controller
             ->where('projects.id', $id)
             ->get();
             
-            return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$project , 'id' => $id]);
+            return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$newProject , 'id' => $id]);
         }
         else
         {
