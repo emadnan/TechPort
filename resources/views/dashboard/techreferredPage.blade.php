@@ -133,7 +133,7 @@
     $("#techsectorError").text('');
     $("#technicheError").text('');
     var rowID = $(this).data('id');
-    var url = 'techSectorUpdatePage/'+rowID;
+    var url = 'techReferredUpdatePage/'+rowID;
             $.ajax({
                 type: 'GET',
                 url: url,
@@ -160,7 +160,7 @@
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("techreferredUpdate") }}',
+                    url: '{{ route("techReferredUpdate") }}',
                     data: formData,
 
                     success: function(response)
