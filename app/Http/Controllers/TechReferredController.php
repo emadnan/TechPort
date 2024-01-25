@@ -27,7 +27,7 @@ class TechReferredController extends Controller
         return view('dashboard.techreferredPage' , ['areas'=>$areas , 'sectors'=>$sectors , 'niches'=>$niches , 'techrefs'=>$techrefs ]);
     }
 
-    public function addTechreferred( Request $req)
+    public function create( Request $req)
     {
         $techreferred = new techreferred;
         $techreferred->id_techarea = $req->techarea;
