@@ -130,14 +130,23 @@
 
 <script type='text/javascript'>
      $(document).ready(function(){
-        $('#menu_techreferred').addClass('bg-primary');
-        const scrollToEl = $('#menu_techreferred');
-        $('html').animate(
-          {
-              scrollTop: scrollToEl.offset().top,
-          },
-          800 //speed
-        );
+
+        $(window).on('load', function() {
+        // Check if the element with ID "menu_techreferred" exists.
+        var $menuTechReferred = $('#menu_techreferred');
+        if ($menuTechReferred.length) {
+            // Add the 'bg-primary' class to the element.
+            $menuTechReferred.addClass('bg-primary');
+
+            // Scroll to the top offset of the element with a smooth animation.
+            $('html, body').animate(
+                {
+                    scrollTop: $menuTechReferred.offset().top
+                },
+                800
+            );
+        }
+    });
 
         $.ajaxSetup({
                 headers: { 
