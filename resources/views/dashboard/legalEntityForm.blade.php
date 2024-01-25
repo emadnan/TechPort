@@ -122,16 +122,17 @@ $(document).ready(function(){
             // Add the 'bg-primary' class to the element.
             $menuTechReferred.addClass('bg-primary');
             console.log('Element offset top:', $menuTechReferred.offset().top);
-
-            $('body').animate(
-            {
-                scrollTop: $menuTechReferred.offset().top - 100
-            },
-            800,
-            function() {
-                console.log('Scrolling complete.');
-            }
-        );
+            var position = $('#menu_legalentity').position();
+            
+        //     $('body').animate(
+        //     {
+        //         scrollTop: $menuTechReferred.offset().top - 100
+        //     },
+        //     800,
+        //     function() {
+        //         console.log('Scrolling complete.');
+        //     }
+        // );
 
         }
     });
