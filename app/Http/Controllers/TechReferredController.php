@@ -49,7 +49,9 @@ class TechReferredController extends Controller
 
         if($techreferred)
         {
-            return response()->json(['message' => 'Technology Referred  Added successfully']);
+            $latestID = techreferred::latest()->value('id');
+            $newRow = techreferred::where('id' , $latestID)->get();
+            return response()->json(['message' => 'Technology Referred Added successfully' , 'newRow'=>$newRow]);
         }
 
     }
