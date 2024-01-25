@@ -93,7 +93,10 @@
         <div class="col-md-8 offset-3 my-3">
             <div class="card">
                 <b><div class="card-header">{{ __('Create Technology Referred') }}</div></b>
-
+                <b>{{ __('Technology Referred') }}</b>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Technology Referred </button>
+                    </div>
                 <div class="card-body">
                     <form method="POST" action="{{route('techReferredSave')}}">
                         @csrf
