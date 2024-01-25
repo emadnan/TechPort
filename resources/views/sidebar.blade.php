@@ -53,7 +53,7 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-             <li class="nav-item ">
+             <li id='menu_projects' class="nav-item ">
                 <a href="{{route('projectForm')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
