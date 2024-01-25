@@ -95,7 +95,20 @@
                     </div>
                 </div>
                 <div class="card-body">
-                  
+                  <table>
+                    <thead>
+                        <th>Technology Area</th>
+                        <th>Technology Sector</th>
+                        <th>Technolgy Niche</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                  </table>
                 </div>
             </div>
         </div>
