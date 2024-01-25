@@ -139,7 +139,7 @@
             $menuTechReferred.addClass('bg-primary');
 
             // Scroll to the top offset of the element with a smooth animation.
-            $('html, body').animate(
+            $('aside').animate(
                 {
                     scrollTop: $menuTechReferred.offset().top
                 },
