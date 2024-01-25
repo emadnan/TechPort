@@ -323,6 +323,7 @@ $(document).ready(function(){
     $('#add-btn').click(function(){
         $('#business-modal').modal('show');
         $('#form').trigger('reset');
+        $('#old-image').text('');
     $('#modal_title').html('Add Project');
     $('.text-danger').text('');
     }) // create click event end
