@@ -170,7 +170,22 @@ class ProjectController extends Controller
         $id = $project->id;
         if($project)
         {
-            $newProject = project::where('id', $id)->get();
+            $newProject = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'project_targets.name as target' , 'projects.*')
+            ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
+            ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
+            ->join('trl' , function($join){
+               $join->on('trl.id' , '=' ,'projects.id_trlstart');
+               $join->on('trl.id' , '=' ,'projects.id_trlactual');
+               $join->on('trl.id' , '=' ,'projects.id_trlfinal');
+            })
+            ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
+            ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
+            ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
+            ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
+            ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+            ->join('status' , 'status.id' , '=' , 'projects.id_status')
+            ->where('id', $id)
+            ->get();
             
             return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$newProject , 'id' => $id]);
         }
