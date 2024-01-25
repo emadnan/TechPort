@@ -97,7 +97,7 @@
                             <option value="{{$techRef-> id}}"> {{$techRef->techarea }} ( {{$techRef->techsector }} ) ( {{$techRef->techniche }} ) </option>
                             @endforeach
                         </select>
-                        <span class="text-danger small" id="techreferredError"></span>
+                        <span class="text-danger small" id="id_techreferredError"></span>
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@
                             <option value="{{$mission-> id}}">{{$mission-> type}} </option>
                             @endforeach
                         </select>
-                            <span class="text-danger small" id="missiontypeError"></span>
+                            <span class="text-danger small" id="id_missiontypeError"></span>
                     </div>
 
                     <label for="trlstart" class="col-md-2 col-form-label text-md-end">{{ __('TRL Start') }}</label>
@@ -121,7 +121,7 @@
                             <option value="{{$trl-> id}}">{{$trl-> trllevel}} </option>
                             @endforeach
                         </select>
-                            <span class="text-danger small" id="trlstartError"></span>
+                            <span class="text-danger small" id="id_trlstartError"></span>
                     </div>
                 </div>
 
@@ -134,7 +134,7 @@
                             <option value="{{$trl-> id}}">{{$trl-> trllevel}} </option>
                             @endforeach
                         </select>
-                            <span class="text-danger small" id="trlactualError"></span>
+                            <span class="text-danger small" id="id_trlactualError"></span>
                     </div>
             
                     <label for="trlfinal" class="col-md-2 col-form-label text-md-end">{{ __('TRL Final') }}</label>
@@ -145,7 +145,7 @@
                             <option value="{{$trl-> id}}">{{$trl-> trllevel}} </option>
                             @endforeach
                         </select>
-                            <span class="text-danger small" id="trlfinalError"></span>
+                            <span class="text-danger small" id="id_trlfinalError"></span>
                     </div>
                 </div>
 
@@ -158,7 +158,7 @@
                             <option value="{{$source-> id}}">{{$source-> name}} </option>
                             @endforeach
                         </select>
-                            <span class="text-danger small" id="foundsourceError"></span>
+                            <span class="text-danger small" id="id_foundsourceError"></span>
                     </div>
             
                     <label for="status" class="col-md-2 col-form-label text-md-end">{{ __('Status') }}</label>
@@ -169,7 +169,7 @@
                             <option value="{{$status-> id}}">{{$status-> status}} </option>
                             @endforeach
                         </select>
-                            <span class="text-danger small" id="statusError"></span>
+                            <span class="text-danger small" id="id_statusError"></span>
                     </div>
                 </div>
 
