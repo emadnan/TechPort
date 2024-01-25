@@ -308,6 +308,7 @@ function getRows ()
 
 $(document).ready(function(){
     // getRows();
+    $('#menu_projects').addClass('bg-primary');
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
