@@ -26,6 +26,7 @@ class ProjectController extends Controller
     ->first();
     
 return response()->json($projOrg);
+
     return view('lowEvolutionPage' , compact('projOrg'));
 
   }
