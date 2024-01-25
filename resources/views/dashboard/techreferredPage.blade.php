@@ -21,7 +21,7 @@
                             <div class="col-md-6">
                                 <select id="techarea" type="text" class="form-control @error('techarea') is-invalid @enderror" name="techarea" value="{{ old('techarea') }}" autocomplete="techarea" autofocus required>
                                     <option selected value="">SELECT</option>
-                                    @foreach ($areas as $area )
+                                    @foreach ($areas as $id=>$area )
                                     <option value="{{$area-> id}}">{{$area-> techarea}}</option>
                                     @endforeach
                                 </select>
@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                                 <select id="techsector" class="form-control @error('techsector') is-invalid @enderror" name="techsector" value="{{ old('techsector') }}" autocomplete="techsector" autofocus required>
                                     <option selected value="">SELECT</option>
-                                    @foreach ($sectors as $sector )
+                                    @foreach ($sectors as $id=>$sector )
                                     <option value="{{$sector-> id}}">{{$sector-> techsector}}</option>
                                     @endforeach
                                 </select>
@@ -59,7 +59,7 @@
                             <div class="col-md-6">
                                 <select id="techniche" class="form-control @error('techniche') is-invalid @enderror" name="techniche" value="{{ old('techniche') }}" autocomplete="techniche" autofocus required>
                                     <option selected value="">SELECT</option>
-                                    @foreach ($niches as $niche )
+                                    @foreach ($niches as $id=>$niche )
                                     <option value="{{$niche-> id}}">{{$niche-> techniche}}</option>
                                     @endforeach
                                 </select>
@@ -102,13 +102,11 @@
                         <th class="py-1">Technolgy Niche</th>
                     </thead>
                     <tbody>
-                    <!-- @foreach ($techrefs as $techref )
-                        <tr  id="row_{{$techref-> id}}">
-                            <td>{{$techref->id_techarea}}</td>
-                            <td>{{$techref->id_techsector}}</td>
-                            <td>{{$techref->id_techniche}}</td>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                    @foreach -->
                     </tbody>
                   </table>
                 </div>
