@@ -356,7 +356,7 @@ $(document).ready(function(){
                    $('#foundsource').val(item.id_foundsource);
                    $('#status').val(item.id_status);
                    $('#note').val(item.note);
-                   $('#old-image').text(item.image);
+                   $('#old-image').text('old image : '+ item.image);
 
                 },
             });
