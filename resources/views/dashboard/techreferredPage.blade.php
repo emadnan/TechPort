@@ -110,9 +110,9 @@
                     <tbody>
                         @foreach ($techrefs as $id=>$techref)
                         <tr id="row_{{$techref-> id}}">
-                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->id_techarea}}</td>
-                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->id_techsector}}</td>
-                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->id_techniche}}</td>
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->area}}</td>
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->sector}}</td>
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->niche}}</td>
                             <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px;">
                                 <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$techref-> id}}"> <span style="color:black;">|</span> </i>
                                 <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$techref-> id}}"> <span style="color:black;">|</span> </i> 
