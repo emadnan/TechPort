@@ -131,6 +131,7 @@
 <script type='text/javascript'>
      $(document).ready(function(){
         $('#menu_techreferred').addClass('bg-primary');
+        $('#menu_techreferred').scrollIntoView();
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
