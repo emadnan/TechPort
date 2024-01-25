@@ -20,7 +20,8 @@ class TechReferredController extends Controller
         $area = techarea::get();
         $sector = techsector::get();
         $niche = techniche::get();
-        return view('dashboard.techreferredPage' , ['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche]);
+        $techreferred = techreferred::get();
+        return view('dashboard.techreferredPage' , ['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
     }
 
     public function saveData( Request $req)
