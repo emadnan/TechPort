@@ -7,7 +7,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal_title"></h4>
+          <h4 class="modal-title" id="modal_title">{{ __('Create Technology Referred') }}</h4>
         </div>
         <div class="modal-body">
         <form method="POST" action="{{route('techReferredSave')}}">
@@ -93,11 +93,11 @@
         <div class="col-md-8 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                <b>{{ __('Technology Referred') }}</b>
+                    <b>{{ __('Technology Referred') }}</b>
                     <div class="float-right">
                         <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Technology Referred </button>
                     </div>
-                    </div>
+                </div>
                 <div class="card-body">
                   
                 </div>
