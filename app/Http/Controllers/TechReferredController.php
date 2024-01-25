@@ -18,7 +18,7 @@ class TechReferredController extends Controller
         $areas = techarea::get();
         $sectors = techsector::get();
         $niches = techniche::get();
-        $techrefs = techreferred::select('techareas.techarea as area' , 'techsector.techsetor as sector' , 'tehniche.techniche as niche' , 'ref_techreferred')
+        $techrefs = techreferred::select('techareas.techarea as area' , 'techsector.techsector as sector' , 'techniche.techniche as niche' , 'ref_techreferred')
         ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
         ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
         ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
