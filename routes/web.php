@@ -282,6 +282,8 @@ Route::controller(TechReferredController::class)->group(function(){
     Route::post('/techreferredCreate' , 'create')->name('techreferredCreate');
     Route::get('/techReferredUpdatePage/{id}' , 'updatePage')->name('techReferredUpdatePage');
     Route::post('/techReferredUpdate' , 'update')->name('techReferredUpdate');
+    Route::get('/techReferredRead/{id}' , 'read')->name('techReferredRead');
+    Route::get('/techReferredDelete/{id}' , 'delete')->name('techReferredDelete');
 });
 
 Route::controller(ProjectTechnologyController::class)->group(function(){
