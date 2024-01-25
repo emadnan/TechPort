@@ -75,16 +75,15 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Submit') }}
-                                </button>
+                                <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                               <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </form>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
 
 
 <div class="container" >
