@@ -10,8 +10,7 @@
           <h4 class="modal-title" id="modal_title">{{ __('Create Technology Referred') }}</h4>
         </div>
         <div class="modal-body">
-        <form method="POST" action="{{route('techReferredSave')}}">
-                        @csrf
+                <form id="form">
                         <div class="col-md-6">
                             <input id="id" type="hidden" class="form-control" name="id">
                         </div>
@@ -118,6 +117,7 @@
     
         $('#add-btn').click(function(){
            $('#form-modal').modal('show');
+
             });
 </script>
 @endsection
