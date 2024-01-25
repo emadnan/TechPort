@@ -24,7 +24,7 @@ class TechReferredController extends Controller
         // return view('dashboard.techreferredPage' , compact('areas' , 'sectors' , 'niches' ));
 
         // return response()->json(['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
-        return view('dashboard.techreferredPage' , ['areas'=>$areas , 'sectors'=>$sectors , 'niches'=>$niches ]);
+        return view('dashboard.techreferredPage' , ['areas'=>$areas , 'sectors'=>$sectors , 'niches'=>$niches , 'techrefs'=>$techrefs ]);
     }
 
     public function saveData( Request $req)
