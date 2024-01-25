@@ -12,7 +12,7 @@
         <div class="modal-body">
                 <form id="form">
                         <div class="col-md-6">
-                            <input id="form_id" type="hidden" class="form-control" name="id">
+                            <input id="id" type="hidden" class="form-control" name="id">
                         </div>
                         <div class="row mb-3">
                             <label for="techarea" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Area') }}</label>
@@ -125,10 +125,34 @@
            $("#technicheError").text('');
         });
 
+        $('body').on('click' , '#update-btn' , function(){
+    $('#form').trigger('reset');
+    $('#form-modal').modal('show');
+    $('#modal_title').html('Update Technology Sector');
+    $("#techareaError").text('');
+    $("#techsectorError").text('');
+    $("#technicheError").text('');
+    var rowID = $(this).data('id');
+    var url = 'techSectorUpdatePage/'+rowID;
+            $.ajax({
+                type: 'GET',
+                url: url,
+                success: function(response) {
+                    $.each(response.row , function(index , item){
+                        $('#id').val(item.id);
+                        $('#techarea').val(item.techarea);
+                        $('#techsector').val(item.techsector);
+                        $('#techniche').val(item.techniche);
+                    });
+                },
+            });
+}); // update click event end
+
+
         $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
-            var inpID = $('#form_id').val();    
+            var inpID = $('#id').val();    
             $("#techareaError").text('');
            $("#techsectorError").text('');
            $("#technicheError").text('');
@@ -187,7 +211,7 @@
                         });
                             $('#form-modal').modal('hide');
                             $('#form').trigger('reset');
-                            $('#form_id').val(null);
+                            $('#id').val(null);
                            
                     }
                     },
@@ -252,6 +276,6 @@
                 });
             }
         });
-        
+
 </script>
 @endsection
