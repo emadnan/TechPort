@@ -694,7 +694,7 @@ switch (project.trlfinal.trllevel) {
     @endforeach
 
     <footer>
-        @include('footer')
+        <!-- @include('footer') -->
     </footer>
     
 
