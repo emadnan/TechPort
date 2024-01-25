@@ -318,7 +318,7 @@
                                         <td><a href="{{ route('locationsClickingPage', ['id' => $org->location->id]) }}" style="color:black;">{{$org->location->state}},{{$org->location->city}}</a></td>
                                         <td>{{$org->description}}</td>
                                     </tr>
-                           @endforeach
+                            @endforeach
 
                                 </table>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4"><a
@@ -343,10 +343,10 @@
                                 </section>
                                 <section><a href="{{ url('/organizations') }}"
                                         style="color:black;font-weight:bold;">Organization Performing Work</a></section>
-                                <section><a href="{{route('organizationClickingPage', ['id' => $projOrg->orgperformingworks[0]->id])}}" style="color:black;">{{$projOrg->orgperformingworks->name}}</a></section>
+                                <section><a href="{{route('organizationClickingPage', ['id' => $projOrg->orgperformingworks[0]->id])}}" style="color:black;">{{$projOrg->orgperformingworks[0]->name}}</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a style="color:black;"
                                         href="{{ url('/legal-entity-roles') }}">Legal Entity Role</a></section>
-                                <section><a href="{{ route('legalEntityClickingPage', ['id' => $projOrg->legalentityroles[0]->id]) }}" style="color:black;">{{$projOrg->legalentityroles->name}}</a></section>
+                                <section><a href="{{ route('legalEntityClickingPage', ['id' => $projOrg->legalentityroles[0]->id]) }}" style="color:black;">{{$projOrg->legalentityroles[0]->name}}</a></section>
                                 <section style="font-weight:bold;margin-top:30px;"><a
                                         href="{{ url('/search-results') }}" style="color:black;">Project</a></section>
                                 <section><a href="{{ url('/search-results') }}" style="color:black;">{{$projOrg->name}}</a></section>
