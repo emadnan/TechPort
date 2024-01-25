@@ -170,24 +170,27 @@ class ProjectController extends Controller
         $id = $project->id;
         if($project)
         {
-            $newProject = project::select('techareas.techarea' , 'missiontype.type','trl.trllevel','foundingsources.name as sourceName','status.status' , 'project_targets.name as target' , 'projects.*')
-            ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
-            ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
-            ->join('trl' , function($join){
-               $join->on('trl.id' , '=' ,'projects.id_trlstart');
-               $join->on('trl.id' , '=' ,'projects.id_trlactual');
-               $join->on('trl.id' , '=' ,'projects.id_trlfinal');
-            })
-            ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
-            ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
-            ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
-            ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
-            ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
-            ->join('status' , 'status.id' , '=' , 'projects.id_status')
-            ->where('id', $id)
-            ->get();
+            $project = project::select('techareas.techarea' ,
+        'missiontype.type',
+        'foundingsources.name as sourceName',
+        'status.status' , 'project_targets.name as target',
+        'trl_start.trllevel as trlstartlevel' ,'trl_actual.trllevel as trlactuallevel' ,'trl_final.trllevel as trlfinallevel' , 
+        'projects.*')
+        ->join('project_targets' , 'project_targets.id' , '=' ,'projects.id_project_target')
+        ->join('missiontype' , 'missiontype.id' , '=' ,'projects.id_missiontype')
+        ->join('trl as trl_start', 'trl_start.id', '=', 'projects.id_trlstart')
+        ->join('trl as trl_actual', 'trl_actual.id', '=', 'projects.id_trlactual')
+        ->join('trl as trl_final', 'trl_final.id', '=', 'projects.id_trlfinal')
+        ->join('foundingsources' , 'foundingsources.id' , '=' , 'projects.id_foundsource')
+        ->join('ref_techreferred' , 'ref_techreferred.id' , '=' , 'projects.id_techreferred')
+               ->join('techareas' , '.techareas.id' , '=' , 'ref_techreferred.id_techarea')
+               ->join('techsector' , '.techsector.id' , '=' , 'ref_techreferred.id_techsector')
+               ->join('techniche' , '.techniche.id' , '=' , 'ref_techreferred.id_techniche')
+        ->join('status' , 'status.id' , '=' , 'projects.id_status')
+        ->where('projects.id', $id)
+        ->get();
             
-            return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$newProject , 'id' => $id]);
+            return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$project , 'id' => $id]);
         }
         else
         {
