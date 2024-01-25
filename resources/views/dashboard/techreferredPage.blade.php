@@ -313,11 +313,11 @@
                    
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
-                '<span style="font-weight:700;">Technology Sector : </span>'
+                '<span style="font-weight:700;">Technology Area : </span>'
                 +item.id_techarea+ '</p>'+
-                '<p>'+ '<span  style="font-weight:700;">Description : </span>'
+                '<p>'+ '<span  style="font-weight:700;">Technology Sector : </span>'
                 +item.id_techsector+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_techniche+'</p>';
+                '<p>'+ '<span style="font-weight:700;"> Technology Niche : </span>'+item.id_techniche+'</p>';
                 data.append(descp);
                 });
 
