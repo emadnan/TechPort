@@ -4,7 +4,7 @@
     }
 </style>
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:100%; overflow-y: auto">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:100%; overflow: auto">
 
     <!-- Sidebar -->
     <div class="sidebar">
