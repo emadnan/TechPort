@@ -121,6 +121,10 @@
 <script type='text/javascript'>
     $(document).ready(function()
     {
+        $(window).on('load', function() {
+        // Check if the element with ID "menu_techreferred" exists.
+            $$('#menu_refEquipments').addClass('bg-primary');
+    });
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')

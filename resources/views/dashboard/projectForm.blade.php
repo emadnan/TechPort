@@ -308,7 +308,10 @@ function getRows ()
 
 $(document).ready(function(){
     // getRows();
-    $('#menu_projects').addClass('bg-primary');
+    $(window).on('load', function() {
+        // Check if the element with ID "menu_techreferred" exists.
+            $$('#menu_projects').addClass('bg-primary');
+    });
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')

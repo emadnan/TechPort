@@ -133,23 +133,7 @@
 
         $(window).on('load', function() {
         // Check if the element with ID "menu_techreferred" exists.
-        var $menuTechReferred = $('#menu_techreferred');
-        if ($menuTechReferred.length) {
-            // Add the 'bg-primary' class to the element.
-            $menuTechReferred.addClass('bg-primary');
-            console.log('Element offset top:', $menuTechReferred.offset().top);
-
-            $('aside').animate(
-            {
-                scrollTop: $menuTechReferred.offset().top
-            },
-            800,
-            function() {
-                console.log('Scrolling complete.');
-            }
-        );
-
-        }
+            $$('#menu_techreferred').addClass('bg-primary');
     });
 
         $.ajaxSetup({
