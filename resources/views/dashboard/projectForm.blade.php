@@ -386,17 +386,22 @@ $(document).ready(function(){
 
                       if(response.errors)
                       {
-                        $.each(response.errors , function(key , value){
-                            $('#'+key+'Error').text(value);
-                        });
-                        //   $("#areaError").text(response.errors.businessArea);
-                        //   $("#descriptionError").text(response.errors.description);
-                        //   $("#noteError").text(response.errors.note);
-
-                        //   $("#businessArea").val(response.oldInput.businessArea);
-                        //   $("#description").val(response.oldInput.description);
-                        //   $("#note").val(response.oldInput.note);
-
+                        var errorMessages = {
+                        'startdate': 'The Start Date field is required.',
+                        'enddate': 'The End Date field is required.',
+                        'techreferred': 'The Technology Ref field is required.',
+                        'projecttarget': 'Project Target field is required',
+                        'missiontype': 'Mission Type field is required',
+                        'trlstart': 'TRL Start field is required',
+                        'trlactual': 'TRL Actual field is required',
+                        'trlfinal': 'TRL Final field is required',
+                        'foundsource': 'Found Source field is required',
+                        'status': 'Status field is required',
+            };
+                    $.each(response.errors, function (key, value) {
+                        var customErrorMessage = errorMessages[key] || value;
+                        $('#' + key + 'Error').text(customErrorMessage);
+                    });
                       }
                       else
                       {                         
