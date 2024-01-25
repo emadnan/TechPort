@@ -76,27 +76,19 @@ class TechReferredController extends Controller
             return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
         }
 
-        $techreferred = techreferred::where('id' , $id);
-        $techreferred->id_techarea = $req->techarea;
-        $techreferred->id_techsector = $req->techsector;
-        $techreferred->id_techniche = $req->techniche;
-        $techreferred->save();
+        $Update = techreferred::where('id',$id)->update([
+            'id_techsector'=> $req->techsector,
+            'id_techarea'=> $req->techarea,
+            'id_techniche'=> $req->techniche,
+        ]);
 
-        // $Update = DB::table('techsector')->where('id',$id)->update([
-        //     'techsector'=> $req->techsector,
-        //     'techsectordescription'=> $req->techsectordescription,
-        //     'id_dm'=> $req->id_dm,
-        //     'otme'=> $req->otme,
-        //     'note'=> $req->note,
-        // ]);
-
-        if($techreferred)
+        if($Update)
         {
-            // $update = DB::table('techsector')->where('id', $id)->get();
-            // if($update)
-            // {
-              return response()->json(['message' => 'Technology Sector  Updated Successfully' , 'update'=>$techreferred]);
-            // }
+            $update = techreferred::where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Technology Sector  Updated Successfully' , 'update'=>$update]);
+            }
         }
         else
         {
