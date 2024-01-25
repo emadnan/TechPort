@@ -100,13 +100,19 @@
                         <th class="py-1">Technology Area</th>
                         <th class="py-1">Technology Sector</th>
                         <th class="py-1">Technolgy Niche</th>
+                        <th class="py-1">Actions</th>
                     </thead>
                     <tbody>
                         @foreach ($techrefs as $id=>$techref)
-                        <tr>
-                            <td>{{$techref->id_techarea}}</td>
-                            <td>{{$techref->id_techsector}}</td>
-                            <td>{{$techref->id_techniche}}</td>
+                        <tr id="row_{{$techref-> id}}">
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->id_techarea}}</td>
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->id_techsector}}</td>
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$techref->id_techniche}}</td>
+                            <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px;">
+                                <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$sector-> id}}"> <span style="color:black;">|</span> </i>
+                                <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$sector-> id}}"> <span style="color:black;">|</span> </i> 
+                                <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$sector-> id}}"></i>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
