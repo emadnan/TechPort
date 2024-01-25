@@ -103,7 +103,7 @@
                     </thead>
                     <tbody>
                     @foreach ($techrefs as $techref )
-                        <tr>
+                        <tr  id="row_{{$techref-> id}}">
                             <td>{{$techref->id_techarea}}</td>
                             <td>{{$techref->id_techsector}}</td>
                             <td>{{$techref->id_techniche}}</td>
