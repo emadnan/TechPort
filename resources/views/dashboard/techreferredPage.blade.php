@@ -139,7 +139,7 @@
             $menuTechReferred.addClass('bg-primary');
             console.log('Element offset top:', $menuTechReferred.offset().top);
 
-            $('html, body').animate(
+            $('aside').animate(
             {
                 scrollTop: $menuTechReferred.offset().top
             },
