@@ -278,7 +278,7 @@ Route::controller(TrlController::class)->group(function(){
 
 Route::controller(TechReferredController::class)->group(function(){
     Route::get('/techPage' ,'techPage')->name('techPage');
-    Route::post('/addTechreferred' , 'addTechreferred')->name('addTechreferred');
+    Route::post('/addTechreferred' , 'create')->name('addTechreferred');
     Route::get('/getTechArea' ,'getTechAreas')->name('getTechArea');
 });
 
