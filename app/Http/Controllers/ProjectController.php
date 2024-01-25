@@ -187,7 +187,7 @@ class ProjectController extends Controller
             ->where('projects.id', $id)
             ->get();
             
-            return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$project]);
+            return response()->json(['errors'=>false , 'message'=> 'Project Added Successfully In DataBase!!' , 'project'=>$project , 'id' => $id]);
         }
         else
         {
