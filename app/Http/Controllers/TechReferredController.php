@@ -17,12 +17,14 @@ class TechReferredController extends Controller
     }
     public function techPage ()
     {
-        $area = techarea::get();
-        $sector = techsector::get();
-        $niche = techniche::get();
-        $techreferred = techreferred::get();
+        $areas = techarea::get();
+        $sectors = techsector::get();
+        $niches = techniche::get();
+        $techrefs = techreferred::get();
+        return view('dashboard.techreferredPage' , compact('areas' , 'sectors' , 'niches' , 'techrefs'));
+
         // return response()->json(['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
-        return view('dashboard.techreferredPage' , ['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
+        // return view('dashboard.techreferredPage' , ['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
     }
 
     public function saveData( Request $req)
