@@ -95,11 +95,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-                  <table>
+                  <table id="data-table" class="table table-bordered table-striped">
                     <thead>
-                        <th>Technology Area</th>
-                        <th>Technology Sector</th>
-                        <th>Technolgy Niche</th>
+                        <th class="py-1">Technology Area</th>
+                        <th class="py-1">Technology Sector</th>
+                        <th class="py-1">Technolgy Niche</th>
                     </thead>
                     <tbody>
                         <tr>
