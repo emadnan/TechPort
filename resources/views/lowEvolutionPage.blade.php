@@ -649,22 +649,6 @@ switch (project.trlfinal.trllevel) {
         console.log("No valid TRls");
 }
 </script>
-                                {{-- <img src="{{ asset('images/Group 153 (1).png') }}" alt="" width="100%"> --}}
-                                <!-- <section style="font-weight:bold;margin-top:30px;font-size:16px">Technology Areas</section>
-                <section>TX01 Propulsion Systems</section>
-                <div class="row" style="margin-left:10px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                    <line x1="0.5" y1="2.18561e-08" x2="0.5" y2="7" stroke="black"/>
-                    <line x1="15" y1="7.5" y2="7.5" stroke="black"/>
-                </svg> <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                    <line x1="0.5" y1="2.18561e-08" x2="0.5" y2="7" stroke="black"/>
-                    <line x1="15" y1="7.5" y2="7.5" stroke="black"/>
-                </svg> <section style="margin-left:5px;">TX01.1 Chemical Space Propulsion</section>
-                <section style="margin-left:5px;">
-                
-                TX01.1 Chemical Space Propulsion</section> -->
                                 <section style="font-weight:bold;margin-top:80px;font-size:16px">Technology Areas
                                 </section>
                                 <section><a href="{{ url('/search-results') }}" style="color:black;">TX01 {{$projOrg->techreferred->techarea->techarea}}</a></section>
