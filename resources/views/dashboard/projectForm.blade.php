@@ -542,7 +542,7 @@ $(document).ready(function(){
                 '<p>'+ '<span  style="font-weight:700;">Description : </span>'
                 +item.description+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Benifit : </span>'+item.benifit+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> Image : </span>'+'<img src="images/'+item.image+'" width="300px">'+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Image : </span>'+'<img src="public/images/'+item.image+'" width="300px">'+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> ID_DOC : </span>'+item.id_doc+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Start Date : </span>'+item.startdate+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> End Date : </span>'+item.enddate+'</p>'+
