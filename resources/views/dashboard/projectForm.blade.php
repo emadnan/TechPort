@@ -462,14 +462,14 @@ $(document).ready(function(){
                         var errorMessages = {
                         'startdate': 'The Start Date field is required.',
                         'enddate': 'The End Date field is required.',
-                        'id_techreferred': 'The Technology Ref field is required.',
+                        'techreferred': 'The Technology Ref field is required.',
                         'projecttarget': 'Project Target field is required',
-                        'id_missiontype': 'Mission Type field is required',
-                        'id_trlstart': 'TRL Start field is required',
-                        'id_trlactual': 'TRL Actual field is required',
-                        'id_trlfinal': 'TRL Final field is required',
-                        'id_foundsource': 'Found Source field is required',
-                        'id_status': 'Status field is required',
+                        'missiontype': 'Mission Type field is required',
+                        'trlstart': 'TRL Start field is required',
+                        'trlactual': 'TRL Actual field is required',
+                        'trlfinal': 'TRL Final field is required',
+                        'foundsource': 'Found Source field is required',
+                        'status': 'Status field is required',
             };
                     $.each(response.errors, function (key, value) {
                         var customErrorMessage = errorMessages[key] || value;
