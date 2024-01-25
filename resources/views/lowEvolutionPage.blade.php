@@ -318,6 +318,8 @@
                                         <td><a href="{{ route('locationsClickingPage', ['id' => $org->location->id]) }}" style="color:black;">{{$org->location->state}},{{$org->location->city}}</a></td>
                                         <td>{{$org->description}}</td>
                                     </tr>
+                           @endforeach
+
                                 </table>
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px" class="mt-4"><a
                                         href="{{ url('/found-sources') }}" style="color:black;">Found Source</a>
@@ -691,10 +693,9 @@ switch (project.trlfinal.trllevel) {
 
 
     <div style="margin-top:200px"></div>
-    @endforeach
 
     <footer>
-        <!-- @include('footer') -->
+        @include('footer')
     </footer>
     
 
