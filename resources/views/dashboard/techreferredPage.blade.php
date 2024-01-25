@@ -139,16 +139,9 @@
             $menuTechReferred.addClass('bg-primary');
             console.log('Element offset top:', $menuTechReferred.offset().top);
 
-            // Scroll to the top offset of the element with a smooth animation.
-            $('aside').animate(
-                {
-                    scrollTop: $menuTechReferred.offset().top
-                },
-                800, 
-                function() {
-                    console.log('error');
-                }
-            );
+            $('aside').scrollTop($menuTechReferred.offset().top);
+
+
         }
     });
 
