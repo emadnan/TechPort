@@ -29,6 +29,17 @@ class TechReferredController extends Controller
 
     public function create( Request $req)
     {
+
+        $validator = Validator::make($req->all(),[
+            'techarea'=> 'required',
+            'techsector'=> 'required',
+            'techniche'=> 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
+
         $techreferred = new techreferred;
         $techreferred->id_techarea = $req->techarea;
         $techreferred->id_techsector = $req->techsector;
@@ -38,7 +49,7 @@ class TechReferredController extends Controller
 
         if($techreferred)
         {
-            return redirect()->route('techPage');
+            return response()->json(['message' => 'Technology Referred  Added successfully']);
         }
 
     }
