@@ -23,9 +23,9 @@ class TechReferredController extends Controller
         ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
         ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
         ->get();
-        return response()->json( compact('techrefs' ));
-
-        // return response()->json(['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
+        
+        // return response()->json( compact('techrefs' ));
+       // return response()->json(['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
         return view('dashboard.techreferredPage' , ['areas'=>$areas , 'sectors'=>$sectors , 'niches'=>$niches , 'techrefs'=>$techrefs ]);
     }
     
