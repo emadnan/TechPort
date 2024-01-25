@@ -131,7 +131,14 @@
 <script type='text/javascript'>
      $(document).ready(function(){
         $('#menu_techreferred').addClass('bg-primary');
-        $('#menu_techreferred').scrollIntoView();
+        const scrollToEl = $('#menu_techreferred');
+        $('html').animate(
+          {
+              scrollTop: scrollToEl.offset().top,
+          },
+          800 //speed
+        );
+
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
