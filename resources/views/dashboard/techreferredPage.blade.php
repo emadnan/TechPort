@@ -219,9 +219,9 @@
                         $.each(response.update , function(index , item){
                             var row1 = 
                             '<tr id="row_'+item.id+'">'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_techarea + '</td>' +
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_techsector + '</td>'+ 
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_techniche+'</td>'+
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.area + '</td>' +
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.sector + '</td>'+ 
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.niche+'</td>'+
                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                     '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -278,9 +278,9 @@
                         var data = $('#data-table tbody');
                  $.each(response.newRow , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_techarea + '</td>' +
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_techsector + '</td>'+ 
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_techniche+'</td>'+
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.area + '</td>' +
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.sector + '</td>'+ 
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.niche+'</td>'+
                                  '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                     '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -314,10 +314,10 @@
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
                 '<span style="font-weight:700;">Technology Area : </span>'
-                +item.id_techarea+ '</p>'+
+                +item.area+ '</p>'+
                 '<p>'+ '<span  style="font-weight:700;">Technology Sector : </span>'
-                +item.id_techsector+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> Technology Niche : </span>'+item.id_techniche+'</p>';
+                +item.sector+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> Technology Niche : </span>'+item.niche+'</p>';
                 data.append(descp);
                 });
 
