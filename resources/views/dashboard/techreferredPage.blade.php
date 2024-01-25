@@ -119,11 +119,11 @@
     
         $('#add-btn').click(function(){
            $('#form-modal').modal('show');
-           $('#form').trigger('reset');
-           $('#modal_title').html('Add Technology Referred');
-           $("#techareaError").text('');
-           $("#techsectorError").text('');
-           $("#technicheError").text('');
+        //    $('#form').trigger('reset');
+        //    $('#modal_title').html('Add Technology Referred');
+        //    $("#techareaError").text('');
+        //    $("#techsectorError").text('');
+        //    $("#technicheError").text('');
         });
 
         $('#form').submit(function(){
