@@ -130,6 +130,7 @@
 
 <script type='text/javascript'>
      $(document).ready(function(){
+        $('#menu_techreferred').select();
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
