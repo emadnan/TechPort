@@ -73,12 +73,10 @@
                         </div>
                         
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-success btn-sm">Submit</button>
-                               <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    </div>
                     </form>
                     </div>
                 </div>
