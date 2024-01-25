@@ -21,7 +21,8 @@ class TechReferredController extends Controller
         $sector = techsector::get();
         $niche = techniche::get();
         $techreferred = techreferred::get();
-        return view('dashboard.techreferredPage' , ['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
+        return response()->json(['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
+        // return view('dashboard.techreferredPage' , ['areas'=>$area , 'sectors'=>$sector , 'niches'=>$niche , 'techReferred'=> $techreferred]);
     }
 
     public function saveData( Request $req)
