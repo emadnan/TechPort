@@ -8,6 +8,7 @@ use App\Models\techreferred;
 use App\Models\techsector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TechReferredController extends Controller
 {
