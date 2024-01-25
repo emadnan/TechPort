@@ -130,7 +130,7 @@
 
 <script type='text/javascript'>
      $(document).ready(function(){
-        $('#menu_techreferred').select();
+        $('#menu_techreferred').addClass('bg-primary');
         $.ajaxSetup({
                 headers: { 
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
