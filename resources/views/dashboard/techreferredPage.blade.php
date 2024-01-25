@@ -12,9 +12,8 @@
         <div class="modal-body">
                 <form id="form">
                         <div class="col-md-6">
-                            <input id="id" type="hidden" class="form-control" name="id">
+                            <input id="form_id" type="hidden" class="form-control" name="id">
                         </div>
-
                         <div class="row mb-3">
                             <label for="techarea" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Area') }}</label>
 
@@ -71,7 +70,7 @@
 
 <div class="container" >
     <div class="row justify-content-center">
-        <div class="col-md-8 offset-3 my-3">
+        <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
                     <b>{{ __('Technology Referred') }}</b>
@@ -119,17 +118,17 @@
     
         $('#add-btn').click(function(){
            $('#form-modal').modal('show');
-        //    $('#form').trigger('reset');
-        //    $('#modal_title').html('Add Technology Referred');
-        //    $("#techareaError").text('');
-        //    $("#techsectorError").text('');
-        //    $("#technicheError").text('');
+           $('#form').trigger('reset');
+           $('#modal_title').html('Add Technology Referred');
+           $("#techareaError").text('');
+           $("#techsectorError").text('');
+           $("#technicheError").text('');
         });
 
         $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
-            var inpID = $('#id').val();    
+            var inpID = $('#form_id').val();    
             $("#techareaError").text('');
            $("#techsectorError").text('');
            $("#technicheError").text('');
@@ -137,26 +136,21 @@
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("techSectorUpdate") }}',
+                    url: '{{ route("techreferredUpdate") }}',
                     data: formData,
 
                     success: function(response)
                     {
 
                         if(response.errors)
-                        {
+                        {   
+                            $("#techareaError").text(response.errors.techarea);
                             $("#techsectorError").text(response.errors.techsector);
-                            $("#techsectordescriptionError").text(response.errors.techsectordescription);
-                            $("#id_dmError").text(response.errors.id_dm);
-                            $("#otmeError").text(response.errors.otme);
-                            $("#noteError").text(response.errors.note);
+                            $("#technicheError").text(response.errors.techniche);
 
+                            $("#techarea").val(response.oldInput.techarea);
                             $("#techsector").val(response.oldInput.techsector);
-                            $("#techsectordescription").val(response.oldInput.techsectordescription);
-                            $("#id_dm").val(response.oldInput.id_dm);
-                            $("#otme").val(response.oldInput.otme);
-                            $("#note").val(response.oldInput.note);
-
+                            $("#techniche").val(response.oldInput.techniche);
                         }
                         else
                         {
@@ -180,11 +174,9 @@
                         $.each(response.update , function(index , item){
                             var row1 = 
                             '<tr id="row_'+item.id+'">'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techsector + '</td>' +
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techsectordescription + '</td>'+ 
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_dm+'</td>'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.otme+'</td>'+
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techarea + '</td>' +
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techsector + '</td>'+ 
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.techniche+'</td>'+
                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                     '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -195,7 +187,7 @@
                         });
                             $('#form-modal').modal('hide');
                             $('#form').trigger('reset');
-                            $('#id').val(null);
+                            $('#form_id').val(null);
                            
                     }
                     },
@@ -206,24 +198,20 @@
             {
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route("techSectorCreate") }}',
+                    url: '{{ route("techreferredCreate") }}',
                     data: formData,
 
                     success: function(response)
                     {
                         if(response.errors)
                         {
+                            $("#techareaError").text(response.errors.techarea);
                             $("#techsectorError").text(response.errors.techsector);
-                            $("#techsectordescriptionError").text(response.errors.techsectordescription);
-                            $("#id_dmError").text(response.errors.id_dm);
-                            $("#otmeError").text(response.errors.otme);
-                            $("#noteError").text(response.errors.note);
+                            $("#technicheError").text(response.errors.techniche);
 
+                            $("#techarea").val(response.oldInput.techarea);
                             $("#techsector").val(response.oldInput.techsector);
-                            $("#techsectordescription").val(response.oldInput.techsectordescription);
-                            $("#id_dm").val(response.oldInput.id_dm);
-                            $("#otme").val(response.oldInput.otme);
-                            $("#note").val(response.oldInput.note);
+                            $("#techniche").val(response.oldInput.techniche);
                         }
                         else
                         {
@@ -245,11 +233,9 @@
                         var data = $('#data-table tbody');
                  $.each(response.newRow , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techsector + '</td>' +
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techsectordescription + '</td>'+ 
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_dm+'</td>'+
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.otme+'</td>'+
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
+                     '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techarea + '</td>' +
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techsector + '</td>'+ 
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.techniche+'</td>'+
                                  '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                     '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -265,7 +251,7 @@
                     }
                 });
             }
-        }); 
         });
+        
 </script>
 @endsection
