@@ -142,6 +142,7 @@
             $('aside').animate(
                 {
                     scrollTop: $menuTechReferred.offset().top
+                    console.log('Element offset top:', $menuTechReferred.offset().top);
                 },
                 800, 
                 function() {
