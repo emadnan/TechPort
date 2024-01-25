@@ -1,3 +1,9 @@
+<style>
+    .selected {
+        background-color : blue;
+    }
+</style>
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:100%; overflow-y: auto">
 
     <!-- Sidebar -->
@@ -204,7 +210,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li id="menu_techreferred" class="nav-item">
                     <a href="{{route('techPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
