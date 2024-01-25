@@ -343,10 +343,16 @@
                                 </section>
                                 <section><a href="{{ url('/organizations') }}"
                                         style="color:black;font-weight:bold;">Organization Performing Work</a></section>
-                                <section><a href="{{route('organizationClickingPage', ['id' => $projOrg->orgperformingworks[0]->id])}}" style="color:black;">{{$projOrg->orgperformingworks[0]->name}}</a></section>
+                           @foreach ( $projOrg->orgperformingworks as $org)
+                                <section><a href="{{route('organizationClickingPage', ['id' => $org->id])}}" style="color:black;">{{$org->name}}</a></section>
+                            @break;
+                            @endforeach
                                 <section style="font-weight:bold;margin-top:30px;"><a style="color:black;"
                                         href="{{ url('/legal-entity-roles') }}">Legal Entity Role</a></section>
-                                <section><a href="{{ route('legalEntityClickingPage', ['id' => $projOrg->legalentityroles[0]->id]) }}" style="color:black;">{{$projOrg->legalentityroles[0]->name}}</a></section>
+                           @foreach ( $projOrg->legalentityroles as $entity)
+                                        <section><a href="{{ route('legalEntityClickingPage', ['id' => $entity->id]) }}" style="color:black;">{{$entity->name}}</a></section>
+                            @break;
+                            @endforeach
                                 <section style="font-weight:bold;margin-top:30px;"><a
                                         href="{{ url('/search-results') }}" style="color:black;">Project</a></section>
                                 <section><a href="{{ url('/search-results') }}" style="color:black;">{{$projOrg->name}}</a></section>
