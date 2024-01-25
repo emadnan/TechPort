@@ -102,7 +102,7 @@
                         <th class="py-1">Technolgy Niche</th>
                     </thead>
                     <tbody>
-                        @foreach ($techrefs as id=> $techref)
+                        @foreach ($techrefs as $id=>$techref)
                         <tr>
                             <td>{{$techref->id_techarea}}</td>
                             <td>{{$techref->id_techsector}}</td>
