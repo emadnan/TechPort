@@ -120,12 +120,12 @@ $(document).ready(function(){
         var $menuTechReferred = $('#menu_legalentity');
         if ($menuTechReferred.length) {
             // Add the 'bg-primary' class to the element.
-            $menuTechReferred.addClass('selected');
+            $menuTechReferred.addClass('bg-primary');
             console.log('Element offset top:', $menuTechReferred.offset().top);
 
-            $('aside').animate(
+            $('body').animate(
             {
-                scrollTop: $menuTechReferred.offset().top
+                scrollTop: $menuTechReferred.offset().top - 100
             },
             800,
             function() {
