@@ -31,7 +31,12 @@ class TechReferredController extends Controller
     
     public function read (string $id)   
     {
-        $read = techreferred::where('id',$id)->get();
+        $read = techreferred::select('techareas.techarea as area' , 'techsector.techsector as sector' , 'techniche.techniche as niche' , 'ref_techreferred.*')
+        ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
+        ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
+        ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
+        ->where('id',$id)
+        ->get();
         return response()->json(['data'=>$read]);
     }
 
@@ -58,7 +63,12 @@ class TechReferredController extends Controller
         if($techreferred)
         {
             $latestID = techreferred::latest()->value('id');
-            $newRow = techreferred::where('id' , $latestID)->get();
+            $newRow = techreferred::select('techareas.techarea as area' , 'techsector.techsector as sector' , 'techniche.techniche as niche' , 'ref_techreferred.*')
+            ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
+            ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
+            ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
+            ->where('id' , $latestID)
+            ->get();
             return response()->json(['message' => 'Technology Referred Added successfully' , 'newRow'=>$newRow]);
         }
 
@@ -91,7 +101,12 @@ class TechReferredController extends Controller
 
         if($Update)
         {
-            $update = techreferred::where('id', $id)->get();
+            $update = techreferred::select('techareas.techarea as area' , 'techsector.techsector as sector' , 'techniche.techniche as niche' , 'ref_techreferred.*')
+            ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
+            ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
+            ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
+            ->where('id', $id)
+            ->get();
             if($update)
             {
               return response()->json(['message' => 'Technology Sector  Updated Successfully' , 'update'=>$update]);
