@@ -139,8 +139,15 @@
             $menuTechReferred.addClass('bg-primary');
             console.log('Element offset top:', $menuTechReferred.offset().top);
 
-            $('aside').scrollTop($menuTechReferred.offset().top);
-
+            $('html, body').animate(
+            {
+                scrollTop: $menuTechReferred.offset().top
+            },
+            800,
+            function() {
+                console.log('Scrolling complete.');
+            }
+        );
 
         }
     });
