@@ -225,13 +225,13 @@
                 <div class="card-body">
                     <table class="table table-bordered table-striped" id="data-table">
                         <thead>
-                            <th class="py-1">Code</th>
+                            <!-- <th class="py-1">Code</th> -->
                             <th class="py-1">Name</th>
                             <th class="py-1">Description</th>
                             {{-- <th class="py-1">Benifit</th> --}}
                             {{-- <th class="py-1">ID_DOC</th> --}}
                             {{-- <th class="py-1">Image</th> --}}
-                            {{-- <th class="py-1">Start Date</th> --}}
+                            <th class="py-1">Start Date</th>
                             <th class="py-1">End Date </th>
                             {{-- <th class="py-1">Technology Ref</th>
                             <th class="py-1">Project Target</th>
