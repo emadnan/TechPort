@@ -57,11 +57,15 @@ class ProductController extends Controller
 
     public function create(Request $req)
     {
+        $latestIdPnc = product::latest()->value('id_pnc');
+        if($latestIdPnc === null) {
+            $latestIdPnc = 0;
+        }
 
         $validator = Validator::make($req->all() , [
             'businessarea' => 'required',
             'description' => 'nullable',
-            'id_pnc' => 'nullable',
+            // 'id_pnc' => 'nullable',
             'priority' => 'required',
             'note' => 'nullable',
             'techreferred' => 'required',
@@ -76,16 +80,16 @@ class ProductController extends Controller
         $create = new  product;
         $create->id_businessarea = $req->businessarea;
         $create->description = $req->description;
-        $create->id_pnc = $req->id_pnc;
+        $create->id_pnc = $latestIdPnc + 1;
         $create->id_priority = $req->priority;
         $create->note = $req->note;
         $create->id_techreferred = $req->techreferred;
         $create->id_requirement = $req->requirement;
         $create->save();
+        $latestID = $create->id;
 
         if($create)
         {
-            $latestID = product::latest()->value('id');
             $products = product::select('businessareas.businessarea' , 'priorities.priority' , 'ref_techreferred.id as techID' , 'techareas.techarea' , 'requirements.description as requirement' , 'products.*')
             ->join('businessareas' , 'businessareas.id' , '=' , 'products.id_businessarea')
             ->join('priorities' , 'priorities.id' , '=' , 'products.id_priority')
@@ -116,7 +120,7 @@ class ProductController extends Controller
         $validator = Validator::make($req->all(),[
             'businessarea' => 'required',
             'description' => 'nullable',
-            'id_pnc' => 'nullable',
+            // 'id_pnc' => 'nullable',
             'priority' => 'required',
             'note' => 'nullable',
             'techreferred' => 'required',
@@ -130,7 +134,7 @@ class ProductController extends Controller
         $Update = product::where('id',$id)->update([
             'id_businessarea'=> $req->businessarea,
             'description'=> $req->description,
-            'id_pnc'=> $req->id_pnc,
+            // 'id_pnc'=> $req->id_pnc,
             'id_priority'=> $req->priority,
             'note'=> $req->note,
             'id_techreferred'=> $req->techreferred,
