@@ -37,7 +37,7 @@ class HumanEntityController extends Controller
             'name'=> 'required',
             'surname'=>'required',
             'email'=>'email | unique:humanentity,email',
-            'tel'=>'size:11 | nullable',
+            'tel'=>'nullable',
         ]);
 
         if ($validator->fails()) {
