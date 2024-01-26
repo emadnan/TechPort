@@ -444,8 +444,7 @@
                                     <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{route('missionTypeClickingPage' , ['id'=>$project->missiontype->id])}}"> {{$project->missiontype->type}}</a></section>
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/found-sources')}}"> Found Source</a> </b></section>
                                     <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{route('foundSourcesClickingPage' , ['id'=>$project->foundingsource->id])}}">{{$project->foundingsource->name}}</a></section>
-                                    <br><br>
-                                    <section class="mb-2" style="font-size:13px"><b> End: </b></section>
+                                    <section class="my-2" style="font-size:13px"><b> End: </b></section>
                                     <section style="font-size:13px">{{$project->enddate}}</section>
                                 </div>
                             </div>
