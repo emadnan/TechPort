@@ -694,9 +694,6 @@ switch (project.trlfinal.trllevel) {
     </div>
     
 
-    <!-- <div style="width: 900px; height: 500px;"></div> -->
-    
-
 
     <div style="margin-top:200px"></div>
 
