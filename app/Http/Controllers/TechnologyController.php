@@ -31,6 +31,11 @@ class TechnologyController extends Controller
 
     public function create(Request $req)
     {
+        $latestIdDm = technology::latest()->value('id_dm');
+        if($latestIdDm === null) {
+            $latestIdDm = 0;
+        }
+
         $validator = Validator::make($req->all(),[
             'technology'=> 'required',
             'id_dm'=> 'required',
@@ -41,15 +46,15 @@ class TechnologyController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $Create = DB::table('technologies')->insert([
-            'technology'=> $req->technology,
-            'id_dm'=> $req->id_dm,
-            'note'=> $req->note,
-        ]);
+        $technology = new technology;
+        $technology->technology = $req->technology;
+        $technology->id_dm = $latestIdDm + 1;
+        $technology->note = $req->note;
+        $technology->save();
+        $latestID = $technology->id;
 
-        if($Create)
+        if($technology)
         {
-            $latestID = technology::latest()->value('id');
             $eqRow = DB::table('technologies')->where('id', $latestID)->get();
             return response()->json(['message' => 'Technology  Added successfully' , 'eqRow'=>$eqRow]);
         }
@@ -70,7 +75,7 @@ class TechnologyController extends Controller
         $id = $req->id;
         $validator = Validator::make($req->all(),[
             'technology'=> 'required',
-            'id_dm'=> 'required',
+            // 'id_dm'=> 'required',
             'note'=> 'nullable',
         ]);
         
@@ -80,7 +85,7 @@ class TechnologyController extends Controller
     
         $Update = DB::table('technologies')->where('id',$id)->update([
             'technology'=> $req->technology,
-            'id_dm'=> $req->id_dm,
+            // 'id_dm'=> $req->id_dm,
             'note'=> $req->note,
         ]);
 
