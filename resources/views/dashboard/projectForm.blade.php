@@ -26,10 +26,17 @@
                     </div> -->
 
 
-                    <label for="name" class=" col-md-1 col-form-label text-md-end">{{ __('Name') }}</label>
+                    <label for="name" class=" col-md-2 col-form-label text-md-end">{{ __('Name') }}</label>
                     <div class="col-md-5">
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value= "{{ old ('name') }}" autocomplete="name" autofocus>
                         <span class="text-danger small" id="nameError"></span>
+                    </div>
+
+                    <label for="image" class="col-md-2 col-form-label text-md-end">{{ __('Image') }}</label>
+                    <div class="col-md-4">
+                        <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image" value= "{{ old ('image') }}" autocomplete="image" autofocus>
+                        <div id="old-image"></div>
+                        <span class="text-danger small" id="imageError"></span>
                     </div>
                 </div>
                 <div class="row mb-2">
@@ -49,12 +56,7 @@
                 </div>
 
                 <div class="row mb-2">
-                    <label for="image" class="col-md-2 col-form-label text-md-end">{{ __('Image') }}</label>
-                    <div class="col-md-4">
-                        <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image" value= "{{ old ('image') }}" autocomplete="image" autofocus>
-                        <div id="old-image"></div>
-                        <span class="text-danger small" id="imageError"></span>
-                    </div>
+                   
 
                     <!-- <label for="id_doc" class="col-md-2 col-form-label text-md-end">{{ __('ID_DOC') }}</label>
                     <div class="col-md-4">
