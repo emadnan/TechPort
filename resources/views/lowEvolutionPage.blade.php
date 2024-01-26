@@ -301,7 +301,7 @@
                                 <section style="font-weight:bold;margin-top:10px;">Benefit:</section>
                                 <section>{{$projOrg->benifit}} </section>
                                 <section style="font-weight:bold;margin-top:10px;">Work Locations:</section>
-                                <div id="regions_div"></div>
+                                <!-- <div id="regions_div"></div> -->
 
                                 <table>
                                     <tr>
@@ -703,7 +703,7 @@ switch (project.trlfinal.trllevel) {
     
 
 </body>
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
  $(document).ready(function(){     
     
      google.charts.load('current', {
@@ -757,5 +757,5 @@ switch (project.trlfinal.trllevel) {
         chart.draw(data, options);
     }
     });
-    </script>
+    </script> -->
 </html>
