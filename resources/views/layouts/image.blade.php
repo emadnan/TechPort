@@ -20,7 +20,7 @@
                                 <section style="padding-bottom:2px; margin-bottom:3px; ">Projects found
                                 </section>
                                 <button class="btn btn-custom"><a style="text-decoration: none; color:black;"
-                                        href="{{ url('/AdvanceSearch') }}"> Modify Search</a></button>
+                                        href="{{ url('/advanceSearch') }}"> Modify Search</a></button>
                             </div>
                         </div>
 
