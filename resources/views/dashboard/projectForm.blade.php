@@ -19,11 +19,11 @@
                 </div>
                 
                 <div class="row mb-2">
-                    <label for="code" class="col-md-1 col-form-label text-md-end">{{ __('Code') }}</label>
+                    <!-- <label for="code" class="col-md-1 col-form-label text-md-end">{{ __('Code') }}</label>
                     <div class="col-md-5">
                         <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value= "{{ old ('code') }}" autocomplete="code" autofocus>
                         <span class="text-danger small" id="codeError"></span>
-                    </div>
+                    </div> -->
 
 
                     <label for="name" class=" col-md-1 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -279,32 +279,6 @@
 </div>
 
 <script type="text/javascript">
-// function getRows ()
-//     {
-//         var projects = @json( $projects );
-//         $.each(projects , function(index , item){
-//         var row = 
-//                           '<tr id="row_'+item.id+'">'+
-//                             //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.code + '</td>' +
-//                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.name + '</td>'+ 
-//                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.description + '</td>'+ 
-//                             //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.benifit + '</td>'+ 
-//                             //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.id_doc + '</td>'+ 
-//                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.startdate + '</td>'+  
-//                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.enddate + '</td>'+ 
-//                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">' + item.status + '</td>'+ 
-//                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; ">'+item.note+'</td>'+
-//                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
-//                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
-//                                   '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
-//                                   '<i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="'+item.id+'"></i>'+
-//                               '</td>'+
-//                           '</tr>'; 
-
-//                           $('#data-table tbody').append(row);
-
-//                         });
-//                     }
 
 $(document).ready(function(){
     $(window).on('load', function() {
