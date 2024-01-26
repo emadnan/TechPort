@@ -17,6 +17,7 @@ class EquipmentController extends Controller
     public function equipmentPage ()
     {
         $equipments = DB::table('equipment')->get();
+
         return view('dashboard.equipmentPage' , ['data'=>$equipments]);
     }
 
@@ -34,6 +35,8 @@ class EquipmentController extends Controller
 
     public function create(Request $req)
     {
+        $latestIdPn = equipment::latest()->value('id-pn');
+
         $validator = Validator::make($req->all(),[
             'equipment'=> 'required',
         ]);
@@ -43,7 +46,7 @@ class EquipmentController extends Controller
         }
 
         $eqCreate = DB::table('equipment')->insert([
-            'id_pn'=> $req->id_pn,
+            'id_pn'=> $latestIdPn + 1,
             'equipment'=> $req->equipment,
             'note'=> $req->note,
         ]);
@@ -78,7 +81,6 @@ class EquipmentController extends Controller
 
         $id = $req->id;
         $eqUpdate = DB::table('equipment')->where('id',$id)->update([
-            'id_pn'=> $req->id_pn,
             'equipment'=> $req->equipment,
             'note'=> $req->note,
         ]);
