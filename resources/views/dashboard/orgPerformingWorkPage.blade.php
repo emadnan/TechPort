@@ -303,7 +303,7 @@ $('#form').submit(function(){
                       $.each(response.updateEQ , function(index , item){
                           var row1 = 
                           '<tr id="row_'+item.id+'">'+
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.typeoflocation + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>'+ 
@@ -373,7 +373,7 @@ $('#form').submit(function(){
                       var data1 = $('#data-table tbody');
                $.each(response.eqRow , function(index , item){
                    var row = '<tr id="row_'+item.id+'">'+
-                    '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>'+ 
+                    // '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.typeoflocation + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>'+ 
