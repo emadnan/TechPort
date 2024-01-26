@@ -52,14 +52,8 @@ class EquipmentController extends Controller
         $equipment->id_pn = $latestIdPn + 1;
         $equipment->equipment =  $req->equipment;
         $equipment->note = $req->note;
-        $latestID = $equipment->id;
         $equipment->save();
-
-        // $eqCreate = DB::table('equipment')->insert([
-        //     'id_pn'=> $latestIdPn + 1,
-        //     'equipment'=> $req->equipment,
-        //     'note'=> $req->note,
-        // ]);
+        $latestID = $equipment->id;
 
         if($equipment)
         {
