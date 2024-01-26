@@ -41,7 +41,7 @@ class OrganizationUnitController extends Controller
 
         $Create = organizationunit::insert([
             'type'=> $req->type,
-            'unitcode'=> $latestCode + 1,
+            'unitcode'=> $latestCode+1,
             'description'=> $req->description,
             'releventcompany'=> $req->releventcompany,
             'note'=> $req->note,
