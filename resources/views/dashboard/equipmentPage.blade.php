@@ -18,13 +18,13 @@
                     <input id="id" type="hidden" class="form-control" name="id">
                 </div>
                 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="id_pn" class="col-md-4 col-form-label text-md-end">{{ __('Id_Pn') }}</label>
                     <div class="col-md-6">
                         <input id="id_pn" type="text" class="form-control @error('id_pn') is-invalid @enderror" name="id_pn" value= "{{ old ('id_pn') }}" autocomplete="id_pn" autofocus>
                         <span class="text-danger small" id="id_pnError"></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-3">
                     <label for="equipment" class="col-md-4 col-form-label text-md-end">{{ __('Equipment') }}</label>
@@ -129,7 +129,7 @@
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
     $('#modal_title').html('Add Equipment');
-    $("#id_pnError").text('');
+    // $("#id_pnError").text('');
     $("#equipmentError").text('');
     $("#noteError").text('');
     }) // create click event end
@@ -139,7 +139,7 @@ $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
     $('#modal_title').html('Update Equipment');
-    $("#id_pnError").text('');
+    // $("#id_pnError").text('');
     $("#equipmentError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
@@ -150,7 +150,7 @@ $('body').on('click' , '#update-btn' , function(){
                 success: function(response) {
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
-                        $('#id_pn').val(item.id_pn);
+                        // $('#id_pn').val(item.id_pn);
                         $('#equipment').val(item.equipment);
                         $('#note').val(item.note);
                     });
@@ -163,7 +163,7 @@ $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
             var inpID = $('#id').val();
-            $("#id_pnError").text('');
+            // $("#id_pnError").text('');
             $("#equipmentError").text('');
             $("#noteError").text('');
             if(inpID)
@@ -178,11 +178,11 @@ $('#form').submit(function(){
 
                         if(response.errors)
                         {
-                            $("#id_pnError").text(response.errors.id_pn);
+                            // $("#id_pnError").text(response.errors.id_pn);
                             $("#equipmentError").text(response.errors.equipment);
                             $("#noteError").text(response.errors.note);
 
-                            $("#id_pn").val(response.oldInput.id_pn);
+                            // $("#id_pn").val(response.oldInput.id_pn);
                             $("#equipment").val(response.oldInput.equipment);
                             $("#note").val(response.oldInput.note);
 
@@ -241,11 +241,11 @@ $('#form').submit(function(){
                     {
                         if(response.errors)
                         {
-                            $("#id_pnError").text(response.errors.id_pn);
+                            // $("#id_pnError").text(response.errors.id_pn);
                             $("#equipmentError").text(response.errors.equipment);
                             $("#noteError").text(response.errors.note);
 
-                            $("#id_pn").val(response.oldInput.id_pn);
+                            // $("#id_pn").val(response.oldInput.id_pn);
                             $("#equipment").val(response.oldInput.equipment);
                             $("#note").val(response.oldInput.note);
 
