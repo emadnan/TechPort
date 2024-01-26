@@ -56,11 +56,11 @@
                         <span class="text-danger small" id="imageError"></span>
                     </div>
 
-                    <label for="id_doc" class="col-md-2 col-form-label text-md-end">{{ __('ID_DOC') }}</label>
+                    <!-- <label for="id_doc" class="col-md-2 col-form-label text-md-end">{{ __('ID_DOC') }}</label>
                     <div class="col-md-4">
                         <input id="id_doc" type="text" class="form-control @error('id_doc') is-invalid @enderror" name="id_doc" value= "{{ old ('id_doc') }}" autocomplete="id_doc" autofocus>
                         <span class="text-danger small" id="id_docError"></span>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="row mb-2">
