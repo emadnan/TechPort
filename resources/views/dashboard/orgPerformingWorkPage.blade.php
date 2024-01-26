@@ -19,13 +19,13 @@
                     <input id="id" type="hidden" class="form-control" name="id">
                 </div>
 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="code" class="col-md-4 col-form-label text-md-end">{{ __('Code') }}</label>
                     <div class="col-md-6">
                         <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}" >
                         <span class="text-danger small" id="codeError"></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-3">
                     <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
