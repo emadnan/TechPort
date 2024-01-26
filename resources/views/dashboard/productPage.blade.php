@@ -199,7 +199,7 @@
         $('#modal_title').html('Add Product');
         $("#businessareaError").text('');
         $("#descriptionError").text('');
-        $("#id_pncError").text('');
+        // $("#id_pncError").text('');
         $("#priorityError").text('');
         $("#noteError").text('');
         $("#techreferredError").text('');
@@ -212,7 +212,7 @@
     $('#modal_title').html('Update Product');
     $("#businessareaError").text('');
         $("#descriptionError").text('');
-        $("#id_pncError").text('');
+        // $("#id_pncError").text('');
         $("#priorityError").text('');
         $("#noteError").text('');
         $("#techreferredError").text('');
@@ -227,7 +227,7 @@
                         $('#id').val(item.id);
                         $('#businessarea').val(item.id_businessarea);
                         $('#description').val(item.description);
-                        $('#id_pnc').val(item.id_pnc);
+                        // $('#id_pnc').val(item.id_pnc);
                         $('#priority').val(item.id_priority);
                         $('#note').val(item.note);
                         $('#techreferred').val(item.id_techreferred);
@@ -244,7 +244,7 @@ $('#form').submit(function(){
           var inpID = $('#id').val();
         $("#businessareaError").text('');
         $("#descriptionError").text('');
-        $("#id_pncError").text('');
+        // $("#id_pncError").text('');
         $("#priorityError").text('');
         $("#noteError").text('');
         $("#techreferredError").text('');
@@ -267,7 +267,7 @@ $('#form').submit(function(){
 
                           $("#business").val(response.oldInput.id_businessarea);
                           $("#description").val(response.oldInput.description);
-                          $("#id_pnc").val(response.oldInput.id_pnc);
+                        //   $("#id_pnc").val(response.oldInput.id_pnc);
                           $("#priority").val(response.oldInput.id_priority);
                           $("#note").val(response.oldInput.note);
                           $("#techreferred").val(response.oldInput.id_techreferred);
@@ -299,7 +299,7 @@ $('#form').submit(function(){
                           '<tr id="row_'+item.id+'">'+
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.businessarea + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_pnc + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_pnc + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.priority + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.note + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techarea + '</td>'+ 
@@ -368,7 +368,7 @@ $('#form').submit(function(){
                    var row = '<tr id="row_'+item.id+'">'+
                     '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.businessarea + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.description + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_pnc + '</td>'+ 
+                            //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_pnc + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.priority + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.note + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techarea + '</td>'+ 
