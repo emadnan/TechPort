@@ -141,7 +141,7 @@
                 <div class="card-body">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Code</th>
+                            <!-- <th class="py-1">Code</th> -->
                             <th class="py-1">Name</th>
                             <th class="py-1">Type Of Location</th>
                             <th class="py-1">Type</th>
@@ -153,7 +153,7 @@
                         <tbody>
                             @foreach ($organizations as $organization )
                             <tr id="row_{{$organization-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> code}}</td>
+                                <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> code}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> name}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> typeoflocation}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> type}}</td>
