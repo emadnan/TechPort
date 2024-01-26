@@ -84,7 +84,7 @@
                 <div class="card-body">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Id-pn</th>
+                            <!-- <th class="py-1">Id-pn</th> -->
                             <th class="py-1">Equipments</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
@@ -92,7 +92,7 @@
                         <tbody>
                             @foreach ($data as $id=>$equipments )
                             <tr id="row_{{$equipments-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$equipments -> id_pn}}</td>
+                                <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$equipments -> id_pn}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$equipments -> equipment}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$equipments -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
