@@ -112,11 +112,11 @@ class ProjectController extends Controller
 
     public function create(Request $req)
     { 
-        $latestCode = equipment::latest()->value('code');
+        $latestCode = project::latest()->value('code');
         if($latestCode === null) {
             $latestCode = 0;
         }
-        $latestIdDoc = equipment::latest()->value('id_doc');
+        $latestIdDoc = project::latest()->value('id_doc');
         if($latestIdDoc === null) {
             $latestIdDoc = 0;
         }
