@@ -112,9 +112,17 @@ class ProjectController extends Controller
 
     public function create(Request $req)
     { 
+        $latestCode = equipment::latest()->value('code');
+        if($latestCode === null) {
+            $latestCode = 0;
+        }
+        $latestIdDoc = equipment::latest()->value('id_doc');
+        if($latestIdDoc === null) {
+            $latestIdDoc = 0;
+        }
         $validator = Validator::make($req->all() , [
-            'code'=> 'nullable',
-            'name'=> 'nullable',
+            // 'code'=> 'nullable',
+            // 'name'=> 'nullable',
             'description'=> 'nullable',
             'benifit'=> 'nullable',
             'id_doc'=> 'nullable | integer',
@@ -149,11 +157,11 @@ class ProjectController extends Controller
 
 
         $project = new project;
-        $project->code = $req->code;
+        $project->code = $latestCode + 1;
         $project->name = $req->name;
         $project->description = $req->description;
         $project->benifit = $req->benifit;
-        $project->id_doc = $req->id_doc;
+        $project->id_doc = $latestIdDoc + 1;
         $project->image = $filename;
         $project->startdate = $req->startdate;
         $project->enddate = $req->enddate;
@@ -209,8 +217,8 @@ class ProjectController extends Controller
     public function update(Request $req)
     {
         $validator = Validator::make($req->all(),[
-            'code'=> 'nullable',
-            'name'=> 'nullable',
+            // 'code'=> 'nullable',
+            // 'name'=> 'nullable',
             'description'=> 'nullable',
             'benifit'=> 'nullable',
             'id_doc'=> 'nullable | integer',
@@ -243,11 +251,11 @@ class ProjectController extends Controller
             $project->image = $filename;
 
         }
-        $project->code = $req->code;
+        // $project->code = $req->code;
         $project->name = $req->name;
         $project->description = $req->description;
         $project->benifit = $req->benifit;
-        $project->id_doc = $req->id_doc;
+        // $project->id_doc = $req->id_doc;
         $project->startdate = $req->startdate;
         $project->enddate = $req->enddate;
         $project->id_project_target = $req->projecttarget;
@@ -261,25 +269,6 @@ class ProjectController extends Controller
         $project->note = $req->note;
         $project->save();
     
-        // $update = project::where('id', $id)->update([
-        //     'code'=>$req->code,
-        //     'name'=> $req->name,
-        //     'description'=> $req->description,
-        //     'benifit'=> $req->benifit,
-        //     'id_doc'=> $req->id_doc,
-        //     'startdate'=> $req->startdate,
-        //     'enddate'=> $req->enddate,
-        //     'id_techreferred'=> $req->techreferred,
-        //     'projecttarget'=> $req->projecttarget,
-        //     'id_missiontype'=> $req->missiontype,
-        //     'id_trlstart'=> $req->trlstart,
-        //     'id_trlactual'=> $req->trlactual,
-        //     'id_trlfinal'=> $req->trlfinal,
-        //     'id_foundsource'=> $req->foundsource,
-        //     'id_status'=> $req->status,
-        //     'note'=> $req->note,
-        // ]);
-        // $data = project::find($id);
         if($project)
         {
             $update = project::select('techareas.techarea' ,
