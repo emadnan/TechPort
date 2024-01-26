@@ -219,9 +219,6 @@ $('#form').submit(function(){
 
                         if(response.errors)
                         {
-
-                            if(response.errors)
-                            {
                                var errorMessages = {
                                   'otme': 'The Otme field is required.',
                                   'techsector': 'The Technology Area field is required.',
@@ -231,7 +228,6 @@ $('#form').submit(function(){
                                 var customErrorMessage = errorMessages[key] || value;
                                 $('#' + key + 'Error').text(customErrorMessage);
                                 });
-                            }
                         }
                         else
                         {
@@ -288,8 +284,6 @@ $('#form').submit(function(){
                     {
                         if(response.errors)
                         {
-                            if(response.errors)
-                            {
                                var errorMessages = {
                                   'otme': 'The Otme field is required.',
                                   'techsector': 'The Technology Area field is required.',
@@ -299,7 +293,6 @@ $('#form').submit(function(){
                                 var customErrorMessage = errorMessages[key] || value;
                                 $('#' + key + 'Error').text(customErrorMessage);
                                 });
-                            }
                         }
                         else
                         {
