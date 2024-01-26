@@ -48,16 +48,23 @@ class EquipmentController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $eqCreate = DB::table('equipment')->insert([
-            'id_pn'=> $latestIdPn + 1,
-            'equipment'=> $req->equipment,
-            'note'=> $req->note,
-        ]);
+        $equipment = new equipment;
+        $equipment->id_pn = $latestIdPn + 1;
+        $equipment->equipment =  $req->equipment;
+        $equipment->note = $req->note;
+        $latestID = $equipment->id;
+        $equipment->save();
+
+        // $eqCreate = DB::table('equipment')->insert([
+        //     'id_pn'=> $latestIdPn + 1,
+        //     'equipment'=> $req->equipment,
+        //     'note'=> $req->note,
+        // ]);
 
         if($eqCreate)
         {
-            $latestID = equipment::latest()->value('id');
-            $eqRow = DB::table('equipment')->where('id', $latestID)->get();
+            // $latestID = equipment::latest()->value('id');
+            $eqRow = equipment::where('id', $latestID)->get();
             return response()->json(['message' => 'Equipment  Added successfully' , 'eqRow'=>$eqRow]);
         }
         else 
