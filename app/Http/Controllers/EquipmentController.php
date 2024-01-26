@@ -40,7 +40,6 @@ class EquipmentController extends Controller
         {
             $latestIdPn = 0;
         }
-        return response()->json(compact('latestIdPn'));
         $validator = Validator::make($req->all(),[
             'equipment'=> 'required',
         ]);
