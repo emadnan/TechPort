@@ -23,7 +23,7 @@ class ProjectTargetController extends Controller
     $active = $projOrg->projects->where('status.status' , 'Active')->count();
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
-
+return response()->json(compact('projOrg'));
         return view('projectTargetClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' ) );
     }
 
