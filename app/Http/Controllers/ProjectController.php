@@ -21,7 +21,7 @@ class ProjectController extends Controller
 {
   public function index(string $id)
   {
-    $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles','trlactual' , 'trlstart' , 'trlfinal')
+    $projOrg = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles','trlactual' , 'trlstart' , 'trlfinal' , 'Project_target')
     ->where('id' , $id)
     ->first();
     
