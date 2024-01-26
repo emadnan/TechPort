@@ -208,33 +208,18 @@ $('#form').submit(function(){
 
                         if(response.errors)
                         {
-
                             if(response.errors)
                             {
-                        var errorMessages = {
-                        'otme': 'The Otme field is required.',
-                        'techarea': 'The Technology Area field is required.',
-                        'techareadescription': 'The Description field is required.',
-            };
-                    $.each(response.errors, function (key, value) {
-                        var customErrorMessage = errorMessages[key] || value;
-                        $('#' + key + 'Error').text(customErrorMessage);
-                    });
-                }
-
-
-                            // $("#techareaError").text(response.errors.techarea);
-                            // $("#techareadescriptionError").text(response.errors.techareadescription);
-                            // $("#id_dmError").text(response.errors.id_dm);
-                            // $("#otmeError").text(response.errors.otme);
-                            // $("#noteError").text(response.errors.note);
-
-                            // $("#techarea").val(response.oldInput.techarea);
-                            // $("#techareadescription").val(response.oldInput.techareadescription);
-                            // $("#id_dm").val(response.oldInput.id_dm);
-                            // $("#otme").val(response.oldInput.otme);
-                            // $("#note").val(response.oldInput.note);
-
+                               var errorMessages = {
+                                 'otme': 'The Otme field is required.',
+                                 'techarea': 'The Technology Area field is required.',
+                                 'techareadescription': 'The Description field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
+                            }
                         }
                         else
                         {
@@ -291,35 +276,18 @@ $('#form').submit(function(){
                     {
                         if(response.errors)
                         {
-
-
                             if(response.errors)
                             {
-                        var errorMessages = {
-                        'otme': 'The Otme field is required.',
-                        'techarea': 'The Technology Area field is required.',
-                        'techareadescription': 'The Description field is required.',
-            };
-                    $.each(response.errors, function (key, value) {
-                        var customErrorMessage = errorMessages[key] || value;
-                        $('#' + key + 'Error').text(customErrorMessage);
-                    });
-                }
-
-
-
-
-                            // $("#techareaError").text(response.errors.techarea);
-                            // $("#techareadescriptionError").text(response.errors.techareadescription);
-                            // $("#id_dmError").text(response.errors.id_dm);
-                            // $("#otmeError").text(response.errors.otme);
-                            // $("#noteError").text(response.errors.note);
-
-                            // $("#techarea").val(response.oldInput.techarea);
-                            // $("#techareadescription").val(response.oldInput.techareadescription);
-                            // $("#id_dm").val(response.oldInput.id_dm);
-                            // $("#otme").val(response.oldInput.otme);
-                            // $("#note").val(response.oldInput.note);
+                               var errorMessages = {
+                                  'otme': 'The Otme field is required.',
+                                  'techarea': 'The Technology Area field is required.',
+                                  'techareadescription': 'The Description field is required.',
+                                };
+                                $.each(response.errors, function (key, value) {
+                                var customErrorMessage = errorMessages[key] || value;
+                                $('#' + key + 'Error').text(customErrorMessage);
+                                });
+                            }
                         }
                         else
                         {
