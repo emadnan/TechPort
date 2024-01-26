@@ -39,13 +39,13 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="id_pnc" class="col-md-4 col-form-label text-md-end">{{ __('Id_pnc') }}</label>
                     <div class="col-md-6">
                         <input id="id_pnc" type="text" class="form-control @error('id_pnc') is-invalid @enderror" name="id_pnc" value="{{ old('id_pnc') }}" >
                         <span class="text-danger small" id="id_pncError"></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-3">
                     <label for="priority" class="col-md-4 col-form-label text-md-end">{{ __('Priority') }}</label>
