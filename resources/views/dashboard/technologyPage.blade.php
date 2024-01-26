@@ -26,13 +26,13 @@
                     </div>
                 </div>
                 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="id_dm" class="col-md-4 col-form-label text-md-end">{{ __('Id_DM') }}</label>
                     <div class="col-md-6">
                         <input id="id_dm" type="text" class="form-control @error('id_dm') is-invalid @enderror" name="id_dm" value= "{{ old ('id_dm') }}" autocomplete="id_dm" autofocus>
                         <span class="text-danger small" id="id_dmError"></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
@@ -130,7 +130,7 @@ $(document).ready(function(){
         $('#form').trigger('reset');
     $('#modal_title').html('Add Technology');
     $("#technologyError").text('');
-    $("#id_dmError").text('');
+    // $("#id_dmError").text('');
     $("#noteError").text('');
     }) // create click event end
 
@@ -140,7 +140,7 @@ $('body').on('click' , '#update-btn' , function(){
     $('#form-modal').modal('show');
     $('#modal_title').html('Update Equipment');
     $("#technologyError").text('');
-    $("#id_dmError").text('');
+    // $("#id_dmError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
     var url = 'technologyUpdatePage/'+rowID;
@@ -151,7 +151,7 @@ $('body').on('click' , '#update-btn' , function(){
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
                         $('#technology').val(item.technology);
-                        $('#id_dm').val(item.id_dm);
+                        // $('#id_dm').val(item.id_dm);
                         $('#note').val(item.note);
                     });
                 },
@@ -164,7 +164,7 @@ $('#form').submit(function(){
             var formData = $(this).serialize();
             var inpID = $('#id').val();
             $("#technologyError").text('');
-            $("#id_dmError").text('');
+            // $("#id_dmError").text('');
             $("#noteError").text('');
             if(inpID)
             {
@@ -179,11 +179,11 @@ $('#form').submit(function(){
                         if(response.errors)
                         {
                             $("#technologyError").text(response.errors.technology);
-                            $("#id_dmError").text(response.errors.id_dm);
+                            // $("#id_dmError").text(response.errors.id_dm);
                             $("#noteError").text(response.errors.note);
 
                             $("#technology").val(response.oldInput.technology);
-                            $("#id_dm").val(response.oldInput.id_dm);
+                            // $("#id_dm").val(response.oldInput.id_dm);
                             $("#note").val(response.oldInput.note);
 
                         }
@@ -211,7 +211,7 @@ $('#form').submit(function(){
                             var row1 = 
                             '<tr id="row_'+item.id+'">'+
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.technology + '</td>'+ 
-                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_dm + '</td>' +
+                                // '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_dm + '</td>' +
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -242,11 +242,11 @@ $('#form').submit(function(){
                         if(response.errors)
                         {
                             $("#technologyError").text(response.errors.technology);
-                            $("#id_dmError").text(response.errors.id_dm);
+                            // $("#id_dmError").text(response.errors.id_dm);
                             $("#noteError").text(response.errors.note);
 
                             $("#technology").val(response.oldInput.technology);
-                            $("#id_dm").val(response.oldInput.id_dm);
+                            // $("#id_dm").val(response.oldInput.id_dm);
                             $("#note").val(response.oldInput.note);
 
 
@@ -272,7 +272,7 @@ $('#form').submit(function(){
                  $.each(response.eqRow , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.technology + '</td>'+ 
-                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_dm + '</td>' +
+                                //  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_dm + '</td>' +
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                  '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
