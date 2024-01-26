@@ -99,7 +99,7 @@
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
                             <th class="py-1">Type</th>
-                            <th class="py-1">Unit Code</th>
+                            <!-- <th class="py-1">Unit Code</th> -->
                             <th class="py-1">Description</th>
                             <th class="py-1">Relevent Company</th>
                             <th class="py-1">Note</th>
@@ -109,7 +109,7 @@
                             @foreach ($data as $id=>$org )
                             <tr  id="row_{{$org-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> type}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> unitcode}}</td>
+                                <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> unitcode}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> description}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> releventcompany}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$org -> note}}</td>
