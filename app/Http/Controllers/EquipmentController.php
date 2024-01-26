@@ -36,7 +36,7 @@ class EquipmentController extends Controller
     public function create(Request $req)
     {
         $latestIdPn = equipment::latest()->value('id_pn');
-
+        return response()->json(compact('latestIdPn'));
         $validator = Validator::make($req->all(),[
             'equipment'=> 'required',
         ]);
