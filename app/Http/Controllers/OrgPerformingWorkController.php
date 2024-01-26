@@ -89,9 +89,13 @@ class OrgPerformingWorkController extends Controller
 
     public function create(Request $req)
     {
+        $latestCode = orgperformingwork::latest()->value('code');
+        if($latestCode === null) {
+            $latestCode = 0;
+        }
 
         $validator = Validator::make($req->all() , [
-            'code' => 'required',
+            // 'code' => 'required',
             'name' => 'required',
             'description' => 'required',
             'typeoflocation' => 'required',
@@ -104,7 +108,7 @@ class OrgPerformingWorkController extends Controller
         }
 
         $create = new  orgperformingwork;
-        $create->code = $req->code;
+        $create->code = $latestCode + 1;
         $create->name = $req->name;
         $create->description = $req->description;
         $create->typeoflocation = $req->typeoflocation;
@@ -113,11 +117,10 @@ class OrgPerformingWorkController extends Controller
         $create->id_location = $req->id_location;
         $create->note = $req->note;
         $create->save();
-
+        $latestID = $create->id;
         // $id = $req->id;
         if($create)
         {
-            $latestID = orgperformingwork::latest()->value('id');
             $createOrg = orgperformingwork::select('orgtype.type' , 'humanentity.name as humanName' , 'humanentity.surname as humanSurName' , 'location.city' , 'orgperformingwork.*' )
             ->join('orgtype' , 'orgtype.id' , '=' , 'orgperformingwork.id_type')
             ->join('humanentity' , 'humanentity.id' , '=' , 'orgperformingwork.id_humanentity')
@@ -143,7 +146,7 @@ class OrgPerformingWorkController extends Controller
     {
         $id = $req->id;
         $validator = Validator::make($req->all(),[
-            'code' => 'required',
+            // 'code' => 'required',
             'name' => 'required',
             'description' => 'required',
             'typeoflocation' => 'required',
@@ -155,7 +158,7 @@ class OrgPerformingWorkController extends Controller
         }
 
         $Update = orgperformingwork::where('id',$id)->update([
-            'code'=> $req->code,
+            // 'code'=> $req->code,
             'name'=> $req->name,
             'description'=> $req->description,
             'typeoflocation'=> $req->typeoflocation,
