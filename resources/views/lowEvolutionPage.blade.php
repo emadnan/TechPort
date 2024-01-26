@@ -337,7 +337,7 @@
                             <div class="col-md-4">
 
                                 <img src="{{ asset('images/' . $projOrg->image) }}" alt=""
-                                    style="height:200px;width:auto;">
+                                    style="height:200px;width:200px;">
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">
                                     Project Organization:
                                 </section>

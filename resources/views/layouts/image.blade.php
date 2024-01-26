@@ -98,22 +98,9 @@
                                         href="{{ url('/') }}">TX011</a></button>
                             </div>
                         </div>
-                        
-
-
                     </div>
-
-
                 </div>
             </div>
-
-
-
-
-
-
         </div>
-
-        <!--  -->
     </div>
 </div>
