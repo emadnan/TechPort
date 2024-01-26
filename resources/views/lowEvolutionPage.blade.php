@@ -303,7 +303,7 @@
                                 <!-- <section style="font-weight:bold;margin-top:10px;">Work Locations:</section> -->
                                 <!-- <div id="regions_div"></div> -->
 
-                                <table>
+                                <table class="mb-5">
                                     <tr>
                                         <th><a href="{{ url('/organizations') }}" style="color:#fff"> Organisation
                                                 Performing Work</a></th>
