@@ -39,17 +39,17 @@ class OrganizationUnitController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $Create = organizationunit::insert([
-            'type'=> $req->type,
-            'unitcode'=> $latestCode+1,
-            'description'=> $req->description,
-            'releventcompany'=> $req->releventcompany,
-            'note'=> $req->note,
-        ]);
+        $organizationunit = new organizationunit;
+        $organizationunit->type = $req->type;
+        $organizationunit->unitcode = $latestCode + 1;
+        $organizationunit->description = $req->description;
+        $organizationunit->releventcompany = $req->releventcompany;
+        $organizationunit->note = $req->note;
+        $organizationunit->save();
+        $latestID = $organizationunit->id;
 
-        if($Create)
+        if($organizationunit)
         {
-            $latestID = organizationunit::latest()->value('id');
             $newRow =organizationunit::where('id', $latestID)->get();
             return response()->json(['message' => 'Organization Unit  Added successfully' , 'newRow'=>$newRow]);
         }
