@@ -683,7 +683,7 @@ switch (project.trlfinal.trllevel) {
                                 <section style="font-weight:bold;margin-top:25px;font-size:16px"><a
                                         href="{{ url('/project-targets') }}" style="color:black;">Project target</a>
                                 </section>
-                                <section style="margin-left:5px;"><a href=""
+                                <section style="margin-left:5px;"><a href="{{ route('projectTargetClickingPage', ['id' => $projOrg->project_target->id]) }}"
                                         style="color:black;">{{$projOrg->project_target->name}}</a></section>
                             </div>
                         </div>
