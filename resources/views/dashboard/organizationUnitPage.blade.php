@@ -26,13 +26,13 @@
                     </div>
                 </div>
                 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="unitcode" class="col-md-4 col-form-label text-md-end">{{ __('Unit Code') }}</label>
                     <div class="col-md-6">
                         <input id="unitcode" type="text" class="form-control @error('unitcode') is-invalid @enderror" name="unitcode" value= "{{ old ('unitcode') }}" autocomplete="unitcode" autofocus>
                         <span class="text-danger small" id="unitcodeError"></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-3">
                     <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
