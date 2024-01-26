@@ -103,7 +103,7 @@
                         <thead>
                             <th class="py-1">Technology Area</th>
                             <th class="py-1">Description</th>
-                            <th class="py-1">Id_dm</th>
+                            <!-- <th class="py-1">Id_dm</th> -->
                             <th class="py-1">Otme</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
@@ -113,7 +113,7 @@
                             <tr id="row_{{$area-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> techarea}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> techareadescription}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> id_dm}}</td>
+                                <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> id_dm}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> otme}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
