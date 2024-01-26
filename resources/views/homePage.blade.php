@@ -1558,7 +1558,7 @@
         </div>
     </div>
 
-    <div style="margin-top:200px"></div>
+    <div style="margin-top:300px"></div>
 
     <footer>
     @include('footer')
