@@ -198,7 +198,7 @@
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
         $('#modal_title').html('Add Working Organization');
-        $("#codeError").text('');
+        // $("#codeError").text('');
         $("#nameError").text('');
         $("#descriptionError").text('');
         $("#typeoflocationError").text('');
@@ -212,7 +212,7 @@
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
     $('#modal_title').html('Update Working Organization');
-        $("#codeError").text('');
+        // $("#codeError").text('');
         $("#nameError").text('');
         $("#descriptionError").text('');
         $("#typeoflocationError").text('');
@@ -228,7 +228,7 @@
                 success: function(response) {
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
-                        $('#code').val(item.code);
+                        // $('#code').val(item.code);
                         $('#name').val(item.name);
                         $('#description').val(item.description);
                         $('#typeoflocation').val(item.typeoflocation);
@@ -246,7 +246,7 @@ $('#form').submit(function(){
           event.preventDefault();
           var formData = $(this).serialize();
           var inpID = $('#id').val();
-        $("#codeError").text('');
+        // $("#codeError").text('');
         $("#nameError").text('');
         $("#descriptionError").text('');
         $("#typeoflocationError").text('');
@@ -270,7 +270,7 @@ $('#form').submit(function(){
                             $('#'+key+'Error').text(value);
                         });
 
-                          $("#code").val(response.oldInput.code);
+                        //   $("#code").val(response.oldInput.code);
                           $("#name").val(response.oldInput.name);
                           $("#description").val(response.oldInput.description);
                           $("#typeoflocation").val(response.oldInput.typeoflocation);
@@ -343,7 +343,7 @@ $('#form').submit(function(){
                             $('#'+key+'Error').text(value);
                         });
 
-                          $("#code").val(response.oldInput.code);
+                        //   $("#code").val(response.oldInput.code);
                           $("#name").val(response.oldInput.name);
                           $("#description").val(response.oldInput.description);
                           $("#typeoflocation").val(response.oldInput.typeoflocation);
