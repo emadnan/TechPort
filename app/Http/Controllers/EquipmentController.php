@@ -61,7 +61,7 @@ class EquipmentController extends Controller
         //     'note'=> $req->note,
         // ]);
 
-        if($eqCreate)
+        if($equipment)
         {
             // $latestID = equipment::latest()->value('id');
             $eqRow = equipment::where('id', $latestID)->get();
