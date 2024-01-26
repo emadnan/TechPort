@@ -115,7 +115,7 @@
                         <thead>
                             <th class="py-1">Technology Sector</th>
                             <th class="py-1">Description</th>
-                            <th class="py-1">Id_dm</th>
+                            <!-- <th class="py-1">Id_dm</th> -->
                             <th class="py-1">Otme</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
@@ -125,7 +125,7 @@
                             <tr id="row_{{$sector-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> techsector}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> techsectordescription}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> id_dm}}</td>
+                                <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> id_dm}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> otme}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$sector -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px;">
@@ -354,8 +354,8 @@ $('body').on('click' , '#view-btn' , function(){
                 +item.techsector+ '</p>'+
                 '<p>'+ '<span  style="font-weight:700;">Description : </span>'
                 +item.techsectordescription+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_dm+'</p>';
-                '<p>'+ '<span style="font-weight:700;"> OTME : </span>'+item.otme+'</p>';
+                '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_dm+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> OTME : </span>'+item.otme+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';
                 data.append(descp);
                 });
