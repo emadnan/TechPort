@@ -422,11 +422,8 @@ $('body').on('keyup' , '#id_dm' , function(){
                     {
                         $.each(array , function(index , item){
                         var row = '<a style="border-bottom:1px solid #CED4DA" class="dropdown-item p-2" >'+item.DM+'</a>'
-                        // console.log(dropdown);
                        
                         dropdown.append(row);
-                        // var $row = $(row);
-                      
 
                     });
                     }
