@@ -23,9 +23,13 @@ class OrganizationUnitController extends Controller
 
     public function create(Request $req)
     {
+        $latestCode = organizationunit::latest()->value('unitcode');
+        if($latestCode === null) {
+            $latestCode = 0;
+        }
         $validator = Validator::make($req->all(),[
             'type'=> 'required',
-            'unitcode'=> 'required',
+            // 'unitcode'=> 'required',
             'description'=> 'required',
             'releventcompany'=> 'required',
             'note'=> 'nullable',
@@ -37,7 +41,7 @@ class OrganizationUnitController extends Controller
 
         $Create = organizationunit::insert([
             'type'=> $req->type,
-            'unitcode'=> $req->unitcode,
+            'unitcode'=> $latestCode + 1,
             'description'=> $req->description,
             'releventcompany'=> $req->releventcompany,
             'note'=> $req->note,
@@ -65,7 +69,7 @@ class OrganizationUnitController extends Controller
     {
         $validator = Validator::make($req->all(),[
             'type'=> 'required',
-            'unitcode'=> 'required',
+            // 'unitcode'=> 'required',
             'description'=> 'required',
             'releventcompany'=> 'required',
             'note'=> 'nullable',
@@ -79,7 +83,7 @@ class OrganizationUnitController extends Controller
 
         $Update = organizationunit::where('id',$id)->update([
             'type'=> $req->type,
-            'unitcode'=> $req->unitcode,
+            // 'unitcode'=> $req->unitcode,
             'description'=> $req->description,
             'releventcompany'=> $req->releventcompany,
             'note'=> $req->note,
