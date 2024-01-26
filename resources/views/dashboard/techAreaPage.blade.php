@@ -208,6 +208,21 @@ $('#form').submit(function(){
 
                         if(response.errors)
                         {
+
+                            if(response.errors)
+                            {
+                        var errorMessages = {
+                        'otme': 'The Otme field is required.',
+                        'techarea': 'The Technology Area field is required.',
+                        'techareadescription': 'The Description field is required.',
+            };
+                    $.each(response.errors, function (key, value) {
+                        var customErrorMessage = errorMessages[key] || value;
+                        $('#' + key + 'Error').text(customErrorMessage);
+                    });
+                }
+
+
                             $("#techareaError").text(response.errors.techarea);
                             $("#techareadescriptionError").text(response.errors.techareadescription);
                             $("#id_dmError").text(response.errors.id_dm);
