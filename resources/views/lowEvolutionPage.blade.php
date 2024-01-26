@@ -299,7 +299,7 @@
                                 <section>{{$projOrg->description}}</section>
 
                                 <section style="font-weight:bold;margin-top:10px;">Benefit:</section>
-                                <section>{{$projOrg->benifit}} </section>
+                                <section class="mb-5">{{$projOrg->benifit}} </section>
                                 <!-- <section style="font-weight:bold;margin-top:10px;">Work Locations:</section> -->
                                 <!-- <div id="regions_div"></div> -->
 
