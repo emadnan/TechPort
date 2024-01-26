@@ -344,8 +344,8 @@ $('body').on('click' , '#view-btn' , function(){
                 +item.techarea+ '</p>'+
                 '<p>'+ '<span  style="font-weight:700;">Description : </span>'
                 +item.techareadescription+'</p>'+
-                '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_dm+'</p>';
-                '<p>'+ '<span style="font-weight:700;"> OTME : </span>'+item.otme+'</p>';
+                '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_dm+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> OTME : </span>'+item.otme+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';
                 data.append(descp);
                 });
