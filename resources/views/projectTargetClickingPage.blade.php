@@ -390,7 +390,7 @@
 var title = $('#page_title').html('Project Target');
 var projOrg = @json($projOrg);
 $(document).ready(function() {
-        $('#dynamic_title').html(projOrg.projecttarget);
+        $('#dynamic_title').html(projOrg.project_target.name);
 });
         const questions = document.querySelectorAll('.qa-question');
 
