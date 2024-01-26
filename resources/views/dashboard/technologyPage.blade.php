@@ -85,7 +85,7 @@
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
                             <th class="py-1">Technology</th>
-                            <th class="py-1">Id_dm</th>
+                            <!-- <th class="py-1">Id_dm</th> -->
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
                         </thead>
@@ -93,7 +93,7 @@
                             @foreach ($data as $id=>$tech )
                             <tr id="row_{{$tech-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> technology}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> id_dm}}</td>
+                                <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> id_dm}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$tech -> note}}</td>
                                 <td class="py-1"style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$tech-> id}}"> <span style="color:black;">|</span> </i>
