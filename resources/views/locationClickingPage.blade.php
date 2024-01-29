@@ -359,7 +359,7 @@
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/locationsPage')}}">Locaion index</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/location-clicking')}}">{{$location->city}}</a></li>
+            <li class="breadCrumbs-items"><b>{{$location->city}}</b></li>
         </ul>
 
         @include('layouts.image')
