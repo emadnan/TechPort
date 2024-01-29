@@ -67,10 +67,13 @@ class FoundingSourcesController extends Controller
 
     public function create(Request $req)
     {
-
+        $latestCode = foundingsource::latest()->value('code');
+        if($latestCode === null) {
+            $latestCode = 0;
+        }
         $validator = Validator::make($req->all(),[
             'name'=> 'required',
-             'code'=>'required',
+            //  'code'=>'required',
         ]);
 
         if ($validator->fails()) {
@@ -78,14 +81,20 @@ class FoundingSourcesController extends Controller
         }
 
         $fsCreate = DB::table('foundingsources')->insert([
-            'code'=> $req->code,
+            'code'=> $latestCode + 1,
             'name'=> $req->name,
             'note'=> $req->note,
         ]);
 
+        $fsCreate = new foundingsource;
+        $fsCreate->code = $latestCode + 1;
+        $fsCreate->name = $req->name;
+        $fsCreate->note = $req->note;
+        $fsCreate->save();
+        $latestID = $fsCreate->id;
+
         if($fsCreate)
         {
-            $latestID = foundingsource::latest()->value('id');
             $fsRow = DB::table('foundingsources')->where('id', $latestID)->get();
           return response()->json(['message' => 'Source Added successfully' , 'fsRow'=>$fsRow]);
         }
@@ -105,7 +114,7 @@ class FoundingSourcesController extends Controller
     {
         $validator = Validator::make($req->all(),[
             'name'=> 'required',
-            'code'=>'required', 
+            // 'code'=>'required', 
         ]);
         
         if ($validator->fails()) {
@@ -114,7 +123,7 @@ class FoundingSourcesController extends Controller
 
         $id = $req->id;
         $fsUpdate = DB::table('foundingsources')->where('id',$id)->update([
-            'code'=> $req->code,
+            // 'code'=> $req->code,
             'name'=> $req->name,
             'note'=> $req->note,
         ]);
