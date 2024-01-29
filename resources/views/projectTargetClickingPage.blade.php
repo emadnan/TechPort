@@ -356,7 +356,7 @@
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/project-targets')}}">Project Target index</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/project-target-clicking')}}">{{$projOrg->name}}</a></li>
+            <li class="breadCrumbs-items"><i>{{$projOrg->name}}</i></li>
         </ul>
 @include('layouts.image')
 
