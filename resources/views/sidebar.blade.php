@@ -149,6 +149,48 @@
                   </a>
               </li>
 
+              <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                    Technology
+                       <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li id='menu_techarea' class="nav-item">
+                            <a href="{{route('techAreaPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                            Technology Area
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_techsector' class="nav-item">
+                            <a href="{{route('techSectorPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Technology Sector</p>
+                            </a>
+                        </li>
+                        <li id='menu_techniche' class="nav-item">
+                            <a href="{{route('techSubSectorPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                            Technology Niche
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_techreferred' class="nav-item">
+                            <a href="{{route('techPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                            Technology Referred
+                            </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -237,7 +279,7 @@
               </li>
 
 
-                <li  id='menu_techarea' class="nav-item ">
+                <li  id='' class="nav-item ">
                     <a href="{{ route('techAreaPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -245,7 +287,7 @@
                     </a>
                 </li>
 
-                <li  id='menu_techsector' class="nav-item ">
+                <li  id='' class="nav-item ">
                     <a href="{{ route('techSectorPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
