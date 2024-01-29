@@ -141,6 +141,14 @@
                     </a>
                 </li>
 
+                <li  id='menu_orgtypes' class="nav-item ">
+                  <a href="{{ route('organizationTypePage') }}" class="nav-link">
+                      <i class="nav-icon fas fa-edit"></i>
+                      <p>
+                        Organization Types </p>
+                  </a>
+              </li>
+
                 <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -209,13 +217,7 @@
                   </a>
               </li>
 
-                <li  id='menu_orgtypes' class="nav-item ">
-                  <a href="{{ route('organizationTypePage') }}" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                        Organization Types </p>
-                  </a>
-              </li>
+               
 
                 <li  id='menu_priorities' class="nav-item ">
                   <a href="{{ route('priorityPage') }}" class="nav-link">
