@@ -307,10 +307,6 @@
         <ul class="breadCrumbs mt-2 mb-0">
             <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/search-results')}}">Search Results</a></li>
-            <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/low-evolution')}}">Project view</a></li>
-            <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/locationsPage')}}">Locaion index</a></li>
         </ul>
         <!-- Add a new row for the image container -->
