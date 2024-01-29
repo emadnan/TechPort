@@ -356,7 +356,7 @@
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/mission-type')}}">Mission Type index</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><i">{{$projOrg->type}}</i></li>
+            <li class="breadCrumbs-items"><i>{{$projOrg->type}}</i></li>
         </ul>
 
 
