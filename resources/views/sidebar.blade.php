@@ -97,15 +97,41 @@
                         </li>
                     </ul>
                 </li>
-             <li  class="nav-item ">
-                <a href="{{route('projectForm')}}" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                        Projects
-                    </p>
-                </a>
-            </li>
 
+                <li  id='menu_definitions' class="nav-item ">
+                    <a href="{{ route('definitionPage') }}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Definitions
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                       Entities
+                       <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li id='menu_entities' class="nav-item">
+                            <a href="{{route('humanEntityPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                            Human Entities
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_legalentity' class="nav-item">
+                            <a href="{{route('legalEntityForm')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Legal Entities</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
@@ -117,14 +143,7 @@
                     </a>
                 </li>
 
-                <li  id='menu_definitions' class="nav-item ">
-                    <a href="{{ route('definitionPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Definitions
-                        </p>
-                    </a>
-                </li>
+              
 
                 <li id='menu_equipments' class="nav-item ">
                     <a href="{{ route('equipmentPage') }}" class="nav-link">
