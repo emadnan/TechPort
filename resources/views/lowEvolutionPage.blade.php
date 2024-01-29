@@ -252,7 +252,7 @@
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/search-results')}}">Search Results</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/low-evolution')}}">Project view</a></li>
+            <li class="breadCrumbs-items"><i>{{$projOrg->name}}</i></li>
         </ul>
         <!-- Add a new row for the image container -->
         <div class="row mt-1">
