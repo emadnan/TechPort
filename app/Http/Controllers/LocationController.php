@@ -49,7 +49,7 @@ class LocationController extends Controller
     }
 
 
-// return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
+return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
         return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
     }
 
