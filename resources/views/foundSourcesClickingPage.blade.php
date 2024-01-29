@@ -352,7 +352,7 @@
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/found-sources')}}">Found Sources index</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/found-sources-clicking')}}">Found Sources view</a></li>
+            <li class="breadCrumbs-items"><a href="{{url('/found-sources-clicking')}}">{{$projOrg->name}}</a></li>
         </ul>
 
 @include('layouts.image')
