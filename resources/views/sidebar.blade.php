@@ -133,6 +133,14 @@
                     </ul>
                 </li>
 
+                <li  id='menu_locations' class="nav-item ">
+                    <a href="{{ route('locationForm') }}" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                    Locations </p>
+                    </a>
+                </li>
+
                 <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -164,6 +172,7 @@
                     </a>
                 </li>
 
+                
                 <li  id='' class="nav-item ">
                     <a href="{{ route('projectTargetForm') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -190,13 +199,7 @@
                   </a>
               </li>
 
-                <li  id='menu_locations' class="nav-item ">
-                  <a href="{{ route('locationForm') }}" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                          Locations </p>
-                  </a>
-              </li>
+               
 
                 <li  id='' class="nav-item ">
                   <a href="{{ route('missionTypeForm') }}" class="nav-link">
