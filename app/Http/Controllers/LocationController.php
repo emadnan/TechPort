@@ -24,8 +24,6 @@ class LocationController extends Controller
     ->where('id' , $id)
     ->first();
 
-    $location = location::find($id);
-
     $allTrls = trl::with('projects.trlactual')->get();
 
 
