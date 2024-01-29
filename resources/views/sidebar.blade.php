@@ -191,6 +191,40 @@
                     </ul>
                 </li>
 
+                <li  id='menu_trl' class="nav-item ">
+                    <a href="{{ route('trlPage') }}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                         Technology Readiness Level (TRL)</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                    Organizations
+                       <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li id='menu_workingOrganizations' class="nav-item">
+                            <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                            Working Organizations
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_projectOrganizations' class="nav-item">
+                            <a href="{{route('projectOrganizationPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Project Organizations</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -201,7 +235,49 @@
                     </a>
                 </li>
 
-              
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                    Units
+                       <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li id='menu_organzationUnits' class="nav-item">
+                            <a href="{{route('organizationUnitPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                             Organization Units
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_refOrganizationUnits' class="nav-item">
+                            <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Ref Organization Units</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                    Equipments and Products
+                       <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li  id='menu_products' class="nav-item">
+                    <a href="{{route('productPage')}}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Products
+                        </p>
+                    </a>
+                </li>
 
                 <li id='menu_equipments' class="nav-item ">
                     <a href="{{ route('equipmentPage') }}" class="nav-link">
@@ -212,64 +288,6 @@
                     </a>
                 </li>
 
-
-                <li  id='menu_sources' class="nav-item ">
-                    <a href="{{ route('foundSourceForm') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Found Sources
-                        </p>
-                    </a>
-                </li>
-
-                
-                <li  id='' class="nav-item ">
-                    <a href="{{ route('projectTargetForm') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Project Targets
-                        </p>
-                    </a>
-                </li>
-
-
-                <li  id='' class="nav-item ">
-                    <a href="{{ route('humanEntityPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Human Entities </p>
-                    </a>
-                </li>
-
-                <li id='' class="nav-item ">
-                  <a href="{{ route('legalEntityForm') }}" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                          Legal Entities </p>
-                  </a>
-              </li>
-
-               
-
-                <li  id='' class="nav-item ">
-                  <a href="{{ route('missionTypeForm') }}" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                        Missions Types </p>
-                  </a>
-              </li>
-
-               
-
-                <li  id='menu_priorities' class="nav-item ">
-                  <a href="{{ route('priorityPage') }}" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                       Priorities</p>
-                  </a>
-              </li>
-
-
                 <li  id='menu_reference' class="nav-item ">
                   <a href="{{ route('referencePage') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
@@ -278,127 +296,43 @@
                   </a>
               </li>
 
-
-                <li  id='' class="nav-item ">
-                    <a href="{{ route('techAreaPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Technology Area</p>
-                    </a>
-                </li>
-
-                <li  id='' class="nav-item ">
-                    <a href="{{ route('techSectorPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Technology Sector</p>
-                    </a>
-                </li>
-
-                <li  id='menu_techniche' class="nav-item ">
-                    <a href="{{ route('techSubSectorPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Technology Niche</p>
-                    </a>
-                </li>
-
-                <li   class="nav-item ">
-                    <a href="{{ route('technologyPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Technologies</p>
-                    </a>
-                </li>
-
-                <li  id='menu_trl' class="nav-item ">
-                    <a href="{{ route('trlPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Technology Readiness Level (TRL)</p>
-                    </a>
-                </li>
-
-                <li id="menu_techreferred" class="nav-item">
-                    <a href="{{route('techPage')}}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Technology Referred
-                        </p>
-                    </a>
-                </li>
-
-                <li  id='' class="nav-item">
-                    <a href="{{route('projectTechnologyPage')}}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                           Project Technology
-                        </p>
-                    </a>
-                </li>
-                   
-                <li  id='menu_workingOrganizations' class="nav-item">
-                    <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                           Working Organizations
-                        </p>
-                    </a>
-                </li>
-                  
-                <li  id='menu_projectOrganizations' class="nav-item">
-                    <a href="{{route('projectOrganizationPage')}}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                           Project Organizations
-                        </p>
-                    </a>
-                </li>
-                
-                <li  id='menu_organzationUnits' class="nav-item">
-                    <a href="{{route('organizationUnitPage')}}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Organization Units
-                        </p>
-                    </a>
-                </li>
-
-                <li id='menu_refOrganizationUnits' class="nav-item">
-                    <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                           Ref Organization Units
-                        </p>
-                    </a>
-                </li>
-
-            <li  id='menu_requirements' class="nav-item">
+                <li  id='menu_requirements' class="nav-item">
                 <a href="{{route('requirementPage')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
                        Requirements
                     </p>
                 </a>
-            </li>
-            
-            <li  id='menu_refEquipments' class="nav-item">
-                <a href="{{route('ref_EquipmentPage')}}" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                        Ref Equipments
-                    </p>
-                </a>
-            </li>
+               </li>
 
-                <li  id='menu_products' class="nav-item">
-                    <a href="{{route('productPage')}}" class="nav-link">
+              <li  id='menu_priorities' class="nav-item ">
+                  <a href="{{ route('priorityPage') }}" class="nav-link">
+                      <i class="nav-icon fas fa-edit"></i>
+                      <p>
+                       Priorities</p>
+                  </a>
+                </li>
+
+                <li id='menu_business' class="nav-item ">
+                    <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Products
+                            Business Areas
+
                         </p>
                     </a>
                 </li>
+              
+                <li  id='menu_refEquipments' class="nav-item">
+                   <a href="{{route('ref_EquipmentPage')}}" class="nav-link">
+                       <i class="nav-icon fas fa-edit"></i>
+                       <p>
+                        Ref Equipments
+                      </p>
+                    </a>
+                </li>
+                </ul>
+            </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
