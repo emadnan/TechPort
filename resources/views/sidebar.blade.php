@@ -59,27 +59,45 @@
                     </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                        <li id='menu_projects' class="nav-item">
+                            <a href="{{route('projectForm')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>Projects</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v2</p>
+                        <li id='menu_technologies' class="nav-item">
+                            <a href="{{route('technologyPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Technologies</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v3</p>
+                        <li id='menu_projecttechnology' class="nav-item">
+                            <a href="{{route('projectTechnologyPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Project Technology</p>
+                            </a>
+                        </li>
+                        <li id='menu_targets' class="nav-item">
+                            <a href="{{route('projectTargetForm')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Project Targets</p>
+                            </a>
+                        </li>
+                        <li id='menu_missiontypes' class="nav-item">
+                            <a href="{{route('missionTypeForm')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Missions Types</p>
+                            </a>
+                        </li>
+                        <li id='menu_sources' class="nav-item">
+                            <a href="{{route('foundSourceForm')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Found Sources</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-             <li id='menu_projects' class="nav-item ">
+             <li  class="nav-item ">
                 <a href="{{route('projectForm')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
@@ -127,7 +145,7 @@
                     </a>
                 </li>
 
-                <li  id='menu_targets' class="nav-item ">
+                <li  id='' class="nav-item ">
                     <a href="{{ route('projectTargetForm') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -161,7 +179,7 @@
                   </a>
               </li>
 
-                <li  id='menu_missiontypes' class="nav-item ">
+                <li  id='' class="nav-item ">
                   <a href="{{ route('missionTypeForm') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
@@ -219,7 +237,7 @@
                     </a>
                 </li>
 
-                <li  id='menu_technologies' class="nav-item ">
+                <li   class="nav-item ">
                     <a href="{{ route('technologyPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -244,7 +262,7 @@
                     </a>
                 </li>
 
-                <li  id='menu_projecttechnology' class="nav-item">
+                <li  id='' class="nav-item">
                     <a href="{{route('projectTechnologyPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
