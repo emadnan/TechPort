@@ -359,7 +359,7 @@
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><a href="{{url('/locationsPage')}}">Locaion index</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/location-clicking')}}">{{$location->city}}</a></li>
+            <li class="breadCrumbs-items"><a href="{{url('/location-clicking')}}">Location view</a></li>
         </ul>
 
         @include('layouts.image')
@@ -1899,9 +1899,8 @@
 
 var title = $('#page_title').html('Locations');
 var projOrg = @json($projOrg);
-var location = @json($location);
 $(document).ready(function() {
-        $('#dynamic_title').html(location.city);
+        $('#dynamic_title').html(projOrg.name);
 });
 
 
