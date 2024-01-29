@@ -41,7 +41,7 @@ class MissionTypeController extends Controller
 
     // return response()->json($projOrg);
 
-        return view('missionTypeClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('missionTypeClickingpage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
     }
 
     public function getProjectsLengthByMissionID(string $missionID ,string $trlID)

@@ -322,7 +322,7 @@
 
 @foreach ($missions as $mission )
         <div class="faq-container">
-                <a href="{{ route('missionTypeClickingPage' , ['id' => $mission->id]) }}">
+                <a href="{{ route('missionTypeClickingPage', ['id' => $mission->id]) }}">
                     <div class="faq-question" onclick="toggleAnswer(this)"> <span class="float-left-text"
                             style="float: left; margin-right: 10px;color: white; margin-left: 0;">{{$loop->index+1}}</span><span
                             style="color: black;" class="faq-question"> {{$mission-> type}} </span><i
