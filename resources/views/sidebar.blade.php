@@ -59,7 +59,7 @@
                     </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li id='menu_projects' class="nav-item">
+                        <li  class="nav-item">
                             <a href="{{route('projectForm')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>Projects</p>
