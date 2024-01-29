@@ -24,6 +24,8 @@ class LocationController extends Controller
     ->where('id' , $id)
     ->first();
 
+    $location = location::find($id);
+
     $allTrls = trl::with('projects.trlactual')->get();
 
 
@@ -47,8 +49,8 @@ class LocationController extends Controller
     }
 
 
-// return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership') );
-        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls') );
+// return response()->json(compact('location') );
+        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
     }
 
     public function getProjectsLengthByLocationID(string $locationID ,string $trlID)
