@@ -30,7 +30,7 @@
                     </button>
                 </div>
             </div> --}}
-            <div class="sidebar-search-results">
+            <!-- <div class="sidebar-search-results">
                 <div class="list-group"><a href="#" class="list-group-item">
                         <div class="search-title"><strong class="text-light"></strong>N<strong
                                 class="text-light"></strong>o<strong class="text-light"></strong> <strong
@@ -45,7 +45,7 @@
                         <div class="search-path"></div>
                     </a></div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -53,12 +53,40 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
+             <li class="nav-item">
+<a href="#" class="nav-link">
+<i class="nav-icon fas fa-tachometer-alt"></i>
+<p>
+Dashboard
+<i class="right fas fa-angle-left"></i>
+</p>
+</a>
+<ul class="nav nav-treeview">
+<li class="nav-item">
+<a href="./index.html" class="nav-link">
+<i class="far fa-circle nav-icon"></i>
+<p>Dashboard v1</p>
+</a>
+</li>
+<li class="nav-item">
+<a href="./index2.html" class="nav-link">
+<i class="far fa-circle nav-icon"></i>
+<p>Dashboard v2</p>
+</a>
+</li>
+<li class="nav-item">
+<a href="./index3.html" class="nav-link">
+<i class="far fa-circle nav-icon"></i>
+<p>Dashboard v3</p>
+</a>
+</li>
+</ul>
+</li>
              <li id='menu_projects' class="nav-item ">
                 <a href="{{route('projectForm')}}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
                         Projects
-
                     </p>
                 </a>
             </li>
