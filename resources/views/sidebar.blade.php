@@ -323,7 +323,5 @@
 </aside>
 
 <script>
-    parent = document.getElementByClassName('nav-dropdown');
-    child = main.firstElementChild;
-    child.style.display === 'block';
+    ()
 </script>
