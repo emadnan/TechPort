@@ -18,13 +18,13 @@
                     <input id="id" type="hidden" class="form-control" name="id">
                 </div>
                 
-                <!-- <div class="row mb-3">
+                <div class="row mb-3">
                     <label for="code" class="col-md-4 col-form-label text-md-end">{{ __('Code') }}</label>
                     <div class="col-md-6">
                         <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value= "{{ old ('code') }}" autocomplete="code" autofocus>
                         <span class="text-danger small" id="codeError"></span>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="row mb-3">
                     <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -130,7 +130,7 @@ $(document).ready(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
     $('#modal_title').html('Add Found Source');
-    // $("#codeError").text('');
+    $("#codeError").text('');
     $("#nameError").text('');
     $("#noteError").text('');
     }) // create click event end
@@ -140,7 +140,7 @@ $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
     $('#modal_title').html('Update Found Source');
-    // $("#codeError").text('');
+    $("#codeError").text('');
     $("#nameError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
@@ -151,7 +151,7 @@ $('body').on('click' , '#update-btn' , function(){
                 success: function(response) {
                     $.each(response.row , function(index , item){
                         $('#id').val(item.id);
-                        // $('#code').val(item.code);
+                        $('#code').val(item.code);
                         $('#name').val(item.name);
                         $('#note').val(item.note);
                     });
@@ -164,7 +164,7 @@ $('#form').submit(function(){
             event.preventDefault();
             var formData = $(this).serialize();
             var inpID = $('#id').val();
-            // $("#codeError").text('');
+            $("#codeError").text('');
             $("#nameError").text('');
             $("#noteError").text('');
             if(inpID)
@@ -179,11 +179,11 @@ $('#form').submit(function(){
 
                         if(response.errors)
                         {
-                            // $("#codeError").text(response.errors.code);
+                            $("#codeError").text(response.errors.code);
                             $("#nameError").text(response.errors.name);
                             $("#noteError").text(response.errors.note);
 
-                            // $("#code").val(response.oldInput.code);
+                            $("#code").val(response.oldInput.code);
                             $("#name").val(response.oldInput.name);
                             $("#note").val(response.oldInput.note);
                             
@@ -211,7 +211,7 @@ $('#form').submit(function(){
                         $.each(response.updateFS , function(index , item){
                             var row1 = 
                             '<tr id="row_'+item.id+'">'+
-                                // '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>' +
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>' +
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; padding-top:15px;">'+
@@ -241,11 +241,11 @@ $('#form').submit(function(){
                     {
                         if(response.errors)
                         {
-                            // $("#codeError").text(response.errors.code);
+                            $("#codeError").text(response.errors.code);
                             $("#nameError").text(response.errors.name);
                             $("#noteError").text(response.errors.note);
 
-                            // $("#code").val(response.oldInput.code);
+                            $("#code").val(response.oldInput.code);
                             $("#name").val(response.oldInput.name);
                             $("#note").val(response.oldInput.note);
 
@@ -271,7 +271,7 @@ $('#form').submit(function(){
                         var data1 = $('#data-table tbody');
                  $.each(response.fsRow , function(index , item){
                      var row = '<tr id="row_'+item.id+'">'+
-                                //  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>' +
+                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>' +
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                  '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; padding-top:15px;">'+
