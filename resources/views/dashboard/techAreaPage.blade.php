@@ -140,6 +140,7 @@
     $(window).on('load', function() {
         // Check if the element with ID "menu_techreferred" exists.
             $('#menu_techarea').addClass('bg-primary');
+            $('#menu_techarea').parent().parent().children('a:first-child').addClass('bg-primary');
     });
         $.ajaxSetup({
                 headers: { 
