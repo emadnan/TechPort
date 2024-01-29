@@ -50,7 +50,7 @@ class LocationController extends Controller
 
 
 // return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership') );
-        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
+        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls') );
     }
 
     public function getProjectsLengthByLocationID(string $locationID ,string $trlID)
