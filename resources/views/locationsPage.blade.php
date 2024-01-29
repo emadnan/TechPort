@@ -153,7 +153,7 @@
         max-width: 100%;
         margin: 0 auto;
         padding: 3px;
-        background: linear-gradient(to right, #065386 4%, #E8E8E8 2%);
+        background: linear-gradient(to right, #065386 3%, #E8E8E8 2%);
         /* White background for FAQ container */
         /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
         /* border-radius: 5px; */
