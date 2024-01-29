@@ -6,10 +6,7 @@
 
             <div class="text-in-image">
                 <section id="page_title" style=" font-weight: 700; margin-bottom:0px;"></section>
-                {{-- @foreach ($projOrgs as $projOrg ) --}}
                 <section id="dynamic_title" style="font-size:17px; font-weight: 700; margin-bottom:10px;"></section>
-                {{-- @break --}}
-                {{-- @endforeach --}}
 
                 <div class="solid-rectangle">
 
