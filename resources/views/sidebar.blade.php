@@ -174,7 +174,7 @@
                 </li>
 
 
-                <li  id='menu_entities' class="nav-item ">
+                <li  id='' class="nav-item ">
                     <a href="{{ route('humanEntityPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -182,7 +182,7 @@
                     </a>
                 </li>
 
-                <li id='menu_legalentity' class="nav-item ">
+                <li id='' class="nav-item ">
                   <a href="{{ route('legalEntityForm') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
