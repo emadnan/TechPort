@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\foundingsource;
 use App\Models\legalentityrole;
 use App\Models\location;
+use App\Models\Project_target;
 use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\orgtype;
@@ -30,6 +31,7 @@ class AdvanceSearchController extends Controller
         $orgtypes = orgtype::with('orgperformingworks')->get();
         $orgs = orgperformingwork::get();
         $statuses = status::get();
+        $projectTargets = Project_target::get();
         // return response()->json($techs);
         return view('advanceSearchPage' , compact('techs' , 'locations','projects' , 'roles' , 'missions' , 'sources' , 'orgtypes' , 'orgs' , 'statuses') );
     }

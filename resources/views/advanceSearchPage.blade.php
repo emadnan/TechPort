@@ -1026,12 +1026,12 @@ function finalTrl()
             <div class="faq-answer" style="display: none;">
                 <div class="container">
                     <div class="row">
-                        @foreach ($projects as $target)
+                        @foreach ($projectTargets as $target)
                             <div class="form-check" style="padding-right: 100px; margin-right: 30px;">
                                 <input class="form-check-input" type="checkbox" value="{{$target->id}}"
                                     id="flexCheckChecked1" name="targets">
                                 <label class="form-check-label" for="flexCheckChecked1">
-                                    {{$target->projecttarget}}
+                                    {{$target->name}}
                                 </label>
                             </div>
                         @endforeach
