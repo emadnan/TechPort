@@ -54,7 +54,7 @@
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                       Trajectory
+                       Trajectries
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
@@ -153,7 +153,7 @@
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                    Technology
+                    Technologies
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
