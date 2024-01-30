@@ -33,7 +33,7 @@ class AdvanceSearchController extends Controller
         $statuses = status::get();
         $projectTargets = Project_target::get();
         // return response()->json($techs);
-        return view('advanceSearchPage' , compact('techs' , 'locations','projects' , 'roles' , 'missions' , 'sources' , 'orgtypes' , 'orgs' , 'statuses , projectTargets') );
+        return view('advanceSearchPage' , compact('techs' , 'locations','projects' , 'roles' , 'missions' , 'sources' , 'orgtypes' , 'orgs' , 'statuses' , 'projectTargets') );
     }
 
     public function getProjectsByAdvanceSearch(Request $req)
