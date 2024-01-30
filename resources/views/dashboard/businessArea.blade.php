@@ -96,7 +96,7 @@
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$business -> businessarea}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$business -> description}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{$business -> note}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; ">
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 80px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$business-> id}}"> <span style="color:black;">|</span> </i>
                                     <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$business-> id}}"> <span style="color:black;">|</span> </i> 
                                     <i id="delete-btn" class="fa-regular fa-trash-can fa-lg" style="color:#C82333;"  data-id="{{$business-> id}}"></i>
