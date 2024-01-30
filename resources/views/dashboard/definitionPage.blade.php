@@ -100,10 +100,10 @@
                         <tbody>
                             @foreach ($data as $id=>$definitions )
                             <tr id="row_{{$definitions-> id}}" >
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; ">{{$definitions -> name}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; ">{{$definitions -> definition}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; ">{{$definitions -> report}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; ">{{$definitions -> note}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; ">{{$definitions -> name}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; ">{{$definitions -> definition}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; ">{{$definitions -> report}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; ">{{$definitions -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 90px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$definitions-> id}}"> <span style="color:black;">|</span> </i>
                                     <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$definitions-> id}}"> <span style="color:black;">|</span> </i> 
