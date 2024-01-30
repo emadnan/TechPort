@@ -100,6 +100,7 @@
                     </div>
                 </div>
                 <div class="card-body">
+                  <div class="table-responsive">
                   <table id="data-table" class="table table-bordered table-striped">
                     <thead>
                         <th class="py-1">Technology Area</th>
@@ -122,6 +123,7 @@
                         @endforeach
                     </tbody>
                   </table>
+</div>
                 </div>
             </div>
         </div>
