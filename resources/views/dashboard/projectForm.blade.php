@@ -225,6 +225,7 @@
                     </div>
                 </div>
                 <div class="card-body">
+                  <div class="table-responsive">
                     <table class="table table-bordered table-striped" id="data-table">
                         <thead>
                             <!-- <th class="py-1">Code</th> -->
@@ -267,6 +268,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                            </div>
                     <div class="row justify-content-center py-3">
                         <div class="col-3" style="padding-left:40px;">
                         </div>
