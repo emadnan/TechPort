@@ -107,6 +107,7 @@
                 </div>
 
                 <div class="card-body">
+                  <div class="table-responsive">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
                             <th class="py-1">Name</th>
@@ -135,6 +136,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                   </div>
                     <div class="row justify-content-center py-2">
                         <div class="col-3" style="padding-left:40px;">
                         </div>
