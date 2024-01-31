@@ -1383,12 +1383,12 @@
 
                 <div onclick="toggleAnswers(this)" class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
-                        <i  class="fa-solid fa-angle-right"></i></div> <span>
+                        <i  class="fa-solid fa-angle-right"></i> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
-                        <a onclick="showimage(this)"><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
-                        ></a>
+                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            onclick="showimage(this)">
 
                         <div class="graph-pop" style="display: none;  z-index:1000; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
@@ -1426,6 +1426,7 @@
 
 
                         </div>
+                    </div>
                 </div>
                 <div class="faq-answer" style="display:none;">
                     @php
