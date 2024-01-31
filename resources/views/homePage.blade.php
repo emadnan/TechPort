@@ -256,11 +256,14 @@
             width: 40px;
         }
 
-        .graph-image {
-            margin-right: 10px;
-            margin-top: 10px;
-            width: 24px;
-        }
+        .graph-image{
+              margin-top: 5px;
+              margin-right:5px;
+              width: 17px;
+              position: absolute;
+              top: 5px;
+              left: 10px;
+          }
         .yellow-graph-image
         {
             margin-right: 7px; 
