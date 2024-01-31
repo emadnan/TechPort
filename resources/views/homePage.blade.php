@@ -1626,8 +1626,7 @@
         }
 
         function showimage(element) {
-            let child = element.firstElementChild;
-            let show = child.nextElementSibling;
+            let show = element.nextElementSibling;
             if (show.style.display == 'none') {
                 show.style.display = 'block';
             } else {
