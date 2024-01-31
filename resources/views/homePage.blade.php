@@ -1577,12 +1577,14 @@
                 answer.style.display = 'none';
 
             }
-            if (element.classList.contains('fa-angle-right')) {
-                element.classList.remove('fa-angle-right');
-                element.classList.add('fa-angle-down')
+            let child = x.firstElementChild;
+            let arrow = child.firstElementChild;
+            if (arrow.classList.contains('fa-angle-right')) {
+                arrow.classList.remove('fa-angle-right');
+                arrow.classList.add('fa-angle-down')
             } else {
-                element.classList.remove('fa-angle-down');
-                element.classList.add('fa-angle-right')
+                arrow.classList.remove('fa-angle-down');
+                arrow.classList.add('fa-angle-right')
             }
         }
 
