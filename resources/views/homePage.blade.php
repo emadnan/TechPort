@@ -1379,11 +1379,11 @@
             <!-- parent tile -->
 @foreach ($techs as $tech )
     
-            <div class="faq-item">
+            <div onclick="toggleAnswers(this)" class="faq-item">
 
                 <div class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
-                        <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
+                        <i  class="fa-solid fa-angle-right"></i> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
@@ -1567,9 +1567,9 @@
 <script>
         function toggleAnswers(element) {
 
-            let x = element.parentElement;
-            let y = x.parentElement;
-            let answer = y.nextElementSibling;
+            // let x = element.parentElement;
+            // let y = x.parentElement;
+            let answer = element.firstElementChild;
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
             } else {
