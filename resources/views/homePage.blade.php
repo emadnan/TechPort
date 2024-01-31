@@ -1426,7 +1426,6 @@
 
 
                         </div>
-                    </div>
                 </div>
                 <div class="faq-answer" style="display:none;">
                     @php
