@@ -256,14 +256,11 @@
             width: 40px;
         }
 
-        .graph-image{
-              margin-top: 5px;
-              margin-right:5px;
-              width: 25px;
-              position: absolute;
-              top: 4px;
-              right: 5px;
-          }
+        .graph-image {
+            margin-right: 10px;
+            margin-top: 10px;
+            width: 24px;
+        }
         .yellow-graph-image
         {
             margin-right: 7px; 
@@ -824,9 +821,6 @@
                 margin-top: 5px;
                 margin-right:5px;
                 width: 17px;
-                position: absolute;
-                top: 5px;
-                left: 10px;
             }
 
             .custom-image {
@@ -1004,9 +998,6 @@
             margin-top: 5px;
             margin-right:5px;
             width: 17px;
-            position: absolute;
-            top: 5px;
-            left: 10px;
         }
 
         .custom-image {
@@ -1191,9 +1182,6 @@
               margin-top: 5px;
               margin-right:5px;
               width: 17px;
-              position: absolute;
-              top: 5px;
-              left: 10px;
           }
 
           .custom-image {
@@ -1398,12 +1386,12 @@
                         <i  class="fa-solid fa-angle-right"></i> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
-                        </div>
+
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)">
 
                         <div class="graph-pop" style="display: none;  z-index:1000; ">
-                            <div class="row m-0 p-1" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                            <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>{{$tech-> techarea}}
                                     </section>
@@ -1438,6 +1426,7 @@
 
 
                         </div>
+                    </div>
                 </div>
                 <div class="faq-answer" style="display:none;">
                     @php
