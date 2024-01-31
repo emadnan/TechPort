@@ -350,7 +350,7 @@
     <div class="row justify-content-center">
         <p style="margin-left:400px;">{{ $orgs->links() }}</p>
     </div>
-    <div style="margin-top:200px"></div>
+    <div style="margin-top:400px"></div>
 
     <footer>
         @include('footer')

@@ -349,7 +349,7 @@
             <p style="margin-left:400px;">{{ $sources->links() }}</p>
         </div>
         
-    <div style="margin-top:200px"></div>
+    <div style="margin-top:400px"></div>
     <footer>
         @include('footer')
     </footer>
