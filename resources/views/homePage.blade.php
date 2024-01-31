@@ -1505,7 +1505,7 @@
                                     class=" float-right graph-image" onclick="showimage(this)">
 
                                 <div class="graph-pop" style="display: none;  z-index:998;">
-                                    <div class="row m-0 p-1" style=" width:100%; background: #323E48">
+                                    <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
                                             <section>{{$techniche-> techniche}}
                                             </section>
