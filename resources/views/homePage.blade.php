@@ -1379,9 +1379,9 @@
             <!-- parent tile -->
 @foreach ($techs as $tech )
     
-            <div onclick="toggleAnswers(this)" class="faq-item">
+            <div  class="faq-item">
 
-                <div class="faq-question">
+                <div onclick="toggleAnswers(this)" class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
                         <i  class="fa-solid fa-angle-right"></i> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
@@ -1569,15 +1569,15 @@
 
             // let x = element.parentElement;
             // let y = x.parentElement;
-            let x = element.firstElementChild;
-            let answer = x.nextElementSibling;
+            // let x = element.firstElementChild;
+            let answer = element.nextElementSibling;
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
             } else {
                 answer.style.display = 'none';
 
             }
-            let child = x.firstElementChild;
+            let child = element.firstElementChild;
             let arrow = child.firstElementChild;
             if (arrow.classList.contains('fa-angle-right')) {
                 arrow.classList.remove('fa-angle-right');
