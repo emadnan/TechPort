@@ -1569,7 +1569,8 @@
 
             // let x = element.parentElement;
             // let y = x.parentElement;
-            let answer = element.firstElementChild;
+            let x = element.firstElementChild;
+            let answer = x.nextElementSibling;
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
             } else {
