@@ -1403,7 +1403,7 @@
                             onclick="showimage(this)">
 
                         <div class="graph-pop" style="display: none;  z-index:1000; ">
-                            <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
+                            <div class="row m-0 p-1" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>{{$tech-> techarea}}
                                     </section>
