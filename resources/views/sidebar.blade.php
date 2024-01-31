@@ -113,6 +113,8 @@
                     </a>
                 </li>
 
+                <div class="divider"></div>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
@@ -139,6 +141,8 @@
                     </ul>
                 </li>
 
+            <div class="divider"></div>
+
                 <li  id='menu_locations' class="nav-item ">
                     <a href="{{ route('locationForm') }}" class="nav-link">
                     <i class="nav-icon fas fa-edit"></i>
@@ -147,6 +151,8 @@
                     </a>
                 </li>
 
+            <div class="divider"></div>
+
                 <li  id='menu_orgtypes' class="nav-item ">
                   <a href="{{ route('organizationTypePage') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
@@ -154,6 +160,8 @@
                         Organization Types </p>
                   </a>
               </li>
+
+            <div class="divider"></div>
 
               <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -197,6 +205,8 @@
                     </ul>
                 </li>
 
+            <div class="divider"></div>
+
                 <li  id='menu_trl' class="nav-item ">
                     <a href="{{ route('trlPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -204,6 +214,8 @@
                          Technology Readiness Level (TRL)</p>
                     </a>
                 </li>
+
+            <div class="divider"></div>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -231,6 +243,8 @@
                     </ul>
                 </li>
 
+            <div class="divider"></div>
+
                 <li id='menu_business' class="nav-item ">
                     <a href="{{ route('businessArea') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -240,6 +254,8 @@
                         </p>
                     </a>
                 </li>
+
+            <div class="divider"></div>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -266,6 +282,8 @@
                         </li>
                     </ul>
                 </li>
+
+            <div class="divider"></div>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -339,6 +357,9 @@
                 </li>
                 </ul>
             </li>
+            
+            <div class="divider"></div>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
