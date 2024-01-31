@@ -259,10 +259,10 @@
         .graph-image{
               margin-top: 5px;
               margin-right:5px;
-              width: 17px;
+              width: 25px;
               position: absolute;
-              top: 5px;
-              left: 10px;
+              top: 4px;
+              left: 5px;
           }
         .yellow-graph-image
         {
