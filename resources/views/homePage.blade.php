@@ -1387,8 +1387,8 @@
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
-                        <a><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
-                            onclick="showimage(this)"></a>
+                        <a onclick="showimage(this)"><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                        ></a>
 
                         <div class="graph-pop" style="display: none;  z-index:1000; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
@@ -1626,7 +1626,8 @@
         }
 
         function showimage(element) {
-            let show = element.nextElementSibling;
+            let child = element.firstElementChild;
+            let show = child.nextElementSibling;
             if (show.style.display == 'none') {
                 show.style.display = 'block';
             } else {
