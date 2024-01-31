@@ -1383,7 +1383,7 @@
 
                 <div onclick="toggleAnswers(this)" class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
-                        <i  class="fa-solid fa-angle-right"></i> <span>
+                        <i  class="fa-solid fa-angle-right"></i></div> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
