@@ -1379,11 +1379,11 @@
             <!-- parent tile -->
 @foreach ($techs as $tech )
     
-            <div  class="faq-item">
+            <div class="faq-item">
 
-                <div onclick="toggleAnswers(this)" class="faq-question">
+                <div class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
-                        <i  class="fa-solid fa-angle-right"></i> <span>
+                        <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
@@ -1567,24 +1567,21 @@
 <script>
         function toggleAnswers(element) {
 
-            // let x = element.parentElement;
-            // let y = x.parentElement;
-            // let x = element.firstElementChild;
-            let answer = element.nextElementSibling;
+            let x = element.parentElement;
+            let y = x.parentElement;
+            let answer = y.nextElementSibling;
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
             } else {
                 answer.style.display = 'none';
 
             }
-            let child = element.firstElementChild;
-            let arrow = child.firstElementChild;
-            if (arrow.classList.contains('fa-angle-right')) {
-                arrow.classList.remove('fa-angle-right');
-                arrow.classList.add('fa-angle-down')
+            if (element.classList.contains('fa-angle-right')) {
+                element.classList.remove('fa-angle-right');
+                element.classList.add('fa-angle-down')
             } else {
-                arrow.classList.remove('fa-angle-down');
-                arrow.classList.add('fa-angle-right')
+                element.classList.remove('fa-angle-down');
+                element.classList.add('fa-angle-right')
             }
         }
 
