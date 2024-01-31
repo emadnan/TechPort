@@ -261,8 +261,8 @@
               margin-right:5px;
               width: 25px;
               position: absolute;
-              top: 4px;
-              right: 5px;
+              top: 48%;
+              right: 110px;
           }
         .yellow-graph-image
         {
