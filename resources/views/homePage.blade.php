@@ -261,8 +261,8 @@
               margin-right:5px;
               width: 25px;
               position: absolute;
-              top: 48%;
-              right: 110px;
+              top: 4px;
+              right: 5px;
           }
         .yellow-graph-image
         {
@@ -1392,13 +1392,16 @@
 @foreach ($techs as $tech )
     
             <div  class="faq-item">
-                <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
-                            onclick="showimage(this)">
+
                 <div onclick="toggleAnswers(this)" class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
                         <i  class="fa-solid fa-angle-right"></i> <span>
                             <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
+                        </div>
+                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            onclick="showimage(this)">
+
                         <div class="graph-pop" style="display: none;  z-index:1000; ">
                             <div class="row m-0 p-1" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
@@ -1435,7 +1438,6 @@
 
 
                         </div>
-                    </div>
                 </div>
                 <div class="faq-answer" style="display:none;">
                     @php
