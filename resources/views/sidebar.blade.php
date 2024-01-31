@@ -97,7 +97,7 @@
                         </li>
                     </ul>
                 </li>
-
+                <div class="faq-container w-100 m-0">
                 <li  id='menu_definitions' class="nav-item ">
                     <a href="{{ route('definitionPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
