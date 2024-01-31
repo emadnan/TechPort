@@ -1182,6 +1182,9 @@
               margin-top: 5px;
               margin-right:5px;
               width: 17px;
+              position: absolute;
+              top: 5px;
+              left: 10px;
           }
 
           .custom-image {
