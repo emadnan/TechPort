@@ -262,7 +262,7 @@
               width: 25px;
               position: absolute;
               top: 4px;
-              left: 5px;
+              right: 5px;
           }
         .yellow-graph-image
         {
