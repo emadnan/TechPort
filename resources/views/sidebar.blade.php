@@ -2,6 +2,11 @@
     .selected {
         background-color : blue;
     }
+    .divider {
+            width: 100%;
+            height: 1px;
+            background-color: white;
+        }
 </style>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:100%; overflow-y: auto">
@@ -97,7 +102,8 @@
                         </li>
                     </ul>
                 </li>
-                <div class="faq-container w-100 m-0">
+            <div class="divider"></div>
+
                 <li  id='menu_definitions' class="nav-item ">
                     <a href="{{ route('definitionPage') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
