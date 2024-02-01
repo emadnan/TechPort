@@ -870,7 +870,8 @@
         }
         
         .column_chart{
-           overflow: hidden;
+           overflow: auto;
+
         }
 
         }
