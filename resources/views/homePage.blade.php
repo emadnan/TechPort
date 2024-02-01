@@ -301,7 +301,7 @@
             background: white;
             width:250px;
             margin-top: -3px;
-            font-size: 14px;
+            font-size: 10px;
         }
         .graph-pop button{
             font-size: 12px;
@@ -1417,7 +1417,7 @@
                                 </div>
                             </div>
                             
-                            <h5 style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px; font-size:14px;">
+                            <h5 style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px; font-size:12px;">
                                 Projects linked to this taxonomy</h5>
                             <button class="btn"
                                 style="margin-left:10px; color:white; background: rgba(6, 83, 134, 1);"><a
