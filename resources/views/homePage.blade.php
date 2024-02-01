@@ -1373,7 +1373,7 @@
 
 
         <!-- <div class="faq-container w-100 m-0"> -->
-        <div class="container border border-dark">
+ <div class="container border border-dark">
 @foreach ($techs as $tech)
     <div class="row ">
         <div class="col-md-11" style="padding-left:0px;">
@@ -1398,6 +1398,7 @@
                              <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                         </div>
                     </div>
+                </div>
                 <div class="col-md-1">
                     <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                 </div>
