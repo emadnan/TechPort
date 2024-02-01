@@ -1382,13 +1382,13 @@
         </div>
         <div class="col-md-10 border p-3">
         {{$tech-> techarea}}
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="col-md-1"></div>
-            <div class="col-md-10"></div>
-            <div class="col-md-1"></div>
+        <div class="col-md-1 border"></div>
+        <div class="col-md-10 border">
+            <div class="col-md-1 border"></div>
+            <div class="col-md-10 border"></div>
+            <div class="col-md-1 border"></div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-1 border"></div>
         </div>
         <div class="col-md-1 border p-3">
 
