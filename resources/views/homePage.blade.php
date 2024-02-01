@@ -1383,7 +1383,7 @@
              <i class="fa-solid fa-angle-right"></i>
         </div>
         <div class="col p-0">
-            <div style="display:flex;  justify-content: space-between;">
+            <div style="display:flex;  justify-content: space-between; align-items: center;">
                 <div class="pl-2"> Technology Area</div> 
                 <div>
                     <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
