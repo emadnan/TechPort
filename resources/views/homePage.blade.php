@@ -1391,7 +1391,7 @@
                         <div class="col-md-11" style="padding-left:0px;">
                             <div style="display:flex;">
                                <div class="border border-dark" style="width:30px; height: 30px;"></div>
-                               <div style="margin-left:10px;">Technology Sector</div>
+                               <div style="margin-left:10px;">Technology Niche</div>
                             </div>
                         </div>
                         <div class="col-md-1">
