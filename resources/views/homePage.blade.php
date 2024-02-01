@@ -1434,7 +1434,7 @@
                 </div>
                 <div class="col p-0">
                     <div style="display:flex;  justify-content: space-between;">
-                        <div> Technology Sector</div> 
+                        <div class="pl-2"> Technology Sector</div> 
                         <div>
                             <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:999; ">
@@ -1479,7 +1479,7 @@
                        </div>
                         <div class="col p-0">
                             <div style="display:flex;  justify-content: space-between;">
-                                <div> Technology Niche</div> 
+                                <div class="pl-2"> Technology Niche</div> 
                                 <div>
                                     <img src="{{ asset('images/icon-black.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                                     <div class="graph-pop" style="display: none;  z-index:998;">
