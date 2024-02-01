@@ -1376,8 +1376,8 @@
         {{-- end --}}
 
 
-        <div class="faq-container w-100 m-0">
-        <!-- <div class="container border">
+        <!-- <div class="faq-container w-100 m-0"> -->
+        <div class="container border">
 
 @foreach ($techs as $tech)
     <div class="row border-top ">
@@ -1517,11 +1517,14 @@
                                         style="margin-left:10px;color:white; background: #323E48;"><a
                                             style="color:white;" href="{{ route('searchProjectsByTechNiche', ['id' => $techniche->id]) }}">Find Linked
                                             Projects</a></button>
-
-
-
+                                    </div>
                                 </div>
-                                </div>
+                            </div>
+                            <div class="container" style="display:none">
+                                <div style="margin-left:40px;font-weight:bold">Description</div>
+                                <section style="padding-left:40px;padding-right:40px">
+                                    {{$techniche->technichedescription}}
+                                </section>
                             </div>
                         </div>
                     </div>
@@ -1538,9 +1541,9 @@
         </div>
     </div>
 @endforeach
-</div> -->
+</div>
             <!-- parent tile -->
-@foreach ($techs as $tech )
+<!-- @foreach ($techs as $tech )
 
             <div class="faq-item">
 
@@ -1712,8 +1715,8 @@
 
             @endforeach
 
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
     <div style="margin-top:300px"></div>
 
