@@ -1383,7 +1383,13 @@
                 <div> Technology Area</div> 
                 <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
             </div>
-            <div class="container">
+            <div class="container" style="none">
+            @php
+                $sectorID = [];
+            @endphp
+            @foreach ($tech->techsectors as $techsector )
+            @if ( in_array( $techsector->id, $sectorID))
+            @else
             <div class="row border border-dark">
                 <div style = 'width:30px'></div>
                 <div class="col border border-dark p-1">
@@ -1404,6 +1410,11 @@
                     </div>
                 </div>
             </div>
+            @php
+                array_push($sectorID, $techsector->id)
+            @endphp
+            @endif
+            @endforeach
             </div>
         </div>
     </div>
