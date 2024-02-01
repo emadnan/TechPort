@@ -1375,7 +1375,19 @@
 
         <div class="faq-container w-100 m-0">
 
+@foreach ($techs as $tech)
+    <div class="row border-black">
+        <div class="col-md-1 border-black"> 
 
+        </div>
+        <div class="col-md-10 border-black">
+
+        </div>
+        <div class="col-md-1 border-black">
+
+        </div>
+    </div>
+@endforeach
             <!-- parent tile -->
 <!-- @foreach ($techs as $tech )
     
@@ -1555,8 +1567,8 @@
 
             @endforeach
 
-        </div>
-    </div> -->
+        </div> -->
+    </div>
 
     <div style="margin-top:300px"></div>
 
