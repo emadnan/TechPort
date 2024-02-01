@@ -1382,7 +1382,7 @@
         <div class="col-md-12 border border-dark p-1">
             <div style="display:flex">
                <div> Technology Area</div>
-               <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">\
+               <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
             </div>
             <div class="row" style = 'display: none;'>
                 <div class="col-md-1 border border-dark p-1"></div>
