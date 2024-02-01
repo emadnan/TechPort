@@ -1376,7 +1376,7 @@
         {{-- end --}}
 
 
-        <!-- <div class="faq-container w-100 m-0"> -->
+        <div class="faq-container w-100 m-0">
         <!-- <div class="container border border-dark">
 
 @foreach ($techs as $tech)
