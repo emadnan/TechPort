@@ -1736,12 +1736,13 @@
                 answer.style.display = 'none';
 
             }
-            if (x.classList.contains('fa-angle-right')) {
-                x.classList.remove('fa-angle-right');
-                x.classList.add('fa-angle-down')
+            let arrow = element.firstElementChild;
+            if (arrow.classList.contains('fa-angle-right')) {
+                arrow.classList.remove('fa-angle-right');
+                arrow.classList.add('fa-angle-down')
             } else {
-                x.classList.remove('fa-angle-down');
-                x.classList.add('fa-angle-right')
+                arrow.classList.remove('fa-angle-down');
+                arrow.classList.add('fa-angle-right')
             }
         }
 
