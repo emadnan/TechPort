@@ -1373,41 +1373,41 @@
 
 
         <!-- <div class="faq-container w-100 m-0"> -->
-        <div class="container">
+        <div class="container border border-dark">
 
 @foreach ($techs as $tech)
-    <div class="row border border-dark">
+    <div class="row">
         <div style = 'width:30px'>
              <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i>
         </div>
-        <div class="col border border-dark p-1">
+        <div class="col p-1">
             <div style="display:flex;  justify-content: space-between;">
                 <div> Technology Area</div> 
                 <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
             </div>
-            <div class="container" style="display:none">
+            <div class="container border border-dark" style="display:none">
             @php
                 $sectorID = [];
             @endphp
             @foreach ($tech->techsectors as $techsector )
             @if ( in_array( $techsector->id, $sectorID))
             @else
-            <div class="row border border-dark">
+            <div class="row">
                 <div style = 'width:30px'>
                     <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i>
                 </div>
-                <div class="col border border-dark p-1">
+                <div class="col p-1">
                     <div style="display:flex;  justify-content: space-between;">
                         <div> Technology Sector</div> 
                         <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
                     </div>
-                    <div class="container" style="display:none">
+                    <div class="container border border-dark" style="display:none">
                     @foreach ($techsector->techniches as $techniche)
-                    <div class="row border border-dark">
+                    <div class="row ">
                         <div style = 'width:30px'>
                             <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i>
                        </div>
-                        <div class="col border border-dark p-1">
+                        <div class="col p-1">
                             <div style="display:flex;  justify-content: space-between;">
                                 <div> Technology Niche</div> 
                                 <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
