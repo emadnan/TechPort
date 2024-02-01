@@ -1376,8 +1376,8 @@
         {{-- end --}}
 
 
-        <!-- <div class="faq-container w-100 m-0"> -->
-        <div class="container border">
+        <div class="faq-container w-100 m-0">
+        <!-- <div class="container border">
 
 @foreach ($techs as $tech)
     <div class="row border-top ">
@@ -1538,9 +1538,9 @@
         </div>
     </div>
 @endforeach
-</div>
+</div> -->
             <!-- parent tile -->
-<!-- @foreach ($techs as $tech )
+@foreach ($techs as $tech )
 
             <div class="faq-item">
 
@@ -1712,8 +1712,8 @@
 
             @endforeach
 
-        </div> -->
-    <!-- </div> -->
+        </div>
+    </div>
 
     <div style="margin-top:300px"></div>
 
