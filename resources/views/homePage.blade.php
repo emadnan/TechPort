@@ -1400,7 +1400,7 @@
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style =" margin-right: 2px; width: 40%; margon-bottom:1px;"
+                                        style =" margin-right: 2px; width: 13px; margon-bottom:1px;"
                                         onclick="hideimage(this)">
                                 </div>
                             </div>
