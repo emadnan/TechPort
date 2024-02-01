@@ -1376,14 +1376,14 @@
         <div class="faq-container w-100 m-0">
 
 @foreach ($techs as $tech)
-    <div class="row border-black">
-        <div class="col-md-1 border-black"> 
+    <div class="row border p-3">
+        <div class="col-md-1 border p-3"> 
 
         </div>
-        <div class="col-md-10 border-black">
+        <div class="col-md-10 border p-3">
 
         </div>
-        <div class="col-md-1 border-black">
+        <div class="col-md-1 border p-3">
 
         </div>
     </div>
