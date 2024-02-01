@@ -1376,12 +1376,12 @@
         {{-- end --}}
 
 
-        <div class="faq-container w-100 m-0">
-        <!-- <div class="container border border-dark">
+        <!-- <div class="faq-container w-100 m-0"> -->
+        <div class="container border border-dark">
 
 @foreach ($techs as $tech)
     <div class="row border-bottom">
-        <div onclick="toggleAnswers(this)" class="bg-primary"  style = 'width:30px;'>
+        <div onclick="toggleAnswers(this)" class="bg-#065386"  style = 'width:30px;'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
         <div class="col p-0">
@@ -1465,9 +1465,9 @@
         </div>
     </div>
 @endforeach
-</div> -->
+</div>
             <!-- parent tile -->
-@foreach ($techs as $tech )
+<!-- @foreach ($techs as $tech )
 
             <div class="faq-item">
 
@@ -1641,8 +1641,8 @@
 
             @endforeach
 
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
     <div style="margin-top:300px"></div>
 
