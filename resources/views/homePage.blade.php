@@ -301,7 +301,7 @@
             background: white;
             width:250px;
             margin-top: -3px;
-            font-size: 10px;
+            font-size: 12px;
         }
         .graph-pop button{
             font-size: 12px;
@@ -1394,13 +1394,13 @@
                     <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                     <div class=" graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
-                                <div class="col-md-9 px-2" style="color: white; font-size:12px;">
+                                <div class="col-md-9 px-2" style="color: white;">
                                     <section>{{$tech-> techarea}}
                                     </section>
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style =" margin-right: 2px; width: 13px; margon-bottom:1px;"
+                                        style =" margin-right: 2px; width: 40%; margon-bottom:1px;"
                                         onclick="hideimage(this)">
                                 </div>
                             </div>
