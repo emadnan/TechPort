@@ -1724,8 +1724,8 @@
 <script>
         function toggleAnswers(element) {
 
-            let x = element.parentElement;
-            let y = x.parentElement;
+            let x = element.nextElementSibling;
+            let y = x.firstChildElement;
             let answer = y.nextElementSibling;
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
@@ -1733,12 +1733,12 @@
                 answer.style.display = 'none';
 
             }
-            if (element.classList.contains('fa-angle-right')) {
-                element.classList.remove('fa-angle-right');
-                element.classList.add('fa-angle-down')
+            if (x.classList.contains('fa-angle-right')) {
+                x.classList.remove('fa-angle-right');
+                x.classList.add('fa-angle-down')
             } else {
-                element.classList.remove('fa-angle-down');
-                element.classList.add('fa-angle-right')
+                x.classList.remove('fa-angle-down');
+                x.classList.add('fa-angle-right')
             }
         }
 
