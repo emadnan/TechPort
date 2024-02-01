@@ -1378,7 +1378,7 @@
         <div class="container border border-dark">
 
 @foreach ($techs as $tech)
-    <div class="row border-bottom">
+    <div class="row border-bottom bg-primary">
         <div onclick="toggleAnswers(this)"  style = 'width:30px'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
