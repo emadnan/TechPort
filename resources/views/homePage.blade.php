@@ -1434,7 +1434,7 @@
                 <div onclick="toggleAnswers(this)" style = 'width:30px; background-color: #FFA800 ;'>
                     <i  class="fa-solid fa-angle-right"></i>
                 </div>
-                <div class="col">
+                <div class="col p-0">
                     <div style="display:flex;  justify-content: space-between;">
                         <div> Technology Sector</div> 
                         <div>
@@ -1479,7 +1479,7 @@
                         <div onclick="toggleAnswers(this)" style = 'width:30px ; background: #323E48'>
                             <i  class="fa-solid fa-angle-right"></i>
                        </div>
-                        <div class="col">
+                        <div class="col p-0">
                             <div style="display:flex;  justify-content: space-between;">
                                 <div> Technology Niche</div> 
                                 <div>
