@@ -352,6 +352,7 @@
             .fa-angle-right {
                 color: white;
                 padding-left: 10px;
+                padding-bottom:5px;
                 font-size: 24px;
                 margin-bottom: 0px;
                 margin-top: 0px;
