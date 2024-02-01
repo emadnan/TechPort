@@ -257,15 +257,13 @@
         }
 
         .graph-image {
-            
-            
             width: 24px;
+            margin: 5px;
         }
         .yellow-graph-image
         {
-            margin-right: 7px; 
-            margin-top: 6px;
-            width: 31px;"
+            margin: 2px;
+            width: 31px;
         }
 
 
