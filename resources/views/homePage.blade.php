@@ -1378,21 +1378,14 @@
 @foreach ($techs as $tech)
     <div class="row border border-dark p-3">
         <div class="col-md-1 border border-dark p-3"></div>
-        <div class="col-md-10 border border-dark p-3">
+        <div class="col-md-11 border border-dark p-3">
         <div class="row p-3">
         <div class="col-md-1 border border-dark p-3"></div>
-        <div class="col-md-10 border border-dark p-3">
+        <div class="col-md-11 border border-dark p-3">
             <div class="row">
             <div class="col-md-1 border border-dark p-3"></div>
-            <div class="col-md-10 border border-dark p-3"></div>
-            <div class="col-md-1 border border-dark p-3"></div>
-            </div>
+            <div class="col-md-11 border border-dark p-3"></div>
         </div>
-        <div class="col-md-1 border border-dark p-3"></div>
-        </div>
-        </div>
-        <div class="col-md-1 border border-dark p-3">
-
         </div>
     </div>
 @endforeach
