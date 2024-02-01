@@ -1445,7 +1445,7 @@
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
+                                        style=" margin-right: 2px; width: 50%; margon-bottom:1px;"
                                         onclick="hideimage(this)">
                                 </div>
                             </div>
@@ -1491,7 +1491,7 @@
                                         <div class="col-3 m-0 px-0"
                                             style="color: white; padding-top:3px; padding-bottom:0px;">
                                             <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                                style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
+                                                style=" margin-right: 2px; width: 50%; margon-bottom:1px;"
                                                 onclick="hideimage(this)">
                                         </div>
                                     </div>
@@ -1836,9 +1836,9 @@ var techs = @json($techs);
         function drawChart(data ,sectorId) {
     //   console.log('Draw Chart');
     var options = {
-    chartArea: { width: '70%' , left:50 , right:20},
-    width: 330,
-    height: 233,
+        chartArea: { width: '70%' , left:50 , right:20},
+    width: 220,
+    height: 150,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
     hAxis: {
@@ -1941,8 +1941,8 @@ var techs = @json($techs);
         function drawChart(data ,nicheId) {
             var options = {
     chartArea: { width: '70%' , left:50 , right:20},
-    width: 330,
-    height: 233,
+    width: 220,
+    height: 150,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
     hAxis: {
