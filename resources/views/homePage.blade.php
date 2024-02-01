@@ -1373,7 +1373,7 @@
         {{-- end --}}
 
 
-        <div class="faq-container w-100 m-0">
+        <!-- <div class="faq-container w-100 m-0"> -->
 
 @foreach ($techs as $tech)
     <div class="row">
@@ -1581,7 +1581,7 @@
             @endforeach
 
         </div> -->
-    </div>
+    <!-- </div> -->
 
     <div style="margin-top:300px"></div>
 
