@@ -257,8 +257,8 @@
         }
 
         .graph-image {
-            margin-right: 10px;
-            margin-top: 10px;
+            
+            
             width: 24px;
         }
         .yellow-graph-image
