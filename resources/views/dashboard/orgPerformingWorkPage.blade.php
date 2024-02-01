@@ -65,7 +65,7 @@
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="id_humanentity" class="col-md-4 col-form-label text-md-end">{{ __('Humanentity') }}</label>
+                    <label for="id_humanentity" class="col-md-4 col-form-label text-md-end">{{ __('Human Entity') }}</label>
                     <div class="col-md-6">
                         <select id="id_humanentity" type="text" class="form-control @error('id_humanentity') is-invalid @enderror" name="id_humanentity" value= "{{ old ('id_humanentity') }}" autocomplete="id_humanentity" autofocus>
                             <option selected value="">SELECT</option>
