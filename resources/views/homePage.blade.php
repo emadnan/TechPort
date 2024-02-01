@@ -1381,10 +1381,6 @@
                 <div class="border border-dark" style="width:30px; height: 30px;"></div>
                 <div>Technology Area</div>
             </div>
-            <div class="col-md-1">
-                <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
-            </div>
-        </div>
             <div class="row" style = 'display: none;'>
                 <div class="col-md-1 border border-dark p-1"></div>
                 <div class="col-md-11 border border-dark p-1">
@@ -1399,7 +1395,10 @@
                     </div>
                 </div>
             </div>
-            
+        </div>
+        <div class="col-md-1">
+            <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+        </div>
     </div>
 @endforeach
 </div>
