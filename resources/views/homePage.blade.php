@@ -1378,8 +1378,8 @@
 @foreach ($techs as $tech)
     <div class="row border border-dark">
         <div style = 'width:30px'></div>
-        <div class=" col border border-dark p-1">
-            <div style="display:flex">
+        <div class="col border border-dark p-1">
+            <div style="display:flex;  justify-content: space-between;">
             <div> Technology Area</div> 
             <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
             </div>
