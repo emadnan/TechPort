@@ -1377,8 +1377,7 @@
 
 @foreach ($techs as $tech)
     <div class="row border border-dark">
-        <div style = 'width:30px'></div>
-        <div class="row">
+        <div style='width:30px'></div>
         <div class="col-md-12 border border-dark p-1">
             <div style="display:flex">
                <div> Technology Area</div>
@@ -1398,7 +1397,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 @endforeach
