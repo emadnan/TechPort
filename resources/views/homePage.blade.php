@@ -1377,7 +1377,6 @@
 @foreach ($techs as $tech)
 <div class="container">
     <div class="row border border-dark">
-        </div>
         <div class="col-md-11 p-1">
             <div style="display:flex;">
             <div class="border border-dark" style="width:30px; height: 30px;"></div>
