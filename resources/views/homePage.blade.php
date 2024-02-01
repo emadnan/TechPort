@@ -1373,39 +1373,28 @@
 
 
         <!-- <div class="faq-container w-100 m-0"> -->
- <div class="container border border-dark">
+        <div class="container">
+
 @foreach ($techs as $tech)
-    <div class="row ">
-        <div class="col-md-11" style="padding-left:0px;">
-            <div style="display:flex;">
-                <div class="border border-dark" style="width:30px; height: 30px;"></div>
-                <div style="margin-left:10px;">Technology Area</div>
-            </div>
+    <div class="row border border-dark">
+        <div class="col-md-1"></div>
+        <div class="col-md-11 border border-dark p-1">
+            <div> Technology Area <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            onclick="showimage(this)"></div>
             <div class="row" style = 'display: none;'>
-                <div class="col-md-11" style="padding-left:0px;">
-                    <div style="display:flex;">
-                        <div class="border border-dark" style="width:30px; height: 30px;"></div>
-                        <div style="margin-left:10px;">Technology Sector</div>
-                    </div>
+                <div class="col-md-1 border border-dark p-1"></div>
+                <div class="col-md-11 border border-dark p-1">
+                    <div>  Technology Sector <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            onclick="showimage(this)"></div>
                     <div class="row" style = 'display: none;'>
-                        <div class="col-md-11" style="padding-left:0px;">
-                            <div style="display:flex;">
-                               <div class="border border-dark" style="width:30px; height: 30px;"></div>
-                               <div style="margin-left:10px;">Technology Niche</div>
-                            </div>
-                        </div>
-                        <div class="col-md-1">
-                             <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+                        <div class="col-md-1 border border-dark p-1"></div>
+                        <div class="col-md-11 border border-dark p-1">
+                            <div>Technology Niche <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            onclick="showimage(this)"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-1">
-                    <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                 </div>
             </div>
-        </div>
-        <div class="col-md-1">
-            <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
         </div>
     </div>
 @endforeach
