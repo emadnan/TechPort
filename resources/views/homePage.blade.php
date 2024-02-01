@@ -1521,7 +1521,7 @@
                                 </div>
                             </div>
                             <div class="container" style="display:none">
-                                <div style="font-weight:bold">Description</div>
+                                <div class="border-top" style="font-weight:bold">Description</div>
                                 <section>
                                     {{$techniche->technichedescription}}
                                 </section>
