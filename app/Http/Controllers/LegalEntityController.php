@@ -164,6 +164,6 @@ class LegalEntityController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'legalEntityClickingPage' . 'getProjectsLengthByRoleID');
+        $this->middleware('auth')->except('index' , 'legalEntityClickingPage' , 'getProjectsLengthByRoleID');
     }
 }
