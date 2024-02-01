@@ -1725,8 +1725,11 @@
         function toggleAnswers(element) {
 
             let x = element.nextElementSibling;
+            console.log(x);
             let y = x.firstChildElement;
+            console.log(y);
             let answer = y.nextElementSibling;
+            console.log(answer);
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
             } else {
