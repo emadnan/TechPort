@@ -771,26 +771,21 @@
         .graph-pop {
             border: 1px solid rgba(6, 83, 134, 1);
             position: absolute;
-            right: 0%;
+            right: -1px;
             background: white;
-            width: 200px;
-            margin-top: -27px;
-            font-size:9px;
-        }
-        .graph-pop .row{
-            flex-wrap: nowrap;
+            width:250px;
+            margin-top: -3px;
+            font-size: 14px;
         }
         .graph-pop button{
-            font-size: 9px;
-            margin-top: 0px;
-            margin-bottom:7px;
+            font-size: 12px;
+            margin-bottom:23px;
         }
         .graph-pop h5{
-            font-size: 9px;
-            margin-top: -6px;
-            margin-bottom:9px;
+            font-size: 12px;
+            margin-top:5px;
+            margin-bottom: 1rem;
         }
-
             .faq-subanswer {
 
                 padding-left: 0px;
@@ -950,28 +945,24 @@
         margin-top: 2px;
         width: 21px;
     }
-    .graph-pop {
-        border: 1px solid rgba(6, 83, 134, 1);
-        position: absolute;
-        right: 0%;
-        background: white;
-        width: 200px;
-        margin-top: -27px;
-        font-size:8px;
-    }
-    .graph-pop .row{
-        flex-wrap: nowrap;
-    }
-    .graph-pop button{
-        font-size: 10px;
-        margin-top: 0px;
-        margin-bottom:7px;
-    }
-    .graph-pop h5{
-        font-size: 9px;
-        margin-top: -6px;
-        margin-bottom:9px;
-    }
+   .graph-pop {
+            border: 1px solid rgba(6, 83, 134, 1);
+            position: absolute;
+            right: -1px;
+            background: white;
+            width:250px;
+            margin-top: -3px;
+            font-size: 14px;
+        }
+        .graph-pop button{
+            font-size: 12px;
+            margin-bottom:23px;
+        }
+        .graph-pop h5{
+            font-size: 12px;
+            margin-top:5px;
+            margin-bottom: 1rem;
+        }
 
         .faq-subanswer {
 
@@ -1135,27 +1126,23 @@
           width: 21px;
       }
       .graph-pop {
-          border: 1px solid rgba(6, 83, 134, 1);
-          position: absolute;
-          right: 0%;
-          background: white;
-          width: 200px;
-          margin-top: -27px;
-          font-size:8px;
-      }
-      .graph-pop .row{
-          flex-wrap: nowrap;
-      }
-      .graph-pop button{
-          font-size: 10px;
-          margin-top: 0px;
-          margin-bottom:7px;
-      }
-      .graph-pop h5{
-          font-size: 9px;
-          margin-top: -6px;
-          margin-bottom:9px;
-      }
+            border: 1px solid rgba(6, 83, 134, 1);
+            position: absolute;
+            right: -1px;
+            background: white;
+            width:250px;
+            margin-top: -3px;
+            font-size: 14px;
+        }
+        .graph-pop button{
+            font-size: 12px;
+            margin-bottom:23px;
+        }
+        .graph-pop h5{
+            font-size: 12px;
+            margin-top:5px;
+            margin-bottom: 1rem;
+        }
 
           .faq-subanswer {
 
@@ -1400,7 +1387,7 @@
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style =" margin-right: 2px; width: 40%; margon-bottom:1px;"
+                                        style =" margin-right: 2px; width: 50%; margon-bottom:1px;"
                                         onclick="hideimage(this)">
                                 </div>
                             </div>
