@@ -1377,7 +1377,7 @@
 
 
             <!-- parent tile -->
-@foreach ($techs as $tech )
+<!-- @foreach ($techs as $tech )
     
             <div class="faq-item">
 
@@ -1556,7 +1556,7 @@
             @endforeach
 
         </div>
-    </div>
+    </div> -->
 
     <div style="margin-top:300px"></div>
 
