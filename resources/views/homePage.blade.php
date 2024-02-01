@@ -1378,9 +1378,9 @@
 <div class="container">
     <div class="row border border-dark">
         <div class="col-md-1">
-            <div class="border border-dark"></div>
+            <div class="border-right border-dark"></div>
         </div>
-        <div class="col-md-11 border border-dark p-1">
+        <div class="col-md-11 p-1">
             <div> Technology Area <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
             <div class="row" style = 'display: none;'>
