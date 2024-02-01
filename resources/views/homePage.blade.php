@@ -1377,10 +1377,10 @@
 
 
         <!-- <div class="faq-container w-100 m-0"> -->
-        <div class="container border border-dark">
+        <div class="container border">
 
 @foreach ($techs as $tech)
-    <div class="row border-bottom">
+    <div class="row ">
         <div onclick="toggleAnswers(this)"  style = 'width:30px; background-color: #065386 ;'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
@@ -1430,7 +1430,7 @@
             @foreach ($tech->techsectors as $techsector )
             @if ( in_array( $techsector->id, $sectorID))
             @else
-            <div class="row border-bottom">
+            <div class="row border-top">
                 <div onclick="toggleAnswers(this)" style = 'width:30px; background-color: #FFA800 ;'>
                     <i  class="fa-solid fa-angle-right"></i>
                 </div>
@@ -1475,7 +1475,7 @@
                     </div>
                     <div class="container" style="display:block">
                     @foreach ($techsector->techniches as $techniche)
-                    <div class="row border-bottom">
+                    <div class="row border-top">
                         <div onclick="toggleAnswers(this)" style = 'width:30px ; background: #323E48'>
                             <i  class="fa-solid fa-angle-right"></i>
                        </div>
