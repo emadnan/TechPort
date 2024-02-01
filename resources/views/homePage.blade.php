@@ -1376,21 +1376,22 @@
         <!-- <div class="faq-container w-100 m-0"> -->
 
 @foreach ($techs as $tech)
+<div class="container">
     <div class="row">
         <div class="col-md-1 border border-dark pt-3"></div>
-        <div class="col-md-10 border border-dark pt-3">
+        <div class="col-md-11 border border-dark pt-3">
             Technology Area
             <div> <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
-            <div class="row" >
+            <div class="row" style = 'display: none;'>
                 <div class="col-md-1 border border-dark pt-3"></div>
-                <div class="col-md-10 border border-dark pt-3">
+                <div class="col-md-11 border border-dark pt-3">
                     Technology Sector
                     <div> <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
-                    <div class="row">
+                    <div class="row" style = 'display: none;'>
                         <div class="col-md-1 border border-dark pt-3"></div>
-                        <div class="col-md-10 border border-dark pt-3">
+                        <div class="col-md-11 border border-dark pt-3">
                             Technology Niche
                             <div> <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
@@ -1400,6 +1401,7 @@
             </div>
         </div>
     </div>
+</div>
 @endforeach
             <!-- parent tile -->
 <!-- @foreach ($techs as $tech )
