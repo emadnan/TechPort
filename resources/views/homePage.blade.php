@@ -299,7 +299,7 @@
             position: absolute;
             right: -1px;
             background: white;
-            width: 350px;
+            width:250px;
             margin-top: -3px;
             font-size: 14px;
         }
