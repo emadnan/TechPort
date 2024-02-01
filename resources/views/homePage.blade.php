@@ -1423,7 +1423,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container border border-dark" style="display:block">
+            <div class="container" style="display:block">
             @php
                 $sectorID = [];
             @endphp
@@ -1473,7 +1473,7 @@
                         </div>
                         </div>
                     </div>
-                    <div class="container border border-dark" style="display:block">
+                    <div class="container" style="display:block">
                     @foreach ($techsector->techniches as $techniche)
                     <div class="row border-bottom">
                         <div onclick="toggleAnswers(this)" style = 'width:30px ; background: #323E48'>
