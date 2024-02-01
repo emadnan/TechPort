@@ -1322,6 +1322,9 @@
         text-decoration: none;
         
     }
+    .col-md-1 {
+        width: 25px;
+    }
 
  
     </style>
