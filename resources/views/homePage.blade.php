@@ -1721,7 +1721,7 @@ var techs = @json($techs);
 //   console.log('Draw Chart');
   var options = {
     chartArea: { width: '50%' , left:50 , right:20},
-    width: 200,
+    width: 150,
     height: 150,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
