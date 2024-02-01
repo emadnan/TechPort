@@ -1380,20 +1380,17 @@
     <div class="row">
         <div class="col-md-1 border border-dark "></div>
         <div class="col-md-11 border border-dark ">
-            Technology Area
-            <div> <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+            <div> Technology Area <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
             <div class="row" style = 'display: none;'>
                 <div class="col-md-1 border border-dark"></div>
                 <div class="col-md-11 border border-dark">
-                    Technology Sector
-                    <div> <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                    <div>  Technology Sector <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
                     <div class="row" style = 'display: none;'>
                         <div class="col-md-1 border border-dark"></div>
                         <div class="col-md-11 border border-dark">
-                            Technology Niche
-                            <div> <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            <div>Technology Niche <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
                         </div>
                     </div>
