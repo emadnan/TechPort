@@ -1726,7 +1726,7 @@
 
             let x = element.nextElementSibling;
             console.log(x);
-            let y = x.firstChildElement;
+            let y = x.firstElementChild ;
             console.log(y);
             let answer = y.nextElementSibling;
             console.log(answer);
