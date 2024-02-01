@@ -1378,9 +1378,11 @@
 @foreach ($techs as $tech)
     <div class="row border border-dark">
         <div style = 'width:30px'></div>
-        <div class="border border-dark p-1">
+        <div class=" col border border-dark p-1">
+            <div style="display:flex">
             <div> Technology Area</div> 
             <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+            </div>
             </div>
             <div class="row" style = 'display: none;'>
                 <div class="col-md-1 border border-dark p-1"></div>
