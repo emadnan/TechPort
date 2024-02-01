@@ -1433,7 +1433,7 @@
                     <i  class="fa-solid fa-angle-right"></i>
                 </div>
                 <div class="col p-0">
-                    <div style="display:flex;  justify-content: space-between;">
+                    <div style="display:flex;  justify-content: space-between; align-items: center;">
                         <div class="pl-2"> Technology Sector</div> 
                         <div>
                             <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
@@ -1478,7 +1478,7 @@
                             <i  class="fa-solid fa-angle-right"></i>
                        </div>
                         <div class="col p-0">
-                            <div style="display:flex;  justify-content: space-between;">
+                            <div style="display:flex;  justify-content: space-between;  align-items: center;">
                                 <div class="pl-2"> Technology Niche</div> 
                                 <div>
                                     <img src="{{ asset('images/icon-black.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
