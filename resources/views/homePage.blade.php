@@ -1322,10 +1322,6 @@
         text-decoration: none;
         
     }
-    .col-md-1 {
-        width: 25px;
-    }
-
  
     </style>
 </head>
@@ -1381,18 +1377,18 @@
 @foreach ($techs as $tech)
 <div class="container">
     <div class="row">
-        <div class="col-md-1 border border-dark "></div>
-        <div class="col-md-11 border border-dark ">
+        <div class="border border-dark p-1 w-30 "></div>
+        <div class="col-md-11 border border-dark p-1">
             <div> Technology Area <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
             <div class="row" style = 'display: none;'>
-                <div class="col-md-1 border border-dark"></div>
-                <div class="col-md-11 border border-dark">
+                <div class="col-md-1 border border-dark p-1"></div>
+                <div class="col-md-11 border border-dark p-1">
                     <div>  Technology Sector <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
                     <div class="row" style = 'display: none;'>
-                        <div class="col-md-1 border border-dark"></div>
-                        <div class="col-md-11 border border-dark">
+                        <div class="col-md-1 border border-dark p-1"></div>
+                        <div class="col-md-11 border border-dark p-1">
                             <div>Technology Niche <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
                         </div>
