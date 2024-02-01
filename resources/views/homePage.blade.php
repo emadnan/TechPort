@@ -786,6 +786,9 @@
             margin-top:5px;
             margin-bottom: 1rem;
         }
+      .graph-pop .row{
+          flex-wrap: nowrap;
+      }
             .faq-subanswer {
 
                 padding-left: 0px;
@@ -945,7 +948,7 @@
         margin-top: 2px;
         width: 21px;
     }
-   .graph-pop {
+    .graph-pop {
             border: 1px solid rgba(6, 83, 134, 1);
             position: absolute;
             right: -1px;
@@ -963,6 +966,9 @@
             margin-top:5px;
             margin-bottom: 1rem;
         }
+      .graph-pop .row{
+          flex-wrap: nowrap;
+      }
 
         .faq-subanswer {
 
@@ -1143,7 +1149,9 @@
             margin-top:5px;
             margin-bottom: 1rem;
         }
-
+      .graph-pop .row{
+          flex-wrap: nowrap;
+      }
           .faq-subanswer {
 
               padding-left: 0px;
