@@ -1476,13 +1476,52 @@
                     <div class="container border border-dark" style="display:none">
                     @foreach ($techsector->techniches as $techniche)
                     <div class="row border-bottom">
-                        <div onclick="toggleAnswers(this)" style = 'width:30px'>
+                        <div onclick="toggleAnswers(this)" style = 'width:30px ; background: #323E48'>
                             <i  class="fa-solid fa-angle-right"></i>
                        </div>
                         <div class="col p-1">
                             <div style="display:flex;  justify-content: space-between;">
                                 <div> Technology Niche</div> 
-                                <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
+                                <div>
+                                    <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
+                                    <div class="graph-pop" style="display: none;  z-index:998;">
+                                    <div class="row m-0" style=" width:100%; background: #323E48">
+                                        <div class="col-md-9 px-2" style="color: white;">
+                                            <section>{{$techniche-> techniche}}
+                                            </section>
+                                        </div>
+                                        <div class="col-3 m-0 px-0"
+                                            style="color: white; padding-top:3px; padding-bottom:0px;">
+                                            <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
+                                                style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
+                                                onclick="hideimage(this)">
+                                        </div>
+                                    </div>
+                                    <section class="my-2 mx-2"
+                                        style="color:rgba(6, 83, 134, 1); font-weight:600;">Technology
+                                        Maturity
+                                        (TRL)</section>
+
+
+                                    <div class="row my-">
+                                        <div class="col-10">
+                                    <div id="columnchart_niche_{{$techniche->id}}" ></div>
+                                    {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"
+                                                class=" float-right my-0" width="100%"> --}}
+                                         </div>
+                                    </div>
+                                    <h5
+                                        style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px;">
+                                        Projects linked to this taxonomy</h5>
+                                    <button class="btn"
+                                        style="margin-left:10px;color:white; background: #323E48;"><a
+                                            style="color:white;" href="{{ route('searchProjectsByTechNiche', ['id' => $techniche->id]) }}">Find Linked
+                                            Projects</a></button>
+
+
+
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
