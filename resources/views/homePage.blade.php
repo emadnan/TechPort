@@ -1377,7 +1377,7 @@
 @foreach ($techs as $tech)
 <div class="container">
     <div class="row">
-        <div class="col-md-1 border border-dark p-1 "></div>
+        <div class="col-md-1"></div>
         <div class="col-md-11 border border-dark p-1">
             <div> Technology Area <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
                             onclick="showimage(this)"></div>
