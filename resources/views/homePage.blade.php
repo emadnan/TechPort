@@ -1722,7 +1722,7 @@ var techs = @json($techs);
   var options = {
     chartArea: { width: '70%' , left:50 , right:20},
     width: 200,
-    height: 200,
+    height: 150,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
     hAxis: {
