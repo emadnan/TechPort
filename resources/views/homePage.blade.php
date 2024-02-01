@@ -1387,7 +1387,7 @@
                 <div class="pl-2">{{$tech-> techarea}}</div> 
                 <div>
                     <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
-                    <div class="graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
+                    <div class="container graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>{{$tech-> techarea}}
