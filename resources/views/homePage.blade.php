@@ -1738,7 +1738,7 @@ var techs = @json($techs);
     title: 'Number of Projects',
     titleTextStyle: {
     color: '#0058a2',  // Text color
-    fontSize: 12,    // Font size
+    fontSize: 10,    // Font size
     bold:true,
     italic:false,    
     },
