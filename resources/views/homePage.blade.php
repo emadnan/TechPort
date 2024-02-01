@@ -1437,7 +1437,7 @@
                         <div class="pl-2">{{$techsector-> techsector}}</div> 
                         <div>
                             <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
-                            <div class="  graph-pop" style="display: none;  z-index:999; ">
+                            <div class="  graph-pop" style="display: none;  z-index:{{999 - $loop->index}}; ">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
                                     <section>{{$techsector->techsector}}
@@ -1482,7 +1482,7 @@
                                 <div class="pl-2">{{$techniche-> techniche}}</div> 
                                 <div>
                                     <img src="{{ asset('images/icon-black.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
-                                    <div class="graph-pop" style="display: none;  z-index:998;">
+                                    <div class="graph-pop" style="display: none;  z-index:{{998 - $loop->index}};">
                                     <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
                                             <section>{{$techniche-> techniche}}
