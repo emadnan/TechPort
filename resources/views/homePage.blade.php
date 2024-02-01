@@ -1382,7 +1382,7 @@
         <div onclick="toggleAnswers(this)" class="bg-primary"  style = 'width:30px;'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
-        <div class="col pt-2">
+        <div class="col p-0">
             <div style="display:flex;  justify-content: space-between;">
                 <div> Technology Area</div> 
                 <div>
