@@ -35,7 +35,7 @@ class TechReferredController extends Controller
         ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
         ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
         ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
-        ->where('id',$id)
+        ->where('ref_techreferred.id',$id)
         ->get();
         return response()->json(['data'=>$read]);
     }
@@ -58,16 +58,17 @@ class TechReferredController extends Controller
         $techreferred->id_techsector = $req->techsector;
         $techreferred->id_techniche = $req->techniche;
         $techreferred->save();
+        $latestID = $techreferred->id;
 
 
         if($techreferred)
         {
-            $latestID = techreferred::latest()->value('id');
+           
             $newRow = techreferred::select('techareas.techarea as area' , 'techsector.techsector as sector' , 'techniche.techniche as niche' , 'ref_techreferred.*')
             ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
             ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
             ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
-            ->where('id' , $latestID)
+            ->where('ref_techreferred.id' , $latestID)
             ->get();
             return response()->json(['message' => 'Technology Referred Added successfully' , 'newRow'=>$newRow]);
         }
@@ -105,7 +106,7 @@ class TechReferredController extends Controller
             ->join('techareas' , 'techareas.id' , '=' , 'ref_techreferred.id_techarea')
             ->join('techsector' , 'techsector.id' , '=' , 'ref_techreferred.id_techsector')
             ->join('techniche' , 'techniche.id' , '=' , 'ref_techreferred.id_techniche')
-            ->where('id', $id)
+            ->where('ref_techreferred.id', $id)
             ->get();
             if($update)
             {
