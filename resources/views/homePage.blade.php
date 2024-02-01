@@ -301,7 +301,7 @@
             background: white;
             width:250px;
             margin-top: -3px;
-            font-size: 12px;
+            font-size: 14px;
         }
         .graph-pop button{
             font-size: 12px;
