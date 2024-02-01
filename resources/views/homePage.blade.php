@@ -1376,25 +1376,22 @@
         <div class="faq-container w-100 m-0">
 
 @foreach ($techs as $tech)
-    <div class="row border p-3">
-        <div class="col-md-1 border p-3"> 
-
-        </div>
-        <div class="col-md-10 border p-3">
-        {{$tech-> techarea}}
-        <div class="row">
-        <div class="col-md-1 border"></div>
-        <div class="col-md-10 border">
+    <div class="row border border-dark p-3">
+        <div class="col-md-1 border border-dark p-3"></div>
+        <div class="col-md-10 border border-dark p-3">
+        <div class="row p-3">
+        <div class="col-md-1 border border-dark p-3"></div>
+        <div class="col-md-10 border border-dark p-3">
             <div class="row">
-            <div class="col-md-1 border p-3"></div>
-            <div class="col-md-10 border p-3"></div>
-            <div class="col-md-1 border p-3"></div>
+            <div class="col-md-1 border border-dark p-3"></div>
+            <div class="col-md-10 border border-dark p-3"></div>
+            <div class="col-md-1 border border-dark p-3"></div>
             </div>
         </div>
-        <div class="col-md-1 border"></div>
+        <div class="col-md-1 border border-dark p-3"></div>
         </div>
         </div>
-        <div class="col-md-1 border p-3">
+        <div class="col-md-1 border border-dark p-3">
 
         </div>
     </div>
