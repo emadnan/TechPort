@@ -1383,7 +1383,7 @@
                 <div> Technology Area</div> 
                 <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
             </div>
-            <div class="container" style="none">
+            <div class="container" style="display:none">
             @php
                 $sectorID = [];
             @endphp
@@ -1397,7 +1397,7 @@
                         <div> Technology Sector</div> 
                         <div><img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)"></div>
                     </div>
-                    <div class="container">
+                    <div class="container" style="display:none">
                     <div class="row border border-dark">
                         <div style = 'width:30px'></div>
                         <div class="col border border-dark p-1">
