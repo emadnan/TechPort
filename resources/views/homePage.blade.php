@@ -1381,7 +1381,7 @@
 
 @foreach ($techs as $tech)
     <div class="row border-bottom">
-        <div onclick="toggleAnswers(this)" class="bg-#065386"  style = 'width:30px;'>
+        <div onclick="toggleAnswers(this)"  style = 'width:30px; background-color: #065386 ;'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
         <div class="col p-0">
