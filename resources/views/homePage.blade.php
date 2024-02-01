@@ -1412,7 +1412,7 @@
                             <div class="row m-0">
                                
                                 <div class="col" >
-                                    <div class="column_chart" id="columnchart_area_{{$tech->id}}" ></div>
+                                    <div id="columnchart_area_{{$tech->id}}" ></div>
                                     {{-- <img style=" margin:30px" src="{{ asset('images/graph.png') }}"width="100%"> --}}
                                 </div>
                             </div>
