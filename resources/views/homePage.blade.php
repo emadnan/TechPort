@@ -300,7 +300,7 @@
             right: -1px;
             background: white;
             width: 350px;
-            margin-top: -4px;
+            margin-top: -3px;
             font-size: 14px;
         }
         .graph-pop button{
@@ -359,7 +359,7 @@
 
             .fa-angle-down {
                 color: white;
-                padding-left: 8px;
+                padding-left:5px;
                 font-size: 24px;
                 margin-bottom: 10px;
                 margin-top: 10px;
@@ -1440,10 +1440,10 @@
                             <div class="  graph-pop" style="display: none;  z-index:999; ">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <section>{{$techsector-> techsector}}
+                                    <section>{{$techsector->techsector}}
                                     </section>
                                 </div>
-                                <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
+                                <div class="col-3 m-0 px-0" style="color: white; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
                                         style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
                                         onclick="hideimage(this)">
