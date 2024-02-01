@@ -299,10 +299,10 @@
         .graph-pop {
             border: 1px solid rgba(6, 83, 134, 1);
             position: absolute;
-            right: 0%;
+            right: -1px;
             background: white;
             width: 350px;
-            margin-top: -44px;
+            margin-top: -4px;
             font-size: 14px;
         }
         .graph-pop button{
@@ -1382,7 +1382,7 @@
         <div onclick="toggleAnswers(this)"  style = 'width:30px'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
-        <div class="col p-1">
+        <div class="col pt-2">
             <div style="display:flex;  justify-content: space-between;">
                 <div> Technology Area</div> 
                 <div>
