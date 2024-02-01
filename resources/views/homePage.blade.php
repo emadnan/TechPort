@@ -353,8 +353,6 @@
                 color: white;
                 padding-left: 10px;
                 font-size: 24px;
-                margin-bottom: 10px;
-                margin-top: 10px;
             }
 
             .fa-angle-down {
