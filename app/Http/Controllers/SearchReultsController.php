@@ -21,7 +21,7 @@ class SearchReultsController extends Controller
     $projOrgs = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles' , 'project_target')
     ->get();
     
-    $allTrls = trl::with('projects.trlactual')->get()->orderBy('trllevel' , 'ASC');
+    $allTrls = trl::with('projects.trlactual')->get();
 
 
         $count = $projOrgs->unique('id')->count();
