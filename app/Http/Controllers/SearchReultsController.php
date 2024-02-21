@@ -31,7 +31,7 @@ class SearchReultsController extends Controller
         
         return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        // return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
     }
 
     public function searchProjects(Request $req)
