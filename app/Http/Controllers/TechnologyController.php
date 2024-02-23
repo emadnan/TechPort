@@ -42,9 +42,9 @@ class TechnologyController extends Controller
             'note'=> 'nullable',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        // }
 
         // $technology = new technology;
         // $technology->technology = $req->technology;
