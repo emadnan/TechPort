@@ -53,6 +53,8 @@ class TechnologyController extends Controller
         $technology->save();
         $latestID = $technology->id;
 
+        return response()->json($latestIdDm);
+
         if($technology)
         {
             $eqRow = DB::table('technologies')->where('id', $latestID)->get();
