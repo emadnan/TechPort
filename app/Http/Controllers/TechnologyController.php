@@ -38,32 +38,31 @@ class TechnologyController extends Controller
 
         $validator = Validator::make($req->all(),[
             'technology'=> 'required',
-            'id_dm'=> 'required',
             'note'=> 'nullable',
         ]);
 
-        // if ($validator->fails()) {
-        //     return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
-        // }
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
+        }
 
-        // $technology = new technology;
-        // $technology->technology = $req->technology;
-        // $technology->id_dm = $latestIdDm + 1;
-        // $technology->note = $req->note;
-        // $technology->save();
-        // $latestID = $technology->id;
+        $technology = new technology;
+        $technology->technology = $req->technology;
+        $technology->id_dm = $latestIdDm + 1;
+        $technology->note = $req->note;
+        $technology->save();
+        $latestID = $technology->id;
 
-        return response()->json(['id_dm' => $latestIdDm]);
+        return response()->json($latestIdDm);
 
-        // if($technology)
-        // {
-        //     $eqRow = DB::table('technologies')->where('id', $latestID)->get();
-        //     return response()->json(['message' => 'Technology  Added successfully' , 'eqRow'=>$eqRow]);
-        // }
-        // else 
-        // {
-        //     return response()->json(['message' => 'Technology  Was Not Added successfully']);
-        // }
+        if($technology)
+        {
+            $eqRow = DB::table('technologies')->where('id', $latestID)->get();
+            return response()->json(['message' => 'Technology  Added successfully' , 'eqRow'=>$eqRow]);
+        }
+        else 
+        {
+            return response()->json(['message' => 'Technology  Was Not Added successfully']);
+        }
     }
 
     public function updatePage(string $id)
