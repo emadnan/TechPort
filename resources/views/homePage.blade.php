@@ -1629,7 +1629,6 @@
 
     $(document).ready(function(){
       $('#filterTax').on('keyup' , function(){
-        console.log($(this).val().toLowerCase());
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
           $('.tech_area').filter(function(){
