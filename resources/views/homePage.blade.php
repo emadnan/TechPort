@@ -1378,7 +1378,7 @@
         <div class="container border">
 
 @foreach ($techs as $tech)
-    <div class="row border-top ">
+    <div class="row border-top tech_area ">
         <div onclick="toggleAnswers(this)"  style = 'width:30px; background-color: #065386 ;'>
              <i class="fa-solid fa-angle-right"></i>
         </div>
@@ -1632,12 +1632,12 @@
         console.log($(this).val().toLowerCase());
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
-          $('.faq-question').filter(function(){
+          $('.tech_area').filter(function(){
            $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
            $('.divider').hide();
         });
   
-  if ($('.faq-question:visible').length > 1) {
+  if ($('.tech_area:visible').length > 1) {
             $('.divider').show();
         } else {
             $('.divider').hide();
