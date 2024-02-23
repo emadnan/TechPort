@@ -52,7 +52,6 @@ class TechnologyController extends Controller
         $technology->save();
         $latestID = $technology->id;
 
-        return response()->json($latestIdDm);
 
         if($technology)
         {
