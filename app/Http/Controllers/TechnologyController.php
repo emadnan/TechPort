@@ -53,17 +53,17 @@ class TechnologyController extends Controller
         $technology->save();
         $latestID = $technology->id;
 
-        return response()->json($latestIdDm);
+        return response()->json(['id_dm' => $latestIdDm]);
 
-        if($technology)
-        {
-            $eqRow = DB::table('technologies')->where('id', $latestID)->get();
-            return response()->json(['message' => 'Technology  Added successfully' , 'eqRow'=>$eqRow]);
-        }
-        else 
-        {
-            return response()->json(['message' => 'Technology  Was Not Added successfully']);
-        }
+        // if($technology)
+        // {
+        //     $eqRow = DB::table('technologies')->where('id', $latestID)->get();
+        //     return response()->json(['message' => 'Technology  Added successfully' , 'eqRow'=>$eqRow]);
+        // }
+        // else 
+        // {
+        //     return response()->json(['message' => 'Technology  Was Not Added successfully']);
+        // }
     }
 
     public function updatePage(string $id)
