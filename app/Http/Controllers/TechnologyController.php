@@ -46,12 +46,12 @@ class TechnologyController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $technology = new technology;
-        $technology->technology = $req->technology;
-        $technology->id_dm = $latestIdDm + 1;
-        $technology->note = $req->note;
-        $technology->save();
-        $latestID = $technology->id;
+        // $technology = new technology;
+        // $technology->technology = $req->technology;
+        // $technology->id_dm = $latestIdDm + 1;
+        // $technology->note = $req->note;
+        // $technology->save();
+        // $latestID = $technology->id;
 
         return response()->json(['id_dm' => $latestIdDm]);
 
