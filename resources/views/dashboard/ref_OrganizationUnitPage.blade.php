@@ -302,7 +302,7 @@
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
                 '<p>'+ '<span  style="font-weight:700;">Organization : </span>'
-                +item.company+'</p>'+
+                +item.type+'</p>'+
                 '<span style="font-weight:700;">Project: </span>'
                 +item.projectName+ '</p>';
                 data.append(descp);
