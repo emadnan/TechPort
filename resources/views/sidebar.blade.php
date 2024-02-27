@@ -70,12 +70,7 @@
                             <p>Projects</p>
                             </a>
                         </li>
-                        <li id='menu_technologies' class="nav-item">
-                            <a href="{{route('technologyPage')}}" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>Technologies</p>
-                            </a>
-                        </li>
+                        
                         <li id='menu_projecttechnology' class="nav-item">
                             <a href="{{route('projectTechnologyPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
@@ -202,6 +197,12 @@
                     </p>
                     </a>
                     <ul class="nav nav-treeview">
+                         <li id='menu_technologies' class="nav-item">
+                            <a href="{{route('technologyPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Technologies</p>
+                            </a>
+                        </li>
                         <li id='menu_techarea' class="nav-item">
                             <a href="{{route('techAreaPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
@@ -263,7 +264,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <div class="divider"></div>
 
                 <!-- <li class="nav-item">
