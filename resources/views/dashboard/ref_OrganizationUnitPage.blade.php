@@ -19,12 +19,12 @@
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="organization" class="col-md-4 col-form-label text-md-end">{{ __('Organization') }}</label>
+                    <label for="organization" class="col-md-4 col-form-label text-md-end">{{ __('Organization Unit') }}</label>
                     <div class="col-md-6">
                         <select id="organization" type="text" class="form-control @error('organization') is-invalid @enderror" name="organization" value= "{{ old ('organization') }}" autocomplete="organization" autofocus>
                             <option selected value="">SELECT</option>
                             @foreach ($organizations as $organization)
-                            <option value="{{$organization ->id}}">{{$organization ->releventcompany}} </option>
+                            <option value="{{$organization ->id}}">{{$organization ->type}} </option>
                             @endforeach
                         </select>
                             <span class="text-danger small" id="organizationError"></span>
@@ -88,14 +88,14 @@
                   <div class="table-responsive">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Organization</th>
+                            <th class="py-1">Organization Unit</th>
                             <th class="py-1">Project</th>
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
                             @foreach ($ref_orgs as $ref_org )
                             <tr id="row_{{$ref_org-> id}}">
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$ref_org -> company}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$ref_org -> type}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$ref_org -> projectName}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$ref_org-> id}}"> <span style="color:rgb(48, 47, 47)6, 55, 55)6, 55, 55)6, 55, 55);">|</span> </i>
@@ -211,7 +211,7 @@
                       $.each(response.updateEQ , function(index , item){
                           var row1 = 
                           '<tr id="row_'+item.id+'">'+
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.company + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.projectName + '</td>'+ 
                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -268,7 +268,7 @@
                       var data1 = $('#data-table tbody');
                $.each(response.eqRow , function(index , item){
                    var row = '<tr id="row_'+item.id+'">'+
-                    '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.company + '</td>'+ 
+                    '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.projectName + '</td>'+ 
                                '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
