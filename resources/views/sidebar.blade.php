@@ -59,7 +59,7 @@
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                       Trajectories
+                       Projects Name
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
