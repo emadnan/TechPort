@@ -15,7 +15,7 @@ class Ref_OrganizationUnitController extends Controller
        
         $projects = project::get();
         $organizations = organizationunit::get();
-        $ref_orgs = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.releventcompany as company' , 'ref_organizationunit.*' )
+        $ref_orgs = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.type as type' , 'ref_organizationunit.*' )
         ->join('projects' , 'projects.id' , '=' , 'ref_organizationunit.id_project')
         ->join('organizationunit' , 'organizationunit.id' , '=' , 'ref_organizationunit.id_organizationunit')
         ->get();
@@ -24,7 +24,7 @@ class Ref_OrganizationUnitController extends Controller
 
     public function read (string $id)   
     {
-        $ref_org = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.releventcompany as company' , 'ref_organizationunit.*' )
+        $ref_org = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.type as type' , 'ref_organizationunit.*' )
         ->join('projects' , 'projects.id' , '=' , 'ref_organizationunit.id_project')
         ->join('organizationunit' , 'organizationunit.id' , '=' , 'ref_organizationunit.id_organizationunit')
         ->where('ref_organizationunit.id',$id)
@@ -52,7 +52,7 @@ class Ref_OrganizationUnitController extends Controller
         if($Create)
         {
             $latestID = ref_organizationunit::latest()->value('id');
-            $ref_org = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.releventcompany as company' , 'ref_organizationunit.*' )
+            $ref_org = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.type as type' , 'ref_organizationunit.*' )
             ->join('projects' , 'projects.id' , '=' , 'ref_organizationunit.id_project')
             ->join('organizationunit' , 'organizationunit.id' , '=' , 'ref_organizationunit.id_organizationunit')
             ->where('ref_organizationunit.id',$latestID)
@@ -91,7 +91,7 @@ class Ref_OrganizationUnitController extends Controller
 
         if($Update)
         {
-            $ref_org = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.releventcompany as company' , 'ref_organizationunit.*' )
+            $ref_org = ref_organizationunit::select('projects.name as projectName' , 'organizationunit.type as type' , 'ref_organizationunit.*' )
             ->join('projects' , 'projects.id' , '=' , 'ref_organizationunit.id_project')
             ->join('organizationunit' , 'organizationunit.id' , '=' , 'ref_organizationunit.id_organizationunit')
             ->where('ref_organizationunit.id',$id)
