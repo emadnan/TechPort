@@ -100,6 +100,15 @@
                             <p>Found Sources</p>
                             </a>
                         </li>
+                        <li id='menu_business' class="nav-item ">
+                            <a href="{{ route('businessArea') }}" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Business Areas
+
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             <div class="divider"></div>
@@ -138,6 +147,35 @@
                             <p>Legal Entities</p>
                             </a>
                         </li>
+                        <li  id='menu_orgtypes' class="nav-item ">
+                            <a href="{{ route('organizationTypePage') }}" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Organization Types </p>
+                            </a>
+                        </li>
+                        <li id='menu_workingOrganizations' class="nav-item">
+                            <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                            Working Organizations
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_organzationUnits' class="nav-item">
+                            <a href="{{route('organizationUnitPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>
+                             Organization Units
+                            </p>
+                            </a>
+                        </li>
+                        <li id='menu_refOrganizationUnits' class="nav-item">
+                            <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Ref Organization Units</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
@@ -153,15 +191,7 @@
 
             <div class="divider"></div>
 
-                <li  id='menu_orgtypes' class="nav-item ">
-                  <a href="{{ route('organizationTypePage') }}" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                        Organization Types </p>
-                  </a>
-              </li>
-
-            <div class="divider"></div>
+                
 
               <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -202,19 +232,17 @@
                             </p>
                             </a>
                         </li>
+                        <li  id='menu_trl' class="nav-item ">
+                            <a href="{{ route('trlPage') }}" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                Technology Readiness Level (TRL)</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
-
-            <div class="divider"></div>
-
-                <li  id='menu_trl' class="nav-item ">
-                    <a href="{{ route('trlPage') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                         Technology Readiness Level (TRL)</p>
-                    </a>
-                </li>
-
+              
             <div class="divider"></div>
 
                 <li class="nav-item">
@@ -226,14 +254,7 @@
                     </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li id='menu_workingOrganizations' class="nav-item">
-                            <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>
-                            Working Organizations
-                            </p>
-                            </a>
-                        </li>
+                       
                         <li id='menu_projectOrganizations' class="nav-item">
                             <a href="{{route('projectOrganizationPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
@@ -243,21 +264,7 @@
                     </ul>
                 </li>
 
-            <div class="divider"></div>
-
-                <li id='menu_business' class="nav-item ">
-                    <a href="{{ route('businessArea') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Business Areas
-
-                        </p>
-                    </a>
-                </li>
-
-            <div class="divider"></div>
-
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
@@ -266,24 +273,11 @@
                     </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li id='menu_organzationUnits' class="nav-item">
-                            <a href="{{route('organizationUnitPage')}}" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>
-                             Organization Units
-                            </p>
-                            </a>
-                        </li>
-                        <li id='menu_refOrganizationUnits' class="nav-item">
-                            <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>Ref Organization Units</p>
-                            </a>
-                        </li>
+                       
                     </ul>
                 </li>
 
-            <div class="divider"></div>
+            <div class="divider"></div> -->
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -320,14 +314,7 @@
                   </a>
               </li>
 
-                <li  id='menu_requirements' class="nav-item">
-                <a href="{{route('requirementPage')}}" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                       Requirements
-                    </p>
-                </a>
-               </li>
+                
 
               <li  id='menu_priorities' class="nav-item ">
                   <a href="{{ route('priorityPage') }}" class="nav-link">
@@ -337,15 +324,7 @@
                   </a>
                 </li>
 
-                <li id='menu_business' class="nav-item ">
-                    <a href="{{ route('businessArea') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Business Areas
-
-                        </p>
-                    </a>
-                </li>
+                
               
                 <li  id='menu_refEquipments' class="nav-item">
                    <a href="{{route('ref_EquipmentPage')}}" class="nav-link">
@@ -359,6 +338,15 @@
             </li>
             
             <div class="divider"></div>
+
+            <li  id='menu_requirements' class="nav-item">
+                <a href="{{route('requirementPage')}}" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                       Requirements
+                    </p>
+                </a>
+               </li>
 
             </ul>
         </nav>
