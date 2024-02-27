@@ -81,7 +81,7 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Reuirements') }}</b>
+                    <b>{{ __('Requirements') }}</b>
                     <div class="float-right">
                         <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Requirement</button>
                     </div>
