@@ -263,6 +263,8 @@
                         </li>
                     </ul>
                 </li>
+                
+                <div class="divider"></div>
 
                 <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
