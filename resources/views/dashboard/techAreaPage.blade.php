@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <div  class="row mb-3">
+                <!-- <div  class="row mb-3">
                     <label for="id_techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
                     <div id="techSectorDropDown" class="col-md-6">
                         <select id="id_techsector" type="text" class="form-control @error('id_techsector') is-invalid @enderror" name="id_techsector" value="{{ old('id_techsector') }}" autocomplete="id_techsector" autofocus required>
@@ -62,7 +62,7 @@
                     <div class="col-md-2 pt-1">
                        <button  class="btn btn-primary btn-sm addMoreSector">Add</button>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
