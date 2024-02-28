@@ -288,6 +288,7 @@ $(document).ready(function(){
     $(window).on('load', function() {
             $('#menu_projects').addClass('bg-primary');
             $('#menu_projects').parent().parent().children('a:first-child').addClass('bg-primary');
+            $('#menu_projects').parent().parent().addClass('menu-is-opening menu-open');
     });
         $.ajaxSetup({
                 headers: { 
