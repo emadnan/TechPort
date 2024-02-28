@@ -232,6 +232,8 @@ $('#form').submit(function(){
                 value: selectedValues.join(',')
             }).appendTo('#form');
 
+            // Submit the form
+            this.submit();
             var formData = $(this).serialize();
             console.log(formData);
             var inpID = $('#id').val();
