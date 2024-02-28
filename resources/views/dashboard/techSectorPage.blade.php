@@ -59,8 +59,8 @@
                             <option value="{{$niche-> id}}">{{$niche->techniche}}</option>
                             @endforeach
                         </select>
-                        <button>Add More</button>
                     </div>
+                    <button>Add More</button>
                 </div>
                 
                 <div class="row mb-3">
