@@ -50,7 +50,7 @@
                 </div>
 
                 <div  class="row mb-3">
-                    <label for="id_techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
+                    <label for="id_techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Sector') }}</label>
                     <div id="techSectorDropDown" class="col-md-6">
                         <select id="id_techsector" type="text" class="form-control @error('id_techsector') is-invalid @enderror" name="id_techsector" value="{{ old('id_techsector') }}" autocomplete="id_techsector" autofocus required>
                             <option selected value="">SELECT</option>
@@ -206,7 +206,7 @@ $('body').on('click' , '#update-btn' , function(){
     $('#techSectoreDropDown').empty();
     $('#techSectorDropDown').append(newNiche);
     $("input[name='selected_techsector']").remove();
-    
+
     var rowID = $(this).data('id');
     var url = 'techAreaUpdatePage/'+rowID;
             $.ajax({
