@@ -187,6 +187,7 @@
     $("#otmeError").text('');
     $("#noteError").text('');
     $('#techNicheDropDown').empty();
+    $('#techNicheDropDown').append(newNiche);
     }) // create click event end
 
 
