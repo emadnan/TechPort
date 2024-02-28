@@ -147,6 +147,7 @@ class TechSectorController extends Controller
             $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
             for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
                 $newTechReferreds[$i]->id_techniche = $selectedTechNiches[$i];
+                $newTechReferreds[$i]->save();
             }
             
         }
@@ -169,6 +170,7 @@ class TechSectorController extends Controller
             $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
             for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
                 $newTechReferreds[$i]->id_techniche = $selectedTechnicheArray[$i];
+                $newTechReferreds[$i]->save();
             }
         }
 
