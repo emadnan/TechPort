@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="col-md-2 p-0">
-                       <button class="btn btn-primary btn-sm" >+</button>
+                       <button id="addMoreNiche" class="btn btn-primary btn-sm">+</button>
                     </div>
                 </div>
                 
@@ -163,6 +163,22 @@
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
                  }
             });
+
+    var newNiche = '<div class="col-md-6">'+
+                        '<select id="id_techniche" type="text" class="form-control @error('id_techniche') is-invalid @enderror" name="id_techniche" value="{{ old('id_techniche') }}" autocomplete="id_techniche" autofocus required>'+
+                            '<option selected value="">SELECT</option>'+
+                           ' @foreach ($niches as $niche )'+
+                            '<option value="{{$niche-> id}}">{{$niche->techniche}}</option>'+
+                            '@endforeach'+
+                        '</select>'+
+                    '</div>'+
+                    '<div class="col-md-2 p-0">'+
+                     '  <button id="addMoreNiche" class="btn btn-primary btn-sm">+</button>'+
+                   ' </div>';
+    
+    $('#addMoreNiche').click(function(){
+        $(this).hide();
+    });
 
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
