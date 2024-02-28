@@ -132,10 +132,11 @@ class TechSectorController extends Controller
         if(is_array($selectedTechNiches)) {
             if(count($selectedTechNiches) < count($techreferreds)) {
                 $count = count($techreferreds) - count($selectedTechNiches);
-                for ($i=0 ; $i<=$count ; $i++) {
+                for ($i=0 ; $i<$count ; $i++) {
                     $techreferreds[$i]->delete();
                 }                
-            }
+           return response()->json(compact('count' , 'techreferreds' , 'selectedTechNiches'));                
+        }
             // else if(count($selectedTechNiches) > count($techreferreds))
             // for($i=0 ; $i<=count($techreferreds) ; $i++) {
             //     $techreferred[$i]->id_techniche = $selectedTechNiches[$i];
@@ -145,9 +146,10 @@ class TechSectorController extends Controller
             $selectedTechnicheArray = explode(',', $selectedTechNiches);
             if(count($selectedTechnicheArray) < count($techreferreds)) {
                 $count = count($techreferreds) - count($selectedTechnicheArray);
-                for ($i=0 ; $i<=$count ; $i++) {
+                for ($i=0 ; $i<$count ; $i++) {
                     $techreferreds[$i]->delete();
-                }                
+                }
+                return response()->json(compact('count' , 'techreferreds' , 'selectedTechnicheArray'));                
             }
         }
 
