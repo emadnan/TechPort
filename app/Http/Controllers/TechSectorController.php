@@ -40,7 +40,7 @@ class TechSectorController extends Controller
         $validator = Validator::make($req->all(),[
             'techsector'=> 'required',
             'techsectordescription'=> 'required',
-            'id_technice'=> 'required',
+            'id_techniche'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
