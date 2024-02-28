@@ -62,7 +62,7 @@ class TechSectorController extends Controller
         $techSector->save();
         // $techArea->techsectors()->create();
 
-        $selectedTechNiches = $req->selected_techniche;
+        $selectedTechNiches = $req->input('selected_techniche');
         foreach($selectedTechNiches as $selectedTechNiche)
         {
             $techreferred = new techreferred ;
