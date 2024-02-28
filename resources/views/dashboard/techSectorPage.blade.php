@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="col-md-2 ">
-                       <button class = "btn btn-primary btn-sm fs-5" >Add More</button>
+                       <button class = "btn btn-primary btn-sm small" >Add More</button>
                     </div>
                 </div>
                 
