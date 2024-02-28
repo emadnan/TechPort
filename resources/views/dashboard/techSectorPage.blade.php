@@ -179,7 +179,7 @@
     $('#addMoreNiche').click(function(){
         $(this).hide();
         var data = $('techNicheDropDown');
-        console.log(newNiche);
+        console.log(data);
         data.append(newNiche);
         // $('techNicheDropDown').append(newNiche);
     });
