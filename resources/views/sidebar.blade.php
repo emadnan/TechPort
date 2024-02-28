@@ -152,7 +152,7 @@
                         <li id='menu_workingOrganizations' class="nav-item">
                             <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
-                            <p>
+                            <p style="font-size:15px">
                             Working Organizations
                             </p>
                             </a>
