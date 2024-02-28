@@ -6,18 +6,22 @@ use App\Models\project;
 use App\Models\techarea;
 use App\Models\techreferred;
 use App\Models\techsector;
+use App\Models\techniche;
 use App\Models\trl;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
+
 class TechSectorController extends Controller
 {
     public function techSectorPage ()
     {
         $sectors = techsector::get();
         $areas = techarea::get();
+        $niches = techniche::get();
 
-        return view('dashboard.techSectorPage' , compact('areas' , 'sectors'));
+        return view('dashboard.techSectorPage' , compact('areas' , 'sectors' , 'niches'));
     }
 
     public function read (string $id)   
