@@ -60,8 +60,8 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-2 p-0">
-                       <button  class="btn btn-primary btn-sm addMoreNiche">+</button>
+                    <div class="col-md-2 pt-1">
+                       <button  class="btn btn-primary btn-sm addMoreNiche">Add</button>
                     </div>
                 </div>
                 
