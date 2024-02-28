@@ -221,7 +221,7 @@ $('#form').submit(function(){
           
             event.preventDefault();
             var selectedValues = [];
-            $('select[name="id_techniche[]"] option:selected').each(function() {
+            $('select[name="id_techniche"] option:selected').each(function() {
                 selectedValues.push($(this).val());
             });
             console.log(selectedValues);
