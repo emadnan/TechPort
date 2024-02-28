@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label for="id_techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
+                    <label for="id_techniche" class="col-md-3 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
                     <div class="col-md-6">
                         <select id="id_techniche" type="text" class="form-control @error('id_techniche') is-invalid @enderror" name="id_techniche" value="{{ old('id_techniche') }}" autocomplete="id_techniche" autofocus required>
                             <option selected value="">SELECT</option>
@@ -60,7 +60,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                        <button >Add More</button>
                     </div>
                 </div>
