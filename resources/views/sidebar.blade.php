@@ -63,7 +63,7 @@
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview ml-3">
                         <li id='menu_projects' class="nav-item">
                             <a href="{{route('projectForm')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
