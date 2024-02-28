@@ -220,6 +220,18 @@ $('body').on('click' , '#update-btn' , function(){
 $('#form').submit(function(){
           
             event.preventDefault();
+            var selectedValues = [];
+            $('select[name="id_techniche[]"] option:selected').each(function() {
+                selectedValues.push($(this).val());
+            });
+
+            // Append the array of selected values to a hidden input field
+            $('<input>').attr({
+                type: 'hidden',
+                name: 'selected_techniche',
+                value: selectedValues.join(',')
+            }).appendTo('#form');
+
             var formData = $(this).serialize();
             console.log(formData);
             var inpID = $('#id').val();
@@ -228,6 +240,7 @@ $('#form').submit(function(){
             $("#id_dmError").text('');
             $("#otmeError").text('');
             $("#noteError").text('');
+
             if(inpID)
             {
                 $.ajax({
