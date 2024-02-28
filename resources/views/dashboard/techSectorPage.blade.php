@@ -164,7 +164,7 @@
                  }
             });
 
-    var newNiche ='<select id="id_techniche" type="text" class="form-control @error('id_techniche') is-invalid @enderror" name="id_techniche" value="{{ old('id_techniche') }}" autocomplete="id_techniche" autofocus required>'+
+    var newNiche ='<select id="id_techniche" type="text" class="mt-2 form-control @error('id_techniche') is-invalid @enderror" name="id_techniche" value="{{ old('id_techniche') }}" autocomplete="id_techniche" autofocus required>'+
                             '<option selected value="">SELECT</option>'+
                            ' @foreach ($niches as $niche )'+
                             '<option value="{{$niche-> id}}">{{$niche->techniche}}</option>'+
