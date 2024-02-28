@@ -61,6 +61,10 @@
                         </select>
                     </div>
                 </div>
+
+                <div>
+                    <button>Add More</button>
+                </div>
                 
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
