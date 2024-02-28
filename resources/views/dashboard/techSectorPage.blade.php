@@ -188,7 +188,7 @@
     $("#noteError").text('');
     $('#techNicheDropDown').empty();
     $('#techNicheDropDown').append(newNiche);
-    $('#selected_niches').val('');
+    $("input[name='selected_techniche']").remove();
     }) // create click event end
 
 
@@ -204,7 +204,7 @@ $('body').on('click' , '#update-btn' , function(){
     $("#noteError").text('');
     $('#techNicheDropDown').empty();
     $('#techNicheDropDown').append(newNiche);
-    $('#selected_niches').val('');
+    $("input[name='selected_techniche']").remove();
     var rowID = $(this).data('id');
     var url = 'techSectorUpdatePage/'+rowID;
             $.ajax({
@@ -236,7 +236,6 @@ $('#form').submit(function(){
                 type: 'hidden',
                 name: 'selected_techniche',
                 value: selectedValues
-                id: 'selected_niches'
             }).appendTo('#form');
 
             var formData = $(this).serialize();
