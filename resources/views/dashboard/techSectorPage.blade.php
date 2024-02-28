@@ -178,7 +178,10 @@
     
     $('#addMoreNiche').click(function(){
         $(this).hide();
-        $('techNicheDropDown').append(newNiche);
+        var data = $('techNicheDropDown');
+        console.log(newNiche);
+        data.append(newNiche);
+        // $('techNicheDropDown').append(newNiche);
     });
 
     $('#add-btn').click(function(){
