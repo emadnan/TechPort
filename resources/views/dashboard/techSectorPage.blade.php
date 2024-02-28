@@ -60,7 +60,9 @@
                             @endforeach
                         </select>
                     </div>
-                    <button>Add More</button>
+                    <div class="col-md-2">
+                       <button >Add More</button>
+                    </div>
                 </div>
                 
                 <div class="row mb-3">
