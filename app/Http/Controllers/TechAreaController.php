@@ -17,9 +17,9 @@ class TechAreaController extends Controller
 
     public function techAreaPage ()
     {
-        $area = DB::table('techareas')->get();
+        $areas = techareas::get();
         $sectors = techsector::get();
-        return view('dashboard.techAreaPage' , compact('area' , 'sectors'));
+        return view('dashboard.techAreaPage' , compact('areas' , 'sectors'));
     }
 
     public function read (string $id)   
