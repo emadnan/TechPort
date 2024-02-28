@@ -177,7 +177,7 @@
                    ' </div>';
     
     $('#addMoreNiche').click(function(){
-        // $(this).hide();
+        $(this).hide();
         var data = $('#techNicheDropDown');
         console.log(data);
         data.append(newNiche);
