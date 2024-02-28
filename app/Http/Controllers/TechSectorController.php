@@ -119,13 +119,13 @@ class TechSectorController extends Controller
             return response()->json(['errors' => $validator->errors(), 'oldInput' => $req->all()]);
         }
 
-        // $Update = DB::table('techsector')->where('id',$id)->update([
-        //     'techsector'=> $req->techsector,
-        //     'techsectordescription'=> $req->techsectordescription,
-        //     'id_dm'=> $req->id_dm,
-        //     'otme'=> $req->otme,
-        //     'note'=> $req->note,
-        // ]);
+        $Update = DB::table('techsector')->where('id',$id)->update([
+            'techsector'=> $req->techsector,
+            'techsectordescription'=> $req->techsectordescription,
+            'id_dm'=> $req->id_dm,
+            'otme'=> $req->otme,
+            'note'=> $req->note,
+        ]);
 
         $selectedTechNiches = $req->selected_techniche;
         $techreferreds = techreferred::where('id_techsector' , $id)->get();
@@ -135,12 +135,20 @@ class TechSectorController extends Controller
                 for ($i=0 ; $i<$count ; $i++) {
                     $techreferreds[$i]->delete();
                 }                
-           return response()->json(compact('count' , 'techreferreds' , 'selectedTechNiches'));                
-        }
-            // else if(count($selectedTechNiches) > count($techreferreds))
-            // for($i=0 ; $i<=count($techreferreds) ; $i++) {
-            //     $techreferred[$i]->id_techniche = $selectedTechNiches[$i];
-            // }
+            }
+            else if (count($selectedTechNiches) > count($techreferreds)) {
+                $count = count($selectedTechNiches) - count($techreferreds);
+                for($i=0 ; $i<$count ; $i++) {
+                    $techreferred = new techreferred;
+                    $techreferred -> id_techsector = $id;
+                    $techreferred->save();
+                }
+            }
+            $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
+            for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
+                $newTechReferreds[$i]->id_techniche = $selectedTechNiches[$i];
+            }
+            
         }
         else {
             $selectedTechnicheArray = explode(',', $selectedTechNiches);
@@ -149,24 +157,33 @@ class TechSectorController extends Controller
                 for ($i=0 ; $i<$count ; $i++) {
                     $techreferreds[$i]->delete();
                 }
-                return response()->json(compact('count' , 'techreferreds' , 'selectedTechnicheArray'));                
+            }
+            else if (count($selectedTechnicheArray) > count($techreferreds)) {
+                $count = count($selectedTechnicheArray) - count($techreferreds);
+                for($i=0 ; $i<$count ; $i++) {
+                    $techreferred = new techreferred;
+                    $techreferred -> id_techsector = $id;
+                    $techreferred->save();
+                }
+            }
+            $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
+            for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
+                $newTechReferreds[$i]->id_techniche = $selectedTechnicheArray[$i];
             }
         }
 
-            return response()->json(compact('techreferreds' , 'selectedTechNiches'));
-
-        // if($Update)
-        // {
-        //     $update = DB::table('techsector')->where('id', $id)->get();
-        //     if($update)
-        //     {
-        //       return response()->json(['message' => 'Technology Sector  Updated Successfully' , 'update'=>$update]);
-        //     }
-        // }
-        // else
-        // {
-        //     return response()->json(['message' => 'Technology Sector Not Updated Successfully']);
-        // }
+        if($Update)
+        {
+            $update = DB::table('techsector')->where('id', $id)->get();
+            if($update)
+            {
+              return response()->json(['message' => 'Technology Sector  Updated Successfully' , 'update'=>$update]);
+            }
+        }
+        else
+        {
+            return response()->json(['message' => 'Technology Sector Not Updated Successfully']);
+        }
     }
 
     public function delete(string $id)
