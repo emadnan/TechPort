@@ -40,6 +40,7 @@ class TechSectorController extends Controller
         $validator = Validator::make($req->all(),[
             'techsector'=> 'required',
             'techsectordescription'=> 'required',
+            'id_technice'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
@@ -61,10 +62,11 @@ class TechSectorController extends Controller
         $techSector->save();
         // $techArea->techsectors()->create();
         
-        // $techReferred = new techreferred;
-        // $techReferred->techareas()->associate($techArea->id);
-        // $techReferred->techsectors()->associate($techSector->id);
-        // $techSector->techareas()->attach($techArea->id);
+        $techreferred = new techreferred ;
+        $techreferred->id_techsector = $techSector->id;
+        $techreferred->id_techniche = $req->id_techniche;
+        $techreferred->save();
+
         
         if($techSector)
         {
