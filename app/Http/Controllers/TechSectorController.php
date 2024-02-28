@@ -151,7 +151,7 @@ class TechSectorController extends Controller
             }
         }
 
-            return response()->json(['message' => 'Technology Sector Not Updated Successfully']);
+            return response()->json(compact('techreferreds , selectedTechNiches'));
 
         // if($Update)
         // {
