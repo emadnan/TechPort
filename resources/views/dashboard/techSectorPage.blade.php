@@ -177,8 +177,8 @@
                    ' </div>';
     
     $('#addMoreNiche').click(function(){
-        $(this).hide();
-        var data = $('techNicheDropDown');
+        // $(this).hide();
+        var data = $('#techNicheDropDown');
         console.log(data);
         data.append(newNiche);
         // $('techNicheDropDown').append(newNiche);
