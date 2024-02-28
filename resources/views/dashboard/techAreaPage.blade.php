@@ -125,7 +125,7 @@
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($data as $id=>$area )
+                            @foreach ($areas as $area )
                             <tr id="row_{{$area-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> techarea}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> techareadescription}}</td>
