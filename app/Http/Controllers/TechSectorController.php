@@ -63,13 +63,26 @@ class TechSectorController extends Controller
         // $techArea->techsectors()->create();
 
         $selectedTechNiches = $req->input('selected_techniche');
-        foreach($selectedTechNiches as $selectedTechNiche)
+        if(is_array($selectedTechNiches))
         {
-            $techreferred = new techreferred ;
-            $techreferred->id_techsector = $techSector->id;
-            $techreferred->id_techniche = $selectedTechNiche;
-            $techreferred->save();
+            foreach($selectedTechNiches as $selectedTechNiche)
+            {
+                $techreferred = new techreferred ;
+                $techreferred->id_techsector = $techSector->id;
+                $techreferred->id_techniche = $selectedTechNiche;
+                $techreferred->save();
+            }
         }
+        else {
+            $selectedTechnicheArray = explode(',', $selectedTechniche);
+            foreach ($selectedTechnicheArray as $techniche) {
+                $techreferred = new techreferred ;
+                $techreferred->id_techsector = $techSector->id;
+                $techreferred->id_techniche = $techniche;
+                $techreferred->save();
+            }
+        }
+       
        
         if($techSector)
         {
