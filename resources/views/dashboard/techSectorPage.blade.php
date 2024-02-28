@@ -201,6 +201,8 @@ $('body').on('click' , '#update-btn' , function(){
     $("#id_techniche").val('');
     $("#otmeError").text('');
     $("#noteError").text('');
+    $('#techNicheDropDown').empty();
+    $('#techNicheDropDown').append(newNiche);
     var rowID = $(this).data('id');
     var url = 'techSectorUpdatePage/'+rowID;
             $.ajax({
