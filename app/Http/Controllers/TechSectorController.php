@@ -74,7 +74,7 @@ class TechSectorController extends Controller
             }
         }
         else {
-            $selectedTechnicheArray = explode(',', $selectedTechniche);
+            $selectedTechnicheArray = explode(',', $selectedTechniches);
             foreach ($selectedTechnicheArray as $techniche) {
                 $techreferred = new techreferred ;
                 $techreferred->id_techsector = $techSector->id;
