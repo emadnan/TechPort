@@ -49,6 +49,21 @@
                     </div>
                 </div>
 
+                <div  class="row mb-3">
+                    <label for="id_techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
+                    <div id="techSectorDropDown" class="col-md-6">
+                        <select id="id_techsector" type="text" class="form-control @error('id_techsector') is-invalid @enderror" name="id_techsector" value="{{ old('id_techsector') }}" autocomplete="id_techsector" autofocus required>
+                            <option selected value="">SELECT</option>
+                            @foreach ($sectors as $sector )
+                            <option value="{{$sector-> id}}">{{$sector->techsector}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-2 pt-1">
+                       <button  class="btn btn-primary btn-sm addMoreSector">Add</button>
+                    </div>
+                </div>
+
                 <div class="row mb-3">
                     <label for="note" class="col-md-4 col-form-label text-md-end">{{ __('Note') }}</label>
 
@@ -149,6 +164,17 @@
                     'x-csrf-token' : $('meta[name="csrf-token"]').attr('content')
                  }
             });
+    
+    var newSector ='<select id="id_techsector" type="text" class="mt-2 form-control @error('id_techsector') is-invalid @enderror" name="id_techsector" value="{{ old('id_techsector') }}" autocomplete="id_techsector" autofocus required>'+
+                    '<option selected value="">SELECT</option>'+
+                    ' @foreach ($sectors as $sector )'+
+                    '<option value="{{$sector-> id}}">{{$sector->techniche}}</option>'+
+                    '@endforeach'+
+                '</select>';
+    
+    $('.addMoreSector').click(function(){
+        $('#techSectorDropDown').append(newSector);
+    });        
 
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
@@ -157,6 +183,7 @@
     $("#techareaError").text('');
     $("#techareadescriptionError").text('');
     $("#id_dmError").text('');
+    $("#id_techsectorError").text('');
     $("#otmeError").text('');
     $("#noteError").text('');
     }) // create click event end
@@ -169,6 +196,7 @@ $('body').on('click' , '#update-btn' , function(){
     $("#techareaError").text('');
     $("#techareadescriptionError").text('');
     $("#id_dmError").text('');
+    $("#id_techsectorError").text('');
     $("#otmeError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
@@ -192,10 +220,23 @@ $('body').on('click' , '#update-btn' , function(){
 $('#form').submit(function(){
           
             event.preventDefault();
+            var selectedValues = [];
+            $('select[name="id_techsector"] option:selected').each(function() {
+                selectedValues.push($(this).val());
+            });
+
+            // Append the array of selected values to a hidden input field
+            $('<input>').attr({
+                type: 'hidden',
+                name: 'selected_techsector',
+                value: selectedValues
+            }).appendTo('#form');
             var formData = $(this).serialize();
             var inpID = $('#id').val();
             $("#techareaError").text('');
             $("#techareadescriptionError").text('');
+            $("#id_techsectorError").text('');
+            $("#id_techsectorError").text('');
             $("#id_dmError").text('');
             $("#otmeError").text('');
             $("#noteError").text('');
