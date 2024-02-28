@@ -75,7 +75,7 @@ class TechAreaController extends Controller
             }
         } 
 
-        if($Create)
+        if($techArea)
         {
             $latestID = techarea::latest()->value('id');
             $newRow = DB::table('techareas')->where('id', $latestID)->get();
