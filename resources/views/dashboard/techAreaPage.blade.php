@@ -169,7 +169,7 @@
     var newSector ='<select id="id_techsector" type="text" class="mt-2 form-control @error('id_techsector') is-invalid @enderror" name="id_techsector" value="{{ old('id_techsector') }}" autocomplete="id_techsector" autofocus required>'+
                     '<option selected value="">SELECT</option>'+
                     ' @foreach ($sectors as $sector )'+
-                    '<option value="{{$sector-> id}}">{{$sector->techniche}}</option>'+
+                    '<option value="{{$sector-> id}}">{{$sector->techsector}}</option>'+
                     '@endforeach'+
                 '</select>';
     
