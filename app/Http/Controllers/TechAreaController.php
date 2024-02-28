@@ -33,6 +33,7 @@ class TechAreaController extends Controller
         $validator = Validator::make($req->all(),[
             'techarea'=> 'required',
             'techareadescription'=> 'required',
+            'id_techsector'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
             'note'=> 'nullable',
@@ -42,13 +43,36 @@ class TechAreaController extends Controller
             return response()->json(['errors' => $validator->errors() , 'oldInput' => $req->all()]);
         }
 
-        $Create = DB::table('techareas')->insert([
-            'techarea'=> $req->techarea,
-            'techareadescription'=> $req->techareadescription,
-            'id_dm'=> $req->id_dm,
-            'otme'=> $req->otme,
-            'note'=> $req->note,
-        ]);
+        $techArea = new techarea;
+        $techArea->techarea = $req->techarea;
+        $techArea->techareadescription = $req->techareadescription;
+        $techArea->id_dm = $req->id_dm;
+        $techArea->otme = $req->otme;
+        $techArea->note = $req->note;
+        $techArea->save();
+       
+        $selectedTechSectors = $req->input('selected_techniche');
+        if(is_array($selectedTechSectors))
+        {
+            foreach($selectedTechSectors as $selectedTechSector)
+            {
+                $techreferreds = techreferred::where('id_techsector' , $selectedTechSector)->get();
+                foreach($techreferreds as $techreferred) {
+                    $techreferred->id_techarea = $techArea->id;
+                    $techreferred->save();
+                }
+            }
+        }
+        else {
+            $selectedTechSectorArray = explode(',', $selectedTechSectors);
+            foreach ($selectedTechSectorArray as $techsector) {
+                $techreferreds = techreferred::where('id_techsector' , $techsector)->get();
+                foreach($techreferreds as $techreferred) {
+                    $techreferred->id_techarea = $techArea->id;
+                    $techreferred->save();
+                }
+            }
+        } 
 
         if($Create)
         {
