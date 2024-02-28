@@ -203,7 +203,7 @@ $('body').on('click' , '#update-btn' , function(){
     $("#otmeError").text('');
     $("#noteError").text('');
     $("#id_techsector").val('');
-    $('#techSectoreDropDown').empty();
+    $('#techSectorDropDown').empty();
     $('#techSectorDropDown').append(newSector);
     $("input[name='selected_techsector']").remove();
 
