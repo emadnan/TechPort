@@ -187,6 +187,9 @@
     $("#id_techsectorError").text('');
     $("#otmeError").text('');
     $("#noteError").text('');
+    $('#techSectoreDropDown').empty();
+    $('#techSectorDropDown').append(newNiche);
+    $("input[name='selected_techsector']").remove();
     }) // create click event end
 
 
@@ -200,6 +203,10 @@ $('body').on('click' , '#update-btn' , function(){
     $("#id_techsectorError").text('');
     $("#otmeError").text('');
     $("#noteError").text('');
+    $('#techSectoreDropDown').empty();
+    $('#techSectorDropDown').append(newNiche);
+    $("input[name='selected_techsector']").remove();
+    
     var rowID = $(this).data('id');
     var url = 'techAreaUpdatePage/'+rowID;
             $.ajax({
