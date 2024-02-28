@@ -77,9 +77,8 @@ class TechAreaController extends Controller
 
         if($techArea)
         {
-            $latestID = techarea::latest()->value('id');
-            $newRow = DB::table('techareas')->where('id', $latestID)->get();
-            return response()->json(['message' => 'Technology Area  Added successfully' , 'newRow'=>$newRow]);
+          
+            return response()->json(['message' => 'Technology Area  Added successfully' , 'newRow'=>$techArea]);
         }
         else 
         {
