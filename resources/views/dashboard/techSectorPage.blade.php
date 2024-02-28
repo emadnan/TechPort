@@ -186,6 +186,7 @@
     $("#id_techniche").val('');
     $("#otmeError").text('');
     $("#noteError").text('');
+    $('#techNicheDropDown').empty();
     }) // create click event end
 
 
