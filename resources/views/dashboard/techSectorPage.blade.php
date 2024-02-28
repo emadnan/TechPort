@@ -180,8 +180,7 @@
         $(this).hide();
         var data = $('#techNicheDropDown');
         console.log(data);
-        data.append(newNiche);
-        // $('techNicheDropDown').append(newNiche);
+        $('techNicheDropDown').append(newNiche);
     });
 
     $('#add-btn').click(function(){
