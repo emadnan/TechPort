@@ -61,17 +61,16 @@ class TechSectorController extends Controller
         $techSector->note = $req->note;
         $techSector->save();
         // $techArea->techsectors()->create();
-        $selectedTechnicheString = $req->selected_techniche;
-        $selectedTechnicheArray = explode(',', $selectedTechnicheString);
-        for($i=0 ; $i<=count($selectedTechnicheArray) ; $i++) {
+
+        $selectedTechNiches = $req->selected_techniche;
+        foreach($selectedTechNiches as $selectedTechNiche)
+        {
             $techreferred = new techreferred ;
             $techreferred->id_techsector = $techSector->id;
-            $techreferred->id_techniche = $selectedTechnicheArray[i];
+            $techreferred->id_techniche = $selectedTechNiche;
             $techreferred->save();
         }
-        
-
-        
+       
         if($techSector)
         {
             $latestID = techsector::latest()->value('id');
