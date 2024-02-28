@@ -65,7 +65,7 @@ class TechSectorController extends Controller
         $techreferred = new techreferred ;
         $techreferred->id_techsector = $techSector->id;
         $techreferred->id_techniche = $req->id_techniche;
-        $techreferred->id_techarea = 0 ;
+        $techreferred->id_techarea = null ;
         $techreferred->save();
 
         
