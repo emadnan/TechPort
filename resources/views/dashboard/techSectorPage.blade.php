@@ -168,6 +168,7 @@
     $("#techsectorError").text('');
     $("#techsectordescriptionError").text('');
     $("#id_dmError").text('');
+    $("#id_techniche").val('');
     $("#otmeError").text('');
     $("#noteError").text('');
     }) // create click event end
@@ -180,6 +181,7 @@ $('body').on('click' , '#update-btn' , function(){
     $("#techsectorError").text('');
     $("#techsectordescriptionError").text('');
     $("#id_dmError").text('');
+    $("#id_techniche").val('');
     $("#otmeError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
