@@ -151,7 +151,7 @@ class TechSectorController extends Controller
             }
         }
 
-            return response()->json(compact('techreferreds , selectedTechNiches'));
+            return response()->json(compact('techreferreds' , 'selectedTechNiches'));
 
         // if($Update)
         // {
