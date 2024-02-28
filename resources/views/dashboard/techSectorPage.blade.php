@@ -224,7 +224,7 @@ $('#form').submit(function(){
             $('select[name="id_techniche[]"] option:selected').each(function() {
                 selectedValues.push($(this).val());
             });
-
+            console.log(selectedValues);
             // Append the array of selected values to a hidden input field
             $('<input>').attr({
                 type: 'hidden',
