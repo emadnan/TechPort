@@ -184,9 +184,9 @@
     $("#techareaError").text('');
     $("#techareadescriptionError").text('');
     $("#id_dmError").text('');
-    $("#id_techsectorError").text('');
     $("#otmeError").text('');
     $("#noteError").text('');
+    $("#id_techsector").val('');
     $('#techSectoreDropDown').empty();
     $('#techSectorDropDown').append(newNiche);
     $("input[name='selected_techsector']").remove();
@@ -200,9 +200,9 @@ $('body').on('click' , '#update-btn' , function(){
     $("#techareaError").text('');
     $("#techareadescriptionError").text('');
     $("#id_dmError").text('');
-    $("#id_techsectorError").text('');
     $("#otmeError").text('');
     $("#noteError").text('');
+    $("#id_techsector").val('');
     $('#techSectoreDropDown').empty();
     $('#techSectorDropDown').append(newNiche);
     $("input[name='selected_techsector']").remove();
