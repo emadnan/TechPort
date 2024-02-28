@@ -72,6 +72,7 @@ class TechAreaController extends Controller
                     $techreferred->id_techarea = $techArea->id;
                     $techreferred->save();
                 }
+                return response()->json(compact('techrefrred'));
             }
         } 
 
