@@ -157,7 +157,7 @@
         // Check if the element with ID "menu_techreferred" exists.
             $('#menu_techsector').addClass('bg-primary');
             $('#menu_techsector').parent().parent().children('a:first-child').addClass('bg-primary');
-            $('#menu_techsector').parent().addClass('block');
+            $('#menu_techsector').parent().parent().addClass('menu-is-opening menu-open');
 
     });
         $.ajaxSetup({
