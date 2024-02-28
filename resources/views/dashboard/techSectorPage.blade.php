@@ -221,6 +221,7 @@ $('#form').submit(function(){
           
             event.preventDefault();
             var formData = $(this).serialize();
+            console.log(formData);
             var inpID = $('#id').val();
             $("#techsectorError").text('');
             $("#techsectordescriptionError").text('');
