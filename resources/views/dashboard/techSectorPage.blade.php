@@ -229,7 +229,7 @@ $('#form').submit(function(){
             $('<input>').attr({
                 type: 'hidden',
                 name: 'selected_techniche',
-                value: selectedValues.join(',')
+                value: sselectedValues
             }).appendTo('#form');
 
             var formData = $(this).serialize();
