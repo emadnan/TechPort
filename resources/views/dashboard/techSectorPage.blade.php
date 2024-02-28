@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="col-md-2 p-0">
-                       <button id="addMoreNiche" class="btn btn-primary btn-sm">+</button>
+                       <button  class="btn btn-primary btn-sm addMoreNiche">+</button>
                     </div>
                 </div>
                 
@@ -173,10 +173,10 @@
                         '</select>'+
                     '</div>'+
                     '<div class="col-md-2 p-0">'+
-                     '  <button id="addMoreNiche" class="btn btn-primary btn-sm">+</button>'+
+                     '  <button class="btn btn-primary btn-sm addMoreNiche">+</button>'+
                    ' </div>';
     
-    $('#addMoreNiche').click(function(){
+    $('.addMoreNiche').click(function(){
         $(this).hide();
         var data = $('#techNicheDropDown');
         console.log(data);
