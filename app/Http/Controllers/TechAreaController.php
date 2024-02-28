@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\project;
 use App\Models\techarea;
 use App\Models\techsector;
+use App\Models\techreferred;
 use App\Models\trl;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
