@@ -127,7 +127,7 @@
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview ml-3">
                         <li id='menu_entities' class="nav-item">
                             <a href="{{route('humanEntityPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
@@ -196,7 +196,7 @@
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview ml-3">
                          <li id='menu_technologies' class="nav-item">
                             <a href="{{route('technologyPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
@@ -254,7 +254,7 @@
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview ml-3">
                        
                         <li id='menu_projectOrganizations' class="nav-item">
                             <a href="{{route('projectOrganizationPage')}}" class="nav-link">
@@ -290,7 +290,7 @@
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview ml-3">
                     <li  id='menu_products' class="nav-item">
                     <a href="{{route('productPage')}}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
