@@ -1651,12 +1651,15 @@
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
           $('.faq-question').each(function(){
-            var text = $(this).text().toLowerCase();
-            var highlightedText = text.replace(new RegExp(search, 'gi'), function(match) {
+            var questionText = $(this).text().toLowerCase();
+            var highlightedText = questionText.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
-            $(this).html(highlightedText);
+            $(this).text(highlightedText);
+            $(this).toggle(questionText.indexOf(search) > -1);
+            $('.divider').hide();
         });
+
   if ($('.faq-question:visible').length > 1) {
             $('.divider').show();
         } else {
