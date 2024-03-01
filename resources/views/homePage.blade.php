@@ -1650,6 +1650,20 @@
            $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
            $('.divider').hide();
         });
+        // var selectedWords = $(this).text().toLowerCase().indexOf(search)>-1;
+        var text = $(this).text().toLowerCase();
+        var $question = $(this);
+        var index = text.indexOf(search);
+            while (index !== -1) {
+                var start = text.substring(0, index);
+                var middle = text.substring(index, index + search.length);
+                var end = text.substring(index + search.length);
+
+                $question.html(start + '<span class="highlighted">' + middle + '</span>' + end);
+
+                text = end;
+                index = text.indexOf(search);
+            }
   
   if ($('.faq-question:visible').length > 1) {
             $('.divider').show();
