@@ -1384,7 +1384,7 @@
                 <div class="faq-question">
                     <div class="arrow-icon" style="position: relative;">
                         <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
-                            <a style="color:#000000"><mark>{{$tech-> techarea}}</mark></span>
+                            <a style="color:#000000">{{$tech-> techarea}}</span>
                         </a>
 
                         <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
@@ -1646,9 +1646,14 @@
       $('#filterTax').on('keyup' , function(){
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
-          $('.faq-question').filter(function(){
-           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-           $('.divider').hide();
+          $('.faq-question').each(function(){
+            var questionText = $(this).text().toLowerCase();
+            var highlightedText = questionText.replace(new RegExp(search, 'gi'), function(match) {
+                return '<span class="highlight">' + match + '</span>';
+            });
+            $(this).html(highlightedText);
+            $(this).toggle(questionText.indexOf(search) > -1);
+            $('.divider').hide();
         });
   
   if ($('.faq-question:visible').length > 1) {
