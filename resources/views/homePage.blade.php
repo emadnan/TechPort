@@ -1347,7 +1347,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
                     <!-- Text inside the image container -->
                     <div class="text-in-image">
-                        <b>DRASS Taxonomy</b>
+                        <b class="highlight">DRASS Taxonomy</b>
                     </div>
                     <div class="icon-in-image">
                         <div class="graph-icon"><img src="{{ asset('images/icon-white.png') }}"></div>
@@ -1627,30 +1627,23 @@
             }
         }
 
-        $(document).ready(function(){
-    $('#filterTax').on('keyup' , function(){
-        var search = $(this).val().toLowerCase();
-        $('.tech_area').each(function() {
-            var text = $(this).text().toLowerCase();
-            var matchIndex = text.indexOf(search);
-            if (matchIndex !== -1) {
-                var beforeMatch = $(this).text().substring(0, matchIndex);
-                var matchText = $(this).text().substring(matchIndex, matchIndex + search.length);
-                var afterMatch = $(this).text().substring(matchIndex + search.length);
-                var highlightedText = beforeMatch + '<span class="highlight">' + matchText + '</span>' + afterMatch;
-                $(this).html(highlightedText);
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
+    $(document).ready(function(){
+      $('#filterTax').on('keyup' , function(){
+        //   event.preventDefault();
+          var search = $(this).val().toLowerCase();
+          $('.tech_area').filter(function(){
+           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+           $('.divider').hide();
         });
-        
-        if ($('.tech_area:visible').length > 1) {
+  
+  if ($('.tech_area:visible').length > 1) {
             $('.divider').show();
         } else {
             $('.divider').hide();
         }
-    });
+          });
+
+
 });
     </script>
 </body>
