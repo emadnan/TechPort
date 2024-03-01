@@ -1347,7 +1347,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
                     <!-- Text inside the image container -->
                     <div class="text-in-image">
-                        <b class="highlight">DRASS Taxonomy</b>
+                        <mark>DRASS Taxonomy</mark>
                     </div>
                     <div class="icon-in-image">
                         <div class="graph-icon"><img src="{{ asset('images/icon-white.png') }}"></div>
