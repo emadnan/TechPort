@@ -257,13 +257,15 @@
         }
 
         .graph-image {
+            margin-right: 10px;
+            margin-top: 10px;
             width: 24px;
-            margin: 5px;
         }
         .yellow-graph-image
         {
-            margin: 2px;
-            width: 31px;
+            margin-right: 7px; 
+            margin-top: 6px;
+            width: 31px;"
         }
 
 
@@ -297,10 +299,10 @@
         .graph-pop {
             border: 1px solid rgba(6, 83, 134, 1);
             position: absolute;
-            right: -1px;
+            right: 0%;
             background: white;
-            width:250px;
-            margin-top: -3px;
+            width: 350px;
+            margin-top: -44px;
             font-size: 14px;
         }
         .graph-pop button{
@@ -350,16 +352,14 @@
             .fa-angle-right {
                 color: white;
                 padding-left: 10px;
-                padding-bottom:5px;
-                padding-top:5px;
                 font-size: 24px;
-                margin-bottom: 0px;
-                margin-top: 0px;
+                margin-bottom: 10px;
+                margin-top: 10px;
             }
 
             .fa-angle-down {
                 color: white;
-                padding-left:5px;
+                padding-left: 8px;
                 font-size: 24px;
                 margin-bottom: 10px;
                 margin-top: 10px;
@@ -771,24 +771,26 @@
         .graph-pop {
             border: 1px solid rgba(6, 83, 134, 1);
             position: absolute;
-            right: -1px;
+            right: 0%;
             background: white;
-            width:250px;
-            margin-top: -3px;
-            font-size: 14px;
+            width: 200px;
+            margin-top: -27px;
+            font-size:9px;
+        }
+        .graph-pop .row{
+            flex-wrap: nowrap;
         }
         .graph-pop button{
-            font-size: 12px;
-            margin-bottom:23px;
+            font-size: 9px;
+            margin-top: 0px;
+            margin-bottom:7px;
         }
         .graph-pop h5{
-            font-size: 12px;
-            margin-top:5px;
-            margin-bottom: 1rem;
+            font-size: 9px;
+            margin-top: -6px;
+            margin-bottom:9px;
         }
-      .graph-pop .row{
-          flex-wrap: nowrap;
-      }
+
             .faq-subanswer {
 
                 padding-left: 0px;
@@ -865,11 +867,6 @@
             border: 1px solid white;
             border-radius: 6px;
             height: 25px;
-        }
-        
-        .column_chart{
-           overflow: auto;
-
         }
 
         }
@@ -949,26 +946,27 @@
         width: 21px;
     }
     .graph-pop {
-            border: 1px solid rgba(6, 83, 134, 1);
-            position: absolute;
-            right: -1px;
-            background: white;
-            width:250px;
-            margin-top: -3px;
-            font-size: 14px;
-        }
-        .graph-pop button{
-            font-size: 12px;
-            margin-bottom:23px;
-        }
-        .graph-pop h5{
-            font-size: 12px;
-            margin-top:5px;
-            margin-bottom: 1rem;
-        }
-      .graph-pop .row{
-          flex-wrap: nowrap;
-      }
+        border: 1px solid rgba(6, 83, 134, 1);
+        position: absolute;
+        right: 0%;
+        background: white;
+        width: 200px;
+        margin-top: -27px;
+        font-size:8px;
+    }
+    .graph-pop .row{
+        flex-wrap: nowrap;
+    }
+    .graph-pop button{
+        font-size: 10px;
+        margin-top: 0px;
+        margin-bottom:7px;
+    }
+    .graph-pop h5{
+        font-size: 9px;
+        margin-top: -6px;
+        margin-bottom:9px;
+    }
 
         .faq-subanswer {
 
@@ -1132,26 +1130,28 @@
           width: 21px;
       }
       .graph-pop {
-            border: 1px solid rgba(6, 83, 134, 1);
-            position: absolute;
-            right: -1px;
-            background: white;
-            width:250px;
-            margin-top: -3px;
-            font-size: 14px;
-        }
-        .graph-pop button{
-            font-size: 12px;
-            margin-bottom:23px;
-        }
-        .graph-pop h5{
-            font-size: 12px;
-            margin-top:5px;
-            margin-bottom: 1rem;
-        }
+          border: 1px solid rgba(6, 83, 134, 1);
+          position: absolute;
+          right: 0%;
+          background: white;
+          width: 200px;
+          margin-top: -27px;
+          font-size:8px;
+      }
       .graph-pop .row{
           flex-wrap: nowrap;
       }
+      .graph-pop button{
+          font-size: 10px;
+          margin-top: 0px;
+          margin-bottom:7px;
+      }
+      .graph-pop h5{
+          font-size: 9px;
+          margin-top: -6px;
+          margin-bottom:9px;
+      }
+
           .faq-subanswer {
 
               padding-left: 0px;
@@ -1323,7 +1323,6 @@
         
     }
 
-
  
     </style>
 </head>
@@ -1347,7 +1346,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
                     <!-- Text inside the image container -->
                     <div class="text-in-image">
-                        <b class="highlight">DRASS Taxonomy</b>
+                        <b>DRASS Taxonomy</b>
                     </div>
                     <div class="icon-in-image">
                         <div class="graph-icon"><img src="{{ asset('images/icon-white.png') }}"></div>
@@ -1374,28 +1373,32 @@
         {{-- end --}}
 
 
-        <!-- <div class="faq-container w-100 m-0"> -->
-        <div class="container border">
+        <div class="faq-container w-100 m-0">
 
-@foreach ($techs as $tech)
-    <div class="row border-top tech_area ">
-        <div onclick="toggleAnswers(this)"  style = 'width:30px; background-color: #065386 ;'>
-             <i class="fa-solid fa-angle-right"></i>
-        </div>
-        <div class="col p-0">
-            <div style="display:flex; justify-content: space-between; align-items: center;">
-                <div class="pl-2">{{$tech-> techarea}}</div> 
-                <div>
-                    <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
-                    <div class=" graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
+
+            <!-- parent tile -->
+@foreach ($techs as $tech )
+    
+            <div class="faq-item">
+
+                <div class="faq-question">
+                    <div class="arrow-icon" style="position: relative;">
+                        <i onclick="toggleAnswers(this)" class="fa-solid fa-angle-right"></i> <span>
+                            <a style="color:#000000"><mark>{{$tech-> techarea}}</mark></span>
+                        </a>
+
+                        <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image"
+                            onclick="showimage(this)">
+
+                        <div class="graph-pop" style="display: none;  z-index:1000; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <section><mark>{{$tech-> techarea}}</mark>
+                                    <section>{{$tech-> techarea}}
                                     </section>
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style =" margin-right: 2px; width: 50%; margon-bottom:1px;"
+                                        style =" margin-right: 2px; width: 40%; margon-bottom:1px;"
                                         onclick="hideimage(this)">
                                 </div>
                             </div>
@@ -1412,40 +1415,44 @@
                                 </div>
                             </div>
                             
-                            <h5 style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px; font-size:12px;">
+                            <h5
+                                style="color: rgba(6, 83, 134, 1); font-weight:600; margin-left:10px; font-size:14px;">
                                 Projects linked to this taxonomy</h5>
                             <button class="btn"
                                 style="margin-left:10px; color:white; background: rgba(6, 83, 134, 1);"><a
                                     style="color:white;" href="{{ route('searchProjectsByTechArea', ['id' => $tech->id]) }}">Find Linked
                                     Projects</a></button>
+
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container" style="display:none;">
-            @php
-                $sectorID = [];
-            @endphp
-            @foreach ($tech->techsectors as $techsector )
-            @if ( in_array( $techsector->id, $sectorID))
-            @else
-            <div class="row border-top">
-                <div onclick="toggleAnswers(this)" style = 'width:30px; background-color: #FFA800 ;'>
-                    <i  class="fa-solid fa-angle-right"></i>
-                </div>
-                <div class="col p-0">
-                    <div style="display:flex;  justify-content: space-between; align-items: center;">
-                        <div class="pl-2">{{$techsector-> techsector}}</div> 
-                        <div>
-                            <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
-                            <div class="  graph-pop" style="display: none;  z-index:{{999 - $loop->index}}; ">
+                <div class="faq-answer" style="display:none;">
+                    @php
+                        $sectorID = [];
+                    @endphp
+                @foreach ($tech->techsectors as $techsector )
+                @if ( in_array( $techsector->id, $sectorID))
+                
+                @else
+                <div class="divider"></div>
+                    <div name="answer1" class="arrow-icon" style="position:relative;">
+                        <i onclick="toggleSubAnswers(this)" class="fa-solid fa-angle-right"></i>
+                        <span>
+                            <a style="color:#000000">{{$techsector-> techsector}}</a></span>
+                        <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right yellow-graph-image "
+                            onclick="showimage(this)">
+
+                        <div class="  graph-pop" style="display: none;  z-index:999; ">
                             <div class="row m-0" style=" width:100%; background: #FFA800">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <section>{{$techsector->techsector}}
+                                    <section>{{$techsector-> techsector}}
                                     </section>
                                 </div>
-                                <div class="col-3 m-0 px-0" style="color: white; padding-bottom:0px;">
+                                <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                        style=" margin-right: 2px; width: 50%; margon-bottom:1px;"
+                                        style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
                                         onclick="hideimage(this)">
                                 </div>
                             </div>
@@ -1468,21 +1475,24 @@
                                 style="margin-left:10px;color:white; background: #FFA800;"><a
                                     style="color:white;" href="{{ route('searchProjectsByTechSector', ['id' => $techsector->id]) }}">Find Linked
                                     Projects</a></button>
-                        </div>
+
+
                         </div>
                     </div>
-                    <div class="container" style="display:none">
-                    @foreach ($techsector->techniches as $techniche)
-                    <div class="row border-top">
-                        <div onclick="toggleAnswers(this)" style = 'width:30px ; background: #323E48'>
-                            <i  class="fa-solid fa-angle-right"></i>
-                       </div>
-                        <div class="col p-0">
-                            <div style="display:flex;  justify-content: space-between;  align-items: center;">
-                                <div class="pl-2">{{$techniche-> techniche}}</div> 
-                                <div>
-                                    <img src="{{ asset('images/icon-black.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
-                                    <div class="graph-pop" style="display: none;  z-index:{{998 - $loop->index}};">
+                    <div class="faq-subanswer" style="position: relative; display:none;">
+                        <div class="divider"></div>
+@foreach ($techsector->techniches as $techniche)
+                        <div name="subAnswer1" 
+                            style="margin-left:1px;">
+                            <div>
+                                <i onclick="toggleSubAnswersDescreption(this)" class="fa-solid fa-angle-right"></i>
+                                <a style="color:#000000">
+                                    <span >{{$techniche-> techniche}}</span>
+                                </a>
+                                <img src="{{ asset('images/icon-black.png') }}" alt=""
+                                    class=" float-right graph-image" onclick="showimage(this)">
+
+                                <div class="graph-pop" style="display: none;  z-index:998;">
                                     <div class="row m-0" style=" width:100%; background: #323E48">
                                         <div class="col-md-9 px-2" style="color: white;">
                                             <section>{{$techniche-> techniche}}
@@ -1491,7 +1501,7 @@
                                         <div class="col-3 m-0 px-0"
                                             style="color: white; padding-top:3px; padding-bottom:0px;">
                                             <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
-                                                style=" margin-right: 2px; width: 50%; margon-bottom:1px;"
+                                                style=" margin-right: 2px; width: 40%; margon-bottom:1px;"
                                                 onclick="hideimage(this)">
                                         </div>
                                     </div>
@@ -1515,34 +1525,40 @@
                                         style="margin-left:10px;color:white; background: #323E48;"><a
                                             style="color:white;" href="{{ route('searchProjectsByTechNiche', ['id' => $techniche->id]) }}">Find Linked
                                             Projects</a></button>
-                                    </div>
+
+
+
                                 </div>
-                            </div>
-                            <div class="container" style="display:none">
-                                <div class="border-top" style="font-weight:bold">Description</div>
-                                <section>
-                                    {{$techniche->technichedescription}}
-                                </section>
+
                             </div>
                         </div>
-                    </div>
-                    @endforeach
-                    </div>
+                    <div class="sub-answer-description" style="display: none;">
+                            <div class="divider"></div>
+                            <div style="margin-left:40px;font-weight:bold">Description</div>
+                            <section style="padding-left:40px;padding-right:40px">
+                                {{$techniche->technichedescription}}
+                            </section>
                 </div>
-            </div>
-            @php
+                    <div class="divider"></div>
+                    @endforeach
+                </div>
+                @php
                 array_push($sectorID, $techsector->id)
             @endphp
             @endif
-            @endforeach
+                    @endforeach
+                </div>
+                
             </div>
+            <div class="divider"></div>
+            
+
+            @endforeach
+
         </div>
     </div>
-@endforeach
-</div>
-</div>
 
-    <div style="margin-top:300px"></div>
+    <div style="margin-top:200px"></div>
 
     <footer>
     @include('footer')
@@ -1551,8 +1567,8 @@
 <script>
         function toggleAnswers(element) {
 
-            let x = element.nextElementSibling;
-            let y = x.firstElementChild ;
+            let x = element.parentElement;
+            let y = x.parentElement;
             let answer = y.nextElementSibling;
             if (answer.style.display == 'none') {
                 answer.style.display = 'block';
@@ -1560,13 +1576,12 @@
                 answer.style.display = 'none';
 
             }
-            let arrow = element.firstElementChild;
-            if (arrow.classList.contains('fa-angle-right')) {
-                arrow.classList.remove('fa-angle-right');
-                arrow.classList.add('fa-angle-down')
+            if (element.classList.contains('fa-angle-right')) {
+                element.classList.remove('fa-angle-right');
+                element.classList.add('fa-angle-down')
             } else {
-                arrow.classList.remove('fa-angle-down');
-                arrow.classList.add('fa-angle-right')
+                element.classList.remove('fa-angle-down');
+                element.classList.add('fa-angle-right')
             }
         }
 
@@ -1631,12 +1646,12 @@
       $('#filterTax').on('keyup' , function(){
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
-          $('.tech_area').filter(function(){
+          $('.faq-question').filter(function(){
            $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
            $('.divider').hide();
         });
   
-  if ($('.tech_area:visible').length > 1) {
+  if ($('.faq-question:visible').length > 1) {
             $('.divider').show();
         } else {
             $('.divider').hide();
@@ -1716,8 +1731,8 @@ var techs = @json($techs);
 //   console.log('Draw Chart');
   var options = {
     chartArea: { width: '70%' , left:50 , right:20},
-    width: 220,
-    height: 150,
+    width: 330,
+    height: 233,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
     hAxis: {
@@ -1733,7 +1748,7 @@ var techs = @json($techs);
     title: 'Number of Projects',
     titleTextStyle: {
     color: '#0058a2',  // Text color
-    fontSize: 10,    // Font size
+    fontSize: 12,    // Font size
     bold:true,
     italic:false,    
     },
@@ -1836,9 +1851,9 @@ var techs = @json($techs);
         function drawChart(data ,sectorId) {
     //   console.log('Draw Chart');
     var options = {
-        chartArea: { width: '70%' , left:50 , right:20},
-    width: 220,
-    height: 150,
+    chartArea: { width: '70%' , left:50 , right:20},
+    width: 330,
+    height: 233,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
     hAxis: {
@@ -1941,8 +1956,8 @@ var techs = @json($techs);
         function drawChart(data ,nicheId) {
             var options = {
     chartArea: { width: '70%' , left:50 , right:20},
-    width: 220,
-    height: 150,
+    width: 330,
+    height: 233,
     bar: {groupWidth: "60%"},
     legend: { position: "none" },
     hAxis: {
