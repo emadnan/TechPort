@@ -1323,10 +1323,6 @@
         
     }
 
-    .highlight {
-    background-color: yellow;
-    font-weight: bold;
-}
  
     </style>
 </head>
@@ -1650,16 +1646,11 @@
       $('#filterTax').on('keyup' , function(){
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
-          $('.faq-question').each(function(){
-            var questionText = $(this).text().toLowerCase();
-            var highlightedText = questionText.replace(new RegExp(search, 'gi'), function(match) {
-                return '<span class="highlight">' + match + '</span>';
-            });
-            $(this).text(highlightedText);
-            $(this).toggle(questionText.indexOf(search) > -1);
-            $('.divider').hide();
+          $('.faq-question').filter(function(){
+           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
+           $('.divider').hide();
         });
-
+  
   if ($('.faq-question:visible').length > 1) {
             $('.divider').show();
         } else {
