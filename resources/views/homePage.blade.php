@@ -1390,8 +1390,8 @@
                     <div class=" graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
                             <div class="row m-0" style=" width:100%; background: rgba(6, 83, 134, 1);">
                                 <div class="col-md-9 px-2" style="color: white;">
-                                    <mark>{{$tech-> techarea}}
-                                    </mark>
+                                    <section><mark>{{$tech-> techarea}}</mark>
+                                    </section>
                                 </div>
                                 <div class="col-3 m-0 px-0" style="color: white; padding-top:2px; padding-bottom:0px;">
                                     <img src="{{ asset('images/icon-white.png') }}"alt="" class="float-right"
