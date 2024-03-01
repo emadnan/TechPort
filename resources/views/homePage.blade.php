@@ -1651,12 +1651,12 @@
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
           $('.faq-question').each(function(){
-            var questionText = $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-            // var questionText = $(this).text().toLowerCase();
+            var questionText = $(this).text().toLowerCase();
             var highlightedText = questionText.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
-            $(this).html(highlightedText);
+            // $(this).html(highlightedText);
+            $(this).toggle(questionText.indexOf(search) > -1);
             $('.divider').hide();
         });
 
