@@ -1327,7 +1327,6 @@
     background-color: yellow;
     font-weight: bold;
 }
-
  
     </style>
 </head>
@@ -1657,10 +1656,10 @@
                 return '<span class="highlight">' + match + '</span>';
             });
             $(this).html(highlightedText);
-            $(this).toggle(questionText.indexOf(search) > -1);
+        $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
             $('.divider').hide();
         });
-  
+
   if ($('.faq-question:visible').length > 1) {
             $('.divider').show();
         } else {
