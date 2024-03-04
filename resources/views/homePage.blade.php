@@ -1431,7 +1431,7 @@
             @foreach ($tech->techsectors as $techsector )
             @if ( in_array( $techsector->id, $sectorID))
             @else
-            <div class="row border-top">
+            <div class="row border-top tech_sector">
                 <div onclick="toggleAnswers(this)" style = 'width:30px; background-color: #FFA800 ;'>
                     <i  class="fa-solid fa-angle-right"></i>
                 </div>
@@ -1476,7 +1476,7 @@
                     </div>
                     <div class="container" style="display:none">
                     @foreach ($techsector->techniches as $techniche)
-                    <div class="row border-top">
+                    <div class="row border-top tech_niche">
                         <div onclick="toggleAnswers(this)" style = 'width:30px ; background: #323E48'>
                             <i  class="fa-solid fa-angle-right"></i>
                        </div>
@@ -1636,15 +1636,7 @@
           var search = $(this).val().toLowerCase();
           $('.tech_area').each(function(){
             var area_text = $(this).find('.area_text');
-            var sector_text = $(this).find('.sector_text');
-            var niche_text = $(this).find('.niche_text');
-            
             var original_text = area_text.text();
-            var original_sector_text = sector_text.text();
-            var original_niche_text = niche_text.text();
-            console.log( 'Area:' ,  original_text);
-            console.log('Sector: ' , original_sector_text);
-            console.log('Niche: ' , original_niche_text);
             var text = area_text.text().toLowerCase();
             var highlightedText = original_text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
@@ -1652,6 +1644,26 @@
             area_text.html(highlightedText);
             $(this).toggle(text.indexOf(search) > -1);
         });
+
+        $('.tech_sector').each(function(){
+            var sector_text = $(this).find('.sector_text');
+            var original_sector_text = area_text.text();
+            var sectorText = area_text.text().toLowerCase();
+            var highlightedText = original_sector_text.replace(new RegExp(search, 'gi'), function(match) {
+                return '<span class="highlight">' + match + '</span>';
+            });
+            sector_text.html(highlightedText);
+        });
+
+        // $('.tech_niche').each(function(){
+        //     var area_text = $(this).find('.area_text');
+        //     var original_text = area_text.text();
+        //     var text = area_text.text().toLowerCase();
+        //     var highlightedText = original_text.replace(new RegExp(search, 'gi'), function(match) {
+        //         return '<span class="highlight">' + match + '</span>';
+        //     });
+        //     area_text.html(highlightedText);
+        // });
 
         // $('.tech_area').each(function(){
         //     var area_text = $(this).find('.area_text');
