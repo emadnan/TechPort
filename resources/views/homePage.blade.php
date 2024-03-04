@@ -1639,7 +1639,7 @@
             var sector_text = $(this).find('.area_text');
             var niche_text = $(this).find('.area_text');
             var original_text = area_text.text();
-            var text = area_text.text();
+            var text = area_text.text().toLowerCase();
             var highlightedText = original_text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
