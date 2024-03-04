@@ -1437,7 +1437,7 @@
                 </div>
                 <div class="col p-0">
                     <div style="display:flex;  justify-content: space-between; align-items: center;">
-                        <div class="pl-2">{{$techsector-> techsector}}</div> 
+                        <div class="pl-2 sector_text">{{$techsector-> techsector}}</div> 
                         <div>
                             <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:{{999 - $loop->index}}; ">
@@ -1482,7 +1482,7 @@
                        </div>
                         <div class="col p-0">
                             <div style="display:flex;  justify-content: space-between;  align-items: center;">
-                                <div class="pl-2">{{$techniche-> techniche}}</div> 
+                                <div class="pl-2 niche-text">{{$techniche-> techniche}}</div> 
                                 <div>
                                     <img src="{{ asset('images/icon-black.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                                     <div class="graph-pop" style="display: none;  z-index:{{998 - $loop->index}};">
@@ -1636,7 +1636,9 @@
           var search = $(this).val().toLowerCase();
           $('.tech_area').each(function(){
             var area_text = $(this).find('.area_text');
-            var text = area_text.text().toLowerCase();
+            var sector_text = $(this).find('.area_text');
+            var niche_text = $(this).find('.area_text');
+            var text = area_text.text();
             var highlightedText = text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
