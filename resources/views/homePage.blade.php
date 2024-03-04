@@ -1657,7 +1657,7 @@
 
         $('.tech_niche').each(function(){
             var niche_text = $(this).find('.niche_text');
-            var original_niche_text = area_text.text();
+            var original_niche_text = niche_text.text();
             var nicheText = niche_text.text().toLowerCase();
             var highlightedText = original_niche_text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
