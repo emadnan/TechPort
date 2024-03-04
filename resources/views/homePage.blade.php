@@ -1482,7 +1482,7 @@
                        </div>
                         <div class="col p-0">
                             <div style="display:flex;  justify-content: space-between;  align-items: center;">
-                                <div class="pl-2 niche-text">{{$techniche-> techniche}}</div> 
+                                <div class="pl-2 niche_text">{{$techniche-> techniche}}</div> 
                                 <div>
                                     <img src="{{ asset('images/icon-black.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                                     <div class="graph-pop" style="display: none;  z-index:{{998 - $loop->index}};">
