@@ -1384,7 +1384,7 @@
         </div>
         <div class="col p-0">
             <div style="display:flex; justify-content: space-between; align-items: center;">
-                <div class="pl-2">{{$tech-> techarea}}</div> 
+                <div class="pl-2 area_text">{{$tech-> techarea}}</div> 
                 <div>
                     <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                     <div class=" graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
@@ -1631,10 +1631,16 @@
       $('#filterTax').on('keyup' , function(){
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
-          $('.tech_area').filter(function(){
-           $(this).toggle($(this).text().toLowerCase().indexOf(search)>-1);
-           $('.divider').hide();
+          $('.tech_area').each(function(){
+            var area_text = $(this).find('.area_text');
+            var text = area_text.text().toLowerCase();
+            var highlightedText = text.replace(new RegExp(search, 'gi'), function(match) {
+                return '<span class="highlight">' + match + '</span>';
+            });
+            area_text.html(highlightedText);
+            $(this).toggle(text.indexOf(search) > -1);
         });
+        
   
   if ($('.tech_area:visible').length > 1) {
             $('.divider').show();
