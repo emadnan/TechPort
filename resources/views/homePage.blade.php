@@ -1656,7 +1656,7 @@
             area_text.html(highlightedAreaText);
             sector_text.html(highlightedSectorText);
             sector_text.html(highlightedNicheText);
-            $(this).toggle(area_text.indexOf(search) > -1);
+            $(this).toggle(areaText.indexOf(search) > -1);
         });
         
   
