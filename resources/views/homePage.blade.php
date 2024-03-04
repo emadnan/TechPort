@@ -1647,8 +1647,8 @@
 
         $('.tech_sector').each(function(){
             var sector_text = $(this).find('.sector_text');
-            var original_sector_text = area_text.text();
-            var sectorText = area_text.text().toLowerCase();
+            var original_sector_text = sector_text.text();
+            var sectorText = sector_text.text().toLowerCase();
             var highlightedText = original_sector_text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
