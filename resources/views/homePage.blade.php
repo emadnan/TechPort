@@ -1638,9 +1638,9 @@
             var area_text = $(this).find('.area_text');
             var sector_text = $(this).find('.sector_text');
             var niche_text = $(this).find('.niche_text');
-            console.log(area_text);
-            console.log(sector_text);
-            console.log(niche_text);
+            console.log( 'Area:' ,  area_text);
+            console.log('Sector: ' , sector_text);
+            console.log('Niche: ' , niche_text);
             var original_text = area_text.text();
             var text = area_text.text().toLowerCase();
             var highlightedText = original_text.replace(new RegExp(search, 'gi'), function(match) {
