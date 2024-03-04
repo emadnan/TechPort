@@ -1636,27 +1636,12 @@
           var search = $(this).val().toLowerCase();
           $('.tech_area').each(function(){
             var area_text = $(this).find('.area_text');
-            var sector_text = $(this).find('.sector_text');
-            var niche_text = $(this).find('.niche_text');
-            var original_area_text = area_text.text();
-            var original_sector_text = sector_text.text();
-            var original_niche_text = niche_text.text();
-            var areaText = area_text.text().toLowerCase();
-            var sectorText = sector_text.text().toLowerCase();
-            var nicheText = niche_text.text().toLowerCase();
-            var highlightedAreaText = original_area_text.replace(new RegExp(search, 'gi'), function(match) {
+            var text = area_text.text().toLowerCase();
+            var highlightedText = text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
-            var highlightedSectorText = original_sector_text.replace(new RegExp(search, 'gi'), function(match) {
-                return '<span class="highlight">' + match + '</span>';
-            });
-            var highlightedNicheText = original_niche_text.replace(new RegExp(search, 'gi'), function(match) {
-                return '<span class="highlight">' + match + '</span>';
-            });
-            area_text.html(highlightedAreaText);
-            sector_text.html(highlightedSectorText);
-            sector_text.html(highlightedNicheText);
-            $(this).toggle(areaText.indexOf(search) > -1);
+            area_text.html(highlightedText);
+            $(this).toggle(text.indexOf(search) > -1);
         });
         
   
