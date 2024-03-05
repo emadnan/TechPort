@@ -52,7 +52,7 @@ class TechAreaController extends Controller
         $techArea->note = $req->note;
         $techArea->save();
        
-        $selectedTechSectors = $req->input('selected_techniche');
+        $selectedTechSectors = $req->input('selected_techsector');
         if(is_array($selectedTechSectors))
         {
             foreach($selectedTechSectors as $selectedTechSector)
