@@ -1653,6 +1653,7 @@
                 return '<span class="highlight">' + match + '</span>';
             });
             sector_text.html(highlightedText);
+            $('.tech_area').toggle(text.indexOf(search) > -1);
         });
 
         $('.tech_niche').each(function(){
