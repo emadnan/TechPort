@@ -1646,7 +1646,6 @@
       $('#filterTax').on('keyup' , function(){
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
-          console.log(search);
           $('.tech_area').each(function(){
             var area_text = $(this).find('.area_text');
             var original_text = area_text.text();
@@ -1739,7 +1738,7 @@
             $('#noRecordMsg').hide();
         }
 
-    if(search.val() === '') {
+    if(search === '') {
         $('.tech_sector').parent().hide();
         $('.tech_niche').parent().hide();
     }
