@@ -1738,9 +1738,12 @@
             $('.divider').hide();
             $('#noRecordMsg').hide();
         }
-          });
 
-
+    if(search.val() === '') {
+        $('.tech_sector').parent().hide();
+        $('.tech_niche').parent().hide();
+    }
+    });
 });
     </script>
 </body>
