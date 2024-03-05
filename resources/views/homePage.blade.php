@@ -1646,6 +1646,7 @@
       $('#filterTax').on('keyup' , function(){
         //   event.preventDefault();
           var search = $(this).val().toLowerCase();
+          console.log(search);
           $('.tech_area').each(function(){
             var area_text = $(this).find('.area_text');
             var original_text = area_text.text();
@@ -1659,7 +1660,7 @@
 
             var niche_description = $(this).find('.niche_description');
             var nicheDescription = niche_description.text().toLowerCase();
-            
+
             var highlightedText = original_text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
