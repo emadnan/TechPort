@@ -1657,6 +1657,7 @@
                 return '<span class="highlight">' + match + '</span>';
             });
             sector_text.html(highlightedText);
+            $(this).show();
         });
 
         $('.tech_niche').each(function(){
@@ -1667,6 +1668,7 @@
                 return '<span class="highlight">' + match + '</span>';
             });
             niche_text.html(highlightedText);
+            $(this).show();
         });
 
         // $('.tech_area').each(function(){
