@@ -1658,7 +1658,7 @@
             });
             sector_text.html(highlightedText);
             if(sectorText.indexOf(search) > -1) {
-                $(this :first-child).show();
+                $(this).parent().show();
             }
         });
 
