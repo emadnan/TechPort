@@ -1670,13 +1670,13 @@
             });
             sector_text.html(highlightedText);
             $(this).parent().show();
-            if($(this).children().first().hasClass('fa-angle-right')) {
-                $(this).children().first().removeClass('fa-angle-right');
-                $(this).children().first().addClass('fa-angle-down');
+            if($(this).children().first().children().first().hasClass('fa-angle-right')) {
+                $(this).children().first().children().first().removeClass('fa-angle-right');
+                $(this).children().first().children().first().addClass('fa-angle-down');
             } 
-            else if($(this).children().first().hasClass('fa-angle-down')) {
-                $(this).children().first().removeClass('fa-angle-down');
-                $(this).children().first().addClass('fa-angle-right');
+            else if($(this).children().first().children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().children().first().removeClass('fa-angle-down');
+                $(this).children().first().children().first().addClass('fa-angle-right');
             }
             
         });
