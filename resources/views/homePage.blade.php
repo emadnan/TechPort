@@ -1739,8 +1739,28 @@
         }
 
     if(search === '') {
-        $('.tech_sector').parent().hide();
-        $('.tech_niche').parent().hide();
+        $('.tech_area').each(function(){
+            if($(this).children().first().children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().children().first().removeClass('fa-angle-down');
+                $(this).children().first().children().first().addClass('fa-angle-right');
+            }
+        })
+
+        $('.tech_sector').each(function(){
+            $(this).parent().hide();
+            if($(this).children().first().children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().children().first().removeClass('fa-angle-down');
+                $(this).children().first().children().first().addClass('fa-angle-right');
+            }
+        })
+
+        $('.tech_niche').each(function(){
+            $(this).parent().hide();
+            if($(this).children().first().children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().children().first().removeClass('fa-angle-down');
+                $(this).children().first().children().first().addClass('fa-angle-right');
+            }
+        })
     }
     });
 });
