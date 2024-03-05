@@ -1670,7 +1670,14 @@
             });
             sector_text.html(highlightedText);
             $(this).parent().show();
-            $(this:first-child).class();
+            if($(this).children().first().hasClass('fa-angle-right')) {
+                $(this).children().first().removeClass('fa-angle-right');
+                $(this).children().first().addClass('fa-angle-down');
+            } 
+            else if($(this).children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().removeClass('fa-angle-down');
+                $(this).children().first().addClass('fa-angle-right');
+            }
             
         });
 
