@@ -1690,7 +1690,6 @@
             });
             niche_text.html(highlightedText);
             $(this).parent().show();
-            $(this:first-child).class();
             $('.niche_description').parent().show();
         });
   
