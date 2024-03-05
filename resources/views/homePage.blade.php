@@ -1659,6 +1659,15 @@
             });
             area_text.html(highlightedText);
             $(this).toggle(text.indexOf(search) > -1 || sectorText.indexOf(search) > -1 || nicheText.indexOf(search) > -1);
+
+            if($(this).children().first().children().first().hasClass('fa-angle-right')) {
+                $(this).children().first().children().first().removeClass('fa-angle-right');
+                $(this).children().first().children().first().addClass('fa-angle-down');
+            } 
+            else if($(this).children().first().children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().children().first().removeClass('fa-angle-down');
+                $(this).children().first().children().first().addClass('fa-angle-right');
+            }
         });
 
         $('.tech_sector').each(function(){
@@ -1691,6 +1700,14 @@
             niche_text.html(highlightedText);
             $(this).parent().show();
             $('.niche_description').parent().show();
+            if($(this).children().first().children().first().hasClass('fa-angle-right')) {
+                $(this).children().first().children().first().removeClass('fa-angle-right');
+                $(this).children().first().children().first().addClass('fa-angle-down');
+            } 
+            else if($(this).children().first().children().first().hasClass('fa-angle-down')) {
+                $(this).children().first().children().first().removeClass('fa-angle-down');
+                $(this).children().first().children().first().addClass('fa-angle-right');
+            }
         });
   
   if ($('.tech_area:visible').length > 1) {
