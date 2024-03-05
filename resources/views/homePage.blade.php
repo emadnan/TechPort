@@ -1670,8 +1670,8 @@
             });
             sector_text.html(highlightedText);
             $(this).parent().show();
-            var child = $(this:first-child);
-            console.log('sector: ' , child);
+            // var child = $(this:first-child);
+            console.log('sector: ' , sector_text);
         });
 
         $('.tech_niche').each(function(){
@@ -1683,8 +1683,8 @@
             });
             niche_text.html(highlightedText);
             $(this).parent().show();
-            var child = $(this:first-child);
-            console.log('niche: ' , child);
+            // var child = $(this:first-child);
+            console.log('niche: ' , niche_text);
             $('.niche_description').parent().show();
         });
   
