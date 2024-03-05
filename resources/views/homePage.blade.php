@@ -1670,6 +1670,7 @@
             });
             sector_text.html(highlightedText);
             $(this).parent().show();
+            console.log($(this:first-child));
         });
 
         $('.tech_niche').each(function(){
@@ -1681,6 +1682,7 @@
             });
             niche_text.html(highlightedText);
             $(this).parent().show();
+            console.log($(this:first-child));
             $('.niche_description').parent().show();
         });
   
