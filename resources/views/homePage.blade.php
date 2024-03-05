@@ -1534,8 +1534,8 @@
                                 </div>
                             </div>
                             <div class="container" style="display:none">
-                                <div class="border-top niche_description" style="font-weight:bold">Description</div>
-                                <section>
+                                <div class="border-top " style="font-weight:bold">Description</div>
+                                <section class='niche_description'>
                                     {{$techniche->technichedescription}}
                                 </section>
                             </div>
@@ -1699,7 +1699,16 @@
             });
             niche_text.html(highlightedText);
             $(this).parent().show();
+            
+            var niche_description = $(this).find('.niche_description');
+            var original_niche_description = niche_description.text();
+            var nicheDescription = niche_description.text().toLowerCase();
+            var highlightedText = original_niche_description.replace(new RegExp(search, 'gi'), function(match) {
+                return '<span class="highlight">' + match + '</span>';
+            });
+            niche_description.html(highlightedText);
             $('.niche_description').parent().show();
+
             if($(this).children().first().children().first().hasClass('fa-angle-right')) {
                 $(this).children().first().children().first().removeClass('fa-angle-right');
                 $(this).children().first().children().first().addClass('fa-angle-down');
