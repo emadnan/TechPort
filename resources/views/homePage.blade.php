@@ -1670,10 +1670,6 @@
                 $(this).children().first().children().first().removeClass('fa-angle-right');
                 $(this).children().first().children().first().addClass('fa-angle-down');
             } 
-            // else if($(this).children().first().children().first().hasClass('fa-angle-down')) {
-            //     $(this).children().first().children().first().removeClass('fa-angle-down');
-            //     $(this).children().first().children().first().addClass('fa-angle-right');
-            // }
         });
 
         $('.tech_sector').each(function(){
@@ -1689,11 +1685,6 @@
                 $(this).children().first().children().first().removeClass('fa-angle-right');
                 $(this).children().first().children().first().addClass('fa-angle-down');
             } 
-            // else if($(this).children().first().children().first().hasClass('fa-angle-down')) {
-            //     $(this).children().first().children().first().removeClass('fa-angle-down');
-            //     $(this).children().first().children().first().addClass('fa-angle-right');
-            // }
-            
         });
 
         $('.tech_niche').each(function(){
@@ -1719,10 +1710,6 @@
                 $(this).children().first().children().first().removeClass('fa-angle-right');
                 $(this).children().first().children().first().addClass('fa-angle-down');
             } 
-            // else if($(this).children().first().children().first().hasClass('fa-angle-down')) {
-            //     $(this).children().first().children().first().removeClass('fa-angle-down');
-            //     $(this).children().first().children().first().addClass('fa-angle-right');
-            // }
         });
   
   if ($('.tech_area:visible').length > 1) {
@@ -1760,6 +1747,7 @@
                 $(this).children().first().children().first().removeClass('fa-angle-down');
                 $(this).children().first().children().first().addClass('fa-angle-right');
             }
+            $('.niche_description').parent().hide();
         })
     }
     });
