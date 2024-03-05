@@ -1658,7 +1658,7 @@
             });
             sector_text.html(highlightedText);
             if(sectorText.indexOf(search) > -1) {
-                $('.tech_sector').css('display' , 'block');
+                $(this :first-child).show();
             }
         });
 
