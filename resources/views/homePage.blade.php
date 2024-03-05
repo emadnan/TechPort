@@ -1522,7 +1522,7 @@
                                 </div>
                             </div>
                             <div class="container" style="display:none">
-                                <div class="border-top" style="font-weight:bold">Description</div>
+                                <div class="border-top niche_description" style="font-weight:bold">Description</div>
                                 <section>
                                     {{$techniche->technichedescription}}
                                 </section>
@@ -1669,6 +1669,7 @@
             });
             niche_text.html(highlightedText);
             $(this).parent().show();
+            $('.niche_description').parent().show();
         });
 
         // $('.tech_area').each(function(){
