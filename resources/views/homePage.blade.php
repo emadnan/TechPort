@@ -1650,15 +1650,21 @@
             var area_text = $(this).find('.area_text');
             var original_text = area_text.text();
             var text = area_text.text().toLowerCase();
+
             var sector_text = $(this).find('.sector_text');
             var sectorText = sector_text.text().toLowerCase();
+
             var niche_text = $(this).find('.niche_text');
             var nicheText = niche_text.text().toLowerCase();
+
+            var niche_description = $(this).find('.niche_description');
+            var nicheDescription = niche_description.text().toLowerCase();
+            
             var highlightedText = original_text.replace(new RegExp(search, 'gi'), function(match) {
                 return '<span class="highlight">' + match + '</span>';
             });
             area_text.html(highlightedText);
-            $(this).toggle(text.indexOf(search) > -1 || sectorText.indexOf(search) > -1 || nicheText.indexOf(search) > -1);
+            $(this).toggle(text.indexOf(search) > -1 || sectorText.indexOf(search) > -1 || nicheText.indexOf(search) > -1 || nicheDescription.indexOf(search) > -1);
 
             if($(this).children().first().children().first().hasClass('fa-angle-right')) {
                 $(this).children().first().children().first().removeClass('fa-angle-right');
