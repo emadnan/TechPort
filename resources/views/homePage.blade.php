@@ -1327,6 +1327,15 @@
     background-color: yellow;
     font-weight: bold;
 }
+
+#noRecordMsg{
+    padding-left: 40%;
+    font-weight: bolder;
+    font-size: larger;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
  
     </style>
 </head>
