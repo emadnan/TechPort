@@ -62,26 +62,26 @@ class TechSectorController extends Controller
         $techSector->save();
         // $techArea->techsectors()->create();
 
-        $selectedTechNiches = $req->input('selected_techniche');
-        if(is_array($selectedTechNiches))
-        {
-            foreach($selectedTechNiches as $selectedTechNiche)
-            {
-                $techreferred = new techreferred ;
-                $techreferred->id_techsector = $techSector->id;
-                $techreferred->id_techniche = $selectedTechNiche;
-                $techreferred->save();
-            }
-        }
-        else {
-            $selectedTechnicheArray = explode(',', $selectedTechNiches);
-            foreach ($selectedTechnicheArray as $techniche) {
-                $techreferred = new techreferred ;
-                $techreferred->id_techsector = $techSector->id;
-                $techreferred->id_techniche = $techniche;
-                $techreferred->save();
-            }
-        }
+        // $selectedTechNiches = $req->input('selected_techniche');
+        // if(is_array($selectedTechNiches))
+        // {
+        //     foreach($selectedTechNiches as $selectedTechNiche)
+        //     {
+        //         $techreferred = new techreferred ;
+        //         $techreferred->id_techsector = $techSector->id;
+        //         $techreferred->id_techniche = $selectedTechNiche;
+        //         $techreferred->save();
+        //     }
+        // }
+        // else {
+        //     $selectedTechnicheArray = explode(',', $selectedTechNiches);
+        //     foreach ($selectedTechnicheArray as $techniche) {
+        //         $techreferred = new techreferred ;
+        //         $techreferred->id_techsector = $techSector->id;
+        //         $techreferred->id_techniche = $techniche;
+        //         $techreferred->save();
+        //     }
+        // }
        
        
         if($techSector)
@@ -127,52 +127,52 @@ class TechSectorController extends Controller
             'note'=> $req->note,
         ]);
 
-        $selectedTechNiches = $req->selected_techniche;
-        $techreferreds = techreferred::where('id_techsector' , $id)->get();
-        if(is_array($selectedTechNiches)) {
-            if(count($selectedTechNiches) < count($techreferreds)) {
-                $count = count($techreferreds) - count($selectedTechNiches);
-                for ($i=0 ; $i<$count ; $i++) {
-                    $techreferreds[$i]->delete();
-                }                
-            }
-            else if (count($selectedTechNiches) > count($techreferreds)) {
-                $count = count($selectedTechNiches) - count($techreferreds);
-                for($i=0 ; $i<$count ; $i++) {
-                    $techreferred = new techreferred;
-                    $techreferred -> id_techsector = $id;
-                    $techreferred->save();
-                }
-            }
-            $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
-            for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
-                $newTechReferreds[$i]->id_techniche = $selectedTechNiches[$i];
-                $newTechReferreds[$i]->save();
-            }
+        // $selectedTechNiches = $req->selected_techniche;
+        // $techreferreds = techreferred::where('id_techsector' , $id)->get();
+        // if(is_array($selectedTechNiches)) {
+        //     if(count($selectedTechNiches) < count($techreferreds)) {
+        //         $count = count($techreferreds) - count($selectedTechNiches);
+        //         for ($i=0 ; $i<$count ; $i++) {
+        //             $techreferreds[$i]->delete();
+        //         }                
+        //     }
+        //     else if (count($selectedTechNiches) > count($techreferreds)) {
+        //         $count = count($selectedTechNiches) - count($techreferreds);
+        //         for($i=0 ; $i<$count ; $i++) {
+        //             $techreferred = new techreferred;
+        //             $techreferred -> id_techsector = $id;
+        //             $techreferred->save();
+        //         }
+        //     }
+        //     $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
+        //     for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
+        //         $newTechReferreds[$i]->id_techniche = $selectedTechNiches[$i];
+        //         $newTechReferreds[$i]->save();
+        //     }
             
-        }
-        else {
-            $selectedTechnicheArray = explode(',', $selectedTechNiches);
-            if(count($selectedTechnicheArray) < count($techreferreds)) {
-                $count = count($techreferreds) - count($selectedTechnicheArray);
-                for ($i=0 ; $i<$count ; $i++) {
-                    $techreferreds[$i]->delete();
-                }
-            }
-            else if (count($selectedTechnicheArray) > count($techreferreds)) {
-                $count = count($selectedTechnicheArray) - count($techreferreds);
-                for($i=0 ; $i<$count ; $i++) {
-                    $techreferred = new techreferred;
-                    $techreferred -> id_techsector = $id;
-                    $techreferred->save();
-                }
-            }
-            $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
-            for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
-                $newTechReferreds[$i]->id_techniche = $selectedTechnicheArray[$i];
-                $newTechReferreds[$i]->save();
-            }
-        }
+        // }
+        // else {
+        //     $selectedTechnicheArray = explode(',', $selectedTechNiches);
+        //     if(count($selectedTechnicheArray) < count($techreferreds)) {
+        //         $count = count($techreferreds) - count($selectedTechnicheArray);
+        //         for ($i=0 ; $i<$count ; $i++) {
+        //             $techreferreds[$i]->delete();
+        //         }
+        //     }
+        //     else if (count($selectedTechnicheArray) > count($techreferreds)) {
+        //         $count = count($selectedTechnicheArray) - count($techreferreds);
+        //         for($i=0 ; $i<$count ; $i++) {
+        //             $techreferred = new techreferred;
+        //             $techreferred -> id_techsector = $id;
+        //             $techreferred->save();
+        //         }
+        //     }
+        //     $newTechReferreds = techreferred::where('id_techsector' , $id)->get();
+        //     for($i = 0 ; $i < count($newTechReferreds) ; $i++) {
+        //         $newTechReferreds[$i]->id_techniche = $selectedTechnicheArray[$i];
+        //         $newTechReferreds[$i]->save();
+        //     }
+        // }
 
         if($Update)
         {
