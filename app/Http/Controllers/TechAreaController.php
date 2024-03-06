@@ -51,7 +51,9 @@ class TechAreaController extends Controller
         $techArea->otme = $req->otme;
         $techArea->note = $req->note;
         $techArea->save();
-       
+
+        // Code For Tree structure 
+
         // $selectedTechSectors = $req->input('selected_techsector');
         // if(is_array($selectedTechSectors))
         // {
