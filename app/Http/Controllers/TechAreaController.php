@@ -52,28 +52,28 @@ class TechAreaController extends Controller
         $techArea->note = $req->note;
         $techArea->save();
        
-        $selectedTechSectors = $req->input('selected_techsector');
-        if(is_array($selectedTechSectors))
-        {
-            foreach($selectedTechSectors as $selectedTechSector)
-            {
-                $techreferreds = techreferred::where('id_techsector' , $selectedTechSector)->get();
-                foreach($techreferreds as $techreferred) {
-                    $techreferred->id_techarea = $techArea->id;
-                    $techreferred->save();
-                }
-            }
-        }
-        else {
-            $selectedTechSectorArray = explode(',', $selectedTechSectors);
-            foreach ($selectedTechSectorArray as $techsector) {
-                $techreferreds = techreferred::where('id_techsector' , $techsector)->get();
-                foreach($techreferreds as $techreferred) {
-                    $techreferred->id_techarea = $techArea->id;
-                    $techreferred->save();
-                }
-            }
-        } 
+        // $selectedTechSectors = $req->input('selected_techsector');
+        // if(is_array($selectedTechSectors))
+        // {
+        //     foreach($selectedTechSectors as $selectedTechSector)
+        //     {
+        //         $techreferreds = techreferred::where('id_techsector' , $selectedTechSector)->get();
+        //         foreach($techreferreds as $techreferred) {
+        //             $techreferred->id_techarea = $techArea->id;
+        //             $techreferred->save();
+        //         }
+        //     }
+        // }
+        // else {
+        //     $selectedTechSectorArray = explode(',', $selectedTechSectors);
+        //     foreach ($selectedTechSectorArray as $techsector) {
+        //         $techreferreds = techreferred::where('id_techsector' , $techsector)->get();
+        //         foreach($techreferreds as $techreferred) {
+        //             $techreferred->id_techarea = $techArea->id;
+        //             $techreferred->save();
+        //         }
+        //     }
+        // } 
 
         if($techArea)
         {
