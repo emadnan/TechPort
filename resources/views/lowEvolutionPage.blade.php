@@ -347,7 +347,7 @@
                             @break;
                             @endforeach
                                 <section style="font-weight:bold;margin-top:30px;"><a style="color:black;"
-                                        href="{{ url('/legal-entity-roles') }}">Legal Entity Role</a></section>
+                                        href="{{ url('/legal-entity-roles') }}">Type of Company</a></section>
                            @foreach ( $projOrg->legalentityroles as $entity)
                                         <section><a href="{{ route('legalEntityClickingPage', ['id' => $entity->id]) }}" style="color:black;">{{$entity->name}}</a></section>
                             @break;
