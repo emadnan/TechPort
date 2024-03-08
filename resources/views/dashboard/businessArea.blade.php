@@ -86,7 +86,7 @@
                   <div class="table-responsive">
                     <table class="table table-bordered table-striped" id="data-table">
                         <thead>
-                            <th class="py-1">Business Area</th>
+                            <th class="py-1">Business Areas</th>
                             <th class="py-1">Description</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
