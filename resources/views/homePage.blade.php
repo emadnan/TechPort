@@ -1399,7 +1399,7 @@
         </div>
         <div class="col p-0">
             <div style="display:flex; justify-content: space-between; align-items: center;">
-                <div class="pl-2 area_text">{{$tech-> techarea}}</div> 
+                <div class="pl-2 area_text">{{tech->code}} {{$tech-> techarea}}</div> 
                 <div>
                     <img src="{{ asset('images/icon-blue.png') }}" alt="" class="float-right graph-image" onclick="showimage(this)">
                     <div class=" graph-pop" style="display: none;  z-index:{{1000 - $loop->index}}; ">
