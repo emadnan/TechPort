@@ -137,7 +137,7 @@
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
     $('#modal_title').html('Add Ref Company Unit');
-    $("#orgainzationError").text('');
+    $("#organizationError").text('');
     $("#projectError").text('');
     }) // create click event end
   
@@ -145,7 +145,7 @@
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
     $('#modal_title').html('Update Ref Company Unit');
-    $("#orgainzationError").text('');
+    $("#organizationError").text('');
     $("#projectError").text('');
     var rowID = $(this).data('id');
     var url = 'ref_OrganizationUnitUpdatePage/'+rowID;
@@ -168,7 +168,7 @@
           event.preventDefault();
           var formData = $(this).serialize();
           var inpID = $('#id').val();
-          $("#orgainzationError").text('');
+          $("#organizationError").text('');
           $("#projectError").text('');
           if(inpID)
           {
