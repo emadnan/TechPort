@@ -431,8 +431,8 @@ $(document).ready(function() {
 
                 function toggleSubAnswer(element) {
                     const answer = element.parentElement;
-                    const answer1 = answer.nextElementSibling;
-                    const answer2 = answer1.nextElementSibling;
+                    // const answer1 = answer.nextElementSibling;
+                    const answer2 = answer.nextElementSibling;
                     if (answer2.style.display === 'none') {
                         answer2.style.display = 'block';
                         element.classList.remove('fa-rotate-180');
