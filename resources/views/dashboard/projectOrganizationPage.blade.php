@@ -19,7 +19,7 @@
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="organization" class="col-md-4 col-form-label text-md-end">{{ __('Organization') }}</label>
+                    <label for="organization" class="col-md-4 col-form-label text-md-end">{{ __('Company') }}</label>
                     <div class="col-md-6">
                         <select id="organization" type="text" class="form-control @error('organization') is-invalid @enderror" name="organization" value= "{{ old ('organization') }}" autocomplete="organization" autofocus>
                             <option selected value="">SELECT</option>
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="row mb-3">
-                  <label for="legalentity" class="col-md-4 col-form-label text-md-end">{{ __('Legal Entity') }}</label>
+                  <label for="legalentity" class="col-md-4 col-form-label text-md-end">{{ __('Type Of Company') }}</label>
                   <div class="col-md-6">
                       <select id="legalentity" type="text" class="form-control @error('legalentity') is-invalid @enderror" name="legalentity" value= "{{ old ('legalentity') }}" autocomplete="legalentity" autofocus>
                           <option selected value="">SELECT</option>
@@ -73,7 +73,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Project Organization Details</h4>
+          <h4 class="modal-title">Ref Company Details</h4>
         </div>
         <div class="modal-body" id="details">
            
@@ -92,9 +92,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Project Organization') }}</b>
+                    <b>{{ __('Ref Companies') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Project Organization</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Ref Company</button>
                     </div>
                 </div>
 
@@ -102,8 +102,8 @@
                   <div class="table-responsive">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Organization</th>
-                            <th class="py-1">Legal Entity</th>
+                            <th class="py-1">Company</th>
+                            <th class="py-1">Type of Company</th>
                             <th class="py-1">Project</th>
                             {{-- <th class="py-1">Note</th> --}}
                             <th class="py-1">Action</th>
@@ -152,7 +152,7 @@
   $('#add-btn').click(function(){
       $('#form-modal').modal('show');
       $('#form').trigger('reset');
-  $('#modal_title').html('Add Project Organization');
+  $('#modal_title').html('Add Ref Company');
   $("#orgainzationError").text('');
   $("#legalentityError").text('');
   $("#projectError").text('');
@@ -161,7 +161,7 @@
   $('body').on('click' , '#update-btn' , function(){
   $('#form').trigger('reset');
   $('#form-modal').modal('show');
-  $('#modal_title').html('Update Project Organization');
+  $('#modal_title').html('Update Ref Company');
   $("#orgainzationError").text('');
   $("#legalentityError").text('');
   $("#projectError").text('');
@@ -202,13 +202,21 @@ $('#form').submit(function(){
 
                     if(response.errors)
                     {
-                        $("#organizationError").text(response.errors.id_orgperformingwork);
-                        $("#legalentityError").text(response.errors.id_legalentityrole);
-                        $("#projectError").text(response.errors.id_project);
+                        var errorMessages = {
+                                 'organization': 'The Company field is required.',
+                                 'legalentity': 'The Type of Company field is required.',
+                                 'project': 'The Project field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
 
                         $("#organization").val(response.oldInput.id_orgperformingwork);
                         $("#legalentity").val(response.oldInput.id_legalentityrole);
                         $("#project").val(response.oldInput.id_project);
+
+                        
 
                     }
                     else
@@ -265,9 +273,15 @@ $('#form').submit(function(){
                 {
                     if(response.errors)
                     {
-                        $("#organizationError").text(response.errors.id_orgperformingwork);
-                        $("#legalentityError").text(response.errors.id_legalentityrole);
-                        $("#projectError").text(response.errors.id_project);
+                        var errorMessages = {
+                                 'organization': 'The Company field is required.',
+                                 'legalentity': 'The Type of Company field is required.',
+                                 'project': 'The Project field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
 
                         $("#organization").val(response.oldInput.id_orgperformingwork);
                         $("#legalentity").val(response.oldInput.id_legalentityrole);
@@ -328,9 +342,9 @@ $('#form').submit(function(){
 
                   $.each(response.data , function(index , item){
                       var descp ='<p>'+ 
-              '<p>'+ '<span  style="font-weight:700;">Organization : </span>'
+              '<p>'+ '<span  style="font-weight:700;">Company : </span>'
               +item.orgName+'</p>'+
-              '<p>'+ '<span  style="font-weight:700;">Legal Entity : </span>'
+              '<p>'+ '<span  style="font-weight:700;">Type of Company : </span>'
               +item.legalName+'</p>'+
               '<span style="font-weight:700;">Project: </span>'
               +item.projectName+ '</p>';
