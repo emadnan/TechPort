@@ -296,7 +296,7 @@
                   <a href="{{ route('referencePage') }}" class="nav-link">
                       <i class="nav-icon fas fa-edit"></i>
                       <p>
-                       Reference</p>
+                       References</p>
                   </a>
               </li>
 
