@@ -2179,6 +2179,8 @@
 
 
 $('#page_title').html('Search Results');
+$('#dynamic_title').html('Search Results');
+
 
 
         const questions = document.querySelectorAll('.qa-question');
