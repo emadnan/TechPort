@@ -159,7 +159,7 @@
         $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Technology Sector');
+    $('#modal_title').html('Update Technology Referred');
     $("#techareaError").text('');
     $("#techsectorError").text('');
     $("#technicheError").text('');
