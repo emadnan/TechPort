@@ -142,7 +142,7 @@
                         <li id='menu_legalentity' class="nav-item">
                             <a href="{{route('legalEntityForm')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
-                            <p>Legal Entities</p>
+                            <p>Type of Company</p>
                             </a>
                         </li>
                         <li  id='menu_orgtypes' class="nav-item ">
