@@ -2179,7 +2179,10 @@
 
 
 $('#page_title').html('Search Results');
-$('#dynamic_title').html('Search Results');
+
+var techarea = @json($teacharea);
+
+$('#dynamic_title').html(techarea);
 
 
 
