@@ -153,7 +153,7 @@
       $('#form-modal').modal('show');
       $('#form').trigger('reset');
   $('#modal_title').html('Add Ref Company');
-  $("#orgainzationError").text('');
+  $("#organizationError").text('');
   $("#legalentityError").text('');
   $("#projectError").text('');
   }) // create click event end
@@ -162,7 +162,7 @@
   $('#form').trigger('reset');
   $('#form-modal').modal('show');
   $('#modal_title').html('Update Ref Company');
-  $("#orgainzationError").text('');
+  $("#organizationError").text('');
   $("#legalentityError").text('');
   $("#projectError").text('');
   var rowID = $(this).data('id');
@@ -187,7 +187,7 @@ $('#form').submit(function(){
         event.preventDefault();
         var formData = $(this).serialize();
         var inpID = $('#id').val();
-        $("#orgainzationError").text('');
+        $("#organizationError").text('');
         $("#legalentityError").text('');
         $("#projectError").text('');
         if(inpID)
