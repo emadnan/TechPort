@@ -98,10 +98,13 @@
                         <li id='menu_business' class="nav-item ">
                             <a href="{{ route('businessArea') }}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Business Areas
-
-                                </p>
+                                <p>Business Areas</p>
+                            </a>
+                        </li>
+                        <li id='menu_refOrganizationUnits' class="nav-item">
+                            <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Ref Company Units</p>
                             </a>
                         </li>
                     </ul>
@@ -165,12 +168,7 @@
                             </p>
                             </a>
                         </li>
-                        <li id='menu_refOrganizationUnits' class="nav-item">
-                            <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>Ref Company Units</p>
-                            </a>
-                        </li>
+                        
                     </ul>
                 </li>
 
