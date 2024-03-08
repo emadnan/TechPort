@@ -181,7 +181,7 @@ class TechAreaController extends Controller
         ->get();
 
         $allTrls = trl::with('projects.trlactual')->get();
-
+        $techarea = techarea::find($id);
 
         $count = $projOrgs->unique('id')->count();
         $active = $projOrgs->where('status.status' , 'Active')->count();
@@ -190,7 +190,7 @@ class TechAreaController extends Controller
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'techarea'));
     }
 
     public function __construct()
