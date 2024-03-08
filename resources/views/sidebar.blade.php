@@ -146,14 +146,14 @@
                             <a href="{{ route('organizationTypePage') }}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    Organization Types </p>
+                                    Company Types </p>
                             </a>
                         </li>
                         <li id='menu_workingOrganizations' class="nav-item">
                             <a href="{{route('orgPerformingWorkPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p style="font-size:15px">
-                            Working Organizations
+                            Working Companies
                             </p>
                             </a>
                         </li>
@@ -161,14 +161,14 @@
                             <a href="{{route('organizationUnitPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>
-                             Organization Units
+                             Company Units
                             </p>
                             </a>
                         </li>
                         <li id='menu_refOrganizationUnits' class="nav-item">
                             <a href="{{route('ref_OrganizationUnitPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
-                            <p>Ref Organization Units</p>
+                            <p>Ref Company Units</p>
                             </a>
                         </li>
                     </ul>
@@ -250,7 +250,7 @@
                     <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                    Organizations
+                    Companies
                        <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
@@ -259,7 +259,7 @@
                         <li id='menu_projectOrganizations' class="nav-item">
                             <a href="{{route('projectOrganizationPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
-                            <p>Project Organizations</p>
+                            <p>Project Companies</p>
                             </a>
                         </li>
                     </ul>
