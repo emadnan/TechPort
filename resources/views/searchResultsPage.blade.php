@@ -2180,11 +2180,8 @@
 
 $('#page_title').html('Search Results:');
 
-var techarea = @json($techarea);
-
-if(techarea) {
-    $('#dynamic_title').html(techarea.techarea);
-}
+var title = @json($title);
+$('#dynamic_title').html(title);
 
 
 
