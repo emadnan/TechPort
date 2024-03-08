@@ -49,6 +49,14 @@
                     </div>
                 </div>
 
+                 <div class="row mb-3">
+                    <label for="code" class="col-md-4 col-form-label text-md-end">{{ __('CODE') }}</label>
+                    <div class="col-md-6">
+                        <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}" >
+                        <span class="text-danger small" id="codeError"></span>
+                    </div>
+                </div>
+
                 <!-- <div  class="row mb-3">
                     <label for="id_techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Sector') }}</label>
                     <div id="techSectorDropDown" class="col-md-6">
@@ -131,6 +139,7 @@
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> techareadescription}}</td>
                                 <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> id_dm}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> otme}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> code}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$area -> note}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$area-> id}}"> <span style="color:black;">|</span> </i>
@@ -185,6 +194,7 @@
     $("#techareadescriptionError").text('');
     $("#id_dmError").text('');
     $("#otmeError").text('');
+    $("#codeError").text('');
     $("#noteError").text('');
     $("#id_techsector").val('');
     $('#techSectorDropDown').empty();
@@ -201,6 +211,7 @@ $('body').on('click' , '#update-btn' , function(){
     $("#techareadescriptionError").text('');
     $("#id_dmError").text('');
     $("#otmeError").text('');
+    $("#codeError").text('');
     $("#noteError").text('');
     $("#id_techsector").val('');
     $('#techSectorDropDown').empty();
@@ -219,6 +230,7 @@ $('body').on('click' , '#update-btn' , function(){
                         $('#techareadescription').val(item.techareadescription);
                         $('#id_dm').val(item.id_dm);
                         $('#otme').val(item.otme);
+                        $('#code').val(item.code);
                         $('#note').val(item.note);
                     });
                 },
@@ -247,6 +259,7 @@ $('#form').submit(function(){
             $("#id_techsectorError").text('');
             $("#id_dmError").text('');
             $("#otmeError").text('');
+            $("#codeError").text('');
             $("#noteError").text('');
             if(inpID)
             {
@@ -262,6 +275,7 @@ $('#form').submit(function(){
                         {
                                var errorMessages = {
                                  'otme': 'The Otme field is required.',
+                                 'code': 'The Code field is required.',
                                  'techarea': 'The Technology Area field is required.',
                                  'techareadescription': 'The Description field is required.',
                                 };
@@ -296,6 +310,7 @@ $('#form').submit(function(){
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techareadescription + '</td>'+ 
                                 // '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_dm+'</td>'+
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.otme+'</td>'+
+                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.code+'</td>'+
                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                 '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -327,6 +342,7 @@ $('#form').submit(function(){
                         {
                                var errorMessages = {
                                   'otme': 'The Otme field is required.',
+                                  'code': 'The Code field is required.',
                                   'techarea': 'The Technology Area field is required.',
                                   'techareadescription': 'The Description field is required.',
                                 };
@@ -360,6 +376,7 @@ $('#form').submit(function(){
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.techareadescription + '</td>'+ 
                                 //  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.id_dm+'</td>'+
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.otme+'</td>'+
+                                 '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.code+'</td>'+
                                  '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">'+item.note+'</td>'+
                                  '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                     '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
@@ -398,6 +415,7 @@ $('body').on('click' , '#view-btn' , function(){
                 +item.techareadescription+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> ID_DM : </span>'+item.id_dm+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> OTME : </span>'+item.otme+'</p>'+
+                '<p>'+ '<span style="font-weight:700;"> CODE : </span>'+item.code+'</p>'+
                 '<p>'+ '<span style="font-weight:700;"> Note : </span>'+item.note+'</p>';
                 data.append(descp);
                 });
