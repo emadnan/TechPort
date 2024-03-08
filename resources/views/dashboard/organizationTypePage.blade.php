@@ -49,7 +49,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Organization Type Details</h4>
+          <h4 class="modal-title">Company Type Details</h4>
         </div>
         <div class="modal-body" id="details">
         </div>
@@ -66,9 +66,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Organization Types') }}</b>
+                    <b>{{ __('Company Types') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Organization Type</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Company Type</button>
                     </div>
                 </div>
 
@@ -121,7 +121,7 @@
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Organization Type');
+    $('#modal_title').html('Add Company Type');
     $("#typeError").text('');
     $("#noteError").text('');
     }) // create click event end
@@ -130,7 +130,7 @@
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Organization Type');
+    $('#modal_title').html('Update Company Type');
     $("#typeError").text('');
     $("#noteError").text('');
     var rowID = $(this).data('id');
