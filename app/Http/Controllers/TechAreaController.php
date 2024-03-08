@@ -37,6 +37,7 @@ class TechAreaController extends Controller
             // 'id_techsector'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
+            'code'=> 'required',
             'note'=> 'nullable',
         ]);
 
@@ -49,6 +50,7 @@ class TechAreaController extends Controller
         $techArea->techareadescription = $req->techareadescription;
         $techArea->id_dm = $req->id_dm;
         $techArea->otme = $req->otme;
+        $techArea->code = strtoupper($req->code);
         $techArea->note = $req->note;
         $techArea->save();
 
@@ -104,6 +106,7 @@ class TechAreaController extends Controller
             'techareadescription'=> 'required',
             'id_dm'=> 'nullable',
             'otme'=> 'required',
+            'code'=> 'required',
             'note'=> 'nullable',
         ]);
         
@@ -116,6 +119,7 @@ class TechAreaController extends Controller
             'techareadescription'=> $req->techareadescription,
             'id_dm'=> $req->id_dm,
             'otme'=> $req->otme,
+            'code'=> strtoupper($req->code),
             'note'=> $req->note,
         ]);
 
