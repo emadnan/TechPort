@@ -2182,7 +2182,7 @@ $('#page_title').html('Search Results');
 
 var techarea = @json($techarea);
 
-$('#dynamic_title').html(techarea->techarea);
+$('#dynamic_title').html(techarea.techarea);
 
 
 
