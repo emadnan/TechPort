@@ -147,7 +147,8 @@ class TechSubSectorController extends Controller
         ->get();
 
         $allTrls = trl::with('projects.trlactual')->get();
-        $title = techniche::find($id);
+        $techniche = techniche::find($id);
+        $title = $techniche->techniche;
 
 
         $count = $projOrgs->unique('id')->count();
