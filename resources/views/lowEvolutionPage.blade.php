@@ -677,7 +677,7 @@ switch (project.trlfinal.trllevel) {
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
                                     <section style="margin-left:5px;"><a href="{{ url('/search-results') }}"
-                                            style="color:black;">{{$projOrg->techreferred->techarea->code}}.1.3 {{$projOrg->techreferred->techniche->techniche}}</a></section>
+                                            style="color:black;">{{$projOrg->techreferred->techarea->code}}.1.2 {{$projOrg->techreferred->techniche->techniche}}</a></section>
                                 </div>
                                 <section style="font-weight:bold;margin-top:25px;font-size:16px"><a
                                         href="{{ url('/project-targets') }}" style="color:black;">Project target</a>
