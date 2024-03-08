@@ -305,7 +305,7 @@
         <ul class="breadCrumbs mt-2 mb-0">
             <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/legal-entity-roles')}}">Legal Entity Roles index</a></li>
+            <li class="breadCrumbs-items"><a href="{{url('/legal-entity-roles')}}">Type of Company index</a></li>
         </ul>
         <!-- Add a new row for the image container -->
         <div class="row mt-1">
@@ -314,7 +314,7 @@
                     <img src="{{ asset('images/rectangle.jpg') }}" alt="Rectangular Image" class="custom-image">
 
                     <div class="text-in-image">
-                        Legal Entity Roles
+                    Type of Company
                     </div>
                     <!--  -->
                 </div>
