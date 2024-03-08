@@ -20,6 +20,7 @@ class SearchReultsController extends Controller
 
     $projOrgs = project::with('foundingsource' , 'missiontype', 'status' , 'techreferred.techarea' , 'orgperformingworks.location' , 'legalentityroles' , 'project_target')
     ->get();
+
     
     $allTrls = trl::with('projects.trlactual')->get();
 
@@ -42,6 +43,7 @@ class SearchReultsController extends Controller
         ->get();
 
         $allTrls = trl::with('projects.trlactual')->get();
+        $title = $req->searchBar;
 
 
         $count = $projOrgs->unique('id')->count();
@@ -52,7 +54,7 @@ class SearchReultsController extends Controller
      
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' ));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' ));
 
     }
 
