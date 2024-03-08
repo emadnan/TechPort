@@ -338,10 +338,10 @@
                                 <img src="{{ asset('images/' . $projOrg->image) }}" alt=""
                                     style="height:200px;width:300px;">
                                 <section style="font-weight:bold;margin-top:30px;font-size:16px">
-                                    Project Organization:
+                                    Project Company:
                                 </section>
                                 <section><a href="{{ url('/organizations') }}"
-                                        style="color:black;font-weight:bold;">Organization Performing Work</a></section>
+                                        style="color:black;font-weight:bold;">Company Performing Work</a></section>
                            @foreach ( $projOrg->orgperformingworks as $org)
                                 <section><a href="{{route('organizationClickingPage', ['id' => $org->id])}}" style="color:black;">{{$org->name}}</a></section>
                             @break;
