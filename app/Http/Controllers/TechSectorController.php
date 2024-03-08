@@ -127,7 +127,7 @@ class TechSectorController extends Controller
             'techsectordescription'=> $req->techsectordescription,
             'id_dm'=> $req->id_dm,
             'otme'=> $req->otme,
-            'code'=> strtoupper($req->otme),
+            'code'=> strtoupper($req->code),
             'note'=> $req->note,
         ]);
 
