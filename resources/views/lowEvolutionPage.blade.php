@@ -316,7 +316,7 @@
                                         <td><a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}" style="color:black;">{{$org->name}}</a></td>
                             @endforeach
                             @foreach ( $projOrg->legalentityroles as $role)
-                                        <td>{{$role->code}}</td>
+                                        <td>{{$role->name}}</td>
                             @endforeach
                             @foreach ( $projOrg->orgperformingworks as $org)
                                         <td><a href="{{ route('locationsClickingPage', ['id' => $org->location->id]) }}" style="color:black;">{{$org->location->state}},{{$org->location->city}}</a></td>
