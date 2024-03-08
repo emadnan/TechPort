@@ -265,10 +265,11 @@ $projOrgs = $projOrgs->get();
             $active = $projOrgs->where('status.status' , 'Active')->count();
             $complete = $projOrgs->where('status.status' , 'Completed')->count();
             $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
+            $title = '';
             
             // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
     
-            return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+            return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title'));
     }
 
 
