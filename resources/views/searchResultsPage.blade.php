@@ -2178,11 +2178,14 @@
 
 
 
-$('#page_title').html('Search Results');
+$('#page_title').html('Search Results:');
 
 var techarea = @json($techarea);
 
-$('#dynamic_title').html(techarea.techarea);
+if(techarea) {
+    $('#dynamic_title').html(techarea.techarea);
+}
+
 
 
 
