@@ -187,8 +187,8 @@ $('#form').submit(function(){
                           $("#equipmentError").text(response.errors.equipment);
                           $("#productError").text(response.errors.product);
 
-                          $("#equipment").val(response.oldInput.id_equipment);
-                          $("#product").val(response.oldInput.id_product);
+                          $("#equipment").val(response.oldInput.equipment);
+                          $("#product").val(response.oldInput.product);
 
                       }
                       else
@@ -247,8 +247,8 @@ $('#form').submit(function(){
                           $("#equipmentError").text(response.errors.equipment);
                           $("#productError").text(response.errors.product);
 
-                          $("#equipment").val(response.oldInput.id_equipment);
-                          $("#product").val(response.oldInput.id_product);
+                          $("#equipment").val(response.oldInput.equipment);
+                          $("#product").val(response.oldInput.product);
 
 
                       }
