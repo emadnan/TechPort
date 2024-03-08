@@ -2359,7 +2359,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
   }
   var projects = @json($projOrgs);
   projects.forEach(function(project){
-    var area = project.techreferred.techarea.techarea;
+    var area = project.techreferred.techarea.code;
     if(area.includes('TX01'))
     {
     var area_btn =  document.getElementById('btn_tx01');
