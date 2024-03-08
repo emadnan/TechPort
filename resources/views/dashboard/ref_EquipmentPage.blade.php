@@ -308,7 +308,7 @@ $('#form').submit(function(){
                 '<p>'+ '<span  style="font-weight:700;">Equipment : </span>'
                 +item.equipment+'</p>'+
                 '<span style="font-weight:700;">Product: </span>'
-                +item.id_pnc+ '</p>';
+                +item.productDescription+ '</p>';
                 data.append(descp);
                 });
 
