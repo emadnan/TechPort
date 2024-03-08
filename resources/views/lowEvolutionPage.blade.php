@@ -305,8 +305,7 @@
 
                                 <table class="mb-5">
                                     <tr>
-                                        <th><a href="{{ url('/organizations') }}" style="color:#fff"> Organisation
-                                                Performing Work</a></th>
+                                        <th><a href="{{ url('/organizations') }}" style="color:#fff"> Company Performing Work</a></th>
                                         <th>Type of Company</th>
                                         <th><a href="{{ url('/locationsPage') }}" style="color:#fff;">Location</a></th>
                                         <th>Description</th>
