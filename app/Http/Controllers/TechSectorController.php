@@ -210,7 +210,8 @@ class TechSectorController extends Controller
         ->get();
 
         $allTrls = trl::with('projects.trlactual')->get();
-        $title = techsector::find($id);
+        $techsector = techsector::find($id);
+        $title = $techsector->techsector;
 
 
         $count = $projOrgs->unique('id')->count();
