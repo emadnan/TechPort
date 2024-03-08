@@ -184,7 +184,7 @@
                       {
                           var errorMessages = {
                                  'organization': 'The Company Unit field is required.',
-                                 'project': 'The Project Area field is required.',
+                                 'project': 'The Project field is required.',
                                 };
                             $.each(response.errors, function (key, value) {
                             var customErrorMessage = errorMessages[key] || value;
@@ -247,7 +247,7 @@
                       {
                         var errorMessages = {
                                  'organization': 'The Company Unit field is required.',
-                                 'project': 'The Project Area field is required.',
+                                 'project': 'The Project field is required.',
                                 };
                             $.each(response.errors, function (key, value) {
                             var customErrorMessage = errorMessages[key] || value;
@@ -308,7 +308,7 @@
   
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
-                '<p>'+ '<span  style="font-weight:700;">Organization : </span>'
+                '<p>'+ '<span  style="font-weight:700;">Company Unit : </span>'
                 +item.type+'</p>'+
                 '<span style="font-weight:700;">Project: </span>'
                 +item.projectName+ '</p>';
