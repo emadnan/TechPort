@@ -129,6 +129,7 @@
                             <th class="py-1">Description</th>
                             <!-- <th class="py-1">Id_dm</th> -->
                             <th class="py-1">Otme</th>
+                            <th class="py-1">Code</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
                         </thead>
