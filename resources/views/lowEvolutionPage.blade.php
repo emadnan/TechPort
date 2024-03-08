@@ -307,7 +307,7 @@
                                     <tr>
                                         <th><a href="{{ url('/organizations') }}" style="color:#fff"> Organisation
                                                 Performing Work</a></th>
-                                        <th>Code</th>
+                                        <th>Type of Company</th>
                                         <th><a href="{{ url('/locationsPage') }}" style="color:#fff;">Location</a></th>
                                         <th>Description</th>
                                     </tr>
