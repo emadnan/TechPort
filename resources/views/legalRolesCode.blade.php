@@ -1,6 +1,6 @@
 <div class="faq-item">
     <div id="legalRoles" class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Legal Entity Roles</span>
+        <span class="faq-question">Type of Company</span>
 
         <i class="fa-solid fa-chevron-down" id="rotateIcon"
             style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
