@@ -305,20 +305,16 @@
 
                                 <table class="mb-5">
                                     <tr>
-                                        <th><a href="{{ url('/organizations') }}" style="color:#fff"> Organization
+                                        <th><a href="{{ url('/organizations') }}" style="color:#fff"> Organisation
                                                 Performing Work</a></th>
-                                        <!-- <th>Type of Company</th> -->
+                                        <th>Code</th>
                                         <th><a href="{{ url('/locationsPage') }}" style="color:#fff;">Location</a></th>
                                         <th>Description</th>
                                     </tr>
                            @foreach ( $projOrg->orgperformingworks as $org)
                                     <tr>
                                         <td><a href="{{ route('organizationClickingPage', ['id' => $org->id]) }}" style="color:black;">{{$org->name}}</a></td>
-                            @endforeach
-                            <!-- @foreach ( $projOrg->legalentityroles as $role)
-                                        <td>{{$role->name}}</td>
-                            @endforeach -->
-                            @foreach ( $projOrg->orgperformingworks as $org)
+                                        <td>{{$projOrg->legalentityroles[$loop->index]->name}}</td>
                                         <td><a href="{{ route('locationsClickingPage', ['id' => $org->location->id]) }}" style="color:black;">{{$org->location->state}},{{$org->location->city}}</a></td>
                                         <td>{{$org->description}}</td>
                                     </tr>
