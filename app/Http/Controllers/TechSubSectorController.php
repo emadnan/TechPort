@@ -147,6 +147,7 @@ class TechSubSectorController extends Controller
         ->get();
 
         $allTrls = trl::with('projects.trlactual')->get();
+        $title = techniche::find($id);
 
 
         $count = $projOrgs->unique('id')->count();
@@ -156,7 +157,7 @@ class TechSubSectorController extends Controller
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title'));
     }
 
     public function __construct()
