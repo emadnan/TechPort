@@ -32,10 +32,10 @@
                         <img src="{{ asset('images/' . $project->image) }}" width="350px">
                     </div>
                     <div class="col">
-                        <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                        <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Type of Company</a></b></section>
                         <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$projOrg->id])}}">{{$projOrg->name}}</a>
                         </section>
-                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}">Lead Organization</a></b></section>
+                        <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}">Lead Company</a></b></section>
                         @foreach ($project->orgperformingworks as $org )
                         <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
                         @endforeach
