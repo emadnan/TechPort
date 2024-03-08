@@ -107,6 +107,12 @@
                             <p>Ref Company Units</p>
                             </a>
                         </li>
+                        <li id='menu_projectOrganizations' class="nav-item">
+                            <a href="{{route('projectOrganizationPage')}}" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            <p>Ref Companies</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             <div class="divider"></div>
@@ -243,27 +249,6 @@
                 </li>
               
             <div class="divider"></div>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                    Companies
-                       <i class="right fas fa-angle-left"></i>
-                    </p>
-                    </a>
-                    <ul class="nav nav-treeview ml-3">
-                       
-                        <li id='menu_projectOrganizations' class="nav-item">
-                            <a href="{{route('projectOrganizationPage')}}" class="nav-link">
-                            <i class="fas fa-edit nav-icon"></i>
-                            <p>Project Companies</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <div class="divider"></div>
 
                 <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
