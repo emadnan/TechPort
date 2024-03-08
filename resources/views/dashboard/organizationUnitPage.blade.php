@@ -73,7 +73,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Organization Unit Details</h4>
+          <h4 class="modal-title">Company Unit Details</h4>
         </div>
         <div class="modal-body" id="details">
         </div>
@@ -90,9 +90,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Organization Unit') }}</b>
+                    <b>{{ __('Company Units') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Organizatoin Unit</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Company Unit</button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -153,7 +153,7 @@
         $('#id').val('');
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Organization Unit');
+    $('#modal_title').html('Add Company Unit');
     $("#typeError").text('');
     $("#unitcodeError").text('');
     $("#descriptionError").text('');
@@ -165,7 +165,7 @@
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Organization Unit');
+    $('#modal_title').html('Update Company Unit');
     $("#typeError").text('');
     $("#unitcodeError").text('');
     $("#descriptionError").text('');
