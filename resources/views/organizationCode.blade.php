@@ -1,6 +1,6 @@
 <div class="faq-item">
     <div id="organization" class="faq-question" onclick="toggleAnswer(this)">
-        <span class="faq-question">Organizations</span><a id="organize"></a>
+        <span class="faq-question">Companies</span><a id="organize"></a>
 
         <i class="fa-solid fa-chevron-down" id="rotateIcon"
             style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
