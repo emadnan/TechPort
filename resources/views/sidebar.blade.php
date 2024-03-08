@@ -211,21 +211,21 @@
                             <a href="{{route('techAreaPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>
-                            Technology Area
+                            Technology Areas
                             </p>
                             </a>
                         </li>
                         <li id='menu_techsector' class="nav-item">
                             <a href="{{route('techSectorPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
-                            <p>Technology Sector</p>
+                            <p>Technology Sectors</p>
                             </a>
                         </li>
                         <li id='menu_techniche' class="nav-item">
                             <a href="{{route('techSubSectorPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>
-                            Technology Niche
+                            Technology Niches
                             </p>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                             <a href="{{route('techPage')}}" class="nav-link">
                             <i class="fas fa-edit nav-icon"></i>
                             <p>
-                            Technology Referred
+                            Technology Referreds
                             </p>
                             </a>
                         </li>
