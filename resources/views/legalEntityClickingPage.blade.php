@@ -383,7 +383,7 @@
 
             <script>
 
-    var title = $('#page_title').html('Legal Entity Roles');
+    var title = $('#page_title').html('Type Of Company');
 var projOrg = @json($projOrg);
 $(document).ready(function() {
         $('#dynamic_title').html(projOrg.name);
