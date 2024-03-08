@@ -658,7 +658,7 @@ switch (project.trlfinal.trllevel) {
 </script>
                                 <section style="font-weight:bold;margin-top:80px;font-size:16px">Technology Areas
                                 </section>
-                                <section><a href="{{ url('/search-results') }}" style="color:black;">TX01 {{$projOrg->techreferred->techarea->techarea}}</a></section>
+                                <section><a href="{{ url('/search-results') }}" style="color:black;">{{$projOrg->techreferred->techarea->code}} {{$projOrg->techreferred->techarea->techarea}}</a></section>
                                 <div class="row ml-1">
                                     <svg xmlns="htp://www.w3.org/2000/svg" width="15" height="8"
                                         viewBox="0 0 15 8" fill="none">
@@ -667,7 +667,7 @@ switch (project.trlfinal.trllevel) {
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
                                     <section style="margin-left:5px;"><a href="{{ url('/search-results') }}"
-                                            style="color:black;">TX01.1 {{$projOrg->techreferred->techsector->techsector}}</a></section>
+                                            style="color:black;">{{$projOrg->techreferred->techarea->code}}.1 {{$projOrg->techreferred->techsector->techsector}}</a></section>
                                 </div>
                                 <div class="row" style="margin-left:25px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8"
@@ -677,7 +677,7 @@ switch (project.trlfinal.trllevel) {
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
                                     <section style="margin-left:5px;"><a href="{{ url('/search-results') }}"
-                                            style="color:black;">TX01.1.3 {{$projOrg->techreferred->techniche->techniche}}</a></section>
+                                            style="color:black;">{{$projOrg->techreferred->techarea->code}}.1.3 {{$projOrg->techreferred->techniche->techniche}}</a></section>
                                 </div>
                                 <section style="font-weight:bold;margin-top:25px;font-size:16px"><a
                                         href="{{ url('/project-targets') }}" style="color:black;">Project target</a>
