@@ -114,7 +114,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Working Organization Details</h4>
+          <h4 class="modal-title">Working Company Details</h4>
         </div>
         <div class="modal-body" id="details">
            
@@ -132,9 +132,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Working Organization') }}</b>
+                    <b>{{ __('Working Companies') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Working Orgaization</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Working Company</button>
                     </div>
                 </div>
 
@@ -201,7 +201,7 @@
 
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-        $('#modal_title').html('Add Working Organization');
+        $('#modal_title').html('Add Working Company');
         // $("#codeError").text('');
         $("#nameError").text('');
         $("#descriptionError").text('');
@@ -215,7 +215,7 @@
     $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Working Organization');
+    $('#modal_title').html('Update Working Company');
         // $("#codeError").text('');
         $("#nameError").text('');
         $("#descriptionError").text('');
