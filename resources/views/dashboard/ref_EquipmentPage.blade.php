@@ -37,7 +37,7 @@
                         <select id="product" type="text" class="form-control @error('product') is-invalid @enderror" name="product" value="{{ old('product') }}">
                             <option selected value="">SELECT</option>
                             @foreach ($products as $product)
-                            <option value="{{$product ->id}}">{{$product->id_pnc}} </option>
+                            <option value="{{$product ->id}}">{{$product->description}} </option>
                             @endforeach
                         </select>
                         <span class="text-danger small" id="productError"></span>
@@ -62,7 +62,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Product Equipment Details</h4>
+          <h4 class="modal-title">Ref Equipment Details</h4>
         </div>
         <div class="modal-body" id="details">
            
@@ -80,9 +80,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Product Equipment') }}</b>
+                    <b>{{ __('Ref Equipments') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Product Equipment</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Ref Equipment</button>
                     </div>
                 </div>
 
@@ -90,15 +90,15 @@
                   <div class="table-responsive">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Product</th>
                             <th class="py-1">Equipment</th>
+                            <th class="py-1">Product</th>
                             <th class="py-1">Action</th>
                         </thead>
                         <tbody>
                             @foreach ($ref_equips as $ref_equip )
                             <tr id="row_{{$ref_equip-> id}}">
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$ref_equip -> equipment}}</td>
-                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$ref_equip -> id_pnc}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$ref_equip -> productDescription}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; ">
                                     <i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745;  " data-id="{{$ref_equip-> id}}"> <span style="color:black;">|</span> </i>
                                     <i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="{{$ref_equip-> id}}"> <span style="color:black;">|</span> </i> 
@@ -138,7 +138,7 @@
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Product Equipment');
+    $('#modal_title').html('Add Ref Equipment');
     $("#equipmentError").text('');
     $("#productError").text('');
     }) // create click event end
@@ -146,7 +146,7 @@
     $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Product Equipment');
+    $('#modal_title').html('Update Ref Equipment');
     $("#equipmentError").text('');
     $("#productError").text('');
     var rowID = $(this).data('id');
@@ -184,8 +184,8 @@ $('#form').submit(function(){
 
                       if(response.errors)
                       {
-                          $("#equipmentError").text(response.errors.id_equipment);
-                          $("#productError").text(response.errors.id_product);
+                          $("#equipmentError").text(response.errors.equipment);
+                          $("#productError").text(response.errors.product);
 
                           $("#equipment").val(response.oldInput.id_equipment);
                           $("#product").val(response.oldInput.id_product);
@@ -215,7 +215,7 @@ $('#form').submit(function(){
                           var row1 = 
                           '<tr id="row_'+item.id+'">'+
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.equipment + '</td>'+ 
-                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_pnc + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.productDescription + '</td>'+ 
                               '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                   '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
@@ -244,8 +244,8 @@ $('#form').submit(function(){
                   {
                       if(response.errors)
                       {
-                          $("#equipmentError").text(response.errors.id_equipment);
-                          $("#productError").text(response.errors.id_product);
+                          $("#equipmentError").text(response.errors.equipment);
+                          $("#productError").text(response.errors.product);
 
                           $("#equipment").val(response.oldInput.id_equipment);
                           $("#product").val(response.oldInput.id_product);
@@ -273,7 +273,7 @@ $('#form').submit(function(){
                $.each(response.eqRow , function(index , item){
                    var row = '<tr id="row_'+item.id+'">'+
                                '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.equipment + '</td>' +
-                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.id_pnc + '</td>'+ 
+                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.productDescription + '</td>'+ 
                                '<td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90px; padding-top:15px;">'+
                                   '<i id="view-btn" class="fa-solid fa-eye fa-lg" style="color:#28A745; " data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+
                                   '<i id="update-btn" class="fa-solid fa-pen-to-square fa-lg" style="color:#E0A800;" data-id="'+item.id+'"> <span style="color:black; padding-right:4px;">|</span> </i>'+ 
