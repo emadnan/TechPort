@@ -19,7 +19,7 @@
                             <label for="techarea" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Area') }}</label>
 
                             <div class="col-md-6">
-                                <select id="techarea" type="text" class="form-control @error('techarea') is-invalid @enderror" name="techarea" value="{{ old('techarea') }}" autocomplete="techarea" autofocus required>
+                                <select id="techarea" type="text" class="form-control @error('techarea') is-invalid @enderror" name="techarea" value="{{ old('techarea') }}" autocomplete="techarea" autofocus>
                                     <option selected value="">SELECT</option>
                                     @foreach ($areas as $id=>$area )
                                     <option value="{{$area-> id}}">{{$area-> techarea}}</option>
@@ -33,7 +33,7 @@
                             <label for="techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Sector') }}</label>
 
                             <div class="col-md-6">
-                                <select id="techsector" class="form-control @error('techsector') is-invalid @enderror" name="techsector" value="{{ old('techsector') }}" autocomplete="techsector" autofocus required>
+                                <select id="techsector" class="form-control @error('techsector') is-invalid @enderror" name="techsector" value="{{ old('techsector') }}" autocomplete="techsector" autofocus>
                                     <option selected value="">SELECT</option>
                                     @foreach ($sectors as $id=>$sector )
                                     <option value="{{$sector-> id}}">{{$sector-> techsector}}</option>
@@ -47,7 +47,7 @@
                             <label for="techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
 
                             <div class="col-md-6">
-                                <select id="techniche" class="form-control @error('techniche') is-invalid @enderror" name="techniche" value="{{ old('techniche') }}" autocomplete="techniche" autofocus required>
+                                <select id="techniche" class="form-control @error('techniche') is-invalid @enderror" name="techniche" value="{{ old('techniche') }}" autocomplete="techniche" autofocus >
                                     <option selected value="">SELECT</option>
                                     @foreach ($niches as $id=>$niche )
                                     <option value="{{$niche-> id}}">{{$niche-> techniche}}</option>
@@ -94,7 +94,7 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Technology Referred') }}</b>
+                    <b>{{ __('Technology Referreds') }}</b>
                     <div class="float-right">
                         <button type="button" class="btn btn-success btn-sm"  id="add-btn" > Add Technology Referred</button>
                     </div>
