@@ -1393,6 +1393,10 @@
             </div>
 
 @foreach ($techs as $tech)
+
+@php
+    $areaLoop = $loop->index+1 ;
+@endphp
     <div class="row border-top tech_area ">
         <div onclick="toggleAnswers(this)"  style = 'width:30px; background-color: #065386 ;'>
              <i class="fa-solid fa-angle-right"></i>
@@ -1439,6 +1443,7 @@
             <div class="container" style="display:none;">
             @php
                 $sectorID = [];
+                $sectorLoop = $loop->index+1;
             @endphp
             @foreach ($tech->techsectors as $techsector )
             @if ( in_array( $techsector->id, $sectorID))
@@ -1449,7 +1454,7 @@
                 </div>
                 <div class="col p-0">
                     <div style="display:flex;  justify-content: space-between; align-items: center;">
-                        <div class="pl-2 sector_text">{{$techsector-> techsector}}</div> 
+                        <div class="pl-2 sector_text">TX0@php areaLoop @endphp.{{$loop->index+1}} {{$techsector-> techsector}}</div> 
                         <div>
                             <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:{{999 - $loop->index}}; ">
