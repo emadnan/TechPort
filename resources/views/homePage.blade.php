@@ -1454,7 +1454,7 @@
                 </div>
                 <div class="col p-0">
                     <div style="display:flex;  justify-content: space-between; align-items: center;">
-                        <div class="pl-2 sector_text">TX0@php $areaLoop @endphp.{{$loop->index+1}} {{$techsector-> techsector}}</div> 
+                        <div class="pl-2 sector_text">TX0{{$areaLoop}}.{{$loop->index+1}} {{$techsector-> techsector}}</div> 
                         <div>
                             <img src="{{ asset('images/icon-yellow.png') }}" alt="" class="float-right  yellow-graph-image" onclick="showimage(this)">
                             <div class="  graph-pop" style="display: none;  z-index:{{999 - $loop->index}}; ">
