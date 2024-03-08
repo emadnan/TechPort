@@ -188,7 +188,7 @@ class TechAreaController extends Controller
         $complete = $projOrgs->where('status.status' , 'Completed')->count();
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
         
-        // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
+        return response()->json(compact('techarea'));
 
         return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'techarea'));
     }
