@@ -658,7 +658,7 @@ switch (project.trlfinal.trllevel) {
 </script>
                                 <section style="font-weight:bold;margin-top:80px;font-size:16px">Technology Areas
                                 </section>
-                                <section><a href="{{ route('/searchProjectsByTechArea' , ['id' => $projOrg->techreferred->techarea->id]) }}" style="color:black;">{{$projOrg->techreferred->techarea->code}} {{$projOrg->techreferred->techarea->techarea}}</a></section>
+                                <section><a href="{{ route('searchProjectsByTechArea' , ['id' => $projOrg->techreferred->techarea->id]) }}" style="color:black;">{{$projOrg->techreferred->techarea->code}} {{$projOrg->techreferred->techarea->techarea}}</a></section>
                                 <div class="row ml-1">
                                     <svg xmlns="htp://www.w3.org/2000/svg" width="15" height="8"
                                         viewBox="0 0 15 8" fill="none">
