@@ -2180,6 +2180,9 @@
 
 $('#page_title').html('Search Results:');
 
+var title = @json($title);
+$('#dynamic_title').html(title);
+
 
 
 
