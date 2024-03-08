@@ -56,7 +56,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Legal Entity Role Details</h4>
+          <h4 class="modal-title">Type of Company Details</h4>
         </div>
         <div class="modal-body" id="details">
         </div>
@@ -74,9 +74,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Legal Entity Roles ') }}</b>
+                    <b>{{ __('Type of Company ') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Legal Entity Role</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Type of Company</button>
                     </div>
                 </div>
 
@@ -132,7 +132,7 @@ $(document).ready(function(){
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Legal Entity Role');
+    $('#modal_title').html('Add Type of Company');
     $("#nameError").text('');
     $("#descriptionError").text('');
     $("#noteError").text('');
@@ -142,7 +142,7 @@ $(document).ready(function(){
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Legal Entity Role');
+    $('#modal_title').html('Update Type of Company');
     $("#nameError").text('');
     $("#descriptionError").text('');
     $("#noteError").text('');
