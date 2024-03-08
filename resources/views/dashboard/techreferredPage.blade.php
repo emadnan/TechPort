@@ -199,9 +199,15 @@
 
                         if(response.errors)
                         {   
-                            $("#techareaError").text(response.errors.techarea);
-                            $("#techsectorError").text(response.errors.techsector);
-                            $("#technicheError").text(response.errors.techniche);
+                            var errorMessages = {
+                                 'techarea': 'The Technology Area field is required.',
+                                 'techsector': 'The Technology Sector field is required.',
+                                 'techniche': 'The Technology Niche field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
 
                             $("#techarea").val(response.oldInput.techarea);
                             $("#techsector").val(response.oldInput.techsector);
@@ -260,10 +266,16 @@
                     {
                         if(response.errors)
                         {
-                            $("#techareaError").text(response.errors.techarea);
-                            $("#techsectorError").text(response.errors.techsector);
-                            $("#technicheError").text(response.errors.techniche);
-
+                            var errorMessages = {
+                                 'techarea': 'The Technology Area field is required.',
+                                 'techsector': 'The Technology Sector field is required.',
+                                 'techniche': 'The Technology Niche field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
+                             
                             $("#techarea").val(response.oldInput.techarea);
                             $("#techsector").val(response.oldInput.techsector);
                             $("#techniche").val(response.oldInput.techniche);
