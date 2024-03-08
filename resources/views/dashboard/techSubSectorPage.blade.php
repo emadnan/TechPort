@@ -19,7 +19,7 @@
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technology Sub sector') }}</label>
+                    <label for="techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technology Niche') }}</label>
                     <div class="col-md-6">
                         <input id="techniche" type="text" class="form-control @error('techniche') is-invalid @enderror" name="techniche" value= "{{ old ('techniche') }}" autocomplete="techniche" autofocus>
                         <span class="text-danger small" id="technicheError"></span>
@@ -76,7 +76,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Technology Sub sector Details</h4>
+          <h4 class="modal-title">Technology Niche Details</h4>
         </div>
         <div class="modal-body" id="details">
         </div>
@@ -92,9 +92,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Technology Niche') }}</b>
+                    <b>{{ __('Technology Niches') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Technology Sub sector</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Technology Niche</button>
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Technology Sub Sector');
+    $('#modal_title').html('Add Technology Niche');
     $("#technicheError").text('');
     $("#technichedescriptionError").text('');
     $("#id_dmError").text('');
@@ -165,7 +165,7 @@
 $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Technology Sub Sector');
+    $('#modal_title').html('Update Technology Niche');
     $("#technicheError").text('');
     $("#technichedescriptionError").text('');
     $("#id_dmError").text('');
@@ -342,7 +342,7 @@ $('body').on('click' , '#view-btn' , function(){
                    
                     $.each(response.data , function(index , item){
                         var descp ='<p>'+ 
-                '<span style="font-weight:700;">Technology Sub Sector : </span>'
+                '<span style="font-weight:700;">Technology Niche : </span>'
                 +item.techniche+ '</p>'+
                 '<p>'+ '<span  style="font-weight:700;">Description : </span>'
                 +item.technichedescription+'</p>'+
