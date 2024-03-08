@@ -14,7 +14,7 @@ class Ref_EquipmentController extends Controller
     {
         $products = product::get();
         $equipments = equipment::get();
-        $ref_equips = ref_equipment::select('products.id_pnc' , 'equipment.equipment' ,'ref_equipments.*' )
+        $ref_equips = ref_equipment::select('products.description as productDescription' , 'equipment.equipment' ,'ref_equipments.*' )
         ->join('products' , 'products.id' , '=' , 'ref_equipments.id_product')
         ->join('equipment' , 'equipment.id' , '=' , 'ref_equipments.id_equipment')
         ->get();
