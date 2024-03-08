@@ -76,7 +76,7 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Business Area') }}</b>
+                    <b>{{ __('Business Areas') }}</b>
                     <div class="float-right">
                         <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Business Area</button>
                     </div>
@@ -86,7 +86,7 @@
                   <div class="table-responsive">
                     <table class="table table-bordered table-striped" id="data-table">
                         <thead>
-                            <th class="py-1">Business Areas</th>
+                            <th class="py-1">Business Area</th>
                             <th class="py-1">Description</th>
                             <th class="py-1">Note</th>
                             <th class="py-1">Action</th>
