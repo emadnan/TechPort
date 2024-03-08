@@ -19,7 +19,7 @@
                 </div>
                 
                 <div class="row mb-3">
-                    <label for="organization" class="col-md-4 col-form-label text-md-end">{{ __('Organization Unit') }}</label>
+                    <label for="organization" class="col-md-4 col-form-label text-md-end">{{ __('Company Unit') }}</label>
                     <div class="col-md-6">
                         <select id="organization" type="text" class="form-control @error('organization') is-invalid @enderror" name="organization" value= "{{ old ('organization') }}" autocomplete="organization" autofocus>
                             <option selected value="">SELECT</option>
@@ -60,7 +60,7 @@
     <div class="modal-dialog" style="left: -100px;">
       <div class="modal-content" style="width: 160%;">
         <div class="card-header">
-          <h4 class="modal-title">Project Organization Unit Details</h4>
+          <h4 class="modal-title">Ref Company Unit Details</h4>
         </div>
         <div class="modal-body" id="details">
            
@@ -78,9 +78,9 @@
         <div id="first_column" class="col-md-10 offset-3 my-3">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ __('Project Organization Unit') }}</b>
+                    <b>{{ __('Ref Company Units') }}</b>
                     <div class="float-right">
-                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Project Organization Unit</button>
+                        <button type="button" class="btn btn-success btn-sm"  id="add-btn" >Add Ref Company Unit</button>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
                   <div class="table-responsive">
                     <table id="data-table" class="table table-bordered table-striped">
                         <thead>
-                            <th class="py-1">Organization Unit</th>
+                            <th class="py-1">Company Unit</th>
                             <th class="py-1">Project</th>
                             <th class="py-1">Action</th>
                         </thead>
@@ -136,7 +136,7 @@
     $('#add-btn').click(function(){
         $('#form-modal').modal('show');
         $('#form').trigger('reset');
-    $('#modal_title').html('Add Project Organization Unit');
+    $('#modal_title').html('Add Ref Company Unit');
     $("#orgainzationError").text('');
     $("#projectError").text('');
     }) // create click event end
@@ -144,7 +144,7 @@
     $('body').on('click' , '#update-btn' , function(){
     $('#form').trigger('reset');
     $('#form-modal').modal('show');
-    $('#modal_title').html('Update Project Organization Unit');
+    $('#modal_title').html('Update Ref Company Unit');
     $("#orgainzationError").text('');
     $("#projectError").text('');
     var rowID = $(this).data('id');
@@ -182,11 +182,14 @@
   
                       if(response.errors)
                       {
-                          $("#organizationError").text(response.errors.id_organizationunit);
-                          $("#projectError").text(response.errors.id_project);
-  
-                          $("#organization").val(response.oldInput.id_organizationunit);
-                          $("#project").val(response.oldInput.id_project);
+                          var errorMessages = {
+                                 'organization': 'The Company Unit field is required.',
+                                 'project': 'The Project Area field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
   
                       }
                       else
@@ -242,11 +245,14 @@
                   {
                       if(response.errors)
                       {
-                          $("#organizationError").text(response.errors.id_organizationunit);
-                          $("#projectError").text(response.errors.id_project);
-  
-                          $("#organization").val(response.oldInput.id_organizationunit);
-                          $("#project").val(response.oldInput.id_project);
+                        var errorMessages = {
+                                 'organization': 'The Company Unit field is required.',
+                                 'project': 'The Project Area field is required.',
+                                };
+                            $.each(response.errors, function (key, value) {
+                            var customErrorMessage = errorMessages[key] || value;
+                            $('#' + key + 'Error').text(customErrorMessage);
+                             });
   
                       }
                       else
