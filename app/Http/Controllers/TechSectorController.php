@@ -210,6 +210,7 @@ class TechSectorController extends Controller
         ->get();
 
         $allTrls = trl::with('projects.trlactual')->get();
+        $title = techsector::find($id);
 
 
         $count = $projOrgs->unique('id')->count();
@@ -219,7 +220,7 @@ class TechSectorController extends Controller
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title'));
     }
 
     public function __construct()
