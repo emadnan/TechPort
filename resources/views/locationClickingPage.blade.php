@@ -405,13 +405,13 @@
                                     <img src="{{ asset('images/' . $project->image) }}" width="350px">
                                 </div>
                                 <div class="col">
-                                    <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                                    <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Type of Company</a></b></section>
                                     @foreach ($org->legalentityroles as $role )
                                     <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$role->id])}}">{{$role->name}}</a>
                                     </section>
                                     @break
                                     @endforeach
-                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Companies Performing Work</a></b></section>
                                     <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
                                     <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01 {{$project->techreferred->techarea->techarea}}</a></section>
@@ -653,7 +653,7 @@
             
             <div class="faq-item">
                 <div id="organization" class="faq-question" onclick="toggleAnswer(this)">
-                    <span class="faq-question">Organizations</span><a id="organize"></a>
+                    <span class="faq-question">Companies</span><a id="organize"></a>
             
                     <i class="fa-solid fa-chevron-down" id="rotateIcon"
                         style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
