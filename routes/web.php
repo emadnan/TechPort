@@ -60,8 +60,8 @@ Route::controller(AdvanceSearchController::class)->group(function(){
 
 Route::controller(SearchReultsController::class)->group(function(){
     Route::get('/search-results','index')->name('searchResultsPage');
-Route::post('/searchProjects','searchProjects')->name('searchProjects');
-Route::post('/getProjectsLengthBySearchID', 'getProjectsLengthBySearchID')->name('getProjectsLengthBySearchID');
+    Route::post('/searchProjects','searchProjects')->name('searchProjects');
+    Route::post('/getProjectsLengthBySearchID', 'getProjectsLengthBySearchID')->name('getProjectsLengthBySearchID');
 });
 //                Routes for Users without AUTH AdminLte 
 // Route::get('/admin' ,[UserController::class , 'admin'])->name('admin');
