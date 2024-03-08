@@ -23,7 +23,7 @@ class Ref_EquipmentController extends Controller
 
     public function read (string $id)   
     {
-        $ref_equip = ref_equipment::select('products.id_pnc' , 'equipment.equipment' ,'ref_equipments.*' )
+        $ref_equip = ref_equipment::select('products.description as productDescription' , 'equipment.equipment' ,'ref_equipments.*' )
         ->join('products' , 'products.id' , '=' , 'ref_equipments.id_product')
         ->join('equipment' , 'equipment.id' , '=' , 'ref_equipments.id_equipment')
         ->where('ref_equipments.id',$id)
@@ -50,7 +50,7 @@ class Ref_EquipmentController extends Controller
         if($Create)
         {
             $latestID = ref_equipment::latest()->value('id');
-            $ref_equip = ref_equipment::select('products.productDescription' , 'equipment.equipment' ,'ref_equipments.*' )
+            $ref_equip = ref_equipment::select('products.description as productDescription' , 'equipment.equipment' ,'ref_equipments.*' )
             ->join('products' , 'products.id' , '=' , 'ref_equipments.id_product')
             ->join('equipment' , 'equipment.id' , '=' , 'ref_equipments.id_equipment')
             ->where('ref_equipments.id',$latestID)
@@ -89,7 +89,7 @@ class Ref_EquipmentController extends Controller
 
         if($Update)
         {
-            $ref_equip = ref_equipment::select('products.productDescription' , 'equipment.equipment' ,'ref_equipments.*' )
+            $ref_equip = ref_equipment::select('products.description as productDescription' , 'equipment.equipment' ,'ref_equipments.*' )
             ->join('products' , 'products.id' , '=' , 'ref_equipments.id_product')
             ->join('equipment' , 'equipment.id' , '=' , 'ref_equipments.id_equipment')
             ->where('ref_equipments.id',$id)
