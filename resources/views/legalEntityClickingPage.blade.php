@@ -352,7 +352,7 @@
         <ul class="breadCrumbs mt-2 mb-0">
             <li class="breadCrumbs-items"><a href="{{url('/')}}">Home</a></li>
             <li class="breadCrumbs-items">></li>
-            <li class="breadCrumbs-items"><a href="{{url('/legal-entity-roles')}}">Legal Entity Roles index</a></li>
+            <li class="breadCrumbs-items"><a href="{{url('/legal-entity-roles')}}">Type Of Company index</a></li>
             <li class="breadCrumbs-items">></li>
             <li class="breadCrumbs-items"><i>{{$projOrg->name}}</i></li>
         </ul>
