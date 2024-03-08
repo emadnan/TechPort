@@ -1446,6 +1446,9 @@
                 $sectorLoop = $loop->index+1;
             @endphp
             @foreach ($tech->techsectors as $techsector )
+            @php
+                $sectorLoop = $loop->index+1;
+            @endphp
             @if ( in_array( $techsector->id, $sectorID))
             @else
             <div class="row border-top tech_sector">
