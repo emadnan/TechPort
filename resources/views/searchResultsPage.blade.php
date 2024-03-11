@@ -362,6 +362,7 @@
     .tooltip-inner {
     background-color: #eff1cc; /* Red background */
     color: black; /* White text */
+    font-size:10px;
 }
 </style>
 
