@@ -336,6 +336,11 @@
         text-decoration: none;
         
     }
+    .tooltip-inner {
+    background-color: #eff1cc; 
+    color: black; 
+    font-size:10px;
+}
 </style>
 
 <body>
