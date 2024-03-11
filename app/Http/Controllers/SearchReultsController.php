@@ -45,6 +45,7 @@ class SearchReultsController extends Controller
 
         $allTrls = trl::with('projects.trlactual')->get();
         $title = $req->searchBar;
+        $totalTechareas = techarea::count();
 
 
         $count = $projOrgs->unique('id')->count();
@@ -55,7 +56,8 @@ class SearchReultsController extends Controller
      
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' ));
+        $totalTechareas = techarea::count();
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas'));
 
     }
 
