@@ -62,7 +62,7 @@
                             <section style="font-size: 16px;">Technology Areas Represented</section>
                             <div class="row" style="gap: 5px;margin-top:10px;">
                            @for($i=1 ; $i<=$totalTechareas ; $i++)
-                           <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px;"
+                           <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;"
                                     class="btn"><a class="btn-hover" style="color:white;" 
                                         href="{{ url('/') }}">TX0{{$i}}</a></button>
                            @endfor
