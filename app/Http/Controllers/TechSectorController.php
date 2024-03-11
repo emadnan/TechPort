@@ -219,10 +219,11 @@ class TechSectorController extends Controller
         $complete = $projOrgs->where('status.status' , 'Completed')->count();
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
         $totalTechareas = techarea::count();
+        $techareas = techarea::with('projects')->get();
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas' , 'techareas'));
     }
 
     public function __construct()
