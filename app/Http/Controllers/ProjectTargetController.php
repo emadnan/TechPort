@@ -5,6 +5,7 @@ use App\Models\foundingsource;
 use App\Models\project;
 use App\Models\Project_target;
 use App\Models\trl;
+use App\Models\techarea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
