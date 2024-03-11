@@ -2368,57 +2368,57 @@ Promise.all(allTrls.map(fetchDataForTrl))
     if(area.includes('TX01'))
     {
     var area_btn =  document.getElementById('btn_tx01');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX02'))
     {
     var area_btn =  document.getElementById('btn_tx02');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX03'))
     {
     var area_btn =  document.getElementById('btn_tx03');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX04'))
     {
     var area_btn =  document.getElementById('btn_tx04');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX05'))
     {
     var area_btn =  document.getElementById('btn_tx05');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX06'))
     {
     var area_btn =  document.getElementById('btn_tx06');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX07'))
     {
     var area_btn =  document.getElementById('btn_tx07');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX08'))
     {
     var area_btn =  document.getElementById('btn_tx08');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX09'))
     {
     var area_btn =  document.getElementById('btn_tx09');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX010'))
     {
     var area_btn =  document.getElementById('btn_tx010');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
     if(area.includes('TX011'))
     {
     var area_btn =  document.getElementById('btn_tx011');
-    area_btn.style.display = 'block';
+    area_btn.classList.add('btn-primary') = 'block';
     }
   });
   </script>
