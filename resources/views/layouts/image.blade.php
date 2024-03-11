@@ -125,7 +125,7 @@
 
     function getProjectCount() {
         var count = @json($count);
-        return 'Projects: ' . count;
+        return 'Projects: ' + count;
     }
 });
 </script>
