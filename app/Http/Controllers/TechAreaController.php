@@ -191,8 +191,7 @@ class TechAreaController extends Controller
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
         $totalTechareas = techarea::count();
 
-        $techareas = techarea::with('projects')
-        ->get();
+        $techareas = techarea::with('projects')->get();
         
         // return response()->json(compact('techareas'));
 
