@@ -36,6 +36,22 @@
                 </div>
 
                 <div class="row mb-3">
+                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
+                    <div class="col-md-6">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" >
+                        <span class="text-danger small" id="emailError"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="website" class="col-md-4 col-form-label text-md-end">{{ __('Website') }}</label>
+                    <div class="col-md-6">
+                        <input id="website" type="text" class="form-control @error('website') is-invalid @enderror" name="website" value="{{ old('website') }}" >
+                        <span class="text-danger small" id="websiteError"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
                     <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                     <div class="col-md-6">
                         <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" ></textarea>
@@ -144,6 +160,8 @@
                         <thead>
                             <!-- <th class="py-1">Code</th> -->
                             <th class="py-1">Name</th>
+                            <th class="py-1">Email</th>
+                            <th class="py-1">Website</th>
                             <th class="py-1">Type Of Location</th>
                             <th class="py-1">Type</th>
                             <th class="py-1">Human Entity</th>
@@ -156,6 +174,8 @@
                             <tr id="row_{{$organization-> id}}">
                                 <!-- <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> code}}</td> -->
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> name}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> email}}</td>
+                                <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> website}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> typeoflocation}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> type}}</td>
                                 <td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">{{$organization -> humanName}}</td>
@@ -204,6 +224,8 @@
         $('#modal_title').html('Add Working Company');
         // $("#codeError").text('');
         $("#nameError").text('');
+        $("#emailError").text('');
+        $("#websiteError").text('');
         $("#descriptionError").text('');
         $("#typeoflocationError").text('');
         $("#id_typeError").text('');
@@ -218,6 +240,8 @@
     $('#modal_title').html('Update Working Company');
         // $("#codeError").text('');
         $("#nameError").text('');
+        $("#emailError").text('');
+        $("#websiteError").text('');
         $("#descriptionError").text('');
         $("#typeoflocationError").text('');
         $("#id_typeError").text('');
@@ -234,6 +258,8 @@
                         $('#id').val(item.id);
                         // $('#code').val(item.code);
                         $('#name').val(item.name);
+                        $('#email').val(item.email);
+                        $('#website').val(item.website);
                         $('#description').val(item.description);
                         $('#typeoflocation').val(item.typeoflocation);
                         $('#id_type').val(item.id_type);
@@ -252,6 +278,8 @@ $('#form').submit(function(){
           var inpID = $('#id').val();
         // $("#codeError").text('');
         $("#nameError").text('');
+        $("#emailError").text('');
+        $("#websiteError").text('');
         $("#descriptionError").text('');
         $("#typeoflocationError").text('');
         $("#id_typeError").text('');
@@ -276,6 +304,8 @@ $('#form').submit(function(){
 
                         //   $("#code").val(response.oldInput.code);
                           $("#name").val(response.oldInput.name);
+                          $("#email").val(response.oldInput.email);
+                          $("#website").val(response.oldInput.website);
                           $("#description").val(response.oldInput.description);
                           $("#typeoflocation").val(response.oldInput.typeoflocation);
                           $("#id_type").val(response.oldInput.id_type);
@@ -309,6 +339,8 @@ $('#form').submit(function(){
                           '<tr id="row_'+item.id+'">'+
                             //   '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.email + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.website + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.typeoflocation + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.humanName + item.humanSurName + '</td>'+ 
@@ -349,6 +381,8 @@ $('#form').submit(function(){
 
                         //   $("#code").val(response.oldInput.code);
                           $("#name").val(response.oldInput.name);
+                          $("#email").val(response.oldInput.email);
+                          $("#website").val(response.oldInput.website);
                           $("#description").val(response.oldInput.description);
                           $("#typeoflocation").val(response.oldInput.typeoflocation);
                           $("#id_type").val(response.oldInput.id_type);
@@ -379,6 +413,8 @@ $('#form').submit(function(){
                    var row = '<tr id="row_'+item.id+'">'+
                     // '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.code + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.name + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.email + '</td>'+ 
+                              '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.website + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.typeoflocation + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.type + '</td>'+ 
                               '<td class="py-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; ">' + item.humanName + item.humanSurName + '</td>'+ 
@@ -419,6 +455,10 @@ $('#form').submit(function(){
                 +item.code+ '</p>'+
                 '<span style="font-weight:700;">Name: </span>'
                 +item.name+ '</p>'+
+                '<span style="font-weight:700;">Email: </span>'
+                +item.email+ '</p>'+
+                '<span style="font-weight:700;">Website: </span>'
+                +item.website+ '</p>'+
                 '<span style="font-weight:700;">Description: </span>'
                 +item.description+ '</p>'+
                 '<span style="font-weight:700;">Type Of Location: </span>'
