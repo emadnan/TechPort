@@ -184,14 +184,20 @@ class TechAreaController extends Controller
         $techarea = techarea::find($id);
         $title = $techarea->techarea;
 
+
         $count = $projOrgs->unique('id')->count();
         $active = $projOrgs->where('status.status' , 'Active')->count();
         $complete = $projOrgs->where('status.status' , 'Completed')->count();
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
+        $searchedProjects = project::with('techareas')
+        ->whereHas('techareas', function ($query) use ($id) {
+            $query->where('techareas.id', $id);
+        })
+        ->count();
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'searchedProjects'));
     }
 
     public function __construct()
