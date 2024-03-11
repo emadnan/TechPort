@@ -115,7 +115,8 @@
     </div>
 </div>
 <script>
-      var projects = @json($projOrgs);
+      var projOrg = @json($projOrg);
+  var projects = projOrg.projects;
   var totalTechareas = @json($totalTechareas);
   projects.forEach(function(project){
     var area = project.techreferred.techarea.code;
