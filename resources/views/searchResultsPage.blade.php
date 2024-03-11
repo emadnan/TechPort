@@ -428,19 +428,19 @@
                                     <img src="{{ asset('images/' . $project->image) }}" width="350px">
                                 </div>
                                 <div class="col">
-                                    <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Legal Entity Role</a></b></section>
+                                    <section class="mb-2" style="font-size:13px;"><b><a style="color:black;" href="{{url('/legal-entity-roles')}}">Type of Company</a></b></section>
                                     @foreach ($project->legalentityroles as $role )
                                     <section class="mb-2" style="font-size:13px;"><a style="color:black;" href="{{route('legalEntityClickingPage' , ['id'=>$role->id])}}">{{$role->name}}</a>
                                     </section>
                                     @break
                                     @endforeach
-                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}"> Organisation Performing Work</a></b></section>
+                                    <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/organizations')}}">Companies Performing Work</a></b></section>
                                     @foreach ($project->orgperformingworks as $org )
                                     <section class="mb-2" style="font-size:13px"> <a style="color:black;" href="{{route('organizationClickingPage' , ['id' => $org->id])}}">{{$org->name}}</a></section>
                                     @break
                                     @endforeach
                                     <section class="mb-2" style="font-size:13px"><b><a style="color:black;" href="{{url('/')}}"> Primary Technology Area:</a></b></section>
-                                    <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">TX01 {{$project->techreferred->techarea->techarea}}</a></section>
+                                    <section class="mb-2" style="font-size:13px"><a style="color:black;" href="{{url('/search-results')}}">{{$project->techreferred->techarea->code}} {{$project->techreferred->techarea->techarea}}</a></section>
                                     <section class="mb-2" style="font-size:13px"><b> Start: </b></section>
                                     <section style="font-size:13px">{{$project->startdate}}</section>
                                 </div>
@@ -678,7 +678,7 @@
             
             <div class="faq-item">
                 <div id="organization" class="faq-question" onclick="toggleAnswer(this)">
-                    <span class="faq-question">Organizations</span><a id="organize"></a>
+                    <span class="faq-question">Companies</span><a id="organize"></a>
             
                     <i class="fa-solid fa-chevron-down" id="rotateIcon"
                         style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
@@ -1672,7 +1672,7 @@
               <div class="divider"></div>
               <div class="faq-item">
                 <div id="legalRoles" class="faq-question" onclick="toggleAnswer(this)">
-                    <span class="faq-question">Legal Entity Roles</span>
+                    <span class="faq-question">Type of Company</span>
             
                     <i class="fa-solid fa-chevron-down" id="rotateIcon"
                         style="float: right; margin-right: 10px; color: grey; cursor: pointer;"></i>
