@@ -16,7 +16,7 @@
                             <input id="id" type="hidden" class="form-control" name="id">
                         </div>
                         <div class="row mb-3">
-                            <label for="techarea" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Area') }}</label>
+                            <label for="techarea" class="col-md-4 col-form-label text-md-end">{{ __('Technology Area') }}</label>
 
                             <div class="col-md-6">
                                 <select id="techarea" type="text" class="form-control @error('techarea') is-invalid @enderror" name="techarea" value="{{ old('techarea') }}" autocomplete="techarea" autofocus>
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Sector') }}</label>
+                            <label for="techsector" class="col-md-4 col-form-label text-md-end">{{ __('Technology Sector') }}</label>
 
                             <div class="col-md-6">
                                 <select id="techsector" class="form-control @error('techsector') is-invalid @enderror" name="techsector" value="{{ old('techsector') }}" autocomplete="techsector" autofocus>
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technolgy Niche') }}</label>
+                            <label for="techniche" class="col-md-4 col-form-label text-md-end">{{ __('Technology Niche') }}</label>
 
                             <div class="col-md-6">
                                 <select id="techniche" class="form-control @error('techniche') is-invalid @enderror" name="techniche" value="{{ old('techniche') }}" autocomplete="techniche" autofocus >
