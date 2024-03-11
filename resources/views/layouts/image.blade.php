@@ -54,12 +54,12 @@
                         <div class="col-md-3">
                     <div id="columnchart_values" ></div>
 
-                            {{-- <h5 style="font-size: 18px; margin-bottom:5px;">Technology Maturity</h5>
+                            {{-- <h5 style="font-size: 18px; ">Technology Maturity</h5>
                             <img src="{{ asset('images/Group 154.svg') }}" style="height:140px;width:180px;"> --}}
                         </div>
 
                         <div style="margin-left: 30px">
-                            <section style="font-size: 16px;">Technology Areas Represented</section>
+                            <section style="font-size: 16px; margin-bottom:5px;">Technology Areas Represented</section>
                             @for($i = 1; $i <= $totalTechareas; $i++)
                                 @if(($i - 1) % 6 === 0)
                                     <div class="row" style="gap: 5px;">
