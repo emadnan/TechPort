@@ -6,6 +6,7 @@ use App\Models\project;
 use App\Models\techniche;
 use App\Models\techreferred;
 use App\Models\techsector;
+use App\Models\techarea;
 use App\Models\trl;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
