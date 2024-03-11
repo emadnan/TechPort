@@ -114,7 +114,7 @@
         </div>
     </div>
 </div>
-<script>
+<!-- <script>
     $(document).ready(function(){
 
     $('#btn_tx05').tooltip({
@@ -128,4 +128,4 @@
         return 'Projects: ' + count;
     }
 });
-</script>
+</script> -->
