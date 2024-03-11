@@ -24,7 +24,11 @@ class ProjectTargetController extends Controller
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
 // return response()->json(compact('projOrg'));
-        return view('projectTargetClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' ) );
+
+    $techareas = techarea::with('projects')->get();
+    $totalTechareas = techarea::count();
+
+        return view('projectTargetClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'techareas' , 'totalTechareas' ) );
     }
 
     public function getProjectsLengthByProjectTargetID(string $targetID ,string $trlID)
