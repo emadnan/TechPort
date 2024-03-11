@@ -114,8 +114,3 @@
         </div>
     </div>
 </div>
-<script>
-    function showProjectsCount(index) {
-
-    }
-</script>
