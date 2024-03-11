@@ -124,6 +124,6 @@
 
     function getProjectCount() {
         var count = {!! json_encode($count) !!};
-        return count;
+        return '170';
     }
 </script>
