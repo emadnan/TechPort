@@ -115,7 +115,6 @@
     </div>
 </div>
 <script>
-    $(document).ready(function(){
 
     $('#btn_tx05').tooltip({
         title: function () {
@@ -127,5 +126,4 @@
         var count = {!! json_encode($count) !!};
         return count;
     }
-});
 </script>
