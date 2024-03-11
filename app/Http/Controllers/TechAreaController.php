@@ -196,7 +196,7 @@ class TechAreaController extends Controller
         
         // return response()->json(compact('techareas'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas' , 'techareas'));
     }
 
     public function __construct()
