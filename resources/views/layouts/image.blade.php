@@ -64,7 +64,7 @@
                                 @if(($i - 1) % 6 === 0)
                                     <div class="row" style="gap: 5px;">
                                 @endif
-                                <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn">
+                                <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                     <a class="btn-hover" style="color: white;">TX0{{$i}}</a>
                                 </button>
                                 @if($i % 6 === 0 || $i === $totalTechareas)
@@ -114,3 +114,8 @@
         </div>
     </div>
 </div>
+<script>
+    function showProjectsCount(index) {
+
+    }
+</script>
