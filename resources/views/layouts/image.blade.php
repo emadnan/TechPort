@@ -65,7 +65,7 @@
                                     <div class="row" style="gap: 5px;">
                                 @endif
                                 <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn">
-                                    <a class="btn-hover" style="color: white;" href="{{ url('/') }}">TX0{{$i}}</a>
+                                    <a class="btn-hover" style="color: white;">TX0{{$i}}</a>
                                 </button>
                                 @if($i % 6 === 0 || $i === $totalTechareas)
                                     </div>
