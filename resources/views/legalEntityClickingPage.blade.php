@@ -552,63 +552,39 @@ Promise.all(allTrls.map(fetchDataForTrl))
     }
     var projOrg = @json($projOrg);
   var projects = projOrg.projects;
+  var totalTechareas = @json($totalTechareas);
   projects.forEach(function(project){
-    var area = project.techreferred.techarea.techarea;
-    if(area.includes('TX01'))
-    {
-    var area_btn =  document.getElementById('btn_tx01');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX02'))
-    {
-    var area_btn =  document.getElementById('btn_tx02');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX03'))
-    {
-    var area_btn =  document.getElementById('btn_tx03');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX04'))
-    {
-    var area_btn =  document.getElementById('btn_tx04');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX05'))
-    {
-    var area_btn =  document.getElementById('btn_tx05');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX06'))
-    {
-    var area_btn =  document.getElementById('btn_tx06');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX07'))
-    {
-    var area_btn =  document.getElementById('btn_tx07');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX08'))
-    {
-    var area_btn =  document.getElementById('btn_tx08');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX09'))
-    {
-    var area_btn =  document.getElementById('btn_tx09');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX010'))
-    {
-    var area_btn =  document.getElementById('btn_tx010');
-    area_btn.style.display = 'block';
-    }
-    if(area.includes('TX011'))
-    {
-    var area_btn =  document.getElementById('btn_tx011');
-    area_btn.style.display = 'block';
+    var area = project.techreferred.techarea.code;
+    for (let index = 1; index <= totalTechareas; index++) {
+        if(area.includes('TX0'+index) || area.includes('TX'+index))
+            {
+            var area_btn =  document.getElementById('btn_tx0'+index);
+            area_btn.classList.add('btn-primary');
+            }
     }
   });
+
+  var techareas = @json($techareas);
+  techareas.forEach(function(techarea){
+    var count = 0 ;
+    techarea.projects.forEach(function(project){
+        count = count + 1 ;
+    })
+    var areaCode = techarea.code;
+    for (let index = 1; index <= totalTechareas; index++) {
+        if (areaCode.includes('TX0'+index) || areaCode.includes('TX'+index)) {
+            $('#btn_tx0'+index).tooltip({
+                title: function () {
+                    return getProjectCount(count);
+                }
+            });
+        
+   }
+    }
+
+  })
+  function getProjectCount(count) {
+            return 'Projects: ' + count;
+        }
   </script>
 </html>
