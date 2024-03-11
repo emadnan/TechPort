@@ -54,23 +54,23 @@
                         <div class="col-md-3">
                     <div id="columnchart_values" ></div>
 
-                            {{-- <h5 style="font-size: 18px;">Technology Maturity</h5>
+                            {{-- <h5 style="font-size: 18px; margin-bottom:5px;">Technology Maturity</h5>
                             <img src="{{ asset('images/Group 154.svg') }}" style="height:140px;width:180px;"> --}}
                         </div>
 
                         <div style="margin-left: 30px">
                             <section style="font-size: 16px;">Technology Areas Represented</section>
                             @for($i = 1; $i <= $totalTechareas; $i++)
-    @if(($i - 1) % 6 === 0)
-        <div class="row" style="gap: 5px; margin-top: 10px;">
-    @endif
-    <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn">
-        <a class="btn-hover" style="color: white;" href="{{ url('/') }}">TX0{{$i}}</a>
-    </button>
-    @if($i % 6 === 0 || $i === $totalTechareas)
-        </div>
-    @endif
-@endfor
+                                @if(($i - 1) % 6 === 0)
+                                    <div class="row" style="gap: 5px;">
+                                @endif
+                                <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn">
+                                    <a class="btn-hover" style="color: white;" href="{{ url('/') }}">TX0{{$i}}</a>
+                                </button>
+                                @if($i % 6 === 0 || $i === $totalTechareas)
+                                    </div>
+                                @endif
+                            @endfor
                                 <!-- <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px;"
                                     class="btn"><a class="btn-hover" style="color:white;" 
                                         href="{{ url('/') }}">TX01</a></button>
