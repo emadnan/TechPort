@@ -2370,61 +2370,86 @@ Promise.all(allTrls.map(fetchDataForTrl))
   var projects = @json($projOrgs);
   projects.forEach(function(project){
     var area = project.techreferred.techarea.code;
-    if(area.includes('TX01'))
-    {
-    var area_btn =  document.getElementById('btn_tx01');
-    area_btn.classList.add('btn-primary');
+    for (let index = 1; index <= totalTechareas; index++) {
+        if(area.includes('TX0'+index))
+            {
+            var area_btn =  document.getElementById('btn_tx0'+index);
+            area_btn.classList.add('btn-primary');
+            }
     }
-    if(area.includes('TX02'))
-    {
-    var area_btn =  document.getElementById('btn_tx02');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX03'))
-    {
-    var area_btn =  document.getElementById('btn_tx03');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX04'))
-    {
-    var area_btn =  document.getElementById('btn_tx04');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX05'))
-    {
-    var area_btn =  document.getElementById('btn_tx05');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX06'))
-    {
-    var area_btn =  document.getElementById('btn_tx06');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX07'))
-    {
-    var area_btn =  document.getElementById('btn_tx07');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX08'))
-    {
-    var area_btn =  document.getElementById('btn_tx08');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX09'))
-    {
-    var area_btn =  document.getElementById('btn_tx09');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX010'))
-    {
-    var area_btn =  document.getElementById('btn_tx010');
-    area_btn.classList.add('btn-primary');
-    }
-    if(area.includes('TX011'))
-    {
-    var area_btn =  document.getElementById('btn_tx011');
-    area_btn.classList.add('btn-primary');
-    }
+    
+//     if(area.includes('TX02'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx02');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX03'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx03');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX04'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx04');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX05'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx05');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX06'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx06');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX07'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx07');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX08'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx08');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX09'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx09');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX010'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx010');
+//     area_btn.classList.add('btn-primary');
+//     }
+//     if(area.includes('TX011'))
+//     {
+//     var area_btn =  document.getElementById('btn_tx011');
+//     area_btn.classList.add('btn-primary');
+//     }
   });
+
+//   var techareas = @json($techareas);
+//   techareas.forEach(function(techarea){
+//     var count = 0 ;
+//     techarea.projects.forEach(function(project){
+//         count = count + 1 ;
+//     })
+//     var area = project.techreferred.techarea.code;
+// if area.includes('TX01') {
+//     $('#btn_tx01').tooltip({
+//         title: function () {
+//             return getProjectCount();
+//         }
+//     });
+
+//     function getProjectCount() {
+//         return 'Projects: ' + count;
+//     }
+//    }
+//   })
+
+
   </script>
 </html>
