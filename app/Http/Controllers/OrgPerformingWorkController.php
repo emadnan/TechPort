@@ -33,9 +33,10 @@ class OrgPerformingWorkController extends Controller
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
 
+    $techareas = techarea::with('projects')->get();
+    $totalTechareas = techarea::count();
 
-
-        return view('organizationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('organizationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'totalTechareas' , 'techareas'));
     }
 
     public function getProjectsLengthByOrgID(string $orgID ,string $trlID)
