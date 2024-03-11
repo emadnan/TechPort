@@ -23,16 +23,17 @@ class LegalEntityController extends Controller
     $projOrg = legalentityrole::with('projects.missiontype' ,'projects.foundingsource','projects.status' , 'projects.techreferred.techarea' , 'projects.orgperformingworks.location', 'projects.project_target')
     ->where('id' , $id)
     ->first();
-
     $allTrls = trl::with('projects.trlactual')->get();
 
     $count = $projOrg->projects->unique('id')->count();
     $active = $projOrg->projects->where('status.status' , 'Active')->count();
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
+    $techareas = techarea::with('projects')->get();
+    $totalTechareas = techarea::count();
 
     // return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership'));
-        return view('legalEntityClickingPage' , compact('projOrg' , 'count', 'active' , 'complete' , 'allTrls', 'partnership') );
+        return view('legalEntityClickingPage' , compact('projOrg' , 'count', 'active' , 'complete' , 'allTrls', 'partnership' , 'totalTechareas' , 'techareas') );
     }
 
     public function getProjectsLengthByRoleID(string $roleID ,string $trlID)
