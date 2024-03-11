@@ -62,7 +62,7 @@
                             <section style="font-size: 16px;">Technology Areas Represented</section>
                             <div style="display: flex; gap: 5px;margin-top:10px;">
                                 <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
-                                    class="btn"><a class="btn-hover" style="color:white;" 
+                                    class="btn"><a class="btn-hover" style="color:grey;" 
                                         href="{{ url('/') }}">TX01</a></button>
                                 <button id="btn_tx02" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
                                     class="btn"><a class="btn-hover" style="color:white;"
