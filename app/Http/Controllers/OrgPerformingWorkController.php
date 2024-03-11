@@ -99,6 +99,8 @@ class OrgPerformingWorkController extends Controller
         $validator = Validator::make($req->all() , [
             // 'code' => 'required',
             'name' => 'required',
+            'email' => 'required|email|unique',
+            'website' => 'required',
             'description' => 'required',
             'typeoflocation' => 'required',
             'note' => 'nullable',
@@ -112,6 +114,8 @@ class OrgPerformingWorkController extends Controller
         $create = new  orgperformingwork;
         $create->code = $latestCode + 1;
         $create->name = $req->name;
+        $create->email = $req->email;
+        $create->website = $req->website;
         $create->description = $req->description;
         $create->typeoflocation = $req->typeoflocation;
         $create->id_type = $req->id_type;
@@ -150,6 +154,8 @@ class OrgPerformingWorkController extends Controller
         $validator = Validator::make($req->all(),[
             // 'code' => 'required',
             'name' => 'required',
+            'email' => 'required|email|unique',
+            'website' => 'required',
             'description' => 'required',
             'typeoflocation' => 'required',
             'note' => 'nullable',
@@ -162,6 +168,8 @@ class OrgPerformingWorkController extends Controller
         $Update = orgperformingwork::where('id',$id)->update([
             // 'code'=> $req->code,
             'name'=> $req->name,
+            'email'=> $req->email,
+            'website'=> $req->website,
             'description'=> $req->description,
             'typeoflocation'=> $req->typeoflocation,
             'id_type'=> $req->id_type,
