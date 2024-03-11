@@ -2372,7 +2372,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
   projects.forEach(function(project){
     var area = project.techreferred.techarea.code;
     for (let index = 1; index <= totalTechareas; index++) {
-        if(area.includes('TX0'+index))
+        if(area.includes('TX0'+index || 'TX'+index))
             {
             var area_btn =  document.getElementById('btn_tx0'+index);
             area_btn.classList.add('btn-primary');
@@ -2388,7 +2388,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
     })
     var areaCode = techarea.code;
     for (let index = 1; index <= totalTechareas; index++) {
-        if (areaCode.includes('TX0'+index)) {
+        if (areaCode.includes('TX0'+index || 'TX'+index)) {
             $('#btn_tx0'+index).tooltip({
                 title: function () {
                     return getProjectCount(count);
