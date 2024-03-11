@@ -2076,9 +2076,9 @@ Promise.all(allTrls.map(fetchDataForTrl))
 
   var projOrg = @json($projOrg);
   var orgs = projOrg.orgperformingworks;
+  var totalTechareas = @json($totalTechareas);
   orgs.forEach(function(org){
   var projects = org.projects;
-  var totalTechareas = @json($totalTechareas);
   projects.forEach(function(project){
     var area = project.techreferred.techarea.code;
     for (let index = 1; index <= totalTechareas; index++) {
