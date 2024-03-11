@@ -2368,6 +2368,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
           chart.draw(data, options);
   }
   var projects = @json($projOrgs);
+  vat totalTechareas = @json($totalTechareas);
   projects.forEach(function(project){
     var area = project.techreferred.techarea.code;
     for (let index = 1; index <= totalTechareas; index++) {
