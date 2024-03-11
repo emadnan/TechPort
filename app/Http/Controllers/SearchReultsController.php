@@ -32,10 +32,11 @@ class SearchReultsController extends Controller
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
         $title = '';
         $totalTechareas = techarea::count();
+        $techareas = techarea::with('projects')->get();
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title', 'totalTechareas'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title', 'totalTechareas' , 'techareas'));
     }
 
     public function searchProjects(Request $req)
@@ -49,16 +50,16 @@ class SearchReultsController extends Controller
         $title = $req->searchBar;
         $totalTechareas = techarea::count();
 
-
         $count = $projOrgs->unique('id')->count();
         $active = $projOrgs->where('status.status' , 'Active')->count();
         $complete = $projOrgs->where('status.status' , 'Completed')->count();
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
-        
+
+        $techareas = techarea::with('projects')->get();
      
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas', 'techareas'));
 
     }
 
