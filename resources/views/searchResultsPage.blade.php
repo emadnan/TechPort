@@ -360,8 +360,8 @@
             display: block;
     }
     .tooltip-inner {
-    background-color: #ff0000; /* Red background */
-    color: #ffffff; /* White text */
+    background-color: #eff1cc; /* Red background */
+    color: black; /* White text */
 }
 </style>
 
