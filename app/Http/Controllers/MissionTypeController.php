@@ -38,10 +38,12 @@ class MissionTypeController extends Controller
 
     $allTrls = trl::with('projects.trlactual')->get();
 
+    $techareas = techarea::with('projects')->get();
+    $totalTechareas = techarea::count();
 
     // return response()->json($projOrg);
 
-        return view('missionTypeClickingpage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls'));
+        return view('missionTypeClickingpage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'techareas' , 'totalTechareas'));
     }
 
     public function getProjectsLengthByMissionID(string $missionID ,string $trlID)
