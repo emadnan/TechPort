@@ -29,8 +29,9 @@ class FoundingSourcesController extends Controller
     $active = $projOrg->projects->where('status.status' , 'Active')->count();
     $complete = $projOrg->projects->where('status.status' , 'Completed')->count();
     $partnership = $projOrg->projects->where('status.status' , 'Partnership')->count();
-
-        return view('foundSourcesClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' ) );
+    $techareas = techarea::with('projects')->get();
+    $totalTechareas = techarea::count();
+        return view('foundSourcesClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'techareas' , 'totalTechareas' ) );
     }
 
     public function getProjectsLengthBySourceID(string $sourceID ,string $trlID)
