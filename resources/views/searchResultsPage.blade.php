@@ -2386,7 +2386,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
     techarea.projects.forEach(function(project){
         count = count + 1 ;
     })
-    var area = project.techreferred.techarea.code;
+    var area = techarea.code;
     for (let index = 1; index <= totalTechareas; index++) {
         if area.includes('TX0'+index) {
             $('#btn_tx0'+index).tooltip({
