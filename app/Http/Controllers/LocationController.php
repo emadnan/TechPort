@@ -48,9 +48,12 @@ class LocationController extends Controller
         })->unique('id')->count();
     }
 
+    $techareas = techarea::with('projects')->get();
+    $totalTechareas = techarea::count();
+
 
 // return response()->json(compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
-        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location') );
+        return view('locationClickingPage' , compact('projOrg' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'location' , 'techareas' , 'totalTechareas') );
     }
 
     public function getProjectsLengthByLocationID(string $locationID ,string $trlID)
