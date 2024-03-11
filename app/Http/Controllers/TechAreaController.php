@@ -194,7 +194,7 @@ class TechAreaController extends Controller
         $techareas = techarea::with('projects')
         ->get();
         
-        return response()->json(compact('techareas'));
+        // return response()->json(compact('techareas'));
 
         return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas'));
     }
