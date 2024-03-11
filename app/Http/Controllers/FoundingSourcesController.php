@@ -9,6 +9,7 @@ use App\Models\missiontype;
 use App\Models\orgperformingwork;
 use App\Models\project;
 use App\Models\ref_projectorganization;
+use App\Models\techarea;
 use App\Models\trl;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
