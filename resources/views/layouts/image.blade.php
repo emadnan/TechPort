@@ -61,7 +61,12 @@
                         <div style="margin-left: 30px">
                             <section style="font-size: 16px;">Technology Areas Represented</section>
                             <div style="display: flex; gap: 5px;margin-top:10px;">
-                                <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px;"
+                           @for($i=1 ; $i<=$totalTechareas ; $i++)
+                           <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px;"
+                                    class="btn"><a class="btn-hover" style="color:white;" 
+                                        href="{{ url('/') }}">TX0{{$loop->index+1}}</a></button>
+                           @endfor
+                                <!-- <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px;"
                                     class="btn"><a class="btn-hover" style="color:white;" 
                                         href="{{ url('/') }}">TX01</a></button>
                                 <button id="btn_tx02" style="width: 50px; height: 30px; font-size: 12px;"
@@ -78,9 +83,9 @@
                                             href="{{ url('/') }}">TX05</a></button>
                                 <button id="btn_tx06" style="width: 50px; height: 30px; font-size: 12px;"
                                     class="btn"><a class="btn-hover" style="color:white;"
-                                        href="{{ url('/') }}">TX06</a></button>
+                                        href="{{ url('/') }}">TX06</a></button> -->
                             </div>
-                            <div style="display: flex; gap: 5px;margin-top:5px;">
+                            <!-- <div style="display: flex; gap: 5px;margin-top:5px;">
                                 <button id="btn_tx07" style="width: 50px; height: 30px; font-size: 12px;"
                                     class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX07</a></button>
@@ -96,7 +101,7 @@
                                 <button id="btn_tx011" style="width: 50px; height: 30px; font-size: 12px;"
                                     class="btn p-0"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX011</a></button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
