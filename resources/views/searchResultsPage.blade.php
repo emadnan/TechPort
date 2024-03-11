@@ -2394,14 +2394,14 @@ Promise.all(allTrls.map(fetchDataForTrl))
                     return getProjectCount();
                 }
             });
-        function getProjectCount() {
-            return 'Projects: ' + count;
-        }
+        
    }
     }
 
   })
-
+  function getProjectCount() {
+            return 'Projects: ' + count;
+        }
 
   </script>
 </html>
