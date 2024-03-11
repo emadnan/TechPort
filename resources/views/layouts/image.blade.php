@@ -64,7 +64,7 @@
                                 @if(($i - 1) % 6 === 0)
                                     <div class="row" style="gap: 5px;">
                                 @endif
-                                <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn" data-toggle="tooltip" data-placement="bottom" >
+                                <button id="btn_tx0{{$i}}" style="width: 50px; height: 30px; font-size: 12px;" class="btn" data-toggle="tooltip" data-placement="bottom" title="Loading...">
                                     <a class="btn-hover" style="color: white;">TX0{{$i}}</a>
                                 </button>
                                 @if($i % 6 === 0 || $i === $totalTechareas)
@@ -115,6 +115,7 @@
     </div>
 </div>
 <script>
+    $(document).ready(function(){
 
     $('#btn_tx05').tooltip({
         title: function () {
@@ -123,7 +124,8 @@
     });
 
     function getProjectCount() {
-        var count = {!! json_encode($count) !!};
-        return '170';
+        var count = @json($count);
+        return count;
     }
+});
 </script>
