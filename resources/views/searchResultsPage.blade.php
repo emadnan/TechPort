@@ -2391,7 +2391,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
         if areaCode.includes('TX0'+index) {
             $('#btn_tx0'+index).tooltip({
                 title: function () {
-                    return getProjectCount();
+                    return getProjectCount(count);
                 }
             });
         
@@ -2399,7 +2399,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
     }
 
   })
-  function getProjectCount() {
+  function getProjectCount(count) {
             return 'Projects: ' + count;
         }
 
