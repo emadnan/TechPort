@@ -666,7 +666,7 @@ switch (project.trlfinal.trllevel) {
                                             stroke="black" />
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
-                                    <section style="margin-left:5px;"><a href="{{ route('searchProjectsByTechSector' , ['id' => $projOrg->techreferred->techarea->id])  }}"
+                                    <section style="margin-left:5px;"><a href="{{ route('searchProjectsByTechSector' , ['id' => $projOrg->techreferred->techsector->id])  }}"
                                             style="color:black;">{{$projOrg->techreferred->techarea->code}}.1 {{$projOrg->techreferred->techsector->techsector}}</a></section>
                                 </div>
                                 <div class="row" style="margin-left:25px;">
@@ -676,7 +676,7 @@ switch (project.trlfinal.trllevel) {
                                             stroke="black" />
                                         <line x1="15" y1="7.5" y2="7.5" stroke="black" />
                                     </svg>
-                                    <section style="margin-left:5px;"><a href="{{route('searchProjectsByTechNiche' , ['id' => $projOrg->techreferred->techarea->id])  }}"
+                                    <section style="margin-left:5px;"><a href="{{route('searchProjectsByTechNiche' , ['id' => $projOrg->techreferred->techniche->id])  }}"
                                             style="color:black;">{{$projOrg->techreferred->techarea->code}}.1.2 {{$projOrg->techreferred->techniche->techniche}}</a></section>
                                 </div>
                                 <section style="font-weight:bold;margin-top:25px;font-size:16px"><a
