@@ -61,40 +61,40 @@
                         <div style="margin-left: 30px">
                             <section style="font-size: 16px;">Technology Areas Represented</section>
                             <div style="display: flex; gap: 5px;margin-top:10px;">
-                                <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;" 
+                                <button id="btn_tx01" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;" 
                                         href="{{ url('/') }}">TX01</a></button>
-                                <button id="btn_tx02" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx02" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX02</a></button>
-                                <button id="btn_tx03" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx03" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX03</a></button>
-                                <button id="btn_tx04" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx04" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX04</a></button>
-                                <button id="btn_tx05" style="width: 50px; height: 30px; font-size: 12px;"
-                                        class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx05" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                        class="btn"><a class="btn-hover" style="color:white;"
                                             href="{{ url('/') }}">TX05</a></button>
-                                <button id="btn_tx06" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx06" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX06</a></button>
                             </div>
                             <div style="display: flex; gap: 5px;margin-top:5px;">
-                                <button id="btn_tx07" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx07" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX07</a></button>
-                                <button id="btn_tx08" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx08" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX08</a></button>
-                                <button id="btn_tx09" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn" style="background-color:#065386"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx09" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX09</a></button>
-                                <button id="btn_tx010" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn  style="background-color:#065386"p-0"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx010" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn p-0"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX010</a></button>
-                                <button id="btn_tx011" style="width: 50px; height: 30px; font-size: 12px;"
-                                    class="btn  style="background-color:#065386"p-0"><a class="btn-hover" style="color:white;"
+                                <button id="btn_tx011" style="width: 50px; height: 30px; font-size: 12px; background-color:#072e47"
+                                    class="btn p-0"><a class="btn-hover" style="color:white;"
                                         href="{{ url('/') }}">TX011</a></button>
                             </div>
                         </div>
