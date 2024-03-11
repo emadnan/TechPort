@@ -266,10 +266,11 @@ $projOrgs = $projOrgs->get();
             $complete = $projOrgs->where('status.status' , 'Completed')->count();
             $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
             $title = '';
-            
+            $techareas = techarea::with('projects')->get();
+            $totalTechareas = techarea::count();
             // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
     
-            return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title'));
+            return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'techareas' , 'totalTechareas'));
     }
 
 
