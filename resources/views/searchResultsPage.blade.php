@@ -2388,7 +2388,7 @@ Promise.all(allTrls.map(fetchDataForTrl))
     })
     var areaCode = techarea.code;
     for (let index = 1; index <= totalTechareas; index++) {
-        if areaCode.includes('TX0'+index) {
+        if (areaCode.includes('TX0'+index)) {
             $('#btn_tx0'+index).tooltip({
                 title: function () {
                     return getProjectCount(count);
