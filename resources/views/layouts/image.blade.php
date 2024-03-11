@@ -125,7 +125,7 @@
 
     function getProjectCount() {
         var count = @json($count);
-        return count;
+        return '178';
     }
 });
 </script>
