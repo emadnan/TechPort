@@ -114,18 +114,3 @@
         </div>
     </div>
 </div>
-<!-- <script>
-    $(document).ready(function(){
-
-    $('#btn_tx05').tooltip({
-        title: function () {
-            return getProjectCount();
-        }
-    });
-
-    function getProjectCount() {
-        var count = @json($count);
-        return 'Projects: ' + count;
-    }
-});
-</script> -->
