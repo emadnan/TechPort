@@ -155,10 +155,11 @@ class TechSubSectorController extends Controller
         $active = $projOrgs->where('status.status' , 'Active')->count();
         $complete = $projOrgs->where('status.status' , 'Completed')->count();
         $partnership = $projOrgs->where('status.status' , 'Partnership')->count();
+        $totalTechareas = techarea::count();
         
         // return response()->json(compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership'));
 
-        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title'));
+        return view('searchResultsPage' , compact('projOrgs' , 'count' , 'active' , 'complete' , 'partnership' , 'allTrls' , 'title' , 'totalTechareas'));
     }
 
     public function __construct()
