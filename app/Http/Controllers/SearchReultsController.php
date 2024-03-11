@@ -10,6 +10,7 @@ use App\Models\orgperformingwork;
 use App\Models\project;
 use App\Models\ref_projectorganization;
 use App\Models\trl;
+use App\Models\techarea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
