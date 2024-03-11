@@ -2368,5 +2368,40 @@ Promise.all(allTrls.map(fetchDataForTrl))
           chart.draw(data, options);
   }
 
+  var projects = @json($projOrgs);
+  var totalTechareas = @json($totalTechareas);
+  projects.forEach(function(project){
+    var area = project.techreferred.techarea.code;
+    for (let index = 1; index <= totalTechareas; index++) {
+        if(area.includes('TX0'+index) || area.includes('TX'+index))
+            {
+            var area_btn =  document.getElementById('btn_tx0'+index);
+            area_btn.classList.add('btn-primary');
+            }
+    }
+  });
+
+  var techareas = @json($techareas);
+  techareas.forEach(function(techarea){
+    var count = 0 ;
+    techarea.projects.forEach(function(project){
+        count = count + 1 ;
+    })
+    var areaCode = techarea.code;
+    for (let index = 1; index <= totalTechareas; index++) {
+        if (areaCode.includes('TX0'+index) || areaCode.includes('TX'+index)) {
+            $('#btn_tx0'+index).tooltip({
+                title: function () {
+                    return getProjectCount(count);
+                }
+            });
+        
+   }
+    }
+
+  })
+  function getProjectCount(count) {
+            return 'Projects: ' + count;
+        }
   </script>
 </html>
