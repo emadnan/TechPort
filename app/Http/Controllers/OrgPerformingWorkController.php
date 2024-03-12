@@ -99,8 +99,8 @@ class OrgPerformingWorkController extends Controller
         $validator = Validator::make($req->all() , [
             // 'code' => 'required',
             'name' => 'required',
-            'email' => 'required|email|unique:orgperformingwork',
-            'website' => 'required',
+            'email' => 'required|email',
+            'website' => 'required|url',
             'description' => 'required',
             'typeoflocation' => 'required',
             'note' => 'nullable',
@@ -154,8 +154,8 @@ class OrgPerformingWorkController extends Controller
         $validator = Validator::make($req->all(),[
             // 'code' => 'required',
             'name' => 'required',
-            'email' => 'required|email|unique:orgperformingwork',
-            'website' => 'required',
+            'email' => 'required|email',
+            'website' => 'required|url',
             'description' => 'required',
             'typeoflocation' => 'required',
             'note' => 'nullable',
